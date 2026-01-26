@@ -148,39 +148,6 @@ class LLMClient:
 
         return response_text
 
-def json_to_xml(json_obj):
-    """Convert JSON object to XML format using xml.dom.minidom."""
-    doc = Document()
-
-    def build_xml_element(parent, key, value):
-        if key is None:
-            if not isinstance(value, dict) or len(value) != 1:
-                raise ValueError(f"Must be a single-element dict: {value}")
-            build_xml_element(parent, *list(value.items())[0])
-        elif isinstance(value, dict):
-            element = doc.createElement(key)
-            parent.appendChild(element)
-            for k, v in value.items():
-                build_xml_element(element, k, v)
-        elif isinstance(value, list):
-            element = doc.createElement(key)
-            parent.appendChild(element)
-            for item in value:
-                build_xml_element(element, None, item)
-        else:
-            v = str(value)
-            if key == ":text":
-                if v:
-                    parent.appendChild(doc.createTextNode(v))
-            elif key == ":cdata":
-                if v:
-                    parent.appendChild(doc.createCDATASection(f"\n{v}\n"))
-            else:
-                parent.setAttribute(key, v)
-
-    build_xml_element(doc, None, json_obj)
-    return doc.toprettyxml(encoding='utf-8', indent='').decode('utf-8')
-
 def history_to_xml(history):
     """Convert LLM interaction history to XML format.
 
@@ -190,13 +157,17 @@ def history_to_xml(history):
     Returns:
         XML string representing the history
     """
-    json_obj = {
-        "messages": [
-            {"message": {"role": msg["role"], ":cdata": msg["content"].rstrip()}}
-            for msg in history
-        ]
-    }
-    return json_to_xml(json_obj)
+    doc = Document()
+    messages = doc.createElement("messages")
+    doc.appendChild(messages)
+    for msg in history:
+        message = doc.createElement("message")
+        message.setAttribute("role", msg["role"])
+        content = msg["content"].rstrip()
+        if content:
+            message.appendChild(doc.createCDATASection(f"\n{content}\n"))
+        messages.appendChild(message)
+    return doc.toprettyxml(encoding='utf-8', indent='').decode('utf-8')
 
 def xml_to_history(xml_string):
     """Convert XML format back to LLM interaction history.
