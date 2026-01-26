@@ -30,16 +30,14 @@ The translation employs a rigorous 5-stage process designed for high-quality tra
 
 ## Project Structure
 
-- `it/`: Italian source text management.
+- [it/](it/): Italian source text management.
   - `split.py`: Splits the Gutenberg source text into individual cantos.
   - `Makefile`: Downloads the Italian text from Project Gutenberg and runs the splitter.
-- `tokenize/`: Italian tokenizer specialized for Dante's text.
-  - `tokenizer.py`: Handles complex elisions and apostrophes common in 14th-century Italian.
-  - `Makefile`: Runs tokenization on all cantos.
-- `norton-inferno-01.txt`: Norton's English translation of *Inferno* Canto 1, used as the reference translation. Norton's prose translation is known for its faithfulness to Dante's original Italian.
+- [tokenize/](tokenize/): Italian tokenizer specialized for Dante's text.
+- [en-norton/](en-norton/): Norton's English translation of *Inferno* Canto 1, used as the reference translation.
 - `translate.py`: The main translation script implementing the structured 5-stage pipeline.
 - `test.py`: A testing script for quick debugging and verification of the translation pipeline.
-- `test/`: Contains translation logs and evaluation results for the first few lines of *Inferno*.
+- [test/](test/): Contains translation logs and evaluation results for the first few lines of *Inferno*.
 
 ## Usage
 
