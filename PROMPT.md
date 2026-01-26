@@ -14,7 +14,7 @@ Compared to massive models like Gemini 3.0 Pro, local LLMs are more prone to gra
 
 This document explains the design philosophy and implementation details of "4-Stage Structured Prompting" to overcome these challenges and maximize the potential of local LLMs.
 
-*Note: The prompt design methodology introduced here was constructed through hypothesis testing via dialogue with Gemini and repeated translation experiments using GPT-OSS 120B.*
+**Note**: The prompt design methodology introduced here was constructed through hypothesis testing via dialogue with Gemini and repeated translation experiments using GPT-OSS 120B.
 
 ## "Serialization" and "Fixation" of Thought
 
@@ -42,8 +42,8 @@ Here is the processing flow applied to Dante's *Inferno* (Canto 1, Line 8) and t
 
 1.  **Source (Italian):** ma per trattar del ben ch'i' **vi** trovai,
 2.  **Intermediate (English):** But in order to treat of the good that **there** I found,
-3.  **Target (Malayalam):** പക്ഷേ ഞാന്‍ **അവിടെ** നല്ലതിന്റെ കണ്ടു ചെയ്യാൻ
-    *(Ref: But I found the good **there**, and to speak about it)*
+3.  **Target (Malayalam):** പക്ഷേ ഞാന്‍ **അവിടെ** നല്ലതിന്റെ കണ്ടു ചെയ്യാൻ  
+    (But I found the good **there**, and to speak about it)
 
 The core of this process lies in handling the polysemous word **`vi`**.
 
