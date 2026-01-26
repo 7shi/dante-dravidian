@@ -4,7 +4,7 @@ Norton's prose translation is known for its faithfulness to Dante's original Ita
 
 - [The Divine Comedy, Volume 1, Hell by Dante Alighieri | Project Gutenberg](https://www.gutenberg.org/ebooks/1995)
 
-This is a prose translation, but it is divided into tercets to match Dante's original text.
+This prose translation is formatted in tercets to match Dante's verse structure.
 
 - [inferno-01.txt](inferno-01.txt)
 
