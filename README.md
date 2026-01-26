@@ -5,7 +5,6 @@ This project aims to translate Dante Alighieri's *Divine Comedy* from Italian in
 This project uses the following Italian text source:
 
 - [La Divina Commedia di Dante: Complete by Dante Alighieri | Project Gutenberg](https://www.gutenberg.org/ebooks/1000)
-- [The Divine Comedy, Volume 1, Hell by Dante Alighieri | Project Gutenberg](https://www.gutenberg.org/ebooks/1995)
 
 ## Methodology
 
