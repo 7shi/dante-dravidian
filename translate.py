@@ -192,7 +192,7 @@ def history_to_xml(history):
     """
     json_obj = {
         "messages": [
-            {"message": {"role": msg["role"], ":cdata": msg["content"]}}
+            {"message": {"role": msg["role"], ":cdata": msg["content"].rstrip()}}
             for msg in history
         ]
     }
@@ -214,7 +214,9 @@ def xml_to_history(xml_string):
         content = ""
         for child in message.childNodes:
             if child.nodeType == child.CDATA_SECTION_NODE:
-                content = child.data.strip()
+                content = child.data
+                if content.startswith('\n'):
+                    content = content[1:]
                 break
         history.append({"role": role, "content": content})
     return history
