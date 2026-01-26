@@ -1,6 +1,7 @@
 """Test for quick debugging."""
 import os
-from translate import *
+from llm import LLMClient, history_to_xml, xml_to_history
+from translate import print_header, STEP1_PROMPT, step1, translate
 
 # model = "ollama:gpt-oss:120b"
 model = "groq:openai/gpt-oss-120b"
