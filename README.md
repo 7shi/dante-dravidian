@@ -1,6 +1,6 @@
 # dante-dravidian
 
-This project aims to translate Dante Alighieri's *Divine Comedy* from Italian into Dravidian languages (Tamil, Telugu, Kannada, and Malayalam) using a structured 5-stage translation process powered by Large Language Models (LLMs).
+This project aims to translate Dante Alighieri's *Divine Comedy* from Italian into Dravidian languages (Telugu, Tamil, Kannada, and Malayalam) using a structured 5-stage translation process powered by Large Language Models (LLMs).
 
 This project uses the following Italian text source:
 
