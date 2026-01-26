@@ -12,7 +12,7 @@ Compared to massive models like Gemini 3.0 Pro, local LLMs are more prone to gra
     *   Example: Malayalam.
 3.  **Agglutinative/SOV Languages:** Languages where word order and grammatical structure differ significantly from the source language (SVO).
 
-This document explains the design philosophy and implementation details of "4-Stage Structured Prompting" to overcome these challenges and maximize the potential of local LLMs.
+This document explains the design philosophy and implementation details of "5-Stage Structured Prompting" to overcome these challenges and maximize the potential of local LLMs.
 
 **Note**: The prompt design methodology introduced here was constructed through hypothesis testing via dialogue with Gemini and repeated translation experiments using GPT-OSS 120B.
 
