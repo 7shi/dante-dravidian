@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Kannada.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Morphosyntactic Requirement Table – Mapping the Italian clause to Kannada grammar**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Requirement in Kannada |
+|---|-------------|--------------------------------------|--------------------------------|
+| 1 | **Ahi** | Interjection expressing pain/lament | No case or tense – rendered as the exclamatory particle **“ಆಹ!”** (no suffix) |
+| 2 | **quanto** | Degree adverb “how” | No case – translated as the adverb **“ಎಷ್ಟು”** (no suffix) |
+| 3 | **a** | Preposition “to” (marks infinitive) | No case – Kannada infinitives are formed with **‑ಲು / ‑ಲು** (e.g., **ಹೇಳಲು**) – the preposition itself is not realized. |
+| 4 | **dir** | “to tell / say” (infinitive) | **Verb‑infinitive** → add **‑ಲು** (e.g., **ಹೇಳಲು**) ; mood: non‑finite, same as source (infinitive) |
+| 5 | **qual** | Interrogative adjective “which” (object of *dir*) | **Accusative case** on the noun it modifies → **‑ನ್ನು / ‑ನನ್ನು** (e.g., **ಯಾವುದನ್ನು** “what” → **ಯಾವುದನ್ನು ಹೇಳಲು”) |
+| 6 | **era** | Imperfect “was” (past state) | **Past‑imperfective** → Kannada past habitual **ಇತ್ತು** (e.g., **ಇತ್ತಿತ್ತು**) ; no case. |
+| 7 | **è** | Present “is” (copular) | **Present tense** → Kannada present **ಇದೆ** (e.g., **ಇದು**) ; no case. |
+| 8 | **cosa** | “thing” (subject) | **Nominative (unmarked)** – the noun appears without case suffix (e.g., **ವಸ್ತು**). |
+| 9 | **dura** | “hard / difficult” (predicative adjective) | No case – agrees with the subject; in Kannada the adjective follows the noun (e.g., **ಕಷ್ಟಕರ**) and takes no suffix. |
+|10| **esta** | Demonstrative “this” (determiner) | No case – rendered as **ಈ** preceding the noun (e.g., **ಈ**). |
+|11| **selva** | “wild wood / forest” (appositive noun) | **Nominative (unmarked)** because it renames the subject “cosa”. |
+|12| **selvaggia** | “wild” (attribute) | No case – adjective **ಅರಣ್ಯ** *‑* **ಕಾಡು** style; no suffix. |
+|13| **e** | Coordinating conjunction “and” | No case – rendered as **ಮತ್ತು**. |
+|14| **aspra** | “rough” (attribute) | No case – adjective **ಕಠಿನ** (no suffix). |
+|15| **e** | Coordinating conjunction “and” | No case – **ಮತ್ತು**. |
+|16| **forte** | “dense / strong” (attribute) | No case – adjective **ದೃಢ / ಕಟ್ಟು** (no suffix). |
+|17| **che** | Relative pronoun “which” (subject of relative clause) | No case – in Kannada the relative clause is introduced by **ಅದು** or **ಏನು**; the pronoun itself is not overtly case‑marked. |
+|18| **nel** | Contraction “in the” (locative) | **Locative case** on the following noun → suffix **‑ನಲ್ಲಿ** (e.g., **ಚಿಂತನೆನಲ್ಲಿ** “in the thought”). |
+|19| **pensier** | “thought” (object of the preposition) | **Locative case** → **‑ನಲ್ಲಿ** (as above) ; the noun itself takes **‑ನಲ್ಲಿ**. |
+|20| **rinova** | “renews” (present) | **Present tense** → Kannada present **ಪುನರುಜ್ಜೀವನಗೊಳಿಸುತ್ತದೆ / ನವೀಕರಿಸುತ್ತದೆ** ; no case. |
+|21| **la** | Definite article “the” (object marker) | No case – Kannada does not use articles; the following noun will receive case marking. |
+|22| **paura** | “fear” (direct object of *rinova*) | **Accusative case** → suffix **‑ನ್ನು / ‑ನನ್ನು** (e.g., **ಭಯವನ್ನು**). |
+
+### How to use the table for a Kannada rendering  
+
+1. **Nouns/Pronouns** – attach the appropriate case suffix indicated in the *Target Requirement* column.  
+   * Example: “qual era” → **ಯಾವುದನ್ನು ಇತ್ತು** (‑ನ್ನು marks the accusative object of *ಹೇಳಲು*).  
+2. **Verbs** – select the Kannada verb form that matches the source tense/mood.  
+   * Imperfect “era” → **ಇತ್ತಿತ್ತು** (past‑habitual).  
+   * Present “è” / “rinova” → **ಇದೆ** / **ನವೀಕರಿಸುತ್ತದೆ**.  
+   * Infinitive “dir” → **ಹೇಳಲು** (‑ಲು infinitive suffix).  
+3. **Prepositional Phrases** – replace the Italian preposition with the appropriate case suffix on the noun.  
+   * “nel pensier” → **ಚಿಂತನೆನಲ್ಲಿ** (‑ನಲ್ಲಿ locative).  
+4. **Adjectival Attributes** – place the adjective after the noun (or before, depending on stylistic choice) with no case suffix.  
+
+By following these requirements you obtain a grammatically well‑formed Kannada sentence that preserves the semantic roles of the original Italian line.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Kannada components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Kannada word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Kannada Lexical Inventory**  
+*(Each line shows the Italian source token, the precise English sense that was required, the plain Kannada lemma, and the fully‑inflected/agglutinated form that will appear in the final translation.)*  
+
+| # | Source Word | Contextual Definition (English) | Target Lemma (Kannada) | Final Agglutinated Form |
+|---|-------------|--------------------------------|------------------------|--------------------------|
+| 1 | **Ahi** | Interjection of pain / lament (“Ah!”) | ಆಹ್ | **ಆಹ!** |
+| 2 | **quanto** | Degree adverb “how (much)”, asking for intensity | ಎಷ್ಟು | **ಎಷ್ಟು** |
+| 3 | **a** | Preposition that introduces the infinitive “to” (its function is realised by the infinitive suffix) | – | *(merged with the verb “dir”; no independent word)* |
+| 4 | **dir** | Verb “to tell, to say” in infinitive | ಹೇಳು | **ಹೇಳಲು** |
+| 5 | **qual** | Interrogative adjective “which / what” (object of *dir*) | ಯಾವುದು | **ಯಾವುದನ್ನು** |
+| 6 | **era** | Imperfect of “to be” – past habitual state “was” | ಇರು | **ಇತ್ತಿತ್ತು** |
+| 7 | **è** | Present of “to be” – copular “is” | ಇರು | **ಇದು** |
+| 8 | **cosa** | Abstract “thing, matter” (subject) | ವಸ್ತು | **ವಸ್ತು** |
+| 9 | **dura** | Predicative adjective “hard, difficult, arduous” | ಕಷ್ಟಕರ | **ಕಷ್ಟಕರ** |
+|10| **esta** | Demonstrative determiner “this” (near) | ಈ | **ಈ** |
+|11| **selva** | “Wild, dense forest / wood” (appositive noun) | ಅರಣ್ಯ | **ಅರಣ್ಯ** |
+|12| **selvaggia** | Attribute “wild, untamed” | ಕಾಡು | **ಕಾಡು** |
+|13| **e** (first) | Coordinating conjunction “and” | ಮತ್ತು | **ಮತ್ತು** |
+|14| **aspra** | Attribute “rough, harsh in texture” | ಕಠಿನ | **ಕಠಿನ** |
+|15| **e** (second) | Coordinating conjunction “and” | ಮತ್ತು | **ಮತ್ತು** |
+|16| **forte** | Attribute “dense, tightly packed / strong” | ದೃಢ | **ದೃಢ** |
+|17| **che** | Relative pronoun “which” introducing the clause that qualifies *selva* (functionally rendered as a connective) | ಅದು | **ಅದು** |
+|18| **nel** | Preposition “in the” – realised by the locative suffix on the following noun | – | *(merged with “pensier”; no independent word)* |
+|19| **pensier** | Noun “thought, mental consideration” (object of the preposition) | ಚಿಂತನೆ | **ಚಿಂತನೆನಲ್ಲಿ** |
+|20| **rinova** | Verb “to renew, to revive again” (present) | ನವೀಕರಿಸು | **ನವೀಕರಿಸುತ್ತದೆ** |
+|21| **la** | Definite article “the” (has no Kannada counterpart) | – | *(omitted)* |
+|22| **paura** | Direct object “fear, dread” (what is renewed) | ಭಯ | **ಭಯವನ್ನು** |
+
+**Key points on agglutination & case handling**
+
+* **Accusative objects** – *qual* → **ಯಾವುದನ್ನು**, *paura* → **ಭಯವನ್ನು** (‑ನ್ನು/‑ವನ್ನು).  
+* **Locative phrase** – *nel pensier* → **ಚಿಂತನೆನಲ್ಲಿ** (noun + ‑ನಲ್ಲಿ). The preposition *nel* is not listed separately because its semantic content is fully expressed by the locative suffix.  
+* **Infinitive** – *a dir* → **ಹೇಳಲು** (verb lemma + ‑ಲು). The preposition *a* is therefore omitted as a standalone token.  
+* **Verb tenses** – Imperfect → **ಇತ್ತಿತ್ತು** (past‑habitual); Present → **ಇದು**, **ನವೀಕರಿಸುತ್ತದೆ**.  
+* **Adjectival attributes** – placed before the noun they modify (standard Kannada order) and receive no case marking.  
+
+These agglutinated forms respect the grammatical requirements derived in **Step 2** and are ready to be slotted into the final Kannada rendering of Dante’s line.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Kannada sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Kannada):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 4 – Slot‑Based Syntactic Assembly**
+
+---
+
+### Line 4  
+**Source Line:**  
+Ahi quanto a dir qual era è cosa dura  
+
+**Component Mapping (new order):**  
+- ಆಹ!  (Interjection)  
+- ಎಷ್ಟು  (Degree adverb)  
+- ಹೇಳಲು  (Infinitive “to tell”)  
+- ಯಾವುದನ್ನು  (Accusative “which”)  
+- ಇತ್ತಿತ್ತು  (Imperfect “was”)  
+- ವಸ್ತು  (Subject “thing”)  
+- ಕಷ್ಟಕರ  (Predicative adjective “hard/difficult”)  
+- ಇದು  (Present copula “is”)  
+
+**Assembly Logic:**  
+1. **Interjection** placed first, unchanged.  
+2. **Degree adverb** follows the interjection.  
+3. The **infinitive clause** (how to tell which it was) is treated as a manner adverbial and placed before the main clause.  
+4. **Subject** “ವಸ್ತು” comes next.  
+5. **Predicative adjective** precedes the copula (Kannada allows the adjective before the verb).  
+6. End with the **present copula** “ಇದು”.  
+7. No punctuation is added (source line has none).
+
+**Target Text:**  
+ಆಹ! ಎಷ್ಟು ಹೇಳಲು ಯಾವುದನ್ನು ಇತ್ತಿತ್ತು ವಸ್ತು ಕಷ್ಟಕರ ಇದು  
+
+---
+
+### Line 5  
+**Source Line:**  
+esta selva selvaggia e aspra e forte  
+
+**Component Mapping (new order):**  
+- ಈ  (Demonstrative “this”)  
+- ಕಾಡು  (Adjective “wild”)  
+- ಮತ್ತು  (Conjunction “and”)  
+- ಕಠಿನ  (Adjective “rough”)  
+- ಮತ್ತು  (Conjunction “and”)  
+- ದೃಢ  (Adjective “dense / strong”)  
+- ಅರಣ್ಯ  (Subject “forest”)  
+
+**Assembly Logic:**  
+1. Demonstrative precedes the noun phrase.  
+2. All adjectives are placed **before** the noun they modify, linked by the two conjunctions “ಮತ್ತು”.  
+3. The noun **ಅರಣ್ಯ** serves as the subject; no verb is required because the line is a nominal description (copula omitted).  
+4. No punctuation (source line has none).
+
+**Target Text:**  
+ಈ ಕಾಡು ಮತ್ತು ಕಠಿನ ಮತ್ತು ದೃಢ ಅರಣ್ಯ  
+
+---
+
+### Line 6  
+**Source Line:**  
+che nel pensier rinova la paura!  
+
+**Component Mapping (new order):**  
+- ಅದು  (Relative pronoun “which”)  
+- ಚಿಂತನೆನಲ್ಲಿ  (Locative “in thought”)  
+- ಭಯವನ್ನು  (Accusative “fear”)  
+- ನವೀಕರಿಸುತ್ತದೆ  (Present verb “renews”)  
+- !  (Exclamation mark copied from source)  
+
+**Assembly Logic:**  
+1. The relative pronoun **ಅದು** functions as the subject of the clause.  
+2. The locative phrase **ಚಿಂತನೆನಲ್ಲಿ** follows the subject (adverbial of place).  
+3. Direct object **ಭಯವನ್ನು** precedes the verb, marked with the accusative suffix **‑ವನ್ನು**.  
+4. The verb **ನವೀಕರಿಸುತ್ತದೆ** ends the clause (S‑O‑V order).  
+5. Preserve the original exclamation mark.
+
+**Target Text:**  
+ಅದು ಚಿಂತನೆನಲ್ಲಿ ಭಯವನ್ನು ನವೀಕರಿಸುತ್ತದೆ!
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Kannada text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (Step 4) | Back‑Translation (literal English) | Source Context | Verification Result |
+|--------|----------------------|------------------------------------|----------------|----------------------|
+| 4 | ಆಹ! ಎಷ್ಟು ಹೇಳಲು ಯಾವುದನ್ನು ಇತ್ತಿತ್ತು ವಸ್ತು ಕಷ್ಟಕರ ಇದು | “Ah! how to tell which was thing difficult this is.” | **Ahi quanto a dir qual era è cosa dura** – “Ah! how hard a thing it is to tell what it was.” | **Correction Needed** (word order does not reflect the intended meaning; the subject‑object‑verb pattern is violated.) |
+| 5 | ಈ ಕಾಡು ಮತ್ತು ಕಠಿನ ಮತ್ತು ದೃಢ ಅರಣ್ಯ | “this wild and rough and strong forest.” | **esta selva selvaggia e aspra e forte** – “this wild and rough and dense wood.” | OK (meaning and structure preserved.) |
+| 6 | ಅದು ಚಿಂತನೆನಲ್ಲಿ ಭಯವನ್ನು ನವೀಕರಿಸುತ್ತದೆ! | “that in thought renews fear!” | **che nel pensier rinova la paura!** – “which in thought renews the fear!” | OK (meaning and structure preserved.) |
+
+---
+
+### Corrected Line 4 (re‑ordered within the line, using all required components)
+
+**Corrected Target Text (Line 4):**  
+```
+ಆಹ! ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಯಾವುದನ್ನು ಹೇಳಲು ಇತ್ತಿತ್ತು ಇದು
+```
+
+**Explanation of the correction**  
+- **Subject** → `ವಸ್ತು` (thing) placed early.  
+- **Adjective** → `ಕಷ್ಟಕರ` (hard/difficult) placed before the subject, as Kannada permits the adjective to precede the noun it modifies.  
+- **Object** → `ಯಾವುದನ್ನು` (which) follows the subject, marked with the accusative suffix.  
+- **Verb phrase** → `ಹೇಳಲು ಇತ್ತಿತ್ತು` (to tell … was) placed after the object, preserving the S‑O‑V order.  
+- **Copula** → `ಇದು` (is) kept at the end to reflect the present‑tense “is” from the source.  
+- The exclamation mark is **not** added because the source line has none.
+
+All components from Step 3 are used **exactly** as they appear in the “Final Agglutinated Form” column; no new suffixes were created.
+
+---
+
+## Final Verified Kannada Translation (one line per source line)
+
+```kannada
+ಆಹ! ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಯಾವುದನ್ನು ಹೇಳಲು ಇತ್ತಿತ್ತು ಇದು
+ಈ ಕಾಡು ಮತ್ತು ಕಠಿನ ಮತ್ತು ದೃಢ ಅರಣ್ಯ
+ಅದು ಚಿಂತನೆನಲ್ಲಿ ಭಯವನ್ನು ನವೀಕರಿಸುತ್ತದೆ!
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Kannada translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆಹ! ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಯಾವುದನ್ನು ಹೇಳಲು ಇತ್ತಿತ್ತು ಇದು
+ಈ ಕಾಡು ಮತ್ತು ಕಠಿನ ಮತ್ತು ದೃಢ ಅರಣ್ಯ
+ಅದು ಚಿಂತನೆನಲ್ಲಿ ಭಯವನ್ನು ನವೀಕರಿಸುತ್ತದೆ!
+]]></message>
+</messages>

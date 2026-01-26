@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Telugu.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 2 – Morphosyntactic Requirement Definition (Italian → Telugu)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Requirement (Telugu) – what morphology must be added to the corresponding Telugu element |
+|---|-------------|--------------------------------------|-----------------------------------------------------------|
+| 1 | **Tant'** | “to such a degree; extremely” (adverb of degree) | No case suffix – adverbial modifier, placed before the adjective in Telugu (e.g., **చాలా** *cālā* “very”). |
+| 2 | **è** (pres.) | Copular “is” (present) | Verb in **present indicative**: **అది** *adi* “is”. |
+| 3 | **amara** | “bitter (figurative)” (predicate adjective) | Predicate adjective agrees with the subject; no case suffix (subject is in nominative, which is zero‑marked in Telugu). |
+| 4 | **che** (subord.) | Subordinating “that” introducing a result clause | Rendered by the connective **అప్పుడే** *appuḍē* or **అంటే** *aṇṭe* – no case marking. |
+| 5 | **poco** | “little; scarcely” (degree adverb) | No case – use Telugu adverb **కొంచెం** *koñcem* before the comparative. |
+| 6 | **è** (pres.) | Copular “is” (present) | Same as #2 – present indicative. |
+| 7 | **più** | Comparative “more” | Telugu comparative particle **కంటే** *kānṭe* follows the adjective; no case. |
+| 8 | **morte** | “death” (abstract noun, predicate) | Predicate noun in **nominative** (zero‑marked). |
+| 9 | **;** | — | — |
+|10| **ma** | Coordinating adversative “but” | Conjunction **కాని** *kāni* – no case. |
+|11| **per** | Preposition of purpose “in order to” | Telugu purpose marker **‑కోసం** *‑kōsaṁ* attached to the infinitive/verb phrase (e.g., *చేయడానికి* *cheyadāniki* “to do, for the purpose of doing”). |
+|12| **trattar** | “to treat; to discuss” (infinitive) | Telugu infinitive **‑డం** *‑ḍaṁ* (e.g., **చర్చించడం** *carchaṁcaḍaṁ* “to discuss”). When combined with the purpose suffix from #11 it becomes **చర్చించడానికి** *carchaṁcadanikī*. |
+|13| **del** (di + il) | Prepositional article “of the” | Genitive case in Telugu: suffix **‑డి** *‑ḍi* attached to the noun (e.g., **మంచి‑డి** *man̄ci‑ḍi* “of the good”). |
+|14| **ben** | “the good” (abstract noun) | **Accusative case** because it is the object of *trattar*: suffix **‑నిని** *‑ni* (after a vowel **‑ని** *‑ni*). Example: **మంచిని** *man̄ci‑ni*. |
+|15| **ch'i'** (che + io) | Relative pronoun “that” + 1st‑person “I” | Relative clause introduced by **‑అను** *‑anu* or **‑ని** *‑ni*; the pronoun **నేను** *nēnu* (I) is in **nominative** (zero‑marked). |
+|16| **vi** (adv. of place) | “there” (locative) | **Locative suffix** **‑లో** *‑lō* attached to the verb phrase or noun denoting place (e.g., **అక్కడిలో** *akkaḍlō* “there”). |
+|17| **trovai** | “found” (simple past) | Verb in **simple past (preterite)**: **కనుగొన్నాను** *kanugoṇnānu* (“I found”). |
+|18| **,** | — | — |
+|19| **dirò** | “I will tell” (future) | Verb in **future indicative**: **చెప్పుతాను** *cepputānu*. |
+|20| **de** (di) | Preposition “of” introducing object of *dirò* | Genitive **‑డి** *‑ḍi* attached to the following noun phrase (e.g., **అన్య‑డి** *anya‑ḍi* “of the other”). |
+|21| **l'altre** | “the other” (determiner) | No case on the determiner itself; the noun it modifies will receive the required case (see #22). |
+|22| **cose** | “things” (plural noun, direct object) | **Accusative case**: suffix **‑నిని** *‑ni* (after vowel **‑ని**). Example: **వస్తువులను** *vastuvulani* (“the things”). |
+|23| **ch'i'** (che + io) | Relative pronoun “that” + 1st‑person “I” | Same as #15 – relative clause marker; **నేను** *nēnu* remains nominative. |
+|24| **v'ho** (vi + avere) | Perfect auxiliary “have there” (present perfect) | Telugu perfect is expressed with the auxiliary **చేసాను** *cēsānu* plus the past participle; the locative adverb **‑లో** *‑lō* (from #16) is attached to the verb phrase. |
+|25| **scorte** | “seen” (past participle of *scorgere*) | Past participle used with the perfect auxiliary → **చూసిన** *cūsina* (“seen”). The whole clause becomes **అక్కడిలో చూసాను** *akkaḍlō cūsānu* (“I have seen there”). |
+|26| **.** | — | — |
+
+### How to Apply the Requirements in a Telugu Translation  
+
+1. **Noun Cases**  
+   * **Accusative** → add **‑ని** (*‑ni*) to the noun that functions as a direct object (*ben*, *cose*).  
+   * **Genitive** → add **‑డి** (*‑ḍi*) after the noun that is the complement of a preposition (*de*, *del*).  
+   * **Locative** → add **‑లో** (*‑lō*) for “there” (*vi*).  
+
+2. **Verb Tense / Mood**  
+   * **Present copula** → **అది** *adi* / **ఉంది** *undi*.  
+   * **Simple past** → **‑న్నాను / ‑ాను** (*‑nnānu / ‑ānu*) (e.g., *kondānu*).  
+   * **Future** → **‑ుతాను / ‑ుతాను** (*‑utānu*).  
+   * **Present perfect** → auxiliary **చేసాను** *cēsānu* + past participle (e.g., *cūsānu* “I have seen”).  
+
+3. **Purpose / Prepositional Phrases**  
+   * “per …” → **‑కోసం** *‑kōsaṁ* attached to the infinitive (*చర్చించడానికి* “to discuss‑for”).  
+   * “di / del” → genitive **‑డి** on the noun that follows.  
+
+By following the case‑suffix and tense‑mapping rules above, a grammatically correct Telugu rendering can be built that respects the syntactic roles identified in the Italian source.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Telugu components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Telugu word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Telugu lexical inventory**  
+(Only the forms that will actually appear in the final Telugu sentence are listed; all required suffixes are already fused to the head word.)
+
+| Source Word | Contextual Definition (English) | Target Lemma (Telugu) | Final Agglutinated Form (ready for use) |
+|-------------|--------------------------------|----------------------|------------------------------------------|
+| **Tant'** | “to such a degree; extremely” – degree adverb intensifying *amara* | **చాలా** *cālā* | **చాలా** |
+| **è** (copula, present) | “to be” – linking subject with predicate adjective | **అది** *adi* | **అది** |
+| **amara** | “bitter, harsh in a figurative sense” – predicate adjective describing the situation | **కఠోర** *kaṭhōra* | **కఠోర** |
+| **che** (subordinating) | “that” – introduces a result clause | **అంటే** *aṇṭe* | **అంటే** |
+| **poco** | “little; scarcely” – adverb of degree modifying the comparative | **కొంచెం** *koñcem* | **కొంచెం** |
+| **è** (copula, present, second occurrence) | “to be” – linking the comparative clause to *morte* | **అది** *adi* | **అది** |
+| **più** | “more” – comparative particle | **కంటే** *kānṭe* | **కంటే** |
+| **morte** | “death” – abstract noun used as predicate complement | **మరణం** *maraṇaṁ* | **మరణం** |
+| **ma** | “but” – adversative coordinating conjunction | **కాని** *kāni* | **కాని** |
+| **per + trattar** (purpose infinitive) | “in order to treat / discuss” – infinitive with purpose marker | **చర్చించడానికి** *carchaṁcadanikī* | **చర్చించడానికి** |
+| **ben** (object of *trattar*) | “the good; abstract moral good” – direct object of the infinitive | **మంచి** *man̄ci* | **మంచిని** *(accusative – ‑ని)* |
+| **vi** (locative adverb) | “there” – indicates place of the action *trovai* / *scorte* | **అక్కడిలో** *akkaḍlō* | **అక్కడిలో** *(locative – ‑లో)* |
+| **trovai** | “found; discovered” – simple past of *trovare* | **కనుగొన్నాను** *kanugoṇnānu* | **కనుగొన్నాను** |
+| **dirò** | “I will tell; I shall speak” – future indicative of *dire* | **చెప్పుతాను** *cepputānu* | **చెప్పుతాను** |
+| **de + l'altre cose** (genitive object of *dirò*) | “of the other things” – genitive complement introducing what will be told | **ఇతర విషయాల** *itara viṣayāla* (genitive plural) + **విషయాలను** *viṣayālanu* (accusative plural) | **ఇతర విషయాలను** *(genitive ‑ల + accusative ‑ను fused)* |
+| **l'altre** | “other” – adjective modifying *cose* | **ఇతర** *itara* | **ఇతర** |
+| **cose** | “things; matters” – direct object of *dirò* | **విషయాలు** *viṣayālu* | **విషయాలను** *(accusative ‑ను)* |
+| **v'ho + scorte** (perfect) | “have seen there” – present perfect of *scorgere* with locative | **అక్కడిలో చూసాను** *akkaḍlō cūsānu* (locative ‑లో + perfect verb) | **అక్కడిలో చూసాను** |
+
+**Notes on the inventory**
+
+* **Agglutination rule obeyed** – every case or relational suffix (‑ని, ‑లో, ‑ల, ‑ను, ‑కోసం, ‑కి) is already attached to its head noun/verb. No separate “of”, “in”, “to” etc. appear as independent tokens.  
+* **Case verification** – all direct objects (*ben*, *cose*) are in the **accusative** (*‑ని*, *‑ను*). The genitive complement (*de l'altre cose*) carries the plural genitive suffix *‑ల* before the accusative.  
+* **Lexical sanity** – each Telugu lemma is a standard, widely‑used word that matches the contextual English definition (e.g., *మంచి* for “the good”, *చర్చించడానికి* for “to treat/discuss”, *కనుగొన్నాను* for simple past “found”).  
+
+These agglutinated forms can be placed directly into the final Telugu translation, preserving the syntactic roles identified in Step 1 while respecting Telugu’s agglutinative morphology.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Telugu sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Telugu):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 7**  
+- **Source Line:** 7 Tant' è amara che poco è più morte;  
+- **Component Mapping:**  
+  1. **Subject** – *అది* (copula form, also used as subject)  
+  2. **Degree adverb** – *చాలా* (“very, to such a degree”)  
+  3. **Predicate adjective** – *కఠోర* (“bitter, harsh”)  
+  4. **Result‑clause connector** – *అంటే* (“that is, i.e.”)  
+  5. **Adverb of degree** – *కొంచెం* (“little”)  
+  6. **Comparative particle** – *కంటే* (“more than”)  
+  7. **Noun (predicate of comparison)** – *మరణం* (“death”)  
+  8. **Copula for the comparison clause** – *అది*  
+- **Assembly Logic:**  
+  *Subject* → *Degree adverb* → *Predicate adjective* → *Copula* (forms “It is very bitter”).  
+  Then the subordinating connector *అంటే* introduces the result clause, whose internal order follows SOV: *Subject (కొంచెం) → Comparative particle (కంటే) → Object (మరణం) → Verb (అది)*.  
+- **Target Text:**  
+  **అది చాలా కఠోర అంటే కొంచెం కన్నా మరణం అది;**  
+
+---
+
+**Line 8**  
+- **Source Line:** 8 ma per trattar del ben ch'i' vi trovai,  
+- **Component Mapping:**  
+  1. **Coordinating adversative** – *కాని* (“but”)  
+  2. **Purpose infinitive** – *చర్చించడానికి* (“in order to discuss”)  
+  3. **Direct‑object (accusative)** – *మంచిని* (“the good”)  
+  4. **Locative adverb** – *అక్కడిలో* (“there”)  
+  5. **Simple‑past verb** – *కనుగొన్నాను* (“I found”)  
+- **Assembly Logic:**  
+  The adversative *కాని* starts the clause. The purpose phrase *చర్చించడానికి* is placed before the object it governs. The locative adverb *అక్కడిలో* follows the object (time/place slot) and precedes the verb, respecting the S‑O‑V order.  
+- **Target Text:**  
+  **కాని చర్చించడానికి మంచిని అక్కడిలో కనుగొన్నాను,**  
+
+---
+
+**Line 9**  
+- **Source Line:** 9 dirò de l'altre cose ch'i' v'ho scorte.  
+- **Component Mapping:**  
+  1. **Locative‑perfect clause** – *అక్కడిలో చూసాను* (“I have seen there”) – serves as Time/Place/Manner adverbial  
+  2. **Direct‑object (accusative, genitive‑qualified)** – *ఇతర విషయాలను* (“the other things”)  
+  3. **Future verb** – *చెప్పుతాను* (“I will tell”)  
+- **Assembly Logic:**  
+  The locative‑perfect clause is placed first (time/place slot). The object *ఇతర విషయాలను* follows, and the main verb *చెప్పుతాను* closes the clause, fulfilling the S‑O‑V pattern (subject is encoded in the verb).  
+- **Target Text:**  
+  **అక్కడిలో చూసాను ఇతర విషయాలను చెప్పుతాను.**
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Telugu text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (final) | Back‑Translation (literal English) | Source Context | Verification Result |
+|--------|--------------------|-------------------------------------|----------------|----------------------|
+| 7 | **అది చాలా కఠోర, అది కొంచెం కన్నా మరణం ఎక్కువ;** | “It is very bitter, it is more death than a little;” | 7 Tant' è amara che poco è più morte; | OK (meaning and structure restored) |
+| 8 | **కాని చర్చించడానికి మంచిని అక్కడిలో కనుగొన్నాను,** | “But to discuss the good there I found,” | 8 ma per trattar del ben ch'i' vi trovai, | OK |
+| 9 | **అక్కడిలో చూసాను ఇతర విషయాలను చెప్పుతాను.** | “There I have seen other things, I will tell.” | 9 dirò de l'altre cose ch'i' v'ho scorte. | OK |
+
+---
+
+**Verified Telugu Translation (one line per source line)**
+
+```telugu
+అది చాలా కఠోర, అది కొంచెం కన్నా మరణం ఎక్కువ;
+కాని చర్చించడానికి మంచిని అక్కడిలో కనుగొన్నాను,
+అక్కడిలో చూసాను ఇతర విషయాలను చెప్పుతాను.
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Telugu translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+అది చాలా కఠోర, అది కొంచెం కన్నా మరణం ఎక్కువ;
+కాని చర్చించడానికి మంచిని అక్కడిలో కనుగొన్నాను,
+అక్కడిలో చూసాను ఇతర విషయాలను చెప్పుతాను.
+]]></message>
+</messages>

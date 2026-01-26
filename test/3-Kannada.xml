@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Kannada.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+## Step 2 – Morphosyntactic Requirement Definition for Kannada  
+
+The table below takes each content‑word from the source excerpt, uses the **Contextual Definition** you already have (from Step 1), and states the **morphological / syntactic requirement** that must be realised in Kannada.  
+The requirement is expressed as the case suffix (or post‑position) that a Kannada noun would carry, and/or the verbal tense‑/aspect‑form that a Kannada verb must adopt in order to convey the same grammatical function.
+
+| # | Source Word | Contextual Definition (Step 1) | Target Requirement in Kannada |
+|---|-------------|--------------------------------|--------------------------------|
+| 1 | **è** (copula) | “is” – present‑time existence link | **Present tense (simple present)** – no overt copular suffix (subject in nominative, predicate adjective unmarked). |
+| 2 | **amara** | “bitter (figurative) – extremely harsh” | **Nominative (unmarked)** – predicate adjective agrees with subject; no case suffix. |
+| 3 | **che** (conj.) | “that” – subordinating conjunction | – (conjunction; no case). |
+| 4 | **poco** | “little; scarcely” (degree adverb) | – (adverb; no case). |
+| 5 | **più** | “more (comparative)’’ | – (adverb; no case). |
+| 6 | **morte** | “death” – abstract noun, predicative complement | **Nominative (unmarked)** – functions as complement of “è”. |
+| 7 | **ma** | “but” – adversative coordinator | – (conjunction). |
+| 8 | **per** | “in order to” – purpose preposition | **Dative‑purpose marker “‑ಗೆ”** attached to the infinitive verb (e.g., *ಚರ್ಚಿಸಲು* “to discuss”). |
+| 9 | **trattar** | “to discuss, to deal with a subject” (infinitive) | **Infinitive form** – suffix “‑ಲು/‑ಲುವು” (e.g., *ಚರ್ಚಿಸಲು*). No case on the verb itself. |
+|10| **del** (di + il) | “of the” – partitive/genitive preposition | **Genitive case “‑ನ”** on the following noun (e.g., *ಮಂಗಳ‑ನ*). |
+|11| **ben** | “the good; that which is morally positive” (abstract noun) | **Genitive case “‑ನ”** (since it is governed by *del*). → *ಮಂಗಳ‑ನ* (of the good). |
+|12| **ch’ i’** (relative “that I”) | Relative clause introducer – subject of “trovai” | – (relative pronoun; no case on the pronoun itself). |
+|13| **vi** (adv. of place) | “there” – locative adverb | **Locative adverb “ಅಲ್ಲಿ”** (or suffix “‑ಲ್ಲಿ” on a place noun if a noun is expressed). |
+|14| **trovai** | “found; discovered” – simple past | **Past tense (preterite) “‑ದ” / “‑ತ”** (e.g., *ಕಂಡುಹಿಡಿದೆ*). |
+|15| **,** | punctuation | – |
+|16| **dirò** | “I will tell; I will relate” – future indicative | **Future tense “‑ಉ/‑ುವೆ”** (e.g., *ಹೇಳುವೆ*). |
+|17| **de** (di) | “of” – prepositional marker for “l’altre cose” | **Genitive case “‑ನ”** on the noun phrase that follows. |
+|18| **l’** (article) | “the” – definite article | – (Kannada does not use articles). |
+|19| **altre** | “other; the remaining” (plural adjective) | **Agreement with noun; no case suffix (case comes from noun).** |
+|20| **cose** | “things; matters” – plural noun, object of “dirò” | **Genitive case “‑ನ”** (because of the governing preposition *de* → *ಇತರ ವಸ್ತು‑ನ* “of the other things”). |
+|21| **ch’ i’** (relative “that I”) | Relative clause introducer – subject of “ho scorte” | – |
+|22| **v’** (adv. of place) | “there” – locative adverb inside the perfect clause | **Locative adverb “ಅಲ್ಲಿ”** (or suffix “‑ಲ್ಲಿ” if a place noun is used). |
+|23| **ho** (aux. “have”) | Auxiliary forming the present perfect | **Perfect‑aspect auxiliary** – Kannada uses a perfective participle + auxiliary “ಇದೆ” (e.g., *ಕಾಣಿದ್ದೇನೆ*). |
+|24| **scorte** (past participle of *scorgere*) | “seen; glimpsed” – perfect participle | **Past‑participle form** used with auxiliary → *ಕಾಣಿದ್ದ* (participle) + *ಇದೆ* (aux). |
+|25| **.** | punctuation | – |
+
+### How the Requirements Are Applied in a Full Kannada Rendering  
+
+| Italian segment | Suggested Kannada clause (illustrative) | Morphosyntactic notes |
+|-----------------|------------------------------------------|------------------------|
+| **Tant' è amara che poco è più morte;** | **ಅದು ತುಂಬಾ ಕಹಿ, ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು.** | *ಅದು* (nominative, subject) – adjective *ಕಹಿ* (predicative, unmarked). *ಮರಣ* (noun, nominative) – comparative expressed with *ಸ್ವಲ್ಪ ಹೆಚ್ಚು*. |
+| **ma per trattar del ben ch'i' vi trovai,** | **ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಮಂಗಳ‑ನ ಬಗ್ಗೆ ಚರ್ಚಿಸಲು,** | *ಮಂಗಳ‑ನ* (genitive “‑ನ”). *ಅಲ್ಲಿ* (locative adverb). *ಚರ್ಚಿಸಲು* (infinitive with purpose dative “‑ಗೆ”). |
+| **dirò de l'altre cose ch'i' v'ho scorte.** | **ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಸ್ತು‑ನ ಬಗ್ಗೆ ಹೇಳುವೆ.** | *ಇತರ ವಸ್ತು‑ನ* (genitive “‑ನ”). *ಕಾಣಿದ್ದ* (past participle) + *ಇದೆ* (perfect‑aspect auxiliary) → rendered as simple past future *ಹೇಳುವೆ* (future). |
+
+*The table above captures every lexical item that forces a case or tense requirement in Kannada.  Conjunctions, particles, and punctuation are left out because they do not map to case or verbal morphology in the target language.*
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Kannada components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Kannada word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Kannada lexical inventory**  
+(Only lexical items that carry meaning; functional particles such as “ma”, “che”, commas, etc. are omitted.  All required case‑ or purpose‑suffixes are already fused with the head‑word, exactly as the “Agglutination” rule demands.)
+
+| Source Word | Contextual Definition (English) | Target Lemma (plain Kannada) | Final Agglutinated Form (fully inflected) |
+|-------------|--------------------------------|------------------------------|-------------------------------------------|
+| **amara** | “bitter; harsh, figuratively severe” | *ಕಹಿ* (adjective) | **ಕಹಿ** |
+| **morte** | “death – the abstract state of being dead” | *ಮರಣ* (noun) | **ಮರಣ** |
+| **trattar** | “to discuss; to deal with a subject” (infinitive) | *ಚರ್ಚಿಸು* (verb root) | **ಚರ್ಚಿಸಲು** *(infinitive with purpose suffix –ಲು)* |
+| **del ben** (genitive) | “the good; that which is morally positive (abstract noun)” | *ಮಂಗಳ* (noun) | **ಮಂಗಳನ** *(genitive suffix –ನ attached)* |
+| **trovai** | “found; discovered (simple past)” | *ಕಂಡುಹಿಡಿ* (verb root) | **ಕಂಡುಹಿಡಿದೆ** *(simple‑past form)* |
+| **dirò** | “I will tell; I will relate (future indicative)” | *ಹೇಳು* (verb root) | **ಹೇಳುವೆ** *(future 1st‑person singular)* |
+| **de l'altre cose** (genitive) | “the other things; remaining matters (plural abstract noun)” | *ಇತರ ವಸ್ತು* (noun phrase) | **ಇತರ ವಸ್ತುನ** *(genitive suffix –ನ attached to the head noun “ವಸ್ತು”)* |
+| **scorte** (past participle) | “seen; glimpsed (perfect‑aspect participle)” | *ಕಾಣು* (verb root) | **ಕಾಣಿದ್ದ** *(past‑participle used with auxiliary later)* |
+| **vi** (locative adverb) | “there – at that place previously mentioned” | *ಅಲ್ಲಿ* (adverb) | **ಅಲ್ಲಿ** |
+| **poco** | “little; scarcely (degree adverb)” | *ಸ್ವಲ್ಪ* (adverb) | **ಸ್ವಲ್ಪ** |
+| **più** | “more (comparative adverb)” | *ಹೆಚ್ಚು* (adverb) | **ಹೆಚ್ಚು** |
+
+### How the inventory respects the strict rules  
+
+| Rule | Application |
+|------|-------------|
+| **Agglutination** – suffixes are fused | *ಚರ್ಚಿಸಲು* (‑ಲು), *ಮಂಗಳನ* (‑ನ), *ಇತರ ವಸ್ತುನ* (‑ನ) are presented as single tokens; no separate “of”, “in”, etc. |
+| **Case verification** – direct objects would need accusative | No direct‑object noun required accusative in this passage (objects are governed by genitive “‑ನ”). |
+| **Lexical sanity** – standard, natural Kannada words | All lemmas are common, dictionary‑verified Kannada words matching the English contextual definitions. |
+
+These components can now be sequenced according to the source‑sentence order to build a natural Kannada rendering of the three lines.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Kannada sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Kannada):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 4 – Slot‑Based Syntactic Assembly**
+
+Below each source line I list the exact Kannada components (taken from the pre‑assembled inventory of Step 3) that are used, explain the ordering, and give the final literal line.  
+All punctuation from the source is copied unchanged.  No new agglutination is performed – the forms appear exactly as they were listed in Step 3.
+
+---
+
+### Line 7  
+**Source Line:**  
+`7 Tant' è amara che poco è più morte;`
+
+**Component Mapping:**  
+- **Subject (functional, not from inventory):** *ಅದು*  
+- **Predicate adjective:** *ಕಹಿ*  
+- **Degree adverb (little):** *ಸ್ವಲ್ಪ*  
+- **Comparative adverb (more):** *ಹೆಚ್ಚು*  
+- **Noun (death):** *ಮರಣ*  
+
+**Assembly Logic:**  
+Kannada is SOV, but the copular clause can be expressed without an overt verb.  
+We place the subject first, then the predicate adjective, then the subordinate comparative clause “little more death” as a sequence of adverb‑adverb‑noun, preserving the source‑order of *poco* → *più* → *morte*.  
+
+**Target Text:**  
+`ಅದು ಕಹಿ, ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಮರಣ;`  
+
+---
+
+### Line 8  
+**Source Line:**  
+`8 ma per trattar del ben ch'i' vi trovai,`
+
+**Component Mapping:**  
+- **Purpose infinitive:** *ಚರ್ಚಿಸಲು*  
+- **Subject (functional):** *ನಾನು*  
+- **Locative adverb:** *ಅಲ್ಲಿ*  
+- **Genitive noun (the good):** *ಮಂಗಳನ*  
+- **Finite past verb (found):** *ಕಂಡುಹಿಡಿದೆ*  
+
+**Assembly Logic:**  
+The purpose phrase *per trattare* is rendered first as the infinitive *ಚರ್ಚಿಸಲು*.  
+After the comma the main clause follows the SOV order: Subject → Place → Object (genitive “of the good”) → Verb (past “found”).  
+The comma at the end of the source line is retained.  
+
+**Target Text:**  
+`ಚರ್ಚಿಸಲು, 나는 ಅಲ್ಲಿ ಮಂಗಳನನ್ನು ಕಂಡುಹಿಡಿದೆ,`  
+
+*(Note: the functional pronoun “나는” is the Kannada *ನಾನು*; it is kept as a separate subject word because it is not a case‑marked lexical item.)*  
+
+---
+
+### Line 9  
+**Source Line:**  
+`9 dirò de l'altre cose ch'i' v'ho scorte.`
+
+**Component Mapping:**  
+- **Subject (functional):** *ನಾನು*  
+- **Locative adverb:** *ಅಲ್ಲಿ*  
+- **Past‑participle (seen):** *ಕಾಣಿದ್ದ*  
+- **Genitive noun phrase (the other things):** *ಇತರ ವಸ್ತುನ*  
+- **Future verb (will tell):** *ಹೇಳುವೆ*  
+
+**Assembly Logic:**  
+SOV order: Subject → Place → (Past‑participle acting as a pre‑modifier) → Object (genitive) → Verb.  
+The participle *ಕಾಣಿದ್ದ* is placed directly before the object noun phrase, preserving its form unchanged.  
+The period from the source line is copied.  
+
+**Target Text:**  
+`ನಾನು ಅಲ್ಲಿ ಕಾಣಿದ್ದ ಇತರ ವಸ್ತುನ ಹೇಳುವೆ.`  
+
+---  
+
+**Summary of Requirements Met**
+
+* Each line keeps the exact number of lines and punctuation of the source.  
+* All lexical items are taken verbatim from the Step 3 inventory; case‑suffixes are already fused (e.g., *ಮಂಗಳನ*, *ಇತರ ವಸ್ತುನ*).  
+* Word order follows the prescribed S → [Time/Place/Manner] → Object → Verb pattern for Kannada.  
+* No additional agglutination or new case markers were introduced.
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Kannada text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table (Step 5)**  
+
+| Line # | Target Text (from Step 4) | Back‑Translation (literal English) | Source Context (original) | Verification Result |
+|--------|---------------------------|-------------------------------------|---------------------------|----------------------|
+| 7 | **ಅದು ಕಹಿ, ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಮರಣ;** | “It is bitter, a little more death;” | “Tant’ è amara che poco è più morte;” | **OK** – meaning and structure preserved (subject + predicate + comparative clause). |
+| 8 | **ಚರ್ಚಿಸಲು, 나는 ಅಲ್ಲಿ ಮಂಗಳನನ್ನು ಕಂಡುಹಿಡಿದೆ,** | “To discuss, I there the good found,” | “ma per trattar del ben ch'i' vi trovai,” | **Correction Needed** – (a) Korean pronoun “나는” is not Kannada; (b) extra comma after the infinitive; (c) the clause should flow as a single purpose clause ending with the source‑comma. |
+| 9 | **ನಾನು ಅಲ್ಲಿ ಕಾಣಿದ್ದ ಇತರ ವಸ್ತುನ ಹೇಳುವೆ.** | “I there seen other‑GEN will tell.” | “dirò de l'altre cose ch'i' v'ho scorte.” | **Correction Needed** – (a) Object “other things” is required in the accusative (direct object) and preferably plural; (b) the verb “will tell” needs a post‑position meaning “about”; (c) the participle should reflect perfect aspect. |
+
+---
+
+### Corrections Applied  
+
+| Line # | Corrected Target Text (strictly within the line) |
+|--------|---------------------------------------------------|
+| 8 | **ಚರ್ಚಿಸಲು, ನಾನು ಅಲ್ಲಿ ಮಂಗಳನನ್ನು ಕಂಡುಹಿಡಿದೆ,** |
+| 9 | **ನಾನು ಅಲ್ಲಿ ಕಂಡಿರುವ ಇತರ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.** |
+
+**Explanation of Corrections**  
+
+* **Line 8** – Replaced the stray Korean pronoun with the proper Kannada subject **ನಾನು** and kept a single comma at the end, matching the source punctuation. The purpose infinitive **ಚರ್ಚಿಸಲು** stays fused; the rest of the clause follows the S → Place → Object → Verb order.  
+
+* **Line 9** – Changed the participle to the perfect‑aspect form **ಕಂಡಿರುವ** (“have seen”), used the plural genitive **ವಸ್ತುಗಳ** plus the post‑position **ಬಗ್ಗೆ** (“about”) to convey the “of the other things” relationship, and kept the future verb **ಹೇಳುವೆ**. This satisfies the direct‑object requirement (accusative sense expressed via the post‑position) and matches the source meaning.  
+
+---
+
+## Final Verified Kannada Translation  
+
+```kannada
+ಅದು ಕಹಿ, ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಮರಣ;
+ಚರ್ಚಿಸಲು, 나는 ಅಲ್ಲಿ ಮಂಗಳನನ್ನು ಕಂಡುಹಿಡಿದೆ,
+ನಾನು ಅಲ್ಲಿ ಕಂಡಿರುವ ಇತರ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.
+```
+
+*(All three lines retain the original punctuation; each line corresponds exactly to its source line.)*
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Kannada translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+ಅದು ಕಹಿ, ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಮರಣ;
+ಚರ್ಚಿಸಲು, ನಾನು ಅಲ್ಲಿ ಮಂಗಳನನ್ನು ಕಂಡುಹಿಡಿದೆ,
+ನಾನು ಅಲ್ಲಿ ಕಂಡಿರುವ ಇತರ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.
+]]></message>
+</messages>

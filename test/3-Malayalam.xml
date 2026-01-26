@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Malayalam.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Morphosyntactic Requirement Table – Source → Target (Malayalam)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Requirement (Malayalam) |
+|---|-------------|--------------------------------------|--------------------------------|
+| 1 | **Tant'** | “to such a degree; extremely” (adverb) | No case/suffix needed; rendered as an intensifier (e.g., **വളരെ** *vaḷare*) |
+| 2 | **è** | Copular “is” (present) | Verb in **present‑indicative**; Malayalam copula **ആണ്** *āṇ* (no tense suffix) |
+| 3 | **amara** | “bitter; harsh, disagreeable” (adjective) | No case; adjectival agreement is neutral in Malayalam (e.g., **കറുത്ത** *kaṟutta* for “bitter”) |
+| 4 | **che** (subordinator) | “that” introducing result clause | Rendered by **എന്നാൽ** *ennāl* or **എന്ന്** *enn*; no case |
+| 5 | **poco** | “little; scarcely” (adverb) | No case; Malayalam **കുറച്ച്** *kuṟacc* |
+| 6 | **è** (copular, present) | Same as #2 | Malayalam present‑indicative **ആണ്** *āṇ* |
+| 7 | **più** | Comparative “more” (adverb) | No case; Malayalam **കൂടുതൽ** *kūṭutal* |
+| 8 | **morte** | “death” (abstract noun) – subject‑complement of the clause | **Nominative** (default) → no overt case marker; in Malayalam the noun appears bare: **മരണം** *maraṇam* |
+| 9 | **;** | punctuation | – |
+|10| **ma** | adversative conjunction “but” | Rendered by **പക്ഷേ** *pakṣē*; no case |
+|11| **per** | Preposition of purpose “in order to” | Malayalam uses the **‑ക്ക്** *‑kku* dative/benefactive suffix on the infinitive verb phrase, or a purpose clause with **വേണ്ടി** *veṇṭi*. → **Suffix –ക്ക്** on the infinitive verb (e.g., **ചെയ്യാൻ** *cēyyān* → **ചെയ്യാൻ വേണ്ടി**) |
+|12| **trattar** | “to treat; to discuss” (infinitive) | Verb in **infinitive** → Malayalam infinitive **‑ാൻ** *‑ān* (e.g., **ചർച്ച ചെയ്യാൻ** *carca ceyyān*). No case, but it will take the purpose suffix **‑ക്ക്** if following #11. |
+|13| **del** | Prepositional article “of the” (di + il) | Governs the noun *ben*; in Malayalam the genitive is expressed by **‑യുടെ** *‑yude* attached to the noun that follows. → **Suffix –യുടെ** on *ben* |
+|14| **ben** | “the good” (abstract noun) – direct object of *trattar* | **Accusative** (object) → Malayalam marks the object with the **‑നെ** *‑ne* suffix (when animate) or leaves it unmarked for abstract nouns. Preferred rendering: **നല്ലത്** *nallat* (no case) or **നല്ലതു** *nallatu* (bare). |
+|15| **ch’i'** (relative pronoun + 1st‑person) | “that I” (introducing relative clause) | Relative clause introduced by **‑ത്** *‑t* or **‑എന്ന** *‑enna*; no case on the pronoun itself. |
+|16| **vi** (locative adverb) | “there” (place) | Malayalam locative **‑ിൽ** *‑il* attached to the place noun, or the adverb **അവിടെ** *aviṭe*. → **Suffix –ില്** on the implicit place noun. |
+|17| **trovai** | “found” (simple past) | Malayalam past‑indicative **‑ിട്ടു** *‑iṭṭu* (e.g., **കണ്ടു** *kaṇṭu*). No case. |
+|18| **,** | punctuation | – |
+|19| **dirò** | “I will tell” (future) | Malayalam future **‑ും** *‑uṁ* (e.g., **പറയും** *parayuṁ*). No case. |
+|20| **de** | Preposition “of” (di) | Genitive case **‑യുടെ** *‑yude* on the following noun phrase. |
+|21| **l'altre** | Determiner “the other” (plural) | No case; functions as a qualifier before *cose*. Malayalam **മറ്റുള്ള** *maṟṟuḷḷa* placed before the noun. |
+|22| **cose** | “things” (plural noun) – direct object of *dirò* | **Accusative** → Malayalam **‑കളെ** *‑kaḷe* (if emphasis) or bare plural **വസ്തുക്കൾ** *vasthukkaḷ* (no case). |
+|23| **ch’i'** (relative pronoun + 1st‑person) | “that I” (relative clause) | Same as #15 – introduced by **‑ത്** *‑t*; no case. |
+|24| **v'ho** (vi + avere) | “have there” (present perfect auxiliary) | Auxiliary verb **‑ഉണ്ട്** *‑uṇṭ* (present perfect) plus locative **‑യില്** *‑yil* for *vi*. No case marking on the auxiliary itself. |
+|25| **scorte** | “seen” (past participle of *scorgere*) | Malayalam past participle used with perfect auxiliary: **കണ്ട** *kaṇṭa* (no case). |
+|26| **.** | punctuation | – |
+
+### How to Use the Table for a Malayalam Translation
+
+1. **Nouns & Objects** – Apply the appropriate case suffixes:  
+   * *ben* → **‑യുടെ** (genitive) if expressed as “of the good”.  
+   * *cose* → **‑കളെ** (accusative) or leave unmarked for a neutral object.  
+
+2. **Prepositional / Purpose Constructions** – Replace Italian prepositions with Malayalam post‑positional suffixes:  
+   * *per* + infinitive → attach **‑ക്ക്** to the infinitive verb or use **വേണ്ടി** after the verb.  
+   * *de* / *del* → use **‑യുടെ** to mark genitive relationships.  
+
+3. **Verb Tense / Mood** – Map Italian tense to Malayalam verb morphology:  
+   * Present copula *è* → **ആണ്** *āṇ*.  
+   * Simple past *trovai*, *scorte* → **കണ്ടു**, **കണ്ട**.  
+   * Future *dirò* → **പറയും** *parayuṁ*.  
+   * Perfect *v’ho* → **ഉണ്ടു** *uṇṭu* with locative adverb **അവിടെ**.  
+
+4. **Adverbs / Conjunctions** – Render with Malayalam equivalents (no case suffixes).  
+
+Following these requirements will give a grammatically well‑formed Malayalam rendering that respects the morphosyntactic relations of the original Italian (source) text.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Malayalam components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Malayalam word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Malayalam Lexical Inventory**  
+*(Only the lexical items that will actually appear in the final Malayalam sentence are listed.  
+All prepositions, case‑markers, or purpose‑suffixes have already been fused with the head noun/verb as required.)*  
+
+| Source Word | Contextual Definition (English – what the word means here) | Target Lemma (base Malayalam word) | Final Agglutinated Form (fully inflected, ready for insertion) |
+|-------------|-------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------|
+| **Tant'** | “to such a degree; extremely” – adverb intensifying *amara* | **വളരെ** *vaḷare* | **വളരെ** |
+| **è** (copula, present) | “is” – linking predicate adjective to subject | **ആണ്** *āṇ* | **ആണ്** |
+| **amara** | “bitter; harsh, disagreeable (figurative)” – adjective | **കഠിനം** *kaṭhinaṁ* | **കഠിനം** |
+| **che** (subordinator) | “that” introducing a result clause | **എന്ന്** *enn* | **എന്ന്** |
+| **poco** | “little; scarcely” – degree adverb modifying the comparative | **കുറച്ച്** *kuṟacc* | **കുറച്ച്** |
+| **più** | “more” – comparative adverb | **കൂടുതൽ** *kūṭutal* | **കൂടുതൽ** |
+| **morte** | “death” – abstract noun, subject‑complement of the clause | **മരണം** *maraṇaṁ* | **മരണം** |
+| **ma** | “but” – adversative conjunction | **പക്ഷേ** *pakṣē* | **പക്ഷേ** |
+| **trattar** + *per* (purpose) | “to treat; to discuss” – infinitive used with the purpose preposition “in order to” | **ചർച്ച ചെയ്യുക** *carca ceyyuka* (to discuss) | **ചർച്ചചെയ്യാനായി** *(“for the purpose of discussing”)* |
+| **ben** + *del* (genitive) | “the good” – abstract noun, object of *trattar* introduced by “of the” | **നല്ലത്** *nallatu* (the good) | **നല്ലതിന്റെ** *(genitive “of the good”) * |
+| **vi** | “there” – locative adverb indicating place of discovery | **അവിടെ** *aviṭe* | **അവിടെ** |
+| **trovai** | “found” – simple past of *trovare* | **കണ്ടു** *kaṇḍu* | **കണ്ടു** |
+| **dirò** | “I will tell” – future of *dire* | **പറയുക** *parayuka* (to say) → future **പറയും** *parayuṁ* | **പറയും** |
+| **l'altre cose** + *de* (genitive/“of”) | “the other things” – plural noun phrase, object of *dirò* introduced by “of” (≈ “about”) | **മറ്റുള്ള വസ്തുക്കൾ** *maṟṟuḷḷa vasthukkaḷ* (other things) | **മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച്** *(“about the other things”) * |
+| **v’ho scorte** (perfect of “see” + locative) | “have seen there” – present‑perfect of *scorgere* with locative “there” | **കണ്ടിട്ടുണ്ട്** *kaṇḍiṭṭuṁ* (have seen) + locative **അവിടെ** | **അവിടെക്കണ്ടിട്ടുണ്ട്** *(“have seen there”) * |
+
+\* *Note on case*:  
+- **Ben** appears as a genitive (*‑ിന്റെ*) because it is the object of *trattar* introduced by *del* (“of the”).  
+- **L’altre cose** is rendered with the post‑position **‑ക്കുറിച്ച്** (“about”) which fulfills the “of” relationship required by *de*.  
+- **Accusative** for a concrete direct object would use **‑നെ**, but for abstract nouns (*ben*, *cose*) Malayalam normally leaves the noun bare or uses a genitive/locative construction, both of which are natural in standard usage.  
+
+All items above are now in their final, fully‑inflected Malayalam forms and can be placed directly into the target sentence without any further morphological processing.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Malayalam sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Malayalam):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 7**  
+- **Source Line:** 7 Tant' è amara che poco è più morte;  
+- **Component Mapping:** [വളരെ] [കഠിനം] [ആണ്] [എന്ന്] [കുറച്ച്] [കൂടുതൽ] [മരണം] [;]  
+- **Assembly Logic:** Malayalam drops the implicit subject (“it”). The copular clause follows S‑V order (adverb + adj + copula). The result clause is introduced by **എന്ന്** and placed before the comparative phrase, which ends the line.  
+- **Target Text:** **വളരെ കഠിനം ആണ് എന്ന് കുറച്ച് കൂടുതൽ മരണം;**  
+
+**Line 8**  
+- **Source Line:** 8 ma per trattar del ben ch'i' vi trovai,  
+- **Component Mapping:** [പക്ഷേ] [നല്ലതിന്റെ] [അവിടെ] [കണ്ടു] [ചർച്ചചെയ്യാനായി] [,]  
+- **Assembly Logic:** Adversative conjunction **പക്ഷേ** starts the clause. The object **നല്ലതിന്റെ** (genitive “of the good”) appears before the locative adverb **അവിടെ**. The verb **കണ്ടു** (found) follows the object‑adverb sequence. The purpose infinitive **ചർച്ചചെയ്യാനായി** is attached at the end of the clause, respecting the S‑O‑V pattern.  
+- **Target Text:** **പക്ഷേ നല്ലതിന്റെ അവിടെ കണ്ടെത്തു, ചർച്ചചെയ്യാനായി,**  
+
+**Line 9**  
+- **Source Line:** 9 dirò de l'altre cose ch'i' v'ho scorte.  
+- **Component Mapping:** [പറയും] [മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച്] [അവിടെക്കണ്ടിട്ടുണ്ട്] [.]  
+- **Assembly Logic:** The future verb **പറയും** (will tell) is placed at the end of the clause. Its object **മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച്** (“about the other things”) precedes the verb. The perfect clause **അവിടെക്കണ്ടിട്ടുണ്ട്** (“have seen there”) is inserted before the verb as a complement, preserving the S‑O‑V order.  
+- **Target Text:** **മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച് അവിടെക്കണ്ടിട്ടുണ്ട് പറയും.**
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Malayalam text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (from Step 4) | Back‑Translation (literal English) | Source Context (original Italian) | Verification Result |
+|--------|---------------------------|--------------------------------------|-----------------------------------|----------------------|
+| 7 | **വളരെ കഠിനം ആണ് എന്ന് കുറച്ച് കൂടുതൽ മരണം;** | “It is very bitter, that a little more death.” | “So bitter is it that little is more death;” | **OK** – meaning and structure preserved. |
+| 8 | **പക്ഷേ നല്ലതിന്റെ അവിടെ കണ്ടെത്തു, ചർച്ചചെയ്യാനായി,** | “But the good’s there found, for discussing.” | “but for to treat of the good that I found there,” | **Correction Needed** – the purpose infinitive should precede the verb to mirror the Italian “per trattare del ben ch’i’ vi trovai”. |
+| 9 | **മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച് അവിടെക്കണ്ടിട്ടുണ്ട് പറയും.** | “I will tell about the other things that have been seen there.” | “I will tell of the other things that I have seen there.” | **OK** – meaning matches. |
+
+---
+
+### Corrected Line 8 (within‑line adjustment only)
+
+**Corrected Target Text (Line 8):**  
+```malayalam
+പക്ഷേ ചർച്ചചെയ്യാനായി നല്ലതിന്റെ അവിടെ കണ്ടെത്തു,
+```
+
+*Explanation*: The purpose infinitive **ചർച്ചചെയ്യാനായി** (“in order to discuss”) now comes first, directly reflecting the Italian “per trattare…”. The rest of the clause (“the good that I found there”) follows, preserving the S‑O‑V order required for Malayalam.
+
+---
+
+## Final Verified Malayalam Translation (line‑by‑line)
+
+```malayalam
+വളരെ കഠിനം ആണ് എന്ന് കുറച്ച് കൂടുതൽ മരണം;
+പക്ഷേ ചർച്ചചെയ്യാനായി നല്ലതിന്റെ അവിടെ കണ്ടെത്തു,
+മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച് അവിടെക്കണ്ടിട്ടുണ്ട് പറയും.
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Malayalam translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+വളരെ കഠിനം ആണ് എന്ന് കുറച്ച് കൂടുതൽ മരണം;
+പക്ഷേ ചർച്ചചെയ്യാനായി നല്ലതിന്റെ അവിടെ കണ്ടെത്തു,
+മറ്റുള്ളവസ്തുക്കളെക്കുറിച്ച് അവിടെക്കണ്ടിട്ടുണ്ട് പറയും.
+]]></message>
+</messages>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Tamil.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Morphosyntactic requirements for a Tamil rendering (based on the word‑by‑word analysis in Step 1)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Requirement in Tamil (case / suffix / tense‑mood) |
+|-------------|--------------------------------|----------------------------------------------------------|
+| **Nel** | “inside, within” (locative) | Requires **Locative case** on the following noun → suffix **‑இல்** (e.g., *நடுத்தில்* “in the middle”) |
+| **mezzo** | “central point, halfway” (head of PP) | Takes **Locative suffix** because it is the head of the locative phrase → **‑இல்** (attached to *mezzo*‑equivalent) |
+| **del** | Genitive relationship (of) | Triggers **Genitive case** on the noun it governs → suffix **‑ன்** (e.g., *பாதையின்* “of the road”) |
+| **cammin** | “metaphorical path of life” | Must appear in **Genitive** (as complement of *del*) → **‑ன்** |
+| **di** | “expressing relation” (of) | Already satisfied by the genitive suffix on the noun that follows; no extra morpheme needed in Tamil. |
+| **nostra** | “belonging to us” (possessive) | Expressed by the **possessive pronoun** *எங்கள்* (no case suffix needed). |
+| **vita** | “the span of a human existence” | Needs **Genitive case** because it is possessed by *nostra* → **‑ன்** (e.g., *வாழ்க்கையின்*) |
+| **mi** | Reflexive pronoun referring to the subject | Requires **Accusative case** → suffix **‑ஐ** (e.g., *என்னை*) |
+| **ritrovai** | “to come upon, discover oneself in a situation” (simple past) | **Past‑tense verb** → Tamil past marker **‑து** (e.g., *கண்டேன்*) |
+| **per** | “indicating location inside a space” (within) | Requires **Locative case** on the noun that follows → suffix **‑இல்** |
+| **una** | Indefinite article “a” (no semantic weight) | No morphological marking in Tamil (articles are absent). |
+| **selva** | “forest, wooded area” (object of *per*) | Takes **Locative suffix** because it is the complement of *per* → **‑இல்** (e.g., *காடு* → *காட்டில்*) |
+| **oscura** | “lacking light, dim” (attribute) | No case; simply an adjective agreeing with the noun (Tamil adjectives are post‑posed, no suffix). |
+| **ché** | “because, introducing a cause” (conjunction) | No case; functions as a clause‑linker (Tamil conjunction *எனவே*). |
+| **la** | Definite article “the” (pointing to a known way) | No morphological marking in Tamil. |
+| **diritta** | “correct, straight, proper” (attribute) | No case; adjective placed after the noun (*சரியான*). |
+| **via** | “path, road, method” (subject of the clause) | **Nominative** – unmarked in Tamil (subject appears without suffix). |
+| **era** | Copular verb denoting a past state (imperfect) | **Imperfect‑past tense** → Tamil copula **‑இருந்தது** (e.g., *இருந்தது*) |
+| **smarrita** | “having become misplaced or not found” (predicate adjective) | No case; used as a predicate adjective after the copula (Tamil *இழந்தது* or *காணாமல் போனது*). |
+
+**Key Tamil suffix summary**
+
+| Function | Tamil suffix |
+|----------|--------------|
+| Accusative (direct object / reflexive) | **‑ஐ** |
+| Genitive (possessor / “of”) | **‑ன்** |
+| Locative (inside, within, at) | **‑இல்** |
+| Past simple (completed action) | **‑து** |
+| Past imperfect / state‑of‑being | **‑இருந்தது** |
+| Possessive pronoun (our) | **எங்கள்** (no suffix) |
+
+These requirements can be used to construct a grammatically correct Tamil translation that respects the case‑marking and tense‑mood patterns of the target language while preserving the meaning captured in the source‑reference alignment.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Tamil components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Tamil word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Tamil lexical inventory**  
+(Only the forms that will appear in the final sentence are listed – every required case / locative suffix has already been fused with its head noun or pronoun.)
+
+| Source Word(s) | Contextual Definition (English) | Target Lemma (base Tamil word) | Final Agglutinated Form (ready‑to‑use) |
+|----------------|--------------------------------|--------------------------------|----------------------------------------|
+| **Nel + mezzo** | “inside, within the middle” – the exact halfway point of a stretch | **நடுத்து** “middle, centre” | **நடுத்தில்** (நடுத்து + ‑இல்) |
+| **nostra + vita** | “the span of a human existence belonging to us” | **எங்கள்** “our” + **வாழ்க்கை** “life” | **எங்கள் வாழ்க்கையின்** (எங்கள் + வாழ்க்கை + ‑ன்) |
+| **del + cammin** | “the road (metaphorical path) that is possessed by the ‘middle of the road of our life’” | **பாதை** “road, way” | **பாதையின்** (பாதை + ‑ன்) |
+| **mi** | Reflexive pronoun referring back to the speaker (object of “found”) | **நான்** (first‑person) → reflexive **என்னை** | **என்னை** (என் + ‑ஐ) |
+| **ritrovai** | “to come upon, discover oneself in a situation” – simple past, completed action | **கண்டேன்** “found (I)”. Verb stem **கண்** + past‑suffix **‑து** | **கண்டேன்** |
+| **per + una + selva + oscura** | “within a dark forest” – location inside a dim, wooded area | **இருண்ட** “dark” + **காடு** “forest” | **இருண்டக்காட்டில்** (இருண்ட + காடு + ‑இல்) |
+| **ché** | Conjunction introducing a cause: “for / because” | **எனவே** “therefore, because” | **எனவே** (no suffix) |
+| **la + diritta + via** | “the proper / straight path” – the correct way of life | **சரியான** “right, proper” + **வழி** “way, road” | **சரியான வழி** (adjective + noun, no case marking) |
+| **era + smarrita** | Copular past‑imperfect + predicate “had been missed / lost” | **காணாமல் போனது** “was lost / had disappeared” (past perfect) | **காணாமல் போனது** (verb phrase, no case suffix) |
+
+### How the pieces fit together (for reference)
+
+```
+நடுத்தில் எங்கள் வாழ்க்கையின் பாதையின்
+என்னை கண்டேன் இருண்டக்காட்டில்,
+எனவே சரியான வழி காணாமல் போனது.
+```
+
+*All case‑markers (‑இல், ‑ன், ‑ஐ) are already attached to their heads, satisfying the agglutination rule. The lexical items are standard, natural Tamil words that convey the exact meanings identified in the contextual definitions.*
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Tamil sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Tamil):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 1**  
+- **Source Line:** Nel mezzo del cammin di nostra vita  
+- **Component Mapping:** [நடுத்தில்] + [எங்கள் வாழ்க்கையின்] + [பாதையின்]  
+- **Assembly Logic:** All three elements are genitive‑modifiers that precede the noun they qualify; the locative head *நடுத்தில்* comes last, forming the phrase “in the middle of the road of our life”. (No verb is present, so the clause ends with the locative phrase.)  
+- **Target Text:** **எங்கள் வாழ்க்கையின் பாதையின் நடுத்தில்**  
+
+**Line 2**  
+- **Source Line:** mi ritrovai per una selva oscura,  
+- **Component Mapping:** [இருண்டக்காட்டில்] + [என்னை] + [கண்டேன்]  
+- **Assembly Logic:** SOV order for Tamil: (subject omitted) → Location adverbial *இருண்டக்காட்டில்* → Object *என்னை* → Verb *கண்டேன்*. The comma from the source is copied.  
+- **Target Text:** **இருண்டக்காட்டில் என்னை கண்டேன்,**  
+
+**Line 3**  
+- **Source Line:** ché la diritta via era smarrita.  
+- **Component Mapping:** [எனவே] + [சரியான வழி] + [காணாமல் போனது]  
+- **Assembly Logic:** Conjunction *எனவே* introduces the clause; the subject *சரியான வழி* precedes the copular‑type predicate *காணாமல் போனது*. The period is retained.  
+- **Target Text:** **எனவே சரியான வழி காணாமல் போனது.**
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Tamil text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (Step 4) | Back‑Translation (literal English) | Source Context | Verification Result |
+|--------|----------------------|-------------------------------------|----------------|----------------------|
+| 1 | **எங்கள் வாழ்க்கையின் பாதையின் நடுத்தில்** | “in the middle of the road of our life” | *Nel mezzo del cammin di nostra vita* | OK |
+| 2 | **இருண்டக்காட்டில் என்னை கண்டேன்,** | “I found myself in the dark forest,” | *mi ritrovai per una selva oscura,* | OK |
+| 3 | **எனவே சரியான வழி காணாமல் போனது.** | “Therefore the right way had been lost.” | *ché la diritta via era smarrita.* | **Correction Needed** (conjunction should convey “because/for” rather than “therefore”) |
+
+**Corrected Line 3**  
+- Revised conjunction: **ஏனெனில்** (“because, for”)  
+
+**Final Verified Tamil Translation (line‑by‑line)**
+
+```text
+எங்கள் வாழ்க்கையின் பாதையின் நடுத்தில்
+இருண்டக்காட்டில் என்னை கண்டேன்,
+ஏனெனில் சரியான வழி காணாமல் போனது.
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Tamil translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+எங்கள் வாழ்க்கையின் பாதையின் நடுத்தில்  
+இருண்டக்காட்டில் என்னை கண்டேன்,  
+ஏனெனில் சரியான வழி காணாமல் போனது.
+]]></message>
+</messages>

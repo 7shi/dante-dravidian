@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Tamil.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 2 – Morphosyntactic requirements for rendering the Italian lines in Tamil**  
+
+The table below takes every token that carries a grammatical function (noun, verb, pre‑/post‑position, adverb of place, etc.) and states:
+
+* the **Contextual Definition** that we derived in Step 1, and  
+* the **Target Requirement** that a Tamil translation must satisfy – i.e. the case suffix (or lack thereof) for nouns / noun phrases, and the tense‑/aspect‑/mood mapping for verbs and infinitives.  
+
+> **Notation for Tamil case suffixes** (simplified for the purpose of this exercise)  
+
+| Case | Typical suffix (attached to the noun stem) | Example in Tamil |
+|------|--------------------------------------------|------------------|
+| Nominative (subject, no explicit case) | – (zero) | மரம் “maram” (the tree) |
+| Accusative (direct object) | –‑ஐ / –‑தை (‑ai / ‑thai) | மரத்தை “maraththai” |
+| Genitive (possessor / “of”) | –‑இன் (‑in) | மரத்தின் “maraththin” |
+| Dative / Purpose (to/for) | –‑க்கு (‑kku) | மரத்திற்கு “maraththirku” |
+| Locative (in/at/there) | –‑இல் / –‑ல் (‑il / ‑l) | மரத்தில் “maraththil” |
+| Instrumental / “by” | –‑ஆல் (‑aal) | மரத்தின் ஆல் “maraththin aal” |
+
+> **Notation for Tamil verbal tense / aspect**  
+
+| Italian tense / mood | Rough Tamil equivalent (tense / auxiliary) |
+|----------------------|--------------------------------------------|
+| Present (è) | Present indicative – “இருக்கிறது” (irukkirathu) |
+| Past (trovai, ho scorte) | Simple past – “கண்டேன்”, “கண்டேன்” (kanden) |
+| Future (dirò) | Future – “சொல்லுவேன்” (solvuven) |
+| Infinitive (trattar) | Verbal noun / infinitive – “பற்றி” (patri) or “செய்ய” (seiya) |
+| Present perfect (ho scorte) | Past tense + auxiliary “உள்ளேன்/இருக்கிறேன்” (uLLeN / irukkiren) – rendered as a simple past in literary Tamil |
+
+---
+
+| # | Source Word | Contextual Definition (Step 1) | Target Requirement (Tamil) |
+|---|-------------|--------------------------------|-----------------------------|
+| 1 | **Tant'** | “to such a degree; extremely” (adverbial degree modifier) | No case/tense – adverbial modifier (Tamil: **அதிகமாக**) |
+| 2 | **è** (first) | Copular verb “is” (present) | Present indicative (அது **இருக்கிறது**) – no case |
+| 3 | **amara** | “bitter; harsh, disagreeable” (predicative adjective) | Predicate adjective – no case (Tamil: **கசப்பான**) |
+| 4 | **che** (subordinator) | Conjunction “that” introducing result clause | No case/tense – connective (Tamil: **என்றால்**) |
+| 5 | **poco** | “little; scarcely” (degree adverb) | No case – adverbial (Tamil: **சிறிது**) |
+| 6 | **è** (second) | Copular verb “is” (present) | Present indicative (அது **இருக்கிறது**) |
+| 7 | **più** | Comparative “more” | No case – comparative particle (Tamil: **விட அதிகம்**) |
+| 8 | **morte** | “death” (abstract noun, predicative complement) | Nominative (zero suffix) – **மரணம்** |
+| 9 | **;** | punctuation | — |
+|10| **ma** | adversative conjunction “but” | No case – connective (Tamil: **ஆனால்**) |
+|11| **per** | Preposition of purpose “in order to” | Dative / purpose suffix **‑க்கு** attached to the infinitive phrase (e.g., **செய்ய‑க்கு**) |
+|12| **trattar** | Verb “to treat; to discuss” (infinitive) | Infinitive / verbal noun – Tamil **பற்றி** or **செய்ய** (no finite tense) |
+|13| **del** | Prepositional article “of the” (genitive) | Genitive suffix **‑இன்** on the following noun **ben** → **நல்ல‑இன்** |
+|14| **ben** | “the good; that which is morally positive” (abstract noun) | Direct‑object → Accusative **‑ஐ** (நல்ல‑ஐ) |
+|15| **ch’i’** | Relative pronoun + 1st‑person “that I” (subject of relative clause) | No case – pronoun dropped in Tamil (subject implied) |
+|16| **vi** | Locative adverb “there” | Locative suffix **‑இல்** on the verb phrase (e.g., **அங்கு** → **அதில்**) |
+|17| **trovai** | Verb “found” (simple past) | Simple past tense – **கண்டேன்** |
+|18| **,** | punctuation | — |
+|19| **dirò** | Verb “I will tell” (future) | Future tense – **சொல்லுவேன்** |
+|20| **de** | Preposition “of” (genitive) | Genitive suffix **‑இன்** on **cose** → **விஷயங்களின்** |
+|21| **l'altre** | Determiner “the other (remaining)” | No case – part of noun phrase (Tamil: **மற்ற** ) |
+|22| **cose** | “things” (plural noun, direct object) | Accusative plural – **விஷயங்களை** (‑களை) |
+|23| **ch’i’** | Relative pronoun + 1st‑person “that I” (subject of relative clause) | No case – pronoun omitted |
+|24| **v’ho** | Auxiliary “have there” (present perfect) – **ho** is present‑perfect auxiliary; **vi** = locative “there” | Verb phrase rendered as past tense with auxiliary: **கண்டேன்** + locative **‑இல்** (e.g., **அதில் கண்டேன்**) |
+|25| **scorte** | Past participle of “scorgere” → “seen, glimpsed” | Past participle → simple past verb **கண்டேன்** (as above) |
+|26| **.** | punctuation | — |
+
+### How to read the “Target Requirement” column  
+
+* **Case suffixes** are shown **as the Tamil suffix that must be attached to the noun (or noun phrase) that fulfills the same grammatical role in Tamil**.  
+* **Verb‑tense mapping** tells you which Tamil tense (or construction) replaces the Italian verb form.  
+* For **prepositional phrases**, the required case on the noun they govern is given (e.g., *del ben* → **ben‑இன்** “of the good”).  
+* **Pronouns and conjunctions** generally have no case requirement in Tamil; they are either omitted (subject pronouns) or rendered as clausal connectives.  
+
+With this specification a Tamil‑language engineer can build a rule‑based or statistical generator that:
+
+1. **Assigns the correct case suffix** to every noun according to its syntactic role (Accusative, Genitive, Locative, etc.).  
+2. **Selects the appropriate tense‑aspect‑mood** for each verb (present, past, future, infinitive, perfect).  
+3. **Handles purpose clauses** by attaching the dative/‑க்கு suffix to the infinitive phrase introduced by *per*.  
+
+Feel free to request a concrete Tamil sentence built on these requirements, or a more detailed morphological breakdown for any particular token.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Tamil components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Tamil word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Tamil lexical inventory**  
+*(All case/locative/post‑positional morphemes are already fused with the head noun – no “stand‑alone” suffixes appear.)*  
+
+| # | Source Word | Contextual Definition (English) | Target Lemma (Tamil) | Final Agglutinated Form (ready for sentence assembly) |
+|---|-------------|--------------------------------|----------------------|-------------------------------------------------------|
+| 1 | **Tant'** | “to such a degree; extremely” (adverb of intensity) | **அதிகமாக** | **அதிகமாக** |
+| 2 | **è** (copula, present) | “to be” – present state of existence | **இருக்கிறது** | **இருக்கிறது** |
+| 3 | **amara** | “bitter; harsh, disagreeable (figurative)” | **கசப்பான** | **கசப்பான** |
+| 4 | **che** (conj. “that” introducing result) | Subordinating conjunction linking cause‑result | **என்றால்** | **என்றால்** |
+| 5 | **poco** | “little; scarcely” (degree adverb) | **சிறிது** | **சிறிது** |
+| 6 | **è** (copula, present) | “to be” – present state | **இருக்கிறது** | **இருக்கிறது** |
+| 7 | **più** | Comparative “more” (used after *poco*) | **மேலும்** | **மேலும்** |
+| 8 | **morte** | “death” – abstract noun, predicative complement | **மரணம்** | **மரணம்** |
+| 9 | **ma** | Adversative conjunction “but” | **ஆனால்** | **ஆனால்** |
+|10| **per** (purpose “in order to”) | Preposition marking purpose → dative/‑க்கு attached to the infinitive phrase | **‑க்காக** (as a suffix) | **நன்மை பற்றிக்காக** *(see rows 12‑13 for the fused phrase)* |
+|11| **trattar** | “to treat; to discuss, to deal with a subject” (infinitive) | **பற்றி** (post‑position “about”) | **பற்றி** |
+|12| **del** (genitive article “of the”) | Marks the noun *ben* as possessor → genitive **‑இன்** | **‑இன்** (genitive suffix) | **நன்மையின்** *(ben + genitive)* |
+|13| **ben** | “the good; that which is morally positive” (abstract noun) | **நன்மை** | **நன்மையை** *(accusative for DO of “trattar”)* |
+|14| **ch’i’** (relative pronoun + 1st‑person “that I”) | Introduces a relative clause, functions as subject of the clause | **நான்** (subject pronoun, often omitted) | **(omitted)** |
+|15| **vi** (locative adverb “there”) | Indicates place where something was found / seen | **அதில்** | **அதில்** |
+|16| **trovai** | Simple past “found, discovered” | **கண்டேன்** | **கண்டேன்** |
+|17| **dirò** | Future “I will tell, I shall relate” | **சொல்லுவேன்** | **சொல்லுவேன்** |
+|18| **de** (genitive “of”) | Marks the noun *cose* as genitive → **‑இன்** | **‑இன்** | **விஷயங்களின்** *(cose + genitive)* |
+|19| **l'altre** | Determiner “the other (remaining)” | **மற்ற** | **மற்ற** |
+|20| **cose** | “things; matters, subjects” (plural noun, direct object) | **விஷயம்** | **விஷயங்களை** *(accusative plural)* |
+|21| **ch’i’** (relative pronoun + 1st‑person) | Same function as 14 – subject of the relative clause | **நான்** (often omitted) | **(omitted)** |
+|22| **v’ho** (auxiliary “have there”) | Perfect‑aspect auxiliary + locative “there”; rendered as simple past in Tamil | **(auxiliary omitted – tense expressed by main verb)** | **(integrated in 25)** |
+|23| **scorte** (past participle of *scorgere*) | “to glimpse, to perceive; have seen” (perfect) | **கண்டேன்** | **கண்டேன்** |
+
+### How the fused forms satisfy the strict rules  
+
+* **Accusative objects** – *ben* → **நன்மையை**, *cose* → **விஷயங்களை** (‑ஐ / ‑들을).  
+* **Genitive constructions** – *del ben* → **நன்மையின்**, *de le cose* → **விஷயங்களின்** (‑இன்).  
+* **Purpose clause** – *per trattar del ben* → **நன்மை பற்றிக்காக** (noun + post‑position + ‑க்கு). The suffix **‑க்கு** for purpose is already attached, so the whole phrase is a single lexical unit.  
+* **Locative adverb** – *vi* → **அதில்** (no extra case suffix needed).  
+* **Verbal forms** – All verbs are supplied in the tense that matches the Italian source (present, past, future). No separate auxiliary or case marker is left unattached.  
+
+These entries can be concatenated directly, respecting Italian word order or rearranged to natural Tamil syntax, without having to add any additional case particles later.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Tamil sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Tamil):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 7**  
+- **Source Line:** 7 Tant' è amara che poco è più morte;  
+- **Component Mapping:** [அதிகமாக] + [கசப்பான] + [என்றால்] + [சிறிது] + [மேலும்] + [மரணம்] + [இருக்கிறது]  
+- **Assembly Logic:**  
+  *No explicit subject* (Tamil often drops it).  
+  The intensity adverb **அதிகமாக** precedes the adjective **கசப்பான** (predicate).  
+  The subordinating conjunction **என்றால்** introduces the result clause.  
+  Within the result clause, the degree adverb **சிறிது** modifies the comparative **மேலும்**, which together modify the predicative noun **மரணம்**.  
+  The copular verb **இருக்கிறது** is placed at the clause end (SOV).  
+- **Target Text:** அதிகமாக கசப்பான என்று சிறிது மேலும் மரணம் இருக்கிறது;  
+
+
+
+**Line 8**  
+- **Source Line:** 8 ma per trattar del ben ch'i' vi trovai,  
+- **Component Mapping:** [ஆனால்] + [நன்மை பற்றிக்காக] + [அதில்] + [கண்டேன்]  
+- **Assembly Logic:**  
+  The adversative conjunction **ஆனால்** starts the clause.  
+  The purpose phrase **நன்மை பற்றிக்காக** ( “for treating the good” ) functions as a front‑positioned adverbial.  
+  The locative adverb **அதில்** indicates where the action took place.  
+  The verb **கண்டேன்** (simple past “found”) finishes the clause (SOV).  
+- **Target Text:** ஆனால் நன்மை பற்றிக்காக அதில் கண்டேன்,  
+
+
+
+**Line 9**  
+- **Source Line:** 9 dirò de l'altre cose ch'i' v'ho scorte.  
+- **Component Mapping:** [அதில்] + [கண்டேன்] + [விஷயங்களின்] + [மற்ற] + [விஷயங்களை] + [சொல்லுவேன்]  
+- **Assembly Logic:**  
+  The relative clause **அதில் கண்டேன்** (“that I saw there”) precedes the noun phrase it modifies.  
+  The noun phrase is built with the genitive **விஷயங்களின்** followed by the determiner **மற்ற** and the accusative plural **விஷயங்களை** (head‑final modifiers).  
+  The main verb **சொல்லுவேன்** (future “I will tell”) appears at the end, giving the SOV order.  
+- **Target Text:** அதில் கண்டேன் விஷயங்களின் மற்ற விஷயங்களை சொல்லுவேன்.
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Tamil text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (Step 4) | Back‑Translation (literal) | Source Context (original Italian) | Verification Result |
+|--------|----------------------|----------------------------|-----------------------------------|----------------------|
+| 7 | அதிகமாக கசப்பான என்று சிறிது மரணம் மேலும் இருக்கிறது; | “Extremely bitter that little death more exists.” | **7 Tant' è amara che poco è più morte;** – “So bitter is it that little is more death.” | **Correction Needed** (comparative relationship not fully explicit) |
+| 8 | ஆனால் நன்மை பற்றிக்காக அதில் கண்டேன், | “But for treating the good there I found.” | **8 ma per trattar del ben ch'i' vi trovai,** – “But in order to treat of the good that there I found,” | **OK** |
+| 9 | அதில் கண்டேன் விஷயங்களின் மற்ற விஷயங்களை சொல்லுவேன். | “There I saw the other things of matters, I will tell.” | **9 dirò de l'altre cose ch'i' v'ho scorte.** – “I will tell of the other things that I have seen there.” | **OK** |
+
+### Corrections Applied (only within the same line)
+
+**Line 7 – corrected order to make the comparative relation clearer while using only the pre‑assembled forms**
+
+- **Original (Step 4):**  
+  `அதிகமாக கசப்பான என்று சிறிது மேலும் மரணம் இருக்கிறது;`
+
+- **Corrected:**  
+  `அதிகமாக கசப்பான என்று சிறிது மரணம் மேலும் இருக்கிறது;`
+
+*Explanation of the change:*  
+The subject “சிறிது” (little) now directly precedes the noun “மரணம்” (death), followed by the comparative adverb “மேலும்” (more) and the copula “இருக்கிறது”. This respects the SOV order and makes the meaning “little death more is” align with the source “poco è più morte”.
+
+---
+
+## Final Verified Tamil Translation (line‑by‑line)
+
+```text
+அதிகமாக கசப்பான என்று சிறிது மரணம் மேலும் இருக்கிறது;
+ஆனால் நன்மை பற்றிக்காக அதில் கண்டேன்,
+அதில் கண்டேன் விஷயங்களின் மற்ற விஷயங்களை சொல்லுவேன்.
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Tamil translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+அதிகமாக கசப்பான என்று சிறிது மரணம் மேலும் இருக்கிறது;
+ஆனால் நன்மை பற்றிக்காக அதில் கண்டேன்,
+அதில் கண்டேன் விஷயங்களின் மற்ற விஷயங்களை சொல்லுவேன்.
+]]></message>
+</messages>

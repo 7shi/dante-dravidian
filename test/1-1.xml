@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+
+Perform a word-by-word alignment between the Source Text and the Reference Translation.
+
+Goal: Identify the specific English meaning and precise semantic definition for each Source token in this context.
+
+Instructions:
+1. Use Reference for Context: Use the Reference Translation to disambiguate polysemous words.
+2. Define Semantics: For the [Contextual Definition] column, write the specific dictionary definition that applies to this context.
+   - Example: For "trattar", do not just write "treat". Write "to discuss; to deal with a subject".
+   - Example: For "ben", write "the good; virtue".
+3. Analyze Grammar: Identify the grammatical role (Subject, Direct Object, etc.).
+
+Table Columns:
+- [Source Word]
+- [Morphology] (Lemma, POS)
+- [English Equivalent] (Literal word aligned with Source)
+- [Contextual Definition] (Specific dictionary sense used here)
+- [Grammatical Role] (Syntactic function)
+
+Source Text:
+1 Nel mezzo del cammin di nostra vita
+2 mi ritrovai per una selva oscura,
+3 ché la diritta via era smarrita.
+
+Reference Translation (English):
+Midway upon the road of our life I found myself within a dark wood, for the right way had been missed.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑word alignment and semantic analysis**
+
+| # | Source Word | Morphology (Lemma / POS) | English Equivalent (literal) | Contextual Definition (dictionary sense used) | Grammatical Role (syntactic function) |
+|---|-------------|--------------------------|------------------------------|-----------------------------------------------|----------------------------------------|
+| 1 | **Nel** | *in* + *il* – preposition + definite article (contraction) | “in the” | **inside, within** – indicating the location of something | Preposition heading the PP “in the middle” |
+| 2 | **mezzo** | *mezzo* – noun masc sg | “middle” | **central point, halfway** – the exact midpoint of a stretch | Head noun of the PP “in the middle” |
+| 3 | **del** | *di* + *il* – preposition + definite article (contraction) | “of the” | **genitive relationship** – expresses belonging/part‑of | Preposition linking “cammin” to “mezzo” |
+| 4 | **cammin** | *cammino* – noun masc sg (archaic) | “walk / journey / road” | **metaphorical path of life** – the course one travels through existence | Noun complement of “del” (the thing whose middle is spoken of) |
+| 5 | **di** | *di* – preposition | “of” | **expressing relation** – here linking a possession | Preposition linking “nostra vita” to “cammin” |
+| 6 | **nostra** | *nostro* – possessive adjective fem sg | “our” | **belonging to us** – the speaker and his companion(s) | Determiner modifying “vita” |
+| 7 | **vita** | *vita* – noun fem sg | “life” | **the span of a human existence** – the poet’s own lifetime | Direct object of the prepositional phrase “of our life” |
+| 8 | **mi** | *mi* – reflexive clitic pronoun 1st sg | “myself” | **reflexive pronoun referring to the subject** – the speaker’s own person | Reflexive object of the verb “ritrovai” |
+| 9 | **ritrovai** | *ritrovare* – verb 1st sg passato remoto | “found” | **to come upon, discover oneself in a situation** – “I found myself” | Main verb of the clause (simple past) |
+|10| **per** | *per* – preposition | “within / through” | **indicating location inside a space** – “within a wood” | Preposition heading the PP “per una selva” |
+|11| **una** | *uno* – indefinite article fem sg | “a” | **one, unspecified** – introduces a non‑specific noun | Determiner for “selva” |
+|12| **selva** | *selva* – noun fem sg | “wood” | **forest, wooded area** – the dark place the poet enters | Noun object of the preposition “per” |
+|13| **oscura** | *oscuro* – adjective fem sg | “dark” | **lacking light, dim** – describing the wood’s condition | Attribute modifying “selva” |
+|14| **ché** | *ché* – conjunction | “for” | **because, introducing a cause** – explains why the wood is entered | Subordinating conjunction linking cause clause |
+|15| **la** | *la* – definite article fem sg | “the” | **the specific** – points to a known way | Determiner for “via” |
+|16| **diritta** | *diritto* – adjective fem sg | “right” | **correct, straight, proper** – the proper/straight way | Attribute modifying “via” |
+|17| **via** | *via* – noun fem sg | “way” | **path, road, method** – the correct course of life | Subject of the clause “la diritta via era smarrita” |
+|18| **era** | *essere* – verb 3rd sg imperf. | “was / had been” | **copular verb denoting a past state** – existence of a condition | Linking verb connecting subject to predicate |
+|19| **smarrita** | *smarrito* – past participle fem sg | “lost / missed” | **having become misplaced or not found** – the way is no longer known | Predicate adjective (past participle) complement of “era” |
+
+*Notes*
+
+* The Italian poem is Dante’s **Divine Comedy** (Inferno, Canto I, line 1‑3).  
+* The English reference (“Midway upon the road of our life …”) is a 19th‑century translation; the literal equivalents above stay as close as possible to the original Italian wording while providing the precise sense required by the context.
+]]></message>
+</messages>

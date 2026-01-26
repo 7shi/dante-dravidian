@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Malayalam.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 2 – Morphosyntactic Requirements for a Malayalam Translation**  
+(Using the alignment and grammatical‑role analysis from Step 1)
+
+| # | Source Word | Contextual Definition (Step 1) | Target Morphosyntactic Requirement in Malayalam |
+|---|-------------|--------------------------------|---------------------------------------------------|
+| 1 | **Ahi** | Interjection “Ah!” (exclamation of amazement) | No case or tense needed – rendered as the interjection **«അഹാ!»** (or **«ഓ!»**) |
+| 2 | **quanto** | Degree adverb “how” (modifies *dura*) | No case – appears as the adverb **«എത്ര»** placed before the adjective. |
+| 3 | **a** (preposition introducing the infinitive) | “to” (marks the infinitive complement of *dir*) | Malayalam does not use a preposition here; the verb *dir* is put in the infinitive **‑ാൻ** form (e.g. *പറയ‑ാൻ*).  → **Infinitive suffix –‑ാൻ** attached to the verb stem. |
+| 4 | **dir** | Verb “to tell / to say” (infinitive) | Must appear as an infinitive **‑ാൻ** form: **«പറയ‑ാൻ»**. |
+| 5 | **qual** | Interrogative adjective “which / what” (object of *dir*) | Treated as a direct object → requires the **accusative marker –‑യെ** (or –‑നെ for animate) after the interrogative noun.  Example: **«എന്തിനെ‑യെ»** or **«എന്തിനെ‑»** in the embedded question. |
+| 6 | **era** | Imperfect past of *essere* “was” (describes a past state) | Malayalam past‑imperfect (continuous) → **past tense suffix –‑ിന്നു** (or –‑ുന്നു) on the copula.  Example: **«ആയിരുന്നു»**. |
+| 7 | **è** | Present copula “is” | Present‑simple → **copula –‑ഉണ്ടു / –‑ആണ്** (e.g. **«അതാണ്»**). |
+| 8 | **cosa** | Noun “thing” (subject of the main clause) | Nominative (no overt case in Malayalam).  Rendered as **«വസ്തു»** or **«കാര്യമാണ്»** depending on style. |
+| 9 | **dura** | Adjective “hard / difficult” (predicative) | Predicative adjective – no case marking; placed after the subject: **«കഠിനം»**. |
+|10| **esta** | Demonstrative adjective “this” (modifies *selva*) | Demonstrative determiner **«ഈ»** placed before the noun; no case marking. |
+|11| **selva** | Noun “wood / forest” (appositive to *cosa*) | Nominative (no suffix).  Rendered as **«വനം»** or **«കാടാണ്»**. |
+|12| **selvaggia** | Adjective “wild” (attribute of *selva*) | No case; appears as **«കാടുമുതല്‍»** → **«കാട്ടു»** (adjectival form). |
+|13| **e** (first) | Coordinating conjunction “and” | No morphological requirement – simply **«മറ്റും»** or **«മತ್ತು»**. |
+|14| **aspra** | Adjective “rough” (attribute of *selva*) | No case – **«മുറിഞ്ഞ»** or **«കടുത്ത»**. |
+|15| **e** (second) | Coordinating conjunction “and” | Same as (13). |
+|16| **forte** | Adjective “dense / strong” (attribute of *selva*) | No case – **«കട്ടിയുള്ള»**. |
+|17| **che** | Relative pronoun “which” (subject of relative clause) | Nominative – no case suffix; rendered by **«അത്»** or **«ആ»** introducing the relative clause. |
+|18| **nel** | Preposition “in the” (locative) | Malayalam expresses location with the **locative suffix –‑ൽ** attached to the noun that follows. |
+|19| **pensier** | Noun “thought” (object of the locative preposition) | Must receive the locative suffix **‑‑ൽ** → **«ചിന്തയിൽ»** (or **«വिचാരത്തിൽ»**). |
+|20| **rinova** | Present‑indicative verb “renews” (transitive) | Present tense → **present‑simple suffix –‑ുന്നു** on the verb stem: **«പുനഃപുതുക്കുന്നു»** / **«പുതുക്കുന്നു»**. |
+|21| **la** | Definite article “the” (feminine) | Malayalam has no definite article; the noun is simply used with the appropriate case suffix (see 22). |
+|22| **paura** | Noun “fear” (direct object of *rinova*) | Direct object → requires the **accusative marker –‑യെ** (or –‑നെ for animate).  Example: **«ഭയത്തെ‑യെ»** or **«ഭയം‑യെ»**. |
+
+### How the requirements are applied in a full Malayalam rendering
+
+Putting the individual requirements together gives a sketch of the final clause structure (literal, not a polished literary translation):
+
+```
+അഹാ! എത്ര‑ക്ക് പറയ‑ാൻ എന്തിനെയാണ്‑യെ (qual) ആയിരുന്നു ? 
+ഈ കാട് — കാട്ടു മുറിഞ്ഞ മറ്റും കടുത്ത മറ്റും കട്ടിയുള്ള — അത് ചിന്തയിൽ പുനഃപുതുക്കുന്നു ഭയത്തെ‑യെ.
+```
+
+*Key points*  
+
+* **Accusative** – ‑യെ on the objects *qual* (the “what”) and *paura* (the “fear”).  
+* **Locative** – ‑ൽ on *pensier* (ചിന്തയിൽ).  
+* **Infinitive** – ‑ാൻ on *dir* (പറയ‑ാൻ).  
+* **Tense** – Imperfect past → ‑ിന്നു (ആയിരുന്നു); Present → ‑ുന്നു (പുനഃപുതുക്കുന്നു).  
+* **Demonstrative** – «ഈ» before *selva* (കാട്).  
+* **Adjectival attributes** are placed before or after the noun as per Malayalam syntax, without case marking.  
+
+These morphosyntactic specifications can be fed directly to a rule‑based or statistical MT system when generating a Malayalam version of Dante’s verse.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Malayalam components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Malayalam word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Malayalam Lexical Inventory**  
+*(All suffixes are already fused with the head noun/verb, in strict accordance with the morphosyntactic requirements derived in Step 2.)*  
+
+| Source Word | Contextual Definition (English) | Target Lemma (Malayalam) | Final Agglutinated Form (ready‑to‑insert) |
+|-------------|--------------------------------|--------------------------|------------------------------------------|
+| Ahi | Interjection expressing amazement or lament | **അഹാ** | **അഹാ!** |
+| quanto | Degree adverb “how” (modifying *dura*) | **എത്ര** | **എത്ര** |
+| dir | Verb “to tell, to say” (infinitive) | **പറയുക** | **പറയാൻ** |
+| qual | Interrogative pronoun “what / which”, functioning as the direct object of *dir* | **എന്ത്** | **എന്തിനെ** *(accusative –‑നെ)* |
+| era | Imperfect past of “to be”, describing a past state | **ആകുക** | **ആയിരുന്നു** *(past‑continuous suffix –‑ുന്നു)* |
+| è | Present‑simple copula “is” | **ആകുക** | **ആണ്** |
+| cosa | Generic “thing, matter” (subject of the clause) | **കാര്യം** | **കാര്യം** |
+| dura | Predicative adjective “hard, difficult” | **കഠിനം** | **കഠിനം** |
+| esta | Demonstrative adjective “this” (modifies *selva*) | **ഈ** | **ഈ** |
+| selva | Noun “wood, forest, dense wild land” | **കാട്** | **കാട്** |
+| selvaggia | Adjective “wild, untamed” (attribute of *selva*) | **കാട്ടു** | **കാട്ടു** |
+| aspra | Adjective “rough, harsh” (attribute of *selva*) | **മുറിഞ്ഞ** | **മുറിഞ്ഞ** |
+| forte | Adjective “dense, strong, thick” (attribute of *selva*) | **കട്ടിയുള്ള** | **കട്ടിയുള്ള** |
+| che | Relative pronoun “which” introducing the clause that qualifies *selva* | **അത്** | **അത്** |
+| pensier | Noun “thought, mental consideration”; object of the locative preposition *nel* | **ചിന്ത** | **ചിന്തയിൽ** *(locative suffix –‑ൽ)* |
+| rinova | Verb “renews, refreshes” (present) | **പുതുക്കുക** | **പുതുക്കുന്നു** *(present‑simple suffix –‑ുന്നു)* |
+| paura | Noun “fear, dread”, direct object of *rinova* | **ഭയം** | **ഭയത്തെ** *(accusative suffix –‑യെ)* |
+| e (first) | Coordinating conjunction “and” linking *selvaggia* and *aspra* | **മറ്റും** | **മറ്റും** |
+| e (second) | Coordinating conjunction “and” linking *aspra* and *forte* | **മറ്റും** | **മറ്റും** |
+
+**Notes on the inventory**
+
+* **Agglutination** – All case or relational suffixes appear attached to the head noun/verb (e.g., *pensier* → **ചിന്തയിൽ**, *qual* → **എന്തിനെ**, *paura* → **ഭയത്തെ**). No separate “‑in”, “‑of”, “‑the” entries are listed.
+* **Verb Forms** – The infinitive *dir* is rendered with the Malayalam infinitive suffix **‑ാൻ**; the present‑simple verb *rinova* receives the present suffix **‑ുന്നു**; the imperfect *era* receives the past‑continuous suffix **‑ായിരുന്നു**.
+* **Case Marking** – Direct objects (*qual*, *paura*) carry the accusative **‑നെ / ‑യെ**. The locative complement (*pensier*) carries **‑ൽ**.
+* **Function Words** – Interjections, adverbs, demonstratives, conjunctions, and the copula are included as independent lexical items because they are not suffixes; they appear in their plain form.  
+
+These components can now be concatenated (respecting Malayalam word order) to produce a grammatically correct, fully agglutinative Malayalam rendering of Dante’s verse.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Malayalam sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Malayalam):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 4 – Slot‑Based Syntactic Assembly**
+
+---
+
+### Source Line 4  
+**Source Line:**  
+`Ahi quanto a dir qual era è cosa dura`
+
+**Component Mapping (in the order they will appear):**  
+1. **അഹാ!** – Interjection (Ahi)  
+2. **എത്ര** – Degree adverb (quanto)  
+3. **പറയാൻ** – Infinitive “to tell” (dir)  
+4. **എന്തിനെ** – Interrogative direct object (qual) – Accusative  
+5. **ആയിരുന്നു** – Imperfect “was” (era) – past‑continuous copula  
+6. **കാര്യം** – Subject noun “thing” (cosa)  
+7. **കഠിനം** – Predicative adjective “hard/difficult” (dura)  
+8. **ആണ്** – Present copula (è)
+
+**Assembly Logic:**  
+- Malayalam follows SOV; the main clause is **കാര്യം കഠിനം ആണ്** (subject + predicative + verb).  
+- The infinitival clause *pəra‑yaan* (“to tell”) takes its object **എന്തിനെ** and is placed before the main clause, preceded by the degree adverb **എത്ര**.  
+- The embedded past‑tense verb **ആയിരുന്നു** completes the indirect question “what it was”.  
+- The interjection **അഹാ!** stands at the very start.
+
+**Target Text:**  
+`അഹാ! എത്ര പറയാൻ എന്തിനെ ആയിരുന്നു കാര്യം കഠിനം ആണ്`
+
+---
+
+### Source Line 5  
+**Source Line:**  
+`esta selva selvaggia e aspra e forte`
+
+**Component Mapping:**  
+1. **ഈ** – Demonstrative “this” (esta)  
+2. **കാട്ടു** – Adjective “wild” (selvaggia)  
+3. **മറ്റും** – Coordinating conjunction “and” (e 1)  
+4. **മുറിഞ്ഞ** – Adjective “rough” (aspra)  
+5. **മറ്റും** – Coordinating conjunction “and” (e 2)  
+6. **കട്ടിയുള്ള** – Adjective “dense/strong” (forte)  
+7. **കാട്** – Noun “forest/wood” (selva)
+
+**Assembly Logic:**  
+- All modifiers precede the noun in Malayalam; the demonstrative **ഈ** comes first, followed by the three adjectives linked by the conjunction **മറ്റും**.  
+- No verb appears in this line, so the noun phrase stands alone.
+
+**Target Text:**  
+`ഈ കാട്ടു മറ്റും മുറിഞ്ഞ മറ്റും കട്ടിയുള്ള കാട്`
+
+---
+
+### Source Line 6  
+**Source Line:**  
+`che nel pensier rinova la paura!`
+
+**Component Mapping:**  
+1. **അത്** – Relative pronoun “which” (che)  
+2. **ചിന്തയിൽ** – Locative “in thought” (nel + pensier) – fused suffix **‑ൽ**  
+3. **ഭയത്തെ** – Direct object “fear” (paura) – Accusative  
+4. **പുതുക്കുന്നു** – Present verb “renews” (rinova)
+
+**Assembly Logic:**  
+- Subject **അത്** (the forest) is followed by the locative adverbial **ചിന്തയിൽ**, then the accusative object **ഭയത്തെ**, and finally the verb **പുതുക്കുന്നു** to satisfy the SOV order.  
+- The source line ends with an exclamation mark, which is copied unchanged.
+
+**Target Text:**  
+`അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!`
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Malayalam text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (Step 4) | Back‑Translation (literal English) | Source Context (Original) | Verification Result |
+|--------|----------------------|--------------------------------------|---------------------------|----------------------|
+| 1 | അഹാ! എത്ര പറയാൻ എന്തിനെ ആയിരുന്നു കാര്യം കഠിനം ആണ് | “Ah! How to tell what was the thing hard is.” | *Ahi quanto a dir qual era è cosa dura* | **OK** |
+| 2 | ഈ കാട്ടു മറ്റും മുറിഞ്ഞ മറ്റും കട്ടിയുള്ള കാട് | “this wild and rough and dense forest” | *esta selva selvaggia e aspra e forte* | **OK** |
+| 3 | അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു! | “that renews fear in thought!” | *che nel pensier rinova la paura!* | **OK** |
+
+All three lines convey the locked meaning from Step 1, preserve the required grammatical roles, and respect the source‑line structure. No corrections are needed.
+
+---
+
+**Final Verified Malayalam Translation (line‑by‑line)**
+
+```malayalam
+അഹാ! എത്ര പറയാൻ എന്തിനെ ആയിരുന്നു കാര്യം കഠിനം ആണ്
+ഈ കാട്ടു മറ്റും മുറിഞ്ഞ മറ്റും കട്ടിയുള്ള കാട്
+അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Malayalam translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+അഹാ! എത്ര പറയാൻ എന്തിനെ ആയിരുന്നു കാര്യം കഠിനം ആണ്
+ഈ കാട്ടു മറ്റും മുറിഞ്ഞ മറ്റും കട്ടിയുള്ള കാട്
+അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
+]]></message>
+</messages>

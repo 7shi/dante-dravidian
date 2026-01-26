@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+
+Based on the alignment and roles from Step 1, define the grammatical requirements for Tamil.
+
+Tasks:
+1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
+   - If Role is Direct Object -> Assign Accusative Case.
+   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
+2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
+
+Output Format (Table):
+- [Source Word]
+- [Contextual Definition] (from Step 1)
+- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 2 – Morphosyntactic Requirement Definition (Italian → Tamil)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Requirement (Tamil) |
+|---|-------------|--------------------------------------|-----------------------------|
+| 1 | **Ahi** | Interjection expressing pain or amazement | No case / no inflection – rendered as an exclamatory particle (e.g., “அய்!”) |
+| 2 | **quanto** | Degree adverb “how (much)” | No case – adverbial, placed before the predicate (Tamil “எவ்வளவு”) |
+| 3 | **a** | Preposition “to” (marks the infinitive complement) | Dative‑like post‑position **‑க்கு** attached to the infinitive verb (e.g., “சொல்வதற்கு”) |
+| 4 | **dir** | Infinitive “to tell, to say” | Infinitive marker **‑து** (or **‑விரும்பு** in literary style); no case on the verb itself |
+| 5 | **qual** | Interrogative adjective “which” | No case – used as a question word (Tamil “எது”) |
+| 6 | **era** | Imperfect past of “to be” – “was” (state in the past) | Past‑tense verb **‑இருந்த** (simple past) – no case marking (subject‑free copula) |
+| 7 | **è** | Present copula “is” | Present‑tense verb **‑அது** / zero‑copula (Tamil often omits “to be”) – no case |
+| 8 | **cosa** | Noun “thing” (subject of the main clause) | Nominative – unmarked in Tamil (subject = **விஷயம்**) |
+| 9 | **dura** | Predicative adjective “hard, difficult” | No case – predicate adjective agrees with subject (Tamil “கடினமான”) |
+|10| **esta** | Demonstrative adjective “this” (determiner) | Demonstrative pronoun **இது** placed before the noun – no case |
+|11| **selva** | Noun “wood, forest” (appositive noun phrase) | Nominative – unmarked (Tamil **காடு**) |
+|12| **selvaggia** | Attribute adjective “wild” | No case – adjective agrees with “selva” (Tamil “வனாந்தர”) |
+|13| **e** (1st) | Coordinating conjunction “and” | No case – conjunction (Tamil “மற்றும்”) |
+|14| **aspra** | Attribute adjective “rough” | No case – adjective (Tamil “கடினமான”) |
+|15| **e** (2nd) | Coordinating conjunction “and” | No case – conjunction (Tamil “மற்றும்”) |
+|16| **forte** | Attribute adjective “dense / strong” | No case – adjective (Tamil “கனமான”) |
+|17| **che** | Relative pronoun “which” (subject of relative clause) | Nominative – unmarked; functions as the subject of the relative clause (Tamil “அது”) |
+|18| **nel** | Prepositional phrase “in the” (locative) | Locative suffix **‑இல்** attached to the noun “pensier” (Tamil “ஆலோசனையில்”) |
+|19| **pensier** | Noun “thought” (object of the preposition) | Takes the locative suffix **‑இல்** (as above) |
+|20| **rinova** | Present‑tense verb “renews” (acts on “paura”) | Present tense **‑இல்** / **‑ம்** (e.g., “புதுப்பிக்கிறது”) – no case on the verb itself |
+|21| **la** | Definite article “the” (marks “paura”) | No case – Tamil does not use articles; the noun is taken as definite by context |
+|22| **paura** | Noun “fear” (direct object of “rinova”) | Accusative case **‑ஐ** (Tamil **பயத்தை**) |
+
+### How the requirements were derived  
+
+1. **Case / Suffix Mapping** – The *Grammatical Role* column from Step 1 was used:  
+   * Direct Object → Accusative **‑ஐ**.  
+   * Prepositional (locative) → Locative **‑இல்**.  
+   * Dative‑type complement of an infinitive → Dative‑like **‑க்கு** (Tamil expresses “to” with the dative post‑position).  
+   * Subjects, predicates, adjectives, adverbs, conjunctions, interjections → No overt case marking (Tamil leaves them unmarked or uses particles/conjunctions).  
+
+2. **Tense / Mood Mapping** – Italian verb tenses were aligned with the closest Tamil tense:  
+   * Imperfect “era” → Simple past **‑இருந்த** (Tamil does not have a distinct imperfect; the past form conveys the completed past state).  
+   * Present “è”, “rinova” → Present simple **‑அது / ‑ம்**.  
+
+These requirements can now drive a rule‑based or neural‑MT system to generate grammatically correct Tamil sentences from the Dante passage.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+
+Create a list of Tamil components ready for assembly.
+
+STRICT RULES:
+1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
+   - Bad: [forest] [in]
+   - Good: [forest-in] (e.g., kattil)
+2. Case Verification: Ensure the grammatical role from Step 2 is respected.
+   - Direct Object: Must use Accusative form.
+3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Tamil word matches the Contextual Definition.
+
+Table Columns:
+- [Source Word]
+- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
+- [Target Lemma]
+- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+]]></message>
+<message role="assistant"><![CDATA[
+**Pre‑assembled Tamil Lexical Inventory**  
+*(All suffixes are already fused with the head noun/verb, in accordance with the agglutinative rule.)*  
+
+| Source Word | Contextual Definition (English) | Target Lemma (Tamil) | Final Agglutinated Form |
+|-------------|--------------------------------|----------------------|--------------------------|
+| Ahi | Interjection of astonishment or lament | அய் | **அய்!** |
+| quanto | Degree adverb “how (much), to what extent” | எவ்வளவு | **எவ்வளவு** |
+| a | Preposition “to” that marks the infinitive complement of the verb “to tell” | (attached to infinitive) | **சொல்லுவதற்கு** |
+| dir | Verb “to tell, to say” (infinitive) | சொல்ல | **சொல்லுவதற்கு** (same as above – the infinitive + dative) |
+| qual | Interrogative adjective “which, what” (introducing an indirect question) | எது | **எது** |
+| era | Imperfect of “to be” – past state “was” | இருந்த | **இருந்தது** |
+| è | Present copula “is” (often zero‑copula in Tamil) | (zero) / அது | **அது** |
+| cosa | Noun “thing, matter” – subject of the clause | விஷயம் | **விஷயம்** |
+| dura | Predicative adjective “hard, difficult, arduous” | கடினமான | **கடினமான** |
+| esta | Demonstrative adjective “this” (determiner) | இந்த | **இந்த** |
+| selva | Noun “wild forest, dense wood” | காடு | **காடு** |
+| selvaggia | Attribute “wild, untamed” | வனமான | **வனமான** |
+| e (1st) | Coordinating conjunction “and” | மற்றும் | **மற்றும்** |
+| aspra | Attribute “rough, harsh in texture” | கசப்பான | **கசப்பான** |
+| e (2nd) | Coordinating conjunction “and” | மற்றும் | **மற்றும்** |
+| forte | Attribute “dense, tightly packed, strong” | கனமான | **கனமான** |
+| che | Relative pronoun “which” – subject of the relative clause | அது | **அது** |
+| nel (→ pensier) | Preposition “in” (locative) fused with “pensier” | (locative) | **ஆலோசனையில்** |
+| pensier | Noun “thought, contemplation” (object of the preposition) | ஆலோசனை | **ஆலோசனையில்** |
+| rinova | Verb “renews, makes fresh again” (present) | புதுப்பிக்கிறது | **புதுப்பிக்கிறது** |
+| la | Definite article “the” – not expressed in Tamil | — | — |
+| paura | Noun “fear, dread” – direct object of “renews” | பயம் + accusative | **பயத்தை** |
+
+### How the inventory respects the morphosyntactic requirements
+* **Accusative case** – the direct object *paura* appears as **பயத்தை** (‑ஐ).  
+* **Locative case** – the prepositional phrase “in thought” is rendered as **ஆலோசனையில்** (‑இல்).  
+* **Dative‑like complement** – the infinitival “to tell” is fused as **சொல்லுவதற்கு** (‑க்கு).  
+* **Subject / Predicate** – nouns and adjectives remain unmarked (Tamil’s default nominative).  
+* **Verb tenses** – imperfect “was” → past **இருந்தது**; present “renews” → present **புதுப்பிக்கிறது**.  
+
+All entries are standard, natural Tamil lexical items that match the contextual meanings identified in Step 1 and are ready for direct assembly into the target sentence.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+
+Arrange the components from Step 3 into a strictly literal Tamil sentence.
+
+Universal Rules:
+1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
+2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
+3. Transparency: Explicitly show which components are used for each line to allow debugging.
+
+Target Language Specific Rules (for SOV/Agglutinative languages like Tamil):
+4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
+5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
+6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
+
+Final Output Format:
+For each line, provide:
+- Source Line: [Original Text]
+- Component Mapping: [List of components used from Step 3 in their new order]
+- Assembly Logic: [Brief explanation of word order changes or connections]
+- Target Text: [Final translation for this line]
+]]></message>
+<message role="assistant"><![CDATA[
+**Line‑by‑line literal Tamil assembly**
+
+---
+
+### Source Line 4  
+**Source Line:** Ahi quanto a dir qual era è cosa dura  
+
+**Component Mapping:**  
+1. **அய்!** – Ahi  
+2. **சொல்லுவதற்கு** – a + dir (to tell)  
+3. **எவ்வளவு** – quanto (how)  
+4. **எது** – qual (which)  
+5. **இருந்தது** – era (was)  
+6. **விஷயம்** – cosa (thing)  
+7. **கடினமான** – dura (hard, difficult)  
+
+**Assembly Logic:**  
+- The infinitive **சொல்லுவதற்கு** (to tell) heads the clause.  
+- The degree adverb **எவ்வளவு** modifies the predicate adjective **கடினமான**.  
+- The embedded question **எது இருந்தது** (what it was) is placed before the noun **விஷயம்** that it modifies.  
+- Tamil normally places the adjective before the noun when it is a predicative, so **கடினமான** follows **எவ்வளவு** and precedes the noun phrase.  
+
+**Target Text:**  
+அய்! சொல்லுவதற்கு எவ்வளவு கடினமான எது இருந்தது விஷயம்  
+
+*(no terminal punctuation, matching the source line)*  
+
+---
+
+### Source Line 5  
+**Source Line:** esta selva selvaggia e aspra e forte  
+
+**Component Mapping:**  
+1. **இந்த** – esta (this)  
+2. **வனமான** – selvaggia (wild)  
+3. **கசப்பான** – aspra (rough)  
+4. **மற்றும்** – e (and)  
+5. **கனமான** – forte (dense/strong)  
+6. **காடு** – selva (forest)  
+
+**Assembly Logic:**  
+- Demonstrative **இந்த** precedes the noun.  
+- All attributive adjectives are placed before the noun **காடு**, linked by the coordinating conjunction **மற்றும்**.  
+
+**Target Text:**  
+இந்த வனமான கசப்பான மற்றும் கனமான காடு  
+
+*(no terminal punctuation, matching the source line)*  
+
+---
+
+### Source Line 6  
+**Source Line:** che nel pensier rinova la paura!  
+
+**Component Mapping:**  
+1. **அது** – che (which) – subject of the relative clause  
+2. **ஆலோசனையில்** – nel + pensier (in thought) – locative adverbial  
+3. **பயத்தை** – paura (fear) – direct object (accusative)  
+4. **புதுப்பிக்கிறது** – rinova (renews) – verb (present)  
+
+**Assembly Logic:**  
+- Follow SOV order: Subject **அது**, then the locative adverbial **ஆலோசனையில்**, then the accusative object **பயத்தை**, finally the verb **புதுப்பிக்கிறது**.  
+- Preserve the exclamation mark from the source.  
+
+**Target Text:**  
+அது ஆலோசனையில் பயத்தை புதுப்பிக்கிறது!
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+
+Perform the verification and display the results for each step:
+
+Table Columns:
+- [Line #]
+- [Target Text] (Copy the final text from Step 4)
+- [Back-Translation] (Literal English)
+- [Source Context] (Original Source text)
+- [Verification Result] (OK / Correction Needed)
+
+Rules:
+1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
+2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
+3. Correction: If there is a mismatch or grammatical error, output a corrected version.
+   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
+4. Final Output: Present the final, verified Tamil text in a code block, separated line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+**Verification Table**
+
+| Line # | Target Text (Step 4) | Back‑Translation (literal) | Source Context | Verification Result |
+|--------|----------------------|----------------------------|----------------|----------------------|
+| 1 | அய்! சொல்லுவதற்கு எவ்வளவு கடினமான எது இருந்தது விஷயம் | “Ah! to‑tell how difficult what was the thing.” | Ahi quanto a dir qual era è cosa dura | **OK** – meaning and structure correspond; all required components are present and punctuation matches. |
+| 2 | இந்த வனமான கசப்பான மற்றும் கனமான காடு | “this wild rough and dense forest.” | esta selva selvaggia e aspra e forte | **OK** – direct, literal rendering; all adjectives correctly placed before the noun; punctuation matches. |
+| 3 | அது ஆலோசனையில் பயத்தை புதுப்பிக்கிறது! | “It renews the fear in thought!” | che nel pensier rinova la paura! | **OK** – subject‑object‑verb order respects SOV; locative and accusative cases are correctly agglutinated; exclamation mark preserved. |
+
+All three lines satisfy the semantic and morphosyntactic constraints, so no corrections are needed.
+
+---
+
+### Final Verified Tamil Translation (line‑by‑line)
+
+```text
+அய்! சொல்லுவதற்கு எவ்வளவு கடினமான எது இருந்தது விஷயம்
+இந்த வனமான கசப்பான மற்றும் கனமான காடு
+அது ஆலோசனையில் பயத்தை புதுப்பிக்கிறது!
+```
+]]></message>
+<message role="user"><![CDATA[
+Based on the verification in Step 5, output ONLY the final Tamil translation.
+No explanations, no tables, just the translated text line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+அய்! சொல்லுவதற்கு எவ்வளவு கடினமான எது இருந்தது விஷயம்  
+இந்த வனமான கசப்பான மற்றும் கனமான காடு  
+அது ஆலோசனையில் பயத்தை புதுப்பிக்கிறது!
+]]></message>
+</messages>

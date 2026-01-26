@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+
+Perform a word-by-word alignment between the Source Text and the Reference Translation.
+
+Goal: Identify the specific English meaning and precise semantic definition for each Source token in this context.
+
+Instructions:
+1. Use Reference for Context: Use the Reference Translation to disambiguate polysemous words.
+2. Define Semantics: For the [Contextual Definition] column, write the specific dictionary definition that applies to this context.
+   - Example: For "trattar", do not just write "treat". Write "to discuss; to deal with a subject".
+   - Example: For "ben", write "the good; virtue".
+3. Analyze Grammar: Identify the grammatical role (Subject, Direct Object, etc.).
+
+Table Columns:
+- [Source Word]
+- [Morphology] (Lemma, POS)
+- [English Equivalent] (Literal word aligned with Source)
+- [Contextual Definition] (Specific dictionary sense used here)
+- [Grammatical Role] (Syntactic function)
+
+Source Text:
+4 Ahi quanto a dir qual era è cosa dura
+5 esta selva selvaggia e aspra e forte
+6 che nel pensier rinova la paura!
+
+Reference Translation (English):
+Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!
+]]></message>
+<message role="assistant"><![CDATA[
+**Source‑Reference Alignment & Semantic Analysis**  
+*(Old Italian – Dante, Inferno Canto I, lines 4‑6)*  
+
+| # | Source Word | Morphology (Lemma, POS) | English Equivalent (literal) | Contextual Definition (specific sense) | Grammatical Role |
+|---|-------------|------------------------|------------------------------|----------------------------------------|------------------|
+| 1 | **Ahi** | ahi, interj. | Ah! | Interjection expressing pain, lament or amazement | Exclamative interjection (sentential front‑marker) |
+| 2 | **quanto** | quanto, adv. | how | “to what degree”; interrogative adverb of degree | Degree adverb modifying the predicate “è dura” |
+| 3 | **a** | a, prep. | to | Preposition that marks the infinitive complement | Preposition introducing the infinitive “dir” |
+| 4 | **dir** | dire, verb inf. | tell | “to say, to relate in words” (transitive) | Infinitival complement of “quanto” (object of the degree adverb) |
+| 5 | **qual** | qual (= quale), adj. / pron. | which | Interrogative adjective meaning “what, which” | Head of the embedded indirect‑question clause “qual era”; functions as direct object of “dir” |
+| 6 | **era** | essere, verb impf. 3sg | was | Imperfect of “to be”, describing a past state | Verb of the subordinate clause “qual era” |
+| 7 | **è** | essere, verb pres. 3sg | is | Present of “to be”, copular verb linking subject and complement | Main‑clause copula linking “cosa” with “dura” |
+| 8 | **cosa** | cosa, noun f.sg | thing | “a matter, an object, an abstract thing” | Subject of the main clause (head of “cosa dura”) |
+| 9 | **dura** | duro, adj. f.sg | hard | “difficult, arduous” (figurative) | Subject‑complement (predicative adjective) of “cosa” |
+|10| **esta** | questo, adj. dem. f.sg | this | Demonstrative adjective indicating proximity (“this”) | Determiner modifying the noun “selva” (part of an appositive NP) |
+|11| **selva** | selva, noun f.sg | wood/forest | “a dense, uncultivated woodland” | Head noun of the appositive phrase that renames “cosa” |
+|12| **selvaggia** | selvaggio, adj. f.sg | wild | “untamed, natural, uncontrolled” | Attribute adjective modifying “selva” |
+|13| **e** | e, conj. | and | Coordinating conjunction adding another attribute | Links “selvaggia” with “aspra” |
+|14| **aspra** | aspro, adj. f.sg | rough | “having a harsh, uneven texture” | Attribute adjective modifying “selva” |
+|15| **e** | e, conj. | and | Coordinating conjunction adding another attribute | Links “aspra” with “forte” |
+|16| **forte** | forte, adj. f.sg | dense / strong | “thick, tightly packed; powerful” (here describing the wood’s density) | Attribute adjective modifying “selva” |
+|17| **che** | che, rel. pron. | which | Relative pronoun introducing a clause that qualifies “selva” | Subject of the relative clause; antecedent = “selva” |
+|18| **nel** | in + il → nel, prep. | in the | Prepositional contraction meaning “in the” | Preposition heading the PP “nel pensier” |
+|19| **pensier** | pensiero, noun m.sg | thought | “the act of thinking; mental contemplation” | Object of the preposition “nel” (complement of place) |
+|20| **rinova** | rinovare, verb pres. 3sg | renews | “to make fresh again, to revive” (figurative) | Main verb of the relative clause; predicate of “che” |
+|21| **la** | la, article f.sg | the | Definite article marking a specific noun | Determiner of “paura” |
+|22| **paura** | paura, noun f.sg | fear | “a feeling of dread or alarm” | Direct object of the verb “rinova” |
+
+### How the alignment works
+- The **Reference Translation** supplies the overall sense, allowing us to pick the appropriate dictionary sense for each Italian token (e.g., “dura” = *hard/difficult* rather than merely *physically hard*).
+- **Grammatical roles** are given with respect to the clause they belong to, distinguishing main‑clause elements, subordinate‑clause elements, and the appositive noun phrase that renames “cosa”.
+- Morphological information follows standard Italian lemmatisation (e.g., *essa* → *essere*, *dir* → *dire*).  
+
+This table can be used for precise lexical‑semantic mapping, machine‑translation training, or detailed linguistic study of Dante’s verse.
+]]></message>
+</messages>
