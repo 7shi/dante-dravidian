@@ -9,7 +9,7 @@ think = False
 # Read test data
 with open("tokenize/inferno/01.txt", 'r', encoding='utf-8') as f:
     it = [l.split("|")[0] for line in f if (l := line.strip())]
-with open("norton-inferno-01.txt", 'r', encoding='utf-8') as f:
+with open("en-norton/inferno-01.txt", 'r', encoding='utf-8') as f:
     en = [l for line in f if (l := line.strip())]
 
 # Create output directory
