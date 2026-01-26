@@ -58,11 +58,11 @@ for i in range(3):
             print(f"Testing translation to {lang}...")
             print("-" * 60)
             history = translate(client, lang)[2:]
+            with open(f"test/{i+1}-{lang}.xml", 'w', encoding='utf-8') as f:
+                f.write(history_to_xml(history))
         translated_text = history[-1]['content'].rstrip()
         for k, line in enumerate(translated_text.splitlines()):
             result += f"{i3+k+1} {line}\n"
-        with open(f"test/{i+1}-{lang}.xml", 'w', encoding='utf-8') as f:
-            f.write(history_to_xml(history))
 
     # Save combined result
     output_file = f"test/{i+1}.txt"
