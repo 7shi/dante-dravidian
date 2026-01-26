@@ -25,7 +25,7 @@ for i in range(3):
     lines = it[i3:i3+3]
     source_text = ""
     for j in range(3):
-        line = f"{i3 + j + 1} {lines[j]}"
+        line = f"{i3+j+1} {lines[j]}"
         print(line)
         source_text += line + "\n"
     reference = en[i]
@@ -52,18 +52,15 @@ for i in range(3):
         if os.path.exists(xml_file):
             with open(xml_file, 'r', encoding='utf-8') as f:
                 history = xml_to_history(f.read())
-            translated_text = history[-1]['content'].rstrip()
-            for line in translated_text.splitlines():
-                result += f"{line}\n"
         else:
             print()
             print("-" * 60)
             print(f"Testing translation to {lang}...")
             print("-" * 60)
             history = translate(client, lang)[2:]
-            translated_text = history[-1]['content'].rstrip()
-            for k, line in enumerate(translated_text.splitlines()):
-                result += f"{i3+k+1} {line}\n"
+        translated_text = history[-1]['content'].rstrip()
+        for k, line in enumerate(translated_text.splitlines()):
+            result += f"{i3+k+1} {line}\n"
         with open(f"test/{i+1}-{lang}.xml", 'w', encoding='utf-8') as f:
             f.write(history_to_xml(history))
 
