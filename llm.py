@@ -2,10 +2,17 @@ from xml.dom.minidom import Document, parseString
 from llm7shi.compat import generate_with_schema
 
 class LLMClient:
-    def __init__(self, model, think):
+    def __init__(self, model, think, temperature=1.0):
         self.model = model
         self.think = think
+        self.temperature = temperature
         self.history = []
+
+    def copy(self):
+        """Create a copy of the LLMClient with the same model, think setting, and history."""
+        new_client = LLMClient(self.model, self.think, self.temperature)
+        new_client.history = self.history.copy()
+        return new_client
 
     def call(self, prompt, system_prompt=None):
         """Call LLM and automatically add query/response to history.
@@ -23,7 +30,13 @@ class LLMClient:
         messages.extend(self.history)
         messages.append({'role': 'user', 'content': prompt})
 
-        response = generate_with_schema(messages, model=self.model, include_thoughts=self.think, show_params=False)
+        response = generate_with_schema(
+            messages,
+            model=self.model,
+            include_thoughts=self.think,
+            temperature=self.temperature,
+            show_params=False,
+        )
         response_text = response.text.strip()
 
         # Automatically add to history

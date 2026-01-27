@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For Esperanto, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement |
+|-------------|-----------------------|--------------------|
+| Ahi | Interjection of emotional intensity. | **Interjekcio** “ha!” ← **BT:** “Ah!” |
+| quanto | Adverb of degree marking “how hard”. | **Adverbo de grado** “kiom” (precedes adjective) – no comparative direction. ← **BT:** “how” |
+| a | Prepositional marker introducing infinitive (Italian). | **Nul‑prepozicio** – omit; use bare infinitive “diri”. ← **BT:** (none) |
+| dir | Infinitive verb “to tell”. | **Infinitivo** “diri”. ← **BT:** “to tell” |
+| qual | Interrogative/relative pronoun introducing content clause. | **Interrogativa pronomo** “kio” (head of embedded question). ← **BT:** “what” |
+| era | Imperfect past of “to be”. | **Pasinta tempo** of “esti”: “estis”. ← **BT:** “was” |
+| è | Present of “to be”. | **Prezenco** of “esti”: “estas”. ← **BT:** “is” |
+| cosa | Common noun denoting “thing”. | **Substantivo** neutra, singular: “aĵo”. ← **BT:** “thing” |
+| dura | Predicate adjective meaning “hard”. | **Atributiva adjektivo** “malfacila” (predikata) – degree supplied by preceding “kiom”. ← **BT:** “hard” |
+| esta | Demonstrative adjective “this”. | **Demonstrativa determinanto** “ĉi‑tiu” agreeing with noun. ← **BT:** “this” |
+| selva | Noun “wood/forest”. | **Substantivo** “arbaro” (or “arbo”) in singular. ← **BT:** “wood” |
+| selvaggia | Adjective “wild”. | **Atributiva adjektivo** “sela”. ← **BT:** “wild” |
+| e | Coordinating conjunction linking adjectives. | **Konjunkcio** “kaj”. ← **BT:** “and” |
+| aspra | Adjective “rough”. | **Atributiva adjektivo** “kruda”. ← **BT:** “rough” |
+| e | Coordinating conjunction linking adjectives. | **Konjunkcio** “kaj”. ← **BT:** “and” |
+| forte | Adjective “dense/strong”. | **Atributiva adjektivo** “densa”. ← **BT:** “dense” |
+| che | Relative pronoun referring to “wood”. | **Relativa pronomo** “kiu”. ← **BT:** “which” |
+| nel | Prepositional phrase “in the”. | **Prepozicio** “en” + **determinanto** “la”. ← **BT:** “in the” |
+| pensier | Noun “thought”. | **Substantivo** “penso”, singular, object of “en”. ← **BT:** “thought” |
+| rinova | Present transitive verb “renews”. | **Verbo** “renovigas” (present, 3‑sg). ← **BT:** “renews” |
+| la | Definite article (optional in Esperanto). | **Determinanto** “la” (kept for literal fidelity). ← **BT:** “the” |
+| paura | Noun “fear”. | **Substantivo** “timo”, singular, direct object of “renovigas”. ← **BT:** “fear” |
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable Esperanto components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 4: Ha kiom malfacile estas diri kio estis malfacila afero / Ha kiom estas malfacile diri kio estis malfacila afero / Ha kiom estas diri kio estis malfacila afero  
+- Line 5: ĉi tiu arbo estas sova kaj kruda kaj densa / ĉi tiu arbaro estas sova kaj kruda kaj densa / ĉi tiu arbo estas kruda kaj sova kaj densa  
+- Line 6: kiu en penso renovigas la timon / kiu en la penso renovigas la timon / kiu en penso renovigas la timon
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into Esperanto lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+**Source Line:**  
+4 Ahi quanto a dir qual era è cosa dura  
+
+**Line Inventory:**  
+- Ha kiom malfacile estas diri kio estis malfacila afero  
+
+**Assembly Notes:**  
+- The phrase already contains the exclamation “Ha”, the degree adverb “kiom”, the infinitive clause and the noun phrase “malfacila afero”; no extra function‑words are required.  
+
+**Target Text:**  
+Ha kiom malfacile estas diri kio estis malfacila afero  
+
+---
+
+**Source Line:**  
+5 esta selva selvaggia e aspra e forte  
+
+**Line Inventory:**  
+- ĉi tiu arbo estas sova kaj kruda kaj densa  
+
+**Assembly Notes:**  
+- The phrase supplies the demonstrative “ĉi tiu”, the noun “arbo”, the copula “estas” and the three coordinated adjectives; no additional linking needed.  
+
+**Target Text:**  
+ĉi tiu arbo estas sova kaj kruda kaj densa  
+
+---
+
+**Source Line:**  
+6 che nel pensier rinova la paura!  
+
+**Line Inventory:**  
+- kiu en penso renovigas la timon  
+
+**Assembly Notes:**  
+- Added the required exclamation mark to match source punctuation; the relative pronoun “kiu” and prepositional phrase “en penso” already provide the correct linkage.  
+
+**Target Text:**  
+kiu en penso renovigas la timon!
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Esperanto text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 4  
+  Target Text (from Step 4): Ha kiom malfacile estas diri kio estis malfacila afero  
+  Back-Translation (literal into the reference translation's language): Ah how hard it is to say what was a hard thing  
+  Reference Translation (line‑aligned): Ah! how hard a thing it is to tell what …  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 5  
+  Target Text (from Step 4): ĉi tiu arbo estas sova kaj kruda kaj densa  
+  Back-Translation (literal into the reference translation's language): this wood is wild and rough and dense  
+  Reference Translation (line‑aligned): … this wild and rough and dense wood …  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **FAIL**  
+  Corrected Target Text: ĉi tiu arbo estas sovaĝa kaj kruda kaj densa  
+
+- Line #: 6  
+  Target Text (from Step 4): kiu en penso renovigas la timon!  
+  Back-Translation (literal into the reference translation's language): which in thought renews the fear!  
+  Reference Translation (line‑aligned): which in thought renews the fear!  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+  Corrected Target Text: kiu en la penso renovigas la timon!  
+
+**Final Status:** UNVERIFIED – failing lines: 5, 6  
+
+```esperanto
+Ha kiom malfacile estas diri kio estis malfacila afero
+ĉi tiu arbo estas sovaĝa kaj kruda kaj densa
+kiu en la penso renovigas la timon!
+```
+]]></message>
+</messages>

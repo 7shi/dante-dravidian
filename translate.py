@@ -1,119 +1,56 @@
 import argparse
+import re
+from pathlib import Path
+
 from llm import LLMClient, history_to_xml
 
-STEP1_PROMPT = """
-### Step 1: Source-Reference Alignment & Semantic Analysis
+PROMPT_MD_PATH = Path(__file__).with_name("PROMPT.md")
+_CACHED_STEP_BLOCKS: list[str] | None = None
 
-Perform a word-by-word alignment between the Source Text and the Reference Translation.
+def _extract_fenced_code_blocks(markdown_text: str) -> list[str]:
+    """Return the contents of all triple-backtick fenced code blocks."""
+    # Supports ``` and ```lang
+    pattern = re.compile(r"```[^\n]*\n(.*?)\n```", re.DOTALL)
+    return [match.group(1) for match in pattern.finditer(markdown_text)]
 
-Goal: Identify the specific English meaning and precise semantic definition for each Source token in this context.
+def _first_non_empty_line(text: str) -> str:
+    for line in text.splitlines():
+        if line.strip():
+            return line
+    return ""
 
-Instructions:
-1. Use Reference for Context: Use the Reference Translation to disambiguate polysemous words.
-2. Define Semantics: For the [Contextual Definition] column, write the specific dictionary definition that applies to this context.
-   - Example: For "trattar", do not just write "treat". Write "to discuss; to deal with a subject".
-   - Example: For "ben", write "the good; virtue".
-3. Analyze Grammar: Identify the grammatical role (Subject, Direct Object, etc.).
+def read_prompt(step_heading_prefix: str) -> str:
+    """Load a Step prompt from PROMPT.md.
 
-Table Columns:
-- [Source Word]
-- [Morphology] (Lemma, POS)
-- [English Equivalent] (Literal word aligned with Source)
-- [Contextual Definition] (Specific dictionary sense used here)
-- [Grammatical Role] (Syntactic function)
+    Finds a fenced code block whose first non-empty line starts with `step_heading_prefix`
+    (e.g., "### Step 4").
+    """
+    global _CACHED_STEP_BLOCKS
+    if _CACHED_STEP_BLOCKS is None:
+        markdown_text = PROMPT_MD_PATH.read_text(encoding="utf-8")
+        _CACHED_STEP_BLOCKS = _extract_fenced_code_blocks(markdown_text)
 
-Source Text:
-{source_text}
+    for block in _CACHED_STEP_BLOCKS:
+        if _first_non_empty_line(block).startswith(step_heading_prefix):
+            return block.strip()
 
-Reference Translation (English):
-{reference}
-""".strip()
+    available = []
+    for block in _CACHED_STEP_BLOCKS:
+        head = _first_non_empty_line(block).strip()
+        if head.startswith("### Step "):
+            available.append(head)
+    available_msg = "\n".join(f"- {h}" for h in available) if available else "(no '### Step' blocks found)"
+    raise ValueError(
+        f"Prompt block not found for prefix: {step_heading_prefix}\n"
+        f"Looked in: {PROMPT_MD_PATH}\n"
+        f"Available Step blocks:\n{available_msg}"
+    )
 
-STEP2_PROMPT = """
-### Step 2: Morphosyntactic Requirement Definition
-
-Based on the alignment and roles from Step 1, define the grammatical requirements for {target_lang}.
-
-Tasks:
-1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
-   - If Role is Direct Object -> Assign Accusative Case.
-   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
-2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
-
-Output Format (Table):
-- [Source Word]
-- [Contextual Definition] (from Step 1)
-- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
-""".strip()
-
-STEP3_PROMPT = """
-### Step 3: Pre-assembled Lexical Inventory
-
-Create a list of {target_lang} components ready for assembly.
-
-STRICT RULES:
-1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
-   - Bad: [forest] [in]
-   - Good: [forest-in] (e.g., kattil)
-2. Case Verification: Ensure the grammatical role from Step 2 is respected.
-   - Direct Object: Must use Accusative form.
-3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen {target_lang} word matches the Contextual Definition.
-
-Table Columns:
-- [Source Word]
-- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
-- [Target Lemma]
-- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
-""".strip()
-
-STEP4_PROMPT = """
-### Step 4: Slot-Based Syntactic Assembly
-
-Arrange the components from Step 3 into a strictly literal {target_lang} sentence.
-
-Universal Rules:
-1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
-2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
-3. Transparency: Explicitly show which components are used for each line to allow debugging.
-
-Target Language Specific Rules (for SOV/Agglutinative languages like {target_lang}):
-4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
-5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
-6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
-
-Final Output Format:
-For each line, provide:
-- Source Line: [Original Text]
-- Component Mapping: [List of components used from Step 3 in their new order]
-- Assembly Logic: [Brief explanation of word order changes or connections]
-- Target Text: [Final translation for this line]
-""".strip()
-
-STEP5_PROMPT = """
-### Step 5: Self-Correction via Back-Translation & Grammatical Check
-
-Perform the verification and display the results for each step:
-
-Table Columns:
-- [Line #]
-- [Target Text] (Copy the final text from Step 4)
-- [Back-Translation] (Literal English)
-- [Source Context] (Original Source text)
-- [Verification Result] (OK / Correction Needed)
-
-Rules:
-1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
-2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
-3. Correction: If there is a mismatch or grammatical error, output a corrected version.
-   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
-4. Final Output: Present the final, verified {target_lang} text in a code block, separated line by line.
-""".strip()
-
-FINAL_PROMPT = """
-Based on the verification in Step 5, output ONLY the final {target_lang} translation.
-No explanations, no tables, just the translated text line by line.
-""".strip()
-
+STEP1_PROMPT = read_prompt("### Step 1:")
+STEP2_PROMPT = read_prompt("### Step 2:")
+STEP3_PROMPT = read_prompt("### Step 3:")
+STEP4_PROMPT = read_prompt("### Step 4:")
+STEP5_PROMPT = read_prompt("### Step 5:")
 def read_text_input(text):
     """Read text from file if prefixed with @, otherwise return as-is."""
     if text.startswith('@'):
@@ -146,11 +83,6 @@ def step5(llm_client, target_lang):
     prompt = STEP5_PROMPT.format(target_lang=target_lang)
     return llm_client.call(prompt)
 
-def extract_final(llm_client, target_lang):
-    """Extract final translation from verified results."""
-    prompt = FINAL_PROMPT.format(target_lang=target_lang)
-    return llm_client.call(prompt)
-
 def print_header(prompt):
     """Print header for each step."""
     first_line = prompt.strip().splitlines()[0]
@@ -158,10 +90,13 @@ def print_header(prompt):
     print(first_line)
     print()
 
+def get_result(history):
+    """Extract final translation result from LLMClient history."""
+    return _extract_fenced_code_blocks(history[-1]["content"])[-1]
+
 def translate(client, target_lang):
     """Run the complete 5-stage structured translation process."""
-    llm_client = LLMClient(client.model, client.think)
-    llm_client.history = client.history.copy()
+    llm_client = client.copy()
 
     print_header(STEP2_PROMPT)
     step2(llm_client, target_lang)
@@ -175,11 +110,6 @@ def translate(client, target_lang):
     print_header(STEP5_PROMPT)
     step5(llm_client, target_lang)
 
-    print()
-    print("### FINAL TRANSLATION")
-    print()
-    extract_final(llm_client, target_lang)
-
     return llm_client.history
 
 if __name__ == '__main__':
@@ -188,7 +118,7 @@ if __name__ == '__main__':
     parser.add_argument('source_text', type=str,
                         help='Source text to translate (or @filename to read from file)')
     parser.add_argument('-r', '--reference', type=str, required=True,
-                        help='Reference translation in English (or @filename to read from file)')
+                        help='Reference translation (or @filename to read from file)')
     parser.add_argument('-s', '--source-lang', type=str, required=True,
                         help='Source language name (e.g., Italian)')
     parser.add_argument('-t', '--target-lang', type=str, required=True,
@@ -199,6 +129,8 @@ if __name__ == '__main__':
                         help='XML file for translation log')
     parser.add_argument('--no-think', action='store_true',
                         help='Disable thinking mode')
+    parser.add_argument('--temperature', type=float, default=0.1,
+                        help='Sampling temperature for the model (default: 0.1)')
     args = parser.parse_args()
 
     source_text = read_text_input(args.source_text)
@@ -216,8 +148,10 @@ if __name__ == '__main__':
     print("=" * 60)
     print()
 
-    llm_client = LLMClient(args.model, not args.no_think)
-    final_translation = translate(llm_client, source_lang, target_lang, source_text, reference)
+    llm_client = LLMClient(args.model, not args.no_think, temperature=args.temperature)
+    print_header(STEP1_PROMPT)
+    step1(llm_client, source_text, reference)
+    translate(llm_client, target_lang)
 
     if output_file:
         with open(output_file, 'w', encoding='utf-8') as f:

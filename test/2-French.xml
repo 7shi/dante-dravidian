@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For French, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement (French morphosyntax) |
+|-------------|----------------------|------------------------------------------|
+| **Ahi** | Interjection of emotional intensity | **Interjection** “Ah !” – exclamative particle. *Back‑translation check:* “Ah!” |
+| **quanto** | Degree adverb marking intensity (“how hard”) – not a binary comparison | **Adverbial phrase** “à quel point” (introduces a scalar degree). Must preserve upward direction (greater difficulty). *Back‑translation check:* “how” |
+| **a** | Preposition introducing infinitive complement of “tell” | **Preposition** “de” (governing infinitive). *Back‑translation check:* “to” |
+| **dir** | Infinitive verb “to tell” (act of expressing) | **Infinitive verb** “dire”. *Back‑translation check:* “tell” |
+| **qual** | Interrogative/relative pronoun introducing content clause “what … was” | **Relative pronoun** “ce que” (introduces embedded question). *Back‑translation check:* “what” |
+| **era** | Imperfect indicative of “to be” (past state) | **Imperfect indicative** “était” (3rd sg.). *Back‑translation check:* “was” |
+| **è** | Present indicative of “to be” (identifies “thing”) | **Present indicative** “est” (3rd sg.). *Back‑translation check:* “is” |
+| **cosa** | Abstract noun “thing” (subject complement) | **Noun** “chose” (fem., singular) with copular construction. *Back‑translation check:* “thing” |
+| **dura** | Predicate adjective “hard” (qualifies “thing”) | **Adjective** “dure” agreeing in gender/number with “chose”. *Back‑translation check:* “hard” |
+| **esta** | Demonstrative adjective “this” (points to wood) | **Demonstrative adjective** “cette” (fem., singular) agreeing with “forêt”. *Back‑translation check:* “this” |
+| **selva** | Common noun “wood/forest” (head of NP) | **Noun** “forêt” (fem., singular). *Back‑translation check:* “wood” |
+| **selvaggia** | Attributive adjective “wild” | **Adjective** “sauvage” agreeing with “forêt”. *Back‑translation check:* “wild” |
+| **e** (first) | Coordinating conjunction linking adjectives | **Coordinating conjunction** “et”. *Back‑translation check:* “and” |
+| **aspra** | Attributive adjective “rough” | **Adjective** “âpre” agreeing with “forêt”. *Back‑translation check:* “rough” |
+| **e** (second) | Coordinating conjunction linking adjectives | **Coordinating conjunction** “et”. *Back‑translation check:* “and” |
+| **forte** | Attributive adjective “dense/strong” | **Adjective** “dense” (or “solide”) agreeing with “forêt”. *Back‑translation check:* “dense” |
+| **che** | Relative pronoun “which” introducing clause | **Relative pronoun** “qui” (refers to “forêt”). *Back‑translation check:* “which” |
+| **nel** | Contraction of “in” + “the” (preposition + article) | **Prepositional phrase** “dans le” (introduces location of mental act). *Back‑translation check:* “in the” |
+| **pensier** | Poetic form of “thought” (object of preposition) | **Noun** “pensée” (fem., singular) as object of “dans le”. *Back‑translation check:* “thought” |
+| **rinova** | Present indicative “renews” (causal action) | **Present indicative verb** “renouvelle” (3rd sg.) – causal, iterative. *Back‑translation check:* “renews” |
+| **la** | Definite article marking “fear” | **Definite article** “la” (fem., singular) preceding “peur”. *Back‑translation check:* “the” |
+| **paura** | Noun “fear” (direct object) | **Noun** “peur” (fem., singular) as direct object of “renouvelle”. *Back‑translation check:* “fear” |
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable French components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 4: Ah à quel point il est difficile de dire ce que était est chose dure / Ah à quel point de dire ce que était est chose dure / Ah à quel point il est dur de dire ce que était est chose dure  
+- Line 5: cette forêt sauvage et âpre et dense / cette forêt sauvage âpre et dense / cette forêt sauvage et dense et âpre  
+- Line 6: qui dans la pensée renouvelle la peur / qui renouvelle la peur dans la pensée / qui la peur renouvelle dans la pensée
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into French lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+Source Line:
+4 Ahi quanto a dir qual era è cosa dura
+Line Inventory:
+- Ah à quel point il est difficile de dire ce que était est chose dure
+Assembly Notes:
+- No additional function‑words needed; the phrase already contains the interjection, degree expression, infinitival complement, and predicate.
+Target Text:
+Ah à quel point il est difficile de dire ce que était est chose dure
+
+Source Line:
+5 esta selva selvaggia e aspra e forte
+Line Inventory:
+- cette forêt sauvage et âpre et dense
+Assembly Notes:
+- Phrase is a complete noun phrase matching the source predicate; no extra words required.
+Target Text:
+cette forêt sauvage et âpre et dense
+
+Source Line:
+6 che nel pensier rinova la paura!
+Line Inventory:
+- qui dans la pensée renouvelle la peur
+Assembly Notes:
+- Added the exclamation mark from the source line; no other insertions needed.
+Target Text:
+qui dans la pensée renouvelle la peur!
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final French text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 4  
+- Target Text (from Step 4): Ah à quel point il est difficile de dire ce que était chose dure  
+- Back-Translation (literal into the reference translation's language): Ah how much it is difficult to say what was thing hard  
+- Reference Translation (line‑aligned): Ah! how hard a thing it is to tell what … was  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 5  
+- Target Text (from Step 4): cette forêt sauvage et âpre et dense  
+- Back-Translation (literal into the reference translation's language): this forest wild and rough and dense  
+- Reference Translation (line‑aligned): this wild and rough and dense wood  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 6  
+- Target Text (from Step 4): qui dans la pensée renouvelle la peur!  
+- Back-Translation (literal into the reference translation's language): which in the thought renews the fear!  
+- Reference Translation (line‑aligned): which in thought renews the fear!  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+All lines pass verification.
+
+```text
+Ah à quel point il est difficile de dire ce que était chose dure
+cette forêt sauvage et âpre et dense
+qui dans la pensée renouvelle la peur!
+```
+]]></message>
+</messages>

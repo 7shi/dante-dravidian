@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For Esperanto, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement |
+|-------------|----------------------|--------------------|
+| Tant' | “so” – intensifier of the following adjective | Render as **tiel** (adverb) modifying the predicate adjective; back‑translation: *“tiel amara” → “so bitter.”* |
+| è | Copular verb linking implicit subject “it” to predicate | Use Esperanto **estas** (present copula); back‑translation: *“estas” → “is.”* |
+| amara | Predicate adjective meaning “bitter” | Use **amara** (adjective) predicated of the subject; back‑translation: *“amara” → “bitter.”* |
+| che | Comparative subordinator introducing the benchmark clause | Translate with **ol** (comparative conjunction); back‑translation: *“ol” → “that … is.”* |
+| poco | Adverb meaning “little” that qualifies the degree of the comparative | Place **iom** before the comparative adjective; back‑translation: *“iom” → “a little.”* |
+| è (in comparative clause) | Copular verb linking “death” to the comparative predicate | Use **estas** again; back‑translation: *“estas” → “is.”* |
+| più | Comparative adverb “more” (degree of bitterness) | Use **pli** + adjective (**pli amara**) to express “more bitter”; back‑translation: *“pli amara” → “more bitter.”* |
+| morte | Noun “death”, subject of the comparative clause | Render as **mort** (noun) with appropriate case (nominative); back‑translation: *“mort” → “death.”* |
+| ma | Coordinating conjunction indicating contrast | Translate as **sed**; back‑translation: *“sed” → “but.”* |
+| per | Preposition marking purpose of the infinitive | Use **por** + infinitive; back‑translation: *“por” → “in order to.”* |
+| trattar | Infinitive “to treat / discuss” | Render as **trakti** (infinitive); back‑translation: *“trakti” → “to treat.”* |
+| del | Contraction of “di + il” → preposition “of the” | Use **de la**; back‑translation: *“de la” → “of the.”* |
+| ben | Abstract noun “good” | Render as **bono** (noun) or **bono** as a concept; back‑translation: *“bono” → “good.”* |
+| ch'i' | Relative pronoun + personal pronoun “that I” | Translate as **kiun mi** (relative clause) or **kiun mi** depending on function; back‑translation: *“kiun mi” → “that I.”* |
+| vi | Locative adverb “there” | Use **tie**; back‑translation: *“tie” → “there.”* |
+| trovai | Simple past “I found” (historic) | Render as **trovis** (past tense of **trovi**); back‑translation: *“trovis” → “found.”* |
+| dirò | Future “I will say/tell” | Use **diros** (future of **diri**); back‑translation: *“diros” → “will tell.”* |
+| de | Preposition “of” introducing the upcoming domain | Use **pri** (about) or **de** depending on nuance; here **pri** fits “about”; back‑translation: *“pri” → “of/about.”* |
+| l'altre | Definite article + adjective “the other” (plural) | Render as **la aliaj** (plural adjective + article); back‑translation: *“la aliaj” → “the other.”* |
+| cose | Noun “things” (plural) | Use **aĵoj** (plural noun) or **aĵoj**; back‑translation: *“aĵoj” → “things.”* |
+| ch'i' (second occurrence) | Relative pronoun + personal pronoun “that I” | Same as above: **kiun mi**; back‑translation: *“kiun mi” → “that I.”* |
+| v'ho | Perfect auxiliary “have … there” (locative clitic) | Use **mi havas tie** (auxiliary + locative) or **mi jam vidis tie**; for perfect of “see” we use **mi jam vidis tie**; back‑translation: *“mi jam vidis tie” → “have … there (seen).”* |
+| scorte | Past participle “seen” agreeing with plural feminine | Render as **viditaj** (past participle agreeing with **aĵoj**) or simply **vidis** in a finite clause; back‑translation: *“viditaj” → “seen.”* |
+
+**Comparative Direction Note:**  
+In the clause “death is a little more bitter,” the Esperanto construction must be **mort estas iom pli amara ol X**, where **X** is the antecedent (the “it” of line 7). The presence of **iom** guarantees the “little” qualifier, and **pli … ol** makes the comparative direction explicit (death > X).
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable Esperanto components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7: tiel amara ol iom pli amara mort / tiel amara ol mort estas iom pli amara / tiel amara ol iom pli amara estas mort  
+- Line 8: sed por trakti de la bono kiun mi trovis tie / sed por trakti la bonon kiun mi trovis tie / sed por trakti pri la bono kiun mi trovis tie  
+- Line 9: diros pri la aliaj aĵoj kiujn mi jam vidis tie / diros pri la aliaj aferoj kiujn mi jam vidis tie / diros pri la aliaj objektoj kiujn mi jam vidis tie
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into Esperanto lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+**Source Line:**  
+7 Tant' è amara che poco è più morte;
+
+**Line Inventory:**  
+- tiel amara ol mort estas iom pli amara
+
+**Assembly Notes:**  
+- No additional function‑words needed; the phrase already contains the main predicate and the comparative clause.
+
+**Target Text:**  
+tiel amara ol mort estas iom pli amara;
+
+---
+
+**Source Line:**  
+8 ma per trattar del ben ch'i' vi trovai,
+
+**Line Inventory:**  
+- sed por trakti la bonon kiun mi trovis tie
+
+**Assembly Notes:**  
+- “sed” supplies the contrastive “ma”; “por” supplies the purpose preposition required by “per”.
+
+**Target Text:**  
+sed por trakti la bonon kiun mi trovis tie,
+
+---
+
+**Source Line:**  
+9 dirò de l'altre cose ch'i' v'ho scorte.
+
+**Line Inventory:**  
+- diros pri la aliaj aĵoj kiujn mi jam vidis tie
+
+**Assembly Notes:**  
+- No extra words needed; the phrase includes the future verb, the preposition, the determiner, and the relative clause.
+
+**Target Text:**  
+diros pri la aliaj aĵoj kiujn mi jam vidis tie.
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Esperanto text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 7  
+- Target Text (from Step 4): tiel amara ol mort estas iom pli amara;  
+- Back-Translation (literal): “so bitter than death is a little more bitter;”  
+- Reference Translation (line‑aligned): So bitter is it that death is little more.  
+- Checks: End Punct **OK**, Coverage **FAIL**, Meaning Drift **FAIL**, Comparative Orientation **FAIL**, Hallucination **OK**  
+- Corrected Target Text: tiel amara ke mort estas iom pli amara;
+
+- Line #: 8  
+- Target Text (from Step 4): sed por trakti la bonon kiun mi trovis tie,  
+- Back-Translation (literal): “but to treat the good which I found there,”  
+- Reference Translation (line‑aligned): But in order to treat of the good that there I found,  
+- Checks: End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**
+
+- Line #: 9  
+- Target Text (from Step 4): diros pri la aliaj aĵoj kiujn mi jam vidis tie.  
+- Back-Translation (literal): “will say about the other things which I have already seen there.”  
+- Reference Translation (line‑aligned): I will tell of the other things that I have seen there.  
+- Checks: End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**
+
+**UNVERIFIED** – failing lines: 7  
+
+```esperanto
+tiel amara ke mort estas iom pli amara;
+sed por trakti la bonon kiun mi trovis tie,
+diros pri la aliaj aĵoj kiujn mi jam vidis tie.
+```
+]]></message>
+</messages>

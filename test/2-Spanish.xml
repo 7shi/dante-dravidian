@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For Spanish, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement |
+|------------|-----------------------|--------------------|
+| Ahi | An exclamation of emotional intensity. | Interjection **¡Ay!** (back‑translation: “Ah!”) |
+| quanto | Marks the degree of difficulty (“how hard”). | Degree adverb **cuán** (intensifier, not comparative) (back‑translation: “how”) |
+| a | Marks the infinitival complement of “tell”. | Preposition **a** introducing infinitive (back‑translation: “to”) |
+| dir | The act of expressing the unknown fact. | Infinitive verb **decir** (back‑translation: “tell”) |
+| qual | Introduces the content clause “what it was”. | Interrogative pronoun **qué** (head of embedded question) (back‑translation: “what”) |
+| era | Past state of the referent (the wood). | Imperfect indicative **era** (3ª sg.) (back‑translation: “was”) |
+| è | Present identification of the referent as a “thing”. | Present indicative **es** (3ª sg.) (back‑translation: “is”) |
+| cosa | The abstract entity whose description is difficult. | Noun **cosa** (feminine, singular) (back‑translation: “thing”) |
+| dura | Qualifies “thing” as difficult. | Predicate adjective **difícil** (feminine, singular) (back‑translation: “hard”) |
+| esta | Points to the specific wood being described. | Demonstrative adjective **esta** (feminine, singular) (back‑translation: “this”) |
+| selva | The forested area that is the subject of the description. | Noun **selva** (feminine, singular) (back‑translation: “wood/forest”) |
+| selvaggia | Attribute of the wood: untamed, natural. | Adjective **salvaje** (feminine, singular) (back‑translation: “wild”) |
+| e | Links successive adjectives. | Coordinating conjunction **y** (back‑translation: “and”) |
+| aspra | Attribute of the wood: physically harsh. | Adjective **áspera** (feminine, singular) (back‑translation: “rough”) |
+| e | Links successive adjectives. | Coordinating conjunction **y** (back‑translation: “and”) |
+| forte | Attribute of the wood: compact/solid. | Adjective **densa** (or **fuerte**) (feminine, singular); choose **densa** for “dense” (back‑translation: “dense/strong”) |
+| che | Refers back to “this wood”. | Relative pronoun **que** (introducing relative clause) (back‑translation: “which”) |
+| nel | Locates the mental action within “thought”. | Contraction **en el** (preposition + definite article) (back‑translation: “in the”) |
+| pensier | The mental representation of the wood. | Noun **pensamiento** (masculine, singular) (back‑translation: “thought”) |
+| rinova | Causes the fear to become fresh again. | Present indicative verb **renueva** (3ª sg.) (back‑translation: “renews”) |
+| la | Specifies the noun “fear”. | Definite article **el** (masculine, singular) because **miedo** is masculine (back‑translation: “the”) |
+| paura | The emotion that is re‑awakened. | Noun **miedo** (masculine, singular) (back‑translation: “fear”) |
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable Spanish components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 4: Ay cuan a decir qué era es cosa dura / Ay cuan a decir qué era es dura cosa / Ay cuan a decir qué era es cosa dura  
+- Line 5: Esta selva salvaje y áspera y fuerte / Esta selva áspera y salvaje y fuerte / Esta selva fuerte y salvaje y áspera  
+- Line 6: que en el pensamiento renueva el miedo / que en el pensamiento siempre renueva el miedo / que en el pensamiento constantemente renueva el miedo
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into Spanish lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+Source Line:
+4 Ahi quanto a dir qual era è cosa dura
+Line Inventory:
+- Ay cuan a decir qué era es cosa dura
+Assembly Notes:
+- No additional function‑words or morphology needed; the phrase already contains the required infinitive marker “a”, the interrogative “qué”, the finite verb “es”, and the predicate “cosa dura”.
+Target Text:
+Ay cuan a decir qué era es cosa dura
+
+Source Line:
+5 esta selva selvaggia e aspra e forte
+Line Inventory:
+- Esta selva salvaje y áspera y fuerte
+Assembly Notes:
+- No extra words required; the phrase supplies the demonstrative, noun, and the three coordinated adjectives.
+Target Text:
+Esta selva salvaje y áspera y fuerte
+
+Source Line:
+6 che nel pensier rinova la paura!
+Line Inventory:
+- que en el pensamiento renueva el miedo
+Assembly Notes:
+- Added the required exclamation at the end to match source punctuation; no other content added.
+Target Text:
+que en el pensamiento renueva el miedo!
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Spanish text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 4  
+- Target Text (from Step 4): Ay cuán a decir qué era es cosa dura  
+- Back-Translation (literal): “Ah how to say what was is a hard thing”  
+- Reference Translation (line‑aligned): Ah! how hard a thing it is to tell what this wild and rough and dense wood was, …  
+- Checks: End Punct **OK**, Coverage **OK**, Meaning Drift **FAIL**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Corrected Target Text: Ay cuán es cosa dura a decir qué era  
+
+- Line #: 5  
+- Target Text (from Step 4): Esta selva salvaje y áspera y fuerte  
+- Back-Translation (literal): “This forest wild and rough and strong”  
+- Reference Translation (line‑aligned): … what this wild and rough and dense wood was …  
+- Checks: End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 6  
+- Target Text (from Step 4): que en el pensamiento renueva el miedo!  
+- Back-Translation (literal): “which in the thought renews the fear!”  
+- Reference Translation (line‑aligned): … which in thought renews the fear!  
+- Checks: End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+**UNVERIFIED** – failing lines: 4  
+
+```text
+Ay cuán es cosa dura a decir qué era
+Esta selva salvaje y áspera y fuerte
+que en el pensamiento renueva el miedo!
+```
+]]></message>
+</messages>

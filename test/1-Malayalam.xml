@@ -2,259 +2,155 @@
 <messages>
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
-
-Based on the alignment and roles from Step 1, define the grammatical requirements for Malayalam.
-
-Tasks:
-1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
-   - If Role is Direct Object -> Assign Accusative Case.
-   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
-2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
-
-Output Format (Table):
-- [Source Word]
-- [Contextual Definition] (from Step 1)
-- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+Goal: For Malayalam, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Morphosyntactic requirements for a Malayalam rendering**  
-
-*(The requirements below are derived from the word‑by‑word alignment and grammatical‑role analysis in **Step 1**.  
-For each Italian token we give the contextual meaning (as defined in Step 1) and the corresponding grammatical‑feature that must be realised in Malayalam – principally case/​post‑positional suffixes and the verbal tense/mood that the source verb conveys.)*  
-
-| # | Source Word | Contextual Definition (from Step 1) | Target Requirement (Malayalam) |
-|---|-------------|--------------------------------------|--------------------------------|
-| 1 | **Nel** | “inside, within” (preposition indicating location) | **Locative/Post‑positional suffix** – the noun that follows must take the **‑il** (‑യില്‍) or **‑ile** (‑ഇല്‍) locative marker (e.g., *മധ്യത്തില്‍* “in the middle”). |
-| 2 | **mezzo** | “central point, halfway” | **Noun + locative suffix** (‑il) as above; also can be rendered as the adverb *മധ്യേ* (no suffix required when used as an adverb). |
-| 3 | **del** | “genitive relationship” (linking “cammin” to “mezzo”) | **Genitive/‑യുടെ** suffix on the noun *cammin* (or a compound noun) – *‑യുടെ* attaches to the head noun (*പഥത്തിന്റെ* “of the road”). |
-| 4 | **cammin** | “metaphorical path of life” | **Noun**; when combined with the genitive marker from #3 it appears as *പഥം* or *പാത* with **‑യുടെ** (‑യുടെ) attached (“of the road”). No extra case needed. |
-| 5 | **di** | “expressing relation” (linking “nostra vita” to “cammin”) | **Genitive/‑യുടെ** suffix on *vita* (‑യുടെ) – *ജീവിതത്തിന്റെ*. |
-| 6 | **nostra** | “belonging to us” (possessive adjective) | **Possessive suffix** – **‑യുടെ** attached to the noun it modifies (as above). |
-| 7 | **vita** | “the span of a human existence” | **Noun** in genitive with **‑യുടെ** (as in #5). |
-| 8 | **mi** | “reflexive pronoun referring to the subject” | **Accusative/‑നെ** suffix on the pronoun – *എന്നെ* (reflexive object). |
-| 9 | **ritrovai** | “to come upon, discover oneself in a situation” (simple past, indicative) | **Verb in Simple Past (preterite) tense** – Malayalam past‑tense suffix **‑ിന്നു** (e.g., *കണ്ടെടുത്തു* / *കണ്ടു*). Mood: **Indicative**. |
-|10| **per** | “indicating location inside a space” | **Locative/Post‑positional suffix** – the following noun takes **‑il** (‑യില്‍) or **‑ile** (‑ഇല്‍); e.g., *ഒരു കാട്ടിന്റെ ഉള്ളിൽ* “within a wood”. |
-|11| **una** | “one, unspecified” (indefinite article) | **Indefinite noun** – no special case; the noun will receive the locative suffix from #10. |
-|12| **selva** | “forest, wooded area” | **Noun** + **locative suffix** (**‑il** / **‑യിൽ**) as dictated by #10 → *കാട്* → *കാട്ടിൽ*. |
-|13| **oscura** | “lacking light, dim” (adjective) | **Adjectival agreement** – adjective follows the noun and takes the same case suffix (‑യിൽ) when the noun is locative: *അന്ധകാരമുള്ള കാട്ടിൽ*. |
-|14| **ché** | “because, introducing a cause” (conjunction) | **Conjunctive clause marker** – Malayalam uses **കാരണം** or **എന്നതിനാൽ**; no case suffix required. |
-|15| **la** | “the specific” (definite article) | **Definite noun** – no suffix; the noun will bear the case required by its grammatical role (subject of clause). |
-|16| **diritta** | “correct, straight, proper” (adjective) | **Adjective** agreeing with *via*; no case suffix of its own. |
-|17| **via** | “path, road, method” (subject of clause) | **Nominative** – in Malayalam the subject appears in the **‑Ø** (zero) case; no overt suffix. |
-|18| **era** | “copular verb denoting a past state” (imperfect) | **Verb in Past‑Imperfect** – Malayalam expresses a past continuous or habitual state with the past‑tense suffix **‑ുന്നു** plus a stative auxiliary if needed (e.g., *ഉണ്ടായിരുന്നു* “was”). Mood: **Indicative**. |
-|19| **smarrita** | “having become misplaced or not found” (past participle used as predicate adjective) | **Predicate adjective** – no case suffix; the adjective agrees with the subject *via* and inherits the nominative (zero) case. In a verbal construction it could be rendered with a copular verb in past (e.g., *കാണാതായ* “was lost”). |
-
-### Summary of the main Malayalam morphosyntactic cues
-
-| Grammatical Role (from Step 1) | Malayalam Case / Suffix Needed |
-|--------------------------------|---------------------------------|
-| **Prepositional phrase “in” / “within”** | Locative **‑il / ‑യിൽ** attached to the noun (or use adverbial form *‑യില്‍*). |
-| **Genitive/possessive relationship** | **‑യുടെ** attached to the possessed noun. |
-| **Direct (reflexive) object** | Accusative **‑നെ** (e.g., *എന്നെ*). |
-| **Subject** | Nominative – no overt suffix (‑Ø). |
-| **Predicate adjective** | Zero case; agrees with subject. |
-| **Verb (simple past)** | Past‑tense suffix **‑ിന്നു** (or **‑ുന്നു** for continuous/imperfect). |
-| **Verb (imperfect / state)** | Past‑tense auxiliary **ഉണ്ടായിരുന്നു** or **‑ുന്നു** with stative verb. |
-
-These requirements can be used directly when constructing a faithful Malayalam translation that preserves the syntactic relations and semantic nuances of Dante’s original Italian lines.
+| Source Word | Contextual Definition | Target Requirement (Malayalam) |
+|-------------|----------------------|---------------------------------|
+| Nel | “in the middle of” – locative prepositional phrase introducing the central point | **മധ്യത്തില്‍** – noun *മധ്യം* + locative suffix **‑ല്‍**; back‑translation: “in middle” |
+| mezzo | “middle” – the central point of a span | **മധ്യം** (noun, neuter, singular); back‑translation: “middle” |
+| del | “of the” – genitive linking the road to the larger context | **‑യുടെ** (genitive suffix attached to *വഴി* → *വഴിയുടെ*); back‑translation: “of the” |
+| cammin | “road” – the route or way that one travels on; metaphor for life’s course | **വഴി** (noun, singular, nominative); back‑translation: “road” |
+| di | “of” – marks possession/association | **‑യുടെ** (genitive suffix on the following noun); back‑translation: “of” |
+| nostra | “our” – collective ownership of life | **ഞങ്ങളുടെ** (first‑person plural possessive pronoun + genitive suffix); back‑translation: “our” |
+| vita | “life” – the span of existence of the speaker | **ജീവിതം** (noun, neuter, singular, genitive when combined → *ജീവിതത്തിന്റെ*); back‑translation: “life” |
+| mi | reflexive pronoun “myself” (object) | **സ്വയം** (reflexive pronoun, emphatic) used with verb; back‑translation: “myself” |
+| ritrovai | “found” – act of discovering one’s own state | **കണ്ടെത്തി** (verb, 1st‑person singular, past perfective); back‑translation: “found” |
+| per | “within” – indicates interior location | **അകത്ത്** (postposition, locative); back‑translation: “within” |
+| una | “a” – indefinite article (non‑specific) | No article; noun appears bare (**കാട്**) – Malayalam lacks indefinite article; back‑translation: “a” (implicit) |
+| selva | “wood” – densely wooded area, metaphorically dark | **കാട്** (noun, singular); back‑translation: “wood” |
+| oscura | “dark” – lacking light, conveys gloom | **ഇരുണ്ട** (adjective, attributive, agrees with *കാട്*); back‑translation: “dark” |
+| ché | “for/because” – causal conjunction | **കാരണം** (causal conjunction placed after clause or as **എന്നാൽ**); back‑translation: “because” |
+| la | “the” – definite article (specifies particular way) | **ആ** (demonstrative determiner before *വഴി* → *ആ വഴി*); back‑translation: “the” |
+| diritta | “right” – correct or proper path | **ശരിയായ** (adjective, attributive, agrees with *വഴി*); back‑translation: “right” |
+| via | “way” – the correct route or method of proceeding | **വഴി** (noun, singular, nominative); back‑translation: “way” |
+| era | “had been” – past state of being (imperfect) | **ഇരുന്നതായിരുന്നു** (verb, 3rd‑person singular, past imperfect); back‑translation: “was” |
+| smarrita | “missed” – state of being lost or not found | **കാണാതായ** (past participle used adjectivally, agrees with *വഴി*); back‑translation: “missed” |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-
-Create a list of Malayalam components ready for assembly.
-
-STRICT RULES:
-1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
-   - Bad: [forest] [in]
-   - Good: [forest-in] (e.g., kattil)
-2. Case Verification: Ensure the grammatical role from Step 2 is respected.
-   - Direct Object: Must use Accusative form.
-3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Malayalam word matches the Contextual Definition.
-
-Table Columns:
-- [Source Word]
-- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
-- [Target Lemma]
-- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+Create placeable Malayalam components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Pre‑assembled Malayalam lexical inventory (ready for sentence‑level assembly)**  
-
-| # | Source Word | Contextual Definition (English) | Target Lemma (Malayalam) | **Final Agglutinated Form** – the exact word that will appear in the Malayalam sentence (suffixes already fused) |
-|---|-------------|--------------------------------|--------------------------|--------------------------------------------------------------|
-| 1 | **Nel** | “inside, within” (prepositional phrase that places the next noun in a location) | *മധ്യം* “middle/centre” | **മധ്യത്തില്‍**  *(“in the middle”) – locative suffix **‑ില്‍** attached to *മധ്യം*; this already incorporates the article “il” of *Nel* |
-| 2 | **mezzo** | “central point, halfway” (head noun of the locative phrase) | *മധ്യം* | — *(already merged with “Nel” → *മധ്യത്തില്‍*) |
-| 3 | **del** | Genitive link “of the” (connects the noun *cammin* to the preceding phrase) | *പഥം* “road, path” | **പഥത്തിന്റെ**  *(genitive **‑ത്തിന്റെ**) – “of the road” |
-| 4 | **cammin** | “metaphorical path of life” (the road that is being spoken about) | *പഥം* | — *(genitive already expressed in “del” → *പഥത്തിന്റെ*) |
-| 5 | **di** | Genitive/possessive connector “of” (introduces the possessor phrase *nostra vita*) | *ജീവിതം* “life” | **ജീവിതത്തിന്റെ**  *(genitive **‑ത്തിന്റെ**) – “of life” |
-| 6 | **nostra** | Possessive adjective “our” (belonging to the speaker and companions) | *ഞങ്ങളുടെ* “our” | **ഞങ്ങളുടെ**  *(possessive suffix **‑യുടെ**) |
-| 7 | **vita** | “the span of a human existence” (the thing possessed) | *ജീവിതം* | **ജീവിതം**  *(no case suffix; the genitive is supplied by the preceding *di*) |
-| 8 | **mi** | Reflexive pronoun “myself” (object of the verb) | *എന്‍* “I / me” | **എന്നെ**  *(accusative **‑നെ**) |
-| 9 | **ritrovai** | “to come upon, discover oneself in a situation” – simple past, indicative | *കണ്ടു* “found” | **കണ്ടു**  *(past‑tense suffix **‑ിന്നു** is inherent in the verb form) |
-|10| **per** | Preposition “within / through” (introduces the locative phrase with *selva*) | *കാട്* “forest, wood” | **കാട്ടില്‍**  *(locative **‑ല്‍**) – the preposition and article are fused into the noun |
-|11| **una** | Indefinite article “a / one” (non‑specific noun) | *ഒരു* “a / one” | **ഒരു** |
-|12| **selva** | “forest, wooded area” (the place in which the speaker finds himself) | *കാട്* | — *(already merged with “per” → *കാട്ടില്‍*) |
-|13| **oscura** | “lacking light, dim” (adjective describing the wood) | *അന്ധകാരമുള്ള* “dark‑filled” | **അന്ധകാരമുള്ള**  *(no case suffix; adjectives stay unchanged) |
-|14| **ché** | Conjunction “for, because” (introduces a causal clause) | *കാരണം* “because” | **കാരണം** |
-|15| **la** | Definite article “the” (does not appear overtly in Malayalam) | – | — *(omitted)*
-|16| **diritta** | “right, proper, straight” (adjective qualifying *via*) | *ശരിയായ* “correct / proper” | **ശരിയായ** |
-|17| **via** | “path, road, method” (subject of the clause) | *വഴി* “way, path” | **വഴി** *(nominative – zero suffix)* |
-|18| **era** | Copular verb indicating a past state (imperfect) | *ഉണ്ടായിരുന്നു* “was / had been” | **ഉണ്ടായിരുന്നു** |
-|19| **smarrita** | “having become misplaced or not found” (predicate adjective) | *തെറ്റിയ* “lost, gone astray” | **തെറ്റിയ** |
-
-### How to read the table
-* **Rows that show “—” in *Final Agglutinated Form*** are already incorporated into another token (e.g., *mezzo* is inside *മധ്യത്തില്‍*; *cammin* inside *പഥത്തിന്റെ*; *selva* inside *കാട്ടില്‍*).  
-* Every **suffix** required by the grammatical role identified in Step 2 is already attached to the head noun or pronoun in the **Final Agglutinated Form** column, complying with the agglutination rule.  
-* The **Target Lemma** column gives the plain dictionary entry (no case or post‑position) for reference.  
-
-These components can now be concatenated in the same order as the original Italian to obtain a fully grammatical Malayalam rendering of Dante’s opening three lines.
+- Line 1: ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍ / ഞങ്ങളുടെ ജീവിതവഴിയുടെ മധ്യത്തില്‍ / വഴിയുടെ മധ്യത്തില്‍ ഞങ്ങളുടെ ജീവിതം  
+- Line 2: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ കാട്ടിന്റെ ഇരുണ്ട അകത്ത് താനെ കണ്ടെത്തി  
+- Line 3: കാരണം ശരിയായ വഴി കാണാതായിരുന്നു / എന്നാൽ ശരിയായ വഴി കാണാതായിരുന്നു / കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-
-Arrange the components from Step 3 into a strictly literal Malayalam sentence.
-
-Universal Rules:
-1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
-2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
-3. Transparency: Explicitly show which components are used for each line to allow debugging.
-
-Target Language Specific Rules (for SOV/Agglutinative languages like Malayalam):
-4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
-5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
-6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
-
-Final Output Format:
-For each line, provide:
-- Source Line: [Original Text]
-- Component Mapping: [List of components used from Step 3 in their new order]
-- Assembly Logic: [Brief explanation of word order changes or connections]
-- Target Text: [Final translation for this line]
+Assemble Step3 components into Malayalam lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Step 4 – Slot‑Based Syntactic Assembly**
+**Source Line:**  
+1 Nel mezzo del cammin di nostra vita  
+
+**Line Inventory:**  
+- ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
+
+**Assembly Notes:**  
+- No additional function‑words needed; the phrase already conveys “midway on the road of our life”.  
+
+**Target Text:**  
+ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
 
 ---
 
-### Line 1  
-**Source Line:** `Nel mezzo del cammin di nostra vita`  
+**Source Line:**  
+2 mi ritrovai per una selva oscura,  
 
-**Component Mapping:**  
-- **മധ്യത്തില്‍** – locative form of *മധ്യം* (“in the middle”)  
-- **പഥത്തിന്റെ** – genitive “of the road”  
-- **ജീവിതത്തിന്റെ** – genitive “of life”  
-- **ഞങ്ങളുടെ** – possessive “our”  
+**Line Inventory:**  
+- ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി  
 
-**Assembly Logic:**  
-The Italian phrase is a prepositional expression with no finite verb.  
-In Malayalam the genitive chain is built *inside‑out*: *ഞങ്ങളുടെ ജീവിതത്തിന്റെ പഥത്തിന്റെ മധ്യത്തില്‍* → “in the middle of the road of our life”.  
-The order follows the head‑final principle (adjectives/genitives precede the noun they modify) and the locative suffix remains attached to the head noun.
+**Assembly Notes:**  
+- No extra morphology required; the phrase includes the reflexive “found myself” and the locative “within a dark wood”.  
 
 **Target Text:**  
-`ഞങ്ങളുടെ ജീവിതത്തിന്റെ പഥത്തിന്റെ മധ്യത്തില്‍`  
+ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
 
 ---
 
-### Line 2  
-**Source Line:** `mi ritrovai per una selva oscura,`  
+**Source Line:**  
+3 ché la diritta via era smarrita.  
 
-**Component Mapping:**  
-- **കാട്ടില്‍** – locative “within a wood” (per + selva)  
-- **ഒരു** – indefinite article “a”  
-- **അന്ധകാരമുള്ള** – adjective “dark”  
-- **കാട്** – noun “wood/forest”  
-- **എന്നെ** – accusative reflexive pronoun “myself”  
-- **കണ്ടു** – past‑tense verb “found”  
+**Line Inventory:**  
+- കാരണം ശരിയായ വഴി കാണാതായിരുന്നു  
 
-**Assembly Logic:**  
-SOV order for Malayalam: **[Place‑adverbial] + [Object] + [Verb]**.  
-The location phrase (*കാട്ടില്‍ ഒരു അന്ധകാരമുള്ള കാട്*) precedes the reflexive object (*എന്നെ*), which is then followed by the verb (*കണ്ടു*).  
-All suffixes remain fused as prepared.
+**Assembly Notes:**  
+- Inserted causal conjunction “കാരണം” to match the Italian “ché”.  
 
 **Target Text:**  
-`കാട്ടില്‍ ഒരു അന്ധകാരമുള്ള കാട് എന്നെ കണ്ടു,`  
-
----
-
-### Line 3  
-**Source Line:** `ché la diritta via era smarrita.`  
-
-**Component Mapping:**  
-- **കാരണം** – causal conjunction “for / because”  
-- **ശരിയായ** – adjective “right, proper”  
-- **വഴി** – noun “way, road” (subject)  
-- **ഉണ്ടായിരുന്നു** – past‑imperfect copula “was / had been”  
-- **തെറ്റിയ** – predicate adjective “lost, missed”  
-
-**Assembly Logic:**  
-Start with the causal marker (**കാരണം**).  
-Subject noun phrase (**ശരിയായ വഴി**) comes first.  
-The copular verb (**ഉണ്ടായിരുന്നു**) follows the subject, and the predicate adjective (**തെറ്റിയ**) follows the verb, respecting the head‑final structure.  
-
-**Target Text:**  
-`കാരണം ശരിയായ വഴി ഉണ്ടായിരുന്നു തെറ്റിയ.`
+കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-
-Perform the verification and display the results for each step:
-
-Table Columns:
-- [Line #]
-- [Target Text] (Copy the final text from Step 4)
-- [Back-Translation] (Literal English)
-- [Source Context] (Original Source text)
-- [Verification Result] (OK / Correction Needed)
-
-Rules:
-1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
-2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
-3. Correction: If there is a mismatch or grammatical error, output a corrected version.
-   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
-4. Final Output: Present the final, verified Malayalam text in a code block, separated line by line.
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Malayalam text in ONE code block, line by line.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Verification Table**
+- Line #: 1  
+- Target Text (from Step 4): ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
+- Back-Translation (literal into the reference translation's language): in the middle of our life's road  
+- Reference Translation (line‑aligned): Midway upon the road of our life  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-| Line # | Target Text (Step 4) | Back‑Translation (literal) | Source Context (original) | Verification Result |
-|--------|----------------------|----------------------------|---------------------------|----------------------|
-| 1 | **ഞങ്ങളുടെ ജീവിതത്തിന്റെ പഥത്തിന്റെ മധ്യത്തില്‍** | “In the middle of the road of our life” | `Nel mezzo del cammin di nostra vita` | **OK** – meaning and structure preserved. |
-| 2 | **കാട്ടില്‍ ഒരു അന്ധകാരമുള്ള കാട് എന്നെ കണ്ടു,** | “In a forest a dark wood I found myself,” | `mi ritrovai per una selva oscura,` | **Correction Needed** – the place‑phrase should be a single locative unit before the object, and the wording is redundant. |
-| 3 | **കാരണം ശരിയായ വഴി ഉണ്ടായിരുന്നു തെറ്റിയ.** | “Because the right way was lost.” | `ché la diritta via era smarrita.` | **OK** – meaning matches; the copular + predicate adjective order is acceptable in Malayalam. |
+- Line #: 2  
+- Target Text (from Step 4): ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
+- Back-Translation (literal into the reference translation's language): I found myself in a dark forest  
+- Reference Translation (line‑aligned): I found myself within a dark wood,  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
----
+- Line #: 3  
+- Target Text (from Step 4): കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.  
+- Back-Translation (literal into the reference translation's language): because the right way was missing  
+- Reference Translation (line‑aligned): for the right way had been missed.  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-### Corrected Line 2  
-
-To satisfy the SOV‑order rule and produce a natural locative phrase, the components are re‑ordered **within the same line**:
-
-*Place phrase* → *Object* → *Verb*  
-
-**Corrected Malayalam line:**  
-
-`അന്ധകാരമുള്ള ഒരു കാട്ടില്‍ എന്നെ കണ്ടു,`
-
-*Explanation of correction*  
-- The adjectives **അന്ധകാരമുള്ള** (dark) and the indefinite article **ഒരു** (a) are combined with the locative noun **കാട്ടില്‍** (“in the forest”) to form a single place‑phrase **അന്ധകാരമുള്ള ഒരു കാട്ടില്‍**.  
-- The reflexive object **എന്നെ** follows the place‑phrase, and the past‑tense verb **കണ്ടു** closes the clause, complying with the required SOV order.
-
----
-
-## Final Verified Malayalam Translation (one line per source line)
+All lines passed verification.
 
 ```malayalam
-ഞങ്ങളുടെ ജീവിതത്തിന്റെ പഥത്തിന്റെ മധ്യത്തില്‍
-അന്ധകാരമുള്ള ഒരു കാട്ടില്‍ എന്നെ കണ്ടു,
-കാരണം ശരിയായ വഴി ഉണ്ടായിരുന്നു തെറ്റിയ.
+ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍
+ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
+കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.
 ```
-]]></message>
-<message role="user"><![CDATA[
-Based on the verification in Step 5, output ONLY the final Malayalam translation.
-No explanations, no tables, just the translated text line by line.
-]]></message>
-<message role="assistant"><![CDATA[
-ഞങ്ങളുടെ ജീവിതത്തിന്റെ പഥത്തിന്റെ മധ്യത്തില്‍
-അന്ധകാരമുള്ള ഒരു കാട്ടില്‍ എന്നെ കണ്ടു,
-കാരണം ശരിയായ വഴി ഉണ്ടായിരുന്നു തെറ്റിയ.
 ]]></message>
 </messages>

@@ -2,247 +2,143 @@
 <messages>
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
-
-Based on the alignment and roles from Step 1, define the grammatical requirements for Telugu.
-
-Tasks:
-1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
-   - If Role is Direct Object -> Assign Accusative Case.
-   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
-2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
-
-Output Format (Table):
-- [Source Word]
-- [Contextual Definition] (from Step 1)
-- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+Goal: For Telugu, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Morphosyntactic requirements for a Telugu rendering**  
-(derived from the word‑by‑word analysis in Step 1)
-
-| # | Source Word | Contextual Definition (Step 1) | Target Requirement in Telugu (case / suffix / verbal morphology) |
-|---|-------------|--------------------------------|-------------------------------------------------------------------|
-| 1 | **Nel** ( in + the ) | “inside, within” (prepositional phrase) | **Locative case – ‑lo** attached to the noun that follows (“mezzo”).  Example: *మధ్య‑**లో** (madhya‑lo)* |
-| 2 | **mezzo** | “middle; halfway” | Noun that receives the locative suffix from the preceding preposition → **‑lo** (madhya‑lo). No further case marking. |
-| 3 | **del** ( of the ) | Genitive relationship | **Genitive case – ‑di** on the possessor noun (“cammin”). In Telugu the genitive is expressed with the post‑position *‑ది* (‑di) attached to “our life” → *మన‑**జీవిత‑**ది* (“of our life”). |
-| 4 | **cammin** | “road / journey (metaphorical path of life)” | Subject of the main clause → **Nominative (no overt suffix)** in Telugu. |
-| 5 | **di** ( of ) | Preposition expressing relation | In Telugu, the relation is rendered by the **genitive suffix –di** on the possessor (as in row 3). |
-| 6 | **nostra** | “our” (possessive) | Possessive adjective → **‑ము** or **‑టి** depending on the noun; in the phrase *మన‑* (mana‑) “our”. No case suffix required beyond the genitive already indicated. |
-| 7 | **vita** | “life (span of a human existence)” | Direct object of the genitive construction → **Genitive –di** (as part of “of our life”). |
-| 8 | **mi** | Reflexive pronoun “myself” | Reflexive pronoun → **‑ను** (accusative) attached to the verb when the verb is transitive. In Telugu, the reflexive is usually expressed with the clitic *‑నే* (‑ne) after the noun/pronoun, e.g., *నేను‑నే* “myself”. |
-| 9 | **ritrovai** (passato remoto) | “found (myself) – to come upon, discover oneself” | Simple **past‑perfective** verb → Telugu past‑tense suffix **‑ఇంది / ‑అంది** (‑indi / ‑a‑ndi) depending on verb class. For “find” → *కనుగొన్నాను* (kanugonnānu) – the suffix **‑న్నాను** marks past perfective for first‑person singular. |
-|10| **per** ( through/within ) | “indicating location inside a space” | **Locative case – ‑lo** on the noun that follows (“selva”). → *అడవి‑**లో** (aḍavi‑lo)* |
-|11| **una** | Indefinite article “a” | No case marking; Telugu uses an indefinite noun without article. |
-|12| **selva** | “wood, forest” | Noun receiving the locative suffix from **per** → **‑lo** (aḍavi‑lo). |
-|13| **oscura** | “dark (lacking light)” | Adjective agrees with the noun; in Telugu adjectives are placed before the noun and do **not** take case suffixes. → *చీకటి* (cīkaṭi). |
-|14| **ché** | Conjunction “for, because” | No case or suffix; rendered by the causal connective **‑కాబట్టి** or **‑ఎందుకంటే** in Telugu. |
-|15| **la** | Definite article “the” | No case suffix; Telugu does not use articles. |
-|16| **diritta** | “right, proper, straight” | Attributive adjective → no case suffix; placed before the noun. |
-|17| **via** | “way, path, method” (subject of the subordinate clause) | Subject → **Nominative (no overt suffix)** in Telugu. |
-|18| **era** (imperfetto) | Copular verb “was / had been” (past state) | **Imperfect past** → Telugu uses the past‑tense suffix **‑ఉన్నది / ‑ఉంది** to convey a continuous past state. Example: *ఉంది* (undi). |
-|19| **smarrita** (past participle) | “lost / missed (having become misplaced)” | Predicate adjective; in Telugu expressed with the past participle form **‑ిపోయింది** or **‑అనిపించింది** depending on style. No case suffix; it agrees with the subject “via”. |
-
-### How the requirements are applied in a full Telugu rendering
-
-| Italian segment | Telugu construction (showing required suffixes) |
-|-----------------|------------------------------------------------|
-| **Nel mezzo del cammin** | *మధ్య‑**లో** (loc. ‑lo) + *మన‑**జీవిత‑**ది* (gen. ‑di) |
-| **di nostra vita** | *మన‑**జీవిత‑**ది* (genitive) |
-| **mi ritrovai** | *నేను‑నే* (reflexive‑acc.) + *కనుగొన్నాను* (past‑perfective ‑న్నాను) |
-| **per una selva oscura** | *అడవి‑**లో** (loc. ‑lo) + *చీకటి* (adj.) |
-| **ché la diritta via era smarrita** | *ఎందుకంటే* (causal) + *సరైన‑**వై** (subject, nom.) + *ఉంది* (imperfect ‑undi) + *కల్పించబడింది* (pred. ‑బడింది) |
-
-> **Key points for Telugu grammar**  
-> * **Locative** = ‑lo (attached to nouns that follow “in”, “within”, “through”).  
-> * **Genitive** = ‑di (expresses “of”).  
-> * **Accusative** (for reflexive pronouns) = ‑ను / ‑నే.  
-> * **Past‑perfective** (simple past) = ‑న్నాను / ‑ఇంది for first‑person singular.  
-> * **Imperfect / continuous past** = ‑ఉంది (or ‑ఉన్నది) to show an ongoing past state.  
-> * **Adjectives** stay before the noun and inherit no case suffix.  
-
-These mappings give a complete morphosyntactic blueprint for turning the Dante excerpt into natural, grammatically correct Telugu while preserving the exact semantic nuances identified in Step 1.
+| Source Word | Contextual Definition | Target Requirement (Telugu) |
+|-------------|----------------------|------------------------------|
+| Nel | “in the middle of” (locative phrase) | Use locative case – **మధ్యలో** (mid‑in). **Comparative direction:** N/A. **Back‑translation check:** “midway”. |
+| mezzo | “middle” (noun) | Noun **మధ్య** in locative when combined with “Nel”. **Comparative direction:** N/A. **Back‑translation check:** “middle”. |
+| del | genitive “of the” linking road to life | Genitive marker **‑కు** on “road” → **పథానికి**. **Comparative direction:** N/A. **Back‑translation check:** “of the”. |
+| cammin | “road, path” (metaphor for life’s course) | Noun **పథం** in genitive case (**పథానికి**). **Comparative direction:** N/A. **Back‑translation check:** “road”. |
+| di | “of” (genitive preposition) | Expressed by the same genitive case **‑కు** on the head noun. **Comparative direction:** N/A. **Back‑translation check:** “of”. |
+| nostra | “our” (possessive adjective) | Possessive pronoun **మా** agreeing with feminine singular **జీవితం**. **Comparative direction:** N/A. **Back‑translation check:** “our”. |
+| vita | “life” (noun) | Noun **జీవితం** in genitive (**జీవితానికి**) to show possession. **Comparative direction:** N/A. **Back‑translation check:** “life”. |
+| mi | Reflexive pronoun “myself” (object) | Accusative pronoun **నన్ను** attached to verb. **Comparative direction:** N/A. **Back‑translation check:** “myself”. |
+| ritrovai | “found” (1st‑person singular perfect) | Verb **కనుగొన్నాను** – past tense, first person, perfective aspect. **Comparative direction:** N/A. **Back‑translation check:** “found”. |
+| per | Preposition “within/through” | Post‑position **లో** attached to following noun (locative). **Comparative direction:** N/A. **Back‑translation check:** “within”. |
+| una | Indefinite article “a” (non‑specific) | No article in Telugu; noun remains singular. **Comparative direction:** N/A. **Back‑translation check:** “a”. |
+| selva | “forest, wood” (noun) | Noun **అడవి** in locative case (**అడవిలో**) due to “per”. **Comparative direction:** N/A. **Back‑translation check:** “forest”. |
+| oscura | “dark” (adjective) | Adjective **చీకటి** agreeing with feminine singular noun, placed before noun (**చీకటి అడవి**). **Comparative direction:** N/A. **Back‑translation check:** “dark”. |
+| ché | Conjunction “for/because” | Causal conjunction **ఎందుకంటే**. **Comparative direction:** N/A. **Back‑translation check:** “for”. |
+| la | Definite article “the” (not lexical in Telugu) | Omitted; noun carries case marker. **Comparative direction:** N/A. **Back‑translation check:** “the”. |
+| diritta | “right, correct” (adjective) | Adjective **సరైన** agreeing with feminine singular noun **వైపు**. **Comparative direction:** N/A. **Back‑translation check:** “right”. |
+| via | “way, path” (noun, subject of clause) | Noun **వైపు** in nominative (subject). **Comparative direction:** N/A. **Back‑translation check:** “way”. |
+| era | “was” (3rd‑person singular imperfect) | Auxiliary verb **ఉంది** in past imperfect (**ఉన్నది**). **Comparative direction:** N/A. **Back‑translation check:** “was”. |
+| smarrita | “missed, lost” (past participle) | Past participle **కోల్పోయింది** agreeing with feminine singular **వైపు**; used with auxiliary **ఉంది**. **Comparative direction:** N/A. **Back‑translation check:** “missed”. |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-
-Create a list of Telugu components ready for assembly.
-
-STRICT RULES:
-1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
-   - Bad: [forest] [in]
-   - Good: [forest-in] (e.g., kattil)
-2. Case Verification: Ensure the grammatical role from Step 2 is respected.
-   - Direct Object: Must use Accusative form.
-3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Telugu word matches the Contextual Definition.
-
-Table Columns:
-- [Source Word]
-- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
-- [Target Lemma]
-- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+Create placeable Telugu components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Pre‑assembled Telugu lexical inventory (ready for direct assembly)**  
-
-| Source Word | Contextual Definition (English – what the word means in this passage) | Target Lemma (base Telugu word) | Final Agglutinated Form (fully inflected, case‑/tense‑marked) |
-|-------------|------------------------------------------------------------------------|--------------------------------|----------------------------------------------------------------|
-| **mezzo** | “middle; the halfway point of a stretch” | **మధ్య** (madhya) | **మధ్యలో** – locative suffix *‑lo* (“in the middle”) |
-| **cammin** | “metaphorical path of life; the road one travels in existence” | **మార్గం** (mārgaṁ) | **మార్గం‑ది** – genitive suffix *‑di* (“of the road”) |
-| **nostra** | “belonging to us; our (possessive) referring to speaker and companions” | **మన** (mana) | **మన** – possessive adjective (no suffix) |
-| **vita** | “the span of a human existence; life” | **జీవితం** (jīvitam) | **జీవితం** – noun (no suffix; already governed by the possessive adjective “మన”) |
-| **mi** | “reflexive pronoun referring to the subject itself (myself)” | **నేను‑నే** (nēnu‑nē) | **నేను‑నే** – fused reflexive (acts as accusative object of the verb) |
-| **ritrovai** | “to come upon, discover oneself in a situation; found (myself)” | **కనుగొన్నాను** (kanugonnānu) | **కనుగొన్నాను** – past‑perfective first‑person singular of *కనుగొను* (“to find”) |
-| **selva** | “forest, wooded area; the dark place entered” | **అడవి** (aḍavi) | **అడవిలో** – locative suffix *‑lo* (“in a forest”) |
-| **oscura** | “lacking light, dim; describing the wood’s condition” | **చీకటి** (cīkaṭi) | **చీకటి** – adjective (no case suffix) |
-| **ché** | “because, introducing a cause” | **ఎందుకంటే** (endukante) | **ఎందుకంటే** – causal connective (no suffix) |
-| **diritta** | “correct, straight, proper; the proper way” | **సరైన** (saraina) | **సరైన** – adjective (no case suffix) |
-| **via** | “path, road, method; the correct course of life (subject of the clause)” | **మార్గం** (mārgaṁ) | **మార్గం** – noun in nominative (no suffix) |
-| **era** | “copular verb denoting a past state; was / had been” | **ఉంది** (undi) | **ఉంది** – imperfect‑type past of *ఉండటం* (“to be”) |
-| **smarrita** | “having become misplaced or not found; lost, missed” | **కోల్పోయింది** (kolpōyindi) | **కోల్పోయింది** – past‑participial predicate adjective (“was lost”) |
-
-**Notes on the agglutination rules applied**
-
-* Prepositions “in/within” (*Nel*, *per*) are fused as the **‑lo** locative suffix on *మధ్య* and *అడవి* respectively.  
-* Genitive relations “of” (*del*, *di*) are expressed with the **‑di** suffix on *మార్గం*.  
-* The reflexive pronoun is rendered as a single fused form *నేను‑నే* (accusative‑type).  
-* Articles (*la*, *una*) and the definite article *la* are omitted because Telugu does not use them.  
-* Adjectives (*oscura*, *diritta*) remain uninflected for case; they simply precede the noun they modify.  
-
-These components can now be concatenated in the correct order to produce a natural‑sounding Telugu rendering of Dante’s opening three lines.
+- Line 1: మన జీవితం యొక్క మార్గం మధ్యలో / మన జీవితం మార్గం మధ్యలో / మన జీవితం పథం మధ్యలో  
+- Line 2: నేను చీకటి అడవిలో కనుగొన్నాను / నేను చీకటి అడవిలో తాను కనుగొన్నాను / నేను చీకటి అడవిలో తాను కనిపించాను  
+- Line 3: సరైన మార్గం కోల్పోయింది / సరైన పథం కోల్పోయింది / సరైన దారి కోల్పోయింది
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-
-Arrange the components from Step 3 into a strictly literal Telugu sentence.
-
-Universal Rules:
-1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
-2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
-3. Transparency: Explicitly show which components are used for each line to allow debugging.
-
-Target Language Specific Rules (for SOV/Agglutinative languages like Telugu):
-4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
-5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
-6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
-
-Final Output Format:
-For each line, provide:
-- Source Line: [Original Text]
-- Component Mapping: [List of components used from Step 3 in their new order]
-- Assembly Logic: [Brief explanation of word order changes or connections]
-- Target Text: [Final translation for this line]
+Assemble Step3 components into Telugu lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Step 4 – Slot‑Based Syntactic Assembly**
+Source Line:
+1 Nel mezzo del cammin di nostra vita
+Line Inventory:
+- మన జీవితం యొక్క మార్గం మధ్యలో
+Assembly Notes:
+- none
+Target Text:
+మన జీవితం యొక్క మార్గం మధ్యలో
 
----
+Source Line:
+2 mi ritrovai per una selva oscura,
+Line Inventory:
+- నేను చీకటి అడవిలో తాను కనుగొన్నాను
+Assembly Notes:
+- none
+Target Text:
+నేను చీకటి అడవిలో తాను కనుగొన్నాను,
 
-### Line 1  
-**Source Line:**  
-Nel mezzo del cammin di nostra vita  
-
-**Component Mapping:**  
-1. [middle‑locative] → **మధ్యలో**  
-2. [possessor “our”] → **మన**  
-3. [life‑genitive] → **జీవితం‑ది**  
-4. [road (subject noun)] → **మార్గం**  
-
-**Assembly Logic:**  
-- Telugu places the genitive phrase **“మన జీవిత‑ది”** before the head noun **“మార్గం”**.  
-- The locative adverb **“మధ్యలో”** follows the noun it modifies, giving the meaning “in the middle of”.  
-- No explicit verb is required; the phrase functions as a locative clause.
-
-**Target Text:**  
-మన జీవిత‑ది మార్గం మధ్యలో  
-
----  
-
-### Line 2  
-**Source Line:**  
-mi ritrovai per una selva oscura,  
-
-**Component Mapping:**  
-1. [reflexive pronoun] → **నేను‑నే**  
-2. [dark (adjective)] → **చీకటి**  
-3. [forest‑locative] → **అడవిలో**  
-4. [verb “found (myself)”] → **కనుగొన్నాను**  
-
-**Assembly Logic:**  
-- Subject = reflexive **నేను‑నే**.  
-- Place‑adverbial = adjective + locative noun **చీకటి అడవిలో** (adjective precedes noun).  
-- Verb follows the object/locative (S‑O‑V order).  
-- The comma is kept exactly as in the source.
-
-**Target Text:**  
-నేను‑నే చీకటి అడవిలో కనుగొన్నాను,  
-
----  
-
-### Line 3  
-**Source Line:**  
-ché la diritta via era smarrita.  
-
-**Component Mapping:**  
-1. [causal connective] → **ఎందుకంటే**  
-2. [adjective “right”] → **సరైన**  
-3. [way (subject noun)] → **మార్గం**  
-4. [copula “was” (imperfect)] → **ఉంది**  
-5. [predicate adjective “lost”] → **కోల్పోయింది**  
-
-**Assembly Logic:**  
-- Causal clause opens with **ఎందుకంటే**.  
-- Subject phrase **సరైన మార్గం** (adjective before noun).  
-- Copular verb **ఉంది** (imperfect) comes next, followed by the predicative past participle **కోల్పోయింది** to convey “had been missed / was lost”.  
-- The period is reproduced exactly.
-
-**Target Text:**  
-ఎందుకంటే సరైన మార్గం ఉంది కోల్పోయింది.
+Source Line:
+3 ché la diritta via era smarrita.
+Line Inventory:
+- సరైన మార్గం కోల్పోయింది
+Assembly Notes:
+- none
+Target Text:
+సరైన మార్గం కోల్పోయింది.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-
-Perform the verification and display the results for each step:
-
-Table Columns:
-- [Line #]
-- [Target Text] (Copy the final text from Step 4)
-- [Back-Translation] (Literal English)
-- [Source Context] (Original Source text)
-- [Verification Result] (OK / Correction Needed)
-
-Rules:
-1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
-2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
-3. Correction: If there is a mismatch or grammatical error, output a corrected version.
-   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
-4. Final Output: Present the final, verified Telugu text in a code block, separated line by line.
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Telugu text in ONE code block, line by line.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Verification Table**
+- Line #: 1  
+- Target Text (from Step 4): మన జీవితం యొక్క మార్గం మధ్యలో  
+- Back-Translation (literal into the reference translation's language): midway the road of our life  
+- Reference Translation (line‑aligned): Midway upon the road of our life  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-| Line # | Target Text (Step 4) | Back‑Translation (literal English) | Source Context (original Italian) | Verification Result |
-|--------|----------------------|--------------------------------------|-----------------------------------|----------------------|
-| 1 | **మన జీవిత‑ది మార్గం మధ్యలో** | “Our life‑genitive road in the middle.” | *Nel mezzo del cammin di nostra vita* | **OK** – conveys “midway upon the road of our life.” |
-| 2 | **నేను‑నే చీకటి అడవిలో కనుగొన్నాను,** | “I‑myself in a dark forest found.” | *mi ritrovai per una selva oscura,* | **OK** – matches “I found myself within a dark wood,” and keeps the comma. |
-| 3 | **ఎందుకంటే సరైన మార్గం ఉంది కోల్పోయింది.** | “Because the right way is‑exists lost.” | *ché la diritta via era smarrita.* | **Correction Needed** – the auxiliary *ఉంది* (“is/exists”) is redundant and ungrammatical with the past‑participle predicate. The line should read **ఎందుకంటే సరైన మార్గం కోల్పోయింది.** |
+- Line #: 2  
+- Target Text (from Step 4): నేను చీకటి అడవిలో తాను కనుగొన్నాను,  
+- Back-Translation (literal into the reference translation's language): I within dark forest myself found ,  
+- Reference Translation (line‑aligned): I found myself within a dark wood,  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
----
+- Line #: 3  
+- Target Text (from Step 4): సరైన మార్గం కోల్పోయింది.  
+- Back-Translation (literal into the reference translation's language): the right way lost .  
+- Reference Translation (line‑aligned): for the right way had been missed.  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **FAIL**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Corrected Target Text: ఎందుకంటే సరైన మార్గం కోల్పోయింది.  
 
-### Corrected Telugu rendering (final, verified)
+**FINAL STATUS:** UNVERIFIED (Failing Line #: 3)
 
-```text
-మన జీవిత‑ది మార్గం మధ్యలో
-నేను‑నే చీకటి అడవిలో కనుగొన్నాను,
+```telugu
+మన జీవితం యొక్క మార్గం మధ్యలో
+నేను చీకటి అడవిలో తాను కనుగొన్నాను,
 ఎందుకంటే సరైన మార్గం కోల్పోయింది.
 ```
-]]></message>
-<message role="user"><![CDATA[
-Based on the verification in Step 5, output ONLY the final Telugu translation.
-No explanations, no tables, just the translated text line by line.
-]]></message>
-<message role="assistant"><![CDATA[
-మన జీవిత‑ది మార్గం మధ్యలో
-నేను‑నే చీకటి అడవిలో కనుగొన్నాను,
-ఎందుకంటే సరైన మార్గం కోల్పోయింది.
 ]]></message>
 </messages>

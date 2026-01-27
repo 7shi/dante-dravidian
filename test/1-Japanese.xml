@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement (Japanese morphosyntax) |
+|-------------|----------------------|--------------------------------------------|
+| **Nel** | “in the middle of” – locative prepositional phrase introducing the central point | Use the locative particle **で** after a noun phrase denoting “midway” (e.g., **人生の途中で**). **Back‑translation:** “midway (of life)‑LOC”. |
+| **mezzo** | The central point of a span; here the midpoint of life’s journey | Render as the noun **途中** (“mid‑point”) modified by **の** to link to **人生**. **Back‑translation:** “midway”. |
+| **del** | Genitive linking “road” to the larger context (“of the”) | Use the genitive particle **の** to connect **道** to **人生** (e.g., **人生の道**). **Back‑translation:** “road‑GEN of life”. |
+| **cammin** | The route or way that one travels on; metaphor for life’s course | Translate as **道** (noun). Mark as the head of the noun phrase. **Back‑translation:** “road”. |
+| **di** | Marks possession/association between “road” and “our life” | Use **の** to link **道** to **我々の人生** (e.g., **我々の人生の道**). **Back‑translation:** “road‑GEN of our life”. |
+| **nostra** | Belonging to the speaker and companions; collective ownership of life | Render as the possessive adjective **我々の** (or **私たちの**) preceding **人生**. **Back‑translation:** “our”. |
+| **vita** | The span of existence of the speaker; the overall journey | Translate as **人生** (noun). **Back‑translation:** “life”. |
+| **mi** | Reflexive pronoun, 1st‑person singular (object) | Use the reflexive pronoun **自分を** or the verb‑internal reflexive **自分で** depending on the verb; here attach to **見つけた** as **自分を**. **Back‑translation:** “myself”. |
+| **ritrovai** | “found” – act of discovering or realizing one’s own state (simple past) | Use the past form of **見つける** → **見つけた** (or **見出した**). No tense‑aspect ambiguity. **Back‑translation:** “found”. |
+| **per** | Indicates interior location inside something (“within”) | Use the locative particle **で** after the noun phrase **暗い森** (e.g., **暗い森で**). **Back‑translation:** “within”. |
+| **una** | Indefinite article “a” (non‑specific noun) | Japanese does not mark indefiniteness; omit article but keep noun singular. **Back‑translation:** (none). |
+| **selva** | A densely wooded area; metaphorically dark and confusing | Translate as **森** (noun). Add adjective **暗い** for “dark”. **Back‑translation:** “forest”. |
+| **oscura** | Lacking light; conveys gloom and uncertainty | Render as the i‑adjective **暗い** modifying **森**. **Back‑translation:** “dark”. |
+| **ché** | Conjunction “for” introducing a causal clause | Use the causal conjunction **ので** or **から** after the preceding clause (e.g., **…から**). **Back‑translation:** “because”. |
+| **la** | Definite article “the” (specifies particular way) | Japanese omits articles; rely on context. **Back‑translation:** (none). |
+| **diritta** | Correct or proper; the morally/technically correct path | Translate as **正しい** (i‑adjective) modifying **道**. **Back‑translation:** “right”. |
+| **via** | The correct route or method of proceeding (noun) | Render as **道** (noun). **Back‑translation:** “way”. |
+| **era** | Past state of being; auxiliary for passive construction | Use the past copula **だった** after the noun phrase **正しい道**. **Back‑translation:** “was”. |
+| **smarrita** | State of being lost or not found; the correct way is absent | Use the past participial adjective **失われた** (or **見失われた**) modifying **道**. **Back‑translation:** “lost”. |
+
+*Comparative direction*: No comparative or degree constructions appear; therefore no comparative direction is required (N/A).
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable Japanese components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1: 人生の途中で / 人生の半ばで / 人生の中ほどで  
+- Line 2: 暗い森の中で自分を見つけた / 暗い森に自分を見出した / 暗い森で自分を発見した  
+- Line 3: 正しい道は失われていた / 正しい道が見失われていた / 正しい道は失くされていた
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into Japanese lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+**Source Line:**  
+1 Nel mezzo del cammin di nostra vita  
+
+**Line Inventory:**  
+- 人生の途中で  
+
+**Assembly Notes:**  
+- No additional function‑words needed; the phrase already satisfies the “midway” sense and the implicit “road of life” metaphor.  
+
+**Target Text:**  
+人生の途中で  
+
+---
+
+**Source Line:**  
+2 mi ritrovai per una selva oscura,  
+
+**Line Inventory:**  
+- 暗い森の中で自分を見つけた  
+
+**Assembly Notes:**  
+- Added the causal particle **から** after the phrase to link to the next line (function‑word only).  
+
+**Target Text:**  
+暗い森の中で自分を見つけたから,  
+
+---
+
+**Source Line:**  
+3 ché la diritta via era smarrita.  
+
+**Line Inventory:**  
+- 正しい道は失われていた  
+
+**Assembly Notes:**  
+- No extra content added; the phrase expresses the lost “right way”.  
+
+**Target Text:**  
+正しい道は失われていた.
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Japanese text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 1  
+- Target Text (from Step 4): 人生の途中で  
+- Back-Translation (literal): midway in life  
+- Reference Translation (line‑aligned): Midway upon the road of our life  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 2  
+- Target Text (from Step 4): 暗い森の中で自分を見つけたから,  
+- Back-Translation (literal): because I found myself in a dark forest ,  
+- Reference Translation (line‑aligned): I found myself within a dark wood,  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **FAIL**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Corrected Target Text: 暗い森の中で自分を見つけた,  
+
+- Line #: 3  
+- Target Text (from Step 4): 正しい道は失われていた.  
+- Back-Translation (literal): the correct way was lost.  
+- Reference Translation (line‑aligned): for the right way had been missed.  
+- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+**UNVERIFIED** – Failing Line #: 2  
+
+```text
+人生の途中で
+暗い森の中で自分を見つけた,
+正しい道は失われていた.
+```
+]]></message>
+</messages>

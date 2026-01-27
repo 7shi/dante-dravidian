@@ -2,258 +2,146 @@
 <messages>
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
-
-Based on the alignment and roles from Step 1, define the grammatical requirements for Telugu.
-
-Tasks:
-1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
-   - If Role is Direct Object -> Assign Accusative Case.
-   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
-2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
-
-Output Format (Table):
-- [Source Word]
-- [Contextual Definition] (from Step 1)
-- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+Goal: For Telugu, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
 ]]></message>
 <message role="assistant"><![CDATA[
-## Step 2 – Morphosyntactic Requirement Definition (Source → Telugu)
-
-| # | Source Word | Contextual Definition (from Step 1) | Target Requirement in Telugu |
-|---|-------------|--------------------------------------|------------------------------|
-| 1 | **Ahi** | Interjection expressing pain, lament or amazement | No morphosyntactic case or tense needed (exclamatory particle – rendered as “అయ్యో!”) |
-| 2 | **quanto** | Degree adverb “how” | No case; functions as an adverbial modifier of the predicate (keeps adverbial form) |
-| 3 | **a** | Preposition “to” (introduces infinitive) | No case on the following verb; Telugu infinitive is formed with the suffix **‑da / ‑dā** (e.g., “cheyy‑da”) |
-| 4 | **dir** | “to tell, to relate in words” (infinitive) | Use Telugu infinitive **‑da** (చెప్ప‑దా) – no case marking |
-| 5 | **qual** | Interrogative adjective “which” (object of *dir*) | Requires **Accusative case** on the noun it modifies → **‑ni** (e.g., “ఏది‑ని” = “which‑ACC”) |
-| 6 | **era** | Imperfect past “was” (state in the past) | **Past‑imperfect tense** → Telugu simple past (‑అను / ‑అది) or past continuous “ఉన్నది” depending on style; no case |
-| 7 | **è** | Present “is” (copula) | **Present tense** → Telugu present copula “ఉంది / ఉంది” (no case) |
-| 8 | **cosa** | “thing, matter” (subject) | **Nominative (unmarked)** – no suffix |
-| 9 | **dura** | “hard, difficult” (predicative adjective) | No case; agrees with the nominative subject “cosa” (no suffix) |
-|10| **esta** | Demonstrative “this” (determinant of *selva*) | No case; agrees with the noun it determines (nominative) |
-|11| **selva** | “wood / forest” (appositive noun renaming *cosa*) | **Nominative (unmarked)** – same case as its antecedent “cosa” |
-|12| **selvaggia** | “wild” (attribute) | No case; adjective agrees with the noun in nominative |
-|13| **e** (first) | Coordinating conjunction “and” | No case |
-|14| **aspra** | “rough” (attribute) | No case |
-|15| **e** (second) | Coordinating conjunction “and” | No case |
-|16| **forte** | “dense / strong” (attribute) | No case |
-|17| **che** | Relative pronoun “which” (subject of relative clause) | No case; introduces a relative clause – Telugu uses relative particle **‑ని** or **‑ది** after the antecedent; the antecedent remains nominative |
-|18| **nel** | Prepositional phrase “in the” (locative) | The noun that follows must bear the **Locative case** → suffix **‑lo** (e.g., “చింతన‑లో”) |
-|19| **pensier** | “thought” (object of the locative preposition) | **Locative case** → **‑lo** (చింతన‑లో) |
-|20| **rinova** | “renews, revives” (present indicative) | **Present tense** → Telugu present verb form (‑చేస్తుంది / ‑పునరుద్ధరిస్తుంది) |
-|21| **la** | Definite article (feminine singular) – “the” | No case in Telugu (articles are not expressed) |
-|22| **paura** | “fear” (direct object of *rinova*) | Requires **Accusative case** → suffix **‑ni** (భయ‑ని) |
-
-### How the requirements are applied in a Telugu rendering  
-
-A possible literal‑style Telugu version that respects the above morphosyntactic constraints:
-
-```
-అయ్యో! ఎంతగా చెప్పాలి ఏమిటి‑ని, ఇది‑ఓ
-అజ్ఞాత‑అడవి‑అలొ, వన‑అలస‑మరియు‑బలవంత‑అడవి,
-అది‑చింతన‑లో భయ‑ని పునరుద్ధరిస్తుంది!
-```
-
-Explanation of the marked elements:
-
-| Telugu fragment | Source correspondence | Case / Tense note |
-|-----------------|-----------------------|-------------------|
-| **ఏమిటి‑ని**   | *qual* (ACC)          | Accusative suffix **‑ni** on the interrogative pronoun |
-| **ఇది‑ఓ**      | *esta selva* (Nom)    | Demonstrative + noun in nominative (no suffix) |
-| **అజ్ఞాత‑అడవి‑అలొ** | *selva selvaggia e aspra e forte* (Nom) | Adjectives agree in nominative; the whole phrase stays nominative |
-| **చింతన‑లో**  | *nel pensier* (Loc)   | Locative suffix **‑lo** |
-| **భయ‑ని**      | *la paura* (Acc)      | Accusative suffix **‑ni** |
-| **పునరుద్ధరిస్తుంది** | *rinova* (Pres) | Present‑tense verb |
-
-All other words (interjections, conjunctions, adjectives, copula) follow the same pattern: they either remain uninflected (nominative) or are expressed by separate particles that do not involve case morphology. This table therefore supplies the complete set of **Telugu morphosyntactic requirements** derived from the Italian source analysis.
+| Source Word | Contextual Definition | Target Requirement (Telugu) |
+|-------------|----------------------|------------------------------|
+| Ahi | Interjection expressing strong emotion | **Interjection** “అయ్యో!” placed clause‑initially. <br>**Back‑translation:** “Ah!” |
+| quanto | Degree adverb intensifying *hard* (how hard) | **Degree adverb** “ఎంత” modifying the adjective *hard*; direction is **high degree** (not a comparison). <br>**Back‑translation:** “how” |
+| a | Prepositional marker introducing infinitival complement | **Dative case marker** “కు” attached to the infinitive verb (e.g., “చెప్పడానికి”). <br>**Back‑translation:** “to” |
+| dir | Infinitive verb “to tell” | **Infinitive verb** “చెప్పు” (or “చెప్పడానికి”) with appropriate aspect. <br>**Back‑translation:** “tell” |
+| qual | Interrogative/relative pronoun introducing content clause | **Interrogative pronoun** “ఏది” introducing the embedded question. <br>**Back‑translation:** “what” |
+| era | Imperfect past of *to be* (was) | **Past imperfect verb** “ఉన్నది” (3 sg.) indicating a past state. <br>**Back‑translation:** “was” |
+| è | Present of *to be* (is) | **Present copula** “అది” (3 sg.) linking subject and predicate. <br>**Back‑translation:** “is” |
+| cosa | Abstract noun “thing” | **Common noun** “వస్తువు” (neuter) used as subject complement. <br>**Back‑translation:** “thing” |
+| dura | Predicate adjective “hard” (difficult) | **Predicate adjective** “కష్టం” agreeing with *cosa*; expresses difficulty. <br>**Back‑translation:** “hard” |
+| esta | Demonstrative adjective “this” (archaic) | **Demonstrative determiner** “ఈ” agreeing with feminine noun *selva*. <br>**Back‑translation:** “this” |
+| selva | Noun “wood/forest” | **Common noun** “అడవి” (feminine) as head of NP. <br>**Back‑translation:** “wood” |
+| selvaggia | Attributive adjective “wild” | **Attributive adjective** “అరణ్య” (feminine) modifying *selva*. <br>**Back‑translation:** “wild” |
+| e | Coordinating conjunction linking adjectives | **Coordinating conjunction** “మరియు”. <br>**Back‑translation:** “and” |
+| aspra | Attributive adjective “rough” | **Attributive adjective** “కఠిన” (feminine) modifying *selva*. <br>**Back‑translation:** “rough” |
+| e | Coordinating conjunction linking adjectives | **Coordinating conjunction** “మరియు”. <br>**Back‑translation:** “and” |
+| forte | Attributive adjective “dense/strong” | **Attributive adjective** “సాంద్ర” (feminine) modifying *selva*. <br>**Back‑translation:** “dense” |
+| che | Relative pronoun “which” introducing clause | **Relative particle** “అది” (or “యది”) introducing the relative clause. <br>**Back‑translation:** “which” |
+| nel | Prepositional phrase “in the” (locative) | **Locative case marker** “లో” attached to *pensier*. <br>**Back‑translation:** “in” |
+| pensier | Noun “thought” (poetic form) | **Common noun** “ఆలోచన” (masc.) as object of *nel*. <br>**Back‑translation:** “thought” |
+| rinova | Present verb “renews” (causes fresh fear) | **Present tense verb** “పునరుద్ధరించు” (3 sg.) indicating causative renewal. <br>**Back‑translation:** “renews” |
+| la | Definite article (feminine) – not lexical in Telugu | **Demonstrative determiner** “ఆ” to convey definiteness of *paura*. <br>**Back‑translation:** “the” |
+| paura | Noun “fear” | **Common noun** “భయం” (feminine) as direct object of *rinova*. <br>**Back‑translation:** “fear” |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-
-Create a list of Telugu components ready for assembly.
-
-STRICT RULES:
-1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
-   - Bad: [forest] [in]
-   - Good: [forest-in] (e.g., kattil)
-2. Case Verification: Ensure the grammatical role from Step 2 is respected.
-   - Direct Object: Must use Accusative form.
-3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Telugu word matches the Contextual Definition.
-
-Table Columns:
-- [Source Word]
-- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
-- [Target Lemma]
-- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+Create placeable Telugu components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Pre‑assembled Telugu Lexical Inventory**  
-*(All forms already carry the required case / verbal‑inflection suffixes – nothing is left “loose”.  Conjunctions, articles and pure function words that do not carry morphology are omitted.)*  
-
-| Source Word | Contextual Definition (English – what the word means in this verse) | Target Lemma (base Telugu word) | Final Agglutinated Form (ready for sentence‑assembly) |
-|-------------|---------------------------------------------------------------------|--------------------------------|--------------------------------------------------------|
-| Ahi | Exclamation of astonishment / lament (“Ah!”) | **అయ్యో** | **అయ్యో!** |
-| quanto | Degree‑adverb “how (much)”, introducing a question of difficulty | **ఎంతగా** (adv.) | **ఎంతగా** |
-| a + dir | Infinitive “to tell, to relate in words” (the “to” is the infinitive marker) | **చెప్పు** (verb “to say”) | **చెప్పడం** |
-| qual (ACC) | Interrogative pronoun “which” used as the object of *dir* | **ఏది** (which) | **ఏదిని** |
-| era (imperf.) | Imperfect past of “to be” – “was” (state in the past) | **ఉండేది** (was, past‑continuous) | **ఉండేది** |
-| è (pres.) | Present copula “is” (linking *cosa* and *dura*) | **ఉంది** (is) | **ఉంది** |
-| cosa | Generic “thing, matter” that is being described | **విషయం** (thing, matter) | **విషయం** |
-| dura | Predicative adjective “hard, difficult, arduous” | **కష్టం** (hard/difficult) | **కష్టం** |
-| esta | Demonstrative “this” that determines *selva* | **ఈ** (this) – placed before the noun | **ఈ** |
-| selva | “wild wood / forest” – the object being described | **అడవి** (forest) | **అడవి** |
-| selvaggia | Attribute “wild, untamed” | **వన్య** (wild) | **వన్య** |
-| aspra | Attribute “rough, harsh in texture” | **ఖార** (rough) | **ఖార** |
-| forte | Attribute “dense / strong, tightly packed” | **బలవంత** (strong/dense) | **బలవంత** |
-| che | Relative pronoun “which” introducing a clause that qualifies *selva* | **అది** (that/which) – used as the subject of the relative clause | **అది** |
-| nel + pensier → pensier‑loc | Prepositional phrase “in the thought” – locative case required | **చింతన** (thought) | **చింతనలో** |
-| rinova | Present‑indicative “renews, revives” (makes fresh again) | **పునరుద్ధరించు** (to renew) | **పునరుద్ధరిస్తుంది** |
-| paura (ACC) | Direct object “fear” – the thing that is renewed | **భయం** (fear) | **భయాన్ని** |
-
-### How to read the table  
-
-- **Target Lemma** is the dictionary‑style base form (no inflection).  
-- **Final Agglutinated Form** is the exact word that will appear in the final Telugu sentence, already carrying the required case suffix (‑ni for accusative, ‑lo for locative), verbal inflection (‑డం for infinitive, ‑స్తుంది for present‑progressive), or demonstrative particle.  
-- Words that are pure conjunctions (*e*), articles (*la*), or particles that do not affect morphology are omitted because they do not need a separate lexical entry under the “agglutination” rule.  
-
-These components can now be concatenated in the order dictated by the Italian syntax (adjusted for Telugu SOV order) to produce a fully grammatical Telugu rendering of the verse.
+- Line 4: అయ్యో ఎంత చెప్పడానికి అది ఏమి ఉండేది చెప్పడం కష్టం / అయ్యో ఎంత చెప్పడానికి అది ఏమిటో చెప్పడం కష్టం / అయ్యో ఎంత చెప్పడానికి అది ఏది ఉండేది చెప్పడం కష్టం  
+- Line 5: ఈ అడవి అడవీగా కఠినగా సాంద్రంగా / ఈ అడవి అడవీ కఠిన సాంద్ర / ఈ అడవి వన్య కఠిన ఘన  
+- Line 6: అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది / అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది / అది ఆలోచనలో భయాన్ని మళ్లీ కలిగిస్తుంది
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-
-Arrange the components from Step 3 into a strictly literal Telugu sentence.
-
-Universal Rules:
-1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
-2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
-3. Transparency: Explicitly show which components are used for each line to allow debugging.
-
-Target Language Specific Rules (for SOV/Agglutinative languages like Telugu):
-4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
-5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
-6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
-
-Final Output Format:
-For each line, provide:
-- Source Line: [Original Text]
-- Component Mapping: [List of components used from Step 3 in their new order]
-- Assembly Logic: [Brief explanation of word order changes or connections]
-- Target Text: [Final translation for this line]
+Assemble Step3 components into Telugu lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Step 4 – Slot‑Based Syntactic Assembly**
+Source Line:
+4 Ahi quanto a dir qual era è cosa dura
+Line Inventory:
+- అయ్యో ఎంత చెప్పడానికి అది ఏమి ఉండేది చెప్పడం కష్టం
+Assembly Notes:
+- No additional function words or morphology needed; the phrase already contains the interjection, degree adverb, infinitival complement and the predicate “కష్టం”.
+Target Text:
+అయ్యో ఎంత చెప్పడానికి అది ఏమి ఉండేది చెప్పడం కష్టం
 
----
+Source Line:
+5 esta selva selvaggia e aspra e forte
+Line Inventory:
+- ఈ అడవి అడవీగా కఠినగా సాంద్రంగా
+Assembly Notes:
+- The phrase includes the demonstrative “ఈ”, the noun “అడవి”, and the three attributive adjectives in adverbial form; no extra linking needed.
+Target Text:
+ఈ అడవి అడవీగా కఠినగా సాంద్రంగా
 
-### Line 4  
-**Source Line:**  
-Ahi quanto a dir qual era è cosa dura  
-
-**Component Mapping (in the order they will appear in Telugu):**  
-1. **అయ్యో** – exclamation (Ahi)  
-2. **విషయం** – subject (cosa)  
-3. **ఎంతగా** – manner adverbial (quanto)  
-4. **ఏదిని** – accusative pronoun (qual)  
-5. **ఉండేది** – imperfect verb (era)  
-6. **చెప్పడం** – infinitive verb (dir)  
-7. **కష్టం** – predicative adjective (dura)  
-
-**Assembly Logic:**  
-- Telugu follows SOV; therefore the subject **విషయం** comes first.  
-- The degree adverb **ఎంతగా** is placed right after the subject (adverbial slot).  
-- The object of “to tell” is the clause **ఏదిని ఉండేది చెప్పడం** (ACC + verb + infinitive).  
-- The predicate adjective **కష్టం** follows the object, completing the clause “… is hard”.  
-- No final punctuation is added because the source line ends without a punctuation mark.  
-
-**Target Text:**  
-అయ్యో విషయం ఎంతగా ఏదిని ఉండేది చెప్పడం కష్టం  
-
----
-
-### Line 5  
-**Source Line:**  
-esta selva selvaggia e aspra e forte  
-
-**Component Mapping:**  
-1. **ఈ** – demonstrative determiner (esta)  
-2. **వన్య** – adjective “wild” (selvaggia)  
-3. **ఖార** – adjective “rough” (aspra)  
-4. **బలవంత** – adjective “dense / strong” (forte)  
-5. **అడవి** – noun “forest, wood” (selva)  
-
-**Assembly Logic:**  
-- All modifiers precede the noun in Telugu (head‑final modifiers).  
-- The phrase is purely nominal; no verb is required because the source line is a noun phrase.  
-
-**Target Text:**  
-ఈ వన్య ఖార బలవంత అడవి  
-
----
-
-### Line 6  
-**Source Line:**  
-che nel pensier rinova la paura!  
-
-**Component Mapping:**  
-1. **అది** – relative pronoun (che) – subject of the relative clause  
-2. **చింతనలో** – locative phrase “in the thought” (nel + pensier)  
-3. **భయాన్ని** – accusative direct object (la paura)  
-4. **పునరుద్ధరిస్తుంది** – present verb “renews” (rinova)  
-
-**Assembly Logic:**  
-- Subject **అది** first, followed by the locative adverbial **చింతనలో**, then the object **భయాన్ని**, and finally the verb **పునరుద్ధరిస్తుంది** (S‑O‑V order).  
-- The exclamation mark is copied exactly from the source line.  
-
-**Target Text:**  
-అది చింతనలో భయాన్ని పునరుద్ధరిస్తుంది!
+Source Line:
+6 che nel pensier rinova la paura!
+Line Inventory:
+- అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది
+Assembly Notes:
+- Added the required exclamation mark at the end to match source punctuation; the relative pronoun “అది” links back to the wood.
+Target Text:
+అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-
-Perform the verification and display the results for each step:
-
-Table Columns:
-- [Line #]
-- [Target Text] (Copy the final text from Step 4)
-- [Back-Translation] (Literal English)
-- [Source Context] (Original Source text)
-- [Verification Result] (OK / Correction Needed)
-
-Rules:
-1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
-2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
-3. Correction: If there is a mismatch or grammatical error, output a corrected version.
-   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
-4. Final Output: Present the final, verified Telugu text in a code block, separated line by line.
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Telugu text in ONE code block, line by line.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Verification Table**
+- Line #: 4  
+  - Target Text (from Step 4): అయ్యో ఎంత చెప్పడానికి అది ఏమి ఉండేది చెప్పడం కష్టం  
+  - Back-Translation (literal): “Ah how to tell that it what was saying is difficult.”  
+  - Reference Translation (line‑aligned): Ah! how hard a thing it is to tell what …  
+  - Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-| Line # | Target Text (Step 4) | Back‑Translation (literal) | Source Context (original Italian) | Verification Result |
-|--------|----------------------|----------------------------|-----------------------------------|----------------------|
-| 4 | అయ్యో విషయం ఎంతగా ఏదిని ఉండేది చెప్పడం కష్టం | “Ah! the thing, how (much), what (ACC) was, telling, hard.” | *Ahi quanto a dir qual era è cosa dura* | **OK** – conveys “how hard a thing it is to tell what … was”. |
-| 5 | ఈ వన్య ఖార బలవంత అడవి | “this wild rough strong forest.” | *esta selva selvaggia e aspra e forte* | **OK** – all adjectives correctly modify the noun. |
-| 6 | అది చింతనలో భయాన్ని పునరుద్ధరిస్తుంది! | “that in thought the fear (ACC) renews!” | *che nel pensier rinova la paura!* | **OK** – captures the relative clause and exclamation. |
+- Line #: 5  
+  - Target Text (from Step 4): ఈ అడవి అడవీగా కఠినగా సాంద్రంగా  
+  - Back-Translation (literal): “this forest forest‑like roughly densely.”  
+  - Reference Translation (line‑aligned): this wild and rough and dense wood …  
+  - Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **FAIL**, Comparative Orientation **N/A**, Hallucination **OK**  
+  - Corrected Target Text: ఈ అడవి వన్య కఠిన ఘన  
 
-All three lines preserve meaning, punctuation, and grammatical requirements.
+- Line #: 6  
+  - Target Text (from Step 4): అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!  
+  - Back-Translation (literal): “it in thought fear renews!”  
+  - Reference Translation (line‑aligned): which in thought renews the fear!  
+  - Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
----
-
-### Final Verified Telugu Translation  
+**Final Verification:** UNVERIFIED – failing Line #5  
 
 ```telugu
-అయ్యో విషయం ఎంతగా ఏదిని ఉండేది చెప్పడం కష్టం
-ఈ వన్య ఖార బలవంత అడవి
-అది చింతనలో భయాన్ని పునరుద్ధరిస్తుంది!
+అయ్యో ఎంత చెప్పడానికి అది ఏమి ఉండేది చెప్పడం కష్టం
+ఈ అడవి వన్య కఠిన ఘన
+అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!
 ```
-]]></message>
-<message role="user"><![CDATA[
-Based on the verification in Step 5, output ONLY the final Telugu translation.
-No explanations, no tables, just the translated text line by line.
-]]></message>
-<message role="assistant"><![CDATA[
-అయ్యో విషయం ఎంతగా ఏదిని ఉండేది చెప్పడం కష్టం
-ఈ వన్య ఖార బలవంత అడవి
-అది చింతనలో భయాన్ని పునరుద్ధరిస్తుంది!
 ]]></message>
 </messages>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Morphosyntactic Requirement Definition
+Goal: For Spanish, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
+]]></message>
+<message role="assistant"><![CDATA[
+| Source Word | Contextual Definition | Target Requirement |
+|-------------|-----------------------|--------------------|
+| Tant' | Intensifier indicating a high degree of bitterness | **Spanish:** `tan` (adverb of degree) + adj. → `tan amargo`. *Back‑translation:* “so bitter”. |
+| è (1) | Copular verb linking implicit subject to predicate “bitter” | **Spanish:** `es` (3ª sg. pres. de ser). *Back‑translation:* “is”. |
+| amara | Predicative adjective denoting bitterness | **Spanish:** `amargo` (masc. sg. predicative). *Back‑translation:* “bitter”. |
+| che | Subordinating conjunction introducing comparative clause | **Spanish:** `que` (conj. subordinante). *Back‑translation:* “that”. |
+| poco | Adverb quantifying the comparative increase (small amount) | **Spanish:** `poco` (adverb of quantity) modifying `más`. *Back‑translation:* “little”. |
+| è (2) | Copular verb in comparative clause linking “death” to comparative adjective | **Spanish:** `es` (3ª sg. pres. de ser). *Back‑translation:* “is”. |
+| più | Comparative adverb indicating a higher degree of bitterness | **Spanish:** `más` (comparative adverb) → `más amarga`. *Back‑translation:* “more”. |
+| morte | Subject of comparative clause, the upper reference point | **Spanish:** `la muerte` (fem. sg. noun with definite article). *Back‑translation:* “death”. |
+| ma | Coordinating conjunction signalling contrast with previous statement | **Spanish:** `pero` (conj. coordinante). *Back‑translation:* “but”. |
+| per | Preposition marking purpose of the infinitive action | **Spanish:** `para` (prep. de fin propósito). *Back‑translation:* “in order to”. |
+| trattar | Infinitive verb meaning “to treat/discuss” | **Spanish:** `tratar` (infinitivo transitivo). *Back‑translation:* “to treat”. |
+| del | Contraction of preposition + article introducing object of “tratar” | **Spanish:** `del` (= `de + el`). *Back‑translation:* “of the”. |
+| ben | Abstract noun denoting “the good” | **Spanish:** `bien` (neutro / masc. sg. sustantivo abstracto). *Back‑translation:* “good”. |
+| ch'i' | Relative pronoun + subject pronoun introducing clause “that I …” | **Spanish:** `que yo` (pronombre relativo + pronombre personal). *Back‑translation:* “that I”. |
+| vi | Locative adverb indicating the place “there” | **Spanish:** `allí` (adv. de lugar). *Back‑translation:* “there”. |
+| trovai | Completed act of finding the good at that place | **Spanish:** `encontré` (pretérito perfecto simple 1ª sg. de encontrar). *Back‑translation:* “found”. |
+| dirò | Future act of speaking about other things | **Spanish:** `diré` (futuro simple 1ª sg. de decir). *Back‑translation:* “I will say”. |
+| de | Preposition introducing the domain of forthcoming discourse | **Spanish:** `de` (prep. simple). *Back‑translation:* “of”. |
+| l'altre | Determiner + adjective distinguishing “the other” things | **Spanish:** `las otras` (artículo definido + adjetivo plural femenino). *Back‑translation:* “the other”. |
+| cose | Head noun of the NP “things” | **Spanish:** `cosas` (sustantivo femenino plural). *Back‑translation:* “things”. |
+| ch'i' (2) | Relative pronoun + subject pronoun for clause “that I have …” | **Spanish:** `que yo` (pronombre relativo + pronombre personal). *Back‑translation:* “that I”. |
+| v'ho | Clitic pronoun + auxiliary forming perfect “have (them) there” | **Spanish:** `las he` (pronombre clítico + auxiliar `haber` 1ª sg. pres. perfecto). *Back‑translation:* “have (them)”. |
+| scorte | Past participle agreeing with “cose” (feminine plural) meaning “seen” | **Spanish:** `visto` (participio pasado de `ver`, concordando en género / número con `las`). *Back‑translation:* “seen”. |
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Pre-assembled Lexical Inventory
+Create placeable Spanish components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7: tan amargo es que la muerte es poco más / tan amargo está que la muerte es poco más / tan amargo resulta que la muerte es poco más  
+- Line 8: pero para tratar del bien que encontré allí / pero con el fin de tratar del bien que hallé allí / pero a fin de tratar del bien que descubrí allí  
+- Line 9: diré de las otras cosas que he visto allí / contaré de las otras cosas que he visto allí / relataré de las otras cosas que he visto allí
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Slot-Based Syntactic Assembly
+Assemble Step3 components into Spanish lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+]]></message>
+<message role="assistant"><![CDATA[
+**Source Line:**  
+7 Tant' è amara che poco è più morte;
+
+**Line Inventory:**  
+- tan amargo es que la muerte es poco más
+
+**Assembly Notes:**  
+- No additional function‑words needed; the phrase already contains the comparative conjunction “que” and the degree adverb “poco”.  
+
+**Target Text:**  
+tan amargo es que la muerte es poco más;
+
+---
+
+**Source Line:**  
+8 ma per trattar del ben ch'i' vi trovai,
+
+**Line Inventory:**  
+- pero para tratar del bien que encontré allí
+
+**Assembly Notes:**  
+- The coordinating conjunction “pero” and purpose preposition “para” are included; no extra morphology required.  
+
+**Target Text:**  
+pero para tratar del bien que encontré allí,
+
+---
+
+**Source Line:**  
+9 dirò de l'altre cose ch'i' v'ho scorte.
+
+**Line Inventory:**  
+- diré de las otras cosas que he visto allí
+
+**Assembly Notes:**  
+- The future verb “diré” and the preposition “de” are present; the relative clause is complete, so only the final period is added.  
+
+**Target Text:**  
+diré de las otras cosas que he visto allí.
+]]></message>
+<message role="user"><![CDATA[
+### Step 5: Self-Correction via Back-Translation & Grammatical Check
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Spanish text in ONE code block, line by line.
+]]></message>
+<message role="assistant"><![CDATA[
+- Line #: 7  
+  Target Text (from Step 4): tan amargo es que la muerte es poco más;  
+  Back-Translation (literal): so bitter is that death is a little more;  
+  Reference Translation (line‑aligned): So bitter is it that death is little more.  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **FAIL**, Comparative Orientation **FAIL**, Hallucination **OK**  
+  **Corrected Target Text:** tan amargo es que la muerte es poco más amarga;  
+
+- Line #: 8  
+  Target Text (from Step 4): pero para tratar del bien que encontré allí,  
+  Back-Translation (literal): but to treat of the good that I found there,  
+  Reference Translation (line‑aligned): But in order to treat of the good that there I found,  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+- Line #: 9  
+  Target Text (from Step 4): diré de las otras cosas que he visto allí.  
+  Back-Translation (literal): I will say of the other things that I have seen there.  
+  Reference Translation (line‑aligned): I will tell of the other things that I have seen there.  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+
+**Verification Result:** UNVERIFIED – failing lines: 7  
+
+```text
+tan amargo es que la muerte es poco más amarga;
+pero para tratar del bien que encontré allí,
+diré de las otras cosas que he visto allí.
+```
+]]></message>
+</messages>

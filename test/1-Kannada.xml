@@ -2,203 +2,142 @@
 <messages>
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
-
-Based on the alignment and roles from Step 1, define the grammatical requirements for Kannada.
-
-Tasks:
-1. Map Case/Suffix: Define the Target Language requirement based on the [Grammatical Role] identified in Step 1.
-   - If Role is Direct Object -> Assign Accusative Case.
-   - If Role is Prepositional Phrase -> Determine the Suffix (e.g., Locative).
-2. Tense/Mood Mapping: Map the Source Tense to the appropriate Target Tense.
-
-Output Format (Table):
-- [Source Word]
-- [Contextual Definition] (from Step 1)
-- [Target Requirement] (e.g., "Accusative case (-e)", "Suffix (-il) on next noun")
+Goal: For Kannada, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
+Requirements (ONE Markdown table):
+- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
+Output: ONLY the table; no extra prose.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Step 2 – Morphosyntactic Requirement Definition for Kannada**  
-*(The requirements are derived from the grammatical roles identified in Step 1.  
-Kannada marks grammatical relations with **suffixes (case‑markers)** attached to the noun (or pronoun) that fulfills the role.  
-Verbal tense is expressed by a suffix on the verb stem.  The table lists the source word, its contextual meaning (from Step 1) and the **target‑language morphosyntactic requirement** that a Kannada translation must satisfy.)*  
-
-| # | Source Word | Contextual Definition (Step 1) | Target Requirement in Kannada |
-|---|-------------|--------------------------------|--------------------------------|
-| 1 | **Nel** | “in the” (preposition of place) | **Locative post‑position** → attach **‑ಲಿ /‑ನಲ್ಲಿ** to the following noun (“mezzo”) – e.g. *ಮಧ್ಯ**ಲಿ*** |
-| 2 | **mezzo** | “middle; halfway” | **Locative case** → suffix **‑ಲಿ /‑ನಲ್ಲಿ** (because it is the complement of “Nel”) |
-| 3 | **del** | genitive “of the” | **Genitive case** on the noun that follows (“cammin”) → suffix **‑ದ** (e.g. *ಮಾರ್ಗ**ದ***) |
-| 4 | **cammin** | “road / path (metaphorical life‑course)” | **Genitive case** → suffix **‑ದ** (as the complement of “del”) |
-| 5 | **di** (in “di nostra vita”) | genitive “of” | **Genitive case** on “vita” → suffix **‑ದ** |
-| 6 | **nostra** | “our” (possessive) | **Possessive adjective** → in Kannada the possessor is expressed by **‑ದ** after the noun (e.g. *ನಮ್ಮ ಜೀವನ**ದ***) – no extra suffix on “nostra” itself |
-| 7 | **vita** | “life (human existence)” | **Genitive case** → suffix **‑ದ** (as complement of “di”) |
-| 8 | **mi** | reflexive pronoun “myself” | **Accusative case** (object of “ritrovai”) → suffix **‑ನ್ನು** on the pronoun (e.g. *ನನ್ನನ್ನು*) |
-| 9 | **ritrovai** | “found (myself)” – passato remoto (simple past) | **Simple past tense** → verb suffix **‑ತ್ತೆ** (or **‑ಇತ್ತೆ**) on the root *ಕಂಡು* → *ಕಂಡಿದ್ದೆ* (literally “I found”). |
-|10| **per** | preposition “within / through” (locative) | **Locative case** on the following noun (“selva”) → suffix **‑ಲಿ /‑ನಲ್ಲಿ** |
-|11| **una** | indefinite article “a” | No case marking needed; article is omitted in Kannada. |
-|12| **selva** | “wood; forest” | **Locative case** → suffix **‑ಲಿ /‑ನಲ್ಲಿ** (e.g. *ಕಾಡು**ಲ್ಲಿ***) |
-|13| **oscura** | “dark (lacking light)” | No case; it is an attributive adjective → agrees with noun but no suffix. |
-|14| **ché** | conjunction “for / because” | No case; it functions as a sub‑ordinator – no morphological marking. |
-|15| **la** (definite article) | “the” (specifies “via”) | Articles are not expressed in Kannada – no suffix. |
-|16| **diritta** | “right / proper / straight” (qualitative) | No case; adjectival modifier of “via”. |
-|17| **via** | “way / path (correct course of life)” – subject of clause | **Nominative (unmarked)** – no suffix on the subject noun. |
-|18| **era** | copula “was / had been” – imperfect (continuous past) | **Imperfect past tense** → verb suffix **‑ತ್ತಿದ್ದ** (e.g. *ಇರುತ್ತಿತ್ತು*) |
-|19| **smarrita** | “lost / missed” (predicate adjective) | No case; predicative complement – no suffix. |
-
-### Quick reference for the Kannada suffixes used
-
-| Case / Function | Kannada suffix (post‑position) | Example (from table) |
-|-----------------|-------------------------------|----------------------|
-| **Locative** (place, “in/at”) | **‑ಲಿ** / **‑ನಲ್ಲಿ** | *ಮಧ್ಯ**ಲಿ***, *ಕಾಡು**ಲ್ಲಿ*** |
-| **Genitive** (possession, “of”) | **‑ದ** | *ಮಾರ್ಗ**ದ***, *ಜೀವನ**ದ*** |
-| **Accusative** (direct object) | **‑ನ್ನು** | *ನನ್ನನ್ನು* |
-| **Nominative** (subject) | **(none)** – base form | *ವಿಧಿ* |
-| **Past simple** (completed action) | **‑ತ್ತೆ / ‑ಇತ್ತೆ** | *ಕಂಡಿದ್ದೆ* |
-| **Imperfect** (past progressive) | **‑ತ್ತಿದ್ದ** | *ಇರುತ್ತಿತ್ತು* |
-
-These requirements give a complete blueprint for rendering each Italian token into a morphologically‑correct Kannada clause while preserving the original syntactic relations.
+| Source Word | Contextual Definition | Target Requirement (Kannada morphosyntax; comparative direction = none; 1‑line literal back‑translation check) |
+|-------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nel | “in the middle of” – locative prepositional phrase introducing the central point | Use locative postposition **‑ನಲ್ಲಿ** with the noun “ಮಧ್ಯ” → **ಮಧ್ಯದಲ್ಲಿ**. <br>**Back‑translation:** “Midway” |
+| mezzo | “middle” – the central point of a span | Translate as the noun **ಮಧ್ಯ** in locative form **ಮಧ್ಯದಲ್ಲಿ** (as above). <br>**Back‑translation:** “midway” |
+| del | genitive “of the” linking road to life | Render with genitive case **‑ದ** on “ರಸ್ತೆ” → **ರಸ್ತೆಯ**. <br>**Back‑translation:** “of the” |
+| cammin | “road, path” – metaphor for life’s course | Translate as **ರಸ್ತೆ** (road) in genitive **ರಸ್ತೆಯ** (as above). <br>**Back‑translation:** “road” |
+| di | genitive “of” linking road to life | Use genitive **‑ದ** on “ಜೀವನ” → **ಜೀವನದ**. <br>**Back‑translation:** “of” |
+| nostra | “our” – collective possession | Use possessive pronoun **ನಮ್ಮ** preceding the noun. <br>**Back‑translation:** “our” |
+| vita | “life” – span of existence | Translate as **ಜೀವನ** in genitive **ಜೀವನದ** (as above). <br>**Back‑translation:** “life” |
+| mi | reflexive pronoun “myself” (object) | Use reflexive pronoun **ನನ್ನನ್ನು** as object of the verb. <br>**Back‑translation:** “myself” |
+| ritrovai | “found” – self‑realization of location | Use past tense verb **ಕಂಡುಹಿಡಿದೆ** (found/discovered). <br>**Back‑translation:** “found” |
+| per | preposition “within/through” indicating interior location | Use locative postposition **‑ನಲ್ಲಿ** after “ಕಾಡು” → **ಕಾಡಿನಲ್ಲಿ**. <br>**Back‑translation:** “within” |
+| una | indefinite article “a” (non‑specific) | Kannada lacks articles; omit but keep noun singular. <br>**Back‑translation:** “a” |
+| selva | “forest, wood” – densely wooded area | Translate as **ಕಾಡು** (forest) in locative **ಕಾಡಿನಲ್ಲಿ** (as above). <br>**Back‑translation:** “wood” |
+| oscura | “dark” – lacking light, gloomy | Use adjective **ಕತ್ತಲೆ** placed before noun in attributive position → **ಕತ್ತಲೆ ಕಾಡು**. <br>**Back‑translation:** “dark” |
+| ché | conjunction “for, because” introducing causal clause | Use causal conjunction **ಏಕೆಂದರೆ**. <br>**Back‑translation:** “for” |
+| la | definite article “the” (feminine singular) | Omit article; Kannada marks definiteness via context. <br>**Back‑translation:** “the” |
+| diritta | “right, straight” – correct or proper | Translate as **ಸರಿಯಾದ** (correct) preceding “ಮಾರ್ಗ”. <br>**Back‑translation:** “right” |
+| via | “way, road” – the path that should be followed | Translate as **ಮಾರ್ಗ** (path) in nominative. <br>**Back‑translation:** “way” |
+| era | imperfect “was” – past state of being | Use past tense copula **ಇತ್ತು**. <br>**Back‑translation:** “had been” |
+| smarrita | “missed, lost” – state of being absent | Use past participle adjective **ಕಳೆದುಹೋದ** (lost) agreeing with feminine noun **ಮಾರ್ಗ** → **ಕಳೆದುಹೋದ ಮಾರ್ಗ**. <br>**Back‑translation:** “missed” |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-
-Create a list of Kannada components ready for assembly.
-
-STRICT RULES:
-1. Agglutination: If Step 2 identified a word as a Suffix (e.g., "of", "in"), do NOT list it separately. Fuse it immediately with the head noun.
-   - Bad: [forest] [in]
-   - Good: [forest-in] (e.g., kattil)
-2. Case Verification: Ensure the grammatical role from Step 2 is respected.
-   - Direct Object: Must use Accusative form.
-3. Lexical Sanity: Ensure words are standard and natural. Verify that the chosen Kannada word matches the Contextual Definition.
-
-Table Columns:
-- [Source Word]
-- [Contextual Definition] (English dictionary definition/description of the meaning in this context. Do not just translate the word; explain it.)
-- [Target Lemma]
-- [Final Agglutinated Form] (The fully inflected word to be used in the sentence)
+Create placeable Kannada components for Step 4.
+Output ONLY bullet list; ONE LINE per bullet.
+- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Where <ID> is the leading integer at the start of the source line.
+Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
+Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
+Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
+Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
+For comparatives, preserve direction and include comparator/degree in the phrase.
+No punctuation characters inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Pre‑assembled Kannada lexical inventory**  
-*(Only the content‑bearing items are listed – any pure prepositional/genitive “suffix” from Step 2 has been fused with the head noun or adjective as required.  All forms are natural, standard Kannada.)*  
-
-| # | Source Word (as it appears in the Italian line) | Contextual Definition (English) | Target Lemma (Kannada) | Final Agglutinated Form (ready for sentence assembly) |
-|---|--------------------------------------------------|--------------------------------|------------------------|------------------------------------------------------|
-| 1 | **Nel mezzo** | “in the middle; midway” (spatial centre of a journey) | **ಮಧ್ಯ** “middle, centre” | **ಮಧ್ಯದಲ್ಲಿ** (locative ‑ ‑ಲ್ಲಿ attached to ಮಧ್ಯ) |
-| 2 | **del cammin** | “of the road / path (the metaphorical course of life)” | **ಮಾರ್ಗ** “road, way” | **ಮಾರ್ಗದ** (genitive ‑ ‑ದ) |
-| 3 | **nostra** | “our (possessor of ‘life’)” | **ನಮ್ಮ** “our” | **ನಮ್ಮ** (possessive adjective – no case suffix) |
-| 4 | **vita** | “human life, the span of existence” (as possessed by ‘our’) | **ಜೀವನ** “life” | **ಜೀವನದ** (genitive ‑ ‑ದ, because it follows “di” – “of our life”) |
-| 5 | **mi** | reflexive pronoun referring to the speaker himself (“myself”) | **ನನ್ನ** “my (self)” | **ನನ್ನನ್ನು** (accusative ‑ ‑ನ್ನು) |
-| 6 | **ritrovai** | simple past “found (myself)” – completed action | **ಕಂಡು** “to find” | **ಕಂಡಿದ್ದೆ** (simple past ‑ ‑ಿದ್ದೆ) |
-| 7 | **per una selva oscura** → **selva oscura** | “a dark wood / forest, the place entered” (dark, dense vegetation) | **ಕಾಡು** “forest, wood” | **ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ** (adjective + noun + locative ‑ ‑ಲ್ಲಿ) |
-| 8 | **ché** | conjunction “for / because” introducing a cause | **ಆದ್ದರಿಂದ** “because, for that reason” | **ಆದ್ದರಿಂದ** (stand‑alone conjunction) |
-| 9 | **la diritta via** → **via** | “the correct / straight way (the proper life‑path)” | **ಮಾರ್ಗ** “way, path” | **ಸರಿ ಮಾರ್ಗ** (adjective + noun, nominative – subject, no case suffix) |
-|10 | **era** | imperfect “was / had been” – a past continuous state | **ಇರು** “to be” | **ಇದ್ದಿತು** (imperfect ‑ ‑ದ್ದಿತು) |
-|11 | **smarrita** | predicate adjective “lost, missed, no longer known” | **ಕಳೆದುಹೋಗಿ** “to become lost” (participle) | **ಕಳೆದುಹೋಗಿತ್ತು** (past participle used predicatively with the copula) |
-
-### How the components will combine in the final Kannada rendering  
-
-```
-ಮಧ್ಯದಲ್ಲಿ ನಾನು ನನ್ನನ್ನು ಕಂದಿದ್ದೆ ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ,
-ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಇದ್ದಿತು ಕಳೆದುಹೋಗಿತ್ತು.
-```
-
-(Word‑order may be adjusted for natural Kannada syntax; the table above supplies each morpheme already carrying the required case, tense, and agreement.)
+- Line 1: ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ / ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ಮಾರ್ಗ / ಮಧ್ಯದಲ್ಲಿ ನಮ್ಮ ಜೀವನದ ಪಥ  
+- Line 2: ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ಕಂಡುಹಿಡಿದೆ / ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ಪತ್ತೆಹಚ್ಚಿದೆ / ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ  
+- Line 3: ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು / ಸರಿಯಾದ ಪಥ ಕಳೆದುಹೋದಿತ್ತು / ಸರಿಯಾದ ರಸ್ತೆ ಕಳೆದುಹೋದಿತ್ತು
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-
-Arrange the components from Step 3 into a strictly literal Kannada sentence.
-
-Universal Rules:
-1. Line Integrity: Do not merge the text into a single paragraph. Translate exactly one Source line at a time. The output must have the same number of lines as the Source.
-2. Punctuation Transfer: Strictly copy punctuation marks (commas, periods, exclamation marks) from the end of the Source Line to the end of the Target Line. Do not add artificial periods if the source does not have them.
-3. Transparency: Explicitly show which components are used for each line to allow debugging.
-
-Target Language Specific Rules (for SOV/Agglutinative languages like Kannada):
-4. Slot Filling: Inside each line, arrange components into the following order: [Subject] + [Time/Place/Manner Adverbials] + [Object] + [Verb]
-5. Head-Final Modifiers: Ensure adjectives and genitives are placed before the noun they modify. ([Adjective/Genitive] + [Noun])
-6. No New Agglutination: Use the Final Agglutinated Forms from Step 3 exactly as they are. Do not separate suffixes again.
-
-Final Output Format:
-For each line, provide:
-- Source Line: [Original Text]
-- Component Mapping: [List of components used from Step 3 in their new order]
-- Assembly Logic: [Brief explanation of word order changes or connections]
-- Target Text: [Final translation for this line]
+Assemble Step3 components into Kannada lines; keep the same number of lines.
+Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
+If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
+When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
+Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
+Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
+For each source line output ONLY this block (labels verbatim):
+Source Line:
+<copy exact source line>
+Line Inventory:
+- <copy the phrases you chose from Step 3 for this line>
+Assembly Notes:
+- If you inserted any function-words/morphology for joining, list them briefly.
+Target Text:
+<assembled target line>
+If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 1**  
-- **Source Line:** Nel mezzo del cammin di nostra vita  
-- **Component Mapping:** [ನಮ್ಮ ಜೀವನದ] (genitive “our life”) + [ಮಾರ್ಗದ] (genitive “of the road”) + [ಮಧ್ಯದಲ್ಲಿ] (locative “in the middle”)  
-- **Assembly Logic:** The genitive modifiers precede the noun they modify (ಜೀವನದ ಮಾರ್ಗದ). The locative adverb “midway” follows the entire noun phrase, giving “in the middle of the road of our life”.  
-- **Target Text:** ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ  
+Source Line:
+1 Nel mezzo del cammin di nostra vita
+Line Inventory:
+- ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ
+Assembly Notes:
+- No additional function words needed; phrase directly matches the prepositional phrase.
+Target Text:
+ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ
 
----
+Source Line:
+2 mi ritrovai per una selva oscura,
+Line Inventory:
+- ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ
+Assembly Notes:
+- No extra function words; retained the comma from the source line.
+Target Text:
+ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ,
 
-**Line 2**  
-- **Source Line:** mi ritrovai per una selva oscura,  
-- **Component Mapping:** [ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ] (locative “in a dark wood”) + [ನನ್ನನ್ನು] (accusative “myself”) + [ಕಂಡಿದ್ದೆ] (simple‑past “found”)  
-- **Assembly Logic:** SOV order – place‑adverbial first, then the accusative object, then the verb. The comma is retained.  
-- **Target Text:** ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡಿದ್ದೆ,  
-
----
-
-**Line 3**  
-- **Source Line:** ché la diritta via era smarrita.  
-- **Component Mapping:** [ಆದ್ದರಿಂದ] (conjunction “for/because”) + [ಸರಿ ಮಾರ್ಗ] (subject “the right way”) + [ಇದ್ದಿತು] (imperfect “was”) + [ಕಳೆದುಹೋಗಿತ್ತು] (predicative “lost”)  
-- **Assembly Logic:** The causal conjunction leads the clause, followed by the subject, the copular verb, and the predicative adjective. The period is kept.  
-- **Target Text:** ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಇದ್ದಿತು ಕಳೆದುಹೋಗಿತ್ತು.
+Source Line:
+3 ché la diritta via era smarrita.
+Line Inventory:
+- ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು
+Assembly Notes:
+- Added causal conjunction “ಏಕೆಂದರೆ” to reflect the source “ché”.
+Target Text:
+ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-
-Perform the verification and display the results for each step:
-
-Table Columns:
-- [Line #]
-- [Target Text] (Copy the final text from Step 4)
-- [Back-Translation] (Literal English)
-- [Source Context] (Original Source text)
-- [Verification Result] (OK / Correction Needed)
-
-Rules:
-1. Verify Meaning: Compare Back-Translation with the "Locked Meaning" from Step 1.
-2. Verify Structure: Check against [Source Context] to ensure no structural elements are ignored.
-3. Correction: If there is a mismatch or grammatical error, output a corrected version.
-   - Constraint: Do NOT reorder words across lines. Corrections must happen strictly within each line.
-4. Final Output: Present the final, verified Kannada text in a code block, separated line by line.
+Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
+Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
+Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
+Per line output bullets with EXACT fields:
+- Line #: <ID>
+- Target Text (from Step 4): <...>
+- Back-Translation (literal into the reference translation's language): <...>
+- Reference Translation (line-aligned): <...>
+- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+- If any FAIL: Corrected Target Text: <...>
+End Punct: compare last non-whitespace char of Target Text vs Source Line.
+Line # rule: <ID> is the leading integer at the start of that Source Line.
+After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
+Output final Kannada text in ONE code block, line by line.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Verification Table**
+- Line #: 1  
+  Target Text (from Step 4): ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ  
+  Back-Translation (literal into English): road in the middle of our life  
+  Reference Translation (line‑aligned): Midway upon the road of our life  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-| Line # | Target Text (Step 4) | Back‑Translation (literal English) | Source Context | Verification Result |
-|--------|----------------------|------------------------------------|----------------|----------------------|
-| 1 | ನಮ್ಮ ಜೀವನದ **ಮಾರ್ಗದ** ಮಧ್ಯದಲ್ಲಿ | “in the middle of the road of our life” | *Nel mezzo del cammin di nostra vita* | **Correction Needed** – double genitive “ಮಾರ್ಗದ” is redundant. |
-| 2 | ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡಿದ್ದೆ, | “in the dark forest I found myself” | *mi ritrovai per una selva oscura,* | **OK** |
-| 3 | ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಇದ್ದಿತು ಕಳೆದುಹೋಗಿತ್ತು. | “therefore the right way was lost” | *ché la diritta via era smarrita.* | **Correction Needed** – the auxiliary “ಇದ್ದಿತು” is unnecessary; the predicate should be just “ಕಳೆದುಹೋಗಿತ್ತು”. |
+- Line #: 2  
+  Target Text (from Step 4): ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ,  
+  Back-Translation (literal into English): I myself found in the dark forest,  
+  Reference Translation (line‑aligned): I found myself within a dark wood,  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-**Corrected Lines**
+- Line #: 3  
+  Target Text (from Step 4): ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು.  
+  Back-Translation (literal into English): because the correct path was lost.  
+  Reference Translation (line‑aligned): for the right way had been missed.  
+  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
 
-1. **ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗ ಮಧ್ಯದಲ್ಲಿ**  
-2. ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡಿದ್ದೆ,  
-3. ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
-
----
-
-**Final Verified Kannada Translation (code block, line‑by‑line)**  
+**Verification Status:** VERIFIED  
 
 ```kannada
-ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗ ಮಧ್ಯದಲ್ಲಿ
-ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡಿದ್ದೆ,
-ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
+ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ
+ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ,
+ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು.
 ```
-]]></message>
-<message role="user"><![CDATA[
-Based on the verification in Step 5, output ONLY the final Kannada translation.
-No explanations, no tables, just the translated text line by line.
-]]></message>
-<message role="assistant"><![CDATA[
-ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗ ಮಧ್ಯದಲ್ಲಿ
-ಕತ್ತಲೆಯ ಕಾಡುದಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡಿದ್ದೆ,
-ಆದ್ದರಿಂದ ಸರಿ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
 ]]></message>
 </messages>
