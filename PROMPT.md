@@ -263,5 +263,6 @@ The essence of this prompt engineering method lies in not treating translation m
 2.  **Requirement Definition**: Decide grammatical specifications (binding rules) required in the target language.
 3.  **Vocabulary Selection**: Align correct parts that are inflected/agglutinated.
 4.  **Syntax Construction**: Place them according to the slot (blueprint).
+5.  **Self-Correction**: Verify and correct accuracy through back-translation and grammatical validation.
 
 This flow serves as a general-purpose solution to achieve high accuracy even with models having fewer parameters in translation between languages with different structures.
