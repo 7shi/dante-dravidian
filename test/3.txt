@@ -10,48 +10,48 @@ So bitter is it that death is little more. But in order to treat of the good tha
 
 # Telugu
 
-7 అంత చెడు, మరణం కన్నా కొంచెం తక్కువ;
-8 కాని అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి,
-9 నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను.
+7 అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది;
+8 కాని నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,
+9 నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను.
 
 # Tamil
 
-7 மிக கசப்பானது மரணம் விட சிறிது அதிகமாகும்;
-8 ஆனால் நான் அங்கு கண்ட நல்லதை விவரிக்க உள்ளேன்,
-9 நான் அங்கில் பார்த்துள்ள மற்ற விஷயங்களை சொல்வேன்.
+7 அது மிகவும் கசப்பாக உள்ளது மற்றும் மரணம் சற்று அதிகமாக கசப்பாக உள்ளது;
+8 ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு,
+9 நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்.
 
 # Kannada
 
-7 ಅದು ತುಂಬ ಕಹಿ ಆಗಿದೆ ಎಂದು ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಕಹಿ ಇದೆ;
-8 ಆದರೆ ಮಂಗಳದ ಬಗ್ಗೆ ಚರ್ಚಿಸಲು ನಾನು ಅಲ್ಲಿ ಕಂಡುಹಿಡಿದ,
-9 ನಾನು ಅಲ್ಲಿ ಕಂಡಿರುವ ಇತರ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಹೇಳುವೆನು.
+7 ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಕಹಿಗಿಂತ ಇದೆ;
+8 ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲುಗಾಗಿ,
+9 ನಾನು ಅಲ್ಲಿ ಕಂಡ ಇತರ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.
 
 # Malayalam
 
-7 അത്ര കയ്പ്പുള്ളത് എന്ന മരണം കുറച്ച് കൂടുതൽ കയ്പ്പുള്ളതാണ്;
-8 പക്ഷേ നല്ലയെക്കുറിച്ച് ഞാൻ അവിടെ കണ്ടെത്തിയതിനായി ചർച്ച ചെയ്യാൻ,
-9 ഞാൻ അവിടെ കണ്ട മറ്റു വസ്തുക്കൾക്കുറിച്ച് പറയും.
+7 ഇത്ര മരണം കയ്പ്പുള്ളതിനെക്കാൾ കുറച്ച് കൂടുതൽ ആണ്;
+8 പക്ഷേ നല്ലത് അവിടെ കണ്ടെത്തി ചർച്ച ചെയ്യാൻ വേണ്ടി,
+9 ഞാൻ അവിടെ കണ്ട മറ്റ് വസ്തുക്കൾ പറയാം.
 
 # Japanese
 
-7 それはとても苦いです死はそれより少しだけ苦い;
-8 しかし私がそこに見つけた善を論じるために,
-9 私はそこに見た他のものについて言うだろう.
+7 死はほんの少しだけ苦さが上回る;
+8 しかしそこで見つけた善を論じるために、
+9 私はそこで見た他のものについて語ります.
 
 # Spanish
 
-7 tan amargo es que la muerte es poco más amarga;
+7 Tan amarga es que la muerte es poco más que amarga;
 8 pero para tratar del bien que encontré allí,
 9 diré de las otras cosas que he visto allí.
 
 # French
 
-7 c’est si amère que la mort est un peu plus amère;
+7 Si amère est‑elle que la mort est un peu plus amère;
 8 mais pour traiter du bien que j’ai trouvé là,
-9 je dirai les autres choses que j’ai vues là.
+9 je dirai des autres choses que j’ai vues là.
 
 # Esperanto
 
-7 tiel amara ke mort estas iom pli amara;
-8 sed por trakti la bonon kiun mi trovis tie,
-9 diros pri la aliaj aĵoj kiujn mi jam vidis tie.
+7 mort estas iom pli ol amara;
+8 sed por trakti bonon kiun mi trovis tie,
+9 mi diros pri la aliaj aĵoj kiujn mi vidis tie.

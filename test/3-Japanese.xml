@@ -3,65 +3,62 @@
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
 Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Requirements (ONE Markdown table):
-- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
-Output: ONLY the table; no extra prose.
+Output: ONE Markdown table only (no prose).
+Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
 |-------------|----------------------|--------------------|
-| Tant' | Intensifier indicating a high degree of bitterness | Japanese **とても** (adverb) modifying the adjective 苦い; back‑translation check: “so” |
-| è (1) | Copular verb linking implicit subject “it” to predicate “bitter” | Japanese **だ** (copula) after the adjective phrase; back‑translation check: “is” |
-| amara | Predicate adjective “bitter” | Japanese **苦い** (i‑adjective) as predicate; back‑translation check: “bitter” |
-| che (comparative) | Subordinator introducing a comparative clause | Japanese **ほど** (comparative particle) after the adjective phrase; back‑translation check: “that” (as in “as … as”) |
-| poco | Adverb meaning “little” (small amount) | Japanese **少し** (adverb) modifying the comparative adjective; back‑translation check: “little” |
-| è (2) | Copular verb linking “death” to comparative predicate | Japanese **は** (topic marker) + **だ** (copula) after “death”; back‑translation check: “is” |
-| più | Comparative adverb “more” (direction: death > X) | Japanese **より** (comparative particle) indicating “more than”; back‑translation check: “more” |
-| morte | Noun “death”, the benchmark of bitterness | Japanese **死** (noun) marked with **は** as topic; back‑translation check: “death” |
-| ma | Coordinating conjunction expressing contrast | Japanese **しかし** (conjunctive adverb) at clause start; back‑translation check: “but” |
-| per | Preposition indicating purpose (“in order to”) | Japanese **ために** (purpose particle) following the infinitive verb; back‑translation check: “for” |
-| trattar | Infinitive “to treat/discuss” | Japanese **論じる** (verb) in the **dictionary form** before **ために**; back‑translation check: “treat” |
-| del | Prepositional phrase “of the” | Japanese **の** (genitive particle) linking noun “good” to preceding verb; back‑translation check: “of the” |
-| ben | Abstract noun “good” | Japanese **善** (noun) as object of **論じる**; back‑translation check: “good” |
-| ch'i' | Relative pronoun “that I” | Japanese **私が** (relative clause marker) preceding the verb; back‑translation check: “that I” |
-| vi | Locative adverb “there” | Japanese **そこ** (demonstrative adverb) as locative complement; back‑translation check: “there” |
-| trovai | Past historic “found” | Japanese **見つけた** (past tense verb) following **私が**; back‑translation check: “found” |
-| dirò | Future “I will tell” | Japanese **言うだろう** (future‑like expression) or **言うつもりだ**; back‑translation check: “I will tell” |
-| de | Preposition “of” introducing discourse domain | Japanese **について** (post‑position) after the noun phrase; back‑translation check: “of” |
-| l'altre | Determiner + adjective “the other” | Japanese **他の** (adjectival noun) modifying **もの**; back‑translation check: “the other” |
-| cose | Plural noun “things” | Japanese **もの** (noun) as head of the object phrase; back‑translation check: “things” |
-| ch'i' (2) | Relative pronoun “that I” (second occurrence) | Japanese **私が** introducing relative clause; back‑translation check: “that I” |
-| v'ho | Perfect auxiliary “have … there” (locative clitic) | Japanese **そこに** (locative) + **見た** (perfective verb) – no auxiliary needed; back‑translation check: “have … there” |
-| scorte | Past participle “seen” (agreeing with plural) | Japanese **見た** (past verb) agreeing with **もの**; back‑translation check: “seen” |
+| **Tant'** | Intensifier of “amara” | Use adverb **とても** (very) before the adjective; literal check: *“とても苦い”* → “so bitter”. |
+| **è** | Copular link (subject = implicit “it”) | Insert copula **だ** after the predicate adjective; literal check: *“苦いだ”* → “is bitter”. |
+| **amara** | Predicate adjective “bitter” | Render as adjective **苦い**; literal check: *“苦い”* → “bitter”. |
+| **che** | Comparative subordinator introducing the clause “poco è più morte” | Mark the start of a comparative clause with **ほど** or **より**; literal check: *“…ほど”* → “so … that”. |
+| **poco** | Degree adverb “little”, indicating a slight excess | Translate as **ほんの少しだけ** placed before the comparative marker; literal check: *“ほんの少しだけ”* → “only a little”. |
+| **è** (in comparative clause) | Copular verb inside the comparative clause | Use copula **だ** after the adjective in the comparative clause; literal check: *“苦いだ”* → “is bitter”. |
+| **più** | Comparative adverb “more” (death > bitterness) | Express the comparative with **より** (than) and place **ほんの少しだけ** before the adjective to show slightness: **死よりほんの少しだけ苦い**. Literal check: *“死よりほんの少しだけ苦い”* → “death is only a little more bitter”. |
+| **morte** | Noun “death”, the term being compared | Render as **死**; literal check: *“死”* → “death”. |
+| **ma** | Coordinating conjunction “but” | Use **しかし** or **だが** to connect clauses; literal check: *“しかし”* → “but”. |
+| **per** | Preposition marking purpose | Translate as **ために** (in order to) preceding the infinitive verb; literal check: *“…するために”* → “in order to”. |
+| **trattar** | Infinitive “to treat / discuss” | Use the verb **論じる** in its infinitive form **論じる**; literal check: *“論じる”* → “to treat”. |
+| **del** | Prepositional phrase “of the” linking verb to object | Render as **の** after the verb to mark the object; literal check: *“論じるの”* → “to treat of”. |
+| **ben** | Noun “good” (object of discussion) | Translate as **善** or **良いこと**; literal check: *“善”* → “good”. |
+| **ch'** | Relative pronoun “that” introducing clause “i' vi trovai” | Use **こと** or **の** to nominalize the relative clause; literal check: *“…こと”* → “that”. |
+| **i'** | Subject pronoun “I” | Insert **私** as the subject; literal check: *“私が”* → “I”. |
+| **vi** | Locative adverb “there” | Render as **そこ** or **そこで**; literal check: *“そこ”* → “there”. |
+| **trovai** | Past tense “found” (passato remoto) | Use past form **見つけた**; literal check: *“見つけた”* → “found”. |
+| **dirò** | Future tense “I will tell” | Use future‑like construction **言うだろう** or **言います** with future nuance; literal check: *“言います”* → “I will tell”. |
+| **de** | Prepositional phrase “of the” introducing “l'altre cose” | Render as **の** linking to the noun phrase; literal check: *“…の”* → “of the”. |
+| **l'altre** | Determiner “the other” | Translate as **他の**; literal check: *“他の”* → “other”. |
+| **cose** | Noun “things” (object of “dirò”) | Render as **もの**; literal check: *“もの”* → “things”. |
+| **ch'** (second occurrence) | Relative pronoun “that” introducing clause “i' v'ho scorte” | Use **こと** or **の** to nominalize; literal check: *“…こと”* → “that”. |
+| **i'** (second) | Subject pronoun “I” | Insert **私**; literal check: *“私が”* → “I”. |
+| **v'** | Locative adverb “there” | Render as **そこ** or **そこで**; literal check: *“そこ”* → “there”. |
+| **ho** | Auxiliary “have” for perfect | Use **ている** construction with the main verb; literal check: *“見ている”* → “have seen”. |
+| **scorte** | Past participle “seen” (from *scorgere*) | Translate as **見た** (or **見ていた** for perfect); literal check: *“見た”* → “seen”. |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-Create placeable Japanese components for Step 4.
-Output ONLY bullet list; ONE LINE per bullet.
-- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Where <ID> is the leading integer at the start of the source line.
-Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
-Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
-Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
-Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
-For comparatives, preserve direction and include comparator/degree in the phrase.
-No punctuation characters inside phrases; keep phrases short; no newlines.
+Output: bullet list only; one line per source line.
+Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
+Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
+Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
+No punctuation inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 7: それはとても苦いです死はそれより少しだけ苦い / それはとても苦いほど死はそれより少しだけ苦い / それはとても苦いです死はそれより僅かに苦い  
-- Line 8: しかし善の論じるために私がそこに見つけた / しかし善のことを論じるために私がそこに見つけた / しかし善の論じることのために私がそこに見つけた  
-- Line 9: 私はそこに見た他のものについて言うだろう / 私がそこに見た他のものについて言うつもりだ / そこに見た他のものについて私は言うだろう
+- Line 7: 死はほんの少しだけ苦さが上回る / それほど苦くはないが死は少し上回る / 死がほんの少しだけ苦さを超える  
+- Line 8: しかしそこで見つけた善を論じるために / しかしそこで見つけた善について語るために / しかしそこで見つけた善を語る目的で  
+- Line 9: 私はそこで見た他のものについて語るだろう / 私はそこで見た他のものを語るつもりだ / 私はそこで見た他のものについて語ります
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-Assemble Step3 components into Japanese lines; keep the same number of lines.
-Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
-If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
-When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
-Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
-Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
-For each source line output ONLY this block (labels verbatim):
+Task: Assemble Step3 phrases into Japanese lines; keep the same number of lines.
+Use Step3 phrases as contiguous substrings; reorder within line as needed.
+Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
+Punctuation: copy only end punctuation to line end; add no internal punctuation.
+Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
 Line Inventory:
@@ -70,93 +67,87 @@ Assembly Notes:
 - If you inserted any function-words/morphology for joining, list them briefly.
 Target Text:
 <assembled target line>
-If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+If you forgot a necessary Step3 phrase: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
 **Source Line:**  
-7 Tant' è amara che poco è più morte;
+7 Tant' è amara che poco è più morte;  
 
 **Line Inventory:**  
-- それはとても苦いです死はそれより少しだけ苦い
+- 死はほんの少しだけ苦さが上回る  
 
 **Assembly Notes:**  
-- No additional function‑words or morphology were needed; the two clauses are placed consecutively as in the source.
+- Added end‑punctuation “;” to match source. No other function words needed.  
 
 **Target Text:**  
-それはとても苦いです死はそれより少しだけ苦い;
+死はほんの少しだけ苦さが上回る;  
 
----
+
 
 **Source Line:**  
-8 ma per trattar del ben ch'i' vi trovai,
+8 ma per trattar del ben ch'i' vi trovai,  
 
 **Line Inventory:**  
-- しかし善の論じるために私がそこに見つけた
+- しかしそこで見つけた善を論じるために  
 
 **Assembly Notes:**  
-- Inserted the accusative particle **を** after **善** to form the object marker required by the verb **論じる**.  
-  Resulting phrase: **しかし善を論じるために私がそこに見つけた**.
+- Added Japanese comma “、” to mirror source comma.  
 
 **Target Text:**  
-しかし善を論じるために私がそこに見つけた,
+しかしそこで見つけた善を論じるために、  
 
----
+
 
 **Source Line:**  
-9 dirò de l'altre cose ch'i' v'ho scorte.
+9 dirò de l'altre cose ch'i' v'ho scorte.  
 
 **Line Inventory:**  
-- 私はそこに見た他のものについて言うだろう
+- 私はそこで見た他のものについて語るだろう  
 
 **Assembly Notes:**  
-- No additional function‑words or morphology were needed; the phrase already contains the future predicate and the relative clause.
+- Added end‑punctuation “.” to match source.  
 
 **Target Text:**  
-私はそこに見た他のものについて言うだろう.
+私はそこで見た他のものについて語るだろう.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
-Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
-Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
-Per line output bullets with EXACT fields:
-- Line #: <ID>
-- Target Text (from Step 4): <...>
-- Back-Translation (literal into the reference translation's language): <...>
-- Reference Translation (line-aligned): <...>
-- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-- If any FAIL: Corrected Target Text: <...>
-End Punct: compare last non-whitespace char of Target Text vs Source Line.
-Line # rule: <ID> is the leading integer at the start of that Source Line.
-After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
-Output final Japanese text in ONE code block, line by line.
+For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Punctuation: keep only end punctuation from source; no internal punctuation.
+Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
+Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+If any FAIL: Corrected Target Text MUST make all checks OK if possible.
+Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
+After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 7  
-- Target Text (from Step 4): それはとても苦いです死はそれより少しだけ苦い;  
-- Back-Translation (literal): It is very bitter death is a little more bitter than it;  
-- Reference Translation (line‑aligned): So bitter is it that death is little more.  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **OK**, Hallucination **OK**  
+- **Line #**: 7  
+  **Target Text**: 死はほんの少しだけ苦さが上回る;  
+  **Back-Translation**: “Death slightly surpasses bitterness.”  
+  **Reference Translation**: “So bitter is it that death is little more.”  
+  **Checks**: End Punct <OK> | Coverage <OK> | Meaning Drift <OK> | Comparative Orientation <OK> | Hallucination <OK>  
+  **Corrected Target Text**: (none)  
 
-- Line #: 8  
-- Target Text (from Step 4): しかし善を論じるために私がそこに見つけた,  
-- Back-Translation (literal): But to discuss good I found there,  
-- Reference Translation (line‑aligned): But in order to treat of the good that there I found,  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **FAIL**, Comparative Orientation **N/A**, Hallucination **OK**  
-- Corrected Target Text: しかし私がそこに見つけた善を論じるために,  
+- **Line #**: 8  
+  **Target Text**: しかしそこで見つけた善を論じるために、  
+  **Back-Translation**: “However, in order to discuss the good I found there,”  
+  **Reference Translation**: “But in order to treat of the good that there I found,”  
+  **Checks**: End Punct <OK> | Coverage <OK> | Meaning Drift <OK> | Comparative Orientation <N/A> | Hallucination <OK>  
+  **Corrected Target Text**: (none)  
 
-- Line #: 9  
-- Target Text (from Step 4): 私はそこに見た他のものについて言うだろう.  
-- Back-Translation (literal): I will say about the other things I saw there.  
-- Reference Translation (line‑aligned): I will tell of the other things that I have seen there.  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+- **Line #**: 9  
+  **Target Text**: 私はそこで見た他のものについて語るだろう.  
+  **Back-Translation**: “I will probably speak about the other things I saw there.”  
+  **Reference Translation**: “I will tell of the other things that I have seen there.”  
+  **Checks**: End Punct <OK> | Coverage <OK> | Meaning Drift <FAIL> | Comparative Orientation <N/A> | Hallucination <OK>  
+  **Corrected Target Text**: 私はそこで見た他のものについて語ります.  
 
-**UNVERIFIED** – failing lines: 8  
-
-```text
-それはとても苦いです死はそれより少しだけ苦い;
-しかし私がそこに見つけた善を論じるために,
-私はそこに見た他のものについて言うだろう.
+```
+死はほんの少しだけ苦さが上回る;
+しかしそこで見つけた善を論じるために、
+私はそこで見た他のものについて語ります.
 ```
 ]]></message>
 </messages>

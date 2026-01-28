@@ -3,65 +3,70 @@
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
 Goal: For Telugu, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Requirements (ONE Markdown table):
-- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
-Output: ONLY the table; no extra prose.
+Output: ONE Markdown table only (no prose).
+Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|----------------------|--------------------|
-| Tant' | Intensifier indicating a high degree of bitterness (the subject is “so bitter”). | Use the Telugu degree adverb **అంత** with the adjective (e.g., *అంత* *కఠినమైన*). **Back‑translation check:** “so bitter”. |
-| è (1) | Copular verb linking the implicit subject (“it”) to the predicate “bitter”. | Render with the existential copula **ఉంది** (present). **Back‑translation check:** “is”. |
-| amara | Predicate adjective meaning “bitter”. | Translate as **కఠినమైన** (bitter, harsh) agreeing with the subject’s gender/number (neuter singular). **Back‑translation check:** “bitter”. |
-| che | Subordinating conjunction introducing a comparative clause. | Use the comparative particle **కంటే** to introduce the clause. **Back‑translation check:** “that”. |
-| poco | Adverb meaning “little”, quantifying the degree of increase. | Place the adverb **కొంచెం** before the comparative adjective. **Back‑translation check:** “little”. |
-| è (2) | Copular verb in the comparative clause linking “death” to the comparative adjective. | Use **ఉంది** again (present). **Back‑translation check:** “is”. |
-| più | Comparative adverb meaning “more”. | Use the comparative form **అధికంగా** (more) after the adjective. **Back‑translation check:** “more”. |
-| morte | Noun “death”, the benchmark of bitterness. | Translate as **మరణం** (noun, nominative). **Back‑translation check:** “death”. |
-| ma | Coordinating conjunction expressing contrast. | Render with **కాని** (but). **Back‑translation check:** “but”. |
-| per | Preposition indicating purpose (“in order to”). | Use the purpose infinitive marker **కు** after the verb (e.g., *చర్చించడానికి*). **Back‑translation check:** “for”. |
-| trattar | Infinitive “to treat/discuss”. | Use the infinitive **చర్చించ** (to discuss). **Back‑translation check:** “treat”. |
-| del | Prepositional phrase “of the”. | Combine **కు** with the definite article‑like particle **ఆ** (the) → **ఆ**. **Back‑translation check:** “of the”. |
-| ben | Abstract noun “good”. | Translate as **మంచి** (good, neuter). **Back‑translation check:** “good”. |
-| ch'i' | Relative pronoun “that I”. | Use **నేను ఏది** or **నేను దాన్ని** depending on clause; here **నేను దాన్ని**. **Back‑translation check:** “that I”. |
-| vi | Locative adverb “there”. | Render with **అక్కడ** (there). **Back‑translation check:** “there”. |
-| trovai | Simple past “I found”. | Use the past tense verb **కనుగొన్నాను** (I found). **Back‑translation check:** “found”. |
-| dirò | Future “I will tell”. | Use future tense **చెప్పుతాను** (I will tell). **Back‑translation check:** “I will tell”. |
-| de | Preposition “of”. | Use the genitive marker **యొక్క** after the noun (e.g., *ఇతర వస్తువుల యొక్క*). **Back‑translation check:** “of”. |
-| l'altre | Determiner + adjective “the other”. | Translate as **ఇతర** (other) with the definite sense implied by context; optionally **ఆ** for “the”. **Back‑translation check:** “the other”. |
-| cose | Plural noun “things”. | Use **వస్తువులు** (things, plural). **Back‑translation check:** “things”. |
-| ch'i' (2) | Relative pronoun “that I”. | Same as above: **నేను ఏవి** or **నేను వాటిని**; here **నేను వాటిని**. **Back‑translation check:** “that I”. |
-| v'ho | Perfect auxiliary “have … there”. | Use perfect aspect with auxiliary **చేసి** + locative **అక్కడ** → **అక్కడ చేసి**. **Back‑translation check:** “have … there”. |
-| scorte | Past participle “seen”. | Translate as **చూసాను** (I saw/seen). **Back‑translation check:** “seen”. |
+**Morphosyntactic Requirement Definition for Telugu (per‑token)**  
+
+| Source Word | Contextual Definition | Target Requirement (Telugu) |
+|-------------|----------------------|------------------------------|
+| **Tant'** | Intensifier of “amara” (so) | `అంత` (adv.) – placed before the adjective to convey “so”. **Literal back‑translation:** “so”. |
+| **è** (copula) | Links implicit subject “it” with predicate adjective | `అది` (pron., neuter) + `ఉంది` (verb, 3rd sg, pres., copular). **Literal back‑translation:** “it is”. |
+| **amara** | Predicate adjective “bitter” describing the subject | `కోపంగా` (adj., fem.) – agrees with the neuter pronoun in meaning. **Literal back‑translation:** “bitter”. |
+| **che** (comparative conjunction) | Introduces comparative clause | `కంటే` (post‑position) – marks the comparative relation. **Literal back‑translation:** “than”. |
+| **poco** | Degree adverb “little”, indicating slight increase | `కొంచెం` (adv.) – modifies the comparative adjective. **Literal back‑translation:** “little”. |
+| **è** (copula in comparative) | Links “death” with comparative predicate | `ఉంది` (verb, 3rd sg, pres., copular) attached to “death”. **Literal back‑translation:** “is”. |
+| **più** | Comparative adverb “more” | `అధికంగా` (adv., comparative) – expresses “more”. **Literal back‑translation:** “more”. |
+| **morte** | Noun “death”, the term that exceeds “bitter” | `మరణం` (noun, neuter) – subject of the comparative clause. **Literal back‑translation:** “death”. |
+| **;** | Clause boundary | `,` (punctuation) – separates clauses. **Literal back‑translation:** “,”. |
+| **ma** | Coordinating conjunction “but” | `కాని` (conj.) – connects to the next clause. **Literal back‑translation:** “but”. |
+| **per** | Preposition marking purpose “in order to” | `కోసం` (post‑position) – attaches to infinitive verb. **Literal back‑translation:** “for”. |
+| **trattar** | Infinitive “to treat/discuss” | `చర్చించడానికి` (verb, infinitive, purpose) – conveys “to discuss”. **Literal back‑translation:** “to discuss”. |
+| **del** | Partitive “of the” (di + il) | `సంబంధించి` (post‑position) – links verb to object “good”. **Literal back‑translation:** “of”. |
+| **ben** | Noun “good” (object of discussion) | `మంచి` (noun, neuter) – object of `చర్చించడానికి`. **Literal back‑translation:** “good”. |
+| **ch'** | Relative pronoun “that” | `అది` (rel. pron., neuter) – introduces relative clause. **Literal back‑translation:** “that”. |
+| **i'** | Pronoun “I” | `నేను` (pron., 1st sg) – subject of relative clause. **Literal back‑translation:** “I”. |
+| **vi** | Locative adverb “there” | `అక్కడ` (adv.) – locative complement. **Literal back‑translation:** “there”. |
+| **trovai** | Past tense “found” (passato remoto) | `కనుగొన్నాను` (verb, 1st sg, aorist) – perfective past. **Literal back‑translation:** “found”. |
+| **,** | Clause separator | `,` (punctuation). **Literal back‑translation:** “,”. |
+| **dirò** | Future tense “I will tell” | `చెప్పుతాను` (verb, 1st sg, future) – expresses future intention. **Literal back‑translation:** “I will tell”. |
+| **de** | Partitive “of the” (di + le) | `సంబంధించి` (post‑position) – links verb to noun phrase. **Literal back‑translation:** “of”. |
+| **l'altre** | Determiner “the other” (plural) | `ఇతర` (adj., plural) – modifies “things”. **Literal back‑translation:** “other”. |
+| **cose** | Noun “things” (plural) | `వస్తువులు` (noun, plural) – direct object of `చెప్పుతాను`. **Literal back‑translation:** “things”. |
+| **ch'** | Relative pronoun “that” | `అవి` (rel. pron., plural) – introduces relative clause. **Literal back‑translation:** “that”. |
+| **i'** | Pronoun “I” | `నేను` (pron., 1st sg) – subject of relative clause. **Literal back‑translation:** “I”. |
+| **v'** | Locative adverb “there” | `అక్కడ` (adv.) – locative complement. **Literal back‑translation:** “there”. |
+| **ho** | Auxiliary “have” (present) | `ఉన్నాను` (auxiliary, 1st sg, pres.) – forms perfect. **Literal back‑translation:** “have”. |
+| **scorte** | Past participle “seen” (scorgere) | `చూసిన` (participle, neuter, plural) – combined with auxiliary to form perfect. **Literal back‑translation:** “seen”. |
+
+**Notes on Comparative Ordering & Degree (Line 7)**  
+- The Telugu clause must preserve the ordering **death > bitter** with a slight degree: `మరణం (death) కొంచెం (little) ఎక్కువగా (more) ఉంటుంది (is)` → literal back‑translation “death is a little more”.  
+- The comparative marker `కంటే` is omitted because the structure “X అధికంగా ఉంది” already encodes “X is more”. The adverb `కొంచెం` explicitly marks the slightness of the increase.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-Create placeable Telugu components for Step 4.
-Output ONLY bullet list; ONE LINE per bullet.
-- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Where <ID> is the leading integer at the start of the source line.
-Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
-Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
-Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
-Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
-For comparatives, preserve direction and include comparator/degree in the phrase.
-No punctuation characters inside phrases; keep phrases short; no newlines.
+Output: bullet list only; one line per source line.
+Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
+Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
+Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
+No punctuation inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 7: అంత కఠినమైనది మరణం కన్నా కొంచెం ఎక్కువ / ఇంత కఠినమైనది మరణం కన్నా స్వల్పంగా ఎక్కువ / అంత చేదు మరణం కన్నా కొంచెం ఎక్కువ  
-- Line 8: అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి / అక్కడ నేను పొందిన మంచి గురించి మాట్లాడటానికి / అక్కడ నేను చూసిన మంచి గురించి వివరిచడానికి  
-- Line 9: నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను / నేను అక్కడ గమనించిన ఇతర వస్తువుల గురించి చెప్పబోతున్నాను / నేను అక్కడ చూసిన ఇతర వస్తువుల గురించి వివరిస్తాను
+- Line 7: అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది / మరణం కొంచెం ఎక్కువగా ఉంటుంది / కోపం కన్నా మరణం కొంచెం ఎక్కువ  
+- Line 8: మంచి గురించి చర్చించడానికి నేను అక్కడ కనుగొన్నాను / చర్చించడానికి నేను అక్కడ మంచి కనుగొన్నాను / నేను అక్కడ మంచి కనుగొన్నాను  
+- Line 9: నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను / అక్కడ చూసిన ఇతర విషయాలు నేను చెప్పుతాను / ఇతర విషయాలు నేను అక్కడ చూసి చెప్పుతాను
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-Assemble Step3 components into Telugu lines; keep the same number of lines.
-Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
-If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
-When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
-Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
-Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
-For each source line output ONLY this block (labels verbatim):
+Task: Assemble Step3 phrases into Telugu lines; keep the same number of lines.
+Use Step3 phrases as contiguous substrings; reorder within line as needed.
+Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
+Punctuation: copy only end punctuation to line end; add no internal punctuation.
+Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
 Line Inventory:
@@ -70,20 +75,20 @@ Assembly Notes:
 - If you inserted any function-words/morphology for joining, list them briefly.
 Target Text:
 <assembled target line>
-If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+If you forgot a necessary Step3 phrase: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
 **Source Line:**  
 7 Tant' è amara che poco è più morte;
 
 **Line Inventory:**  
-- అంత కఠినమైనది మరణం కన్నా కొంచెం ఎక్కువ
+- అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది
 
 **Assembly Notes:**  
-- No additional function‑words needed; the phrase already contains the main predicate “అంత కఠినమైనది” and the comparative clause “మరణం కన్నా కొంచెం ఎక్కువ”.
+- No additional function‑words needed; the phrase already contains the comparative marker, degree adverb, and copula.
 
 **Target Text:**  
-అంత కఠినమైనది మరణం కన్నా కొంచెం ఎక్కువ;
+అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది;
 
 ---
 
@@ -91,13 +96,13 @@ If you forgot a necessary phrase from Step 3: re-insert it (no new content words
 8 ma per trattar del ben ch'i' vi trovai,
 
 **Line Inventory:**  
-- అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి
+- మంచి గురించి చర్చించడానికి నేను అక్కడ కనుగొన్నాను
 
 **Assembly Notes:**  
-- No extra morphology required; the infinitive purpose marker “చర్చించడానికి” conveys the “per …” (in order to) relation.
+- No extra words required; the infinitive చర్చించడానికి expresses purpose and the relative clause is embedded.
 
 **Target Text:**  
-అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి,
+మంచి గురించి చర్చించడానికి నేను అక్కడ కనుగొన్నాను,
 
 ---
 
@@ -105,58 +110,52 @@ If you forgot a necessary phrase from Step 3: re-insert it (no new content words
 9 dirò de l'altre cose ch'i' v'ho scorte.
 
 **Line Inventory:**  
-- నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను
+- నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను
 
 **Assembly Notes:**  
-- The future verb “చెప్పుతాను” supplies the required tense; no further linking needed.
+- No additional morphology needed; the phrase includes the future verb చెప్పుతాను and the relative clause.
 
 **Target Text:**  
-నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను.
+నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
-Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
-Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
-Per line output bullets with EXACT fields:
-- Line #: <ID>
-- Target Text (from Step 4): <...>
-- Back-Translation (literal into the reference translation's language): <...>
-- Reference Translation (line-aligned): <...>
-- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-- If any FAIL: Corrected Target Text: <...>
-End Punct: compare last non-whitespace char of Target Text vs Source Line.
-Line # rule: <ID> is the leading integer at the start of that Source Line.
-After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
-Output final Telugu text in ONE code block, line by line.
+For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Punctuation: keep only end punctuation from source; no internal punctuation.
+Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
+Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+If any FAIL: Corrected Target Text MUST make all checks OK if possible.
+Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
+After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 7  
-  Target Text (from Step 4): అంత కఠినమైనది మరణం కన్నా కొంచెం ఎక్కువ;  
-  Back-Translation (literal): “so bitter, a little more than death;”  
-  Reference Translation (line‑aligned): So bitter is it that death is little more.  
-  Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **FAIL**, Comparative Orientation **FAIL**, Hallucination **OK**  
-  Corrected Target Text: అంత చెడు, మరణం కన్నా కొంచెం తక్కువ;
+- **Line #**: 7  
+  **Target Text**: అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది;  
+  **Back-Translation**: “So bitter, death is a little more.”  
+  **Reference Translation**: “So bitter is it that death is little more.”  
+  **Checks**: End Punct OK | Coverage OK | Meaning Drift OK | Comparative Orientation OK | Hallucination OK  
+  **Corrected Target Text**:  
 
-- Line #: 8  
-  Target Text (from Step 4): అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి,  
-  Back-Translation (literal): “there I found good about discuss to,”  
-  Reference Translation (line‑aligned): But in order to treat of the good that there I found,  
-  Checks (OK/FAIL): End Punct **OK**, Coverage **FAIL**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
-  Corrected Target Text: కానీ అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి,
+- **Line #**: 8  
+  **Target Text**: మంచి గురించి చర్చించడానికి నేను అక్కడ కనుగొన్నాను,  
+  **Back-Translation**: “To discuss about the good, I found there.”  
+  **Reference Translation**: “But in order to treat of the good that there I found.”  
+  **Checks**: End Punct OK | Coverage FAIL | Meaning Drift FAIL | Comparative Orientation N/A | Hallucination OK  
+  **Corrected Target Text**: కానీ నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,  
 
-- Line #: 9  
-  Target Text (from Step 4): నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను.  
-  Back-Translation (literal): “I will say about the other things I saw there.”  
-  Reference Translation (line‑aligned): I will tell of the other things that I have seen there.  
-  Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+- **Line #**: 9  
+  **Target Text**: నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను.  
+  **Back-Translation**: “I will tell the other things I saw there.”  
+  **Reference Translation**: “I will tell of the other things that I have seen there.”  
+  **Checks**: End Punct OK | Coverage OK | Meaning Drift OK | Comparative Orientation N/A | Hallucination OK  
+  **Corrected Target Text**:  
 
-**Final Telugu Text**
-
-```telugu
-అంత చెడు, మరణం కన్నా కొంచెం తక్కువ;
-కాని అక్కడ నేను కనుగొన్న మంచి గురించి చర్చించడానికి,
-నేను అక్కడ చూసిన ఇతర విషయాలు గురించి చెప్పుతాను.
+```
+అంతకోపంగా మరణం కొంచెం ఎక్కువగా ఉంటుంది;
+కాని నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,
+నేను అక్కడ చూసిన ఇతర విషయాలు చెప్పుతాను.
 ```
 ]]></message>
 </messages>

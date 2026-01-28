@@ -3,61 +3,58 @@
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
 Goal: For Malayalam, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Requirements (ONE Markdown table):
-- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
-Output: ONLY the table; no extra prose.
+Output: ONE Markdown table only (no prose).
+Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement (Malayalam) |
-|-------------|----------------------|---------------------------------|
-| Nel | “in the middle of” – locative prepositional phrase introducing the central point | **മധ്യത്തില്‍** – noun *മധ്യം* + locative suffix **‑ല്‍**; back‑translation: “in middle” |
-| mezzo | “middle” – the central point of a span | **മധ്യം** (noun, neuter, singular); back‑translation: “middle” |
-| del | “of the” – genitive linking the road to the larger context | **‑യുടെ** (genitive suffix attached to *വഴി* → *വഴിയുടെ*); back‑translation: “of the” |
-| cammin | “road” – the route or way that one travels on; metaphor for life’s course | **വഴി** (noun, singular, nominative); back‑translation: “road” |
-| di | “of” – marks possession/association | **‑യുടെ** (genitive suffix on the following noun); back‑translation: “of” |
-| nostra | “our” – collective ownership of life | **ഞങ്ങളുടെ** (first‑person plural possessive pronoun + genitive suffix); back‑translation: “our” |
-| vita | “life” – the span of existence of the speaker | **ജീവിതം** (noun, neuter, singular, genitive when combined → *ജീവിതത്തിന്റെ*); back‑translation: “life” |
-| mi | reflexive pronoun “myself” (object) | **സ്വയം** (reflexive pronoun, emphatic) used with verb; back‑translation: “myself” |
-| ritrovai | “found” – act of discovering one’s own state | **കണ്ടെത്തി** (verb, 1st‑person singular, past perfective); back‑translation: “found” |
-| per | “within” – indicates interior location | **അകത്ത്** (postposition, locative); back‑translation: “within” |
-| una | “a” – indefinite article (non‑specific) | No article; noun appears bare (**കാട്**) – Malayalam lacks indefinite article; back‑translation: “a” (implicit) |
-| selva | “wood” – densely wooded area, metaphorically dark | **കാട്** (noun, singular); back‑translation: “wood” |
-| oscura | “dark” – lacking light, conveys gloom | **ഇരുണ്ട** (adjective, attributive, agrees with *കാട്*); back‑translation: “dark” |
-| ché | “for/because” – causal conjunction | **കാരണം** (causal conjunction placed after clause or as **എന്നാൽ**); back‑translation: “because” |
-| la | “the” – definite article (specifies particular way) | **ആ** (demonstrative determiner before *വഴി* → *ആ വഴി*); back‑translation: “the” |
-| diritta | “right” – correct or proper path | **ശരിയായ** (adjective, attributive, agrees with *വഴി*); back‑translation: “right” |
-| via | “way” – the correct route or method of proceeding | **വഴി** (noun, singular, nominative); back‑translation: “way” |
-| era | “had been” – past state of being (imperfect) | **ഇരുന്നതായിരുന്നു** (verb, 3rd‑person singular, past imperfect); back‑translation: “was” |
-| smarrita | “missed” – state of being lost or not found | **കാണാതായ** (past participle used adjectivally, agrees with *വഴി*); back‑translation: “missed” |
+| Source Word | Contextual Definition | Target Requirement |
+|-------------|----------------------|--------------------|
+| **Nel** | “in the middle of” (locative phrase) | Locative case **‑ൽ** attached to *മധ്യം* → **മധ്യത്തിൽ**  *BT: “in the middle”* |
+| **mezzo** | “middle point” | Noun *മധ്യം* with locative **‑ൽ** (as above) → **മധ്യത്തിൽ**  *BT: “mid‑way”* |
+| **del** | Genitive link “of the” (road → life) | Genitive suffix **‑യുടെ** on *വഴി* → **വഴിയുടെ**  *BT: “of the road”* |
+| **cammin** | “road / path” | Noun *വഴി* in genitive **‑യുടെ** (as above) → **വഴിയുടെ**  *BT: “of the road”* |
+| **di** | Possessive/genitive marker “of” | Covered by genitive **‑യുടെ** on the following noun; no separate morpheme needed. |
+| **nostra** | Possessive adjective “our” | Possessive pronoun **ഞങ്ങളുടെ** preceding *ജീവിതം* → **ഞങ്ങളുടെ ജീവിതം**  *BT: “our life”* |
+| **vita** | “life” (possessor of the road) | Noun *ജീവിതം* with genitive **‑ത്തിന്റെ** → **ജീവിതത്തിന്റെ**  *BT: “of our life”* |
+| **mi** | Reflexive pronoun “myself” | Reflexive pronoun **താനെ** attached to verb → **താനെ**  *BT: “myself”* |
+| **ritrovai** | Past‑tense “found” (self‑locating) | Verb **കണ്ടെത്തി** (past simple) with reflexive object → **കണ്ടെത്തി**  *BT: “found”* |
+| **per** | Preposition “within” (spatial) | Locative case **‑ൽ** on following noun → **കാട്ടിൽ**  *BT: “within”* |
+| **una** | Indefinite article “a” (no Malayalam article) | No morphological marking; noun appears bare. |
+| **selva** | “wood / forest” | Noun *കാട്* with locative **‑ൽ** (from *per*) → **കാട്ടിൽ**  *BT: “a wood”* |
+| **oscura** | “dark” (attribute) | Adjective *ഇരുണ്ട* agreeing with *കാട്* → **ഇരുണ്ട**  *BT: “dark”* |
+| **ché** | Causal conjunction “for / because” | Conjunction **കാരണം** placed before clause → **കാരണം**  *BT: “because”* |
+| **la** | Definite article “the” (not expressed) | No morphological marking; noun is definite by context. |
+| **diritta** | “right / correct” (attribute) | Adjective *ശരിയായ* modifying *വഴി* → **ശരിയായ**  *BT: “right”* |
+| **via** | “way / path” (subject of clause) | Noun *വഴി* in nominative (default) → **വഴി**  *BT: “the way”* |
+| **era** | Copular verb “was / had been” (imperfect) | Auxiliary **ഇരുന്നതായിരുന്നു** or omitted in perfect construction; here encoded in **നഷ്ടപ്പെട്ടിരുന്നു** (past perfect) → **നഷ്ടപ്പെട്ടിരുന്നു**  *BT: “had been”* |
+| **smarrita** | Past participle “missed / lost” | Past participle adjective **നഷ്ടപ്പെട്ട** attached to *വഴി* → **നഷ്ടപ്പെട്ട**  *BT: “missed”* |
+
+**Notes on Comparative Ordering & Degree:**  
+No comparative or degree expressions appear in the source; therefore the *Target Requirement* column marks this as **N/A** for all rows.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-Create placeable Malayalam components for Step 4.
-Output ONLY bullet list; ONE LINE per bullet.
-- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Where <ID> is the leading integer at the start of the source line.
-Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
-Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
-Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
-Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
-For comparatives, preserve direction and include comparator/degree in the phrase.
-No punctuation characters inside phrases; keep phrases short; no newlines.
+Output: bullet list only; one line per source line.
+Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
+Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
+Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
+No punctuation inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 1: ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍ / ഞങ്ങളുടെ ജീവിതവഴിയുടെ മധ്യത്തില്‍ / വഴിയുടെ മധ്യത്തില്‍ ഞങ്ങളുടെ ജീവിതം  
-- Line 2: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ കാട്ടിന്റെ ഇരുണ്ട അകത്ത് താനെ കണ്ടെത്തി  
-- Line 3: കാരണം ശരിയായ വഴി കാണാതായിരുന്നു / എന്നാൽ ശരിയായ വഴി കാണാതായിരുന്നു / കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു
+- Line 1: ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ / നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ / ജീവിതം വഴിയുടെ മധ്യത്തിൽ  
+- Line 2: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടു / ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ പിടിച്ചു  
+- Line 3: കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു / കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടു / കാരണം ശരിയായ വഴി നഷ്ടമായിരുന്നു
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-Assemble Step3 components into Malayalam lines; keep the same number of lines.
-Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
-If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
-When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
-Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
-Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
-For each source line output ONLY this block (labels verbatim):
+Task: Assemble Step3 phrases into Malayalam lines; keep the same number of lines.
+Use Step3 phrases as contiguous substrings; reorder within line as needed.
+Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
+Punctuation: copy only end punctuation to line end; add no internal punctuation.
+Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
 Line Inventory:
@@ -66,31 +63,31 @@ Assembly Notes:
 - If you inserted any function-words/morphology for joining, list them briefly.
 Target Text:
 <assembled target line>
-If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+If you forgot a necessary Step3 phrase: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
 **Source Line:**  
-1 Nel mezzo del cammin di nostra vita  
+Nel mezzo del cammin di nostra vita  
 
 **Line Inventory:**  
-- ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
+- നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
 
 **Assembly Notes:**  
-- No additional function‑words needed; the phrase already conveys “midway on the road of our life”.  
+- No additional function words needed; the phrase already expresses the locative “in the middle of the road of our life”.  
 
 **Target Text:**  
-ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
+നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
 
 ---
 
 **Source Line:**  
-2 mi ritrovai per una selva oscura,  
+mi ritrovai per una selva oscura,  
 
 **Line Inventory:**  
 - ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി  
 
 **Assembly Notes:**  
-- No extra morphology required; the phrase includes the reflexive “found myself” and the locative “within a dark wood”.  
+- The locative suffix “‑ൽ” on *കാട്ടിൽ* supplies the meaning of “within”. No extra particles required.  
 
 **Target Text:**  
 ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
@@ -98,59 +95,55 @@ If you forgot a necessary phrase from Step 3: re-insert it (no new content words
 ---
 
 **Source Line:**  
-3 ché la diritta via era smarrita.  
+ché la diritta via era smarrita.  
 
 **Line Inventory:**  
-- കാരണം ശരിയായ വഴി കാണാതായിരുന്നു  
+- കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു  
 
 **Assembly Notes:**  
-- Inserted causal conjunction “കാരണം” to match the Italian “ché”.  
+- The causal conjunction “കാരണം” provides the “because/for” link; the verb phrase already encodes the past perfect “had been missed”.  
 
 **Target Text:**  
-കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.
+കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
-Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
-Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
-Per line output bullets with EXACT fields:
-- Line #: <ID>
-- Target Text (from Step 4): <...>
-- Back-Translation (literal into the reference translation's language): <...>
-- Reference Translation (line-aligned): <...>
-- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-- If any FAIL: Corrected Target Text: <...>
-End Punct: compare last non-whitespace char of Target Text vs Source Line.
-Line # rule: <ID> is the leading integer at the start of that Source Line.
-After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
-Output final Malayalam text in ONE code block, line by line.
+For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Punctuation: keep only end punctuation from source; no internal punctuation.
+Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
+Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+If any FAIL: Corrected Target Text MUST make all checks OK if possible.
+Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
+After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 1  
-- Target Text (from Step 4): ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍  
-- Back-Translation (literal into the reference translation's language): in the middle of our life's road  
-- Reference Translation (line‑aligned): Midway upon the road of our life  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Line 1  
+  Target Text: നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
+  Back-Translation: “in the middle of the road of our life”  
+  Reference Translation: Midway upon the road of our life  
+  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
+  Corrected Target Text:  
 
-- Line #: 2  
-- Target Text (from Step 4): ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
-- Back-Translation (literal into the reference translation's language): I found myself in a dark forest  
-- Reference Translation (line‑aligned): I found myself within a dark wood,  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Line 2  
+  Target Text: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
+  Back-Translation: “I found myself in a dark forest”  
+  Reference Translation: I found myself within a dark wood,  
+  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
+  Corrected Target Text:  
 
-- Line #: 3  
-- Target Text (from Step 4): കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.  
-- Back-Translation (literal into the reference translation's language): because the right way was missing  
-- Reference Translation (line‑aligned): for the right way had been missed.  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+- Line 3  
+  Target Text: കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.  
+  Back-Translation: “because the right way had been lost”  
+  Reference Translation: for the right way had been missed.  
+  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
+  Corrected Target Text:  
 
-All lines passed verification.
-
-```malayalam
-ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍
+```
+നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
 ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
-കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.
+കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 ```
 ]]></message>
 </messages>

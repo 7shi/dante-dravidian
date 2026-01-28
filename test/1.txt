@@ -10,48 +10,48 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 
 # Telugu
 
-1 మన జీవితం యొక్క మార్గం మధ్యలో
+1 మన జీవితం యొక్క దారి మధ్యలో
 2 నేను చీకటి అడవిలో తాను కనుగొన్నాను,
-3 ఎందుకంటే సరైన మార్గం కోల్పోయింది.
+3 ఎందుకంటే సరైన దారి కోల్పోయింది.
 
 # Tamil
 
-1 எங்கள் வாழ்க்கையின் பாதையின் நடுவில்
-2 நான் ஒரு இருண்ட காடில் என்னை கண்டுபிடித்தேன்,
-3 ஏனெனில் சரியான வழி இழந்திருந்தது.
+1 நம் வாழ்க்கையின் பாதையின் நடுவில்
+2 நான் இருண்ட காடில் தன்னை கண்டேன்,
+3 ஏனெனில் சரியான பாதை இழந்தது.
 
 # Kannada
 
-1 ನಮ್ಮ ಜೀವನದ ಮಧ್ಯದಲ್ಲಿ ರಸ್ತೆ
-2 ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲೇ ತಾನೇ ಕಂಡುಹಿಡಿದೆ,
+1 ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
+2 ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡುಹಿಡಿದೆ,
 3 ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು.
 
 # Malayalam
 
-1 ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തില്‍
+1 നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
 2 ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
-3 കാരണം ശരിയായ വഴി കാണാതായിരുന്നു.
+3 കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 
 # Japanese
 
-1 人生の途中で
+1 我々の人生の道の途中で
 2 暗い森の中で自分を見つけた,
-3 正しい道は失われていた.
+3 正しい道が失われていたから.
 
 # Spanish
 
 1 En el medio del camino de nuestra vida
 2 Me encontré en una selva oscura,
-3 Porque la recta vía había sido perdida.
+3 porque la recta vía estaba perdida.
 
 # French
 
 1 Au milieu du chemin de notre vie
-2 Je me retrouvai dans une foret sombre,
-3 car la voie droite était perdue.
+2 Je me suis retrouvé dans une forêt sombre,
+3 car le droit chemin était perdu.
 
 # Esperanto
 
-1 En la mezo de la vojo de nia vivo
-2 Mi trovis min en ia malhela arbaro,
-3 Ĉar la ĝusta vojo estis perdita.
+1 en la mezo de la vojo de nia vivo
+2 mi troviĝis en malluma arbaro,
+3 ĉar la rekta vojo estis perdita.

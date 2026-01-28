@@ -3,64 +3,68 @@
 <message role="user"><![CDATA[
 ### Step 2: Morphosyntactic Requirement Definition
 Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Requirements (ONE Markdown table):
-- Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-- In [Target Requirement], make comparative direction unambiguous and add a 1-line literal back-translation check.
-Output: ONLY the table; no extra prose.
+Output: ONE Markdown table only (no prose).
+Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
+In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|----------------------|--------------------|
-| Ahi | Interjection of emotional intensity | Use an exclamatory interjection 「ああ」; **← back‑translation:** “Ah!” |
-| quanto | Degree adverb marking intensity (“how”) | Insert the degree adverb 「どれほど」 before the adjective; **← back‑translation:** “how” |
-| a | Prepositional marker introducing infinitive complement | Render with the nominalizer 「こと」 plus object particle 「を」 (e.g., 「ことを」); **← back‑translation:** “to” |
-| dir | Verb “to tell” | Use the infinitive verb 「言う」; **← back‑translation:** “tell” |
-| qual | Interrogative/relative pronoun introducing embedded question | Use the interrogative 「何が」 to head the embedded clause; **← back‑translation:** “what” |
-| era | Past‑tense copula “was” | Apply past copula 「だった」 after the predicate; **← back‑translation:** “was” |
-| è | Present‑tense copula “is” | Apply present copula 「だ」 after the predicate; **← back‑translation:** “is” |
-| cosa | Abstract noun “thing” | Use the nominal noun 「こと」; **← back‑translation:** “thing” |
-| dura | Predicate adjective “hard” (difficulty) | Use i‑adjective 「難しい」 modifying the noun; **← back‑translation:** “hard” |
-| esta | Demonstrative adjective “this” | Use demonstrative 「この」 preceding the noun; **← back‑translation:** “this” |
-| selva | Noun “wood/forest” | Use noun 「森」 (or 「林」); **← back‑translation:** “wood” |
-| selvaggia | Attributive adjective “wild” | Use na‑adjective 「野生の」 attached to the noun; **← back‑translation:** “wild” |
-| e (1) | Coordinating conjunction “and” | Use coordinating conjunction 「そして」 between adjectives; **← back‑translation:** “and” |
-| aspra | Attributive adjective “rough” | Use i‑adjective 「荒い」; **← back‑translation:** “rough” |
-| e (2) | Coordinating conjunction “and” | Same as above: 「そして」; **← back‑translation:** “and” |
-| forte | Attributive adjective “dense/strong” | Use i‑adjective 「濃い」 (for “dense”) or 「強い」 (for “strong”); **← back‑translation:** “dense” |
-| che | Relative pronoun “which” introducing a clause | Use a relative clause marker 「～という」 or 「～の」; e.g., 「…という」; **← back‑translation:** “which” |
-| nel | Locative preposition “in” (within) | Use locative particle 「で」 after the noun phrase 「思考の中で」; **← back‑translation:** “in” |
-| pensier | Noun “thought” (poetic form) | Use noun 「思考」; **← back‑translation:** “thought” |
-| rinova | Verb “renews” (causative present) | Use transitive verb 「新たにする」 or 「再び起こす」; **← back‑translation:** “renews” |
-| la | Definite article “the” (specifying) | Use demonstrative 「その」 before the noun; **← back‑translation:** “the” |
-| paura | Noun “fear” | Use noun 「恐怖」; **← back‑translation:** “fear” |
+| Source Word | Contextual Definition (locked meaning) | Target Requirement (Japanese morphosyntax) |
+|-------------|----------------------------------------|--------------------------------------------|
+| Ahi | Exclamation of emotional intensity | Interjection **ああ**; literal back‑translation check: *“Ah!”* |
+| quanto | Marks degree of difficulty (“how”) | Degree adverb **どれほど** preceding the predicate; back‑translation: *“how”* |
+| a | Introduces infinitive purpose (“to”) | Particle **に** marking purpose after the verb stem; back‑translation: *“to”* |
+| dir | Action of speaking/telling | Verb **言う** in infinitive form **言うこと**; back‑translation: *“to tell”* |
+| qual | Refers to the unknown identity (“what”) | Interrogative pronoun **何** used as a nominal relative clause; back‑translation: *“what”* |
+| era | Past state of X (the forest) | Past copular **だった** attached to the noun phrase; back‑translation: *“was”* |
+| è | Present state of X as a “hard thing” | Present copular **だ** linking subject to predicate; back‑translation: *“is”* |
+| cosa | The entity being described (X) | Noun **もの** (generic “thing”); back‑translation: *“thing”* |
+| dura | Property indicating difficulty (“hard”) | Adjective **難しい** (hard/difficult) with degree marker **とても** for emphasis; back‑translation: *“hard”* |
+| esta | Demonstrative pointing to the specific forest (“this”) | Demonstrative adjective **この** modifying the noun; back‑translation: *“this”* |
+| selva | The referent X (forest/wood) | Noun **森** (forest) or **林**; back‑translation: *“forest/wood”* |
+| selvaggia | Property of X (“wild”) | Adjective **野生の**; back‑translation: *“wild”* |
+| e | Links adjectives (“and”) | Coordinating conjunction **そして** (or simple **、**) between adjectives; back‑translation: *“and”* |
+| aspra | Property of X (“rough”) | Adjective **荒い**; back‑translation: *“rough”* |
+| e | Links adjectives (“and”) | Same as above (**そして** or **、**); back‑translation: *“and”* |
+| forte | Property of X (“strong/dense”) | Adjective **濃い** (dense) or **強い** (strong) with degree marker **とても** if needed; back‑translation: *“strong/dense”* |
+| che | Relative pronoun referring back to *selva* (“which/that”) | Relative clause marker **～こと** or **～の** after the noun; back‑translation: *“which/that”* |
+| nel | Locates the mental activity (“in the”) | Prepositional phrase **…の中で**; back‑translation: *“in the”* |
+| pensier | Mental arena where X is considered (“thought”) | Noun **思考** or poetic **思ひ**; back‑translation: *“thought”* |
+| rinova | Causes the state of fear to re‑appear (“renews”) | Verb **新たにする** or **呼び起こす** in present tense **呼び起こす**; back‑translation: *“renews”* |
+| la | Definite article specifying “the fear” | Demonstrative **その** modifying the noun; back‑translation: *“the”* |
+| paura | Emotional response evoked by X (“fear”) | Noun **恐怖**; back‑translation: *“fear”* |
+| ! | Marks exclamation, heightening affect | Sentence‑final punctuation **！**; back‑translation: *“!”* |
+
+**Notes on comparative ordering & degree**  
+- The phrase “quanto … dura” is rendered with the explicit degree construction **どれほど…難しいか** (literally “how difficult it is”).  
+- Adjectives “aspra” and “forte” are each preceded by **とても** when a stronger degree is required, preserving the intensity of the original Italian.  
+
+**Literal back‑translation check (full sentence)**  
+> ああ、どれほど**言うこと**が**難しい**か、**この****森**は**野生の**、**荒い**、**とても濃い**ものだ、**それ**を**思考**の中で**呼び起こす****その恐怖**！  
+
+(Back‑translation: “Ah! how hard a thing it is to tell, this forest is wild, rough, and very dense, which in thought renews that fear!”)
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Pre-assembled Lexical Inventory
-Create placeable Japanese components for Step 4.
-Output ONLY bullet list; ONE LINE per bullet.
-- Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Where <ID> is the leading integer at the start of the source line.
-Hook: each phrase must satisfy the Step 2 Requirements table for that line (including the literal back-translation checks).
-Rules: Each phrase is directly placeable in the final line (no glue-only fragments).
-Must keep the line’s main predicate + any required linkage (result/purpose/relative); do not output only a subordinate fragment.
-Avoid embedding clause-linking connectors inside a phrase; keep phrases as clean, placeable propositions and let Step 4 add any necessary linking function-words/morphology.
-For comparatives, preserve direction and include comparator/degree in the phrase.
-No punctuation characters inside phrases; keep phrases short; no newlines.
+Output: bullet list only; one line per source line.
+Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
+Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
+Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
+Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
+No punctuation inside phrases; keep phrases short; no newlines.
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 4: ああどれほど何がだったかを言うことは難しい / ああどれほど何がだったかということは難しい / ああどれほど何がだったかを語ることは困難だ  
-- Line 5: この野生の荒い濃い森 / この野生の荒い強い森 / この荒々しい野生の濃い森  
-- Line 6: 思考の中で恐怖を新たにする / 思考の中で恐怖を再び起こす / 思考の中で恐怖を呼び起こす
+- Line 4: ああどれほど言うことが難しいか / それは難しいものだ / それはかつてそうだった  
+- Line 5: この森は野生だ / 荒くて / 濃い  
+- Line 6: それは / 思考の中で / 恐怖を呼び起こす
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Slot-Based Syntactic Assembly
-Assemble Step3 components into Japanese lines; keep the same number of lines.
-Use Step3 Final Form as contiguous substrings; reorder within-line as needed.
-If simple concatenation is ungrammatical or produces a predicate-clash, you MAY insert only function-words and/or inflectional morphology needed for grammatical joining; do NOT add new content words.
-When adding linking function-words/morphology, match the relation implied by the source line (result/purpose/relative) and do NOT turn it into a contrast relation unless the source explicitly contrasts.
-Semantic completeness: each Target Text MUST express the full Locked Meaning for that Source Line; do NOT drop the main predicate when the line contains a main predicate + linked clause.
-Punctuation: copy ONLY end punctuation from the source line to the END of Target Text; add NO internal punctuation.
-For each source line output ONLY this block (labels verbatim):
+Task: Assemble Step3 phrases into Japanese lines; keep the same number of lines.
+Use Step3 phrases as contiguous substrings; reorder within line as needed.
+Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
+Punctuation: copy only end punctuation to line end; add no internal punctuation.
+Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
 Line Inventory:
@@ -69,20 +73,22 @@ Assembly Notes:
 - If you inserted any function-words/morphology for joining, list them briefly.
 Target Text:
 <assembled target line>
-If you forgot a necessary phrase from Step 3: re-insert it (no new content words).
+If you forgot a necessary Step3 phrase: re-insert it (no new content words).
 ]]></message>
 <message role="assistant"><![CDATA[
 **Source Line:**  
 4 Ahi quanto a dir qual era è cosa dura  
 
 **Line Inventory:**  
-- ああどれほど何がだったかを言うことは難しい  
+- ああどれほど言うことが難しいか  
+- それは難しいものだ  
 
 **Assembly Notes:**  
-- Used the Step 3 phrase directly; no additional function‑words or inflection needed.  
+- No additional content words were added.  
+- The two phrases were concatenated directly; the ending copula 「だ」 of the second phrase provides the sentence‑final predicate.  
 
 **Target Text:**  
-ああどれほど何がだったかを言うことは難しい  
+ああどれほど言うことが難しいかそれは難しいものだ  
 
 ---
 
@@ -90,13 +96,16 @@ If you forgot a necessary phrase from Step 3: re-insert it (no new content words
 5 esta selva selvaggia e aspra e forte  
 
 **Line Inventory:**  
-- この野生の荒い濃い森  
+- この森は野生だ  
+- 荒くて  
+- 濃い  
 
 **Assembly Notes:**  
-- Phrase is a complete noun phrase matching the source description; no extra particles required.  
+- Inserted the particle 「で」 after 「野生だ」 to link the adjectival clause smoothly (function word only).  
+- The conjunctive 「荒くて」 already contains the connective 「て」, so no further particles are needed.  
 
 **Target Text:**  
-この野生の荒い濃い森  
+この森は野生だで荒くて濃い  
 
 ---
 
@@ -104,56 +113,54 @@ If you forgot a necessary phrase from Step 3: re-insert it (no new content words
 6 che nel pensier rinova la paura!  
 
 **Line Inventory:**  
-- 思考の中で恐怖を新たにする  
+- それは  
+- 思考の中で  
+- 恐怖を呼び起こす  
 
 **Assembly Notes:**  
-- Phrase functions as the relative clause; kept as‑is and appended the source exclamation mark.  
+- No extra words were required; the three phrases were placed in the natural order of a relative clause.  
 
 **Target Text:**  
-思考の中で恐怖を新たにする!
+それは思考の中で恐怖を呼び起こす！
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 5: Self-Correction via Back-Translation & Grammatical Check
-Verify each Step4 line vs Reference Translation + Locked Meaning; correct within-line only.
-Allowed: reorder within the line; re-insert only Step4 Missing; fix function-word/morphology anywhere; never add new content words; never move across lines.
-Punctuation rule: do NOT introduce new internal punctuation; only keep the end punctuation transferred from the source line.
-Per line output bullets with EXACT fields:
-- Line #: <ID>
-- Target Text (from Step 4): <...>
-- Back-Translation (literal into the reference translation's language): <...>
-- Reference Translation (line-aligned): <...>
-- Checks (OK/FAIL): End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-- If any FAIL: Corrected Target Text: <...>
-End Punct: compare last non-whitespace char of Target Text vs Source Line.
-Line # rule: <ID> is the leading integer at the start of that Source Line.
-After all lines: if any FAIL, label final as UNVERIFIED and list failing Line # values.
-Output final Japanese text in ONE code block, line by line.
+For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Punctuation: keep only end punctuation from source; no internal punctuation.
+Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
+Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
+If any FAIL: Corrected Target Text MUST make all checks OK if possible.
+Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
+After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
 - Line #: 4  
-- Target Text (from Step 4): ああどれほど何がだったかを言うことは難しい  
-- Back-Translation (literal into the reference translation's language): Ah how much what was that to say thing is difficult  
-- Reference Translation (line‑aligned): Ah! how hard a thing it is to tell what  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+  Target Text: ああどれほど言うことが難しいかそれは難しいものだ  
+  Back-Translation: “Ah how hard it is to say, it is a hard thing.”  
+  Reference Translation: Ah! how hard a thing it is to tell …  
+  Checks: End Punct <OK> Coverage <OK> Meaning Drift <OK> Comparative Orientation <N/A> Hallucination <OK>  
+  Corrected Target Text: (none)  
 
 - Line #: 5  
-- Target Text (from Step 4): この野生の荒い濃い森  
-- Back-Translation (literal into the reference translation's language): this wild rough dense forest  
-- Reference Translation (line‑aligned): this wild and rough and dense wood  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+  Target Text: この森は野生だで荒くて濃い  
+  Back-Translation: “This forest is wild, rough and dense.”  
+  Reference Translation: … this wild and rough and dense wood …  
+  Checks: End Punct <OK> Coverage <FAIL> Meaning Drift <FAIL> Comparative Orientation <N/A> Hallucination <OK>  
+  Corrected Target Text: この森は野生だが荒くて濃い  
 
 - Line #: 6  
-- Target Text (from Step 4): 思考の中で恐怖を新たにする!  
-- Back-Translation (literal into the reference translation's language): in thought fear anew does!  
-- Reference Translation (line‑aligned): which in thought renews the fear!  
-- Checks (OK/FAIL): End Punct **OK**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
+  Target Text: それは思考の中で恐怖を呼び起こす！  
+  Back-Translation: “It renews the fear in thought!”  
+  Reference Translation: … which in thought renews the fear!  
+  Checks: End Punct <OK> Coverage <OK> Meaning Drift <OK> Comparative Orientation <N/A> Hallucination <OK>  
+  Corrected Target Text: (none)  
 
-
-
-```text
-ああどれほど何がだったかを言うことは難しい
-この野生の荒い濃い森
-思考の中で恐怖を新たにする!
+```
+ああどれほど言うことが難しいかそれは難しいものだ
+この森は野生だが荒くて濃い
+それは思考の中で恐怖を呼び起こす！
 ```
 ]]></message>
 </messages>
