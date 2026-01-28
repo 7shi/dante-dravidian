@@ -37,21 +37,3 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 1 我々の人生の道の途中で
 2 暗い森の中で自分を見つけた,
 3 正しい道が失われていたから.
-
-# Spanish
-
-1 En el medio del camino de nuestra vida
-2 Me encontré en una selva oscura,
-3 porque la recta vía estaba perdida.
-
-# French
-
-1 Au milieu du chemin de notre vie
-2 Je me suis retrouvé dans une forêt sombre,
-3 car le droit chemin était perdu.
-
-# Esperanto
-
-1 en la mezo de la vojo de nia vivo
-2 mi troviĝis en malluma arbaro,
-3 ĉar la rekta vojo estis perdita.

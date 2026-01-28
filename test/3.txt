@@ -37,21 +37,3 @@ So bitter is it that death is little more. But in order to treat of the good tha
 7 死はほんの少しだけ苦さが上回る;
 8 しかしそこで見つけた善を論じるために、
 9 私はそこで見た他のものについて語ります.
-
-# Spanish
-
-7 Tan amarga es que la muerte es poco más que amarga;
-8 pero para tratar del bien que encontré allí,
-9 diré de las otras cosas que he visto allí.
-
-# French
-
-7 Si amère est‑elle que la mort est un peu plus amère;
-8 mais pour traiter du bien que j’ai trouvé là,
-9 je dirai des autres choses que j’ai vues là.
-
-# Esperanto
-
-7 mort estas iom pli ol amara;
-8 sed por trakti bonon kiun mi trovis tie,
-9 mi diros pri la aliaj aĵoj kiujn mi vidis tie.

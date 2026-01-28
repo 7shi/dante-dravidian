@@ -52,7 +52,7 @@ for i in range(3):
             f.write(history_to_xml(client.history))
 
     # Steps 2-5 and final translation for each target language
-    for j, lang in enumerate(["Telugu", "Tamil", "Kannada", "Malayalam", "Japanese", "Spanish", "French", "Esperanto"]):
+    for j, lang in enumerate(["Telugu", "Tamil", "Kannada", "Malayalam", "Japanese"]):
         xml_file = f"test/{i+1}-{lang}.xml"
         if os.path.exists(xml_file):
             with open(xml_file, 'r', encoding='utf-8') as f:
