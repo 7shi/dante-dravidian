@@ -10,81 +10,92 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-அதிகமாக கசப்பாக உள்ளது மற்றும் மரணம் சிறிது அதிகம்;  
-ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி விவாதிக்க,  
+அது இவ்வளவு கசப்பாக உள்ளது மற்றும் மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;  
+ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,  
 நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Tamil Mapping Table**
+**Word‑to‑Word Mapping Table (Step 3)**  
 
-| Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
-|-------------|----------------------|------------------------------|-----------------------------|--------|
-| **Tant'** | Intensifier indicating a high degree of bitterness | அதிகமாக | “very / so” | OK |
-| **è** (1st) | Copular verb linking subject “it” to predicate “bitter” | உள்ளது | “is” | OK |
-| **amara** | Predicate adjective describing the quality “bitter” | கசப்பாக | “bitterly” | OK |
-| **che** | Subordinator introducing the comparative clause | மற்றும் | “and” (used as a conjunction) | **WRONG** – does not convey the comparative “that” |
-| **poco** | Quantifier expressing a small amount | சிறிது | “little” | OK |
-| **è** (2nd) | Copular verb in the comparative clause | *(not expressed)* | — | **MISSING** |
-| **più** | Comparative marker “more” | அதிகம் | “more” | OK |
-| **morte** | Entity being compared – “death” | மரணம் | “death” | OK |
-| **ma** | Coordinating conjunction signalling contrast – “but” | ஆனால் | “but” | OK |
-| **per** | Prepositional marker of purpose (“in order to”) | *(not expressed)* | — | **MISSING** |
-| **trattar** | Infinitive “to treat” (purpose) | விவாதிக்க | “to discuss / treat” | OK |
-| **del** | Prepositional complement linking “good” to the verb | நல்லதைப் (part of) | “the good” (as object) | OK (implicit) |
-| **ben** | Direct object “good” | நல்லதைப் | “the good” | OK |
-| **ch'i'** (1st) | Relative pronoun “that I” (subject of clause) | *(implicit in “கண்ட”)* | — | **MISSING** |
-| **vi** | Locative adverb “there” | அங்கே | “there” | OK |
-| **trovai** | Verb “found” (completed action) | கண்ட | “found” | OK |
-| **dirò** | Main verb “will tell” (future intention) | சொல்லுவேன் | “will tell” | OK |
-| **de** | Prepositional marker “of/about” | *(not expressed)* | — | **MISSING** |
-| **l'** | Definite article “the” | *(embedded in “மற்றவற்றைச்”)* | — | OK (implicit) |
-| **altre** | Attribute “other” | மற்றவற்றை | “other (things)” | OK |
-| **cose** | Direct object “things” | மற்றவற்றை | “things” | OK |
-| **ch'i'** (2nd) | Relative pronoun “that I” (subject of clause) | *(implicit in “பார்த்த”)* | — | **MISSING** |
-| **v'** | Locative adverb “there” | அங்கே | “there” | OK |
-| **ho** | Auxiliary verb forming the perfect | *(not expressed)* | — | **MISSING** |
-| **scorte** | Main verb “seen” (perfect) | பார்த்த | “seen” | OK |
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (Eng.) | Status |
+|---|-------------|--------------------------------------|------------------------------|--------------------------|--------|
+| 1 | **Tant'** | “so”, intensifier of degree | **இவ்வளவு** | “so much / to this extent” | OK |
+| 2 | **è** | copular verb “is” (present) | **உள்ளது** | “is” | OK |
+| 3 | **amara** | adjective “bitter” | **கசப்பாக** | “bitterly” | OK |
+| 4 | **che** | resultative conjunction “that” | — | — | **MISSING** |
+| 5 | **poco** | adverb “little, slightly” | **கொஞ்சம்** | “a little” | OK |
+| 6 | **è** | copular verb “is” (present) | **உள்ளது** | “is” | OK |
+| 7 | **più** | comparative adverb “more” | **அதிகமாக** | “more” | OK |
+| 8 | **morte** | noun “death” | **மரணம்** | “death” | OK |
+| 9 | **ma** | coordinating conjunction “but” | **ஆனால்** | “but” | OK |
+|10| **per** | preposition of purpose “in order to” | **பேசுவதற்காக** | “for speaking / in order to speak” | OK |
+|11| **trattar** | infinitive “to treat / discuss” | **பேசுவதற்கு** | “to speak / to discuss” | OK |
+|12| **del** | preposition + article “of the” (introducing *ben*) | **நல்லதைப்** | “of the good” | OK |
+|13| **ben** | noun “good” | **நல்லது** | “good” | OK |
+|14| **ch'** | relative pronoun “that” (introducing clause) | — | — | **MISSING** |
+|15| **i'** | pronoun “I” (subject) | **நான்** | “I” | OK |
+|16| **vi** | adverb “there” (locative) | **அங்கே** | “there” | OK |
+|17| **trovai** | verb “found” (preterite) | **கண்ட** | “found” | OK |
+|18| **dirò** | future verb “I will tell” | **சொல்லுவேன்** | “I will tell” | OK |
+|19| **de** | preposition “of” (part of *de l'altre*) | **மற்றவற்றை** (part) | “of the other things” | OK |
+|20| **l'** | definite article “the” (part of *l'altre*) | **மற்றவற்றை** (part) | “the other things” | OK |
+|21| **altre** | adjective “other” (plural) | **மற்ற** | “other” | OK |
+|22| **cose** | noun “things” (plural) | **மற்றவற்றை** (part) | “things” | OK |
+|23| **ch'** | relative pronoun “that” (introducing clause) | — | — | **MISSING** |
+|24| **i'** | pronoun “I” (subject) | **நான்** | “I” | OK |
+|25| **v'** | clitic “there” (locative) | **அங்கே** | “there” | OK |
+|26| **ho** | auxiliary “have” (perfect) | — | — | **MISSING** |
+|27| **scorte** | past participle “seen” | **பார்த்த** | “seen” | OK |
 
 ---
 
-### Missing / Wrong Items
-- **Wrong:** `che` – rendered as “மற்றும்” (“and”) instead of a comparative subordinator.
-- **Missing:** `è` (second copula), `per`, `ch'i'` (both occurrences), `de`, `ho` – these grammatical elements are not overtly represented in the Tamil translation.
-- **Implicit/Embedded:** `del`, `l'` are absorbed into the Tamil compounds (`நல்லதைப்`, `மற்றவற்றைச்`) and therefore not separate lexical items.
+### Missing / Problematic Items
+- **che** (line 7) – resultative conjunction not rendered in Tamil.  
+- **ch'** (line 8) – relative pronoun “that” omitted.  
+- **ch'** (line 9) – relative pronoun “that” omitted.  
+- **ho** (line 9) – auxiliary “have” (perfect) omitted.  
+
+All other lexical items are present and correctly translated; no gender, number, or case agreement errors were detected in the Tamil output.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line # 1**  
-- **Original Translation:** அதிகமாக கசப்பாக உள்ளது மற்றும் மரணம் சிறிது அதிகம்;  
-- **Issues:** “che” rendered as “மற்றும்” (wrong); missing second copula “è”; comparative subordinator not expressed.  
-- **Corrected Translation:** அதிகமாக கசப்பாக **என்று** மரணம் சிறிது அதிகம் **உள்ளது**;  
+- **Line 7**  
+  - Original: அது இவ்வளவு கசப்பாக உள்ளது மற்றும் மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;  
+  - Issue: missing resultative conjunction “che”.  
+  - Corrected: அது இவ்வளவு கசப்பாக உள்ளது **என** மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;  
 
-**Line # 2**  
-- **Original Translation:** ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி விவாதிக்க,  
-- **Issues:** “per” (purpose marker) not overtly expressed.  
-- **Corrected Translation:** ஆனால் நான் அங்கே கண்ட நல்லதைப் **பற்றி** **விவாதிக்க**,  
+- **Line 8**  
+  - Original: ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,  
+  - Issue: missing relative pronoun “ch'”.  
+  - Corrected: ஆனால் நான் அங்கே கண்ட நல்லதைப் **என்று** பற்றி பேசுவதற்காக,  
 
-**Line # 3**  
-- **Original Translation:** நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.  
-- **Issues:** missing relative pronoun “ch’i’” and auxiliary “ho” (perfect).  
-- **Corrected Translation:** நான் அங்கே **பார்த்துள்ள** மற்றவற்றைச் சொல்லுவேன்.  
+- **Line 9**  
+  - Original: நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.  
+  - Issue: missing relative pronoun “ch'” and auxiliary “ho”.  
+  - Corrected: நான் அங்கே **பார்த்துள்ள** **என்று** மற்றவற்றைச் சொல்லுவேன்.  
 
-```text
-அதிகமாக கசப்பாக என்று மரணம் சிறிது அதிகம் உள்ளது;
-ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி விவாதிக்க,
-நான் அங்கே பார்த்துள்ள மற்றவற்றைச் சொல்லுவேன்.
+```Tamil
+அது இவ்வளவு கசப்பாக உள்ளது என மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
+ஆனால் நான் அங்கே கண்ட நல்லதைப் என்று பற்றி பேசுவதற்காக,
+நான் அங்கே பார்த்துள்ள என்று மற்றவற்றைச் சொல்லுவேன்.
 ```
 ]]></message>
 </messages>

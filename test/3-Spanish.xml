@@ -10,75 +10,86 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Tan amarga es que la muerte es poco más;  
-Pero para tratar del bien que allí encontré,  
-Diré de las otras cosas que allí he visto.
+Tan amarga es que la muerte es poco más;
+pero para tratar del bien que allí encontré,
+diré de las otras cosas que allí he visto.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Italian → Spanish)**  
+**Word‑to‑Word Mapping Table**
 
-| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Spanish) | Back‑Translation (English) | Status |
-|---|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
-| 1 | **Tant'** | Intensifier indicating a high degree of bitterness | **Tan** | “so” | OK |
-| 2 | **è** (1) | Copular verb linking subject to predicate “bitter” | **es** | “is” | OK |
-| 3 | **amara** | Predicate adjective describing bitterness | **amarga** | “bitter” | OK |
-| 4 | **che** | Subordinator introducing the comparative clause | **que** | “that” | OK |
-| 5 | **poco** | Degree modifier expressing a small amount | **poco** | “little” | OK |
-| 6 | **è** (2) | Copular verb in the comparative clause | **es** | “is” | OK |
-| 7 | **più** | Comparative marker indicating a greater amount | **más** | “more” | OK |
-| 8 | **morte** | Subject of the comparative clause, “death” | **muerte** | “death” | OK |
-| 9 | **ma** | Coordinating conjunction signalling contrast | **Pero** | “but” | OK |
-|10| **per** | Prepositional marker of purpose | **para** | “in order to” | OK |
-|11| **trattar** | Infinitive “to treat” | **tratar** | “to treat” | OK |
-|12| **del** | Prepositional complement “of the” | **del** | “of the” | OK |
-|13| **ben** | Direct object “good” | **bien** | “good” | OK |
-|14| **ch'i'** (1) | Relative pronoun introducing clause, subject “I” | **que** | “that I” | OK |
-|15| **vi** | Locative adverb “there” | **allí** | “there” | OK |
-|16| **trovai** | Main verb of the relative clause “found” | **encontré** | “found” | OK |
-|17| **dirò** | Future main verb “I will tell” | **Diré** | “I will tell” | OK |
-|18| **de** | Prepositional marker “of” | **de** | “of” | OK |
-|19| **l'altre** | Definite article + adjective “the other” | **las otras** | “the other” | OK |
-|20| **cose** | Direct object “things” | **cosas** | “things” | OK |
-|21| **ch'i'** (2) | Relative pronoun introducing clause, subject “I” | **que** | “that I” | OK |
-|22| **v'ho** | Auxiliary verb “have” in perfect construction | **he** | “have” | OK |
-|23| **scorte** | Main verb of perfect “seen” | **visto** | “seen” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **Tant'** | “to such a degree” (intensifier) | **Tan** | “so / such” | OK |
+| **è** (1st) | Copular verb “is” | **es** | “is” | OK |
+| **amara** | adjective “bitter” | **amarga** | “bitter” | OK |
+| **che** | resultative subordinator “that” | **que** | “that” | OK |
+| **poco** | adverb of slight degree “little” | **poco** | “little” | OK |
+| **è** (2nd) | Copular verb “is” (comparative clause) | **es** | “is” | OK |
+| **più** | comparative adverb “more” | **más** | “more” | OK |
+| **morte** | noun “death” | **muerte** | “death” | OK |
+| **ma** | coordinating conjunction “but” | **pero** | “but” | OK |
+| **per** | preposition of purpose “in order to” | **para** | “for / to” | OK |
+| **trattar** | infinitive “to treat / discuss” | **tratar** | “to treat / discuss” | OK |
+| **del** | contraction of *di + il* “of the” | **del** | “of the” | OK |
+| **ben** | noun “good” (the good thing) | **bien** | “good” | OK |
+| **ch'** | relative pronoun “that/which” | **que** | “that / which” | OK |
+| **i'** | first‑person pronoun “I” (subject of relative clause) | — (implicit in verb) | “I” (understood) | **MISSING** |
+| **vi** | locative adverb “there” | **allí** | “there” | OK |
+| **trovai** | 1st‑person past “found” | **encontré** | “I found” | OK |
+| **dirò** | 1st‑person future “I will say/tell” | **diré** | “I will tell” | OK |
+| **de** | preposition “of” (introducing complement) | **de** | “of” | OK |
+| **l'altre** | definite article + adjective “the other” | **las** | “the (feminine plural)” | OK |
+| **cose** | noun “things” | **cosas** | “things” | OK |
+| **ch'** | relative pronoun “that/which” | **que** | “that / which” | OK |
+| **i'** | first‑person pronoun “I” (subject of perfect) | — (implicit in verb) | “I” (understood) | **MISSING** |
+| **v'ho** | auxiliary “have” + clitic “there” → perfect “have (seen)” | **he** | “have” (auxiliary) | OK |
+| **scorte** | past participle “seen” | **visto** | “seen” | OK |
 
-### Missing / Wrong Items
-None – every source token is represented in the Spanish translation with the correct sense and grammatical role.
+---
+
+### Items to Review
+
+- **MISSING**: the pronoun **i'** (first‑person “I”) appears twice (lines 8 and 9) but is not explicitly rendered in the Spanish translation; the subject is only implied by the verb forms *encontré* and *he visto*.
+- No **WRONG** lexical choices were identified.
+- No **GRAMMAR** errors were detected in the Spanish output (agreement, gender, number are all correct).
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Spanish text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 7**  
-- **Original Translation:** Tan amarga es que la muerte es poco más;  
-- **Issues:** None  
-- **Corrected Translation:** Tan amarga es que la muerte es poco más;  
-
-**Line 8**  
-- **Original Translation:** Pero para tratar del bien que allí encontré,  
-- **Issues:** None  
-- **Corrected Translation:** Pero para tratar del bien que allí encontré,  
-
-**Line 9**  
-- **Original Translation:** Diré de las otras cosas que allí he visto.  
-- **Issues:** None  
-- **Corrected Translation:** Diré de las otras cosas que allí he visto.  
+- Line 7:
+  - Original: Tan amarga es que la muerte es poco más;
+  - Issue: none
+  - Corrected: no change
+- Line 8:
+  - Original: pero para tratar del bien que allí encontré,
+  - Issue: missing subject pronoun “yo”
+  - Corrected: pero para tratar del bien que allí **yo** encontré,
+- Line 9:
+  - Original: diré de las otras cosas que allí he visto.
+  - Issue: missing subject pronoun “yo”
+  - Corrected: diré de las otras cosas que allí **yo** he visto.
 
 ```text
 Tan amarga es que la muerte es poco más;
-Pero para tratar del bien que allí encontré,
-Diré de las otras cosas que allí he visto.
+pero para tratar del bien que allí yo encontré,
+diré de las otras cosas que allí yo he visto.
 ```
 ]]></message>
 </messages>

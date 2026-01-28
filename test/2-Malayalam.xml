@@ -10,68 +10,93 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-അഹ്, അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണ്  
-ഈ വന്യവും കഠിനവും ശക്തവുമായ കാട്  
-അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
+അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്  
+ഈ കാട്ടു കഠിനവും സാന്ദ്രവുമായ മരവനം  
+ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Step 3)**  
+**Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|----------------------------------|-----------------------------|--------|
-| **Ahi** | Interjection expressing exclamation | **അഹ്** | “Ah!” | OK |
-| **quanto** | Adverb of degree marking high intensity of difficulty | **എത്ര** | “how / how much” | OK |
-| **a** | Preposition introducing the infinitival complement *dir* | **പറയാൻ** (part of the infinitive) | “to say” | OK |
-| **dir** | Verb (infinitive) “to tell / say” | **പറയാൻ** | “to say” | OK |
-| **qual** | Interrogative adjective introducing the content clause “what it was” | **എന്തായിരുന്നു** | “what was” | OK |
-| **era** | Imperfect of *essere* “was” inside the content clause | **എന്തായിരുന്നു** (the “was” part) | “was” | OK |
-| **è** | Present copula “is” linking subject and predicate | **കാര്യമാണ്** (contains the copula) | “is” | OK |
-| **cosa** | Generic noun “thing” | **കാര്യമാണ്** (the noun “thing”) | “thing” | OK |
-| **dura** | Adjective “hard, difficult” | **കഠിനമായ** | “hard” | OK |
-| **esta** | Demonstrative adjective “this” | **ഈ** | “this” | OK |
-| **selva** | Noun “forest / wood” | **കാട്** | “forest / wood” | OK |
-| **selvaggia** | Adjective “wild” | **വന്യവും** | “wild” | OK |
-| **e** (1st) | Coordinating conjunction “and” linking adjectives | **വും** (suffix attaching to adjectives) | “and” | OK |
-| **aspra** | Adjective “rough” | **കഠിനവും** | “rough / hard” | OK |
-| **e** (2nd) | Coordinating conjunction “and” linking adjectives | **വും** (suffix) | “and” | OK |
-| **forte** | Adjective “strong / dense” | **ശക്തവുമായ** | “strong / dense” | OK |
-| **che** | Relative pronoun “which / that” | **അത്** | “that / which” | OK |
-| **nel** | Preposition + article “in the” (locative) | **ചിന്തയിൽ** | “in thought” | OK |
-| **pensier** | Noun “thought” | **ചിന്ത** | “thought” | OK |
-| **rinova** | Verb “renews” | **പുതുക്കുന്നു** | “renews” | OK |
-| **la** | Definite article “the” (object marker) | **ഭയത്തെ** (contains the article) | “the” (as part of “the fear”) | OK |
-| **paura!** | Noun “fear” (object) | **ഭയത്തെ!** | “fear” | OK |
+| # | Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|---|-------------|-----------------------|----------------------------------|-----------------------------|--------|
+| 1 | Ahi | Interjection – exclamation of emotion | **അഹ്** | “Ah!” | OK |
+| 2 | quanto | Adverb intensifier “how” (degree) | **എത്ര** | “how” | OK |
+| 3 | a | Preposition / infinitive marker “to” | *(none)* | – | **MISSING** |
+| 4 | dir | Verb infinitive “tell” | **പറയാൻ** | “to tell” | OK |
+| 5 | qual | Interrogative adjective “what” | **എന്താണെന്ന്** | “what … is” | OK |
+| 6 | era | Verb imperfect “was” | *(none)* | – | **MISSING** |
+| 7 | è | Verb present “is” (copula) | **…മാണെന്ന്** (part of **കാര്യമാണെന്ന്**) | “is” | OK |
+| 8 | cosa | Noun “thing” | **കാര്യം** | “thing” | OK |
+| 9 | dura | Adjective “hard” | **കഠിനമായ** | “hard” | OK |
+|10| esta | Demonstrative adjective “this” | **ഈ** | “this” | OK |
+|11| selva | Noun “forest / wood” | **കാട്ടു** | “forest / wood” | OK |
+|12| selvaggia | Adjective “wild” | *(none)* | – | **MISSING** |
+|13| e (1st) | Coordinating conjunction “and” | **വും** (conj. suffix) | “and” | OK |
+|14| aspra | Adjective “rough” | **സാന്ദ്രവുമായ** | “dense” | **WRONG** (semantic mismatch) |
+|15| e (2nd) | Coordinating conjunction “and” | **വുമായ** (conj. suffix) | “and” | OK |
+|16| forte | Adjective “strong / dense” | **മരവനം** | “wood / forest” | **WRONG** (semantic mismatch) |
+|17| che | Relative pronoun “which” | *(none)* | – | **MISSING** |
+|18| nel | Contraction “in the” (preposition + article) | **ചിന്തയിൽ** | “in thought” | OK |
+|19| pensier | Noun “thought” | **ചിന്ത** | “thought” | OK |
+|20| rinova | Verb “renews” | **പുതുക്കുന്നു** | “renews” | OK |
+|21| la | Definite article “the” | *(none)* | – | **MISSING** |
+|22| paura | Noun “fear” | **ഭയത്തെ** | “the fear” | OK |
 
-### Missing / Wrong Items
-- **None.** Every source token is represented in the Malayalam translation, and the back‑translations match the intended meanings.
+---
+
+### Items Needing Attention
+**Missing translations**  
+- `a` (infinitive marker)  
+- `era` (past “was”)  
+- `selvaggia` (“wild”)  
+- `che` (relative pronoun “which”)  
+- `la` (definite article “the”)  
+
+**Wrong/semantically inaccurate translations**  
+- `aspra` rendered as **സാന്ദ്രവുമായ** (“dense”) – should convey “rough”.  
+- `forte` rendered as **മരവനം** (“wood/forest”) – should convey “strong / dense”.  
+
+**Grammar issues**  
+- None detected in the Malayalam output (agreement, case, etc., are acceptable).
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Correction Table**
+- **Line 4**  
+  - Original: അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്  
+  - Issue: Missing pronoun “it” and past verb “was” (qual era).  
+  - Corrected: **അഹ് അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്**  
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|---------------------|--------|-----------------------|
-| 4 | അഹ്, അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണ് | – Internal comma (not allowed) <br>– Order of “quanto” and “a dir” does not follow source sequence | അഹ് എത്ര പറയാൻ എന്തായിരുന്നു അത് ആണ് കഠിനമായ കാര്യം |
-| 5 | ഈ വന്യവും കഠിനവും ശക്തവുമായ കാട് | – None | ഈ വന്യവും കഠിനവും ശക്തവുമായ കാട് |
-| 6 | അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു! | – None | അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു! |
+- **Line 5**  
+  - Original: ഈ കാട്ടു കഠിനവും സാന്ദ്രവുമായ മരവനം  
+  - Issue: Missing adjective “wild” (selvaggia) and wrong noun “മരവനം”.  
+  - Corrected: **ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്ടു**  
 
-**Final Malayalam Translation (one line per source line)**
+- **Line 6**  
+  - Original: ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!  
+  - Issue: Missing relative pronoun “which/it”.  
+  - Corrected: **അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!**  
 
 ```malayalam
-അഹ് എത്ര പറയാൻ എന്തായിരുന്നു അത് ആണ് കഠിനമായ കാര്യം
-ഈ വന്യവും കഠിനവും ശക്തവുമായ കാട്
+അഹ് അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്
+ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്ടു
 അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
 ```
 ]]></message>

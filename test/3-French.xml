@@ -10,76 +10,85 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Tellement amère est‑elle que la mort n’est que légèrement plus;  
-mais pour traiter du bien que j’ai trouvé là,  
-je dirai des autres choses que j’ai vues là.
+Si amère est‑elle que la mort n’est que légèrement plus;
+mais pour traiter du bien que j’ai trouvé là,
+je dirai les autres choses que j’ai vues là.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
 **Word‑to‑French Mapping Table**
 
 | Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
 |-------------|-----------------------|----------------------|------------------------|--------|
-| **Tant'** | Intensifier indicating a high degree of bitterness | **Tellement** | “so / very” | OK |
-| **è** (1st) | Copular verb linking subject to predicate “bitter” | **est‑elle** | “is (it)” | OK |
-| **amara** | Predicate adjective describing bitterness | **amère** | “bitter” | OK |
-| **che** (comparative) | Conjunction introducing the comparative clause | **que** | “that” | OK |
-| **poco** | Adverb quantifier expressing a small amount (“little”) | **que** | “only / merely” | OK |
-| **è** (2nd) | Copular verb in the comparative clause | **n’est** | “is not” (part of *n’est que*) | OK |
-| **più** | Comparative adverb indicating “more” | **plus** | “more” | OK |
-| **morte** | Noun, the entity “death” | **mort** | “death” | OK |
-| **ma** | Coordinating conjunction signalling contrast | **mais** | “but” | OK |
-| **per** | Preposition introducing a purpose infinitive | **pour** | “for / in order to” | OK |
-| **trattar** | Infinitive “to treat” | **traiter** | “to treat” | OK |
-| **del** | Contraction *di + il* → “of the” | **du** | “of the” | OK |
-| **ben** | Noun “good” (object of treatment) | **bien** | “good” | OK |
-| **ch'i'** | Relative pronoun “that I” | **que** | “that” | OK |
-| **vi** | Locative adverb “there” | **là** | “there” | OK |
-| **trovai** | Past‑historic verb “found” | **trouvé** | “found” | OK |
-| **dirò** | Future verb “will tell” | **dirai** | “I will tell” | OK |
-| **de** | Preposition “of” (introducing the topic) | **des** | “of the” (partitive) | OK |
-| **l'altre** | Adjective “other” | **autres** | “other” | OK |
-| **cose** | Noun “things” | **choses** | “things” | OK |
-| **v'ho** | Auxiliary + locative “have (there)” | **j’ai** | “I have” | OK |
-| **scorte** | Past participle “seen” | **vues** | “seen” | OK |
-
-### Missing / Wrong Items
-None – every source token is accounted for and correctly aligned with its French counterpart.
-]]></message>
-<message role="user"><![CDATA[
-### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
-Output final French text in ONE code block, line by line (no extra prose).
-]]></message>
-<message role="assistant"><![CDATA[
-**Line 7**  
-- **Original Translation:** `Tellement amère est‑elle que la mort n’est que légèrement plus;`  
-- **Issues:** In the word‑to‑French table the source token **poco** was incorrectly aligned with **« que »**. It should be aligned with **« légèrement »** (the adverb that conveys “little”).  
-- **Corrected Translation:** *no change needed* (the French sentence already expresses “little more” with **légèrement**).
-
-**Line 8**  
-- **Original Translation:** `mais pour traiter du bien que j’ai trouvé là,`  
-- **Issues:** none.  
-- **Corrected Translation:** *no change needed*.
-
-**Line 9**  
-- **Original Translation:** `je dirai des autres choses que j’ai vues là.`  
-- **Issues:** none.  
-- **Corrected Translation:** *no change needed*.
+| **Tant'** | “so” – intensifier of the predicate | **Si** | “so” | OK |
+| **è** (1st) | copular “is” linking subject to predicate | **est‑elle** | “is (it)” | OK |
+| **amara** | adjective “bitter” | **amère** | “bitter” | OK |
+| **che** | subordinator “that” (resultative) | **que** | “that” | OK |
+| **poco** | adverb “little”, indicating slight degree | **que … n’est que légèrement** | “that … is only slightly” | OK |
+| **è** (2nd) | copular “is” in comparative clause | **n’est** | “is” | OK |
+| **più** | comparative adverb “more” | **plus** | “more” | OK |
+| **morte** | noun “death” | **la mort** | “the death” | OK |
+| **ma** | coordinating conjunction “but” | **mais** | “but” | OK |
+| **per** | preposition marking purpose “in order to” | **pour** | “for / in order to” | OK |
+| **trattar** | infinitive “to treat / discuss” | **traiter** | “to treat / discuss” | OK |
+| **del** | contraction *di + il* “of the” | **du** | “of the” | OK |
+| **ben** | noun “good” (the positive thing) | **bien** | “good” | OK |
+| **ch'i'** | relative pronoun + subject “that I” | **que j’ai** | “that I have” | OK |
+| **vi** | adverb “there” (locative) | **là** | “there” | OK |
+| **trovai** | past‑tense “found” | **trouvé** | “found” | OK |
+| **dirò** | future “I will tell” | **je dirai** | “I will tell” | OK |
+| **de** | preposition “of” (introducing complement) | — | — | **MISSING** |
+| **l'altre** | adjective + article “the other” | **les autres** | “the other” | OK |
+| **cose** | noun “things” | **choses** | “things” | OK |
+| **ch'i'** (2nd) | relative pronoun + subject “that I” | **que j’ai** | “that I have” | OK |
+| **v'** | clitic locative “there” | **là** | “there” | OK |
+| **ho** | auxiliary “have” (perfect) | — (part of **j’ai**) | — | OK |
+| **scorte** | past participle “seen” | **vues** | “seen” | OK |
 
 ---
 
+### Items Requiring Attention
+- **de** – not rendered in the French translation (the French clause uses the article **les** instead). → **MISSING**
+- **Grammar issue** – The French line 7 “*Si amère est‑elle que la mort n’est que légèrement plus;*” is stylistically archaic and would more naturally be “*Si amère qu’elle est, la mort n’est que légèrement plus*”. The current word order is grammatically strained. → **GRAMMAR** (noted in the “Status” column for the relevant tokens).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 7**  
+  - **Original:** Tant' è amara che poco è più morte;  
+  - **Issue:** GRAMMAR – word order and punctuation of the French rendering were unidiomatic.  
+  - **Corrected:** *Si amère qu’elle est, la mort n’est que légèrement plus;*  
+
+- **Line 8**  
+  - **Original:** ma per trattar del ben ch'i' vi trovai,  
+  - **Issue:** none  
+  - **Corrected:** *mais pour traiter du bien que j’ai trouvé là,*  
+
+- **Line 9**  
+  - **Original:** dirò de l'altre cose ch'i' v'ho scorte.  
+  - **Issue:** none  
+  - **Corrected:** *je dirai les autres choses que j’ai vues là.*  
+
 ```text
-Tellement amère est‑elle que la mort n’est que légèrement plus;
+Si amère qu’elle est, la mort n’est que légèrement plus;
 mais pour traiter du bien que j’ai trouvé là,
-je dirai des autres choses que j’ai vues là.
+je dirai les autres choses que j’ai vues là.
 ```
 ]]></message>
 </messages>

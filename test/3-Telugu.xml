@@ -10,88 +10,81 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-అది అంతగా చేదుగా ఉంది మరణం కొంచెం ఎక్కువగా ఉంది;  
-కానీ నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,  
+ఇంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;  
+కానీ నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,  
 నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Italian → Telugu)**  
+**Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
-| **Tant'** | Intensifier indicating a high degree of bitterness | **అంతగా** | “so” | OK |
-| **è** (1st) | Copular verb linking “it” to “bitter” | **ఉంది** | “is” | OK |
-| **amara** | Predicate adjective “bitter” | **చేదుగా** | “bitter” | OK |
-| **che** | Subordinator introducing the comparative clause | — | — | **MISSING** |
-| **poco** | Degree modifier “little” | **కొంచెం** | “little” | OK |
-| **è** (2nd) | Copular verb in the comparative clause | **ఉంది** | “is” | OK |
-| **più** | Comparative marker “more” | **ఎక్కువగా** | “more” | OK |
-| **morte** | Subject of the comparative clause, “death” | **మరణం** | “death” | OK |
-| **ma** | Coordinating conjunction signalling contrast | **కానీ** | “but” | OK |
-| **per** | Prepositional marker of purpose | — | — | **MISSING** |
-| **trattar** | Infinitive “to treat / to discuss” | **చర్చించడానికి** | “to treat / to discuss” | OK |
-| **del** | Prepositional complement linking “good” to the verb | — | — | **MISSING** |
-| **ben** | Noun “good” | **మంచి** | “good” | OK |
-| **ch'i'** (1st) | Relative pronoun “that I” (subject of clause) | — | — | **MISSING** |
-| **vi** | Locative adverb “there” | **అక్కడ** | “there” | OK |
-| **trovai** | Main verb of the relative clause “found” | **కనుగొన్న** | “found” | OK |
-| **dirò** | Main verb “I will tell” (future) | **చెప్పుతాను** | “I will tell” | OK |
-| **de** | Prepositional marker “of” | — | — | **MISSING** |
-| **l'** | Definite article “the” | — | — | **MISSING** |
-| **altre** | Attribute “other” | **ఇతర** | “other” | OK |
-| **cose** | Direct object “things” | **విషయాలను** | “things” | OK |
-| **ch'i'** (2nd) | Relative pronoun “that I” (subject of clause) | — | — | **MISSING** |
-| **v'** | Locative adverb “there” | **అక్కడ** | “there” | OK |
-| **ho** | Auxiliary verb “have” (perfect) | — | — | **MISSING** |
-| **scorte** | Main verb of perfect “seen” | **చూసిన** | “seen” | OK |
-
----
-
-### Missing / Unrendered Items
-- **che** (comparative subordinator)  
-- **per** (purpose preposition)  
-- **del** (prepositional complement)  
-- **ch'i'** (first occurrence) – relative pronoun “that I”  
-- **ch'i'** (second occurrence) – relative pronoun “that I”  
-- **de** (preposition “of”)  
-- **l'** (definite article “the”)  
-- **ho** (auxiliary “have”)  
-
-No items were identified as incorrectly translated (WRONG).
+| Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (Eng) | Status |
+|-------------|-----------------------|------------------------------|------------------------|--------|
+| Tant' | intensifier “to such a degree” | **ఇంతగా** | “so, to such an extent” | OK |
+| è (1st) | copular verb “is” | **ఉంది** | “is” | OK |
+| amara | adjective “bitter” | **చేదుగా** | “bitter” | OK |
+| che | conjunction introducing result/comparative clause | — | — | **MISSING** |
+| poco | adverb “little” | **కొంచెం** | “a little” | OK |
+| è (2nd) | copular verb “is” | **ఉంది** | “is” | OK |
+| più | comparative adverb “more” | **ఎక్కువగా** | “more” | OK |
+| morte | noun “death” | **మరణం** | “death” | OK |
+| ma | coordinating conjunction “but” | **కానీ** | “but” | OK |
+| per | preposition marking purpose “in order to” | **చర్చించడానికి** | “to discuss / for discussing” | OK |
+| trattar | infinitive verb “to treat / discuss” | **చర్చించడానికి** | “to discuss” | OK |
+| del | contraction “of the” | **మంచిని** (part of the phrase) | “of the good” | OK |
+| ben | noun “good” | **మంచి** | “good” | OK |
+| ch' (1st) | relative pronoun “that” | **గురించి** | “about / that” | OK |
+| i' (1st) | pronoun “I” | **నేను** | “I” | OK |
+| vi | adverb “there” | **అక్కడ** | “there” | OK |
+| trovai | verb “found” | **కనుగొన్న** | “found” | OK |
+| dirò | future verb “I will tell” | **చెప్పుతాను** | “I will tell” | OK |
+| de | preposition “of” | — | — | **MISSING** |
+| l'altre | adjective “other” | **ఇతర** | “other” | OK |
+| cose | noun “things” | **విషయాలను** | “things (object)” | OK |
+| ch' (2nd) | relative pronoun “that” | **చూసిన** (part of verb) | “that (seen)” | OK |
+| i' (2nd) | pronoun “I” | **నేను** | “I” | OK |
+| v' | clitic pronoun “vi” = “there” | **అక్కడ** | “there” | OK |
+| ho | auxiliary “have” | — | — | **MISSING** |
+| scorte | past participle “seen” | **చూసిన** | “seen” | OK |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 7**  
-- **Original Translation:** అది అంతగా చేదుగా ఉంది మరణం కొంచెం ఎక్కువగా ఉంది;  
-- **Issues:** Missing comparative subordinator “che”; extra pronoun “అది”.  
-- **Corrected Translation:** అంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;  
+- Line 7:  
+  - Original: ఇంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;  
+  - Issue: Missing *che* (conj. “that”), internal comma.  
+  - Corrected: **ఇంతగా చేదుగా ఉంది అలానే మరణం కొంచెం ఎక్కువగా ఉంది;**  
 
-**Line 8**  
-- **Original Translation:** కానీ నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,  
-- **Issues:** None (purpose “per” is expressed by “చర్చించడానికి”; “del” is implicit).  
-- **Corrected Translation:** (unchanged) కానీ నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,  
+- Line 8:  
+  - Original: కానీ నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,  
+  - Issue: Missing *de* (preposition “of”).  
+  - Corrected: **కానీ నేను అక్కడ కనుగొన్న ద మంచి గురించి చర్చించడానికి,**  
 
-**Line 9**  
-- **Original Translation:** నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.  
-- **Issues:** None (prepositions “de”, “l’” and auxiliary “ho” are naturally omitted in Telugu).  
-- **Corrected Translation:** (unchanged) నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.  
+- Line 9:  
+  - Original: నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.  
+  - Issue: Missing *ho* (auxiliary “have”).  
+  - Corrected: **నేను అక్కడ చేసి చూసిన ఇతర విషయాలను చెప్పుతాను.**  
 
-```telugu
-అంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;
-కానీ నేను అక్కడ కనుగొన్న మంచి గురించి చర్చించడానికి,
-నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
+```
+ఇంతగా చేదుగా ఉంది అలానే మరణం కొంచెం ఎక్కువగా ఉంది;
+కానీ నేను అక్కడ కనుగొన్న ద మంచి గురించి చర్చించడానికి,
+నేను అక్కడ చేసి చూసిన ఇతర విషయాలను చెప్పుతాను.
 ```
 ]]></message>
 </messages>

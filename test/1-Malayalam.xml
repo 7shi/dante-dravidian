@@ -10,7 +10,7 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മദ്ധ്യത്തിൽ  
+നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
 ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
 കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 ]]></message>
@@ -18,61 +18,74 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Source → Malayalam)**  
+**Word‑to‑Word Alignment Table (Source → Malayalam)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|----------------------------------|-----------------------------|--------|
-| **Nel** | prepositional phrase head “in” (locative) | **മദ്ധ്യത്തിൽ** | “in the middle” | OK |
-| **mezzo** | noun “middle point” | **മദ്ധ്യത്തിൽ** | “midway / middle” | OK |
-| **del** | preposition + article “of the” (linking cammin to vita) | **വഴിയുടെ** | “of the road” | OK |
-| **cammin** | noun “road / path” | **വഴിയുടെ** | “road” | OK |
-| **di** | preposition “of” (linking nostra to vita) | **ജീവിതത്തിന്റെ** | “of life” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------|----------------------------|--------|
+| **Nel** | preposition + definite article (in + the) | **മധ്യത്തിൽ** | “in the middle” | **MISSING** (no separate word for the preposition+article) |
+| **mezzo** | noun “middle, midpoint” | **മധ്യത്തിൽ** | “in the middle” | OK |
+| **del** | preposition + definite article (of + the) – genitive linking “cammin” | **വഴിയുടെ** | “of the road” | OK |
+| **cammin** | noun “road, journey” (archaic *cammino*) | **വഴിയുടെ** | “of the road” | OK |
+| **di** | preposition linking “cammin” to “nostra vita” | **ജീവിതത്തിന്റെ** | “of life” | OK |
 | **nostra** | possessive adjective “our” | **നമ്മുടെ** | “our” | OK |
-| **vita** | noun “life (span)” | **ജീവിതത്തിന്റെ** | “life” | OK |
-| **mi** | reflexive object pronoun “myself” | **താനെ** | “myself” | OK |
-| **ritrovai** | verb “found (myself)” | **കണ്ടെത്തി** | “found” | OK |
-| **per** | preposition “within / in” (locative) | **കാട്ടിൽ** | “in (the) forest” | OK |
+| **vita** | noun “life” | **ജീവിതത്തിന്റെ** | “of life” | OK |
+| **mi** | reflexive pronoun (1st sg.) – “myself” | **താനെ** | “myself” | OK |
+| **ritrovai** | verb (passato remoto) “found” | **കണ്ടെത്തി** | “found” | OK |
+| **per** | preposition “within/through” (spatial) | **കാട്ടിൽ** | “in the forest” | OK |
 | **una** | indefinite article “a” | **ഒരു** | “a” | OK |
-| **selva** | noun “forest / wood” | **കാട്ടിൽ** | “forest” | OK |
+| **selva** | noun “forest, wood” | **കാട്ട്** | “forest” | OK |
 | **oscura** | adjective “dark” | **ഇരുണ്ട** | “dark” | OK |
-| **ché** | conjunction “for / because” (causal) | **കാരണം** | “because” | **WRONG** (should retain resultative “for … that …” rather than a causal “because”) |
-| **la** | definite article “the” | — | — | **MISSING** (Malayalam has no article) |
-| **diritta** | adjective “right / straight (correct)” | **ശരിയായ** | “right / correct” | OK |
-| **via** | noun “way / path” | **വഴി** | “way” | OK |
-| **era** | copular verb “was / had been” (imperfect) | **നഷ്ടപ്പെട്ടിരുന്നു** | “had been” (as part of the participial construction) | OK |
-| **smarrita** | adjective “lost / missed” | **നഷ്ടപ്പെട്ടിരുന്നു** | “lost / missed” | OK |
+| **ché** | conjunction “for / because” (causal) – instruction requires resultative, not causal | **കാരണം** | “because” | **WRONG** (should keep resultative structure, not a causal “because”) |
+| **la** | definite article “the” | — | — | **MISSING** (no article in Malayalam) |
+| **diritta** | adjective “right / straight” (correct) | **ശരിയായ** | “right / correct” | OK |
+| **via** | noun “way, path” | **വഴി** | “way” | OK |
+| **era** | imperfect of *essere* “was / had been” | **നഷ്ടപ്പെട്ടിരുന്നു** | “had been lost” (embedded in predicate) | OK |
+| **smarrita** | past participle adjective “lost, missed” | **നഷ്ടപ്പെട്ട** | “lost / missed” | OK |
 
 ---
 
-### Items Needing Attention
-- **ché** – marked **WRONG** because the translation used a causal conjunction “കാരണം” (“because”) instead of preserving the resultative “for … that …” structure required by the task.
-- **la** – marked **MISSING**; Malayalam does not have a direct equivalent for the definite article, so it is absent in the translation.
+### Items Requiring Attention
+- **MISSING:** `Nel` (preposition+article), `la` (definite article).  
+- **WRONG:** `ché` – rendered as causal “കാരണം” whereas the required structure is resultative (e.g., “അങ്ങനെ … എന്നതിനാല്‍” is inappropriate; a more literal rendering would keep the clause as “… അതിനാല്‍” is still causal, so a better resultative phrasing would be “… അവസാനമായി …” – the current translation violates the instruction).  
+
+No grammatical agreement errors were detected in the Malayalam output.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑Line Review**
+- Line 1:
+  - Original: **നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ**
+  - Issue: none
+  - Corrected: **നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ**
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|----------------------|--------|-----------------------|
-| 1 | നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മദ്ധ്യത്തിൽ | – | – (no change) |
-| 2 | ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി, | – | – (no change) |
-| 3 | കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു. | **WRONG** – used causal “കാരണം” instead of the required resultative connective. | അതിനാൽ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു. |
+- Line 2:
+  - Original: **ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,**
+  - Issue: word order
+  - Corrected: **ഞാൻ താനെ ഒരു ഇരുണ്ട കാട്ടിൽ കണ്ടെത്തി,**
 
----
+- Line 3:
+  - Original: **കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.**
+  - Issue: wrong connective (causal instead of resultative)
+  - Corrected: **അങ്ങനെ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.**
 
-```malayalam
-നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മദ്ധ്യത്തിൽ
-ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
-അതിനാൽ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
+```
+നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
+ഞാൻ താനെ ഒരു ഇരുണ്ട കാട്ടിൽ കണ്ടെത്തി,
+അങ്ങനെ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 ```
 ]]></message>
 </messages>

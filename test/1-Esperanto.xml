@@ -11,69 +11,85 @@ Rules:
 ]]></message>
 <message role="assistant"><![CDATA[
 Meze sur la vojo de nia vivo  
-Mi trovis min en malluma arbaro,  
+mi trovis min en malluma arbaro,  
 ĉar la prava vojo estis perdita.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Step 3)**  
+**Word‑to‑Word Alignment Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Esperanto) | Back‑Translation (EN) | Status |
-|-------------|--------------------------------------|----------------------------------|------------------------|--------|
-| **Nel** | preposition + definite article “in the” (locative) | **Meze** | “midway” (contains the idea of “in the middle”) | **WRONG** (does not render the simple locative “in”) |
-| **mezzo** | noun “middle” (the exact midpoint) | **Meze** | “midway” | **OK** |
-| **del** | genitive “of the” linking “cammin” to “vita” | **de** | “of” | **OK** |
-| **cammin** | noun “road, path” (the journey) | **vojo** | “road” | **OK** |
-| **di** | preposition “of” (possessive) | **de** | “of” | **OK** |
-| **nostra** | possessive adjective “our” (collective) | **nia** | “our” | **OK** |
-| **vita** | noun “life” (the span of existence) | **vivo** | “life” | **OK** |
-| **mi** | reflexive pronoun “myself” (object of “ritrovai”) | **Mi** | “I” (subject) | **OK** |
-| **ritrovai** | verb “found (myself)” (past remote) | **trovis** | “found” | **OK** |
-| **per** | preposition “within, through” (locative) | **en** | “in/within” | **OK** |
-| **una** | indefinite article “a” (introducing “selva”) | — | — | **MISSING** (Esperanto has no indefinite article) |
-| **selva** | noun “forest, wood” | **arbaro** | “forest” | **OK** |
-| **oscura** | adjective “dark” | **malluma** | “dark” | **OK** |
-| **ché** | conjunction “for, because” (causal) | **ĉar** | “because/for” | **OK** |
-| **la** | definite article “the” | **la** | “the” | **OK** |
-| **diritta** | adjective “right, straight, correct” | **prava** | “right/correct” | **OK** |
-| **via** | noun “way, path” | **vojo** | “way” | **OK** |
-| **era** | imperfect of “to be” – “had been” | **estis** | “was / had been” | **OK** |
-| **smarrita** | past participle “lost, missed” | **perdita** | “lost / missed” | **OK** |
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|-----------------------|--------|
+| **Nel** | preposition + definite article “in the” | **Meze** | “midway” | **WRONG** (semantic mismatch) |
+| **mezzo** | noun “midpoint, middle” | **sur** | “on / upon” | **WRONG** |
+| **del** | preposition + article “of the” | **de** | “of” | OK |
+| **cammin** | noun “road, journey” | **vojo** | “road / way” | OK |
+| **di** | preposition linking “cammin” to “nostra vita” | **de** | “of” | OK |
+| **nostra** | possessive adjective “our” | **nia** | “our” | OK |
+| **vita** | noun “life” | **vivo** | “life” | OK |
+| **mi** | reflexive pronoun (1st sg.) “myself / I” | **mi** | “I” | OK |
+| **ritrovai** | verb “found (myself)” | **trovis** | “found” | OK |
+| **per** | preposition “within, through” | **en** | “in” | OK |
+| **una** | indefinite article “a / an” | *(none)* | — | **MISSING** |
+| **selva** | noun “forest, wood” | **arbaro** | “forest” | OK |
+| **oscura** | adjective “dark” | **malluma** | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) | **ĉar** | “because” | OK |
+| **la** | definite article “the” | **la** | “the” | OK |
+| **diritta** | adjective “right, straight” | **prava** | “right / correct” | OK |
+| **via** | noun “way, road” | **vojo** | “way / road” | OK |
+| **era** | verb “was, had been” (imperfect) | **estis** | “was” | OK |
+| **smarrita** | past participle “lost, missed” | **perdita** | “lost / missed” | OK |
 
 ---
 
-### Items Needing Attention
-- **Nel** – marked **WRONG**: the Esperanto “Meze” conveys “midway” but does not directly express the locative preposition “in”. A more literal rendering would be “En la mezo …”.
-- **una** – marked **MISSING**: Esperanto does not use an indefinite article; the translation omits it, which is acceptable in Esperanto but noted as a missing token for a strict one‑to‑one mapping.
+### Items to Review
+
+- **WRONG:**  
+  - *Nel* → *Meze* (should convey “in the”, not “midway”).  
+  - *mezzo* → *sur* (should convey “midpoint”, not “on”).
+
+- **MISSING:**  
+  - *una* (indefinite article) has no direct equivalent in Esperanto; the translation omitted it.
+
+All other mappings are correct and show proper grammatical agreement in Esperanto.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Esperanto text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑line correction report**
+- **Line 1**  
+  - **Original:** Meze sur la vojo de nia vivo  
+  - **Issue:** WRONG – “Nel” + “mezzo” should convey “in the middle of”, not “midway on”.  
+  - **Corrected:** En la mezo de la vojo de nia vivo  
 
-| Line # | Original Translation (Step 2) | Issues | Corrected Translation |
-|--------|------------------------------|--------|-----------------------|
-| 1 | Meze sur la vojo de nia vivo | **WRONG** – “Nel” was rendered as *Meze* and the preposition “sur” does not convey the required “in the middle of”. | **En la mezo de la vojo de nia vivo** |
-| 2 | Mi trovis min en malluma arbaro, | No missing or wrong items (the indefinite article “una” is naturally omitted in Esperanto). | *unchanged* |
-| 3 | ĉar la prava vojo estis perdita. | No missing or wrong items. | *unchanged* |
+- **Line 2**  
+  - **Original:** mi trovis min en malluma arbaro,  
+  - **Issue:** none  
+  - **Corrected:** no change  
 
----
-
-**Final Esperanto translation (one line per source line)**
+- **Line 3**  
+  - **Original:** ĉar la prava vojo estis perdita.  
+  - **Issue:** none  
+  - **Corrected:** no change  
 
 ```esperanto
 En la mezo de la vojo de nia vivo
-Mi trovis min en malluma arbaro,
+mi trovis min en malluma arbaro,
 ĉar la prava vojo estis perdita.
 ```
 ]]></message>

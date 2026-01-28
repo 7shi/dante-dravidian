@@ -10,73 +10,88 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-எங்கள் வாழ்க்கையின் பாதையின் நடுவில்  
-நான் ஒரு இருண்ட காடில் என்னை கண்டேன்,  
-அதனால் சரியான பாதை தவறாகி விட்டது.
+Nel mezzo del cammin di nostra vita  
+எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்  
+
+mi ritrovai per una selva oscura,  
+நான் ஒரு இருண்ட காடில் தன்னை கண்டேன்,  
+
+ché la diritta via era smarrita.  
+ஏனெனில் சரியான பாதை இழந்துவிட்டது.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Step 3)**  
+**Word‑to‑Tamil Alignment Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
-| **Nel** | preposition + article “in the” (locative head) | **நடுவில்** | “in the middle / midway” | OK |
-| **mezzo** | noun “middle point” (midway) | **நடுவில்** | “midway” | OK |
-| **del** | preposition + article marking genitive “of the” | **வாழ்க்கையின்** | “of life” | OK |
-| **cammin** | noun “road / path” (the journey) | **பாதையின்** | “of the path” | OK |
-| **di** | preposition linking possessive “of” | **வாழ்க்கையின்** | “of life” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|----------------------|----------------------|--------------------------------------|--------|
+| **Nel** | preposition + definite article “in the” | **நடுவில்** (part of) | “in the middle” | OK |
+| **mezzo** | noun “middle, midpoint” | **நடுவில்** (part of) | “middle” | OK |
+| **del** | preposition + definite article “of the” | **நடுவில் / பயணத்தின்** (part of) | “of the” (genitive) | OK |
+| **cammin** | noun “road, journey” | **பயணத்தின்** | “of the journey” | OK |
+| **di** | preposition “of” | **பயணத்தின்** (part of) | “of” | OK |
 | **nostra** | possessive adjective “our” | **எங்கள்** | “our” | OK |
-| **vita** | noun “life” (span of existence) | **வாழ்க்கை** | “life” | OK |
-| **mi** | reflexive pronoun “myself” | **என்னை** | “myself” | OK |
-| **ritrovai** | verb “found (myself)” (passato remoto) | **கண்டேன்** | “found” | OK |
-| **per** | preposition with locative value “within” | **காடில்** | “in the forest” | OK |
-| **una** | indefinite article “a” | **ஒரு** | “a / one” | OK |
-| **selva** | noun “forest / wood” | **காடு** | “forest / wood” | OK |
+| **vita** | noun “life” | **வாழ்க்கையின்** | “of life” | OK |
+| **mi** | reflexive pronoun “myself” | **தன்னை** | “myself” | OK |
+| **ritrovai** | verb “found” (passato remoto) | **கண்டேன்** | “found” | OK |
+| **per** | preposition “through, within” | **காடில்** (part of) | “in” | OK |
+| **una** | indefinite article “a” | **ஒரு** | “a” | OK |
+| **selva** | noun “forest, wood” | **காடு** | “forest” | OK |
 | **oscura** | adjective “dark” | **இருண்ட** | “dark” | OK |
-| **ché** | conjunction “for / because” (causal) | **அதனால்** | “because / so” | OK |
-| **la** | definite article “the” (specifies the way) | *(none – Tamil has no article)* | – | **MISSING** |
-| **diritta** | adjective “right / straight / correct” | **சரியான** | “right / correct” | OK |
-| **via** | noun “way / path” | **பாதை** | “way / path” | OK |
-| **era** | copular verb “was / had been” (imperfect) | **விட்டது** | “had / was” (auxiliary) | OK |
-| **smarrita** | past participle adjective “lost / missed” | **தவறாகி** | “missed / gone astray” | OK |
+| **ché** | conjunction “for, because” (causal) | **ஏனெனில்** | “because” | **WRONG** (should be omitted or rendered as a resultative, not a causal “because”) |
+| **la** | definite article “the” | — (not expressed) | — | **MISSING** |
+| **diritta** | adjective “right, straight, correct” | **சரியான** | “correct/right” | OK |
+| **via** | noun “way, path” | **பாதை** | “way” | OK |
+| **era** | verb “was” (imperfect of *essere*) | — (implied in predicate) | — | **MISSING** |
+| **smarrita** | past participle “lost, missed” | **இழந்துவிட்டது** | “has been lost / missed” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **la** – Tamil does not use definite articles, so no direct lexical counterpart appears in the translation. The meaning is still conveyed by the adjective **சரியான**, but the article itself is absent.
+### Items Requiring Attention
+- **WRONG:** `ché` – rendered as “ஏனெனில்” (causal “because”). The source clause is a resultative (“for the right way had been missed”), so the conjunction should be omitted or expressed with a resultative particle, not a causal “because”.
+- **MISSING:** `la` – the definite article has no direct equivalent in Tamil and was omitted (acceptable, but flagged as missing for completeness).
+- **MISSING:** `era` – the copular verb “was” is not explicitly present in the Tamil clause; the meaning is carried by the past‑perfect verb “இழந்துவிட்டது”. This omission is noted. 
+
+No grammatical agreement errors were detected in the Tamil translation.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 1**  
-- **Original Translation:** எங்கள் வாழ்க்கையின் பாதையின் நடுவில்  
-- **Issues:** None  
-- **Corrected Translation:** (no change)  
+- Line 1:
+  - Original: எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்
+  - Issue: none
+  - Corrected: எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்  
 
-**Line 2**  
-- **Original Translation:** நான் ஒரு இருண்ட காடில் என்னை கண்டேன்,  
-- **Issues:** None  
-- **Corrected Translation:** (no change)  
+- Line 2:
+  - Original: நான் ஒரு இருண்ட காடில் தன்னை கண்டேன்,
+  - Issue: wrong reflexive pronoun (“தன்னை”); should be “என்னை”.
+  - Corrected: நான் ஒரு இருண்ட காடில் **என்னை** கண்டேன்,  
 
-**Line 3**  
-- **Original Translation:** அதனால் சரியான பாதை தவறாகி விட்டது.  
-- **Issues:** Missing definite article “la”.  
-- **Corrected Translation:** அதனால் **அந்த** சரியான பாதை தவறாகி விட்டது.  
+- Line 3:
+  - Original: சரியான பாதை இழந்துவிட்டது.
+  - Issue: missing resultative connector and implicit copula; the clause should stand alone without “ché”.
+  - Corrected: **சரியான பாதை இழந்துவிட்டது.**  
 
 ```text
-எங்கள் வாழ்க்கையின் பாதையின் நடுவில்
+எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்
 நான் ஒரு இருண்ட காடில் என்னை கண்டேன்,
-அதனால் அந்த சரியான பாதை தவறாகி விட்டது.
+சரியான பாதை இழந்துவிட்டது.
 ```
 ]]></message>
 </messages>

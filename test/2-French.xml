@@ -10,73 +10,80 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Ah comme il est dur de dire ce que c'était  
+Ah comme il est difficile de dire ce que c'était  
 cette forêt sauvage et âpre et dense  
-qui dans la pensée renouvelle la peur!
+qui dans la pensée renoue la peur!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑French Mapping Table**
+**Word‑to‑Word Mapping Table (Italian → French)**  
 
-| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (French) | Back‑Translation (EN) | Status |
-|-------------|--------------------------------|------------------------------|------------------------|--------|
-| Ahi | Exclamatory expression of emotion | Ah | “Ah!” | OK |
-| quanto | Marks high intensity of difficulty | comme | “how” (as in “how hard”) | OK |
-| a | Introduces infinitival complement | de | “to” | OK |
-| dir | Action whose difficulty is evaluated | dire | “to tell” | OK |
-| qual | Introduces content clause about identity | ce | “what” | OK |
-| era | Past copular link inside content clause | c'était | “was” | OK |
-| è | Present copular link equating subject and predicate | est | “is” | OK |
-| cosa | Generic referent for the difficult object | — | “thing” | **MISSING** |
-| dura | Qualifies *cosa* as difficult | dur | “hard” | OK |
-| esta | Points to the specific forest being described | cette | “this” | OK |
-| selva | The physical setting (forest) | forêt | “forest” | OK |
-| selvaggia | Attribute of the forest (wild) | sauvage | “wild” | OK |
-| e (1st) | Connects *selvaggia* with *aspra* | et | “and” | OK |
-| aspra | Attribute of the forest (rough) | âpre | “rough” | OK |
-| e (2nd) | Connects *aspra* with *forte* | et | “and” | OK |
-| forte | Attribute of the forest (dense/strong) | dense | “dense” | OK |
-| che | Refers back to *selva* and introduces a relative clause | qui | “which” | OK |
-| nel | Marks the mental locus of the action | dans | “in” | OK |
-| pensier | The mental arena where the forest is considered | pensée | “thought” | OK |
-| rinova | Action performed on *paura* | renouvelle | “renews” | OK |
-| la | Determines the noun *paura* | la | “the” | OK |
-| paura | Emotional response that is revived | peur | “fear” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase (French) | Back‑Translation (EN) | Status |
+|-------------|-----------------------|------------------------------|------------------------|--------|
+| Ahi | Interjection, exclamatory expression of emotion | Ah | “Ah!” | OK |
+| quanto | Adverb (intensifier), marks degree of difficulty | comme | “as / how” | OK |
+| a | Preposition (infinitive marker) | de | “to” (infinitive marker) | OK |
+| dir | Verb (infinitive), action of stating or describing | dire | “to say / to tell” | OK |
+| qual | Interrogative adjective, introduces the content of *dir* | ce que | “what” (as a clause) | OK |
+| era | Verb (imperf. 3sg), past state of the referent | c' | (part of *c'était*) | OK |
+| è | Verb (present 3sg), present state of the referent | étais / (part of *c'était*) | “was / is” (within *c'était*) | OK |
+| cosa | Noun (feminine), abstract entity denoted as difficult | — | — | **MISSING** |
+| dura | Adjective (feminine), property of difficulty | difficile | “difficult / hard” | OK |
+| esta | Demonstrative adjective, points to a specific forest | cette | “this” | OK |
+| selva | Noun (feminine), the physical setting being described | forêt | “forest / wood” | OK |
+| selvaggia | Adjective (feminine), quality of untamed nature | sauvage | “wild” | OK |
+| e (1) | Coordinating conjunction, connects adjectives | et | “and” | OK |
+| aspra | Adjective (feminine), quality of harsh texture | âpre | “rough / harsh” | OK |
+| e (2) | Coordinating conjunction, connects adjectives | et | “and” | OK |
+| forte | Adjective (feminine), quality of thickness or vigor | dense | “dense / thick” | OK |
+| che | Relative pronoun, refers back to *selva* | qui | “which / who” | OK |
+| nel | Contraction of *in* + *il*, preposition + article, locates mental domain | dans | “in” | OK |
+| pensier | Noun (masc., archaic *pensiero*), cognitive arena where effect occurs | pensée | “thought” | OK |
+| rinova | Verb (present 3sg), causes a re‑appearance or revival | renoue | “renews / reconnects” | OK |
+| la (definite article) | Definite article (feminine), specifies the noun *paura* | la | “the” | OK |
+| paura | Noun (feminine), emotional response being renewed | peur | “fear” | OK |
 
-### Missing / Wrong Items
-- **cosa** – not rendered in the French translation (marked **MISSING**).
+### Items to Address
+- **MISSING**: *cosa* – the French translation does not contain an explicit word for “thing”. The meaning is absorbed in the clause “c'était” (“it was”), but a lexical equivalent for *cosa* is absent.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final French text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 4** – Original: *Ah comme il est dur de dire ce que c'était*  
-**Issues:** missing translation of **cosa** (“thing”).  
-**Corrected:** *Ah comme il est dur de dire ce qu'était cette chose*
+- **Line 4**  
+  - Original: *Ah comme il est difficile de dire ce que c'était*  
+  - Issue: missing translation for **cosa** and the present‑tense copula **è**; the clause “ce que c'était” does not reflect the structure “what it was is a hard thing”.  
+  - Corrected: *Ah comme il est difficile de dire ce qu'était, c'est une chose dure*  
 
-**Line 5** – Original: *cette forêt sauvage et âpre et dense*  
-**Issues:** none.  
-**Corrected:** *(no change)*
+- **Line 5**  
+  - Original: *cette forêt sauvage et âpre et dense*  
+  - Issue: none  
+  - Corrected: *cette forêt sauvage et âpre et dense*  
 
-**Line 6** – Original: *qui dans la pensée renouvelle la peur!*  
-**Issues:** none.  
-**Corrected:** *(no change)*  
-
----
+- **Line 6**  
+  - Original: *qui dans la pensée renoue la peur!*  
+  - Issue: none  
+  - Corrected: *qui dans la pensée renoue la peur!*  
 
 ```text
-Ah comme il est dur de dire ce qu'était cette chose
+Ah comme il est difficile de dire ce qu'était, c'est une chose dure
 cette forêt sauvage et âpre et dense
-qui dans la pensée renouvelle la peur!
+qui dans la pensée renoue la peur!
 ```
 ]]></message>
 </messages>

@@ -10,66 +10,81 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-我々の人生の道の途中で  
+人生の道の真ん中で  
 暗い森の中で自分を見つけた、  
-正しい道が見失われていた。
+正しい道が失われていた。
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Japanese Mapping Table (Step 3)**  
+**Word‑to‑Japanese Mapping Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
-| **Nel** | “in the” – locative preposition + article introducing the midpoint | **で** (as part of 「途中で」) | “at / in” | OK |
-| **mezzo** | “midpoint” – the exact middle point of the journey | **途中** | “midway” | OK |
-| **del** | “of the” – genitive linking *cammin* to *vita* | **の** (as in 「道の」) | “of” | OK |
-| **cammin** | “road” – the path that constitutes the journey | **道** | “road” | OK |
-| **di** | “of” – possessive link between *nostra* and *vita* | **の** (as in 「人生の」) | “of” | OK |
-| **nostra** | “our” – collective possessor of *vita* | **我々の** | “our” | OK |
-| **vita** | “life” – the span of human existence being spoken of | **人生** | “life” | OK |
-| **mi** | reflexive pronoun “myself” – object of *ritrovai* | **自分** | “self / oneself” | OK |
-| **ritrovai** | verb “found” – act of discovering oneself | **見つけた** | “found” | OK |
-| **per** | preposition “within” – locative introducing the forest | **で** (as part of 「中で」) | “in / within” | OK |
-| **una** | indefinite article “a” – marks the forest as indefinite | *(omitted in Japanese)* | “a” | **MISSING** |
-| **selva** | noun “wood / forest” – the dark forest that contains the speaker | **森** | “forest” | OK |
-| **oscura** | adjective “dark” – qualifies the forest as lacking light | **暗い** | “dark” | OK |
-| **ché** | conjunction “for” – introduces the causal clause | *(omitted; causal sense expressed by the following clause)* | “for / because” | **MISSING** |
-| **la** | definite article “the” – specifies the particular way | *(omitted in Japanese)* | “the” | **MISSING** |
-| **diritta** | adjective “right / straight” – qualifies the way as the correct one | **正しい** | “right / correct” | OK |
-| **via** | noun “way” – the correct path that should be followed | **道** | “way / road” | OK |
-| **era** | copular verb “had been” – auxiliary forming the past state | **が** (subject marker in 「道が」) | “(was)” | OK |
-| **smarrita** | past participle “missed / lost” – describes the state of the way | **見失われていた** | “had been missed / was lost” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| Nel | “in the” (locative) | で | “in/at” | OK |
+| mezzo | “midpoint / middle” | 真ん中 | “middle” | OK |
+| del | genitive “of the” linking *mezzo* to *cammin* | の | “of” | OK |
+| cammin | “road / journey” | 道 | “road” | OK |
+| di | genitive “of” linking *cammin* to *nostra vita* | の | “of” | OK |
+| nostra | possessive “our” (part of *nostra vita*) | 人生 | “life” (captures “our life”) | OK |
+| vita | “life” | 人生 | “life” | OK |
+| mi | reflexive “myself” | 自分 | “myself” | OK |
+| ritrovai | “found” (past) | 見つけた | “found” | OK |
+| per | “within / through” (spatial) | の中で | “within” | OK |
+| una | indefinite article “a” (non‑specific) | — | — | **MISSING** |
+| selva | “forest / wood” | 森 | “forest” | OK |
+| oscura | “dark” (adj.) | 暗い | “dark” | OK |
+| ché | causal “for / because” (resultative clause) | — | — | **MISSING** |
+| la | definite article “the” (subject marker) | — | — | **MISSING** |
+| diritta | “right / straight / correct” | 正しい | “right / correct” | OK |
+| via | “way / path” | 道 | “way” | OK |
+| era | copular “was / had been” (imperfect) | 失われていた | “had been lost” | OK |
+| smarrita | “lost / missed” (past participle) | 失われていた | “lost” | OK |
+
+---
 
 ### Missing / Problematic Items
-- **una** – Japanese does not use an indefinite article; the translation omitted it.  
-- **ché** – the causal conjunction “for” was not rendered explicitly; the Japanese sentence simply follows the previous clause.  
-- **la** – Japanese lacks a definite article; the article is not represented in the translation.  
+- **una** – no Japanese equivalent expressed (indefinite article omitted).  
+- **ché** – causal conjunction not rendered in the Japanese resultative structure.  
+- **la** – definite article not rendered (Japanese does not use articles).  
 
-All other source tokens have a clear Japanese counterpart that preserves the meaning of the reference translation.
+All other source tokens are represented in the Japanese translation with appropriate meaning and grammatical function.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line # | Original Translation | Issues | Corrected Translation**
+- Line 1:
+  - Original: 人生の道の真ん中で
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: 暗い森の中で自分を見つけた、  
+  - Issue: missing “una”
+  - Corrected: ある暗い森の中で自分を見つけた、  
+- Line 3:
+  - Original: 正しい道が失われていた。  
+  - Issue: missing “ché” and “la”
+  - Corrected: それでその正しい道が失われていた。  
 
-- **Line 1** | 我々の人生の道の途中で | None | 我々の人生の道の途中で  
-- **Line 2** | 暗い森の中で自分を見つけた、 | Missing *una* (indefinite article) | ある暗い森の中で自分を見つけた、  
-- **Line 3** | 正しい道が見失われていた。 | Missing *ché* (causal “for”) and *la* (definite article) | その正しい道が見失われていたために。  
-
-```text
-我々の人生の道の途中で
-ある暗い森の中で自分を見つけた、
-その正しい道が見失われていたために。
+```
+人生の道の真ん中で
+ある暗い森の中で自分を見つけた、 
+それでその正しい道が失われていた。
 ```
 ]]></message>
 </messages>

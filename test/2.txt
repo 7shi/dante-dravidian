@@ -10,54 +10,54 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 
 # Telugu
 
-4 అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో
-5 ఈ అడవి వన్యమైన మరియు గట్టిగా మరియు ఘనంగా ఉంది
-6 అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!
+4 అహ్, అది ఏమిటో చెప్పడానికి ఎంత కఠినమైన విషయం
+5 ఈ అడవి అడవిగా మరియు గట్టిగా మరియు బలంగా ఉంది
+6 అది ఆలోచనలో ఆ భయాన్ని పునరుద్ధరిస్తుంది!
 
 # Tamil
 
-4 ஆஹ் அதை என்ன இருந்தது என்று சொல்ல எவ்வளவு கடினமானது என்பது ஒரு கடினமான விஷயம்
-5 இந்த காட்டுப்பகுதி காட்டு மற்றும் கடினமான மற்றும் அடர்த்தியானது
-6 அது நினைவில் அந்த பயத்தை புதுப்பிக்கிறது!
+4 ஆஹா! அது என்ன என்பதை சொல்லுவது எவ்வளவு கடினமானது
+5 இந்த காடு காட்டு முரட்டான வலுவானது
+6 அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!
 
 # Kannada
 
-4 ಆಹ್ ಇದು ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳಲು
-5 ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
+4 ಆಹ್! ಎಷ್ಟು ಹೇಳಲು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ
+5 ಈ ಕಾಡು ಕಾಡುಸ್ವಭಾವದ, ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
 6 ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
 
 # Malayalam
 
-4 അഹ് എത്ര പറയാൻ എന്തായിരുന്നു അത് ആണ് കഠിനമായ കാര്യം
-5 ഈ വന്യവും കഠിനവും ശക്തവുമായ കാട്
+4 അഹ് അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്
+5 ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്ടു
 6 അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
 
 # Japanese
 
-4 ああ、何であったかを語ることに、とても困難なことだ
-5 この野生で荒々しく、そして、そして厚い森
-6 それは思いの中でその恐怖を新たにする！
+4 ああ、どれほど語ることは何だったことが困難だ
+5 この野生で荒くてと濃い森
+6 それは思考の中で恐怖を新たにする！
 
 # French
 
-4 Ah comme il est dur de dire ce qu'était cette chose
+4 Ah comme il est difficile de dire ce qu'était, c'est une chose dure
 5 cette forêt sauvage et âpre et dense
-6 qui dans la pensée renouvelle la peur!
+6 qui dans la pensée renoue la peur!
 
 # Spanish
 
-4 Ay cuanto es cosa dura a decir qué era
+4 Ay cuánto cuesta decir qué era es cosa dura
 5 esta selva salvaje y áspera y fuerte
-6 que en el pensamiento renueva la miedo!
+6 que en el pensamiento renueva el miedo!
 
 # Portuguese
 
-4 Ai quão difícil é a dizer o que era coisa dura
-5 esta selva selvagem e áspera e forte
+4 Ah quão difícil é a dizer qual era a coisa
+5 esta selva selvagem e áspera e densa
 6 que no pensamento renova o medo!
 
 # Esperanto
 
-4 Ho, kiom malfacila estas por diri kio ĝi estis
+4 Aĥi kiom malfacila afero estas por diri kio ĝi estis
 5 ĉi tiu sovaĝa kaj aspra kaj densa arbaro
-6 kiu en pensado renovigas la timon!
+6 kiu en penso renovigas la timon!

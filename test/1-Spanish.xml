@@ -11,70 +11,74 @@ Rules:
 ]]></message>
 <message role="assistant"><![CDATA[
 En medio del camino de nuestra vida  
-me encontré en una selva oscura,  
-pues la recta vía estaba perdida.
+me encontré dentro de una selva oscura,  
+pues el camino recto se había perdido.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Step 3)**  
+**Word‑to‑Word Alignment Table (Spanish translation)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Spanish) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|----------------------------|--------|
-| Nel | prepositional phrase head “in the middle of” | En | in | OK |
-| mezzo | noun “the exact middle point” | medio | middle | OK |
-| del | preposition + article “of the” | del | of the | OK |
-| cammin | head noun “road” | camino | road | OK |
-| di | preposition linking “nostra” to “vita” – “of” | de | of | OK |
-| nostra | possessive adjective “our” | nuestra | our | OK |
-| vita | noun “life” | vida | life | OK |
-| mi | reflexive object “myself” | me | myself | OK |
-| ritrovai | main verb “found” (past) | encontré | found | OK |
-| per | preposition “within” (locative) | en | within | OK |
-| una | indefinite article “a” | una | a | OK |
-| selva | noun “wood/forest” | selva | forest | OK |
-| oscura | adjective “dark” | oscura | dark | OK |
-| ché | conjunction “for” (causal) | pues | for | OK |
-| la | definite article “the” | la | the | OK |
-| diritta | adjective “right/straight” | recta | straight | OK |
-| via | noun “way” | vía | way | OK |
-| era | copular verb “had been” (imperfect) | estaba | had been | OK |
-| smarrita | predicate adjective “missed/lost” | perdida | missed/lost | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| Nel | preposition + definite article (location inside a larger span) | En | “in / upon” | OK |
+| mezzo | noun (central point of a stretch) | medio | “midway / middle” | OK |
+| del | preposition + definite article (genitive linking) | del | “of the” | OK |
+| cammin | noun (path taken through life) | camino | “road / journey” | OK |
+| di | preposition (links “cammin” to “nostra vita”) | de | “of” | OK |
+| nostra | possessive adjective (belonging to the speaker and companions) | nuestra | “our” | OK |
+| vita | noun (span of human existence) | vida | “life” | OK |
+| mi | reflexive pronoun (speaker as experiencer) | me | “myself” | OK |
+| ritrovai | verb (act of encountering oneself) | encontré | “found” | OK |
+| per | preposition (spatial context = within) | dentro | “within” | OK |
+| una | indefinite article (non‑specific) | una | “a” | OK |
+| selva | noun (dark, wooded area) | selva | “forest / wood” | OK |
+| oscura | adjective (lacking light, metaphorically confusing) | oscura | “dark” | OK |
+| ché | conjunction (introduces causal clause) | pues | “for / because” | OK |
+| la | definite article (specifies a particular way) | el | “the” | OK |
+| diritta | adjective (the correct, direct path) | recto | “right / straight” | OK |
+| via | noun (the intended route through life) | camino | “way / road” | OK |
+| era | verb (copular linking subject to predicate, imperfect) | se había | “had been” | OK |
+| smarrita | past participle used as adjective (state of being lost) | perdido | “missed / lost” | OK |
 
-**Missing / Wrong Items**  
-- *None.* All source tokens are represented in the Spanish translation with appropriate meanings.
+### Issues Detected
+*None* – every source token has a corresponding Spanish translation that respects the intended meaning and grammatical function.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Spanish text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 1**  
-- **Original Translation:** En medio del camino de nuestra vida  
-- **Issues:** None  
-- **Corrected Translation:** En medio del camino de nuestra vida  
+- Line 1:
+  - Original: En medio del camino de nuestra vida
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: me encontré dentro de una selva oscura,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: pues el camino recto se había perdido.
+  - Issue: none
+  - Corrected: no change
 
-**Line 2**  
-- **Original Translation:** me encontré en una selva oscura,  
-- **Issues:** None  
-- **Corrected Translation:** me encontré en una selva oscura,  
-
-**Line 3**  
-- **Original Translation:** pues la recta vía estaba perdida.  
-- **Issues:** None  
-- **Corrected Translation:** pues la recta vía estaba perdida.  
-
-```text
+```
 En medio del camino de nuestra vida
-me encontré en una selva oscura,
-pues la recta vía estaba perdida.
+me encontré dentro de una selva oscura,
+pues el camino recto se había perdido.
 ```
 ]]></message>
 </messages>

@@ -10,78 +10,81 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-మన జీవిత మార్గం మధ్యలో  
-నేను ఒక చీకటి అడవిలో తాను కనుగొన్నాను,  
-అందుకే సరైన మార్గం కోల్పోయింది.
+మన జీవితం యొక్క ప్రయాణం మధ్యలో  
+నేను చీకటి అడవిలో తాను కనుగొన్నాను,  
+కారణం సరైన మార్గం కోల్పోయింది.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Telugu translation from Step 2)**  
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
-| **Nel** | preposition + article “in the” (locative introducing the midpoint) | **మధ్యలో** | “in the middle” | OK |
-| **mezzo** | noun “middle” – the exact midpoint of the journey | **మధ్య** | “middle” | OK |
-| **del** | preposition + article “of the” (genitive linking *cammin* to *vita*) | — | — | **MISSING** |
-| **cammin** | noun “road” – the path that constitutes the journey | **మార్గం** | “road” | OK |
-| **di** | preposition linking the possessive *nostra* to *vita* | — | — | **MISSING** |
-| **nostra** | possessive adjective “our” (collective speaker + addressee) | **మన** | “our” | OK |
-| **vita** | noun “life” – the span of human existence being spoken of | **జీవిత** | “life” | OK |
-| **mi** | reflexive pronoun “myself” (object of *ritrovai*) | **తాను** | “myself” | OK |
-| **ritrovai** | verb “found” – the act of discovering oneself | **కనుగొన్నాను** | “found” | OK |
-| **per** | preposition “within” – locative introducing the forest | **లో** | “within” | OK |
-| **una** | indefinite article “a” – marks the forest as indefinite | **ఒక** | “a” | OK |
-| **selva** | noun “forest/wood” – the dark forest that contains the speaker | **అడవి** | “forest” | OK |
-| **oscura** | adjective “dark” – qualifies the forest as lacking light | **చీకటి** | “dark” | OK |
-| **ché** | conjunction “for/so” – introduces the causal clause | **అందుకే** | “so / therefore” | OK |
-| **la** | definite article “the” – specifies the particular *via* | — | — | **MISSING** |
-| **diritta** | adjective “right/straight” – qualifies the way as the correct one | **సరైన** | “right / correct” | OK |
-| **via** | noun “way” – the correct path that should be followed | **మార్గం** | “way” | OK |
-| **era** | copular verb “was / had been” – links *via* to its state | — | — | **MISSING** |
-| **smarrita** | past participle “lost / missed” – describes the state of the *via* | **కోల్పోయింది** | “was lost / missed” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| **Nel** | preposition + article “in the middle of” | మధ్యలో | “midway / inside” | OK |
+| **mezzo** | noun “middle point” | మధ్యలో | “midway” | OK |
+| **del** | genitive “of the” | యొక్క | “of” | OK |
+| **cammin** | noun “road / journey” | ప్రయాణం | “journey / road” | OK |
+| **di** | preposition “of” (genitive) | యొక్క | “of” | OK |
+| **nostra** | possessive adjective “our” | మన | “our” | OK |
+| **vita** | noun “life” | జీవితం | “life” | OK |
+| **mi** | reflexive pronoun “myself” | తాను | “myself” | OK |
+| **ritrovai** | verb (past) “found” | కనుగొన్నాను | “found” | OK |
+| **per** | preposition “within / through” | అడవిలో | “in the forest” (locative) | OK |
+| **una** | indefinite article “a” | — | — | **MISSING** |
+| **selva** | noun “forest / wood” | అడవిలో | “forest (in)” | OK |
+| **oscura** | adjective “dark” | చీకటి | “dark” | OK |
+| **ché** | conjunction “for” (resultative) | కారణం | “because” | **WRONG** (should keep resultative “for”) |
+| **la** | definite article “the” | — | — | **MISSING** |
+| **diritta** | adjective “right / straight” | సరైన | “correct / right” | OK |
+| **via** | noun “way” | మార్గం | “way” | OK |
+| **era** | copular verb “was / had been” | — (implicit in predicate) | — | **MISSING** |
+| **smarrita** | past participle “lost / missed” | కోల్పోయింది | “was lost” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **del** – not rendered explicitly in the Telugu line.  
-- **di** – omitted; the genitive relationship is implied.  
-- **la** – definite article not expressed in Telugu.  
-- **era** – the copular verb “was/had been” is not a separate word; its meaning is folded into the verb **కోల్పోయింది**.  
-
-All other source words are represented with appropriate Telugu equivalents and their English back‑translations match the intended meanings.
+### Items Needing Attention
+- **MISSING:** `una`, `la`, `era` – the Telugu translation does not contain explicit equivalents for these words (article “a”, article “the”, and the copular verb “was”).
+- **WRONG:** `ché` – rendered as “కారణం” (“because”), which changes the required resultative “for” structure.  
+- **GRAMMAR:** none detected (no gender/number agreement errors in the provided translation).
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 1**  
-- **Original Translation:** మన జీవిత మార్గం మధ్యలో  
-- **Issues:** missing the genitive markers for “del” and “di” (the “of” relationship).  
-- **Corrected Translation:** **మన జీవితము యొక్క మార్గం మధ్యలో**  
+- Line 1:
+  - Original: మన జీవితం యొక్క ప్రయాణం మధ్యలో
+  - Issue: none
+  - Corrected: మన జీవితం యొక్క ప్రయాణం మధ్యలో  
 
-**Line 2**  
-- **Original Translation:** నేను ఒక చీకటి అడవిలో తాను కనుగొన్నాను,  
-- **Issues:** none (all source words are represented).  
-- **Corrected Translation:** *(no change)*  
+- Line 2:
+  - Original: నేను చీకటి అడవిలో తాను కనుగొన్నాను,
+  - Issue: missing indefinite article “una”
+  - Corrected: నేను **ఒక** చీకటి అడవిలో తాను కనుగొన్నాను,  
 
-**Line 3**  
-- **Original Translation:** అందుకే సరైన మార్గం కోల్పోయింది.  
-- **Issues:** none (the copular meaning is conveyed by “కోల్పోయింది”).  
-- **Corrected Translation:** *(no change)*  
+- Line 3:
+  - Original: కారణం సరైన మార్గం కోల్పోయింది.
+  - Issue: wrong resultative “కారణం”, missing definite article “la”, missing copular verb “era”
+  - Corrected: **కోసం** ఆ సరైన మార్గం **ఉంది** కోల్పోయింది.  
 
-```text
-మన జీవితము యొక్క మార్గం మధ్యలో
+```telugu
+మన జీవితం యొక్క ప్రయాణం మధ్యలో
 నేను ఒక చీకటి అడవిలో తాను కనుగొన్నాను,
-అందుకే సరైన మార్గం కోల్పోయింది.
+కోసం ఆ సరైన మార్గం ఉండి కోల్పోయింది.
 ```
 ]]></message>
 </messages>

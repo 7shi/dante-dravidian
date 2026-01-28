@@ -10,66 +10,83 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ  
-ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡುಕೊಂಡೆ,  
-ಆದರಿಂದ ಸರಿಯಾದ ಮಾರ್ಗವು ಕಳೆದುಹೋಗಿತ್ತು.
+Nel mezzo del cammin di nostra vita  
+mi ritrovai per una selva oscura,  
+ché la diritta via era smarrita.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Italian → Kannada)**  
+**Word‑to‑Word Alignment Table (Source → Kannada)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
-| **Nel** | preposition “in the middle of” (locative) | **ಮಧ್ಯದಲ್ಲಿ** | “in the middle” | OK |
-| **mezzo** | noun “middle” (the midpoint of the journey) | **ಮಧ್ಯದಲ್ಲಿ** | “in the middle” | OK |
-| **del** | genitive “of the” linking *cammin* to *vita* | **ಮಾರ್ಗದ** (of the road) | “of the road” | OK |
-| **cammin** | noun “road, path” (the journey’s way) | **ಮಾರ್ಗ** (road) | “road” | OK |
-| **di** | preposition “of” linking *nostra* to *vita* | **ಜೀವನದ** (of life) | “of life” | OK |
-| **nostra** | possessive adjective “our” (collective life) | **ನಮ್ಮ** (our) | “our” | OK |
-| **vita** | noun “life” (the span of existence) | **ಜೀವನ** (life) | “life” | OK |
-| **mi** | reflexive pronoun “myself” (object of *ritrovai*) | **ನನ್ನನ್ನು** (myself) | “myself” | OK |
-| **ritrovai** | verb “found (myself)” (past‑remote) | **ಕಂಡುಕೊಂಡೆ** (found) | “found” | OK |
-| **per** | preposition “within, in” (locative) | **ಕಾಡಿನಲ್ಲಿ** (in the forest) | “in the forest” | OK |
-| **una** | indefinite article “a” (introduces *selva*) | *(none – article omitted in Kannada)* | – | **MISSING** |
-| **selva** | noun “wood, forest” (dark place) | **ಕಾಡು** (forest) | “forest” | OK |
-| **oscura** | adjective “dark” (qualifies *selva*) | **ಕತ್ತಲೆ** (dark) | “dark” | OK |
-| **ché** | conjunction “for, because” (causal) | **ಆದರಿಂದ** (because/therefore) | “because” | OK |
-| **la** | definite article “the” (specifies *via*) | **ಮಾರ್ಗ** (the way) – article not separate in Kannada | “the way” | OK |
-| **diritta** | adjective “right, straight” (correct way) | **ಸರಿಯಾದ** (right/correct) | “right” | OK |
-| **via** | noun “way, path” (the correct road) | **ಮಾರ್ಗ** (way) | “way” | OK |
-| **era** | imperfect of *essere* “was/had been” (copular) | **ಕಳೆದುಹೋಗಿತ್ತು** (had been missed) | “had been missed” | OK |
-| **smarrita** | past participle “lost, missed” (state of *via*) | **ಕಳೆದುಹೋಗಿತ್ತು** (missed) | “missed” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|--------------------------------|--------------------------|--------|
+| **Nel** | preposition + definite article “in the” (location) | **ಮಧ್ಯದಲ್ಲಿ** | “in the middle” | OK |
+| **mezzo** | noun “midway, middle” | **ಮಧ್ಯ** | “middle” | OK |
+| **del** | genitive “of the” linking “mezzo” to “cammin” | **ದ** | “of” | OK |
+| **cammin** | noun “road, journey” | **ಮಾರ್ಗ** | “road” | OK |
+| **di** | preposition “of” linking to “nostra vita” | **ದ** | “of” | OK |
+| **nostra** | possessive adjective “our” | **ನಮ್ಮ** | “our” | OK |
+| **vita** | noun “life” | **ಜೀವನ** | “life” | OK |
+| **mi** | reflexive pronoun “myself” (object of ritrovai) | **ನನ್ನನ್ನು** | “myself” | OK |
+| **ritrovai** | verb “found” (past remote) | **ಕಂಡೆ** | “found” | OK |
+| **per** | preposition “within/through” (spatial) | **ನಲ್ಲಿ** | “in” | OK |
+| **una** | indefinite article “a” (non‑specific) | — | — | **MISSING** |
+| **selva** | noun “forest, wood” | **ಕಾಡು** | “forest” | OK |
+| **oscura** | adjective “dark” (metaphoric) | **ಕತ್ತಲೆ** | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) | — | — | **MISSING** |
+| **la** | definite article “the” (specifies way) | — | — | **MISSING** |
+| **diritta** | adjective “right, straight, correct” | **ಸರಿಯಾದ** | “right/correct” | OK |
+| **via** | noun “way, path” | **ಮಾರ್ಗ** | “way” | OK |
+| **era** | verb “was” (imperfect of *essere*) | **ಇತ್ತು** | “was” | OK |
+| **smarrita** | past participle “missed, lost” | **ಕಳೆದುಹೋಗಿತ್ತು** | “had been missed / was lost” | OK |
 
-### Missing / Wrong Items
-- **una** – the indefinite article is not expressed in the Kannada translation (Kannada does not use a separate word for “a” in this context). All other source words are present and correctly rendered.
+---
+
+### Items Needing Attention
+- **una** – no direct article in Kannada; the translation omits it.  
+- **ché** – causal conjunction omitted; the Kannada clause stands alone.  
+- **la** – definite article not expressed in Kannada; omitted.  
+
+All other lexical correspondences are correctly rendered with appropriate grammatical agreement.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑line review**
+- Line 1:
+  - Original: ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
+  - Issue: none
+  - Corrected: ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ  
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|----------------------|--------|-----------------------|
-| 1 | ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ | – | – |
-| 2 | ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡುಕೊಂಡೆ, | Missing the indefinite article “una”. | ನಾನು ಒಂದು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡುಕೊಂಡೆ, |
-| 3 | ಆದರಿಂದ ಸರಿಯಾದ ಮಾರ್ಗವು ಕಳೆದುಹೋಗಿತ್ತು. | – | – |
+- Line 2:
+  - Original: ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
+  - Issue: missing indefinite article “ಒಂದು”
+  - Corrected: ನಾನು ಒಂದು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,  
 
-**Final Kannada text**
+- Line 3:
+  - Original: ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
+  - Issue: missing conjunction “ಆದ್ದರಿಂದ” and definite article “ಆ”
+  - Corrected: ಆದ್ದರಿಂದ ಆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.  
 
 ```kannada
 ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
-ನಾನು ಒಂದು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡುಕೊಂಡೆ,
-ಆದರಿಂದ ಸರಿಯಾದ ಮಾರ್ಗವು ಕಳೆದುಹೋಗಿತ್ತು.
+ನಾನು ಒಂದು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
+ಆದ್ದರಿಂದ ಆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
 ```
 ]]></message>
 </messages>

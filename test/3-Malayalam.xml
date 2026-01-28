@@ -10,77 +10,87 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-അത്രയേറെ കയ്പ്പാണ് അത് മരണം അല്പം കൂടുതലാണ്;  
-പക്ഷേ അവിടെ ഞാൻ കണ്ടെത്തിയ നല്ലതിനെ പരിചരിക്കാൻ,  
-ഞാൻ അവിടെ കണ്ട മറ്റ് കാര്യങ്ങളെപ്പറ്റി പറയും.
+7 ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്‍പം മാത്രമേ കൂടുതലുള്ളൂ;  
+8 എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് സംസാരിക്കാൻ,  
+9 ഞാൻ അവിടെ കണ്ട മറ്റ് കാര്യങ്ങളെക്കുറിച്ച് പറയും.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Italian → Malayalam)**  
+**Word‑to‑Word Alignment Table (Malayalam translation)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|----------------------------------|-----------------------------|--------|
-| **Tant'** | intensifier indicating a high degree of bitterness | **അത്രയേറെ** | “so much / so” | OK |
-| **è** (1st) | copular verb linking subject to predicate “bitter” | **കയ്പ്പാണ്** | “is bitter” (verb + adjective) | OK |
-| **amara** | predicate adjective describing the bitterness | **കയ്പ്പാണ്** | “bitter” (part of the same word) | OK |
-| **che** | comparative subordinator introducing the clause “poco è più morte” | – | – | **MISSING** |
-| **poco** | adverb quantifier “little” | **അൽപം** | “little” | OK |
-| **è** (2nd) | copular verb in the comparative clause | **കൂടുതലാണ്** | “is more” | OK |
-| **più** | comparative marker “more” | **കൂടുതലാണ്** | “more” (embedded in the verb) | OK |
-| **morte** | noun “death” | **മരണം** | “death” | OK |
-| **ma** | coordinating conjunction “but” | **പക്ഷേ** | “but” | OK |
-| **per** | preposition introducing purpose (“in order to”) | **പരിചരിക്കാൻ** | “to treat” (infinitive) | OK |
-| **trattar** | infinitive “to treat” | **പരിചരിക്കാൻ** | “to treat” | OK |
-| **del** | preposition + article “of the” (object marker) | **നല്ലതിനെ** | “the good (object)” | OK |
-| **ben** | noun “good” | **നല്ലതിനെ** | “good” (object) | OK |
-| **ch'i'** (1st) | relative pronoun “that I” introducing “vi trovai” | – | – | **MISSING** |
-| **vi** | locative adverb “there” | **അവിടെ** | “there” | OK |
-| **trovai** | past‑historic “found” | **കണ്ടെത്തിയ** | “found” (participle) | OK |
-| **dirò** | future “I will tell” | **പറയും** | “will tell” | OK |
-| **de** | preposition “of/about” introducing the topic | **കാര്യങ്ങളെപ്പറ്റി** | “about the things” | OK |
-| **l'altre** | adjective “other” (plural) | **മറ്റ്** | “other” | OK |
-| **cose** | noun “things” (plural) | **കാര്യങ്ങളെ** | “things” (object) | OK |
-| **ch'i'** (2nd) | relative pronoun “that I” introducing “v'ho scorte” | – | – | **MISSING** |
-| **v'ho** | auxiliary “have” (perfect) | – | – | **MISSING** |
-| **scorte** | past participle “seen” | **കണ്ട** | “seen” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------|----------------------------|--------|
+| **Tant'** | “to such a degree” – intensifier of the predicate | **അത്ര** | “so / to that extent” | OK |
+| **è** (1st) | Copular verb linking subject to predicate | **ആണ്** (part of *കയ്പ്പുള്ളതാണു*) | “is” | OK |
+| **amara** | adjective describing the subject (bitter) | **കയ്പ്പുള്ളത്** | “bitter” | OK |
+| **che** | Subordinator introducing result/comparative clause | **അതിനേക്കാൾ** | “than that” (comparative “that”) | OK |
+| **poco** | Quantifier indicating slight degree | **അല്‍പം** | “a little” | OK |
+| **è** (2nd) | Copular verb in comparative clause | **കൂടുതലുള്ളൂ** (contains “is more”) | “is” (as part of “is more”) | OK |
+| **più** | Comparative adverb marking increase | **കൂടുതലുള്ളൂ** (contains “more”) | “more” | OK |
+| **morte** | The entity being compared (death) | **മരണം** | “death” | OK |
+| **ma** | Coordinating conjunction signalling contrast | **എന്നാൽ** | “but / however” | OK |
+| **per** | Preposition marking purpose (“in order to”) | — | — | **MISSING** |
+| **trattar** | Infinitive verb “to discuss / to treat” | **സംസാരിക്കാൻ** | “to speak / to discuss” | OK |
+| **del** | Preposition + definite article “of the” | **‑യുടെ** (implicit in *നല്ലതിനെക്കുറിച്ച്*) | “of the” | OK |
+| **ben** | Noun “good” (the positive thing) | **നല്ലത്** | “the good” | OK |
+| **ch'** (line 8) | Relative pronoun introducing clause “that I found” | **കണ്ടെത്തിയ** | “that I found” | OK |
+| **i'** | First‑person pronoun “I” | **ഞാൻ** | “I” | OK |
+| **vi** | Locative adverb “there” | **അവിടെ** | “there” | OK |
+| **trovai** | Past‑tense verb “found” | **കണ്ടെത്തിയ** | “found” | OK |
+| **dirò** | Future‑tense verb “I will tell” | **പറയും** | “I will tell” | OK |
+| **de** | Preposition “of” introducing object of “tell” | **‑യുടെ** (implicit in *കാര്യങ്ങളെക്കുറിച്ച്*) | “of” | OK |
+| **l'altre** | Adjective “other” (plural) | **മറ്റ്** | “other” | OK |
+| **cose** | Noun “things” (plural) | **കാര്യങ്ങൾ** | “things” | OK |
+| **ch'** (line 9) | Relative pronoun “that” introducing clause “that I have seen” | **കണ്ട** | “that (I) have seen” | OK |
+| **i'** | First‑person pronoun “I” | **ഞാൻ** | “I” | OK |
+| **v'** | Clitic locative “vi” = “there” | **അവിടെ** | “there” | OK |
+| **ho** | Auxiliary verb forming perfect “have” | — | — | **MISSING** |
+| **scorte** | Past participle “seen” | **കണ്ട** | “seen” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **che** (comparative subordinator) – not rendered explicitly in Malayalam.  
-- **ch'i'** (first occurrence) – relative pronoun omitted; the clause is fused into the participial form **കണ്ടെത്തിയ**.  
-- **ch'i'** (second occurrence) – same issue; the relative pronoun is absorbed in **കണ്ട**.  
-- **v'ho** – auxiliary “have” of the perfect is not expressed separately in Malayalam; the perfect aspect is conveyed by the past participle **കണ്ട**.  
-
-All other source tokens have appropriate Malayalam equivalents and are marked **OK**.
+### Items Needing Attention
+- **Missing translations:** `per` (purpose marker) and `ho` (auxiliary “have”) are not explicitly rendered in the Malayalam output.
+- **No outright wrong or grammatical‑agreement errors** were detected in the rendered Malayalam; the only issues are the two missing function words.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑Line Review**
+- Line 7:
+  - Original: ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്‍പം മാത്രമേ കൂടുതലുള്ളൂ;
+  - Issue: none
+  - Corrected: ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്‍പം മാത്രമേ കൂടുതലുള്ളൂ;
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|---------------------|--------|-----------------------|
-| 7 | അത്രയേറെ കയ്പ്പാണ് അത് മരണം അല്പം കൂടുതലാണ്; | Missing comparative subordinator **che** | **അത്രയേറെ കയ്പ്പാണ് അത് എന്നാൽ മരണം അല്പം കൂടുതലാണ്;** |
-| 8 | പക്ഷേ അവിടെ ഞാൻ കണ്ടെത്തിയ നല്ലതിനെ പരിചരിക്കാൻ, | Missing relative pronoun **che** (that) | **പക്ഷേ അവിടെ ഞാൻ കണ്ടെത്തിയത് നല്ലതിനെ പരിചരിക്കാൻ,** |
-| 9 | ഞാൻ അവിടെ കണ്ട മറ്റ് കാര്യങ്ങളെപ്പറ്റി പറയും. | Missing relative pronoun **che** (that) | **ഞാൻ അവിടെ കണ്ടത് മറ്റ് കാര്യങ്ങളെപ്പറ്റി പറയും.** |
+- Line 8:
+  - Original: എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് സംസാരിക്കാൻ,
+  - Issue: Missing purpose marker “per”
+  - Corrected: എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് വേണ്ടി സംസാരിക്കാൻ,
 
----
+- Line 9:
+  - Original: ഞാൻ അവിടെ കണ്ട മറ്റ് കാര്യങ്ങളെക്കുറിച്ച് പറയും.
+  - Issue: Missing auxiliary “ho”
+  - Corrected: ഞാൻ അവിടെ കണ്ടിട്ടുണ്ട് മറ്റ് കാര്യങ്ങളെക്കുറിച്ച് പറയും.
 
-```malayalam
-അത്രയേറെ കയ്പ്പാണ് അത് എന്നാൽ മരണം അല്പം കൂടുതലാണ്;
-പക്ഷേ അവിടെ ഞാൻ കണ്ടെത്തിയത് നല്ലതിനെ പരിചരിക്കാൻ,
-ഞാൻ അവിടെ കണ്ടത് മറ്റ കാര്യങ്ങളെപ്പറ്റി പറയും.
+```
+ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്പം മാത്രമേ കൂടുതലുള്ളൂ;
+എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് വേണ്ടി സംസാരിക്കാൻ,
+ഞാൻ അവിടെ കണ്ടിട്ടുണ്ട് മറ്റുള്ള കാര്യങ്ങളെക്കുറിച്ച് പറയും.
 ```
 ]]></message>
 </messages>

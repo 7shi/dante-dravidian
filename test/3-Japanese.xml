@@ -10,79 +10,94 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-それほど苦く死はほんの少しだけ上回る;  
-しかしそこで見つけた善について論じるために、  
-そこで見た他の事柄を語ろう。
+それほど苦く、死はほんの少しだけそれ以上だ;  
+しかし、私がそこで見つけた善について論じるために、  
+私はそこで見た他の事柄について語ろう.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Japanese Mapping Table**
+**Word‑to‑Japanese Mapping Table (Step 3)**  
 
-| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
-|-------------|--------------------------------|--------------------------------|-----------------------------|--------|
-| **Tant'** | Intensifier indicating a high degree of bitterness | それほど | “so” | OK |
-| **è** (1st) | Copular verb linking subject to predicate | *(omitted)* | – | MISSING |
-| **amara** | Predicate adjective describing bitterness | 苦く | “bitterly” | OK |
-| **che** | Comparative subordinator introducing clause | *(omitted)* | – | MISSING |
-| **poco** | Degree modifier expressing a small amount | ほんの少しだけ | “only a little” | OK |
-| **è** (2nd) | Copular verb in the comparative clause | *(omitted)* | – | MISSING |
-| **più** | Comparative marker indicating “greater” | 上回る | “exceeds” | OK |
-| **morte** | Noun, the entity being compared (death) | 死 | “death” | OK |
-| **ma** | Coordinating conjunction signalling contrast | しかし | “but” | OK |
-| **per** | Preposition introducing a purpose infinitive | ために | “in order to” | OK |
-| **trattar** | Infinitive verb meaning “to treat / discuss” | 論じる | “to discuss / treat” | OK |
-| **del** | Preposition + article linking noun to verb (“of the”) | について | “about” | OK |
-| **ben** | Noun meaning “good” | 善 | “good” | OK |
-| **ch'i'** (1st) | Relative pronoun introducing clause (“that I”) | *(omitted)* | – | MISSING |
-| **vi** | Locative adverb “there” | そこで | “there” | OK |
-| **trovai** | Past‑historic verb “found” | 見つけた | “found” | OK |
-| **dirò** | Future verb “I will tell” | 語ろう | “will tell” | OK |
-| **de** | Preposition “of” linking object | を | object marker “(direct‑object)” | OK |
-| **l'altre** | Adjective “other” | 他の | “other” | OK |
-| **cose** | Noun “things” | 事柄 | “things” | OK |
-| **ch'i'** (2nd) | Relative pronoun (“that I”) | *(omitted)* | – | MISSING |
-| **v'ho** | Auxiliary verb “have” forming the perfect | *(omitted)* | – | MISSING |
-| **scorte** | Past participle “seen” | 見た | “saw” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|----------------------------|--------|
+| Tant' | “to such a degree” (intensifier) | それほど | “to such an extent” | OK |
+| è (1) | copular “is” | – (implicit in それほど苦く) | – (copula omitted in Japanese) | MISSING |
+| amara | adjective “bitter” | 苦く | “bitter (adverbial) ” | OK |
+| che (1) | conjunction “that” (comparative result) | – (implicit, realized by the comma) | – | MISSING |
+| poco | adverb “little” (slight degree) | ほんの | “only, merely” | OK |
+| è (2) | copular “is” | – (implicit in 死は…) | – | MISSING |
+| più | comparative “more” | それ以上だ | “more / beyond that” | WRONG (does not convey the comparative “more bitter”) |
+| morte | noun “death” | 死は | “death (topic) ” | OK |
+| ; | end‑sentence punctuation | ; | ; | OK |
+| ma | coordinating conjunction “but” | しかし | “but, however” | OK |
+| per | preposition “in order to” (purpose) | ために | “for the purpose of” | OK |
+| trattar | infinitive “to treat / discuss” | 論じる | “to discuss, to argue” | OK |
+| del | “of the” (genitive) | について | “about, concerning” | OK (functionally rendered) |
+| ben | noun “good” | 善 | “good, virtue” | OK |
+| ch' (2) | relative pronoun “that” | – (implicit in relative clause) | – | MISSING |
+| i' (1) | pronoun “I” (subject) | 私が | “I (subject) ” | OK |
+| vi | adverb “there” (locative) | そこで | “there, at that place” | OK |
+| trovai | verb “found” (preterite) | 見つけた | “found” | OK |
+| , | end‑clause punctuation | , | , | OK |
+| dirò | future “I will tell” | 語ろう | “will tell / speak” (volitional) | OK (volitional used for future intent) |
+| de | preposition “of” | について | “about, concerning” | OK |
+| l' | definite article “the” | – (no article in Japanese) | – | MISSING |
+| altre | adjective “other” | 他の | “other” | OK |
+| cose | noun “things” | 事柄 | “things, matters” | OK |
+| ch' (3) | relative pronoun “that” | – (implicit) | – | MISSING |
+| i' (2) | pronoun “I” (subject) | 私が | “I (subject) ” | OK |
+| v' | clitic “vi” = “there” | そこで | “there, at that place” | OK |
+| ho | auxiliary “have” (perfect) | – (perfect not expressed) | – | MISSING |
+| scorte | past participle “seen” | 見た | “seen / looked at” | OK |
+| . | end‑sentence punctuation | . | . | OK |
 
 ---
 
-### Missing / Unmatched Items
-- **è** (first occurrence) – copular verb not expressed in Japanese.  
-- **è** (second occurrence) – same as above.  
-- **che** – comparative subordinator omitted in Japanese.  
-- **ch'i'** (first) – relative pronoun omitted.  
-- **ch'i'** (second) – relative pronoun omitted.  
-- **v'ho** – auxiliary “have” for perfect tense omitted.  
+### Items Needing Attention
+- **Missing elements**: the copular verbs **è** (twice), the conjunction **che** (twice), the relative pronouns **ch'** (three occurrences), the article **l'**, and the auxiliary **ho** are not overtly expressed in Japanese (they are either implicit or omitted).  
+- **Wrong translation**: **più** rendered as **それ以上だ** does not clearly convey the comparative “more (bitter)”. A more accurate rendering would be **もっと苦い** or **より苦い**.  
+- **Grammar note**: The Japanese line for line 7 contains an internal comma (**、**) which violates the “no internal punctuation” rule; it should be removed or replaced with a natural Japanese pause (e.g., using a conjunction).  
 
-All other source words have appropriate Japanese equivalents and are marked **OK**.
+These points should be corrected in a revised translation before proceeding further.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑Line Corrections**
+- Line 7:
+  - Original: それほど苦く、死はほんの少しだけそれ以上だ;
+  - Issue: 内部にコンマがあり、比較「more bitter」の表現が不足している。
+  - Corrected: それほど苦く死はほんの少しだけそれ以上に苦い;
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|----------------------|--------|-----------------------|
-| 7 | それほど苦く死はほんの少しだけ上回る; | – missing copula **è** (first) <br>– missing comparative subordinator **che** | それほど苦いほど死はほんの少しだけ上回る; |
-| 8 | しかしそこで見つけた善について論じるために、 | – missing relative pronoun **ch'i'** (and pronoun **io**) | しかし私がそこで見つけた善について論じるために、 |
-| 9 | そこで見た他の事柄を語ろう。 | – missing relative pronoun **ch'i'** (and pronoun **io**) <br>– missing auxiliary **ho** (perfect) | 私がそこで見た他の事柄を語ろう。 |
+- Line 8:
+  - Original: しかし、私がそこで見つけた善について論じるために、 
+  - Issue: 内部にコンマがある。
+  - Corrected: しかし私がそこで見つけた善について論じるために,
 
-**Final Japanese Text**
+- Line 9:
+  - Original: 私はそこで見た他の事柄について語ろう.
+  - Issue: none
+  - Corrected: no change
 
-```text
-それほど苦いほど死はほんの少しだけ上回る;
-しかし私がそこで見つけた善について論じるために、
-私がそこで見た他の事柄を語ろう。
+```
+それほど苦く死はほんの少しだけそれ以上に苦い;
+しかし私がそこで見つけた善について論じるために,
+私はそこで見た他の事柄について語ろう.
 ```
 ]]></message>
 </messages>

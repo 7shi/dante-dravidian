@@ -11,72 +11,76 @@ Rules:
 ]]></message>
 <message role="assistant"><![CDATA[
 Au milieu du chemin de notre vie  
-je me suis retrouvé dans une forêt sombre,  
-car la voie droite avait été perdue.
+Je me retrouvai dans une forêt sombre,  
+car la voie droite était perdue.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Italian → French)**  
+**Word‑to‑Word Alignment Table (French translation)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
-|-------------|--------------------------------------|----------------------|------------------------|--------|
-| **Nel** | “in the middle of” (locative prepositional phrase) | **Au** | “to the / at the” | OK |
-| **mezzo** | noun denoting the exact midpoint of a journey | **milieu** | “midst” | OK |
-| **del** | genitive “of the” linking *cammin* to *vita* | **du** | “of the” | OK |
-| **cammin** | “road, path” that constitutes the journey | **chemin** | “road” | OK |
-| **di** | preposition linking *nostra* to *vita* (possessive) | **de** | “of” | OK |
-| **nostra** | possessive adjective “our” (collective) | **notre** | “our” | OK |
-| **vita** | noun “life” (the span of existence) | **vie** | “life” | OK |
-| **mi** | reflexive pronoun, object of *ritrovai* | **me** | “myself” | OK |
-| **ritrovai** | “found (myself)” – past, self‑discovery event | **je me suis retrouvé** | “I found myself” | OK |
-| **per** | locative preposition “within/inside” | **dans** | “in/within” | OK |
-| **una** | indefinite article “a” (feminine) | **une** | “a” | OK |
-| **selva** | noun “forest, wood” | **forêt** | “forest” | OK |
-| **oscura** | adjective “dark” | **sombre** | “dark” | OK |
-| **ché** | causal conjunction “for” (resultative) | **car** | “for” | OK |
-| **la** | definite article “the” (feminine) | **la** | “the” | OK |
-| **diritta** | adjective “right, straight” (correct way) | **droite** | “right/straight” | OK |
-| **via** | noun “way, path” | **voie** | “way” | OK |
-| **era** | copular verb “had been” (imperfect) | **avait** | “had” (auxiliary) | OK |
-| **smarrita** | past participle “lost, missed” | **été perdue** | “been lost” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| **Nel** | preposition + definite article (in + the) marking location inside a larger span | **Au** | “to the” / “at the” (used in “au milieu”) | OK |
+| **mezzo** | the central point of a stretch | **milieu** | “middle”/“midst” | OK |
+| **del** | genitive linking “mezzo” to “cammin” (of the) | **du** | “of the” | OK |
+| **cammin** | the path taken through life | **chemin** | “road”/“path” | OK |
+| **di** | links “cammin” to “nostra vita” (of) | **de** | “of” | OK |
+| **nostra** | belonging to the speaker and companions | **notre** | “our” | OK |
+| **vita** | the span of human existence | **vie** | “life” | OK |
+| **mi** | the speaker as the experiencer of the verb (reflexive) | **me** | “myself” (reflexive) | OK |
+| **ritrovai** | act of encountering oneself in a place (past historic) | **retrouvai** | “found”/“came upon” | OK |
+| **per** | indicates the spatial context of the encounter (within/through) | **dans** | “in/within” | OK |
+| **una** | non‑specific forest (indefinite article) | **une** | “a” | OK |
+| **selva** | a dark, wooded area | **forêt** | “forest/wood” | OK |
+| **oscura** | lacking light, metaphorically confusing (adjective) | **sombre** | “dark” | OK |
+| **ché** | introduces causal clause (for/because) | **car** | “for/because” | OK |
+| **la** | specifies a particular way (definite article) | **la** | “the” | OK |
+| **diritta** | the correct, direct path (adjective) | **droite** | “right/straight” | OK |
+| **via** | the intended route through life (noun) | **voie** | “way”/“road” | OK |
+| **era** | copular verb linking subject to predicate (imperfect) | **était** | “was”/“had been” | OK |
+| **smarrita** | state of being not found or gone astray (past participle used adjectivally) | **perdue** | “lost”/“missed” | OK |
 
-### Missing / Wrong Items
-*None – every source token has a corresponding French translation that respects the intended meaning and grammatical role.*
+### Missing / Wrong / Grammar Issues
+- **None**. All source tokens are represented, the French equivalents convey the intended meanings, and grammatical agreement (gender, number, article‑noun concord) is correct.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final French text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line # 1**  
-- **Original Translation:** Au milieu du chemin de notre vie  
-- **Issues:** none  
-- **Corrected Translation:** Au milieu du chemin de notre vie  
+- **Line 1**  
+  - **Original:** Au milieu du chemin de notre vie  
+  - **Issue:** none  
+  - **Corrected:** no change  
 
-**Line # 2**  
-- **Original Translation:** je me suis retrouvé dans une forêt sombre,  
-- **Issues:**  
-  - The verb *ritrovai* was rendered as the multi‑word phrase “je me suis retrouvé”, which does not give a one‑to‑one correspondence with the source token.  
-  - This prevents a direct mapping of each Italian word to a French counterpart.  
-- **Corrected Translation:** je me retrouvai dans une forêt sombre,  
+- **Line 2**  
+  - **Original:** Je me retrouvai dans une forêt sombre,  
+  - **Issue:** none  
+  - **Corrected:** no change  
 
-**Line # 3**  
-- **Original Translation:** car la voie droite avait été perdue.  
-- **Issues:** none  
-- **Corrected Translation:** car la voie droite avait été perdue.  
+- **Line 3**  
+  - **Original:** car la voie droite était perdue.  
+  - **Issue:** none  
+  - **Corrected:** no change  
 
-```text
+```
 Au milieu du chemin de notre vie
-je me retrouvai dans une forêt sombre,
-car la voie droite avait été perdue.
+Je me retrouvai dans une forêt sombre,
+car la voie droite était perdue.
 ```
 ]]></message>
 </messages>

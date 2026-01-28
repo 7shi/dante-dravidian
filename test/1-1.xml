@@ -17,45 +17,38 @@ Reference Translation (provided):
 Midway upon the road of our life I found myself within a dark wood, for the right way had been missed.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Interpretation Lock – FIRST (one bullet per source line)**  
+**Interpretation Lock – FIRST**  
 
-- **Line 1 “Nel mezzo del cammin di nostra vita” → Locked Meaning**  
-  *There exists a temporal point **M** such that **M** is the exact midpoint of the journey **J** that constitutes the duration of the collective life **L** of the speaker and the addressed “our”.  **M** is located on the road **R** (the “cammin”) that represents **J**.  The clause asserts that the speaker is at **M** while travelling along **R**.*  
-
-- **Line 2 “mi ritrovai per una selva oscura,” → Locked Meaning**  
-  *The first‑person subject **S** (the speaker) undergoes the event *find‑self* (**ritrovai**) and the resultant state is that **S** is situated **inside** (**per**) a single, indefinite forest **F** that is dark (**oscura**).  The prepositional phrase introduces the location of the self‑finding.*  
-
-- **Line 3 “ché la diritta via era smarrita.” → Locked Meaning**  
-  *Because (**ché**) the specific road **V** that is straight/right (**diritta**) was in the state of being lost (**smarrita**) – i.e., it was not known or could not be followed – the condition described in line 2 obtains.  The clause asserts the existence of a road **V** that is the correct way and that **V** held the property *lost* at the relevant past time.*  
-
-
+- **Line 1** *Nel mezzo del cammin di nostra vita* → **Locked Meaning**: There exists a point that is at the midpoint of the journey that belongs to our life.  
+- **Line 2** *mi ritrovai per una selva oscura* → **Locked Meaning**: The speaker (first‑person singular) found himself located inside a dark forest.  
+- **Line 3** *ché la diritta via era smarrita* → **Locked Meaning**: The straight (right) path was lost; i.e., the correct way had been missed.  
 
 ---
 
 ### Source‑Reference Alignment Table  
 
-| Source Word | Morphology | Reference Equivalent | Contextual Definition (in‑sentence) | Grammatical Role |
-|-------------|------------|----------------------|--------------------------------------|------------------|
-| **Nel** | contraction of *in* + *il* (preposition + definite article) | *Midway* (adverbial phrase) | “in the middle of” – locates the speaker at the midpoint | Prepositional phrase head (introduces location) |
-| **mezzo** | noun, masculine singular | *midway* (noun‑like) | The exact middle point of a journey | Complement of *Nel* (object of the preposition) |
-| **del** | contraction of *di* + *il* (preposition + definite article) | *of the* (genitive) | Marks possession/association between “cammin” and “vita” | Prepositional phrase linking “cammin” to “vita” |
-| **cammin** | noun, masculine singular (archaic form of *cammino*) | *road* | The path that constitutes the journey | Head noun of the noun phrase “del cammin” |
-| **di** | preposition | *of* | Links “nostra” to “vita” (possessive) | Prepositional link inside the genitive phrase |
-| **nostra** | possessive adjective, feminine singular | *our* | Possessor of “vita” (collective speaker + addressee) | Determiner within the noun phrase “nostra vita” |
-| **vita** | noun, feminine singular | *life* | The whole span of human existence being spoken of | Head noun of the genitive phrase “di nostra vita” |
-| **mi** | clitic pronoun, first‑person reflexive | *myself* | Reflexive object of “ritrovai” | Reflexive object of the verb |
-| **ritrovai** | verb, 1st person singular, passato remoto of *ritrovare* | *found* | The act of discovering oneself | Main verb of the clause |
-| **per** | preposition (here used with locative value) | *within* | Introduces the location where the self‑finding occurs | Prepositional head of the locative PP |
-| **una** | indefinite article, feminine singular | *a* | Marks the forest as indefinite | Determiner of “selva” |
-| **selva** | noun, feminine singular | *wood* (forest) | The dark forest that contains the speaker | Head noun of the noun phrase “una selva oscura” |
-| **oscura** | adjective, feminine singular | *dark* | Qualifies the forest as lacking light | Attribute of “selva” |
-| **ché** | conjunction (archaic form of *perché*) | *for* | Introduces the causal clause explaining the previous line | Subordinating conjunction |
-| **la** | definite article, feminine singular | *the* | Specifies the particular “via” being spoken of | Determiner of “diritta via” |
-| **diritta** | adjective, feminine singular | *right* (straight) | Qualifies the way as the correct/straight one | Attribute of “via” |
-| **via** | noun, feminine singular | *way* | The correct path that should be followed | Head noun of the noun phrase “la diritta via” |
-| **era** | verb, 3rd person singular imperfect of *essere* | *had been* | Auxiliary forming the passive past state | Copular verb linking subject “via” to predicate adjective |
-| **smarrita** | past participle, feminine singular of *smarrire* (used adjectivally) | *missed* / *lost* | Describes the state of the “via” as not found | Predicate adjective in the passive construction |
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **Nel** | preposition + definite article (contracted *in* + *il*) | *in* / *upon* | marks location inside a larger span | introduces prepositional phrase “Nel mezzo” |
+| **mezzo** | noun (masc., singular) | *midway* / *middle* | the central point of a stretch | head of the noun phrase “mezzo del cammin” |
+| **del** | preposition + definite article (contracted *di* + *il*) | *of the* | genitive linking “mezzo” to “cammin” | introduces genitive complement |
+| **cammin** | noun (masc., singular, archaic for *cammino*) | *road* / *journey* | the path taken through life | noun complement of “mezzo del cammin” |
+| **di** | preposition | *of* | links “cammin” to “nostra vita” | genitive marker |
+| **nostra** | possessive adjective (fem., singular) | *our* | belonging to the speaker and companions | modifier of “vita” |
+| **vita** | noun (fem., singular) | *life* | the span of human existence | head of the noun phrase “nostra vita” |
+| **mi** | reflexive pronoun (1st person singular) | *myself* | the speaker as the experiencer of the verb | object of “ritrovai” (reflexive) |
+| **ritrovai** | verb (1st person singular, passato remoto) | *found* | the act of encountering oneself in a place | main verb of the clause |
+| **per** | preposition | *within* / *through* | indicates the spatial context of the encounter | introduces prepositional phrase “per una selva” |
+| **una** | indefinite article (fem., singular) | *a* | non‑specific forest | determiner of “selva” |
+| **selva** | noun (fem., singular) | *wood* / *forest* | a dark, wooded area | head of the noun phrase “una selva” |
+| **oscura** | adjective (fem., singular) | *dark* | lacking light, metaphorically confusing | attributive modifier of “selva” |
+| **ché** | conjunction (archaic for *perché*) | *for* / *because* | introduces causal clause | links clause to preceding statement |
+| **la** | definite article (fem., singular) | *the* | specifies a particular way | determiner of “via” |
+| **diritta** | adjective (fem., singular) | *right* / *straight* | the correct, direct path | attributive modifier of “via” |
+| **via** | noun (fem., singular) | *way* | the intended route through life | subject of the clause “la diritta via era smarrita” |
+| **era** | verb (3rd person singular, imperfect of *essere*) | *had been* / *was* | copular verb linking subject to predicate | predicate verb |
+| **smarrita** | past participle (fem., singular) used as adjective | *missed* / *lost* | the state of being not found or gone astray | predicate adjective describing “via” |
 
-*The table preserves the one‑to‑one alignment between each Italian token and its English counterpart in the supplied reference translation, while also spelling out the precise sense (contextual definition) and syntactic function (grammatical role) that each token plays in its clause.*
+*The table reflects the lexical choices made in the provided reference translation and captures each Italian token’s in‑context sense and grammatical function as required by the alignment task.*
 ]]></message>
 </messages>

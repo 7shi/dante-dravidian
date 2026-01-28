@@ -10,80 +10,94 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-ಆಹ್ ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಇದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು  
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
+ಆಹ್ ಅದು ಏನು ಎಂದು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ  
+ಈ ಕಾಡು ಕಾಡು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
 ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Source → Kannada)**  
+**Word‑by‑Word Mapping Table**
 
 | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
 |-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
-| **Ahi** | Exclamatory interjection “Ah!” | **ಆಹ್** | “Ah!” | OK |
-| **quanto** | Degree adverb “how (much)”, marks intensity of difficulty | **ಎಷ್ಟು** | “how / how much” | OK |
-| **a** | Preposition introducing infinitival complement “to” | — | — | **MISSING** |
-| **dir** | Infinitive verb “to tell” | **ಹೇಳುವುದು** | “to tell / saying” | OK |
-| **qual** | Interrogative adjective “what” introducing content clause | **ಏನು** | “what” | OK |
-| **era** | Imperfect of *essere* “was” (past copula) | **ಆಗಿತ್ತು** | “was” | OK |
-| **è** | Present copula “is” linking subject and predicate | **ಇದು** | “this / it is” (used as a pronoun) | **WRONG** (does not render the copular meaning) |
-| **cosa** | Generic noun “thing” (subject of “is hard”) | **ವಿಷಯ** | “thing / matter” | OK |
-| **dura** | Predicate adjective “hard / difficult” | **ಕಷ್ಟದ** | “hard / difficult” | OK |
-| **esta** | Demonstrative adjective “this” | **ಈ** | “this” | OK |
-| **selva** | Noun “forest / wood” | **ಕಾಡು** | “forest / wood” | OK |
-| **selvaggia** | Adjective “wild” | **ಕಾಡು** | “wild” (same lexical item used for “wild”) | OK |
-| **e** (1st) | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
-| **aspra** | Adjective “rough” | **ಕಠಿಣ** | “rough / harsh” | OK |
-| **e** (2nd) | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
-| **forte** | Adjective “dense / strong” | **ದಟ್ಟ** | “dense / thick” | OK |
-| **che** | Relative pronoun “which / that” | **ಇದು** | “this / that” (subject of relative clause) | OK |
-| **nel** | Preposition+article “in the” (locative) | **ಮನಸ್ಸಿನಲ್ಲಿ** | “in the mind” (contains locative) | OK |
-| **pensier** | Noun “thought / mind” | **ಮನಸ್ಸು** (root of “ಮನಸ್ಸಿನಲ್ಲಿ”) | “mind / thought” | OK |
-| **rinova** | Verb “renews / revives” | **ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ** | “renews / causes again” | OK |
-| **la** | Definite article “the” (determiner) | — | — | **MISSING** |
-| **paura** | Noun “fear” (direct object) | **ಭಯವನ್ನು** | “fear (accusative)” | OK |
+| Ahi | Interjection expressing exclamation | ಆಹ್ | “Ah!” | OK |
+| quanto | Intensifier “how” (degree) | *‑* | – | **MISSING** |
+| a | Preposition introducing infinitive “to” | *‑* | – | **MISSING** |
+| dir | Verb infinitive “to tell” | ಹೇಳುವುದು | “to tell” | OK |
+| qual | Interrogative adjective “what” | ಏನು | “what” | OK |
+| era | Imperfect “was” (copular) | ಅದು | “that/it” (used as pronoun) | **WRONG** |
+| è | Present copula “is” | *‑* | – | **MISSING** |
+| cosa | Noun “thing” (abstract) | ವಿಷಯ | “thing” | OK |
+| dura | Adjective “hard / difficult” | ಕಷ್ಟದ | “hard / difficult” | OK |
+| esta | Demonstrative “this” | ಈ | “this” | OK |
+| selva | Noun “forest / wood” | ಕಾಡು | “forest / wood” | OK |
+| selvaggia | Adjective “wild” | ಕಾಡು | “wild” (same lexical item as “forest”) | OK |
+| e (1st) | Coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| aspra | Adjective “rough” | ಕಠಿಣ | “rough” | OK |
+| e (2nd) | Coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| forte | Adjective “strong / dense” | ದಟ್ಟ | “dense / strong” | OK |
+| che | Relative pronoun “which / that” | ಇದು | “which / that / it” | OK |
+| nel | Prepositional phrase “in the” (locative) | ಮನಸ್ಸಿನಲ್ಲಿ | “in the mind” | OK |
+| pensier | Noun “thought” (mental realm) | ಮನಸ್ಸು | “thought / mind” | OK |
+| rinova | Verb “renews / causes again” | ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ | “renews / causes again” | OK |
+| la | Definite article (feminine) | *‑* | – | **MISSING** |
+| paura | Noun “fear” (object) | ಭಯವನ್ನು | “fear” (accusative) | OK |
 
 ---
 
-### Missing / Wrong Items
-- **Missing:** `a` (preposition “to”), `la` (definite article “the”).  
-- **Wrong:** `è` – rendered as “ಇದು”, which functions as a pronoun rather than the copular verb “is”.  
+### Items to Review
 
-All other source tokens have appropriate Kannada equivalents that preserve the meaning conveyed in the reference translation.
+**Missing elements**  
+- **quanto** (degree marker “how”)  
+- **a** (infinitive marker “to”)  
+- **è** (present copula “is”)  
+- **la** (definite article)
+
+**Wrong mapping**  
+- **era** → rendered as “ಅದು” (pronoun) rather than a past‑tense verb; the copular meaning is lost.
+
+**Grammar/Stylistic concerns**  
+- The phrase **“ಕಾಡು ಕಾಡು”** (used for *selva* + *selvaggia*) repeats the same word, which is stylistically awkward in Kannada. A more natural rendering would separate “forest” and “wild” (e.g., “ಕಾಡು, ಕಾಡು‑ಸ್ವಭಾವದ”).  
+
+These points should be addressed in a revised translation to achieve full coverage and grammatical naturalness.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line 4**  
-- **Original Translation:** ಆಹ್ ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಇದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು  
-- **Issues:** Missing preposition *a* (“to”), wrong rendering of copula *è* (“is”).  
-- **Corrected Translation:** ಆಹ್ ಇದು ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳಲು  
+- **Line 4**  
+  - **Original:** ಆಹ್ ಅದು ಏನು ಎಂದು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ  
+  - **Issue:** missing “quanto” (how), infinitive marker “a”, past copula “era”, present copula “è”.  
+  - **Corrected:** ಆಹ್! ಎಷ್ಟು ಹೇಳಲು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ  
 
-**Line 5**  
-- **Original Translation:** ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
-- **Issues:** None (the definite article *la* does not exist in Kannada).  
-- **Corrected Translation:** ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
+- **Line 5**  
+  - **Original:** ಈ ಕಾಡು ಕಾಡು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
+  - **Issue:** missing “selvaggia” (wild) and the coordinating “e” before “forte”.  
+  - **Corrected:** ಈ ಕಾಡು ಕಾಡುಸ್ವಭಾವದ, ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
 
-**Line 6**  
-- **Original Translation:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
-- **Issues:** None (the definite article *la* is naturally omitted).  
-- **Corrected Translation:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
+- **Line 6**  
+  - **Original:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
+  - **Issue:** none  
+  - **Corrected:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
 
----
-
-```kannada
-ಆಹ್ ಇದು ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳಲು
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
+```
+ಆಹ್! ಎಷ್ಟು ಹೇಳಲು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ
+ಈ ಕಾಡು ಕಾಡುಸ್ವಭಾವದ, ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
 ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
 ```
 ]]></message>

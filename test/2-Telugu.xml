@@ -10,72 +10,81 @@ Rules:
 - No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో  
-ఈ అడవి అడవిగా గట్టిగా ఘనంగా ఉంది  
-దాన్ని ఆలోచనలో గుర్తు చేసుకుంటే భయం పునరుద్ధరించబడుతుంది!
+అహ్ అది ఏమిటో చెప్పడం ఎంత కష్టం  
+ఈ అడవి అడవిగా గట్టిగా బలంగా ఉంది  
+అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
-After the table, list any MISSING or WRONG items.
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+After the table, list any MISSING, WRONG, or GRAMMAR items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Telugu translation)**  
+**Word‑by‑Word Mapping Table**
 
-| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
-|-------------|--------------------------------|------------------------------|--------------------------|--------|
-| **Ahi** | Interjection expressing exclamation | **అయ్యో** | “Ah!” | OK |
-| **quanto** | Adverb of degree marking high intensity | **ఎంత** | “how / how much” | OK |
-| **a** | Preposition introducing infinitival complement “to” | **చెప్పడానికి** (part of the infinitive) | “to (tell)” | OK |
-| **dir** | Verb (infinitive) “to tell” | **చెప్పడానికి** | “to tell” | OK |
-| **qual** | Interrogative adjective “what” introducing content clause | **ఏమిటో** | “what it is” | OK |
-| **era** | Imperfect of *essere* “was” (past copula) | **అది** (implicit past in context) | “it was” | OK |
-| **è** | Present copula “is” | **అది** | “it is” | OK |
-| **cosa** | Generic noun “thing” | **అది** (used as “thing”) | “thing / it” | OK |
-| **dura** | Adjective “hard / difficult” | **కష్టం** | “hard / difficult” | OK |
-| **esta** | Demonstrative adjective “this” | **ఈ** | “this” | OK |
-| **selva** | Noun “wood / forest” | **అడవి** | “forest / wood” | OK |
-| **selvaggia** | Adjective “wild” | **అడవిగా** | “wildly (like a forest)” | OK |
-| **e** (1st) | Coordinating conjunction “and” linking adjectives | — (conjunction omitted) | — | **MISSING** |
-| **aspra** | Adjective “rough” | **గట్టిగా** | “roughly” | OK |
-| **e** (2nd) | Coordinating conjunction “and” linking adjectives | — (conjunction omitted) | — | **MISSING** |
-| **forte** | Adjective “dense / strong” | **ఘనంగా** | “densely / strongly” | OK |
-| **che** | Relative pronoun “which / that” referring to *selva* | **దాన్ని** (subject pronoun) | “that (it)” | OK |
-| **nel** | Preposition + article “in the” (locative) | **ఆలోచనలో** (contains “లో”) | “in (the) thought” | OK |
-| **pensier** | Noun “thought” (mental arena) | **ఆలోచన** | “thought” | OK |
-| **rinova** | Verb “renews” (present) | **పునరుద్ధరించబడుతుంది** | “is renewed” | OK |
-| **la** | Definite article “the” (object) | — (article omitted) | — | **MISSING** |
-| **paura!** | Noun “fear” (object of renewal) | **భయం** | “fear” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (English) | Status |
+|-------------|----------------------|------------------------------|----------------------------|--------|
+| Ahi | Interjection expressing emotion | అహ్ | “Ah!” | OK |
+| quanto | Degree adverb “how” (intensifier) | ఎంత | “how” | OK |
+| a | Preposition introducing infinitive “to” | — (infinitive marker implicit) | — | **MISSING** |
+| dir | Verb “to tell / say” (infinitive) | చెప్పడం | “to tell” | OK |
+| qual | Interrogative adjective “what” (object of *dir*) | ఏమిటో | “what (it) is” | OK |
+| era | Imperfect “was” (past state) | అది | “it (was)” | OK |
+| è | Present “is” (copula) | — (copula omitted, understood) | — | **MISSING** |
+| cosa | Noun “thing” (subject of *è dura*) | — (noun omitted, implied) | — | **MISSING** |
+| dura | Adjective “hard / difficult” | కష్టం | “hard / difficult” | OK |
+| esta | Demonstrative adjective “this” | ఈ | “this” | OK |
+| selva | Noun “forest / wood” | అడవి | “forest / wood” | OK |
+| selvaggia | Adjective “wild” | అడవిగా | “wildly” (as attribute) | OK |
+| e (1) | Coordinating conjunction “and” (first) | — (conjunction omitted) | — | **MISSING** |
+| aspra | Adjective “rough” | గట్టిగా | “roughly” | OK |
+| e (2) | Coordinating conjunction “and” (second) | — (conjunction omitted) | — | **MISSING** |
+| forte | Adjective “strong / dense” | బలంగా | “strongly / densely” | OK |
+| che | Relative pronoun “which / that” | అది | “that / it” | OK |
+| nel | Prepositional phrase “in the” | లో | “in” | OK |
+| pensier | Noun “thought” (abstract) | ఆలోచన | “thought” | OK |
+| rinova | Verb “renews / revives” | పునరుద్ధరిస్తుంది | “renews / revives” | OK |
+| la | Definite article (feminine) | — (article omitted) | — | **MISSING** |
+| paura | Noun “fear” (object) | భయాన్ని | “fear (accusative)” | OK |
 
-### Missing / Wrong Items
-- **e** (both occurrences) – the coordinating conjunction “and” is not overtly expressed in the Telugu rendering.  
-- **la** – the definite article “the” is omitted (Telugu does not require an article).  
-
-All other source tokens are represented with appropriate Telugu equivalents that preserve the meaning of the reference translation.
+### Items Requiring Attention
+- **MISSING**: a, è, cosa, e (both occurrences), la – these function words or articles are not overtly expressed in the Telugu rendering; their meaning is conveyed implicitly or omitted.
+- **WRONG / GRAMMAR**: none detected; the Telugu sentences are grammatically sound and preserve the intended meanings.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
-Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
-Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-**Line‑by‑line review**
+- Line 4:
+  - Original: అహ్ అది ఏమిటో చెప్పడం ఎంత కష్టం
+  - Issue: missing infinitive marker “a”, copula “è”, noun “cosa”, and degree “quanto” not fully expressed.
+  - Corrected: **అహ్, అది ఏమిటో చెప్పడానికి ఎంత కఠినమైన విషయం**
 
-| Line # | Original Translation | Issues | Corrected Translation |
-|--------|----------------------|--------|-----------------------|
-| 4 | అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో | – | అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో |
-| 5 | ఈ అడవి అడవిగా గట్టిగా ఘనంగా ఉంది | Missing the coordinating conjunctions “e” (and) that link the three adjectives. | ఈ అడవి వన్యమైన మరియు గట్టిగా మరియు ఘనంగా ఉంది |
-| 6 | దాన్ని ఆలోచనలో గుర్తు చేసుకుంటే భయం పునరుద్ధరించబడుతుంది! | Extra phrase “గుర్తు చేసుకుంటే”, wrong pronoun “దాన్ని”. | అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది! |
+- Line 5:
+  - Original: ఈ అడవి అడవిగా గట్టిగా బలంగా ఉంది
+  - Issue: missing coordinating conjunctions “e” (both occurrences).
+  - Corrected: **ఈ అడవి అడవిగా మరియు గట్టిగా మరియు బలంగా ఉంది**
 
-**Final Telugu text**
+- Line 6:
+  - Original: అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది!
+  - Issue: missing definite article “la”.
+  - Corrected: **అది ఆలోచనలో ఆ భయాన్ని పునరుద్ధరిస్తుంది!**
 
 ```telugu
-అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో
-ఈ అడవి వన్యమైన మరియు గట్టిగా మరియు ఘనంగా ఉంది
-అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!
+అహ్, అది ఏమిటో చెప్పడానికి ఎంత కఠినమైన విషయం
+ఈ అడవి అడవిగా మరియు గట్టిగా మరియు బలంగా ఉంది
+అది ఆలోచనలో ఆ భయాన్ని పునరుద్ధరిస్తుంది!
 ```
 ]]></message>
 </messages>
