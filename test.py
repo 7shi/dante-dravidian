@@ -1,7 +1,7 @@
 """Test for quick debugging."""
 import os
 from llm import LLMClient, history_to_xml, xml_to_history
-from translate import print_header, STEP1_PROMPT, step1, translate, get_result
+from translate import step1, translate, get_result
 
 # model = "ollama:gpt-oss:120b"
 model = "groq:openai/gpt-oss-120b"
@@ -46,7 +46,6 @@ for i in range(3):
         with open(xml_file, 'r', encoding='utf-8') as f:
             client.history = xml_to_history(f.read())
     else:
-        print_header(STEP1_PROMPT)
         step1(client, source_text, reference)
         with open(xml_file, 'w', encoding='utf-8') as f:
             f.write(history_to_xml(client.history))

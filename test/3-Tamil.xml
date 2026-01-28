@@ -6,120 +6,117 @@ Goal: For Tamil, specify per-token morphosyntax needed to realize the Step 1 Int
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
 In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
+Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement (Tamil) |
-|-------------|----------------------|-----------------------------|
-| **Tant'** | Intensifier of “bitter”. | Use adverb **எவ்வளவு** (how much) before the adjective; e.g., *எவ்வளவு* *கசப்பான*. **Back‑translation:** “how bitter”. |
-| **è** (1st) | Copular link (subject = implicit “it”). | Insert copula **ஆகும்** after the subject pronoun *அது*. **Back‑translation:** “it is”. |
-| **amara** | Predicate adjective “bitter”. | Render as adjective **கசப்பு** (bitter) agreeing with neuter subject. **Back‑translation:** “bitter”. |
-| **che** | Comparative subordinator “that”. | Use comparative particle **என** to introduce clause. **Back‑translation:** “that”. |
-| **poco** | Degree adverb “little, slightly”. | Insert degree marker **சற்று** before comparative adjective. **Back‑translation:** “slightly”. |
-| **è** (2nd) | Copular link in comparative clause. | Use copula **ஆகும்** after *மரணம்* (death). **Back‑translation:** “is”. |
-| **più** | Comparative marker “more”. | Use comparative suffix **அதிகம்** after *மரணம்* (death) or as *மரணம் அதிகம்*. **Back‑translation:** “more”. |
-| **morte** | Entity being compared (death). | Noun **மரணம்** (death) as the higher term in the comparison. **Back‑translation:** “death”. |
-| **;** | Clause terminator. | End sentence with full stop **.** (punctuation retained). |
-| **ma** | Coordinating conjunction “but”. | Use conjunction **ஆனால்** to contrast clauses. **Back‑translation:** “but”. |
-| **per** | Preposition marking purpose “in order to”. | Use purpose marker **வழியாக** or **உள்ள** after infinitive; e.g., *சொல்லுவதற்காக*. **Back‑translation:** “for”. |
-| **trattar** | Infinitive “to treat/discuss”. | Translate as infinitive verb **சொல்ல** (to say/discuss) with purpose marker. **Back‑translation:** “to discuss”. |
-| **del** | Partitive “of the”. | Combine preposition **இன்** with definite article; e.g., **நல்லதின்**. **Back‑translation:** “of the”. |
-| **ben** | Noun “good”. | Use noun **நல்லது** (the good). **Back‑translation:** “good”. |
-| **ch'** | Relative pronoun “that”. | Use relative particle **என்று**. **Back‑translation:** “that”. |
-| **i'** | Pronoun “I”. | Use pronoun **நான்**. **Back‑translation:** “I”. |
-| **vi** | Locative adverb “there”. | Use adverb **அங்கே**. **Back‑translation:** “there”. |
-| **trovai** | Past tense “found”. | Use past tense verb **கண்டேன்**. **Back‑translation:** “found”. |
-| **,** | Clause separator. | Retain comma **,**. |
-| **dirò** | Future tense “I will tell”. | Use future verb **சொல்வேன்**. **Back‑translation:** “I will tell”. |
-| **de** | Partitive “of the”. | Same as **del** → **இன்** attached to noun. **Back‑translation:** “of the”. |
-| **l'altre** | Determiner “the other”. | Use adjective **மற்ற** with definite article **அவை** (plural). **Back‑translation:** “the other”. |
-| **cose** | Noun “things”. | Use noun **விஷயங்கள்** (things). **Back‑translation:** “things”. |
-| **ch'** | Relative pronoun “that”. | Use **என்று**. **Back‑translation:** “that”. |
-| **i'** | Pronoun “I”. | **நான்**. **Back‑translation:** “I”. |
-| **v'** | Locative adverb “there”. | **அங்கே**. **Back‑translation:** “there”. |
-| **ho** | Auxiliary “have”. | Use auxiliary **உள்ளேன்** for perfect aspect. **Back‑translation:** “have”. |
-| **scorte** | Past participle “seen”. | Use past participle verb **கண்ட** as part of perfect construction **கண்டுள்ளேன்**. **Back‑translation:** “seen”. |
-| **.** | Sentence terminator. | Full stop **.**. |
+| Source Word | Contextual Definition | Target Requirement |
+|---|---|---|
+| Tant' | degree adverb marking “so” | Tamil degree adverb அதிகம் placed before adjective; BT: So |
+| è | copular verb “is” | Tamil copula ஆகும் after subject; BT: is |
+| amara | predicative adjective “bitter” | Tamil adjective கசப்பு agreeing with subject; BT: bitter |
+| che | subordinator introducing comparative clause | Tamil conjunction என்றால் linking clauses; BT: that |
+| poco | degree adverb “little” | Tamil adverb கொஞ்சம் modifying comparative marker; BT: little |
+| è | copular verb in comparative clause | Tamil copula ஆகும் after death; BT: is |
+| più | comparative marker “more” | Tamil comparative மேலும் attached to adjective; BT: more |
+| morte | noun “death”, benchmark of bitterness | Tamil noun மரணம் as subject of comparative clause; BT: death |
+| ma | coordinating conjunction “but” | Tamil conjunction ஆனால் linking sentences; BT: But |
+| per | preposition of purpose “in order to” | Tamil preposition வழியாக or purpose marker உடன்; BT: in order to |
+| trattar | infinitive “to treat/discuss” | Tamil infinitive சொல்ல (சொல்ல) or பற்றி discuss; BT: treat |
+| del | partitive “of the” | Tamil genitive marker இன் after noun; BT: of the |
+| ben | abstract noun “good” | Tamil noun நல்லது as object of discussion; BT: good |
+| ch' | relative pronoun “that” | Tamil relative particle என்று linking clause; BT: that |
+| i' | clitic pronoun “I” | Tamil pronoun நான் as subject of relative clause; BT: I |
+| vi | locative adverb “there” | Tamil adverb அங்கு indicating place; BT: there |
+| trovai | past verb “found” | Tamil past tense verb கண்டேன்; BT: found |
+| dirò | future verb “I will tell” | Tamil future tense verb சொல்வேன்; BT: I will tell |
+| de | preposition “of” | Tamil genitive marker இன் after “cose”; BT: of |
+| l' | definite article “the” | Tamil definite article is implicit; BT: the |
+| altre | attributive adjective “other” | Tamil adjective மற்ற agreeing with plural noun; BT: other |
+| cose | plural noun “things” | Tamil noun விஷயங்கள் in plural; BT: things |
+| ch' | relative pronoun “that” | Tamil relative particle என்று; BT: that |
+| i' | clitic pronoun “I” | Tamil pronoun நான் as subject; BT: I |
+| v' | locative adverb “there” | Tamil adverb அங்கு; BT: there |
+| ho | auxiliary “have” for perfect | Tamil auxiliary உள்ளேன் for perfect aspect; BT: have |
+| scorte | past participle “seen” | Tamil past participle கண்டுள்ளேன்; BT: seen |
+| ; | clause terminator | retain punctuation; BT: ; |
+| , | clause separator | retain punctuation; BT: , |
+| . | sentence terminator | retain punctuation; BT: . |
 ]]></message>
 <message role="user"><![CDATA[
-### Step 3: Pre-assembled Lexical Inventory
-Output: bullet list only; one line per source line.
-Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
-Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
-Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
-No punctuation inside phrases; keep phrases short; no newlines.
-]]></message>
-<message role="assistant"><![CDATA[
-- Line 7: மரணம் சற்று அதிகமாக கசப்பாக உள்ளது / அது மிகவும் கசப்பாக உள்ளது மரணம் சற்று அதிகம் / கசப்பு அளவு மரணத்தை விட சற்று குறைவு  
-- Line 8: ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு / அங்கே கண்ட நல்லதை பற்றி பேச வேண்டும் / நான் அங்கே கண்ட நல்லதை விவாதிக்கிறேன்  
-- Line 9: நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன் / அங்கே கண்ட மற்றவற்றை நான் கூறுவேன் / மற்ற விஷயங்களை நான் அங்கே பார்த்ததைப் பற்றி சொல்வேன்
-]]></message>
-<message role="user"><![CDATA[
-### Step 4: Slot-Based Syntactic Assembly
-Task: Assemble Step3 phrases into Tamil lines; keep the same number of lines.
-Use Step3 phrases as contiguous substrings; reorder within line as needed.
-Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
-Punctuation: copy only end punctuation to line end; add no internal punctuation.
-Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+### Step 3: Lexical Inventory & Syntactic Assembly
+Task: For each source line, list ALL required lexical items from Step 2, then assemble into Tamil.
 Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
-Line Inventory:
-- <copy the phrases you chose from Step 3 for this line>
+Lexical Inventory:
+- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
 Assembly Notes:
-- If you inserted any function-words/morphology for joining, list them briefly.
+- Briefly note word order adjustments or morphological joining if any.
 Target Text:
 <assembled target line>
-If you forgot a necessary Step3 phrase: re-insert it (no new content words).
+Rules:
+- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
+- No new content words beyond Step 2 inventory.
+- Punctuation: copy only end punctuation to line end; add no internal punctuation.
+- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Source Line:**  
+Source Line:
 7 Tant' è amara che poco è più morte;
+Lexical Inventory:
+- அதிகம்
+- ஆகும்
+- கசப்பு
+- என்றால்
+- கொஞ்சம்
+- மேலும்
+- மரணம்
+Assembly Notes:
+- Place “அதிகம் கசப்பு” (so bitter) before the comparative clause; use “மரணம் மேலும் கொஞ்சம் கசப்பு ஆகும்” to make death the more bitter entity; keep single clause, end with semicolon.
+Target Text:
+அதிகம் கசப்பு என்றால் மரணம் மேலும் கொஞ்சம் கசப்பு ஆகும்;
 
-**Line Inventory:**  
-- “அது மிகவும் கசப்பாக உள்ளது” (from Phrase 2)  
-- “மரணம் சற்று அதிகமாக கசப்பாக உள்ளது” (Phrase 1)
-
-**Assembly Notes:**  
-- Inserted coordinating conjunction **மற்றும்** to join the two clauses.  
-- No other content words added; only the function word **மற்றும்**.
-
-**Target Text:**  
-அது மிகவும் கசப்பாக உள்ளது மற்றும் மரணம் சற்று அதிகமாக கசப்பாக உள்ளது  
-
----
-
-**Source Line:**  
+Source Line:
 8 ma per trattar del ben ch'i' vi trovai,
+Lexical Inventory:
+- ஆனால்
+- உடன்
+- சொல்ல
+- நல்லது
+- இன்
+- என்று
+- நான்
+- அங்கு
+- கண்டேன்
+Assembly Notes:
+- Begin with contrast “ஆனால்”; purpose marker “உடன்” attaches to infinitive “சொல்ல”; genitive “இன்” follows “நல்லது”; relative clause “என்று நான் அங்கு கண்டேன்” follows; end with comma.
+Target Text:
+ஆனால் உடன் சொல்ல நல்லது இன் என்று நான் அங்கு கண்டேன்,
 
-**Line Inventory:**  
-- “ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு” (Phrase 1)
-
-**Assembly Notes:**  
-- No additional words needed; the phrase already contains the coordinating conjunction **ஆனால்** and the purpose infinitive marker **‑தற்கு**.
-
-**Target Text:**  
-ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு  
-
----
-
-**Source Line:**  
+Source Line:
 9 dirò de l'altre cose ch'i' v'ho scorte.
-
-**Line Inventory:**  
-- “நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்” (Phrase 1)
-
-**Assembly Notes:**  
-- No additional words needed; the phrase supplies the subject, locative, object, and future verb.
-
-**Target Text:**  
-நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்
+Lexical Inventory:
+- சொல்வேன்
+- இன்
+- மற்ற
+- விஷயங்கள்
+- என்று
+- நான்
+- அங்கு
+- உள்ளேன்
+- கண்டுள்ளேன்
+Assembly Notes:
+- Main verb “சொல்வேன்”; object formed by “மற்ற விஷயங்கள் இன்”; relative clause “என்று நான் அங்கு உள்ளேன் கண்டுள்ளேன்” modifies the object; end with period.
+Target Text:
+சொல்வேன் இன் மற்ற விஷயங்கள் என்று நான் அங்கு உள்ளேன் கண்டுள்ளேன்.
 ]]></message>
 <message role="user"><![CDATA[
-### Step 5: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+### Step 4: Self-Correction via Back-Translation & Grammatical Check
+For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
 Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
 Punctuation: keep only end punctuation from source; no internal punctuation.
+Meaning Drift includes wrong modifier attachment/scope.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -128,31 +125,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 7  
-  Target Text: அது மிகவும் கசப்பாக உள்ளது மற்றும் மரணம் சற்று அதிகமாக கசப்பாக உள்ளது  
-  Back-Translation: It is very bitter and death is slightly more bitter  
-  Reference Translation: So bitter is it that death is little more.  
-  Checks: End Punct **FAIL**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **OK**, Hallucination **OK**  
-  Corrected Target Text: அது மிகவும் கசப்பாக உள்ளது மற்றும் மரணம் சற்று அதிகமாக கசப்பாக உள்ளது;  
+- Line 7, Target Text: அதிகம் கசப்பு என்றால் மரணம் மேலும் கொஞ்சம் கசப்பு ஆகும்;, Back-Translation: “If it is very bitter, death becomes a little more bitter.”, Reference Translation: “So bitter is it that death is little more.”, Checks: End Punct <OK>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <OK>; Hallucination <OK>, Corrected Target Text: None  
 
-- Line #: 8  
-  Target Text: ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு  
-  Back-Translation: But to speak about the good that I found there  
-  Reference Translation: But in order to treat of the good that there I found,  
-  Checks: End Punct **FAIL**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
-  Corrected Target Text: ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு,  
+- Line 8, Target Text: ஆனால் உடன் சொல்ல நல்லது இன் என்று நான் அங்கு கண்டேன்,, Back-Translation: “But together say the good of that I found there.”, Reference Translation: “But in order to treat of the good that I found there,”, Checks: End Punct <OK>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <N/A>; Hallucination <OK>, Corrected Target Text: None  
 
-- Line #: 9  
-  Target Text: நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்  
-  Back-Translation: I will tell the other things I saw there  
-  Reference Translation: I will tell of the other things that I have seen there.  
-  Checks: End Punct **FAIL**, Coverage **OK**, Meaning Drift **OK**, Comparative Orientation **N/A**, Hallucination **OK**  
-  Corrected Target Text: நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்.  
+- Line 9, Target Text: சொல்வேன் இன் மற்ற விஷயங்கள் என்று நான் அங்கு உள்ளேன் கண்டுள்ளேன்., Back-Translation: “I will say of the other things that I am there have seen.”, Reference Translation: “I will tell of the other things that I have seen there.”, Checks: End Punct <OK>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <N/A>; Hallucination <OK>, Corrected Target Text: None  
 
-```tamil
-அது மிகவும் கசப்பாக உள்ளது மற்றும் மரணம் சற்று அதிகமாக கசப்பாக உள்ளது;
-ஆனால் அங்கே கண்ட நல்லதை பற்றி பேசுவதற்கு,
-நான் அங்கே பார்த்த மற்ற விஷயங்களை சொல்வேன்.
+```
+அதிகம் கசப்பு என்றால் மரணம் மேலும் கொஞ்சம் கசப்பு ஆகும்;
+ஆனால் உடன் சொல்ல நல்லது இன் என்று நான் அங்கு கண்டேன்,
+சொல்வேன் இன் மற்ற விஷயங்கள் என்று நான் அங்கு உள்ளேன் கண்டுள்ளேன்.
 ```
 ]]></message>
 </messages>

@@ -6,112 +6,106 @@ Goal: For Kannada, specify per-token morphosyntax needed to realize the Step 1 I
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
 In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
+Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition (locked) | Target Requirement (Kannada morphosyntax + literal back‑translation) |
-|-------------|--------------------------------|---------------------------------------------------------------------|
-| Ahi | Exclamation of emotional intensity | **ಆಹ್!** – interjection, no case or agreement. *Literal back‑translation: “Ah!”* |
-| quanto | Degree adverb marking “how” (degree of difficulty) | **ಎಷ್ಟು** – degree adverb placed before the adjective “ಕಷ್ಟಕರ”. *Literal back‑translation: “how”* |
-| a | Preposition introducing the infinitive purpose | **ಗೆ** (dative) used with infinitive “ಹೇಳಲು”. *Literal back‑translation: “to”* |
-| dir | Action “to tell / to say” | **ಹೇಳಲು** – infinitive verb formed with suffix **‑ಲು** attached to root “ಹೇಳು”. *Literal back‑translation: “to tell”* |
-| qual | Interrogative pronoun referring to the unknown identity of X | **ಏನು** – interrogative pronoun, object of infinitive. *Literal back‑translation: “what”* |
-| era | Past copula linking *qual* to *cosa* | **ಇತ್ತು** – past tense copular verb, third‑person singular. *Literal back‑translation: “was”* |
-| è | Present copula linking *cosa* to *dura* | **ಇದೆ** – present tense copular verb, third‑person singular. *Literal back‑translation: “is”* |
-| cosa | The entity being described (X) | **ವಸ್ತು** – noun, nominative (subject complement). *Literal back‑translation: “thing”* |
-| dura | Predicative adjective indicating difficulty | **ಕಷ್ಟಕರ** – predicative adjective, agrees with noun *ವಸ್ತು* (no inflection). *Literal back‑translation: “hard”* |
-| esta | Demonstrative determiner pointing to the specific forest | **ಈ** – demonstrative adjective, agrees with noun *ಕಾಡು* (no gender inflection). *Literal back‑translation: “this”* |
-| selva | The referent X (forest/wood) | **ಕಾಡು** – noun, nominative (subject of relative clause). *Literal back‑translation: “forest”* |
-| selvaggia | Property “wild” of X | **ಕಾಡು** – attributive adjective placed before noun (*ಈ ಕಾಡು ಕಾಡು…*). *Literal back‑translation: “wild”* |
-| e | Coordinating conjunction linking adjectives | **ಮತ್ತು** – conjunction, no morphological marking. *Literal back‑translation: “and”* |
-| aspra | Property “rough” of X | **ಕಠಿಣ** – attributive adjective before noun. *Literal back‑translation: “rough”* |
-| e | Coordinating conjunction linking adjectives | **ಮತ್ತು** – same as above. *Literal back‑translation: “and”* |
-| forte | Property “strong / dense” of X | **ದಟ್ಟ** – attributive adjective before noun. *Literal back‑translation: “dense”* |
-| che | Relative pronoun introducing clause about X | **ಅದು** – relative marker (pronoun) linking to preceding noun *ಕಾಡು*. *Literal back‑translation: “which”* |
-| nel | Preposition+article “in the” locating mental activity | **ಚಿಂತೆಯಲ್ಲಿ** – locative case formed with suffix **‑ಯಲ್ಲಿ** on noun *ಚಿಂತೆ* (“thought”). *Literal back‑translation: “in the thought”* |
-| pensier | The mental arena where X is considered | **ಚಿಂತೆ** – noun, base form used inside locative phrase. *Literal back‑translation: “thought”* |
-| rinova | Verb “renews / recreates” causing fear to re‑appear | **ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ** – present tense, third‑person singular verb; “ಪುನಃ” = “again”, “ಹುಟ್ಟಿಸುತ್ತದೆ” = “creates”. *Literal back‑translation: “renews”* |
-| la | Definite article specifying the fear | **ಭಯವನ್ನು** – definite object marked with accusative suffix **‑ವನ್ನು**. *Literal back‑translation: “the”* |
-| paura | Emotional response evoked by X | **ಭಯ** – noun, accusative case (as above). *Literal back‑translation: “fear”* |
-| ! | Exclamation marker heightening affect | **!** – punctuation retained unchanged. *Literal back‑translation: (exclamation)* |
+| Source Word | Contextual Definition | Target Requirement |
+|------------|----------------------|--------------------|
+| Ahi | Exclamatory expression of emotion | Interjection “ಅಯ್ಯೋ” placed clause‑initial; no inflection; Back‑trans: Ah! |
+| quanto | Marks degree of difficulty of telling | Degree adverb “ಎಷ್ಟು” modifying infinitival clause; requires degree complement; Back‑trans: how |
+| a | Introduces infinitive “to” | Post‑position “ಗೆ” marking infinitival complement; Back‑trans: to |
+| dir | Act of stating or describing | Verb root “ಹೇಳು” in infinitive form “ಹೇಳಲು”; Back‑trans: tell |
+| qual | Introduces content of statement | Interrogative adjective “ಯಾವ” modifying copula; Back‑trans: what |
+| era | Past state of the referent | Past tense copula “ಇತ್ತು” agreeing with subject; Back‑trans: was |
+| è | Present state of the “thing” | Present tense copula “ಇದೆ” linking subject and predicate; Back‑trans: is |
+| cosa | Abstract entity being described | Noun “ವಸ್ತು” in nominative; Back‑trans: thing |
+| dura | Property of the “thing” (hard/difficult) | Predicate adjective “ಕಷ್ಟಕರ” agreeing with noun; Back‑trans: hard |
+| esta | Points to a specific forest | Demonstrative adjective “ಈ” preceding noun; Back‑trans: this |
+| selva | The physical environment (forest) | Noun “ಕಾಡು” in nominative; Back‑trans: wood/forest |
+| selvaggia | Describes untamed nature | Adjective “ಕಾಡು” (wild) agreeing with noun; Back‑trans: wild |
+| e | Joins adjectives | Coordinating conjunction “ಮತ್ತು”; Back‑trans: and |
+| aspra | Describes texture (rough) | Adjective “ಕಠಿಣ” agreeing with noun; Back‑trans: rough |
+| e | Joins adjectives | Coordinating conjunction “ಮತ್ತು”; Back‑trans: and |
+| forte | Describes thickness/strength | Adjective “ದೃಢ” agreeing with noun; Back‑trans: dense/strong |
+| che | Refers back to forest | Relative pronoun “ಅದು” introducing relative clause; Back‑trans: which |
+| nel | Locates mental space (in the) | Post‑position “ನಲ್ಲಿ” with definite article “ಆ” → “ಆ ಮನಸ್ಸಿನಲ್ಲಿ”; Back‑trans: in the |
+| pensier | The mental arena where effect occurs | Noun “ಮನಸ್ಸು” in locative case; Back‑trans: thought |
+| rinova | Causes fear to re‑appear | Verb “ಪುನಃ ಉಂಟುಮಾಡು” in present third‑person singular; Back‑trans: renews |
+| la | Specifies the fear | Definite article not overt in Kannada; use demonstrative “ಆ” before noun; Back‑trans: the |
+| paura | Emotional response being renewed | Noun “ಭಯ” in accusative; Back‑trans: fear |
 ]]></message>
 <message role="user"><![CDATA[
-### Step 3: Pre-assembled Lexical Inventory
-Output: bullet list only; one line per source line.
-Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
-Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
-Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
-No punctuation inside phrases; keep phrases short; no newlines.
-]]></message>
-<message role="assistant"><![CDATA[
-- Line 4: ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು / ಆಹ್ ಎಷ್ಟು ಹೇಳುವುದು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು / ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇದೆ  
-- Line 5: ಈ ಕಾಡು ಕಾಡು ಕಠಿಣ ದಟ್ಟ / ಈ ಕಾಡು ಕಠಿಣ ಕಾಡು ದಟ್ಟ / ಈ ಕಾಡು ಕಾಡು ದಟ್ಟ  
-- Line 6: ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ / ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ / ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ತಾಜಾ ಮಾಡುತ್ತದೆ
-]]></message>
-<message role="user"><![CDATA[
-### Step 4: Slot-Based Syntactic Assembly
-Task: Assemble Step3 phrases into Kannada lines; keep the same number of lines.
-Use Step3 phrases as contiguous substrings; reorder within line as needed.
-Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
-Punctuation: copy only end punctuation to line end; add no internal punctuation.
-Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+### Step 3: Lexical Inventory & Syntactic Assembly
+Task: For each source line, list ALL required lexical items from Step 2, then assemble into Kannada.
 Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
-Line Inventory:
-- <copy the phrases you chose from Step 3 for this line>
+Lexical Inventory:
+- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
 Assembly Notes:
-- If you inserted any function-words/morphology for joining, list them briefly.
+- Briefly note word order adjustments or morphological joining if any.
 Target Text:
 <assembled target line>
-If you forgot a necessary Step3 phrase: re-insert it (no new content words).
+Rules:
+- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
+- No new content words beyond Step 2 inventory.
+- Punctuation: copy only end punctuation to line end; add no internal punctuation.
+- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Source Line:**  
-4 Ahi quanto a dir qual era è cosa dura  
+Source Line:
+Ahi quanto a dir qual era è cosa dura
+Lexical Inventory:
+- ಅಯ್ಯೋ
+- ಎಷ್ಟು
+- ಗೆ
+- ಹೇಳಲು
+- ಯಾವಿತ್ತು
+- ಇದೆ
+- ವಸ್ತು
+- ಕಷ್ಟಕರ
+Assembly Notes:
+- Kannada places the degree adverb before the adjective; the infinitival marker “ಗೆ” precedes the infinitive “ಹೇಳಲು”; the copula “ಇದೆ” follows the subject noun phrase.
+Target Text:
+ಅಯ್ಯೋ ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಇದೆ ಗೆ ಹೇಳಲು ಯಾವಿತ್ತು
 
-**Line Inventory:**  
-- ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು  
+Source Line:
+esta selva selvaggia e aspra e forte
+Lexical Inventory:
+- ಈ
+- ಕಾಡು
+- ಕಾಡು
+- ಮತ್ತು
+- ಕಠಿಣ
+- ಮತ್ತು
+- ದೃಢ
+Assembly Notes:
+- Demonstrative “ಈ” precedes the noun; the first “ಕಾಡು” functions as the adjective “wild”, the second as the noun “forest”; conjunctions “ಮತ್ತು” link the adjectives.
+Target Text:
+ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ
 
-**Assembly Notes:**  
-- No additional function‑words needed; the phrase already contains the required interjection, degree adverb, infinitive, adjective, noun, pronoun and past copula.  
-
-**Target Text:**  
-ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು  
-
----
-
-**Source Line:**  
-5 esta selva selvaggia e aspra e forte  
-
-**Line Inventory:**  
-- ಈ ಕಾಡು ಕಾಡು ಕಠಿಣ ದಟ್ಟ  
-
-**Assembly Notes:**  
-- Inserted coordinating conjunction **ಮತ್ತು** twice to link the three adjectives, preserving the original word order inside the phrase.  
-
-**Target Text:**  
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
-
----
-
-**Source Line:**  
-6 che nel pensier rinova la paura!  
-
-**Line Inventory:**  
-- ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ  
-
-**Assembly Notes:**  
-- Added the exclamation mark from the source line; no other insertions required.  
-
-**Target Text:**  
-ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ!
+Source Line:
+che nel pensier rinova la paura!
+Lexical Inventory:
+- ಅದು
+- ಆ
+- ಮನಸ್ಸಿನಲ್ಲಿ
+- ಮನಸ್ಸು
+- ಪುನಃ ಉಂಟುಮಾಡು
+- ಆ
+- ಭಯ
+Assembly Notes:
+- Relative pronoun “ಅದು” starts the clause; locative phrase “ಆ ಮನಸ್ಸಿನಲ್ಲಿ” follows; the verb phrase uses “ಪುನಃ ಉಂಟುಮಾಡು” with the object “ಆ ಭಯ”.
+Target Text:
+ಅದು ಆ ಮನಸ್ಸಿನಲ್ಲಿ ಮನಸ್ಸು ಪುನಃ ಉಂಟುಮಾಡು ಆ ಭಯ!
 ]]></message>
 <message role="user"><![CDATA[
-### Step 5: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+### Step 4: Self-Correction via Back-Translation & Grammatical Check
+For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
 Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
 Punctuation: keep only end punctuation from source; no internal punctuation.
+Meaning Drift includes wrong modifier attachment/scope.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -120,31 +114,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 4  
-- Target Text: ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು  
-- Back-Translation: “Ah how to tell a hard thing it was”  
-- Reference Translation: Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!  
-- Checks: End Punct <OK> / Coverage <OK> / Meaning Drift <OK> / Comparative Orientation <N/A> / Hallucination <OK>  
-- Corrected Target Text:  
+- Line 4, Target Text: ಅಯ್ಯೋ ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಇದೆ ಗೆ ಹೇಳಲು ಯಾವಿತ್ತು, Back-Translation: “Ah! how difficult a thing it is to tell what was”, Reference Translation: “Ah! how hard a thing it is to tell what”, Checks: End Punct <OK>, Coverage <FAIL>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: ಅಯ್ಯೋ ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಇದೆ ಗೆ ಹೇಳಲು ಯಾವುದು ಇತ್ತು  
 
-- Line #: 5  
-- Target Text: ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
-- Back-Translation: “this forest wild and rough and dense”  
-- Reference Translation: Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!  
-- Checks: End Punct <OK> / Coverage <OK> / Meaning Drift <OK> / Comparative Orientation <N/A> / Hallucination <OK>  
-- Corrected Target Text:  
+- Line 5, Target Text: ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ, Back-Translation: “this forest wild and rough and strong”, Reference Translation: “this wild and rough and dense wood”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
 
-- Line #: 6  
-- Target Text: ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ!  
-- Back-Translation: “It in thought fear again creates!”  
-- Reference Translation: Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!  
-- Checks: End Punct <OK> / Coverage <OK> / Meaning Drift <OK> / Comparative Orientation <N/A> / Hallucination <OK>  
-- Corrected Target Text:  
+- Line 6, Target Text: ಅದು ಆ ಮನಸ್ಸಿನಲ್ಲಿ ಮನಸ್ಸು ಪುನಃ ಉಂಟುಮಾಡು ಆ ಭಯ!, Back-Translation: “that in the mind mind renews the fear”, Reference Translation: “which in thought renews the fear!”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <FAIL>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: ಅದು ಆ ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡು!  
 
 ```
-ಆಹ್ ಎಷ್ಟು ಹೇಳಲು ಕಷ್ಟಕರ ವಸ್ತು ಅದು ಇತ್ತು
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
-ಅದು ಚಿಂತೆಯಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಹುಟ್ಟಿಸುತ್ತದೆ!
+ಅಯ್ಯೋ ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಇದೆ ಗೆ ಹೇಳಲು ಯಾವುದು ಇತ್ತು
+ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ
+ಅದು ಆ ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡು!
 ```
 ]]></message>
 </messages>

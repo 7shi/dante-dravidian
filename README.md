@@ -1,6 +1,6 @@
 # dante-dravidian
 
-This project aims to translate Dante Alighieri's *Divine Comedy* from Italian into Dravidian languages (Telugu, Tamil, Kannada, and Malayalam) using a structured 5-stage translation process powered by Large Language Models (LLMs).
+This project aims to translate Dante Alighieri's *Divine Comedy* from Italian into Dravidian languages (Telugu, Tamil, Kannada, and Malayalam) using a structured 4-stage translation process powered by Large Language Models (LLMs).
 
 This project uses the following Italian text source:
 
@@ -17,15 +17,14 @@ The core philosophy is the "Serialization" and "Fixation" of thought processes:
 - **Requirement Definition**: Explicitly defining grammatical requirements (cases, suffixes) for the target language.
 - **Inventory & Assembly**: Separating vocabulary selection from sentence construction to prevent grammatical collapse.
 
-### 5-Stage Structured Translation
+### 4-Stage Structured Translation
 
-The translation employs a rigorous 5-stage process designed for high-quality translation into low-resource languages:
+The translation employs a rigorous 4-stage process designed for high-quality translation into low-resource languages:
 
 1.  **Source-Reference Alignment & Semantic Analysis**: Aligns the Italian source with an English reference translation to identify precise contextual definitions for each token.
 2.  **Morphosyntactic Requirement Definition**: Maps grammatical roles (Subject, Object, etc.) to the target language's case and suffix requirements.
-3.  **Pre-assembled Lexical Inventory**: Selects target language lemmas and applies necessary agglutination (e.g., fusing case suffixes with nouns).
-4.  **Slot-Based Syntactic Assembly**: Arranges the pre-assembled components into the target language's syntax (typically SOV for Dravidian languages).
-5.  **Self-Correction via Back-Translation & Grammatical Check**: Back-translates the result to English to verify semantic integrity and performs final grammatical checks.
+3.  **Lexical Inventory & Syntactic Assembly**: Lists all required lexical items and assembles them into the target language's syntax (typically SOV for Dravidian languages).
+4.  **Self-Correction via Back-Translation & Grammatical Check**: Back-translates the result to English to verify semantic integrity and performs final grammatical checks.
 
 ## Project Structure
 
@@ -39,7 +38,7 @@ The translation employs a rigorous 5-stage process designed for high-quality tra
 ### Scripts
 
 - [llm.py](llm.py): Wrapper for LLM interactions, including history management and XML serialization.
-- [translate.py](translate.py): Implements the 5-stage translation process.
+- [translate.py](translate.py): Implements the 4-stage translation process.
 - [test.py](test.py): Script for testing and debugging the translation pipeline.
 
 ## Usage
@@ -72,7 +71,7 @@ uv run test.py
 
 **Results and Evaluation**:
 
-- `test/*.xml`: Detailed 5-stage translation logs for each chunk and language.
+- `test/*.xml`: Detailed 4-stage translation logs for each chunk and language.
 - `test/*.txt`: Combined final translations for comparison.
 - `test/README.md`: A summary of the translations with critiques and rankings of the LLM's performance in each language (evaluated by GPT-5.2).
 

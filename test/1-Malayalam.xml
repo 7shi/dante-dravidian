@@ -6,111 +6,109 @@ Goal: For Malayalam, specify per-token morphosyntax needed to realize the Step 1
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
 In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
+Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|----------------------|--------------------|
-| **Nel** | “in the middle of” (locative phrase) | Locative case **‑ൽ** attached to *മധ്യം* → **മധ്യത്തിൽ**  *BT: “in the middle”* |
-| **mezzo** | “middle point” | Noun *മധ്യം* with locative **‑ൽ** (as above) → **മധ്യത്തിൽ**  *BT: “mid‑way”* |
-| **del** | Genitive link “of the” (road → life) | Genitive suffix **‑യുടെ** on *വഴി* → **വഴിയുടെ**  *BT: “of the road”* |
-| **cammin** | “road / path” | Noun *വഴി* in genitive **‑യുടെ** (as above) → **വഴിയുടെ**  *BT: “of the road”* |
-| **di** | Possessive/genitive marker “of” | Covered by genitive **‑യുടെ** on the following noun; no separate morpheme needed. |
-| **nostra** | Possessive adjective “our” | Possessive pronoun **ഞങ്ങളുടെ** preceding *ജീവിതം* → **ഞങ്ങളുടെ ജീവിതം**  *BT: “our life”* |
-| **vita** | “life” (possessor of the road) | Noun *ജീവിതം* with genitive **‑ത്തിന്റെ** → **ജീവിതത്തിന്റെ**  *BT: “of our life”* |
-| **mi** | Reflexive pronoun “myself” | Reflexive pronoun **താനെ** attached to verb → **താനെ**  *BT: “myself”* |
-| **ritrovai** | Past‑tense “found” (self‑locating) | Verb **കണ്ടെത്തി** (past simple) with reflexive object → **കണ്ടെത്തി**  *BT: “found”* |
-| **per** | Preposition “within” (spatial) | Locative case **‑ൽ** on following noun → **കാട്ടിൽ**  *BT: “within”* |
-| **una** | Indefinite article “a” (no Malayalam article) | No morphological marking; noun appears bare. |
-| **selva** | “wood / forest” | Noun *കാട്* with locative **‑ൽ** (from *per*) → **കാട്ടിൽ**  *BT: “a wood”* |
-| **oscura** | “dark” (attribute) | Adjective *ഇരുണ്ട* agreeing with *കാട്* → **ഇരുണ്ട**  *BT: “dark”* |
-| **ché** | Causal conjunction “for / because” | Conjunction **കാരണം** placed before clause → **കാരണം**  *BT: “because”* |
-| **la** | Definite article “the” (not expressed) | No morphological marking; noun is definite by context. |
-| **diritta** | “right / correct” (attribute) | Adjective *ശരിയായ* modifying *വഴി* → **ശരിയായ**  *BT: “right”* |
-| **via** | “way / path” (subject of clause) | Noun *വഴി* in nominative (default) → **വഴി**  *BT: “the way”* |
-| **era** | Copular verb “was / had been” (imperfect) | Auxiliary **ഇരുന്നതായിരുന്നു** or omitted in perfect construction; here encoded in **നഷ്ടപ്പെട്ടിരുന്നു** (past perfect) → **നഷ്ടപ്പെട്ടിരുന്നു**  *BT: “had been”* |
-| **smarrita** | Past participle “missed / lost” | Past participle adjective **നഷ്ടപ്പെട്ട** attached to *വഴി* → **നഷ്ടപ്പെട്ട**  *BT: “missed”* |
-
-**Notes on Comparative Ordering & Degree:**  
-No comparative or degree expressions appear in the source; therefore the *Target Requirement* column marks this as **N/A** for all rows.
+Nel | preposition + definite article “in the” | case=locative; noun = മധ്യം+loc‑suffix ‑യിൽ; BT: in the middle  
+mezzo | noun “middle” (spatial centre) | noun stem = മധ്യം; degree=neutral; BT: middle  
+del | preposition + definite article “of the” | genitive case marker ‑യുടെ attached to following noun; BT: of the  
+cammin | noun “road” (archaic) | noun stem = വഴി; case=genitive ‑യുടെ; BT: road of  
+di | preposition “of” (genitive) | genitive case marker ‑യുടെ on noun; BT: of  
+nostra | possessive adjective “our” (collective) | possessive pronoun ‑യുടെ attached to noun; BT: our  
+vita | noun “life” | noun stem = ജീവിതം; case=genitive ‑യുടെ; BT: life  
+mi | clitic reflexive pronoun “myself” | reflexive pronoun = എന്നെ; positioned as object of verb; BT: myself  
+ritrovai | verb “found (myself)” 1st sg remote past | verb stem = കണ്ടെത്തി; tense=remote past; mood=indicative; BT: I found  
+per | preposition “within” | locative case marker ‑യിൽ on following noun; BT: within  
+una | indefinite article “a” (fem) | indefinite determiner expressed by noun without article; BT: a  
+selva | noun “forest/wood” | noun stem = കാട്; case=locative ‑യിൽ; BT: forest  
+oscura | adjective “dark” | adjective stem = ഇരുണ്ട; agreement with noun (fem, singular); BT: dark  
+ché | causal conjunction “for” | conjunction = കാരണം; links clause; BT: for  
+la | definite article “the” (fem) | definite noun without article; context‑determined; BT: the  
+diritta | adjective “right” (correct) | adjective stem = ശരിയായ; agreement with noun (fem, singular); BT: right  
+via | noun “way” | noun stem = വഴി; case=nominative; BT: way  
+era | verb “was” 3rd sg imperfect | verb stem = ഇരുന്നു; tense=imperfect; BT: was  
+smarrita | past participle “missed/lost” | adjective stem = കാണാതായ; agreement with noun (fem, singular); BT: missed
 ]]></message>
 <message role="user"><![CDATA[
-### Step 3: Pre-assembled Lexical Inventory
-Output: bullet list only; one line per source line.
-Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
-Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
-Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
-No punctuation inside phrases; keep phrases short; no newlines.
-]]></message>
-<message role="assistant"><![CDATA[
-- Line 1: ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ / നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ / ജീവിതം വഴിയുടെ മധ്യത്തിൽ  
-- Line 2: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി / ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടു / ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ പിടിച്ചു  
-- Line 3: കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു / കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടു / കാരണം ശരിയായ വഴി നഷ്ടമായിരുന്നു
-]]></message>
-<message role="user"><![CDATA[
-### Step 4: Slot-Based Syntactic Assembly
-Task: Assemble Step3 phrases into Malayalam lines; keep the same number of lines.
-Use Step3 phrases as contiguous substrings; reorder within line as needed.
-Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
-Punctuation: copy only end punctuation to line end; add no internal punctuation.
-Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+### Step 3: Lexical Inventory & Syntactic Assembly
+Task: For each source line, list ALL required lexical items from Step 2, then assemble into Malayalam.
 Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
-Line Inventory:
-- <copy the phrases you chose from Step 3 for this line>
+Lexical Inventory:
+- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
 Assembly Notes:
-- If you inserted any function-words/morphology for joining, list them briefly.
+- Briefly note word order adjustments or morphological joining if any.
 Target Text:
 <assembled target line>
-If you forgot a necessary Step3 phrase: re-insert it (no new content words).
+Rules:
+- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
+- No new content words beyond Step 2 inventory.
+- Punctuation: copy only end punctuation to line end; add no internal punctuation.
+- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Source Line:**  
-Nel mezzo del cammin di nostra vita  
+Source Line:
+Nel mezzo del cammin di nostra vita
+Lexical Inventory:
+- Nel → യിൽ  
+- mezzo → മധ്യം  
+- del → യുടെ  
+- cammin → വഴി  
+- di → യുടെ  
+- nostra → ഞങ്ങളുടെ  
+- vita → ജീവിതം
+Assembly Notes:
+- “Nel” supplies the locative suffix “‑യിൽ” which attaches to “മധ്യം” forming “മധ്യത്തിൽ”.  
+- “del” adds the genitive suffix “‑യുടെ” to “വഴി” → “വഴിയുടെ”.  
+- “di” adds another genitive “‑യുടെ” to “ജീവിതം” → “ജീവിതത്തിന്റെ”.  
+- Possessor phrase “ഞങ്ങളുടെ ജീവിതത്തിന്റെ” precedes the noun “വഴി”.  
+- Final order follows Malayalam noun‑possessor‑genitive pattern, then the locative phrase.
+Target Text:
+ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
 
-**Line Inventory:**  
-- നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
+Source Line:
+mi ritrovai per una selva oscura,
+Lexical Inventory:
+- mi → എന്നെ  
+- ritrovai → കണ്ടെത്തി  
+- per → യിൽ  
+- una → ഒരു  
+- selva → കാട്  
+- oscura → ഇരുണ്ട
+Assembly Notes:
+- Reflexive pronoun “എന്നെ” is the object of “കണ്ടെത്തി”.  
+- “per” provides the locative suffix “‑യിൽ” attached to “കാട്” → “കാടിൽ”.  
+- Indefinite article “una” rendered as “ഒരു” placed before the adjective‑noun pair.  
+- Adjective “ഇരുണ്ട” precedes the noun “കാട്”.  
+- Order: pronoun + verb + indefinite + adjective + noun + locative.
+Target Text:
+എന്നെ കണ്ടെത്തി ഒരു ഇരുണ്ട കാടിൽ
 
-**Assembly Notes:**  
-- No additional function words needed; the phrase already expresses the locative “in the middle of the road of our life”.  
-
-**Target Text:**  
-നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
-
----
-
-**Source Line:**  
-mi ritrovai per una selva oscura,  
-
-**Line Inventory:**  
-- ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി  
-
-**Assembly Notes:**  
-- The locative suffix “‑ൽ” on *കാട്ടിൽ* supplies the meaning of “within”. No extra particles required.  
-
-**Target Text:**  
-ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
-
----
-
-**Source Line:**  
-ché la diritta via era smarrita.  
-
-**Line Inventory:**  
-- കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു  
-
-**Assembly Notes:**  
-- The causal conjunction “കാരണം” provides the “because/for” link; the verb phrase already encodes the past perfect “had been missed”.  
-
-**Target Text:**  
-കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
+Source Line:
+ché la diritta via era smarrita.
+Lexical Inventory:
+- ché → കാരണം  
+- la → ആ  
+- diritta → ശരിയായ  
+- via → വഴി  
+- era → ഇരുന്നു  
+- smarrita → കാണാതായ
+Assembly Notes:
+- Causal conjunction “കാരണം” introduces the clause.  
+- Definite article “la” rendered as “ആ” before the noun phrase.  
+- Copular verb “ഇരുന്നു” combines with past participle “കാണാതായ” to form “കാണാതായിരുന്നു”.  
+- Order: conjunction + definite article + adjective + noun + predicate adjective with copula.
+Target Text:
+കാരണം ആ ശരിയായ വഴി കാണാതായിരുന്നു
 ]]></message>
 <message role="user"><![CDATA[
-### Step 5: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+### Step 4: Self-Correction via Back-Translation & Grammatical Check
+For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
 Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
 Punctuation: keep only end punctuation from source; no internal punctuation.
+Meaning Drift includes wrong modifier attachment/scope.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -119,31 +117,14 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 1  
-  Target Text: നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ  
-  Back-Translation: “in the middle of the road of our life”  
-  Reference Translation: Midway upon the road of our life  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text:  
+- Line 1, ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ, in the middle of the road of our life, Midway upon the road of our life, End Punct <OK>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <N/A>; Hallucination <OK>, None  
+- Line 2, എന്നെ കണ്ടെത്തി ഒരു ഇരുണ്ട കാടിൽ, I found myself in a dark forest, I found myself within a dark wood, End Punct <FAIL>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <N/A>; Hallucination <OK>, എന്നെ കണ്ടെത്തി ഒരു ഇരുണ്ട കാടിൽ,  
+- Line 3, കാരണം ആ ശരിയായ വഴി കാണാതായിരുന്നു, because the right way was missed, for the right way had been missed, End Punct <OK>; Coverage <OK>; Meaning Drift <OK>; Comparative Orientation <N/A>; Hallucination <OK>, None  
 
-- Line 2  
-  Target Text: ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,  
-  Back-Translation: “I found myself in a dark forest”  
-  Reference Translation: I found myself within a dark wood,  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text:  
-
-- Line 3  
-  Target Text: കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.  
-  Back-Translation: “because the right way had been lost”  
-  Reference Translation: for the right way had been missed.  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text:  
-
-```
-നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
-ഞാൻ ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
-കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
+```malayalam
+ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
+എന്നെ കണ്ടെത്തി ഒരു ഇരുണ്ട കാടിൽ,
+കാരണം ആ ശരിയായ വഴി കാണാതായിരുന്നു
 ```
 ]]></message>
 </messages>

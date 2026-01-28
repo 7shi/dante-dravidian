@@ -6,6 +6,7 @@ Task: Align source tokens to the provided Reference Translation; pick in-context
 Output: (a) Interpretation Lock FIRST (one bullet per source line):
 - Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
 - If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., “slightly”).
+- Include key predicate-argument structure and modifier attachment/scope (what modifies what) when it affects meaning.
 - Note: A>B is equivalent to B<A; do not reverse the ordering.
 (b) THEN ONE Markdown table consistent with the Lock:
 - [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
@@ -17,40 +18,49 @@ Reference Translation (provided):
 Midway upon the road of our life I found myself within a dark wood, for the right way had been missed.
 ]]></message>
 <message role="assistant"><![CDATA[
-**(a) Interpretation Lock – ONE BULLET PER SOURCE LINE**
+**(a) Interpretation Lock FIRST – one bullet per source line**
 
-- **Line 1 – “Nel mezzo del cammin di nostra vita”** → *Locked Meaning*: There exists a journey (*cammin*) that belongs to “our life” (*nostra vita*). The speaker is positioned at the exact middle point (*mezzo*) of that journey, i.e., *mid‑way* along the road of our life.  
-- **Line 2 – “mi ritrovai per una selva oscura,”** → *Locked Meaning*: The first‑person subject (*I*) finds (or discovers) himself (*mi*) located *within* (*per*) a singular, dark forest (*una selva oscura*).  
-- **Line 3 – “ché la diritta via era smarrita.”** → *Locked Meaning*: Because (*ché*) the definite, straight/right path (*la diritta via*) was in a state of being lost (*era smarrita*), i.e., the correct way had been missed.  
+- **Line 1 *Nel mezzo del cammin di nostra vita*** →  
+  **Locked Meaning:** There exists a *life* **L** that belongs collectively to “our” speakers. **L** has a *road* **R** that constitutes its course. A *point* **P** lies at the *mid‑point* of **R** (i.e., the distance from the start of **R** to **P** equals the distance from **P** to the end of **R**). The narrator is located at **P**.  
+  **Predicate‑Argument Structure:** *be‑located‑at*(narrator, P) ∧ *mid‑point‑of*(P, R) ∧ *road‑of*(R, L) ∧ *life‑of*(L, “our”).  
+  **Modifier Scope:** “Nel” (in the) scopes over the whole locative phrase; “mezzo” modifies “cammin” (the road) as a spatial noun‑modifier; “nostra” modifies “vita”.
 
-*(No comparative or degree expressions are present, so no A > B or degree specifications are required.)*  
+- **Line 2 *mi ritrovai per una selva oscura*** →  
+  **Locked Meaning:** The narrator experiences the event *self‑finding* in which the narrator (self) is located *within* a *forest* **F** that has the property *dark*. Formally: ∃F[dark(F) ∧ forest(F) ∧ located‑within(narrator, F) ∧ find‑self(narrator, F)].  
+  **Predicate‑Argument Structure:** *find‑self*(narrator, F) ∧ *within*(F) ∧ *dark*(F).  
+  **Modifier Scope:** The adjective “oscura” modifies the noun “selva”; the preposition “per” introduces the locative PP that scopes over the whole event.
+
+- **Line 3 *ché la diritta via era smarrita*** →  
+  **Locked Meaning:** The *right way* **W** (the correct path) is in a state of being *missed* (i.e., not known or lost). This state is the *cause* of the situation described in line 2. Formally: cause( missed(W) , locate‑in‑dark‑forest(narrator) ).  
+  **Predicate‑Argument Structure:** *missed*(W) ∧ *right*(W) ∧ *way*(W) ∧ *because*( missed(W) , … ).  
+  **Modifier Scope:** “diritta” (right) modifies “via”; the copular clause “era smarrita” predicates the missed‑state of the whole NP “la diritta via”.
 
 ---
 
-**(b) Markdown Table Consistent with the Lock**
+**(b) Markdown Table Consistent with the Lock**
 
 | Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
 |-------------|------------|----------------------|-----------------------|------------------|
-| Nel | contraction of *in* + *il* (preposition + definite article) | Midway upon | “in the middle of” – locative prepositional phrase introducing the position | Prepositional phrase head |
-| mezzo | noun, masculine singular | midway | The exact middle point of a journey | Complement of preposition *Nel* |
-| del | contraction of *di* + *il* (preposition + definite article) | of the | Genitive marker linking *cammin* to *vita* | Prepositional link |
-| cammin | noun, masculine singular (archaic of *cammino*) | road | The path or journey being travelled | Noun, object of *del* |
-| di | preposition | of | Marks possession/association (“our life”) | Prepositional link |
-| nostra | possessive adjective, feminine singular | our | Indicates that the life belongs to the speaker and companions | Modifier of *vita* |
-| vita | noun, feminine singular | life | The span of existence of the speaker and companions | Head of noun phrase *nostra vita* |
-| mi | clitic pronoun, accusative (reflexive) | I | The speaker as the experiencer of the action | Direct object of *ritrovai* (reflexive) |
-| ritrovai | verb, 1st person singular, passato remoto of *ritrovarsi* | found | “I found myself” – self‑locating action | Predicate verb |
-| per | preposition | within | Introduces the spatial domain of the finding | Prepositional head |
-| una | indefinite article, feminine singular | a | Marks the noun *selva* as non‑specific | Determiner |
-| selva | noun, feminine singular | wood | A forest, the dark environment | Object of preposition *per* |
-| oscura | adjective, feminine singular | dark | Qualifies *selva* as lacking light | Attribute of *selva* |
-| ché | conjunction | for | Introduces the causal clause | Subordinator |
-| la | definite article, feminine singular | the | Specifies the particular *via* | Determiner |
-| diritta | adjective, feminine singular | right | Describes the *via* as the correct/straight one | Attribute of *via* |
-| via | noun, feminine singular | way | The correct path that should be followed | Subject of *era smarrita* |
-| era | verb, 3rd person singular, imperfetto of *essere* | had been | Copular verb indicating a past state | Predicate of the clause |
-| smarrita | past participle adjective, feminine singular of *smarrire* | missed | State of being lost; the way is not found | Predicate adjective linked to *via* |
+| **Nel** | preposition + definite article (in + the) | *Midway* (part of “Midway upon…”) | “in the” – introduces the locative PP that contains the midpoint | Prepositional determiner of the PP “Nel mezzo” |
+| **mezzo** | noun, masc. sg. | *midway* (the middle) | “middle” – the spatial centre of the road | Head noun of the PP “Nel mezzo” |
+| **del** | preposition + definite article (of + the) | *upon the* (part of “upon the road”) | “of the” – links “cammin” to “vita” | Prepositional determiner of the PP “del cammin” |
+| **cammin** | noun, masc. sg. (archaic *cammino*) | *road* | “road” – the metaphorical path of life | Head noun of the PP “del cammin” |
+| **di** | preposition | *of* | “of” – genitive linking “nostra” to “vita” | Preposition introducing the genitive PP “di nostra vita” |
+| **nostra** | possessive adjective, fem. sg. | *our* | “our” – collective possession of the life | Modifier of the noun “vita” |
+| **vita** | noun, fem. sg. | *life* | “life” – the whole human existence being narrated | Head noun of the PP “di nostra vita” |
+| **mi** | clitic reflexive pronoun, 1st sg. | *I* (subject of “found myself”) | “myself” – marks the verb as reflexive | Object of the reflexive verb “ritrovai” |
+| **ritrovai** | verb, 1st sg. passato remoto of *ritrovarsi* | *found myself* | “found” – the act of self‑discovery at a location | Main verb of the clause |
+| **per** | preposition | *within* | “within” – introduces the locative PP of the forest | Prepositional head of the PP “per una selva oscura” |
+| **una** | indefinite article, fem. sg. | *a* | “a” – introduces a non‑specific forest | Determiner of the noun “selva” |
+| **selva** | noun, fem. sg. | *wood* (forest) | “wood” – the dark forest the narrator is in | Head noun of the PP “una selva oscura” |
+| **oscura** | adjective, fem. sg. | *dark* | “dark” – describes the forest’s lack of light | Modifier of “selva” |
+| **ché** | conjunction (causal) | *for* | “for” – signals the causal relation to the previous clause | Clause‑linking conjunction |
+| **la** | definite article, fem. sg. | *the* | “the” – specifies the particular “right way” | Determiner of the noun “via” |
+| **diritta** | adjective, fem. sg. | *right* | “right” – denotes the correct or proper way | Modifier of “via” |
+| **via** | noun, fem. sg. | *way* | “way” – the correct path that should be followed | Head noun of the NP “la diritta via” |
+| **era** | verb, 3rd sg. imperf. of *essere* | *had been* (auxiliary) | “had been” – forms the past‑perfect passive construction | Copular auxiliary linking subject “la diritta via” to predicate “smarrita” |
+| **smarrita** | past participle, fem. sg. of *smarrire* (used adjectivally) | *missed* | “missed” – state of being lost or not known | Predicate adjective of the copular clause |
 
-*The table aligns each Italian token with its English counterpart from the reference translation, supplies a contextual definition that respects the locked truth‑conditions, and identifies the grammatical function each token plays within its clause.*
+*The table lists every token from the Italian source, its grammatical makeup, the English lexical item(s) it aligns with in the reference translation, a concise contextual gloss, and the syntactic function it fulfills in the sentence.*
 ]]></message>
 </messages>

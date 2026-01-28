@@ -1,6 +1,6 @@
-# 5-Stage Translation Prompt (Local LLM)
+# 4-Stage Translation Prompt (Local LLM)
 
-This repo translates high-difficulty source text into target languages using a **five-step** prompt pipeline. The goal is to make the process:
+This repo translates high-difficulty source text into target languages using a **four-step** prompt pipeline. The goal is to make the process:
 
 - Meaning-stable (anchored to a reference translation)
 - Hard to omit components (anti-omission)
@@ -9,7 +9,7 @@ This repo translates high-difficulty source text into target languages using a *
 ## Quick principles
 
 1. **Anchor meaning to a reference translation**: use it to resolve polysemy and idioms.
-2. **Separate concerns**: meaning/roles → morphosyntax → inventory → assembly → verification.
+2. **Separate concerns**: meaning/roles → morphosyntax → inventory+assembly → verification.
 3. **No content invention**: do not add new content words to “fix” missing parts.
 4. **Line fidelity** (for verse): keep line boundaries; copy end punctuation exactly.
 
@@ -32,9 +32,8 @@ These rules apply to ALL steps.
 - Keep line boundaries and the number of lines identical to the source.
 - Keep end punctuation identical to the source line; do not normalize or “fix” punctuation.
 - Make every intermediate artifact debuggable:
-   - Step 3 must be a clean, deduplicated, placeable inventory.
-   - Step 4 must include an explicit coverage check.
-   - Step 5 must explicitly check meaning drift and report failures.
+   - Step 3 must list a clean inventory and assemble it; coverage failures indicate missing elements.
+   - Step 4 must explicitly check meaning drift and report failures.
 
 ### Output discipline
 
@@ -72,38 +71,27 @@ Formatting: no newlines inside any table cell; keep the back-translation check s
 ```
 
 ```
-### Step 3: Pre-assembled Lexical Inventory
-Output: bullet list only; one line per source line.
-Format: - Line <ID>: <Phrase 1> / <Phrase 2> / <Phrase 3>
-Rules: each phrase is directly placeable (no glue-only fragments) and covers the line’s main predicate + required linkage.
-Hook: satisfy Step 2 requirements for that line (incl. back-translation checks).
-Comparatives: preserve ordering (A>B ⇔ B<A is OK) and degree; at least one phrase must make both recoverable.
-No punctuation inside phrases; keep phrases short; no newlines.
-```
-
-```
-### Step 4: Slot-Based Syntactic Assembly
-Task: Assemble Step3 phrases into {target_lang} lines; keep the same number of lines.
-Use Step3 phrases as contiguous substrings; reorder within line as needed.
-Allowed edits: insert only function-words/morphology for grammatical joining; no new content words.
-Avoid flat modifier stacking: make intended attachment/roles explicit using available function-words/morphology.
-Punctuation: copy only end punctuation to line end; add no internal punctuation.
-Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+### Step 3: Lexical Inventory & Syntactic Assembly
+Task: For each source line, list ALL required lexical items from Step 2, then assemble into {target_lang}.
 Output per source line (labels verbatim):
 Source Line:
 <copy exact source line>
-Line Inventory:
-- <copy the phrases you chose from Step 3 for this line>
+Lexical Inventory:
+- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
 Assembly Notes:
-- If you inserted any function-words/morphology for joining, list them briefly.
+- Briefly note word order adjustments or morphological joining if any.
 Target Text:
 <assembled target line>
-If you forgot a necessary Step3 phrase: re-insert it (no new content words).
+Rules:
+- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
+- No new content words beyond Step 2 inventory.
+- Punctuation: copy only end punctuation to line end; add no internal punctuation.
+- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
 ```
 
 ```
-### Step 5: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step4 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
+### Step 4: Self-Correction via Back-Translation & Grammatical Check
+For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
 Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
 Punctuation: keep only end punctuation from source; no internal punctuation.
 Meaning Drift includes wrong modifier attachment/scope.
