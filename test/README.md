@@ -44,7 +44,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 2: “found myself” reflexive/argument structure is awkward.
+- Line 2: “found myself” reflexive/argument structure is awkward. (OK for literal-first)
 - Line 3: Causal marker reads as “therefore/so”, not “for/because”; the causal relation is weakened.
 - Line 4: “what it was” is not explicitly realized.
 - Line 7: Comparative is incomplete: “death is a little more” lacks an explicit scale/property (i.e., “more bitter”).
@@ -68,7 +68,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 **Points of criticism (GPT-5.2)**:
 
 - Line 3: Causal connector reads as “therefore/so”, not “for/because”.
-- Line 4: Tautological/overlong (“hard … a hard thing”); structure is not clean.
+- Line 4: Tautological/overlong (“hard … a hard thing”); structure is not clean. (OK for literal-first)
 - Line 6: Uses “memory” rather than “thought”, drifting from the reference framing.
 - Line 7: Comparative is not clean: missing the explicit “so bitter is it” frame and/or the comparison scale.
 
@@ -92,7 +92,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 - Line 3: Causal connector reads as “therefore/so”, not “for/because”.
 - Line 4: Scrambled phrasing; “what it was” is not explicit.
-- Line 5: Repetition and incomplete descriptor bundle; mapping to wild/rough/dense/strong is not clean.
+- Line 5: Repetition is clumsy (OK for literal-first), but the descriptor bundle is incomplete; mapping to wild/rough/dense/strong is not clean.
 - Line 7: Comparative is incomplete; the scale/property for “a little more” is not explicit.
 
 ## Malayalam (GPT-OSS 120B)
@@ -138,7 +138,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 **Points of criticism (GPT-5.2)**:
 
 - Line 4: Awkward phrasing; “what it was” is not cleanly expressed.
-- Line 5: Duplicate connector (“そして、そして”); descriptor bundle is clumsy.
+- Line 5: Duplicate connector (“そして、そして”); descriptor bundle is clumsy. (OK for literal-first)
 - Line 6: “renews the fear” is paraphrased (“make it new”), reducing literal correspondence.
 - Line 7: Comparative is incomplete/elliptical; the comparison scale/property is not explicit.
 
@@ -160,7 +160,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 4: Slightly indirect phrasing; correspondence is acceptable but not maximally literal.
+- Line 4: Slightly indirect phrasing; correspondence is acceptable but not maximally literal. (OK for literal-first)
 - Line 7: Comparative is incomplete/elliptical (“la mort n’est que légèrement plus” lacks the explicit scale/property, i.e., “plus amère”).
 
 ## Spanish (GPT-OSS 120B)
@@ -181,7 +181,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 4: Awkward structure; “what it was” is only partially realized.
+- Line 4: Awkward structure; “what it was” is only partially realized. (OK for literal-first)
 - Line 6: Agreement/grammar error (“la miedo”).
 - Line 7: Comparative is incomplete (“la muerte es poco más” lacks the explicit scale/property).
 
@@ -205,7 +205,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 - Line 4: Awkward phrasing (“é a dizer”); structure is not clean.
 - Line 7: Comparative is incomplete (“a morte é pouco mais” lacks the explicit scale/property).
-- Line 9: Tense/aspect drifts (“tinha visto” adds an unnecessary past-perfect nuance).
+- Line 9: Tense/aspect drifts (“tinha visto” adds an unnecessary past-perfect nuance). (OK for literal-first)
 
 ## Esperanto (GPT-OSS 120B)
 
@@ -227,18 +227,20 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 - Line 7: Comparative is incomplete (“morto estas iom pli” lacks the explicit scale/property, i.e., “pli amara”).
 - Line 9: Adds “jam” (“already”), which is not supported by the source/reference.
-- Capitalization varies by line, reducing stylistic consistency.
+- Capitalization varies by line, reducing stylistic consistency. (OK for literal-first)
 
 ## Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
 
+(Ranking below ignores any points marked "OK for literal-first".)
+
 1. French: Very close overall; main issue is the incomplete comparative scale in line 7.
-2. Portuguese: Close overall; main issues are the incomplete comparative scale (line 7) and minor phrasing/tense drift.
+2. Portuguese: Close overall; remaining issues are awkward line 4 phrasing and the incomplete comparative scale in line 7.
 3. Esperanto: Generally faithful, but line 7 is incomplete and line 9 adds unsupported “already”.
 4. Spanish: Mostly faithful, but has a clear agreement error (line 6) and an incomplete comparative (line 7).
-5. Japanese: Mostly faithful, but has clumsy modifiers (line 5) and an incomplete comparative (line 7).
-6. Telugu: Good overall coverage, but line 7’s comparative scale is incomplete and the causal marker can read as “therefore/so”.
-7. Kannada: Roughly traceable, but descriptor bundle (line 5) and comparative scale (line 7) are incomplete.
-8. Malayalam: Generally stable, but verb choice drifts (line 8) and the comparative scale is incomplete (line 7).
-9. Tamil: Readable, but has the most drift/tautology and weaker comparative framing among these outputs.
+5. Japanese: Mostly faithful, but has awkward line 4 phrasing, paraphrase in line 6, and an incomplete comparative in line 7.
+6. Telugu: Good overall coverage, but the causal connector can read as “therefore/so” and the line 7 comparative scale is incomplete.
+7. Tamil: Readable, but drifts in line 6 (“memory” vs “thought”) and has an incomplete comparative in line 7.
+8. Kannada: Roughly traceable, but has an incomplete descriptor bundle (line 5) and an incomplete comparative scale (line 7).
+9. Malayalam: Generally stable, but has multiple drift points (line 8 verb choice) and an incomplete comparative scale (line 7).
