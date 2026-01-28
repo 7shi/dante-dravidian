@@ -2,6 +2,8 @@
 
 This project aims to translate Dante Alighieri's *Divine Comedy* from Italian into Dravidian languages (Telugu, Tamil, Kannada, and Malayalam) using a structured 4-stage translation process powered by Large Language Models (LLMs).
 
+**Note**: This project originally began with a focus on SOV agglutinative languages, particularly Dravidian languages. However, the current prompt framework contains no language-specific instructions and is designed as a general-purpose methodology applicable to any source-target language pair.
+
 This project uses the following Italian text source:
 
 - [La Divina Commedia di Dante: Complete by Dante Alighieri | Project Gutenberg](https://www.gutenberg.org/ebooks/1000)
@@ -12,19 +14,31 @@ This project uses the following Italian text source:
 
 The project is based on a structured prompting methodology designed to overcome the limitations of LLMs when dealing with high-difficulty translations (classical texts, low-resource languages, and languages with significantly different word orders like SOV).
 
-The core philosophy is the "Serialization" and "Fixation" of thought processes:
-- **Context Lock**: Using an English reference to fix the meaning and disambiguate polysemous words.
-- **Requirement Definition**: Explicitly defining grammatical requirements (cases, suffixes) for the target language.
-- **Inventory & Assembly**: Separating vocabulary selection from sentence construction to prevent grammatical collapse.
+### Design Philosophy
+
+This project targets **local LLMs** (e.g., 120B-parameter open-source models) with limited instruction-following capability. Complex multi-step instructions often cause smaller models to lose track of requirements or produce malformed output.
+
+The original approach used a bottom-up method: build a word table first, then assemble words into sentences. However, this led to grammatical collapse, especially for complex syntactic structures like nested relative clauses and purpose clauses. The problem is that **assembling words into proper word order is not part of normal LLM training**. LLMs are trained on natural text generation and translation, not on puzzle-like word rearrangement tasks.
+
+The current top-down approach (translate first → verify coverage → fix errors) aligns with what LLMs actually learned during training:
+1. **Translation**: Abundantly present in training data
+2. **Coverage checking**: A comparison/verification task
+3. **Correction**: An editing task LLMs handle well
+
+This leverages the model's natural translation ability while using structured checks to catch omissions.
+
+Core principles:
+- **Context Lock**: Use an English reference translation to fix meaning and disambiguate polysemous words.
+- **Translate First**: Let the model produce natural word order, then verify rather than construct.
+- **Coverage Check**: Build word tables *after* translation to identify missing or wrong items.
+- **Simplicity over Perfection**: Accept imperfect output; keep prompts minimal to avoid confusing smaller models.
 
 ### 4-Stage Structured Translation
 
-The translation employs a rigorous 4-stage process designed for high-quality translation into low-resource languages:
-
-1.  **Source-Reference Alignment & Semantic Analysis**: Aligns the Italian source with an English reference translation to identify precise contextual definitions for each token.
-2.  **Morphosyntactic Requirement Definition**: Maps grammatical roles (Subject, Object, etc.) to the target language's case and suffix requirements.
-3.  **Lexical Inventory & Syntactic Assembly**: Lists all required lexical items and assembles them into the target language's syntax (typically SOV for Dravidian languages).
-4.  **Self-Correction via Back-Translation & Grammatical Check**: Back-translates the result to English to verify semantic integrity and performs final grammatical checks.
+1.  **Source-Reference Alignment & Semantic Analysis**: Aligns the Italian source with an English reference translation. Produces an "Interpretation Lock" (truth-conditions per line) and a token-by-token alignment table with contextual definitions.
+2.  **Direct Translation**: Translates each source line into the target language, guided by the reference translation and Step 1 analysis. Preserves line count and end punctuation.
+3.  **Word Table & Coverage Check**: Builds a word table mapping each source word to its target equivalent, with back-translation and status (OK/MISSING/WRONG). Lists any items requiring correction.
+4.  **Correction & Final Output**: Fixes MISSING or WRONG items from Step 3. Outputs the corrected translation in a single code block.
 
 ## Project Structure
 

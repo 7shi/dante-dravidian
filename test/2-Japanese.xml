@@ -1,134 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <messages>
 <message role="user"><![CDATA[
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-]]></message>
-<message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|----------------------|--------------------|
-| Ahi | Ah! | ああ [BT: Ah] |
-| quanto | how (quantifies difficulty) | どれほど [BT: how much] |
-| a | to (infinitive marker) | ことは [BT: the act of] |
-| dir | say | 言う [BT: say] |
-| qual | what (introduces content clause) | 何が [BT: what] |
-| era | was | だった [BT: was] |
-| è | is (copular) | だ [BT: is] |
-| cosa | thing | もの [BT: thing] |
-| dura | hard/difficult | 難しい [BT: difficult] |
-| esta | this | この [BT: this] |
-| selva | wood/forest | 森 [BT: forest] |
-| selvaggia | wild | 野生の [BT: wild] |
-| e | and (first) | と [BT: and] |
-| aspra | rough | 荒々しい [BT: rough] |
-| e | and (second) | と [BT: and] |
-| forte | dense/strong | 密集した [BT: dense] |
-| che | which (relative pronoun) | それは [BT: which] |
-| nel | in (locative) | 考えの中で [BT: in thought] |
-| pensier | thought | 考え [BT: thought] |
-| rinova | renews (re‑creates) | 呼び起こす [BT: evoke] |
-| la | the (definite article) | その [BT: the] |
-| paura | fear | 恐怖 [BT: fear] |
-]]></message>
-<message role="user"><![CDATA[
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into Japanese.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Source Line:
-4 Ahi quanto a dir qual era è cosa dura
-Lexical Inventory:
-- ああ
-- どれほど
-- ことは
-- 言う
-- 何が
-- だった
-- だ
-- もの
-- 難しい
-Assembly Notes:
-- Japanese places the exclamation first, uses 「は」 to mark the subject 「もの」, and attaches 「は」 after the relative clause; particles added for grammaticality.
-Target Text:
-ああ、どれほどことは言う何がだっただものは難しい
-
-Source Line:
-5 esta selva selvaggia e aspra e forte
-Lexical Inventory:
-- この
-- 森
-- 野生の
-- と
-- 荒々しい
-- と
-- 密集した
-Assembly Notes:
-- Demonstrative 「この」 modifies 「森」; 「は」 marks the topic, adjectives linked by 「と」 in a right‑branching coordination.
-Target Text:
-この森は野生のと荒々しいと密集した
-
-Source Line:
-6 che nel pensier rinova la paura!
-Lexical Inventory:
-- それは
-- 考えの中で
-- 考え
-- 呼び起こす
-- その
-- 恐怖
-Assembly Notes:
-- Relative clause formed with 「は」 as subject, 「で」 marks the locative adjunct, 「を」 marks the object; 「その恐怖」 remains as the object noun phrase.
-Target Text:
-それは考えの中で考えを呼び起こすその恐怖!
+ああ、何であったかを語ることは、とても困難なことだ  
+この野生で荒々しく、そして厚い森  
+それは思いの中で恐怖を新たにする！
 ]]></message>
 <message role="user"><![CDATA[
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| Ahi | Interjection expressing exclamation | ああ | “Ah!” | OK |
+| quanto | Adverb of degree, intensifies difficulty | とても | “very” | OK |
+| a | Preposition introducing the infinitive *dir* | — | — | **MISSING** |
+| dir | Verb (infinitive) “to tell” | 語る | “to tell” | OK |
+| qual | Interrogative adjective “what” | 何で | “what” | OK |
+| era | Imperfect of *essere* “was” | あった | “was” | OK |
+| è | Present copula “is” | だ | “is” | OK |
+| cosa | Noun “thing” | こと | “thing” | OK |
+| dura | Adjective “hard / difficult” | 困難な | “difficult” | OK |
+| esta | Demonstrative adjective “this” | この | “this” | OK |
+| selva | Noun “forest / wood” | 森 | “forest” | OK |
+| selvaggia | Adjective “wild” | 野生で | “wild” | OK |
+| e (1st) | Coordinating conjunction “and” (between *selvaggia* and *aspra*) | そして | “and” | OK |
+| aspra | Adjective “rough” | 荒々しく | “rough” | OK |
+| e (2nd) | Coordinating conjunction “and” (between *aspra* and *forte*) | — | — | **MISSING** |
+| forte | Adjective “dense / strong” | 厚い | “thick / dense” | OK |
+| che | Relative pronoun “which / that” | それは | “that” | OK |
+| nel | Preposition + article “in the” | の中で | “in (the)” | OK |
+| pensier | Noun “thought” | 思い | “thought” | OK |
+| rinova | Verb “renews” | 新たにする | “renew” | OK |
+| la | Definite article “the” | — | — | **MISSING** |
+| paura | Noun “fear” | 恐怖 | “fear” | OK |
+
+### Missing / Problematic Items
+- **a** – preposition introducing the infinitive is not overtly rendered in Japanese.  
+- **e** (second occurrence) – the second “and” is omitted in the Japanese clause.  
+- **la** – the definite article has no direct counterpart in Japanese.  
+
+All other source words are represented correctly in the Japanese translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 4, ああ何がだったかを言うことはどれほど難しいものだ, Ah, how difficult a thing it is to say what it was, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+**Line‑by‑line corrections**
 
-- Line 5, この森は野生のと荒々しいと密集した, This forest is wild and rough and dense, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+| Line # | Original Translation | Issues | Corrected Translation |
+|--------|----------------------|--------|-----------------------|
+| 4 | ああ、何であったかを語ることは、とても困難なことだ | Missing the preposition **a** (dative marker before the infinitive) | ああ、何であったかを語ることに、とても困難なことだ |
+| 5 | この野生で荒々しく、そして厚い森 | Missing the second coordinating **e** (“and”) | この野生で荒々しく、そして、そして厚い森 |
+| 6 | それは思いの中で恐怖を新たにする！ | Missing the definite article **la** before *paura* | それは思いの中でその恐怖を新たにする！ |
 
-- Line 6, それは考えの中でその恐怖を呼び起こす!, It, in thought, evokes that fear!, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+**Final Japanese text**
 
-```
-ああ何がだったかを言うことはどれほど難しいものだ
-この森は野生のと荒々しいと密集した
-それは考えの中でその恐怖を呼び起こす!
+```text
+ああ、何であったかを語ることに、とても困難なことだ
+この野生で荒々しく、そして、そして厚い森
+それは思いの中でその恐怖を新たにする！
 ```
 ]]></message>
 </messages>

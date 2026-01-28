@@ -5,8 +5,7 @@
 Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
 Output: (a) Interpretation Lock FIRST (one bullet per source line):
 - Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
-- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., “slightly”).
-- Include key predicate-argument structure and modifier attachment/scope (what modifies what) when it affects meaning.
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
 - Note: A>B is equivalent to B<A; do not reverse the ordering.
 (b) THEN ONE Markdown table consistent with the Lock:
 - [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
@@ -18,30 +17,28 @@ Reference Translation (provided):
 Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!
 ]]></message>
 <message role="assistant"><![CDATA[
-**Interpretation Lock – ONE BULLET PER SOURCE LINE**
+**Interpretation Lock – FIRST (one bullet per source line)**  
 
-- **Line 4 – “Ahi quanto a dir qual era è cosa dura”**  
-  *Locked Meaning*: The speaker exclaims (Ahi) that the **difficulty** (quantified by “quanto”) of **saying** (“a dir”) **what it was** (“qual era”) is **extremely high**; the thing in question is a **hard‑to‑describe thing** (“è cosa dura”).  
-  *Predicate‑Argument Structure*:  
-  - **Main copular clause**: *cosa* (subject) **is** (*è*) *dura* (predicative adjective).  
-  - **Embedded infinitival clause** (*a dir qual era*) functions as the **complement of “quanto”** (how).  
-  - Within the embedded clause, *qual era* is a **relative interrogative** denoting the **identity of the referent (X)**.  
-  *Modifier Scope*: “quanto” scopes over the entire infinitival complement, intensifying the difficulty; “dura” modifies “cosa” directly.
+- **Line 4 – “Ahi quanto a dir qual era è cosa dura”** → *The speaker exclaims that the act of telling what something was is a very difficult (hard) thing.*  
+  - Truth‑conditions:  
+    1. There is an exclamatory stance (Ahi).  
+    2. The degree adverb *quanto* marks a high intensity of difficulty.  
+    3. The infinitival clause *a dir* (“to tell”) is the action whose difficulty is being evaluated.  
+    4. The embedded interrogative *qual era* (“what it was”) denotes the content that is to be told.  
+    5. The copula *è* links the predicate *cosa dura* (“hard thing”) to the subject *cosa*; thus the proposition “the thing is hard” holds.  
 
-- **Line 5 – “esta selva selvaggia e aspra e forte”**  
-  *Locked Meaning*: The speaker points to **this forest** (*esta selva*) and attributes three coordinated properties to it: **wild** (*selvaggia*), **rough** (*aspra*), and **dense/strong** (*forte*).  
-  *Predicate‑Argument Structure*:  
-  - **Nominal phrase**: *esta selva* (head noun *selva* with demonstrative determiner *esta*).  
-  - **Coordinate adjectival modifiers** (*selvaggia*, *aspra*, *forte*) each **predicatively describe** the noun.  
-  *Modifier Scope*: The conjunction “e” links the three adjectives in a **right‑branching coordination**, each independently modifying *selva*.
+- **Line 5 – “esta selva selvaggia e aspra e forte”** → *The entity being spoken of is a forest that possesses three simultaneous properties: wildness, roughness, and density/strength.*  
+  - Truth‑conditions:  
+    1. The demonstrative *esta* identifies the forest as proximate (“this”).  
+    2. The noun *selva* denotes a wooded area.  
+    3. The adjectives *selvaggia*, *aspra*, and *forte* each ascribe a property to the forest, conjoined by *e* (“and”).  
 
-- **Line 6 – “che nel pensier rinova la paura!”**  
-  *Locked Meaning*: The forest (*che* referring back to *selva*) **re‑creates** (“rinova”) **fear** (“la paura”) **whenever it is thought of** (“nel pensier”).  
-  *Predicate‑Argument Structure*:  
-  - **Relative clause** headed by *che* (subject) with verb *rinova* (transitive).  
-  - **Prepositional phrase** *nel pensier* functions as a **temporal/locative adjunct** indicating the mental context.  
-  - **Direct object** *la paura* receives the action of renewal.  
-  *Modifier Scope*: The adjunct *nel pensier* scopes over the entire verb phrase, specifying the condition under which fear is renewed.
+- **Line 6 – “che nel pensier rinova la paura!”** → *That forest, when thought of, causes the fear to be renewed.*  
+  - Truth‑conditions:  
+    1. The relative pronoun *che* refers back to the forest of line 5 and functions as the subject of the clause.  
+    2. The prepositional phrase *nel pensier* (“in thought”) locates the mental arena where the event occurs.  
+    3. The verb *rinova* asserts that the event of “renewing” takes place.  
+    4. The direct object *la paura* is the fear that is renewed.  
 
 ---
 
@@ -49,29 +46,29 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 
 | Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
 |-------------|------------|----------------------|----------------------|------------------|
-| Ahi | Interjection | Ah! | Exclamatory expression of emotion | Sentence‑initial exclamation |
-| quanto | Interrogative adverb (intensifier) | how | Quantifies the difficulty of the infinitival act | Modifier of the infinitival complement |
-| a | Preposition (infinitive marker) | to | Introduces infinitive *dir* | Marks infinitival complement |
-| dir | Verb (infinitive) | say | Action of expressing the identity of X | Complement of *a*; part of difficulty clause |
-| qual | Interrogative adjective | what | Introduces a content clause identifying X | Head of relative interrogative *qual era* |
-| era | Verb (imperf. of *essere*) | was | Past state of X | Predicate of the embedded clause |
-| è | Verb (present of *essere*) | is | Copular link between *cosa* and *dura* | Main‑clause copula |
-| cosa | Noun (feminine) | thing | The entity being described as hard | Subject of copular clause |
-| dura | Adjective (feminine) | hard | Property of *cosa* (difficulty) | Predicative adjective |
-| esta | Demonstrative determiner (feminine) | this | Points to the specific forest | Determiner of *selva* |
-| selva | Noun (feminine) | wood/forest | The wild place being described | Head noun of noun phrase |
-| selvaggia | Adjective (feminine) | wild | First property of the forest | Coordinated modifier of *selva* |
-| e | Coordinating conjunction | and | Links adjectives | Connects *selvaggia* with *aspra* and *forte* |
-| aspra | Adjective (feminine) | rough | Second property of the forest | Coordinated modifier of *selva* |
-| e (second) | Coordinating conjunction | and | Links adjectives | Connects *aspra* with *forte* |
-| forte | Adjective (feminine) | dense (interpreted as “strong”) | Third property of the forest, implying thickness | Coordinated modifier of *selva* |
-| che | Relative pronoun | which | Introduces relative clause referring to *selva* | Subject of the relative clause |
-| nel | Preposition (contraction of *in* + *il*) | in | Marks the mental context | Introduces adjunct *nel pensier* |
-| pensier | Noun (masculine, poetic form of *pensiero*) | thought | The mental act of recalling the forest | Object of preposition *nel* |
-| rinova | Verb (present) | renews | Action performed by the forest on fear | Main verb of relative clause |
-| la | Definite article (feminine) | the | Specifies the noun *paura* | Determiner of *paura* |
-| paura | Noun (feminine) | fear | Emotional response re‑evoked | Direct object of *rinova* |
+| **Ahi** | Interjection | “Ah!” | Exclamatory expression of emotion | Discourse particle (sentence‑initial) |
+| **quanto** | Adverb of degree | “how” | Marks high intensity of difficulty | Modifies adjective *dura* |
+| **a** | Preposition | “to” | Introduces infinitival complement | Links preposition to *dir* |
+| **dir** | Verb (infinitive) | “tell” | Action whose difficulty is being evaluated | Complement of *a* |
+| **qual** | Interrogative adjective | “what” | Introduces content clause about the thing’s identity | Head of relative clause *qual era* |
+| **era** | Verb (imperf. of *essere*) | “was” | Past copular link inside the content clause | Predicate of *qual* |
+| **è** | Verb (present of *essere*) | “is” | Present copular link equating subject and predicate | Main‑clause copula |
+| **cosa** | Noun | “thing” | Generic referent for the difficult object | Subject of *è* |
+| **dura** | Adjective | “hard” | Qualifies *cosa* as difficult | Predicate adjective (subject complement) |
+| **esta** | Demonstrative adjective | “this” | Points to the specific forest being described | Determiner of *selva* |
+| **selva** | Noun | “wood / forest” | The physical setting under discussion | Head noun of the noun phrase |
+| **selvaggia** | Adjective | “wild” | Attribute of the forest | Modifier of *selva* |
+| **e** (1st) | Coordinating conjunction | “and” | Connects *selvaggia* with *aspra* | Links adjectives |
+| **aspra** | Adjective | “rough” | Attribute of the forest | Modifier of *selva* |
+| **e** (2nd) | Coordinating conjunction | “and” | Connects *aspra* with *forte* | Links adjectives |
+| **forte** | Adjective | “dense / strong” | Attribute of the forest (sense of thickness) | Modifier of *selva* |
+| **che** | Relative pronoun | “which” | Refers back to *selva* and introduces a relative clause | Subject of the clause |
+| **nel** | Preposition + article (in + the) | “in the” | Marks the mental locus of the action | Introduces prepositional phrase *nel pensier* |
+| **pensier** | Noun | “thought” | The mental arena where the forest is considered | Object of preposition *nel* |
+| **rinova** | Verb (present) | “renews” | Action performed on *paura* | Predicate of the relative clause |
+| **la** | Definite article | “the” | Determines the noun *paura* | Determiner of *paura* |
+| **paura** | Noun | “fear” | Emotional response that is revived | Direct object of *rinova* |
 
-*The table lists each source token once (duplicates merged) and aligns it with the English reference translation, providing a contextual definition and its grammatical function within the locked interpretation.*
+*The table preserves the order of the source tokens, aligns each with its English counterpart in the provided reference translation, and records the meaning and syntactic function that are locked by the interpretation above.*
 ]]></message>
 </messages>

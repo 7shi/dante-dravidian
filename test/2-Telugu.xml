@@ -1,134 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <messages>
 <message role="user"><![CDATA[
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For Telugu, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-]]></message>
-<message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|-----------------------|--------------------|
-| Ahi | Exclamatory expression of emotion | అయ్యో [BT: oh!] |
-| quanto | Quantifies the difficulty of the infinitival act | ఎంత [BT: how] |
-| a | Introduces infinitive *dir* | కు [BT: to] |
-| dir | say | చెప్పడానికి [BT: to say] |
-| qual | what | ఏది [BT: what] |
-| era | was | ఉన్నది [BT: was] |
-| è | is | ఉంది [BT: is] |
-| cosa | thing | వస్తువు [BT: thing] |
-| dura | hard | కఠినమైన [BT: hard] |
-| esta | this | ఈ [BT: this] |
-| selva | forest | అడవి [BT: forest] |
-| selvaggia | wild | అరణ్య [BT: wild] |
-| e | and | మరియు [BT: and] |
-| aspra | rough | ముడి [BT: rough] |
-| e | and | మరియు [BT: and] |
-| forte | strong/dense | బలమైన [BT: strong] |
-| che | which | అది [BT: which] |
-| nel | in | లో [BT: in] |
-| pensier | thought | ఆలోచన [BT: thought] |
-| rinova | renews | పునరుద్ధరిస్తుంది [BT: renews] |
-| la | the (definite) | ఆ [BT: the] |
-| paura | fear | భయం [BT: fear] |
-]]></message>
-<message role="user"><![CDATA[
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into Telugu.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Source Line:
-4 Ahi quanto a dir qual era è cosa dura
-Lexical Inventory:
-- అయ్యో
-- ఎంత
-- కు
-- చెప్పడానికి
-- ఏది
-- ఉన్నది
-- ఉంది
-- వస్తువు
-- కఠినమైన
-Assembly Notes:
-- Telugu follows SOV; place the infinitival phrase before the embedded clause, then the copular clause with adjective before the verb “ఉంది”.
-Target Text:
-అయ్యో ఎంత కు చెప్పడానికి ఏది ఉన్నది ఉంది వస్తువు కఠినమైన ఉంది
-
-Source Line:
-5 esta selva selvaggia e aspra e forte
-Lexical Inventory:
-- ఈ
-- అడవి
-- అరణ్య
-- మరియు
-- ముడి
-- మరియు
-- బలమైన
-Assembly Notes:
-- Adjectives precede the noun; coordinate adjectives linked by “మరియు”.
-Target Text:
-ఈ అడవి అరణ్య మరియు ముడి మరియు బలమైన
-
-Source Line:
-6 che nel pensier rinova la paura!
-Lexical Inventory:
-- అది
-- లో
-- ఆలోచన
-- పునరుద్ధరిస్తుంది
-- ఆ
-- భయం
-Assembly Notes:
-- Combine “లో” with “ఆలోచన” to form the locative phrase “ఆలోచనలో”; keep subject‑object order and retain the exclamation.
-Target Text:
-అది ఆలోచనలో పునరుద్ధరిస్తుంది ఆ భయం!
+అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో  
+ఈ అడవి అడవిగా గట్టిగా ఘనంగా ఉంది  
+దాన్ని ఆలోచనలో గుర్తు చేసుకుంటే భయం పునరుద్ధరించబడుతుంది!
 ]]></message>
 <message role="user"><![CDATA[
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Telugu translation)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------|------------------------------|--------------------------|--------|
+| **Ahi** | Interjection expressing exclamation | **అయ్యో** | “Ah!” | OK |
+| **quanto** | Adverb of degree marking high intensity | **ఎంత** | “how / how much” | OK |
+| **a** | Preposition introducing infinitival complement “to” | **చెప్పడానికి** (part of the infinitive) | “to (tell)” | OK |
+| **dir** | Verb (infinitive) “to tell” | **చెప్పడానికి** | “to tell” | OK |
+| **qual** | Interrogative adjective “what” introducing content clause | **ఏమిటో** | “what it is” | OK |
+| **era** | Imperfect of *essere* “was” (past copula) | **అది** (implicit past in context) | “it was” | OK |
+| **è** | Present copula “is” | **అది** | “it is” | OK |
+| **cosa** | Generic noun “thing” | **అది** (used as “thing”) | “thing / it” | OK |
+| **dura** | Adjective “hard / difficult” | **కష్టం** | “hard / difficult” | OK |
+| **esta** | Demonstrative adjective “this” | **ఈ** | “this” | OK |
+| **selva** | Noun “wood / forest” | **అడవి** | “forest / wood” | OK |
+| **selvaggia** | Adjective “wild” | **అడవిగా** | “wildly (like a forest)” | OK |
+| **e** (1st) | Coordinating conjunction “and” linking adjectives | — (conjunction omitted) | — | **MISSING** |
+| **aspra** | Adjective “rough” | **గట్టిగా** | “roughly” | OK |
+| **e** (2nd) | Coordinating conjunction “and” linking adjectives | — (conjunction omitted) | — | **MISSING** |
+| **forte** | Adjective “dense / strong” | **ఘనంగా** | “densely / strongly” | OK |
+| **che** | Relative pronoun “which / that” referring to *selva* | **దాన్ని** (subject pronoun) | “that (it)” | OK |
+| **nel** | Preposition + article “in the” (locative) | **ఆలోచనలో** (contains “లో”) | “in (the) thought” | OK |
+| **pensier** | Noun “thought” (mental arena) | **ఆలోచన** | “thought” | OK |
+| **rinova** | Verb “renews” (present) | **పునరుద్ధరించబడుతుంది** | “is renewed” | OK |
+| **la** | Definite article “the” (object) | — (article omitted) | — | **MISSING** |
+| **paura!** | Noun “fear” (object of renewal) | **భయం** | “fear” | OK |
+
+### Missing / Wrong Items
+- **e** (both occurrences) – the coordinating conjunction “and” is not overtly expressed in the Telugu rendering.  
+- **la** – the definite article “the” is omitted (Telugu does not require an article).  
+
+All other source tokens are represented with appropriate Telugu equivalents that preserve the meaning of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 4, Target Text: అయ్యో ఎంత కు చెప్పడానికి ఏది ఉన్నది వస్తువు కఠినమైన ఉంది, Back-Translation: “Ah! how to tell what was thing hard is”, Reference Translation: “Ah! how hard a thing it is to tell what”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>
+**Line‑by‑line review**
 
-- Line 5, Target Text: ఈ అడవి అరణ్య మరియు ముడి మరియు బలమైన, Back-Translation: “this forest wild and rough and strong”, Reference Translation: “this wild and rough and dense wood”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>
+| Line # | Original Translation | Issues | Corrected Translation |
+|--------|----------------------|--------|-----------------------|
+| 4 | అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో | – | అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో |
+| 5 | ఈ అడవి అడవిగా గట్టిగా ఘనంగా ఉంది | Missing the coordinating conjunctions “e” (and) that link the three adjectives. | ఈ అడవి వన్యమైన మరియు గట్టిగా మరియు ఘనంగా ఉంది |
+| 6 | దాన్ని ఆలోచనలో గుర్తు చేసుకుంటే భయం పునరుద్ధరించబడుతుంది! | Extra phrase “గుర్తు చేసుకుంటే”, wrong pronoun “దాన్ని”. | అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది! |
 
-- Line 6, Target Text: అది ఆలోచనలో పునరుద్ధరిస్తుంది ఆ భయం!, Back-Translation: “it renews that fear in thought!”, Reference Translation: “which in thought renews the fear!”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>
+**Final Telugu text**
 
-```
-అయ్యో ఎంత కు చెప్పడానికి ఏది ఉన్నది వస్తువు కఠినమైన ఉంది
-ఈ అడవి అరణ్య మరియు ముడి మరియు బలమైన
-అది ఆలోచనలో పునరుద్ధరిస్తుంది ఆ భయం!
+```telugu
+అయ్యో చెప్పడానికి ఎంత కష్టం అది ఏమిటో
+ఈ అడవి వన్యమైన మరియు గట్టిగా మరియు ఘనంగా ఉంది
+అది ఆలోచనలో భయాన్ని పునరుద్ధరించుతుంది!
 ```
 ]]></message>
 </messages>

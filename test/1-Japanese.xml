@@ -1,143 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <messages>
 <message role="user"><![CDATA[
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-]]></message>
-<message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|---|---|---|
-| Nel | Introduces the spatial phrase “in the middle” | の中で [BT: in the] |
-| mezzo | Midpoint of the journey | 途中 [BT: midway] |
-| del | Links cammin to vita (of) | の [BT: of] |
-| cammin | The path that constitutes life’s progress | 旅 [BT: journey] |
-| di | Marks possession/association (of) | の [BT: of] |
-| nostra | Belongs to the speaker and companions | 私たちの [BT: our] |
-| vita | The span of human existence | 人生 [BT: life] |
-| mi | The speaker as the experiencer (reflexive) | 自分を [BT: myself] |
-| ritrovai | The act of discovering oneself | 見つけた [BT: found] |
-| per | Introduces the location of the self‑finding | で [BT: within] |
-| una | Introduces a non‑specific forest | ある [BT: a] |
-| selva | The dark natural setting | 森 [BT: forest] |
-| oscura | Qualifies the forest’s character | 暗い [BT: dark] |
-| ché | Signals causal relation to the next clause | なぜなら [BT: because] |
-| la | Specifies the particular way (the) | その [BT: the] |
-| diritta | Indicates the correct/straight way | 正しい [BT: right] |
-| via | The intended correct path | 道 [BT: way] |
-| era | Auxiliary forming the passive perfect (was) | だった [BT: was] |
-| smarrita | State of the way being lost | 失われた [BT: lost] |
-]]></message>
-<message role="user"><![CDATA[
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into Japanese.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Source Line:
-Nel mezzo del cammin di nostra vita
-Lexical Inventory:
-- の中で
-- 途中
-- の
-- 旅
-- の
-- 私たちの
-- 人生
-Assembly Notes:
-- Place possessive phrase before “旅”, then “途中” and finish with location phrase “の中で”.
-Target Text:
-私たちの人生の旅の途中の中で
-
-Source Line:
-mi ritrovai per una selva oscura,
-Lexical Inventory:
-- 自分を
-- 見つけた
-- で
-- ある
-- 森
-- 暗い
-Assembly Notes:
-- Order verb phrase first, then indefinite article + adjective + noun, ending with location particle “で”.
-Target Text:
-自分を見つけたある暗い森で,
-
-Source Line:
-ché la diritta via era smarrita.
-Lexical Inventory:
-- なぜなら
-- その
-- 正しい
-- 道
-- だった
-- 失われた
-Assembly Notes:
-- Start with causal conjunction, then demonstrative + adjective + noun, followed by copula “だった” and predicate “失われた”.
-Target Text:
-なぜならその正しい道だった失われた.
+我々の人生の道の途中で  
+暗い森の中で自分を見つけた、  
+正しい道が見失われていた。
 ]]></message>
 <message role="user"><![CDATA[
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| **Nel** | “in the” – locative preposition + article introducing the midpoint | **で** (as part of 「途中で」) | “at / in” | OK |
+| **mezzo** | “midpoint” – the exact middle point of the journey | **途中** | “midway” | OK |
+| **del** | “of the” – genitive linking *cammin* to *vita* | **の** (as in 「道の」) | “of” | OK |
+| **cammin** | “road” – the path that constitutes the journey | **道** | “road” | OK |
+| **di** | “of” – possessive link between *nostra* and *vita* | **の** (as in 「人生の」) | “of” | OK |
+| **nostra** | “our” – collective possessor of *vita* | **我々の** | “our” | OK |
+| **vita** | “life” – the span of human existence being spoken of | **人生** | “life” | OK |
+| **mi** | reflexive pronoun “myself” – object of *ritrovai* | **自分** | “self / oneself” | OK |
+| **ritrovai** | verb “found” – act of discovering oneself | **見つけた** | “found” | OK |
+| **per** | preposition “within” – locative introducing the forest | **で** (as part of 「中で」) | “in / within” | OK |
+| **una** | indefinite article “a” – marks the forest as indefinite | *(omitted in Japanese)* | “a” | **MISSING** |
+| **selva** | noun “wood / forest” – the dark forest that contains the speaker | **森** | “forest” | OK |
+| **oscura** | adjective “dark” – qualifies the forest as lacking light | **暗い** | “dark” | OK |
+| **ché** | conjunction “for” – introduces the causal clause | *(omitted; causal sense expressed by the following clause)* | “for / because” | **MISSING** |
+| **la** | definite article “the” – specifies the particular way | *(omitted in Japanese)* | “the” | **MISSING** |
+| **diritta** | adjective “right / straight” – qualifies the way as the correct one | **正しい** | “right / correct” | OK |
+| **via** | noun “way” – the correct path that should be followed | **道** | “way / road” | OK |
+| **era** | copular verb “had been” – auxiliary forming the past state | **が** (subject marker in 「道が」) | “(was)” | OK |
+| **smarrita** | past participle “missed / lost” – describes the state of the way | **見失われていた** | “had been missed / was lost” | OK |
+
+### Missing / Problematic Items
+- **una** – Japanese does not use an indefinite article; the translation omitted it.  
+- **ché** – the causal conjunction “for” was not rendered explicitly; the Japanese sentence simply follows the previous clause.  
+- **la** – Japanese lacks a definite article; the article is not represented in the translation.  
+
+All other source tokens have a clear Japanese counterpart that preserves the meaning of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #1  
-  Target Text: 私たちの人生の旅の途中の中で  
-  Back-Translation: in the middle of the journey of our life  
-  Reference Translation: Midway upon the road of our life  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: 私たちの人生の旅の途中の中で  
+**Line # | Original Translation | Issues | Corrected Translation**
 
-- Line #2  
-  Target Text: 自分を見つけたある暗い森で,  
-  Back-Translation: found myself in a certain dark forest  
-  Reference Translation: I found myself within a dark wood,  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: 自分を見つけたある暗い森で,  
+- **Line 1** | 我々の人生の道の途中で | None | 我々の人生の道の途中で  
+- **Line 2** | 暗い森の中で自分を見つけた、 | Missing *una* (indefinite article) | ある暗い森の中で自分を見つけた、  
+- **Line 3** | 正しい道が見失われていた。 | Missing *ché* (causal “for”) and *la* (definite article) | その正しい道が見失われていたために。  
 
-- Line #3  
-  Target Text: なぜならその正しい失われた道だった.  
-  Back-Translation: because it was the right lost way  
-  Reference Translation: for the right way had been missed.  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: なぜならその正しい失われた道だった.  
-
-```
-私たちの人生の旅の途中の中で
-自分を見つけたある暗い森で,
-なぜならその正しい失われた道だった.
+```text
+我々の人生の道の途中で
+ある暗い森の中で自分を見つけた、
+その正しい道が見失われていたために。
 ```
 ]]></message>
 </messages>

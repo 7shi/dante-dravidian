@@ -5,8 +5,7 @@
 Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
 Output: (a) Interpretation Lock FIRST (one bullet per source line):
 - Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
-- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., “slightly”).
-- Include key predicate-argument structure and modifier attachment/scope (what modifies what) when it affects meaning.
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
 - Note: A>B is equivalent to B<A; do not reverse the ordering.
 (b) THEN ONE Markdown table consistent with the Lock:
 - [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
@@ -18,60 +17,49 @@ Reference Translation (provided):
 So bitter is it that death is little more. But in order to treat of the good that there I found, I will tell of the other things that I have seen there.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Interpretation Lock – one bullet per source line**
+**Interpretation Lock – FIRST**  
 
-- **Line 7 “Tant' è amara che poco è più morte;”**  
-  *Locked Meaning*: The (implicit) referent is **so bitter** that **death is only a little more bitter** than it.  
-  - Predicate‑argument structure: **[it] è amara** (copular predicate “is bitter”) + comparative clause **che [poco] è [più] morte** (“that death is a little more [bitter]”).  
-  - Modifier scope: the adverb **poco** limits the degree of the comparative **più**, signalling a *slight* excess of bitterness on the part of death.  
+- **Line 7** *“Tant' è amara che poco è più morte;”* ⇒  
+  *Locked Meaning*: The speaker asserts a high degree of bitterness ( *amara* ) of the situation, and then states a comparative fact: **Entity A = “death”** is **greater than** **Entity B = “little”** by a **slight degree** (“little more”). Truth‑conditions: *Bitter( situation ) ∧ Greater( death , little ) ∧ Degree( slight )*.
 
-- **Line 8 “ma per trattare del ben ch'i' vi trovai,”**  
-  *Locked Meaning*: **But** (contrast) the speaker’s purpose is **to treat/discuss the good that I found there**.  
-  - Predicate‑argument structure: purpose preposition **per** + infinitive **trattare** (to treat) taking the complement **del ben** (“of the good”).  
-  - Relative clause **ch'i' vi trovai** modifies **ben**: subject **i'** (“I”), locative adverb **vi** (“there”), verb **trovai** (past‑historic “found”).  
+- **Line 8** *“ma per trattar del ben ch'i' vi trovai,”* ⇒  
+  *Locked Meaning*: The speaker introduces a purpose clause: **Because** the speaker wishes **to treat** ( *trattar* ) **the good** ( *del ben* ) **that** he **found there** ( *ch'i' vi trovai* ). Truth‑conditions: *Purpose( speaker , treat(good) ) ∧ Locate( good , there ) ∧ Find( speaker , good , there )*.
 
-- **Line 9 “dirò de l'altre cose ch'i' v'ho scorte.”**  
-  *Locked Meaning*: The speaker **will tell** (future) **about the other things that I have seen there**.  
-  - Predicate‑argument structure: main verb **dirò** (“I will say”) with prepositional complement **de l'altre cose** (“about the other things”).  
-  - Relative clause **ch'i' v' ho scorte** modifies **cose**: subject **i'** (“I”), locative **v'** (“there”), auxiliary **ho** + past participle **scorte** (“seen”).  
+- **Line 9** *“dirò de l'altre cose ch'i' v'ho scorte.”* ⇒  
+  *Locked Meaning*: The speaker commits to **telling** ( *dirò* ) **about the other things** ( *l'altre cose* ) **that** he **has seen there** ( *ch'i' v'ho scorte* ). Truth‑conditions: *WillSpeak( speaker , about(other‑things) ) ∧ See( speaker , other‑things , there )*.
 
 ---
 
-## Token‑by‑Token Alignment Table  
+## Alignment Table  
 
 | Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
-|-------------|------------|----------------------|-----------------------|------------------|
-| **Tant'** | adv. (elided *tanto*) | “so” | intensifier of the adjective that follows | degree adverb modifying *amara* |
-| **è** | 3sg pres. of *essere* | “is” | copular verb linking subject (implicit *it*) to predicate | copula |
-| **amara** | fem. sg. adj. | “bitter” | quality attributed to the referent | predicate adjective |
-| **che** | conj. (comparative) | “that” | introduces comparative clause | subordinator |
-| **poco** | adv. | “little” | limits the comparative increase | degree adverb modifying *più* |
-| **è** | 3sg pres. of *essere* | “is” | copular verb in comparative clause | copula |
-| **più** | adv. (comparative) | “more” | marks the comparative increase of bitterness | comparative adverb |
-| **morte** | fem. sg. noun | “death” | entity compared with the referent’s bitterness | subject of comparative clause |
-| **;** | punctuation | – | clause terminator | – |
-| **ma** | conj. | “but” | signals contrast with previous line | coordinating conjunction |
-| **per** | prep. | “in order to” | marks purpose of the infinitive | preposition heading purpose clause |
-| **trattare** | infinitive verb | “to treat” | action the speaker intends to perform | infinitival verb (purpose complement) |
-| **del** | contraction *di + il* (prep. + def. article) | “of the” | introduces the noun phrase *ben* | prepositional article |
-| **ben** | masc. sg. noun (archaic *buono*) | “good” | object of discussion | noun (object of *trattare*) |
-| **ch'** | rel. pron. (elided *che*) | “that” | introduces relative clause modifying *ben* | relative pronoun |
-| **i'** | pron. (elided *io*) | “I” | subject of the relative clause | subject pronoun |
-| **vi** | adv. | “there” | locative complement of *trovai* | locative adverb |
-| **trovai** | 1sg past‑historic of *trovare* | “found” | action performed by the speaker in the past | verb (main verb of relative clause) |
-| **,** | punctuation | – | clause separator | – |
-| **dirò** | 1sg fut. of *dire* | “I will tell” | main clause verb expressing future intention | finite verb (future) |
-| **de** | prep. (variant of *di*) | “of/about” | introduces the prepositional complement | preposition |
-| **l'** | contraction *la* (def. article) | “the” | article for *altre* | definite article |
-| **altre** | fem. pl. adj. | “other” | modifies *cose* | attributive adjective |
-| **cose** | fem. pl. noun | “things” | noun head of the prepositional phrase | noun (object of *dirò*) |
-| **ch'** | rel. pron. (elided *che*) | “that” | introduces relative clause modifying *cose* | relative pronoun |
-| **i'** | pron. (elided *io*) | “I” | subject of the relative clause | subject pronoun |
-| **v'** | adv. (elided *vi*) | “there” | locative complement of *ho scorte* | locative adverb |
-| **ho** | 1sg pres. of *avere* (aux.) | “have” | auxiliary for perfect construction | auxiliary verb |
-| **scorte** | past participle fem. pl. of *scorgere* | “seen” | main verb of perfect construction | past participle (verb) |
-| **.** | punctuation | – | sentence terminator | – |
+|-------------|------------|----------------------|----------------------|------------------|
+| **Tant'** | adv. (elided *tanto*) | “So” | Intensifier indicating a high degree of bitterness | Sentence‑initial intensifier |
+| **è** (1st) | 3sg present of *essere* | “is” | Copular verb linking subject “it” to predicate “bitter” | Predicate verb |
+| **amara** | adj. fem. sg., predicative | “bitter” | Describes the quality of the situation | Predicate adjective |
+| **che** | conjunction (comparative) | “that” | Introduces the comparative clause | Subordinator |
+| **poco** | adv. | “little” | Quantifier expressing a small amount | Degree modifier (comparand) |
+| **è** (2nd) | 3sg present of *essere* | “is” | Copular verb in the comparative clause | Predicate verb |
+| **più** | adv. comparative | “more” | Marks the comparative relation (greater) | Comparative marker |
+| **morte** | noun fem. sg. | “death” | The entity being compared to “little” | Subject of comparative clause |
+| **ma** | conjunction | “But” | Signals contrast with previous statement | Coordinating conjunction |
+| **per** | preposition | “in order to” | Introduces purpose infinitive | Prepositional marker of purpose |
+| **trattar** | infinitive of *trattare* | “to treat” | Action the speaker intends to perform | Verb infinitive (purpose) |
+| **del** | contraction *di + il* (preposition + article) | “of the” | Links “good” to the verb “treat” | Prepositional complement |
+| **ben** | noun masc. sg. (archaic *bene*) | “good” | Object of the treatment | Direct object of *trattar* |
+| **ch'i'** | contraction *che + io* (conjunction + pronoun) | “that I” | Relative pronoun introducing clause | Relative pronoun (subject) |
+| **vi** | adverb of place | “there” | Locates where the good was found | Locative adverb |
+| **trovai** | 1sg past historic of *trovare* | “found” | Completed action of discovery | Main verb of relative clause |
+| **dirò** | 1sg future of *dire* | “I will tell” | Speaker’s future intention | Main verb of sentence 9 |
+| **de** | preposition (variant of *di*) | “of” | Introduces the topic of the forthcoming discourse | Prepositional marker |
+| **l'** | contraction *la* (definite article) | “the” | Definite article for “altre cose” | Determiner |
+| **altre** | adj. fem. pl. | “other” | Specifies a set distinct from previously mentioned | Attribute |
+| **cose** | noun fem. pl. | “things” | The items to be narrated | Direct object of *dirò* |
+| **ch'i'** | contraction *che + io* | “that I” | Relative pronoun introducing clause | Relative pronoun (subject) |
+| **v'** | contraction *vi* (pronoun “there”) | “there” | Locative reference for the seeing | Locative adverb (object of *scorte*) |
+| **ho** | 1sg present of *avere* (auxiliary) | “have” | Forms the perfect with *scorte* | Auxiliary verb |
+| **scorte** | past participle of *scorgere* (to see, to glimpse) | “seen” | Completed perception of the “other things” | Main verb of perfect construction |
 
-*The table aligns each Italian token with its English counterpart in the supplied reference translation, supplies a concise contextual definition, and marks its grammatical function within the locked‑meaning interpretation.*
+*The table respects the locked meanings above, pairing each Italian token with its English counterpart, the sense it carries in context, and its grammatical function within the three lines.*
 ]]></message>
 </messages>

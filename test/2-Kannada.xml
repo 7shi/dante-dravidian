@@ -1,149 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <messages>
 <message role="user"><![CDATA[
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For Kannada, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-]]></message>
-<message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|-------------|-----------------------|--------------------|
-| Ahi | Exclamatory expression of emotion | ಆಹ್! [BT: ah!] |
-| quanto | how (quantifies difficulty) | ಎಷ್ಟು [BT: how much] |
-| a | to (infinitive marker) | ಲು [BT: to (infinitive marker)] |
-| dir | say (action of expressing) | ಹೇಳಲು [BT: to say] |
-| qual | what (introduces content clause) | ಯಾವ [BT: which/what] |
-| era | was (past state) | ಇದ್ದು [BT: was] |
-| è | is (copular link) | ಇದೆ [BT: is] |
-| cosa | thing (entity being described) | ವಸ್ತು [BT: thing] |
-| dura | hard (property of thing) | ಕಠಿಣ [BT: hard] |
-| esta | this (demonstrative) | ಈ [BT: this] |
-| selva | wood/forest (the place) | ಕಾಡು [BT: forest] |
-| selvaggia | wild (first property) | ಕಾಡು [BT: wild] |
-| e | and (connects adjectives) | ಮತ್ತು [BT: and] |
-| aspra | rough (second property) | ಕಠಿಣ [BT: rough] |
-| e (second) | and (connects adjectives) | ಮತ್ತು [BT: and] |
-| forte | dense/strong (third property) | ದೃಢ [BT: strong] |
-| che | which (relative pronoun) | ಅದು [BT: which] |
-| nel | in (marks mental context) | ನಲ್ಲಿ [BT: in] |
-| pensier | thought (mental act) | ಚಿಂತನೆ [BT: thought] |
-| rinova | renews (action on fear) | ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ [BT: renews] |
-| la | the (definite article) | ಆ [BT: the] |
-| paura | fear (emotional response) | ಭಯ [BT: fear] |
-]]></message>
-<message role="user"><![CDATA[
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into Kannada.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Source Line:
-Ahi quanto a dir qual era è cosa dura
-Lexical Inventory:
-- ಆಹ್!
-- ಎಷ್ಟು
-- ಲು
-- ಹೇಳಲು
-- ಯಾವ
-- ಇದ್ದು
-- ಇದೆ
-- ವಸ್ತು
-- ಕಠಿಣ
-Assembly Notes:
-- Kannada places the exclamation first, then the degree adverb, the infinitive marker, the infinitive verb, the interrogative phrase, the copula, and finally the noun‑adjective predicate; the copula “ಇದೆ” follows the adjective‑noun phrase.
-Target Text:
-ಆಹ್! ಎಷ್ಟು ಲು ಹೇಳಲು ಯಾವ ಇದ್ದು ವಸ್ತು ಕಠಿಣ ಇದೆ
-
-Source Line:
-esta selva selvaggia e aspra e forte
-Lexical Inventory:
-- ಈ
-- ಕಾಡು
-- ಕಾಡು
-- ಮತ್ತು
-- ಕಠಿಣ
-- ಮತ್ತು
-- ದೃಢ
-Assembly Notes:
-- Demonstrative precedes the noun; the noun is repeated for the “wild” adjective; coordinated adjectives are linked by “ಮತ್ತು” in a right‑branching chain.
-Target Text:
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ
-
-Source Line:
-che nel pensier rinova la paura!
-Lexical Inventory:
-- ಅದು
-- ನಲ್ಲಿ
-- ಚಿಂತನೆ
-- ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ
-- ಆ
-- ಭಯ
-Assembly Notes:
-- Relative pronoun subject “ಅದು” followed by locative phrase “ನಲ್ಲಿ ಚಿಂತನೆ”, then the verb and its object; exclamation mark retained.
-Target Text:
-ಅದು ನಲ್ಲಿ ಚಿಂತನೆ ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ ಆ ಭಯ!
+ಆಹ್ ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಇದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು  
+ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
+ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
 ]]></message>
 <message role="user"><![CDATA[
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| **Ahi** | Exclamatory interjection “Ah!” | **ಆಹ್** | “Ah!” | OK |
+| **quanto** | Degree adverb “how (much)”, marks intensity of difficulty | **ಎಷ್ಟು** | “how / how much” | OK |
+| **a** | Preposition introducing infinitival complement “to” | — | — | **MISSING** |
+| **dir** | Infinitive verb “to tell” | **ಹೇಳುವುದು** | “to tell / saying” | OK |
+| **qual** | Interrogative adjective “what” introducing content clause | **ಏನು** | “what” | OK |
+| **era** | Imperfect of *essere* “was” (past copula) | **ಆಗಿತ್ತು** | “was” | OK |
+| **è** | Present copula “is” linking subject and predicate | **ಇದು** | “this / it is” (used as a pronoun) | **WRONG** (does not render the copular meaning) |
+| **cosa** | Generic noun “thing” (subject of “is hard”) | **ವಿಷಯ** | “thing / matter” | OK |
+| **dura** | Predicate adjective “hard / difficult” | **ಕಷ್ಟದ** | “hard / difficult” | OK |
+| **esta** | Demonstrative adjective “this” | **ಈ** | “this” | OK |
+| **selva** | Noun “forest / wood” | **ಕಾಡು** | “forest / wood” | OK |
+| **selvaggia** | Adjective “wild” | **ಕಾಡು** | “wild” (same lexical item used for “wild”) | OK |
+| **e** (1st) | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
+| **aspra** | Adjective “rough” | **ಕಠಿಣ** | “rough / harsh” | OK |
+| **e** (2nd) | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
+| **forte** | Adjective “dense / strong” | **ದಟ್ಟ** | “dense / thick” | OK |
+| **che** | Relative pronoun “which / that” | **ಇದು** | “this / that” (subject of relative clause) | OK |
+| **nel** | Preposition+article “in the” (locative) | **ಮನಸ್ಸಿನಲ್ಲಿ** | “in the mind” (contains locative) | OK |
+| **pensier** | Noun “thought / mind” | **ಮನಸ್ಸು** (root of “ಮನಸ್ಸಿನಲ್ಲಿ”) | “mind / thought” | OK |
+| **rinova** | Verb “renews / revives” | **ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ** | “renews / causes again” | OK |
+| **la** | Definite article “the” (determiner) | — | — | **MISSING** |
+| **paura** | Noun “fear” (direct object) | **ಭಯವನ್ನು** | “fear (accusative)” | OK |
+
+---
+
+### Missing / Wrong Items
+- **Missing:** `a` (preposition “to”), `la` (definite article “the”).  
+- **Wrong:** `è` – rendered as “ಇದು”, which functions as a pronoun rather than the copular verb “is”.  
+
+All other source tokens have appropriate Kannada equivalents that preserve the meaning conveyed in the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #4  
-  Target Text: ಆಹ್ ಎಷ್ಟು ಗೆ ಹೇಳಲು ಯಾವ ಇದ್ದು ವಸ್ತು ಕಠಿಣ ಇದೆ  
-  Back-Translation: Ah how to say which was thing hard is  
-  Reference Translation: Ah! how hard a thing it is to tell what it was  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: ಆಹ್ ಎಷ್ಟು ಗೆ ಹೇಳಲು ಯಾವ ಇದ್ದು ವಸ್ತು ಕಠಿಣ ಇದೆ  
+**Line 4**  
+- **Original Translation:** ಆಹ್ ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಇದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳುವುದು  
+- **Issues:** Missing preposition *a* (“to”), wrong rendering of copula *è* (“is”).  
+- **Corrected Translation:** ಆಹ್ ಇದು ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳಲು  
 
-- Line #5  
-  Target Text: ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ  
-  Back-Translation: this forest forest and hard and strong  
-  Reference Translation: this wild and rough and dense wood  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ  
+**Line 5**  
+- **Original Translation:** ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
+- **Issues:** None (the definite article *la* does not exist in Kannada).  
+- **Corrected Translation:** ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ  
 
-- Line #6  
-  Target Text: ಅದು ಚಿಂತನೆನಲ್ಲಿ ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ ಆ ಭಯ!  
-  Back-Translation: which in thought renews the fear!  
-  Reference Translation: which in thought renews the fear!  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-  Corrected Target Text: ಅದು ಚಿಂತನೆನಲ್ಲಿ ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ ಆ ಭಯ!  
+**Line 6**  
+- **Original Translation:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
+- **Issues:** None (the definite article *la* is naturally omitted).  
+- **Corrected Translation:** ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!  
+
+---
 
 ```kannada
-ಆಹ್ ಎಷ್ಟು ಗೆ ಹೇಳಲು ಯಾವ ಇದ್ದು ವಸ್ತು ಕಠಿಣ ಇದೆ
-ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ
-ಅದು ಚಿಂತನೆನಲ್ಲಿ ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ ಆ ಭಯ!
+ಆಹ್ ಇದು ಎಷ್ಟು ಕಷ್ಟದ ವಿಷಯ ಎಂದು ಏನು ಆಗಿತ್ತು ಎಂದು ಹೇಳಲು
+ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
+ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
 ```
 ]]></message>
 </messages>

@@ -1,44 +1,26 @@
 # 4-Stage Translation Prompt (Local LLM)
 
-This repo translates high-difficulty source text into target languages using a **four-step** prompt pipeline. The goal is to make the process:
+This repo translates high-difficulty source text into target languages using a **four-step** prompt pipeline.
+
+## Design assumptions
+
+- **Target runtime**: Local LLMs with limited instruction-following capability (e.g., 120B-parameter open-source models).
+- **Goal**: Word-by-word literal translation to assist readers in understanding the original text (not publication-quality prose).
+- **Simplicity over perfection**: Complex instructions confuse smaller models. We accept imperfect output and keep prompts minimal.
+
+The goal is to make the process:
 
 - Meaning-stable (anchored to a reference translation)
 - Hard to omit components (anti-omission)
 - Debuggable (transparent inventories and checks)
 
-## Quick principles
+## Core rules
 
-1. **Anchor meaning to a reference translation**: use it to resolve polysemy and idioms.
-2. **Separate concerns**: meaning/roles → morphosyntax → inventory+assembly → verification.
-3. **No content invention**: do not add new content words to “fix” missing parts.
-4. **Line fidelity** (for verse): keep line boundaries; copy end punctuation exactly.
-
-## Policy (Non-Negotiable)
-
-These rules apply to ALL steps.
-
-### Do NOT write / do NOT assume
-
-- Do NOT hardcode any specific target language, script, orthography, or typographic conventions.
-   - No language-specific examples (no example sentences, particles, or punctuation from any particular language).
-   - No rules that rely on a specific language’s word order or morphology.
-- Do NOT hardcode any specific source text, work, author, or test case.
-- Do NOT assume a particular reference language; treat the Reference Translation as “the provided reference translation” in its own language.
-- Do NOT invent new content words to repair meaning, coverage, or fluency.
-- Do NOT introduce new punctuation inside a line; only transfer end punctuation from the source line.
-
-### Must do
-
-- Keep line boundaries and the number of lines identical to the source.
-- Keep end punctuation identical to the source line; do not normalize or “fix” punctuation.
-- Make every intermediate artifact debuggable:
-   - Step 3 must list a clean inventory and assemble it; coverage failures indicate missing elements.
-   - Step 4 must explicitly check meaning drift and report failures.
-
-### Output discipline
-
-- Follow the output formats exactly; do not add prose outside the specified formats.
-- When a required format says “table only” or “no extra prose”, comply literally.
+1. **Anchor to reference**: Use the reference translation to resolve polysemy and idioms.
+2. **No content invention**: Never add new content words to fix meaning or fluency.
+3. **Line fidelity**: Keep line count and end punctuation identical to source; no internal punctuation.
+4. **Language-agnostic**: No hardcoded languages, scripts, or language-specific examples.
+5. **Output discipline**: Follow formats exactly; no extra prose.
 
 ## Prompt templates
 
@@ -49,8 +31,7 @@ The following code blocks are the canonical prompts. `translate.py` extracts eac
 Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
 Output: (a) Interpretation Lock FIRST (one bullet per source line):
 - Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
-- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., “slightly”).
-- Include key predicate-argument structure and modifier attachment/scope (what modifies what) when it affects meaning.
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
 - Note: A>B is equivalent to B<A; do not reverse the ordering.
 (b) THEN ONE Markdown table consistent with the Lock:
 - [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
@@ -61,49 +42,26 @@ Reference Translation (provided):
 ```
 
 ```
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For {target_lang}, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-```
-
-```
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into {target_lang}.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into {target_lang}, guided by the Reference Translation and Step 1 analysis.
+Output: ONE {target_lang} line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ```
 
 ```
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+```
+
+```
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final {target_lang} text in ONE code block, line by line (no extra prose).
 ```

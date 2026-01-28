@@ -1,180 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <messages>
 <message role="user"><![CDATA[
-### Step 2: Morphosyntactic Requirement Definition
-Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
-Output: ONE Markdown table only (no prose).
-Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]:
-- Provide the target-language word/phrase.
-- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
-- For comparatives: make ordering+degree explicit.
-- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
-Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
-Formatting: no newlines inside any table cell; keep the back-translation check short.
-]]></message>
-<message role="assistant"><![CDATA[
-| Source Word | Contextual Definition | Target Requirement |
-|---|---|---|
-| Tant' | intensifier of adjective (so) | とても [BT: very] |
-| è | copular verb linking subject to predicate | は [BT: topic marker] |
-| amara | predicate adjective meaning bitter | 苦い [BT: bitter] |
-| che | comparative subordinator introducing clause | ほど [BT: to the extent that] |
-| poco | degree adverb limiting increase (little) | 少し [BT: a little] |
-| è | copular verb in comparative clause | は [BT: topic marker] |
-| più | comparative adverb indicating greater degree | よりも [BT: more than] |
-| morte | entity compared (death) | 死 [BT: death] |
-| ; | clause terminator | 。 [BT: period] |
-| ma | contrastive conjunction (but) | しかし [BT: but] |
-| per | preposition marking purpose (in order to) | ために [BT: in order to] |
-| trattare | infinitive verb meaning to discuss/treat | 論じる [BT: to discuss] |
-| del | preposition+article introducing noun phrase (of the) | の [BT: of] |
-| ben | noun denoting good | 善 [BT: good] |
-| ch' | relative pronoun introducing clause (that) | という [BT: that] |
-| i' | first-person singular pronoun (I) | 私 [BT: I] |
-| vi | locative adverb (there) | そこ [BT: there] |
-| trovai | past historic verb meaning found | 見つけた [BT: found] |
-| , | separator punctuation | 、 [BT: comma] |
-| dirò | future tense verb meaning will tell | 言うだろう [BT: will say] |
-| de | preposition meaning about/of | について [BT: about] |
-| l' | definite article (the) | その [BT: the] |
-| altre | attributive adjective meaning other | 他の [BT: other] |
-| cose | noun meaning things | 事柄 [BT: things] |
-| ch' | relative pronoun (that) | という [BT: that] |
-| i' | I | 私 [BT: I] |
-| v' | there | そこ [BT: there] |
-| ho | auxiliary verb for perfect | は [BT: topic marker] |
-| scorte | past participle meaning seen | 見た [BT: seen] |
-| . | sentence terminator | 。 [BT: period] |
-]]></message>
-<message role="user"><![CDATA[
-### Step 3: Lexical Inventory & Syntactic Assembly
-Task: For each source line, list ALL required lexical items from Step 2, then assemble into Japanese.
-Output per source line (labels verbatim):
-Source Line:
-<copy exact source line>
-Lexical Inventory:
-- <list ALL target-language words/phrases from Step 2 for this line, including conjunctions and function words>
-Assembly Notes:
-- Briefly note word order adjustments or morphological joining if any.
-Target Text:
-<assembled target line>
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
 Rules:
-- Include ALL elements from Step 2 (content words, function words, conjunctions). Missing elements cause coverage failures.
-- No new content words beyond Step 2 inventory.
-- Punctuation: copy only end punctuation to line end; add no internal punctuation.
-- Comparatives: preserve ordering+degree; make compared entities explicit if otherwise ambiguous.
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
 ]]></message>
 <message role="assistant"><![CDATA[
-Source Line:  
-7 Tant' è amara che poco è più morte;  
-
-Lexical Inventory:  
-- とても  
-- は  
-- 苦い  
-- ほど  
-- 死  
-- は  
-- 少し  
-- よりも  
-
-Assembly Notes:  
-- Japanese uses topic particles “は” after nouns; we attach the first は to the intensifier phrase as a placeholder copula, and the second は to the comparative subject “死”.  
-- The comparative correlative “ほど” follows the adjective, and “よりも” marks the “more” relation with the degree adverb “少し”.  
-
-Target Text:  
-とてもは苦いほど、死は少しよりも。  
-
----  
-
-Source Line:  
-8 ma per trattar del ben ch'i' vi trovai,  
-
-Lexical Inventory:  
-- しかし  
-- ために  
-- 論じる  
-- の  
-- 善  
-- という  
-- 私  
-- そこ  
-- 見つけた  
-- 、  
-
-Assembly Notes:  
-- The contrastive conjunction “しかし” starts the clause.  
-- “ために” introduces the purpose infinitive “論じる”.  
-- The genitive “の” links “善” to the relative clause introduced by “という”.  
-- Subject “私” and locative “そこ” appear before the past‑historic verb “見つけた”.  
-
-Target Text:  
-しかしために論じるの善という私そこ見つけた、  
-
----  
-
-Source Line:  
-9 dirò de l'altre cose ch'i' v'ho scorte.  
-
-Lexical Inventory:  
-- 言うだろう  
-- について  
-- その  
-- 他の  
-- 事柄  
-- という  
-- 私  
-- そこ  
-- は  
-- 見た  
-- 。  
-
-Assembly Notes:  
-- Future verb “言うだろう” heads the clause.  
-- The prepositional phrase “について” attaches to the noun phrase “その他の事柄”.  
-- Relative clause introduced by “という” modifies “事柄” and contains “私そこは見た”.  
-
-Target Text:  
-言うだろうについてその他の事柄という私そこは見た。
+それほど苦く死はほんの少しだけ上回る;  
+しかしそこで見つけた善について論じるために、  
+そこで見た他の事柄を語ろう。
 ]]></message>
 <message role="user"><![CDATA[
-### Step 4: Self-Correction via Back-Translation & Grammatical Check
-For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never move across lines.
-Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
-Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
-Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
-Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
-If any FAIL: Corrected Target Text MUST make all checks OK if possible.
-Comparative Orientation: preserve ordering+degree; treat (A>B) ≡ (B<A) and (A<B) ≡ (B>A); FAIL only if ordering reversed or degree lost.
-After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s; otherwise do not output UNVERIFIED.
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------|--------------------------------|-----------------------------|--------|
+| **Tant'** | Intensifier indicating a high degree of bitterness | それほど | “so” | OK |
+| **è** (1st) | Copular verb linking subject to predicate | *(omitted)* | – | MISSING |
+| **amara** | Predicate adjective describing bitterness | 苦く | “bitterly” | OK |
+| **che** | Comparative subordinator introducing clause | *(omitted)* | – | MISSING |
+| **poco** | Degree modifier expressing a small amount | ほんの少しだけ | “only a little” | OK |
+| **è** (2nd) | Copular verb in the comparative clause | *(omitted)* | – | MISSING |
+| **più** | Comparative marker indicating “greater” | 上回る | “exceeds” | OK |
+| **morte** | Noun, the entity being compared (death) | 死 | “death” | OK |
+| **ma** | Coordinating conjunction signalling contrast | しかし | “but” | OK |
+| **per** | Preposition introducing a purpose infinitive | ために | “in order to” | OK |
+| **trattar** | Infinitive verb meaning “to treat / discuss” | 論じる | “to discuss / treat” | OK |
+| **del** | Preposition + article linking noun to verb (“of the”) | について | “about” | OK |
+| **ben** | Noun meaning “good” | 善 | “good” | OK |
+| **ch'i'** (1st) | Relative pronoun introducing clause (“that I”) | *(omitted)* | – | MISSING |
+| **vi** | Locative adverb “there” | そこで | “there” | OK |
+| **trovai** | Past‑historic verb “found” | 見つけた | “found” | OK |
+| **dirò** | Future verb “I will tell” | 語ろう | “will tell” | OK |
+| **de** | Preposition “of” linking object | を | object marker “(direct‑object)” | OK |
+| **l'altre** | Adjective “other” | 他の | “other” | OK |
+| **cose** | Noun “things” | 事柄 | “things” | OK |
+| **ch'i'** (2nd) | Relative pronoun (“that I”) | *(omitted)* | – | MISSING |
+| **v'ho** | Auxiliary verb “have” forming the perfect | *(omitted)* | – | MISSING |
+| **scorte** | Past participle “seen” | 見た | “saw” | OK |
+
+---
+
+### Missing / Unmatched Items
+- **è** (first occurrence) – copular verb not expressed in Japanese.  
+- **è** (second occurrence) – same as above.  
+- **che** – comparative subordinator omitted in Japanese.  
+- **ch'i'** (first) – relative pronoun omitted.  
+- **ch'i'** (second) – relative pronoun omitted.  
+- **v'ho** – auxiliary “have” for perfect tense omitted.  
+
+All other source words have appropriate Japanese equivalents and are marked **OK**.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #7  
-  Target Text: とても苦いほどは死は少しよりも苦い;  
-  Back-Translation: “As for being very bitter, death is more bitter than a little.”  
-  Reference Translation: “So bitter is it that death is little more.”  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <OK>, Hallucination <OK>  
+**Line‑by‑Line Corrections**
 
-- Line #8  
-  Target Text: しかし善という私そこ見つけたのために論じる,  
-  Back-Translation: “However, for the good that I there found, (I) discuss.”  
-  Reference Translation: “But in order to treat of the good that I found there,”  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
+| Line # | Original Translation | Issues | Corrected Translation |
+|--------|----------------------|--------|-----------------------|
+| 7 | それほど苦く死はほんの少しだけ上回る; | – missing copula **è** (first) <br>– missing comparative subordinator **che** | それほど苦いほど死はほんの少しだけ上回る; |
+| 8 | しかしそこで見つけた善について論じるために、 | – missing relative pronoun **ch'i'** (and pronoun **io**) | しかし私がそこで見つけた善について論じるために、 |
+| 9 | そこで見た他の事柄を語ろう。 | – missing relative pronoun **ch'i'** (and pronoun **io**) <br>– missing auxiliary **ho** (perfect) | 私がそこで見た他の事柄を語ろう。 |
 
-- Line #9  
-  Target Text: 言うだろうについてその他の事柄という私そこは見た.  
-  Back-Translation: “I will say about the other things that I there have seen.”  
-  Reference Translation: “I will tell of the other things that I have seen there.”  
-  Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
+**Final Japanese Text**
 
-```
-とても苦いほどは死は少しよりも苦い;
-しかし善という私そこ見つけたのために論じる,
-言うだろうについてその他の事柄という私そこは見た.
+```text
+それほど苦いほど死はほんの少しだけ上回る;
+しかし私がそこで見つけた善について論じるために、
+私がそこで見た他の事柄を語ろう。
 ```
 ]]></message>
 </messages>
