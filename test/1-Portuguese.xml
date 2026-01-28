@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+No meio do caminho da nossa vida  
+encontrei‑me numa selva escura,  
+pois a via direita estava perdida.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Portuguese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|-----------------------------------|-----------------------------|--------|
+| **Nel** | prepositional phrase head “in the middle of” | **No** | “in the” | OK |
+| **mezzo** | noun, the middle point of a journey | **meio** | “middle” | OK |
+| **del** | preposition linking “cammin” to “vita” (genitive) | **do** | “of the” | OK |
+| **cammin** | noun “road, path” | **caminho** | “road” | OK |
+| **di** | preposition linking “nostra” to “vita” (genitive) | **da** | “of the” | OK |
+| **nostra** | possessive adjective “our” | **nossa** | “our” | OK |
+| **vita** | noun “life” | **vida** | “life” | OK |
+| **mi** | reflexive object of “ritrovai” (self) | **me** (part of *encontrei‑me*) | “myself” | OK |
+| **ritrovai** | main verb “found” (passato remoto) | **encontrei** | “found” | OK |
+| **per** | locative preposition “within, in” | **em** (implicit in *numa*) | “in/within” | OK |
+| **una** | indefinite article “a” | **uma** | “a” | OK |
+| **selva** | noun “forest, wood” | **selva** | “forest/wood” | OK |
+| **oscura** | adjective “dark” | **escura** | “dark” | OK |
+| **ché** | causal conjunction “for, because” | **pois** | “for” | OK |
+| **la** | definite article “the” | **a** | “the” | OK |
+| **diritta** | adjective “right, straight (correct way)” | **direita** | “right” | OK |
+| **via** | noun “way, road” | **via** | “way” | OK |
+| **era** | copular verb “had been, was” (imperfect) | **estava** | “was” | OK |
+| **smarrita** | predicate adjective “lost, missed” | **perdida** | “lost” | OK |
+
+### Missing / Wrong Items
+- **None.** All source tokens are accounted for and correctly mapped to the Portuguese translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 1**  
+- **Original Translation:** No meio do caminho da nossa vida  
+- **Issues:** None  
+- **Corrected Translation:** No meio do caminho da nossa vida  
+
+**Line 2**  
+- **Original Translation:** encontrei‑me numa selva escura,  
+- **Issues:** None  
+- **Corrected Translation:** encontrei‑me numa selva escura,  
+
+**Line 3**  
+- **Original Translation:** pois a via direita estava perdida.  
+- **Issues:** None  
+- **Corrected Translation:** pois a via direita estava perdida.  
+
+```text
+No meio do caminho da nossa vida
+encontrei‑me numa selva escura,
+pois a via direita estava perdida.
+```
+]]></message>
+</messages>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tan amarga es que la muerte es poco más;  
+Pero para tratar del bien que allí encontré,  
+Diré de las otras cosas que allí he visto.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Italian → Spanish)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Spanish) | Back‑Translation (English) | Status |
+|---|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| 1 | **Tant'** | Intensifier indicating a high degree of bitterness | **Tan** | “so” | OK |
+| 2 | **è** (1) | Copular verb linking subject to predicate “bitter” | **es** | “is” | OK |
+| 3 | **amara** | Predicate adjective describing bitterness | **amarga** | “bitter” | OK |
+| 4 | **che** | Subordinator introducing the comparative clause | **que** | “that” | OK |
+| 5 | **poco** | Degree modifier expressing a small amount | **poco** | “little” | OK |
+| 6 | **è** (2) | Copular verb in the comparative clause | **es** | “is” | OK |
+| 7 | **più** | Comparative marker indicating a greater amount | **más** | “more” | OK |
+| 8 | **morte** | Subject of the comparative clause, “death” | **muerte** | “death” | OK |
+| 9 | **ma** | Coordinating conjunction signalling contrast | **Pero** | “but” | OK |
+|10| **per** | Prepositional marker of purpose | **para** | “in order to” | OK |
+|11| **trattar** | Infinitive “to treat” | **tratar** | “to treat” | OK |
+|12| **del** | Prepositional complement “of the” | **del** | “of the” | OK |
+|13| **ben** | Direct object “good” | **bien** | “good” | OK |
+|14| **ch'i'** (1) | Relative pronoun introducing clause, subject “I” | **que** | “that I” | OK |
+|15| **vi** | Locative adverb “there” | **allí** | “there” | OK |
+|16| **trovai** | Main verb of the relative clause “found” | **encontré** | “found” | OK |
+|17| **dirò** | Future main verb “I will tell” | **Diré** | “I will tell” | OK |
+|18| **de** | Prepositional marker “of” | **de** | “of” | OK |
+|19| **l'altre** | Definite article + adjective “the other” | **las otras** | “the other” | OK |
+|20| **cose** | Direct object “things” | **cosas** | “things” | OK |
+|21| **ch'i'** (2) | Relative pronoun introducing clause, subject “I” | **que** | “that I” | OK |
+|22| **v'ho** | Auxiliary verb “have” in perfect construction | **he** | “have” | OK |
+|23| **scorte** | Main verb of perfect “seen” | **visto** | “seen” | OK |
+
+### Missing / Wrong Items
+None – every source token is represented in the Spanish translation with the correct sense and grammatical role.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 7**  
+- **Original Translation:** Tan amarga es que la muerte es poco más;  
+- **Issues:** None  
+- **Corrected Translation:** Tan amarga es que la muerte es poco más;  
+
+**Line 8**  
+- **Original Translation:** Pero para tratar del bien que allí encontré,  
+- **Issues:** None  
+- **Corrected Translation:** Pero para tratar del bien que allí encontré,  
+
+**Line 9**  
+- **Original Translation:** Diré de las otras cosas que allí he visto.  
+- **Issues:** None  
+- **Corrected Translation:** Diré de las otras cosas que allí he visto.  
+
+```text
+Tan amarga es que la muerte es poco más;
+Pero para tratar del bien que allí encontré,
+Diré de las otras cosas que allí he visto.
+```
+]]></message>
+</messages>

@@ -85,3 +85,59 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 7 それほど苦いほど死はほんの少しだけ上回る;
 8 しかし私がそこで見つけた善について論じるために、
 9 私がそこで見た他の事柄を語ろう。
+
+# French
+
+1 Au milieu du chemin de notre vie
+2 je me retrouvai dans une forêt sombre,
+3 car la voie droite avait été perdue.
+
+4 Ah comme il est dur de dire ce qu'était cette chose
+5 cette forêt sauvage et âpre et dense
+6 qui dans la pensée renouvelle la peur!
+
+7 Tellement amère est‑elle que la mort n’est que légèrement plus;
+8 mais pour traiter du bien que j’ai trouvé là,
+9 je dirai des autres choses que j’ai vues là.
+
+# Spanish
+
+1 En medio del camino de nuestra vida
+2 me encontré en una selva oscura,
+3 pues la recta vía estaba perdida.
+
+4 Ay cuanto es cosa dura a decir qué era
+5 esta selva salvaje y áspera y fuerte
+6 que en el pensamiento renueva la miedo!
+
+7 Tan amarga es que la muerte es poco más;
+8 Pero para tratar del bien que allí encontré,
+9 Diré de las otras cosas que allí he visto.
+
+# Portuguese
+
+1 No meio do caminho da nossa vida
+2 encontrei‑me numa selva escura,
+3 pois a via direita estava perdida.
+
+4 Ai quão difícil é a dizer o que era coisa dura
+5 esta selva selvagem e áspera e forte
+6 que no pensamento renova o medo!
+
+7 Tão amarga é que a morte é pouco mais;
+8 Mas para tratar do bem que lá encontrei,
+9 Direi das outras coisas que lá tinha visto.
+
+# Esperanto
+
+1 En la mezo de la vojo de nia vivo
+2 Mi trovis min en malluma arbaro,
+3 ĉar la prava vojo estis perdita.
+
+4 Ho, kiom malfacila estas por diri kio ĝi estis
+5 ĉi tiu sovaĝa kaj aspra kaj densa arbaro
+6 kiu en pensado renovigas la timon!
+
+7 Tiom amara estas ĝi ke morto estas iom pli;
+8 Sed por trakti bonon kiun mi trovis tie,
+9 Mi diros pri la aliaj aferoj kiujn mi jam vidis tie.

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ah comme il est dur de dire ce que c'était  
+cette forêt sauvage et âpre et dense  
+qui dans la pensée renouvelle la peur!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑French Mapping Table**
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (French) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------|------------------------------|------------------------|--------|
+| Ahi | Exclamatory expression of emotion | Ah | “Ah!” | OK |
+| quanto | Marks high intensity of difficulty | comme | “how” (as in “how hard”) | OK |
+| a | Introduces infinitival complement | de | “to” | OK |
+| dir | Action whose difficulty is evaluated | dire | “to tell” | OK |
+| qual | Introduces content clause about identity | ce | “what” | OK |
+| era | Past copular link inside content clause | c'était | “was” | OK |
+| è | Present copular link equating subject and predicate | est | “is” | OK |
+| cosa | Generic referent for the difficult object | — | “thing” | **MISSING** |
+| dura | Qualifies *cosa* as difficult | dur | “hard” | OK |
+| esta | Points to the specific forest being described | cette | “this” | OK |
+| selva | The physical setting (forest) | forêt | “forest” | OK |
+| selvaggia | Attribute of the forest (wild) | sauvage | “wild” | OK |
+| e (1st) | Connects *selvaggia* with *aspra* | et | “and” | OK |
+| aspra | Attribute of the forest (rough) | âpre | “rough” | OK |
+| e (2nd) | Connects *aspra* with *forte* | et | “and” | OK |
+| forte | Attribute of the forest (dense/strong) | dense | “dense” | OK |
+| che | Refers back to *selva* and introduces a relative clause | qui | “which” | OK |
+| nel | Marks the mental locus of the action | dans | “in” | OK |
+| pensier | The mental arena where the forest is considered | pensée | “thought” | OK |
+| rinova | Action performed on *paura* | renouvelle | “renews” | OK |
+| la | Determines the noun *paura* | la | “the” | OK |
+| paura | Emotional response that is revived | peur | “fear” | OK |
+
+### Missing / Wrong Items
+- **cosa** – not rendered in the French translation (marked **MISSING**).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 4** – Original: *Ah comme il est dur de dire ce que c'était*  
+**Issues:** missing translation of **cosa** (“thing”).  
+**Corrected:** *Ah comme il est dur de dire ce qu'était cette chose*
+
+**Line 5** – Original: *cette forêt sauvage et âpre et dense*  
+**Issues:** none.  
+**Corrected:** *(no change)*
+
+**Line 6** – Original: *qui dans la pensée renouvelle la peur!*  
+**Issues:** none.  
+**Corrected:** *(no change)*  
+
+---
+
+```text
+Ah comme il est dur de dire ce qu'était cette chose
+cette forêt sauvage et âpre et dense
+qui dans la pensée renouvelle la peur!
+```
+]]></message>
+</messages>

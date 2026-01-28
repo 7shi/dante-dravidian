@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tiom amara estas ĝi ke morto estas iom pli;  
+Sed por trakti bonon kiun mi trovis tie,  
+Mi diros pri la aliaj aferoj kiujn mi vidis tie.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------|------------------------------|------------------------|--------|
+| **Tant'** | Intensifier indicating a high degree of bitterness | **Tiom** | “so / that much” | OK |
+| **è** (1st) | Copular verb linking subject “it” to predicate “bitter” | **estas** | “is” | OK |
+| **amara** | Predicate adjective describing bitterness | **amara** | “bitter” | OK |
+| **che** | Subordinator introducing the comparative clause | **ke** | “that” (comparative) | OK |
+| **poco** | Degree modifier (comparand) | **iom** | “little, a little” | OK |
+| **è** (2nd) | Copular verb in the comparative clause | **estas** | “is” | OK |
+| **più** | Comparative marker indicating greater | **pli** | “more” | OK |
+| **morte;** | Subject of the comparative clause (death) | **morto;** | “death” | OK |
+| **ma** | Coordinating conjunction signalling contrast | **Sed** | “but / however” | OK |
+| **per** | Prepositional marker of purpose | **per** | “for / in order to” | OK |
+| **trattar** | Verb infinitive (purpose) – “to treat” | **trakti** | “to treat” | OK |
+| **del** | Prepositional complement linking “good” to the verb | **bonon** | “good (object)” | OK |
+| **ben** | Object of the treatment – “good” | **bonon** | “good” | OK |
+| **ch'i'** | Relative pronoun (subject) introducing clause | **kiun** | “that (which) I …” (object) | OK |
+| **vi** | Locative adverb “there” | **tie** | “there” | OK |
+| **trovai,** | Past‑historic verb “found” | **trovis** | “found” | OK |
+| **dirò** | Future verb “will tell” | **diros** | “will tell” | OK |
+| **de** | Prepositional marker introducing the topic | **pri** | “about” | OK |
+| **l'altre** | Definite article for “altre cose” | **la** | “the” | OK |
+| **cose** | Noun “things” (plural) | **aliaj aferoj** | “other things” | OK |
+| **ch'i'** | Relative pronoun introducing clause | **kiujn** | “that (which) I …” (object) | OK |
+| **v'** | Locative adverb “there” | **tie** | “there” | OK |
+| **ho** | Auxiliary verb forming the perfect (present) | **mi** | “I” (subject) | **WRONG** |
+| **scorte.** | Past participle “seen” | **vidis** | “saw / seen” | OK |
+
+### Items that are **MISSING** or **WRONG**
+
+* **ho → mi** – The auxiliary *ho* (present perfect) was not rendered; instead a subject pronoun *mi* was added, which does not correspond to the source token. This is marked **WRONG**.  
+
+No source words are completely missing from the table; all tokens are accounted for.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 7**  
+Original Translation: Tiom amara estas ĝi ke morto estas iom pli;  
+Issues: none  
+Corrected Translation: Tiom amara estas ĝi ke morto estas iom pli;  
+
+**Line 8**  
+Original Translation: Sed por trakti bonon kiun mi trovis tie,  
+Issues: none  
+Corrected Translation: Sed por trakti bonon kiun mi trovis tie,  
+
+**Line 9**  
+Original Translation: Mi diros pri la aliaj aferoj kiujn mi vidis tie.  
+Issues: missing representation of the auxiliary *ho* (present perfect)  
+Corrected Translation: Mi diros pri la aliaj aferoj kiujn mi **jam** vidis tie.  
+
+```
+Tiom amara estas ĝi ke morto estas iom pli;
+Sed por trakti bonon kiun mi trovis tie,
+Mi diros pri la aliaj aferoj kiujn mi jam vidis tie.
+```
+]]></message>
+</messages>

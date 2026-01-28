@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ho, kiom malfacila estas diri kio ĝi estis  
+ĉi tiu sovaĝa kaj aspra kaj densa arbaro  
+kiu en pensado renovigas la timon!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Esperanto) | Back‑Translation | Status |
+|-------------|--------------------------------------|--------------------------------|-------------------|--------|
+| Ahi | Exclamatory expression of emotion | Ho | “Ah!” | OK |
+| quanto | Marks high intensity of difficulty | kiom | “how” (as in “how hard”) | OK |
+| a | Preposition introducing infinitival complement “to” | *(none – omitted)* | – | **MISSING** |
+| dir | Action “to tell” whose difficulty is evaluated | diri | “to tell” | OK |
+| qual | Interrogative “what” introducing content clause | kio | “what” | OK |
+| era | Past copular link inside content clause | estis | “was” | OK |
+| è | Present copular link equating subject and predicate | estas | “is” | OK |
+| cosa | Generic referent “thing” | ĝi | “it” (refers to the thing) | OK |
+| dura | Qualifies *cosa* as difficult/hard | malfacila | “hard / difficult” | OK |
+| esta | Demonstrative “this” pointing to the forest | ĉi tiu | “this” | OK |
+| selva | Noun “forest / wood” | arbaro | “forest / wood” | OK |
+| selvaggia | Attribute “wild” | sovaĝa | “wild” | OK |
+| e (1st) | Coordinating conjunction linking adjectives | kaj | “and” | OK |
+| aspra | Attribute “rough” | aspra | “rough” | OK |
+| e (2nd) | Coordinating conjunction linking adjectives | kaj | “and” | OK |
+| forte | Attribute “dense / strong” | densa | “dense / thick” | OK |
+| che | Relative pronoun referring back to *selva* | kiu | “which / that” | OK |
+| nel | Preposition + article “in the” (mental locus) | en | “in” | OK |
+| pensier | Noun “thought / mental arena” | pensado | “thought” | OK |
+| rinova | Verb “renews” (present) | renovigas | “renews” | OK |
+| la | Definite article determining *paura* | la | “the” | OK |
+| paura! | Noun “fear” (object of renewal) | timon! | “fear” | OK |
+
+### Missing / Wrong Items
+- **Missing:** `a` – the preposition “to” was not rendered explicitly in the Esperanto line (the infinitive *diri* stands alone). No other items are marked as wrong.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line‑by‑line correction report**
+
+| Line # | Original Translation (Step 2) | Issues | Corrected Translation |
+|--------|------------------------------|--------|-----------------------|
+| 4 | Ho, kiom malfacila estas diri kio ĝi estis | Missing preposition “a” (to) → add functional preposition **por** before the infinitive | Ho, kiom malfacila estas **por** diri kio ĝi estis |
+| 5 | ĉi tiu sovaĝa kaj aspra kaj densa arbaro | – | ĉi tiu sovaĝa kaj aspra kaj densa arbaro |
+| 6 | kiu en pensado renovigas la timon! | – | kiu en pensado renovigas la timon! |
+
+**Final Esperanto text**
+
+```text
+Ho, kiom malfacila estas por diri kio ĝi estis
+ĉi tiu sovaĝa kaj aspra kaj densa arbaro
+kiu en pensado renovigas la timon!
+```
+]]></message>
+</messages>

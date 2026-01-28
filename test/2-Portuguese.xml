@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ai quão difícil é dizer o que era coisa dura  
+esta selva selvagem e áspera e forte  
+que no pensamento renova o medo!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| # | Source Word | Contextual Definition (Step 1) | Target Word/Phrase (Portuguese) | Back‑Translation (English) | Status |
+|---|-------------|--------------------------------|--------------------------------|-----------------------------|--------|
+| 1 | **Ahi** | Interjection expressing exclamation | **Ai** | “Ah!” | OK |
+| 2 | **quanto** | Adverb of degree marking high intensity | **quão** | “how” (intensifier) | OK |
+| 3 | **a** | Preposition introducing the infinitive *dir* | *(none – omitted)* | – | **MISSING** |
+| 4 | **dir** | Verb infinitive “to tell” | **dizer** | “to say / to tell” | OK |
+| 5 | **qual** | Interrogative adjective “what” introducing the content clause | **que** (as part of **o que**) | “what / which” | OK |
+| 6 | **era** | Imperfect of *essere* “was” inside the content clause | **era** | “was” | OK |
+| 7 | **è** | Present copula “is” linking subject and predicate | **é** | “is” | OK |
+| 8 | **cosa** | Generic noun “thing” | **coisa** | “thing” | OK |
+| 9 | **dura** | Predicate adjective “hard / difficult” | **dura** | “hard / difficult” | OK |
+|10| **esta** | Demonstrative adjective “this” | **esta** | “this” | OK |
+|11| **selva** | Noun “forest / wood” | **selva** | “forest / wood” | OK |
+|12| **selvaggia** | Adjective “wild” | **selvagem** | “wild” | OK |
+|13| **e** (1st) | Coordinating conjunction “and” | **e** | “and” | OK |
+|14| **aspra** | Adjective “rough” | **áspera** | “rough” | OK |
+|15| **e** (2nd) | Coordinating conjunction “and” | **e** | “and” | OK |
+|16| **forte** | Adjective “dense / strong” | **forte** | “strong / dense” | OK |
+|17| **che** | Relative pronoun “which / that” | **que** | “which / that” | OK |
+|18| **nel** | Preposition + article “in the” | **no** | “in the” | OK |
+|19| **pensier** | Noun “thought” | **pensamento** | “thought” | OK |
+|20| **rinova** | Verb “renews” | **renova** | “renews” | OK |
+|21| **la** | Definite article “the” (object) | **o** | “the” | OK |
+|22| **paura** | Noun “fear” | **medo** | “fear” | OK |
+
+### Missing / Wrong Items
+- **Missing:** **a** – the preposition that introduced the infinitive *dir* is not rendered in the Portuguese translation (the infinitive appears directly as *dizer*).  
+- **No wrong translations** were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line‑by‑line review**
+
+| Line | Original Translation | Issues | Corrected Translation |
+|------|----------------------|--------|-----------------------|
+| 4 | Ai quão difícil é dizer o que era coisa dura | Missing preposition **a** introducing the infinitive *dizer* (source “a dir”) | Ai quão difícil é **a** dizer o que era coisa dura |
+| 5 | esta selva selvagem e áspera e forte | – | esta selva selvagem e áspera e forte |
+| 6 | que no pensamento renova o medo! | – | que no pensamento renova o medo! |
+
+**Final Portuguese text**
+
+```text
+Ai quão difícil é a dizer o que era coisa dura
+esta selva selvagem e áspera e forte
+que no pensamento renova o medo!
+```
+]]></message>
+</messages>

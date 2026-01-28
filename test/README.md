@@ -1,6 +1,8 @@
-Using this method, the first 3 lines of Dante's "Divine Comedy" Inferno (original Italian) were translated into Dravidian languages (Telugu, Tamil, Kannada, Malayalam), referencing the English translation (Norton).
+This project originally focused on translating Dante's "Divine Comedy" into Dravidian languages (Telugu, Tamil, Kannada, Malayalam), which are SOV agglutinative languages with limited training data in most LLMs. However, the translation methodology proved to be general-purpose and language-agnostic, containing no language-specific instructions.
 
-Below, grammatical and vocabulary issues are pointed out as a literal translation of the Italian original.
+Following successful generalization, additional target languages were added to validate the methodology's versatility: Japanese (another SOV agglutinative language), Romance languages closely related to Italian (French, Spanish, Portuguese), and Esperanto (a constructed auxiliary language with vocabulary and syntax heavily influenced by Romance languages).
+
+The examples below show translations of the first 9 lines of Dante's "Divine Comedy" Inferno (original Italian), referencing the English translation (Norton). Grammatical and vocabulary issues are pointed out as a literal translation of the Italian original.
 
 ## Italian (Dante)
 
@@ -119,8 +121,6 @@ Below, grammatical and vocabulary issues are pointed out as a literal translatio
 
 ## Japanese (GPT-OSS 120B)
 
-Main targets are Dravidian languages. Japanese is an agglutinative reference, not a primary target.
-
 ```text
 1 我々の人生の道の途中で
 2 ある暗い森の中で自分を見つけた、
@@ -142,12 +142,103 @@ Main targets are Dravidian languages. Japanese is an agglutinative reference, no
 - Line 6: “renews the fear” is paraphrased (“make it new”), reducing literal correspondence.
 - Line 7: Comparative is incomplete/elliptical; the comparison scale/property is not explicit.
 
+## French (GPT-OSS 120B)
+
+```text
+1 Au milieu du chemin de notre vie
+2 je me retrouvai dans une forêt sombre,
+3 car la voie droite avait été perdue.
+
+4 Ah comme il est dur de dire ce qu'était cette chose
+5 cette forêt sauvage et âpre et dense
+6 qui dans la pensée renouvelle la peur!
+
+7 Tellement amère est‑elle que la mort n’est que légèrement plus;
+8 mais pour traiter du bien que j’ai trouvé là,
+9 je dirai des autres choses que j’ai vues là.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 4: Slightly indirect phrasing; correspondence is acceptable but not maximally literal.
+- Line 7: Comparative is incomplete/elliptical (“la mort n’est que légèrement plus” lacks the explicit scale/property, i.e., “plus amère”).
+
+## Spanish (GPT-OSS 120B)
+
+```text
+1 En medio del camino de nuestra vida
+2 me encontré en una selva oscura,
+3 pues la recta vía estaba perdida.
+
+4 Ay cuanto es cosa dura a decir qué era
+5 esta selva salvaje y áspera y fuerte
+6 que en el pensamiento renueva la miedo!
+
+7 Tan amarga es que la muerte es poco más;
+8 Pero para tratar del bien que allí encontré,
+9 Diré de las otras cosas que allí he visto.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 4: Awkward structure; “what it was” is only partially realized.
+- Line 6: Agreement/grammar error (“la miedo”).
+- Line 7: Comparative is incomplete (“la muerte es poco más” lacks the explicit scale/property).
+
+## Portuguese (GPT-OSS 120B)
+
+```text
+1 No meio do caminho da nossa vida
+2 encontrei‑me numa selva escura,
+3 pois a via direita estava perdida.
+
+4 Ai quão difícil é a dizer o que era coisa dura
+5 esta selva selvagem e áspera e forte
+6 que no pensamento renova o medo!
+
+7 Tão amarga é que a morte é pouco mais;
+8 Mas para tratar do bem que lá encontrei,
+9 Direi das outras coisas que lá tinha visto.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 4: Awkward phrasing (“é a dizer”); structure is not clean.
+- Line 7: Comparative is incomplete (“a morte é pouco mais” lacks the explicit scale/property).
+- Line 9: Tense/aspect drifts (“tinha visto” adds an unnecessary past-perfect nuance).
+
+## Esperanto (GPT-OSS 120B)
+
+```text
+1 En la mezo de la vojo de nia vivo
+2 Mi trovis min en malluma arbaro,
+3 ĉar la prava vojo estis perdita.
+
+4 Ho, kiom malfacila estas por diri kio ĝi estis
+5 ĉi tiu sovaĝa kaj aspra kaj densa arbaro
+6 kiu en pensado renovigas la timon!
+
+7 Tiom amara estas ĝi ke morto estas iom pli;
+8 Sed por trakti bonon kiun mi trovis tie,
+9 Mi diros pri la aliaj aferoj kiujn mi jam vidis tie.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 7: Comparative is incomplete (“morto estas iom pli” lacks the explicit scale/property, i.e., “pli amara”).
+- Line 9: Adds “jam” (“already”), which is not supported by the source/reference.
+- Capitalization varies by line, reducing stylistic consistency.
+
 ## Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
 
-1. Telugu: Best overall coverage and modifier bundle; remaining weakness is the incomplete comparative scale in line 7.
-2. Kannada: Good line-to-line correspondence, but the descriptor bundle (line 5) and comparative scale (line 7) are incomplete.
-3. Malayalam: Generally stable, but line 8 drifts (“take care of the good”) and line 7’s comparative scale is incomplete.
-4. Tamil: Readable but has more drift/tautology and an incomplete comparative frame (line 7).
-5. Japanese (reference): Not a target; helpful as an agglutinative comparison point, but has clumsy modifiers (line 5) and an incomplete comparative (line 7).
+1. French: Very close overall; main issue is the incomplete comparative scale in line 7.
+2. Portuguese: Close overall; main issues are the incomplete comparative scale (line 7) and minor phrasing/tense drift.
+3. Esperanto: Generally faithful, but line 7 is incomplete and line 9 adds unsupported “already”.
+4. Spanish: Mostly faithful, but has a clear agreement error (line 6) and an incomplete comparative (line 7).
+5. Japanese: Mostly faithful, but has clumsy modifiers (line 5) and an incomplete comparative (line 7).
+6. Telugu: Good overall coverage, but line 7’s comparative scale is incomplete and the causal marker can read as “therefore/so”.
+7. Kannada: Roughly traceable, but descriptor bundle (line 5) and comparative scale (line 7) are incomplete.
+8. Malayalam: Generally stable, but verb choice drifts (line 8) and the comparative scale is incomplete (line 7).
+9. Tamil: Readable, but has the most drift/tautology and weaker comparative framing among these outputs.

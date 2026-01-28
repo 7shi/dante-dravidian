@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+En medio del camino de nuestra vida  
+me encontré en una selva oscura,  
+pues la recta vía estaba perdida.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Spanish) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|----------------------------|--------|
+| Nel | prepositional phrase head “in the middle of” | En | in | OK |
+| mezzo | noun “the exact middle point” | medio | middle | OK |
+| del | preposition + article “of the” | del | of the | OK |
+| cammin | head noun “road” | camino | road | OK |
+| di | preposition linking “nostra” to “vita” – “of” | de | of | OK |
+| nostra | possessive adjective “our” | nuestra | our | OK |
+| vita | noun “life” | vida | life | OK |
+| mi | reflexive object “myself” | me | myself | OK |
+| ritrovai | main verb “found” (past) | encontré | found | OK |
+| per | preposition “within” (locative) | en | within | OK |
+| una | indefinite article “a” | una | a | OK |
+| selva | noun “wood/forest” | selva | forest | OK |
+| oscura | adjective “dark” | oscura | dark | OK |
+| ché | conjunction “for” (causal) | pues | for | OK |
+| la | definite article “the” | la | the | OK |
+| diritta | adjective “right/straight” | recta | straight | OK |
+| via | noun “way” | vía | way | OK |
+| era | copular verb “had been” (imperfect) | estaba | had been | OK |
+| smarrita | predicate adjective “missed/lost” | perdida | missed/lost | OK |
+
+**Missing / Wrong Items**  
+- *None.* All source tokens are represented in the Spanish translation with appropriate meanings.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line 1**  
+- **Original Translation:** En medio del camino de nuestra vida  
+- **Issues:** None  
+- **Corrected Translation:** En medio del camino de nuestra vida  
+
+**Line 2**  
+- **Original Translation:** me encontré en una selva oscura,  
+- **Issues:** None  
+- **Corrected Translation:** me encontré en una selva oscura,  
+
+**Line 3**  
+- **Original Translation:** pues la recta vía estaba perdida.  
+- **Issues:** None  
+- **Corrected Translation:** pues la recta vía estaba perdida.  
+
+```text
+En medio del camino de nuestra vida
+me encontré en una selva oscura,
+pues la recta vía estaba perdida.
+```
+]]></message>
+</messages>

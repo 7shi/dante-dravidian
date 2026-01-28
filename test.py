@@ -9,6 +9,20 @@ model = "openrouter:openai/gpt-oss-120b:free"
 think = False
 temperature = 0.1
 
+LANGUAGES = [
+    # Dravidian languages
+    "Telugu", "Tamil", "Kannada", "Malayalam",
+
+    # Agglutinative non-Dravidian language
+    "Japanese",
+
+    # Romance languages
+    "French", "Spanish", "Portuguese",
+
+    # Constructed language
+    "Esperanto",
+]
+
 # Read test data
 with open("tokenize/inferno/01.txt", "r", encoding="utf-8") as f:
     it = [l.split("|")[0] for line in f if (l := line.strip())]
@@ -51,7 +65,7 @@ for i in range(3):
             f.write(history_to_xml(client.history))
 
     # Steps 2-5 and final translation for each target language
-    for j, lang in enumerate(["Telugu", "Tamil", "Kannada", "Malayalam", "Japanese"]):
+    for j, lang in enumerate(LANGUAGES):
         xml_file = f"test/{i+1}-{lang}.xml"
         if os.path.exists(xml_file):
             with open(xml_file, 'r', encoding='utf-8') as f:

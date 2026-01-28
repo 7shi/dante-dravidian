@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+4 Ay cuanto es duro decir qué era  
+5 esta selva salvaje y áspera y fuerte  
+6 que en el pensamiento renueva el miedo!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG]
+After the table, list any MISSING or WRONG items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Spanish) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|----------------------------|--------|
+| **Ahi** | Exclamatory interjection expressing emotion | **Ay** | “Ah!” | OK |
+| **quanto** | Adverb of degree marking high intensity of difficulty | **cuanto** | “how” (as in “how hard”) | OK |
+| **a** | Preposition introducing the infinitival complement *dir* | *(none)* | – | **MISSING** |
+| **dir** | Infinitive verb “to tell” whose difficulty is evaluated | **decir** | “to tell” | OK |
+| **qual** | Interrogative adjective introducing the content clause “what it was” | **qué** | “what” | OK |
+| **era** | Imperfect copular verb inside the content clause | **era** | “was” | OK |
+| **è** | Present copular verb linking subject *cosa* with predicate *dura* | **es** | “is” | OK |
+| **cosa** | Generic noun “thing” that is the subject of the difficulty claim | *(none)* | – | **MISSING** |
+| **dura** | Predicate adjective describing the thing as hard/difficult | **duro** | “hard” | OK |
+| **esta** | Demonstrative adjective pointing to the specific forest | **esta** | “this” | OK |
+| **selva** | Noun denoting a wooded area (forest) | **selva** | “forest / wood” | OK |
+| **selvaggia** | Adjective attributing wildness to the forest | **salvaje** | “wild” | OK |
+| **e** (1st) | Coordinating conjunction linking adjectives | **y** | “and” | OK |
+| **aspra** | Adjective attributing roughness to the forest | **áspera** | “rough” | OK |
+| **e** (2nd) | Coordinating conjunction linking adjectives | **y** | “and” | OK |
+| **forte** | Adjective attributing density/strength to the forest | **fuerte** | “dense / strong” | OK |
+| **che** | Relative pronoun referring back to *selva* and introducing a clause | **que** | “which / that” | OK |
+| **nel** | Prepositional phrase “in the” marking mental locus | **en** | “in” | OK |
+| **pensier** | Noun “thought” – the mental arena where the forest is considered | **pensamiento** | “thought” | OK |
+| **rinova** | Verb “renews” – action performed on *paura* | **renueva** | “renews” | OK |
+| **la** | Definite article (feminine) introducing *paura* | **el** | “the” (masc.) | **WRONG** (gender mismatch) |
+| **paura** | Noun “fear” that is renewed | **miedo** | “fear” | OK |
+
+---
+
+### Items Not Properly Rendered
+
+- **Missing:** `a` (preposition), `cosa` (noun) – these source tokens have no counterpart in the Spanish translation.  
+- **Wrong:** `la` – the feminine article was rendered as the masculine `el`, altering gender agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING or WRONG items from Step 3. Reorder within line if needed; do not add new content words.
+Output per line: Line #, Original Translation, Issues, Corrected Translation (if any).
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+**Line‑by‑line correction report**
+
+| Line # | Original Translation (Step 2) | Issues | Corrected Translation |
+|-------|------------------------------|--------|-----------------------|
+| 4 | Ay cuanto es duro decir qué era | • Missing preposition **a** before *decir*.<br>• Missing noun **cosa** to render “cosa dura”.<br>• Adjective order should reflect “cosa dura”. | Ay cuanto es **cosa dura a** decir qué era |
+| 5 | esta selva salvaje y áspera y fuerte | No issues. | (unchanged) |
+| 6 | que en el pensamiento renueva el miedo! | Article **el** does not match source feminine **la**. | que en el pensamiento renueva **la** miedo! |
+
+---
+
+**Final Spanish text**
+
+```text
+Ay cuanto es cosa dura a decir qué era
+esta selva salvaje y áspera y fuerte
+que en el pensamiento renueva la miedo!
+```
+]]></message>
+</messages>
