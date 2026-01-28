@@ -27,172 +27,132 @@ Below, grammatical and vocabulary issues are pointed out as a literal translatio
 ## Telugu (GPT-OSS 120B)
 
 ```text
-1 మన జీవితం యొక్క మార్గం మధ్యలో
-2 నేను ఒక చీకటి అడవిలో కనుగొన్నానుతాను,
-3 ఎందుకంటే ఆ సరైన మార్గం ఉండేది కోల్పోయిన.
+1 మన జీవితం యొక్క ప్రయాణం మధ్యలో
+2 నన్ను ఒక చీకటి అడవిలో కనుగొన్నాను,
+3 ఎందుకంటే ఆ సరైన మార్గం ఉంది కోల్పోయింది.
 
-4 అయ్యో! అది కఠినమైన వస్తువు ఎంత చెప్పడానికి ఏది ఉన్నది
-5 ఈ అడవి అరణ్య మరియు కఠినమైన మరియు బలమైన
-6 అది ఆలోచనలో పునరుద్ధరించు భయం!
+4 అయ్యో ఎంత కు చెప్పడానికి ఏది ఉన్నది వస్తువు కఠినమైన ఉంది
+5 ఈ అడవి అరణ్య మరియు ముడి మరియు బలమైన
+6 అది ఆలోచనలో పునరుద్ధరిస్తుంది ఆ భయం!
 
-7 చాలా చెడు ఎందుకంటే మరణం కన్నా కొంచెం ఎక్కువ;
-8 కాని చర్చించడానికి కు మంచి యొక్క అది నేను అక్కడ కనుగొన్నాను,
-9 ఇతర వస్తువులు గురించి నేను చెప్పుతాను అవి నేను అక్కడ చూసాను.
+7 అది అంత కఠినమైన అంటే మరణం అది కన్నా కొంచెం ఎక్కువ ఉంది;
+8 కాని చేయడానికి చర్చించడానికి మంచి యొక్క అది నేను అక్కడ కనుగొన్నాను,
+9 చెప్పుతాను గురించి ఆ ఇతర వస్తువులు అది నేను అక్కడ చేసి చూసాను.
 ```
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 2: “found myself” is not cleanly expressed; malformed/merged tokens and a stray reflexive element reduce clarity.
-- Line 3: Causal clause is ungrammatical and semantically unstable; “the right way had been missed” is not recoverable.
-- Line 4: The “what it was” component is missing/unclear; word order is scrambled.
-- Line 6: Predicate structure is broken; “renews the fear” is not cleanly expressed.
-- Line 7: Major meaning drift: “bitter” is not preserved (rendered as “bad”), and the “so … that …” frame is missing.
-- Lines 8–9: Purpose/relative linkage is scrambled; “the good that I found there” and “the other things that I have seen there” are hard to recover.
+- Line 2: “found myself” argument structure is unstable (object/self marking is unclear).
+- Line 3: “for the right way had been missed” is degraded into a generic “the right way was lost”, and the clause is awkward.
+- Line 4: The “what it was” component is not explicit; word order is scrambled.
+- Line 5: Adjective bundle is incomplete/shifted; correspondence to wild/rough/dense/strong is unclear.
+- Line 7: Major meaning drift: “bitter” is replaced by “hard”, and the “so … that …” comparative frame is not cleanly realized.
+- Lines 8–9: Purpose and relative linkage are scrambled; “the good that I found there” / “the other things that I have seen there” are not cleanly recoverable.
 
 ## Tamil (GPT-OSS 120B)
 
 ```text
-1 எங்கள் வாழ்க்கைஉடைய வழியின் நடுத்தரத்தில்
-2 என்னை கண்டுபிடித்தேன் இருண்ட காடில்,
-3 ஏனெனில் அந்த சரியான வழி தவறிய இருந்தது.
+1 எங்கள் வாழ்க்கை இன் பயணம் இன் நடுத்தரம் இல்
+2 என்னை கண்டுபிடித்தேன் உள்ளில் ஒரு இருண்ட காடு,
+3 ஏனெனில் அந்த சரியான வழி இழந்த இருந்தது.
 
-4 அஹ்! எவ்வளவு சொல்ல என்று எது இருந்தது என்பது விஷயம் கடினமான ஆகும்
-5 இந்த காடு காட்டு மற்றும் கடினமான மற்றும் மிகுந்த
-6 அது சிந்தனைஇல் புதுப்பிக்கிறது அந்த பயம்!
+4 அஹ்! எவ்வளவு கடினமான விஷயம் எது இருந்ததை சொல்ல ஆகும்
+5 இந்த காடு காட்டு மற்றும் கடினமான மற்றும் அதிகமான
+6 அது பயத்தை சிந்தனைஇல் புதுப்பிக்கிறது!
 
-7 அதிகம் கசப்பு என்றால் மரணம் மேலும் கொஞ்சம் கசப்பு ஆகும்;
-8 ஆனால் உடன் சொல்ல நல்லது இன் என்று நான் அங்கு கண்டேன்,
-9 சொல்வேன் இன் மற்ற விஷயங்கள் என்று நான் அங்கு உள்ளேன் கண்டுள்ளேன்.
+7 அதிகமாக கசப்பான ஆகும் என்று மரணம் சற்று மேலும் கசப்பான ஆகும்;
+8 ஆனால் வழங்க விவாதிக்க இன் நல்ல என்று நான் அங்கு கண்டேன்,
+9 சொல்லுவேன் பற்றி அ மற்ற விஷயங்கள் என்று நான் அங்கு உள்ளேன் கண்டேன்.
 ```
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 4: Clause structure is unstable; “what it was” is not clearly realized.
-- Line 5: Descriptor bundle is underspecified/vague; correspondence to wild/rough/dense/strong is unclear.
-- Line 7: Uses an if/then style (“if more bitter, then…”) rather than the intended “so X that Y” construction.
-- Lines 8–9: Purpose and relative relations are malformed; “the good that I found there” and “the other things that I have seen there” are not cleanly expressed.
+- Line 1: Heavy case/particle stacking makes the core structure hard to parse.
+- Line 4: “how hard it is to say what it was” is only partially realized; structure is unstable.
+- Line 5: Descriptor bundle is underspecified/vague; mapping to wild/rough/dense/strong is unclear.
+- Line 7: Comparative framing is malformed; the intended “so bitter is it that …” relation is not explicit.
+- Lines 8–9: Purpose/relative relations are broken; “the good that I found there” and “the other things that I have seen there” are not cleanly expressed.
 
 ## Kannada (GPT-OSS 120B)
 
 ```text
-1 ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯನಲ್ಲಿ
-2 ನನ್ನನ್ನು ಕಂಡುಹಿಡಿದೆ ಕತ್ತಲೆಯ ಕಾಡು ಒಳಗೆ,
-3 ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಿತ್ತು.
+1 ಮಧ್ಯದಲ್ಲಿ ಮಧ್ಯ ಪ್ರಯಾಣದ ನಮ್ಮ ಜೀವನದ
+2 ನನ್ನನ್ನು ಕಂಡುಹಿಡಿದೆ ಒಳಗೆ ಒಂದು ಕತ್ತಲೆಯ ಕಾಡು,
+3 ಆದರಿಂದ ಆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋದಇತ್ತು.
 
-4 ಅಯ್ಯೋ ಎಷ್ಟು ಕಷ್ಟಕರ ವಸ್ತು ಇದೆ ಗೆ ಹೇಳಲು ಯಾವುದು ಇತ್ತು
+4 ಆಹ್ ಎಷ್ಟು ಗೆ ಹೇಳಲು ಯಾವ ಇದ್ದು ವಸ್ತು ಕಠಿಣ ಇದೆ
 5 ಈ ಕಾಡು ಕಾಡು ಮತ್ತು ಕಠಿಣ ಮತ್ತು ದೃಢ
-6 ಅದು ಆ ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡು!
+6 ಅದು ಚಿಂತನೆನಲ್ಲಿ ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ ಆ ಭಯ!
 
-7 ಇಷ್ಟು ಕಹಿ ಇದೆ ಎಂದು ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ;
-8 ಆದರೆ ಚರ್ಚಿಸಲುಗಾಗಿ ನಿಂದ ಉತ್ತಮ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡುಹಿಡಿದೆ,
-9 ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಿಷಯಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಕಂಡಿದೆ.
+7 ಅಷ್ಟು ಇದು ಕಹಿ ಎಂದು ಮರಣ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದು ಕಹಿ;
+8 ಆದರೆ ಉತ್ತಮದ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡೆಗಾಗಿ ಚರ್ಚಿಸಲು,
+9 ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಸ್ತುಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ.
 ```
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 2: “found myself” construction is not clean; argument structure is unclear.
+- Line 1: Redundant “middle” phrasing; attachment is awkward.
 - Line 4: “how hard it is to say what it was” is scrambled; “what it was” is not explicit.
-- Line 6: Verb form reads imperative/non-finite; intended “renews the fear” is not cleanly expressed.
-- Line 7: Comparative is malformed/elliptical; reference point for “a little more” is unclear, and the “so bitter is it” predicate is missing.
-- Lines 8–9: Purpose/relative linkage is unstable; relationships between “good”, “found there”, and “other things seen” are weakened.
+- Line 5: Repetition (“ಕಾಡು”) and incomplete descriptor bundle reduce literal transparency.
+- Line 7: Comparative is present but poorly formed; linkage and reference point are not cleanly recoverable.
+- Lines 8–9: Purpose/relative linkage is unstable; “good found there” and “other things seen there” relations are weakened.
 
 ## Malayalam (GPT-OSS 120B)
 
 ```text
-1 ഞങ്ങളുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
-2 എന്നെ കണ്ടെത്തി ഒരു ഇരുണ്ട കാടിൽ,
-3 കാരണം ആ ശരിയായ വഴി കാണാതായിരുന്നു
+1 മധ്യം നമ്മുടെ ജീവിതം യുടെ പാത യുടെ മധ്യത്തിൽ
+2 എനിക്ക് തന്നെ കണ്ടെത്തി അകത്ത് ഒരു ഇരുണ്ട കാട്,
+3 കാരണം ആ സരിയായ വഴി ആയിരുന്നു കാണാതായ.
 
-4 അയ്യോ! പറയാൻ എന്ത് ആയിരുന്നു വസ്തു എത്ര കഠിനം ആണ്
-5 ഈ കാട് കാട്ടു മറ്റ മുറുകന്‍ മറ്റ ശക്തമായ
-6 എന്ന മനസ്സിൽ ചിന്ത പുനർജന്മം നൽകുന്നു ഭയം!
+4 അയ്യോ! എത്ര ചെയ്യാൻ പറയുക എന്ത് ആയിരുന്നു വസ്തു കഠിനം ആണ്
+5 ഈ കാട് കാട്ടു കൂടാതെ മുറുകൻ കൂടാതെ ശക്തമായ
+6 അത് ചിന്തയിൽ ചിന്ത പുതുക്കുന്നു ആ ഭയം!
 
-7 ഇത്ര കയ്പ്പുള്ള ആണ് എന്നാൽ മരണം കുറച്ച് കൂടുതൽ ആണ്;
-8 പക്ഷേ ചർച്ച ചെയ്യാൻക്കായി നല്ലത്യുടെ അത് ഞാൻ അവിടെ കണ്ടു,
-9 പറയും മറ്റു വസ്തുക്കളുടെ അത് ഞാൻ അവിടെ കണ്ടു ഉണ്ട്.
+7 ഇത്ര കയ്പ്പുള്ളതാണ് എന്നാൽ മരണം കുറച്ച് കൂടുതൽ കയ്പ്പുള്ളതാണ്;
+8 പക്ഷേ വേണ്ടി ചർച്ച ചെയ്യാൻ നല്ലതിന്റെ നല്ലത് എന്ന അവിടെ കണ്ടെത്തി,
+9 പറയും പറ്റി മറ്റുള്ള വസ്തുക്കൾ എന്ന അവിടെ ഉണ്ട് കണ്ടു.
 ```
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 3: Missing end punctuation; causal clause feels incomplete.
-- Line 5: Modifier bundle is malformed/opaque; mapping to wild/rough/dense/strong is not recoverable.
-- Line 6: Predicate–argument structure is scrambled; “renews the fear” is not cleanly expressed.
-- Line 7: Uses an if/then framing (“if so bitter, then…”) rather than “so X that Y”.
-- Lines 8–9: Purpose/relative linkage is weak; key relations are not cleanly recoverable.
+- Line 1: Redundant “middle … middle” phrasing; attachment is awkward.
+- Line 4: Clause is scrambled; “what it was” is not explicit.
+- Line 5: Modifier coordination is malformed/opaque; mapping to each original adjective is unclear.
+- Line 6: Redundant phrasing (“thought in thought”) and unstable predicate structure.
+- Lines 8–9: Purpose/relative linkage is unstable; “I found there” and “I have seen there” are not cleanly recovered.
 
 ## Japanese (GPT-OSS 120B)
 
 Main targets are Dravidian languages. Japanese is an agglutinative reference, not a primary target.
 
 ```text
-1 我々の人生の道の途中の中で
-2 ある暗い森の中で自分を見つけた,
-3 だから失われた正しい道だった。
+1 私たちの人生の旅の途中の中で
+2 自分を見つけたある暗い森で,
+3 なぜならその正しい失われた道だった.
 
-4 ああどれほど語ることは難しいことであるどのことだったである
-5 この森は野生のそして荒いそして密な
-6 それは心の中で思考の中でその恐怖を再び呼び起こす!
+4 ああ何がだったかを言うことはどれほど難しいものだ
+5 この森は野生のと荒々しいと密集した
+6 それは考えの中でその恐怖を呼び起こす!
 
-7 とても苦いですはというのは死より少しだけ苦い。
-8 しかし論じるために善のという私そこ見つけた、
-9 言うだろうのその他のものという私そこている見た。
+7 とても苦いほどは死は少しよりも苦い;
+8 しかし善という私そこ見つけたのために論じる,
+9 言うだろうについてその他の事柄という私そこは見た.
 ```
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 1: Redundant/awkward locative phrasing (“途中の中で”); attachment of “of our life” is not clean.
-- Line 3: Meaning drift: asserts “it was the lost right way” rather than “for the right way had been missed.”
-- Line 4: Largely ill-formed; “what it was” is not explicit.
-- Line 6: Redundant phrasing (“心の中で思考の中で”) and unstable argument structure.
-- Lines 7–9: Broken clause linkage; comparative and purpose/relative relations are not cleanly expressed.
+- Line 1: Redundant locative phrasing (“途中の中で”); attachment is awkward.
+- Line 3: Meaning drift: asserts “it was the right lost way” rather than “for the right way had been missed.”
+- Line 4: Unnatural/ill-formed phrasing; “what it was” is not cleanly expressed.
+- Line 5: Descriptor bundle is incomplete (missing at least one of the intended adjectives).
+- Lines 7–9: Comparative and purpose/relative linkage are ungrammatical and hard to map back literally.
 
 ## Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
 
-1. Kannada: Most recoverable line-to-line correspondence among the Dravidian outputs, despite frequent ungrammaticality.
-2. Tamil: Many unstable constructions, but major content is still partially traceable; the if/then distortion is a recurring issue.
-3. Malayalam: Preserves some key content words, but linkage and comparative framing are unstable across multiple lines.
-4. Telugu: Strongest meaning drift (notably line 7: “bitter”→“bad”) and scrambled linkage in lines 8–9.
-5. Japanese (reference): High ungrammaticality and distorted causal relation (line 3); useful mainly as a non-Dravidian agglutinative comparison point.
-
-## Overall Assessment (Claude Opus 4.5)
-
-### General Evaluation
-
-The translations into four Dravidian languages and Japanese (as a reference) by GPT-OSS 120B maintain basic lexical correspondence but exhibit common difficulties in processing complex syntactic structures.
-
-### Common Issues
-
-1. **Failure to process "so ... that ..." constructions**: The resultative construction in Line 7 ("So bitter is it that death is little more") is not adequately expressed in any language. Tamil and Malayalam show erroneous conversion to conditional (if/then) framing, Telugu exhibits semantic drift ("bitter" → "bad"), and Kannada leaves the reference point for comparison unclear.
-
-2. **Breakdown of relative/purpose clause linkage**: The nested relative clause structures in Lines 8–9 ("the good that I found there," "the other things that I have seen there") collapse or weaken across all languages.
-
-3. **Reflexive "found myself" construction**: The self-discovery expression in Line 2 becomes unnatural in Telugu and Kannada.
-
-4. **Embedded question "what it was"**: The indirect question structure in Line 4 is unclear or missing in all languages.
-
-5. **Predicate structure breakdown**: The expression "renews the fear" in Line 6 is incomplete in Telugu, Kannada, and Malayalam.
-
-### Language-Specific Characteristics
-
-| Language | Strengths | Main Issues |
-|----------|-----------|-------------|
-| **Kannada** | Most recoverable line-to-line correspondence | Verb morphology (imperative/non-finite), incomplete comparative structure |
-| **Tamil** | Main content partially traceable | Logic conversion to if/then, syntactic instability |
-| **Malayalam** | Key vocabulary preserved | Opaque modifier bundles, weak linkage |
-| **Telugu** | Lexical-level correspondence present | Most pronounced semantic drift (bitter→bad), scrambled linkage |
-| **Japanese** | Useful as agglutinative reference | Redundant expressions, distorted causal relations, broken clause linkage |
-
-### Typological Considerations
-
-These issues can be attributed to the following factors:
-
-1. **Word order differences**: Difficulties in converting between SVO structure (Italian/English) and SOV structure (Dravidian languages/Japanese)
-2. **Modification structure**: Information loss when converting from pre-modification (English) to post-modification (Dravidian languages)
-3. **Lack of resultative constructions**: Natural structures corresponding to "so X that Y" either do not exist in the target languages or the model fails to map them appropriately
-4. **Training data bias**: The volume of Dravidian language training data in the 120B parameter model is likely limited compared to English and other major languages
-
-### Conclusion
-
-Even Kannada, ranked first, exhibits frequent ungrammaticality, indicating that current translation quality does not reach a practical level. Improvement in processing complex sentence structures (causal, resultative, purpose, and relative clauses) is urgently needed. Japanese shows similar issues, suggesting the universality of structural challenges in translation to agglutinative languages.
+1. Malayalam: Best preservation of key predicates/modifiers overall, but linkage remains unstable in lines 8–9.
+2. Kannada: Rough line-to-line correspondence is often recoverable, though phrasing is frequently ill-formed.
+3. Tamil: Major content is partially traceable, but comparative framing and linkage are often malformed.
+4. Telugu: Biggest semantic drift (notably line 7 “bitter”→“hard”) and scrambled linkage in lines 8–9.
+5. Japanese (reference): Not a target; useful only as an agglutinative comparison point, but has significant ungrammaticality and causal drift (line 3).

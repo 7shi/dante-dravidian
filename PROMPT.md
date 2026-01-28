@@ -65,7 +65,11 @@ Reference Translation (provided):
 Goal: For {target_lang}, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ```
@@ -92,9 +96,10 @@ Rules:
 ```
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.

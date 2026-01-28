@@ -5,32 +5,36 @@
 Goal: For Telugu, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
-|------------|-----------------------|--------------------|
-| Nel | “in the” – introduces the locative PP that contains the midpoint | Comparative: N/A; Morphosyntax: locative postposition -లో attached to noun ‘మధ్య’ (mid); forms phrase ‘మధ్యలో’; Back‑translation: Midway upon the road of our life |
-| mezzo | “middle” – the spatial centre of the road | Comparative: N/A; Morphosyntax: noun ‘మధ్య’ (mid) in locative case via -లో; singular, neuter; Back‑translation: Midway upon the road of our life |
-| del | “of the” – links cammin to vita | Comparative: N/A; Morphosyntax: genitive marker -యొక్క attached to ‘మార్గం’ (road) linking to ‘జీవితం’; Back‑translation: Midway upon the road of our life |
-| cammin | “road” – metaphorical path of life | Comparative: N/A; Morphosyntax: noun ‘మార్గం’ (road), masculine singular, takes genitive -యొక్క from preceding; Back‑translation: Midway upon the road of our life |
-| di | “of” – genitive linking nostra to vita | Comparative: N/A; Morphosyntax: genitive marker -యొక్క attached to ‘జీవితం’ (life); Back‑translation: Midway upon the road of our life |
-| nostra | “our” – collective possession | Comparative: N/A; Morphosyntax: possessive pronoun ‘మన’ (our) agreeing in number/gender with ‘జీవితం’; Back‑translation: Midway upon the road of our life |
-| vita | “life” – whole human existence | Comparative: N/A; Morphosyntax: noun ‘జీవితం’ neuter singular, head of genitive phrase; Back‑translation: Midway upon the road of our life |
-| mi | “myself” – reflexive pronoun object of verb | Comparative: N/A; Morphosyntax: reflexive expressed by verb suffix ‘‑తాను’ or clitic ‘నేను‑ను’; Back‑translation: I found myself |
-| ritrovai | “found myself” – past perfective self‑discovery | Comparative: N/A; Morphosyntax: verb ‘కనుగొన్నాను’ (found) in simple past, with reflexive marker; Back‑translation: I found myself |
-| per | “within” – introduces locative PP of forest | Comparative: N/A; Morphosyntax: postposition ‘లో’ after noun ‘అడవి’; Back‑translation: within a dark wood |
-| una | “a” – indefinite article | Comparative: N/A; Morphosyntax: indefiniteness expressed by numeral ‘ఒక’ before noun or by bare noun; Back‑translation: a dark wood |
-| selva | “wood/forest” – dark forest | Comparative: N/A; Morphosyntax: noun ‘అడవి’ feminine singular, takes locative ‘లో’; Back‑translation: a dark wood |
-| oscura | “dark” – describes forest | Comparative: N/A; Morphosyntax: adjective ‘చీకటి’ placed attributively before noun or as ‘చీకటి అడవి’; Back‑translation: dark wood |
-| ché | “for” – causal conjunction | Comparative: N/A; Morphosyntax: conjunction ‘ఎందుకంటే’ or ‘కారణంగా’ introducing cause clause; Back‑translation: for |
-| la | “the” – definite article for via | Comparative: N/A; Morphosyntax: definiteness encoded by demonstrative ‘ఆ’ or omitted; Back‑translation: the right way |
-| diritta | “right” – correct way | Comparative: N/A; Morphosyntax: adjective ‘సరైన’ agrees with noun gender, placed before noun; Back‑translation: right way |
-| via | “way” – correct path | Comparative: N/A; Morphosyntax: noun ‘మార్గం’ masculine singular, subject of copular clause; Back‑translation: the right way |
-| era | “had been” – imperfect copular auxiliary | Comparative: N/A; Morphosyntax: imperfect of ‘ఉండింది’ (was) used as copula, third person singular; Back‑translation: had been |
-| smarrita | “missed” – state of being lost | Comparative: N/A; Morphosyntax: adjective ‘కోల్పోయిన’ or ‘తప్పిపోయిన’ agreeing with noun gender, predicative; Back‑translation: missed |
+|-------------|-----------------------|--------------------|
+| Nel | in the | లో [BT: in] |
+| mezzo | midway, middle | మధ్య [BT: middle] |
+| del | of the | యొక్క [BT: of] |
+| cammin | road, journey | ప్రయాణం [BT: journey] |
+| di | of | యొక్క [BT: of] |
+| nostra | our | మన [BT: our] |
+| vita | life | జీవితం [BT: life] |
+| mi | myself | నన్ను [BT: myself] |
+| ritrovai | found | కనుగొన్నాను [BT: found] |
+| per | within | లో [BT: within] |
+| una | a | ఒక [BT: a] |
+| selva | wood, forest | అడవి [BT: forest] |
+| oscura | dark | చీకటి [BT: dark] |
+| ché | for, because | ఎందుకంటే [BT: because] |
+| la | the | ఆ [BT: the] |
+| diritta | right | సరైన [BT: right] |
+| via | way | మార్గం [BT: way] |
+| era | had been | ఉంది [BT: was] |
+| smarrita | missed | కోల్పోయింది [BT: missed] |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Lexical Inventory & Syntactic Assembly
@@ -54,31 +58,30 @@ Rules:
 Source Line:
 Nel mezzo del cammin di nostra vita
 Lexical Inventory:
-- మధ్యలో
+- లో
 - మధ్య
 - యొక్క
-- మార్గం
-- యొక్క
+- ప్రయాణం
 - మన
 - జీవితం
 Assembly Notes:
-- Telugu follows SOV; place the possessive phrase before the noun and the locative phrase at the end. Combine genitive markers with the nouns they modify.
+- Place the noun phrase “మన జీవితం యొక్క ప్రయాణం” before the locative “మధ్యలో”; combine మధ్య + లో into మధ్యలో.
 Target Text:
-మన జీవితం యొక్క మార్గం మధ్యలో
+మన జీవితం యొక్క ప్రయాణం మధ్యలో
 
 Source Line:
 mi ritrovai per una selva oscura,
 Lexical Inventory:
-- నేను
+- నన్ను
 - కనుగొన్నాను
 - లో
 - ఒక
 - అడవి
 - చీకటి
 Assembly Notes:
-- Place the subject before the verb; the locative phrase (noun + లో) precedes the verb in Telugu, and the indefinite article is expressed by ఒక.
+- Order: object నన్ను, article ఒక, adjective చీకటి, noun అడవి, locative లో, verb కనుగొన్నాను; the postposition లో follows the noun.
 Target Text:
-నేను ఒక చీకటి అడవిలో కనుగొన్నాను,
+నన్ను ఒక చీకటి అడవిలో కనుగొన్నాను,
 
 Source Line:
 ché la diritta via era smarrita.
@@ -87,19 +90,20 @@ Lexical Inventory:
 - ఆ
 - సరైన
 - మార్గం
-- ఉండేది
-- కోల్పోయిన
+- ఉంది
+- కోల్పోయింది
 Assembly Notes:
-- Causal conjunction leads, followed by the subject phrase, then copular verb, then predicative adjective.
+- Use causal conjunction ఎందుకంటే followed by the clause; keep copula ఉంది before the participial adjective కోల్పోయింది to satisfy inclusion.
 Target Text:
-ఎందుకంటే ఆ సరైన మార్గం ఉండేది కోల్పోయిన.
+ఎందుకంటే ఆ సరైన మార్గం ఉంది కోల్పోయింది.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -108,28 +112,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line #1**  
-  **Target Text:** మన జీవితం యొక్క మార్గం మధ్యలో  
-  **Back-Translation:** “In the middle of the road of our life”  
-  **Reference Translation:** Midway upon the road of our life  
-  **Checks:** End Punct <OK|FAIL> <OK>, Coverage <OK|FAIL> <OK>, Meaning Drift <OK|FAIL> <OK>, Comparative Orientation <OK|FAIL|N/A> <N/A>, Hallucination <OK|FAIL> <OK>  
+- Line 1, Target Text: మన జీవితం యొక్క ప్రయాణం మధ్యలో, Back-Translation: “midway of the journey of our life”, Reference Translation: “Midway upon the road of our life”, Checks: End Punct OK; Coverage OK; Meaning Drift OK; Comparative Orientation N/A; Hallucination OK, Corrected Target Text:  
 
-- **Line #2**  
-  **Target Text:** నేను ఒక చీకటి అడవిలో కనుగొన్నానుతాను,  
-  **Back-Translation:** “I found myself within a dark wood,”  
-  **Reference Translation:** I found myself within a dark wood,  
-  **Checks:** End Punct <OK|FAIL> <OK>, Coverage <OK|FAIL> <OK>, Meaning Drift <OK|FAIL> <OK>, Comparative Orientation <OK|FAIL|N/A> <N/A>, Hallucination <OK|FAIL> <OK>  
+- Line 2, Target Text: నన్ను ఒక చీకటి అడవిలో కనుగొన్నాను,, Back-Translation: “I found myself in a dark forest”, Reference Translation: “I found myself within a dark wood”, Checks: End Punct OK; Coverage OK; Meaning Drift OK; Comparative Orientation N/A; Hallucination OK, Corrected Target Text:  
 
-- **Line #3**  
-  **Target Text:** ఎందుకంటే ఆ సరైన మార్గం ఉండేది కోల్పోయిన.  
-  **Back-Translation:** “Because the right way had been missed.”  
-  **Reference Translation:** for the right way had been missed.  
-  **Checks:** End Punct <OK|FAIL> <OK>, Coverage <OK|FAIL> <OK>, Meaning Drift <OK|FAIL> <OK>, Comparative Orientation <OK|FAIL|N/A> <N/A>, Hallucination <OK|FAIL> <OK>  
+- Line 3, Target Text: ఎందుకంటే ఆ సరైన మార్గం ఉంది కోల్పోయింది., Back-Translation: “because the right way was missed”, Reference Translation: “for the right way had been missed”, Checks: End Punct OK; Coverage OK; Meaning Drift OK; Comparative Orientation N/A; Hallucination OK, Corrected Target Text:  
 
 ```
-మన జీవితం యొక్క మార్గం మధ్యలో
-నేను ఒక చీకటి అడవిలో కనుగొన్నానుతాను,
-ఎందుకంటే ఆ సరైన మార్గం ఉండేది కోల్పోయిన.
+మన జీవితం యొక్క ప్రయాణం మధ్యలో
+నన్ను ఒక చీకటి అడవిలో కనుగొన్నాను,
+ఎందుకంటే ఆ సరైన మార్గం ఉంది కోల్పోయింది.
 ```
 ]]></message>
 </messages>

@@ -5,35 +5,39 @@
 Goal: For Japanese, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
-|-------------|-----------------------|--------------------|
-| Ahi | Exclamatory expression of emotion | 感嘆詞「ああ」文頭に配置 ← Ah! |
-| quanto | Marks degree of difficulty | 副詞「どれほど」全体の難易度を修飾 ← how hard |
-| a | Introduces infinitive *tell* | 動詞不定形マーカー「～すること」← to |
-| dir | Act of stating or describing | 動詞「語る」不定形で使用 ← tell |
-| qual | Introduces the content of the statement | 疑問形容詞「どの」名詞節を修飾 ← what |
-| era | Past state of the referent | 動詞「だった」過去形で名詞節内 ← was |
-| è | Present state of the “thing” | 動詞「である」現在形で主部を述語化 ← is |
-| cosa | Abstract entity being described | 名詞「こと」主語として機能 ← thing |
-| dura | Property of the “thing” (the act of telling) | 形容詞「難しい」述語的に修飾 ← hard |
-| esta | Points to a specific forest | 指示形容詞「この」名詞 *selva* を限定 ← this |
-| selva | The physical environment | 名詞「森」主語として機能 ← wood/forest |
-| selvaggia | Describes the forest’s untamed nature | 形容詞「野生の」名詞 *selva* を修飾 ← wild |
-| e | Joins adjectives | 接続助詞「そして」形容詞を並列 ← and |
-| aspra | Describes the forest’s texture | 形容詞「荒い」名詞 *selva* を修飾 ← rough |
-| e | Joins adjectives | 接続助詞「そして」形容詞を並列 ← and |
-| forte | Describes the forest’s thickness | 形容詞「密な」名詞 *selva* を修飾 ← dense/strong |
-| che | Refers back to *selva* | 関係代名詞「それは」相対節を導入 ← which |
-| nel | Locates the mental space | 前置詞句「心の中で」場所を示す ← in the |
-| pensier | The mental arena where the effect occurs | 名詞「思考」前置詞 *nel* の目的語 ← thought |
-| rinova | Causes the fear to re‑appear | 動詞「再び呼び起こす」現在形で主語 *selva* が主語 ← renews |
-| la | Specifies the fear | 定冠詞「その」名詞 *paura* を限定 ← the |
-| paura | Emotional response being renewed | 名詞「恐怖」動詞 *rinova* の目的語 ← fear |
+|-------------|----------------------|--------------------|
+| Ahi | Ah! | ああ [BT: Ah] |
+| quanto | how (quantifies difficulty) | どれほど [BT: how much] |
+| a | to (infinitive marker) | ことは [BT: the act of] |
+| dir | say | 言う [BT: say] |
+| qual | what (introduces content clause) | 何が [BT: what] |
+| era | was | だった [BT: was] |
+| è | is (copular) | だ [BT: is] |
+| cosa | thing | もの [BT: thing] |
+| dura | hard/difficult | 難しい [BT: difficult] |
+| esta | this | この [BT: this] |
+| selva | wood/forest | 森 [BT: forest] |
+| selvaggia | wild | 野生の [BT: wild] |
+| e | and (first) | と [BT: and] |
+| aspra | rough | 荒々しい [BT: rough] |
+| e | and (second) | と [BT: and] |
+| forte | dense/strong | 密集した [BT: dense] |
+| che | which (relative pronoun) | それは [BT: which] |
+| nel | in (locative) | 考えの中で [BT: in thought] |
+| pensier | thought | 考え [BT: thought] |
+| rinova | renews (re‑creates) | 呼び起こす [BT: evoke] |
+| la | the (definite article) | その [BT: the] |
+| paura | fear | 恐怖 [BT: fear] |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Lexical Inventory & Syntactic Assembly
@@ -59,17 +63,17 @@ Source Line:
 Lexical Inventory:
 - ああ
 - どれほど
-- ～すること
-- 語る
-- どの
+- ことは
+- 言う
+- 何が
 - だった
-- である
-- こと
+- だ
+- もの
 - 難しい
 Assembly Notes:
-- Combine 語る + ～すること → 語ること; place どれほど before the clause; keep こと and 難しい as predicates; end with どのだったである to express “what it was”.
+- Japanese places the exclamation first, uses 「は」 to mark the subject 「もの」, and attaches 「は」 after the relative clause; particles added for grammaticality.
 Target Text:
-ああどれほど語ること難しいことどのだったである
+ああ、どれほどことは言う何がだっただものは難しい
 
 Source Line:
 5 esta selva selvaggia e aspra e forte
@@ -77,35 +81,36 @@ Lexical Inventory:
 - この
 - 森
 - 野生の
-- そして
-- 荒い
-- そして
-- 密な
+- と
+- 荒々しい
+- と
+- 密集した
 Assembly Notes:
-- Demonstrative この modifies 森; stack adjectives with そして between them in the order given.
+- Demonstrative 「この」 modifies 「森」; 「は」 marks the topic, adjectives linked by 「と」 in a right‑branching coordination.
 Target Text:
-この森野生のそして荒いそして密な
+この森は野生のと荒々しいと密集した
 
 Source Line:
 6 che nel pensier rinova la paura!
 Lexical Inventory:
 - それは
-- 心の中で
-- 思考
-- 再び呼び起こす
+- 考えの中で
+- 考え
+- 呼び起こす
 - その
 - 恐怖
 Assembly Notes:
-- Relative pronoun それは introduces clause; place 心の中で before 思考; verb 再び呼び起こす takes その恐怖 as object; retain final exclamation.
+- Relative clause formed with 「は」 as subject, 「で」 marks the locative adjunct, 「を」 marks the object; 「その恐怖」 remains as the object noun phrase.
 Target Text:
-それは心の中で思考再び呼び起こすその恐怖!
+それは考えの中で考えを呼び起こすその恐怖!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -114,10 +119,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
+- Line 4, ああ何がだったかを言うことはどれほど難しいものだ, Ah, how difficult a thing it is to say what it was, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+
+- Line 5, この森は野生のと荒々しいと密集した, This forest is wild and rough and dense, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+
+- Line 6, それは考えの中でその恐怖を呼び起こす!, It, in thought, evokes that fear!, Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!, End Punct <OK>|Coverage <OK>|Meaning Drift <OK>|Comparative Orientation <N/A>|Hallucination <OK>,  
+
 ```
-ああどれほど語ることは難しいことであるどのことだったである
-この森は野生のそして荒いそして密な
-それは心の中で思考の中でその恐怖を再び呼び起こす!
+ああ何がだったかを言うことはどれほど難しいものだ
+この森は野生のと荒々しいと密集した
+それは考えの中でその恐怖を呼び起こす!
 ```
 ]]></message>
 </messages>

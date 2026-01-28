@@ -80,9 +80,16 @@ def translate(client, target_lang):
 
     prompt = read_prompt("### Step 4:")
     print_header(prompt)
-    llm_client.call(prompt.format(target_lang=target_lang))
+    for _ in range(3):
+        client = llm_client.copy()
+        client.call(prompt.format(target_lang=target_lang))
+        try:
+            text = get_result(client.history)
+            break
+        except IndexError:
+            print("No fenced code block found in the response; retrying...")
 
-    return llm_client.history
+    return client.history, text
 
 if __name__ == '__main__':
     # Parse command line arguments
@@ -122,9 +129,9 @@ if __name__ == '__main__':
 
     llm_client = LLMClient(args.model, not args.no_think, temperature=args.temperature)
     step1(llm_client, source_text, reference)
-    translate(llm_client, target_lang)
+    history, _ = translate(llm_client, target_lang)
 
     if output_file:
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(history_to_xml(llm_client.history))
+            f.write(history_to_xml(history))
         print(f"Final translation saved to {output_file}")

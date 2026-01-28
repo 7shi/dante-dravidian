@@ -5,32 +5,36 @@
 Goal: For Tamil, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
-|------------|----------------------|--------------------|
-| Nel | “in the” – introduces the locative PP that contains the midpoint | Locative case suffix -இல் on noun ‘நடுத்தரம்’; back‑translation: “in the middle” |
-| mezzo | “middle” – the spatial centre of the road | Noun ‘நடுத்தரம்’ (midpoint) in absolute form; back‑translation: “midpoint” |
-| del | “of the” – links “cammin” to “vita” | Genitive marker -இன் on ‘வாழ்க்கை’ to form ‘வாழ்க்கையின்’; back‑translation: “of life” |
-| cammin | “road” – the metaphorical path of life | Noun ‘வழி’ (road) with genitive linking to ‘வாழ்க்கை’; back‑translation: “road” |
-| di | “of” – genitive linking “nostra” to “vita” | Possessive suffix -உடைய attached to ‘வாழ்க்கை’; back‑translation: “of” |
-| nostra | “our” – collective possession of the life | Possessive pronoun ‘எங்கள்’ agreeing in number; back‑translation: “our” |
-| vita | “life” – the whole human existence being narrated | Noun ‘வாழ்க்கை’ in nominative; back‑translation: “life” |
-| mi | “myself” – marks the verb as reflexive | Reflexive clitic ‘என்னை’ as object of verb; back‑translation: “myself” |
-| ritrovai | “found myself” – the act of self‑discovery at a location | Verb ‘கண்டுபிடித்தேன்’ in past tense, first person, with reflexive object; back‑translation: “found myself” |
-| per | “within” – introduces the locative PP of the forest | Postposition ‘உள்ளில்’ or locative case -இல் on ‘காடு’; back‑translation: “within” |
-| una | “a” – introduces a non‑specific forest | Indefinite article expressed by lack of definiteness; noun remains singular; back‑translation: “a” |
-| selva | “wood” – the dark forest the narrator is in | Noun ‘காடு’ in locative case -இல்; back‑translation: “forest” |
-| oscura | “dark” – describes the forest’s lack of light | Adjective ‘இருண்ட’ agreeing in case with ‘காடு’; back‑translation: “dark” |
-| ché | “for” – signals the causal relation to the previous clause | Causal conjunction ‘ஏனெனில்’; back‑translation: “for” |
-| la | “the” – specifies the particular “right way” | Definite sense rendered by demonstrative ‘அந்த’; back‑translation: “the” |
-| diritta | “right” – denotes the correct or proper way | Adjective ‘சரியான’ agreeing with ‘வழி’; back‑translation: “right” |
-| via | “way” – the correct path that should be followed | Noun ‘வழி’ in nominative; back‑translation: “way” |
-| era | “had been” – forms the past‑perfect passive construction | Auxiliary verb ‘இருந்தது’ in imperfect past; back‑translation: “was” |
-| smarrita | “missed” – state of being lost or not known | Past participle adjective ‘தவறிய’ agreeing with ‘வழி’; back‑translation: “missed” |
+|------------|-----------------------|--------------------|
+| Nel | in the (preposition+article) | இல் [BT: in] |
+| mezzo | middle point of the journey | நடுத்தரம் [BT: middle] |
+| del | of (linking cammin to vita) | இன் [BT: of] |
+| cammin | road/journey of life | பயணம் [BT: journey] |
+| di | of (possessive) | இன் [BT: of] |
+| nostra | our (possessive) | எங்கள் [BT: our] |
+| vita | life (span of existence) | வாழ்க்கை [BT: life] |
+| mi | reflexive pronoun (self) | என்னை [BT: myself] |
+| ritrovai | found (self) | கண்டுபிடித்தேன் [BT: found] |
+| per | within (location) | உள்ளில் [BT: within] |
+| una | indefinite article a | ஒரு [BT: a] |
+| selva | forest/wood | காடு [BT: forest] |
+| oscura | dark (modifier) | இருண்ட [BT: dark] |
+| ché | because (causal) | ஏனெனில் [BT: because] |
+| la | the (definite article) | அந்த [BT: the] |
+| diritta | right/correct (modifier) | சரியான [BT: right] |
+| via | way/path | வழி [BT: way] |
+| era | was (copular) | இருந்தது [BT: was] |
+| smarrita | missed/lost (state) | இழந்த [BT: lost] |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Lexical Inventory & Syntactic Assembly
@@ -54,29 +58,31 @@ Rules:
 Source Line:
 Nel mezzo del cammin di nostra vita
 Lexical Inventory:
-- நடுத்தரம்
 - இல்
-- வாழ்க்கை
+- நடுத்தரம்
 - இன்
-- வழி
-- உடைய
+- பயணம்
+- இன்
 - எங்கள்
+- வாழ்க்கை
 Assembly Notes:
-- Combine “நடுத்தரம்”+“இல்” → “நடுத்தரத்தில்”; place genitive “வழியின்” before location; prepend possessive phrase “எங்கள் வாழ்க்கைஉடைய”.
+- Tamil uses post‑positional particles; we keep each token separate and order them to approximate “midway on the road of our life”. The possessive “எங்கள் வாழ்க்கை” precedes the genitive “இன்” linking to “பயணம்”. The phrase ends with the locative “இல்”.
 Target Text:
-எங்கள் வாழ்க்கைஉடைய வழியின் நடுத்தரத்தில்
+எங்கள் வாழ்க்கை இன் பயணம் இன் நடுத்தரம் இல்
 
 Source Line:
 mi ritrovai per una selva oscura,
 Lexical Inventory:
 - என்னை
 - கண்டுபிடித்தேன்
-- காடில்
+- உள்ளில்
+- ஒரு
+- காடு
 - இருண்ட
 Assembly Notes:
-- Reflexive pronoun precedes verb; adjective “இருண்ட” agrees with “காடில்”; locative case already on “காடில்”.
+- Place the reflexive object before the verb, then the locative “உள்ளில்”, followed by the indefinite article, adjective, and noun to form “within a dark wood”.
 Target Text:
-என்னை கண்டுபிடித்தேன் இருண்ட காடில்,
+என்னை கண்டுபிடித்தேன் உள்ளில் ஒரு இருண்ட காடு
 
 Source Line:
 ché la diritta via era smarrita.
@@ -86,18 +92,19 @@ Lexical Inventory:
 - சரியான
 - வழி
 - இருந்தது
-- தவறிய
+- இழந்த
 Assembly Notes:
-- Causal conjunction leads; demonstrative “அந்த” before adjective‑noun phrase; place past participle “தவறிய” before auxiliary “இருந்தது”.
+- Use the causal conjunction “ஏனெனில்” followed by the noun phrase “அந்த சரியான வழி” and the passive construction “இழந்த இருந்தது” to render “the right way had been missed”.
 Target Text:
-ஏனெனில் அந்த சரியான வழி தவறிய இருந்தது.
+ஏனெனில் அந்த சரியான வழி இழந்த இருந்தது
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -106,31 +113,14 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #: 1  
-- Target Text: எங்கள் வாழ்க்கைஉடைய வழியின் நடுத்தரத்தில்  
-- Back-Translation: at the middle of the road of our life  
-- Reference Translation: Midway upon the road of our life  
-- Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-- Corrected Target Text:  
-
-- Line #: 2  
-- Target Text: என்னை கண்டுபிடித்தேன் இருண்ட காடில்,  
-- Back-Translation: I found myself in the dark forest  
-- Reference Translation: I found myself within a dark wood,  
-- Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-- Corrected Target Text:  
-
-- Line #: 3  
-- Target Text: ஏனெனில் அந்த சரியான வழி தவறிய இருந்தது.  
-- Back-Translation: because the right way was missed  
-- Reference Translation: for the right way had been missed.  
-- Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>  
-- Corrected Target Text:  
+- Line 1, Target Text: எங்கள் வாழ்க்கை இன் பயணம் இன் நடுத்தரம் இல், Back-Translation: In the middle of the journey of our life, Reference Translation: Midway upon the road of our life, Checks: End Punct OK, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK  
+- Line 2, Target Text: என்னை கண்டுபிடித்தேன் உள்ளில் ஒரு இருண்ட காடு, Back-Translation: I found myself within a dark forest, Reference Translation: I found myself within a dark wood, Checks: End Punct FAIL, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK, Corrected Target Text: என்னை கண்டுபிடித்தேன் உள்ளில் ஒரு இருண்ட காடு,  
+- Line 3, Target Text: ஏனெனில் அந்த சரியான வழி இழந்த இருந்தது, Back-Translation: because the right way was lost, Reference Translation: for the right way had been missed, Checks: End Punct FAIL, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK, Corrected Target Text: ஏனெனில் அந்த சரியான வழி இழந்த இருந்தது.  
 
 ```
-எங்கள் வாழ்க்கைஉடைய வழியின் நடுத்தரத்தில்
-என்னை கண்டுபிடித்தேன் இருண்ட காடில்,
-ஏனெனில் அந்த சரியான வழி தவறிய இருந்தது.
+எங்கள் வாழ்க்கை இன் பயணம் இன் நடுத்தரம் இல்
+என்னை கண்டுபிடித்தேன் உள்ளில் ஒரு இருண்ட காடு,
+ஏனெனில் அந்த சரியான வழி இழந்த இருந்தது.
 ```
 ]]></message>
 </messages>

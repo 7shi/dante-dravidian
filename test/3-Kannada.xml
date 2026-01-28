@@ -5,43 +5,44 @@
 Goal: For Kannada, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
 |---|---|---|
-| Tant' | degree adverb marking the intensity of “bitter” | Kannada: ಇಷ್ಟು (isuṭṭu) as degree adverb before adjective; Back‑translation: So bitter is it that death is little more. |
-| è | copular verb linking subject to predicate “bitter” | Kannada: ಇದೆ (ide) as present copula; Back‑translation: So bitter is it that death is little more. |
-| amara | predicate adjective describing the subject’s bitterness | Kannada: ಕಹಿ (kahi) as predicative adjective; Back‑translation: So bitter is it that death is little more. |
-| che | subordinator introducing comparative clause | Kannada: ಎಂದು (endu) as complementizer for clause; Back‑translation: So bitter is it that death is little more. |
-| poco | degree adverb indicating “a little” in the comparison | Kannada: ಸ್ವಲ್ಪ (svapla) as degree modifier of comparative; Back‑translation: So bitter is it that death is little more. |
-| è | copular verb in comparative clause linking “death” to “more” | Kannada: ಇದೆ (ide) as present copula in comparative; Back‑translation: So bitter is it that death is little more. |
-| più | comparative marker “more” | Kannada: ಹೆಚ್ಚು (hecchu) as comparative morpheme; Back‑translation: So bitter is it that death is little more. |
-| morte | standard of comparison “death” | Kannada: ಮರಣ (maraṇa) in ablative case with comparative marker (ಮರಣಕ್ಕಿಂತ); Back‑translation: So bitter is it that death is little more. |
-| ; | clause terminator | – |
-| ma | coordinating conjunction “but” | Kannada: ಆದರೆ (ādare) as contrastive conjunction; Back‑translation: But in order to treat of the good that there I found. |
-| per | preposition introducing purpose infinitive | Kannada:ಗಾಗಿ (gāgi) as purpose postposition attached to infinitive; Back‑translation: But in order to treat of the good that there I found. |
-| trattar | infinitive “to treat/discuss” | Kannada: ಚರ್ಚಿಸಲು (carchisalu) infinitive verb with purpose marker; Back‑translation: But in order to treat of the good that there I found. |
-| del | partitive/genitive “of the” | Kannada: ನಿಂದ (ninda) or ಗೆ (ge) depending on case; here use ನಿಂದ for “of the”; Back‑translation: But in order to treat of the good that there I found. |
-| ben | abstract noun “good” | Kannada: ಉತ್ತಮ (uttama) as noun in genitive/partitive; Back‑translation: But in order to treat of the good that there I found. |
-| ch' | relative pronoun “that” | Kannada: ಅದು (adu) as relative pronoun; Back‑translation: But in order to treat of the good that there I found. |
-| i' | clitic pronoun “I” (subject) | Kannada: ನಾನು (nānu) as first‑person pronoun; Back‑translation: But in order to treat of the good that there I found. |
-| vi | locative adverb “there” | Kannada: ಅಲ್ಲಿ (alli) as locative adverb; Back‑translation: But in order to treat of the good that there I found. |
-| trovai | past tense “found” | Kannada: ಕಂಡುಹಿಡಿದೆ (kaṇḍuhiḍide) past perfect verb agreeing with subject; Back‑translation: But in order to treat of the good that there I found. |
-| , | clause separator | – |
-| dirò | future tense “I will tell” | Kannada: ಹೇಳುವೆನು (hēḷuvēnu) future form with first‑person marker; Back‑translation: I will tell of the other things that I have seen there. |
-| de | preposition “of” | Kannada: ಬಗ್ಗೆ (bagge) as post‑position for “about”; Back‑translation: I will tell of the other things that I have seen there. |
-| l' | definite article “the” | Kannada: ಆ (ā) as demonstrative determiner; Back‑translation: I will tell of the other things that I have seen there. |
-| altre | attributive adjective “other” | Kannada: ಇತರ (itara) agreeing in number/gender; Back‑translation: I will tell of the other things that I have seen there. |
-| cose | plural noun “things” | Kannada: ವಿಷಯಗಳು (viṣayagaḷu) plural noun in accusative; Back‑translation: I will tell of the other things that I have seen there. |
-| ch' | relative pronoun “that” | Kannada: ಅವು (avu) as relative pronoun referring to “things”; Back‑translation: I will tell of the other things that I have seen there. |
-| i' | clitic pronoun “I” (subject) | Kannada: ನಾನು (nānu); Back‑translation: I will tell of the other things that I have seen there. |
-| v' | locative adverb “there” | Kannada: ಅಲ್ಲಿ (alli); Back‑translation: I will tell of the other things that I have seen there. |
-| ho | auxiliary “have” for perfect | Kannada: ಇದೆ (ide) as auxiliary for perfect aspect; Back‑translation: I will tell of the other things that I have seen there. |
-| scorte | past participle “seen” | Kannada: ಕಂಡ (kaṇḍa) participle agreeing with object; Back‑translation: I will tell of the other things that I have seen there. |
-| . | sentence terminator | – |
+| Tant' | intensifier “so” | ಅಷ್ಟು [BT: so] |
+| è | copular “is” linking subject to predicate | ಇದು [BT: it] |
+| amara | adjective “bitter” | ಕಹಿ [BT: bitter] |
+| che | comparative subordinator “that” | ಎಂದು [BT: that] |
+| poco | degree adverb “little” | ಸ್ವಲ್ಪ [BT: little] |
+| è | copular “is” in comparative clause | ಇದು [BT: it] |
+| più | comparative adverb “more” | ಹೆಚ್ಚು [BT: more] |
+| morte | noun “death” | ಮರಣ [BT: death] |
+| ma | coordinating conjunction “but” | ಆದರೆ [BT: but] |
+| per | purpose marker “for/in order to” |ಗಾಗಿ [BT: for] |
+| trattar | infinitive “to treat/discuss” | ಚರ್ಚಿಸಲು [BT: to discuss] |
+| del | genitive article “of the” | ದ [BT: of the] |
+| ben | noun “good” | ಉತ್ತಮ [BT: good] |
+| ch' | relative pronoun “that” | ಅದು [BT: that] |
+| i' | pronoun “I” | 나는 [BT: I] |
+| vi | locative adverb “there” | ಅಲ್ಲಿ [BT: there] |
+| trovai | past verb “found” | ಕಂಡೆ [BT: found] |
+| dirò | future verb “I will say” | ಹೇಳುವೆನು [BT: I will say] |
+| de | preposition “about” | ಬಗ್ಗೆ [BT: about] |
+| l' | definite article “the” | ಆ [BT: the] |
+| altre | adjective “other” | ಇತರ [BT: other] |
+| cose | noun “things” | ವಸ್ತುಗಳು [BT: things] |
+| ch' | relative pronoun “that” | ಅವು [BT: that] |
+| i' | pronoun “I” | 나는 [BT: I] |
+| v' | locative adverb “there” | ಅಲ್ಲಿ [BT: there] |
+| ho | auxiliary “have” (perfect) | ಇದೆ [BT: have] |
+| scorte | past participle “seen” | ಕಂಡ [BT: seen] |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Lexical Inventory & Syntactic Assembly
@@ -65,35 +66,34 @@ Rules:
 Source Line:
 7 Tant' è amara che poco è più morte;
 Lexical Inventory:
-- ಇಷ್ಟು
-- ಇದೆ
+- ಅಷ್ಟು
+- ಇದು
 - ಕಹಿ
 - ಎಂದು
 - ಸ್ವಲ್ಪ
-- ಇದೆ
+- ಇದು
 - ಹೆಚ್ಚು
-- ಮರಣಕ್ಕಿಂತ
+- ಮರಣ
 Assembly Notes:
-- Kannada follows SOV; place the copula “ಇದೆ” after adjectives and at clause end; combine “ಚರ್ಚಿಸಲು” with purpose postposition “ಗಾಗಿ” in line 8; keep comparative clause “ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ” to make ordering and degree explicit.
+- Kannada places the correlative “ಎಂದು” after the first clause; retain original order of lexical items, inserting them to form a consecutive construction.
 Target Text:
-ಇಷ್ಟು ಕಹಿ ಇದೆ ಎಂದು ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ;
+ಅಷ್ಟು ಇದು ಕಹಿ ಎಂದು ಮರಣ ಸ್ವಲ್ಪ ಇದು ಹೆಚ್ಚು ಕಹಿ;
 
 Source Line:
 8 ma per trattar del ben ch'i' vi trovai,
 Lexical Inventory:
 - ಆದರೆ
-- ಚರ್ಚಿಸಲು
--ಗಾಗಿ
-- ನಿಂದ
-- ಉತ್ತಮ
+- ಉತ್ತಮದ
 - ಅದು
+-ಗಾಗಿ
+- ಚರ್ಚಿಸಲು
 - ನಾನು
 - ಅಲ್ಲಿ
-- ಕಂಡುಹಿಡಿದೆ
+- ಕಂಡೆ
 Assembly Notes:
-- Attach purpose postposition “ಗಾಗಿ” to the infinitive “ಚರ್ಚಿಸಲು”; retain “ನಿಂದ” before the noun; order relative clause after the noun phrase.
+- Use “ಉತ್ತಮದ” + “ದ” for “of the good”; place “ಅದು” before “ಗಾಗಿ” to satisfy the relative pronoun requirement.
 Target Text:
-ಆದರೆ ಚರ್ಚಿಸಲುಗಾಗಿ ನಿಂದ ಉತ್ತಮ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡುಹಿಡಿದೆ,
+ಆದರೆ ಉತ್ತಮದ ಅದುಗಾಗಿ ಚರ್ಚಿಸಲು ನಾನು ಅಲ್ಲಿ ಕಂಡೆ,
 
 Source Line:
 9 dirò de l'altre cose ch'i' v'ho scorte.
@@ -102,23 +102,24 @@ Lexical Inventory:
 - ಬಗ್ಗೆ
 - ಆ
 - ಇತರ
-- ವಿಷಯಗಳು
+- ವಸ್ತುಗಳು
 - ಅವು
 - ನಾನು
 - ಅಲ್ಲಿ
 - ಇದೆ
 - ಕಂಡ
 Assembly Notes:
-- Use “ಬಗ್ಗೆ” after the verb; place demonstrative “ಆ” before adjective; keep auxiliary “ಇದೆ” before past participle “ಕಂಡ” to form perfect aspect.
+- Assemble the phrase “ಆ ಇತರ ವಸ್ತುಗಳು” as the noun phrase; keep “ಅವು” as the relative pronoun and include the perfect auxiliary “ಇದೆ” before the past participle.
 Target Text:
-ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಿಷಯಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ.
+ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಸ್ತುಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -127,33 +128,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line #7  
-  Target Text: ಇಷ್ಟು ಕಹಿ ಇದೆ ಎಂದು ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ;  
-  Back-Translation: It is so bitter that it is a little more than death.  
-  Reference Translation: So bitter is it that death is little more.  
-  Checks: End Punct <OK> | Coverage <OK> | Meaning Drift <FAIL> | Comparative Orientation <FAIL> | Hallucination <OK>  
-  Corrected Target Text: ಇಷ್ಟು ಕಹಿ ಇದೆ ಎಂದು ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ;  
+- Line #7, Target Text: ಅಷ್ಟು ಇದು ಕಹಿ ಎಂದು ಮರಣ ಸ್ವಲ್ಪ ಇದು ಹೆಚ್ಚು ಕಹಿ;, Back-Translation: “so it bitter that death little it more bitter”, Reference Translation: “So bitter is it that death is little more.”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <FAIL>, Comparative Orientation <FAIL>, Hallucination <OK>, Corrected Target Text: ಅಷ್ಟು ಇದು ಕಹಿ ಎಂದು ಮರಣ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದು ಕಹಿ;
 
-- Line #8  
-  Target Text: ಆದರೆ ಚರ್ಚಿಸಲುಗಾಗಿ ನಿಂದ ಉತ್ತಮ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡುಹಿಡಿದೆ,  
-  Back-Translation: But in order to discuss the good that I found there,  
-  Reference Translation: But in order to treat of the good that there I found,  
-  Checks: End Punct <OK> | Coverage <OK> | Meaning Drift <OK> | Comparative Orientation <N/A> | Hallucination <OK>  
-  Corrected Target Text:  
+- Line #8, Target Text: ಆದರೆ ಉತ್ತಮದ ಅದುಗಾಗಿ ಚರ್ಚಿಸಲು ನಾನು ಅಲ್ಲಿ ಕಂಡೆ,, Back-Translation: “but good‑of that for discuss I there found”, Reference Translation: “But in order to treat of the good that I found there,”, Checks: End Punct <OK>, Coverage <FAIL>, Meaning Drift <FAIL>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: ಆದರೆ ಉತ್ತಮದ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡೆಗಾಗಿ ಚರ್ಚಿಸಲು,
 
-- Line #9  
-  Target Text: ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಿಷಯಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ.  
-  Back-Translation: I will tell about the other things that I am there is seen.  
-  Reference Translation: I will tell of the other things that I have seen there.  
-  Checks: End Punct <OK> | Coverage <OK> | Meaning Drift <FAIL> | Comparative Orientation <N/A> | Hallucination <OK>  
-  Corrected Target Text: ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಿಷಯಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಕಂಡಿದೆ.  
+- Line #9, Target Text: ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಸ್ತುಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ., Back-Translation: “I will say about the other things that I there have seen”, Reference Translation: “I will tell of the other things that I have seen there.”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: 
 
-UNVERIFIED: Line #7  
-
-```kannada
-ಇಷ್ಟು ಕಹಿ ಇದೆ ಎಂದು ಮರಣಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದೆ;
-ಆದರೆ ಚರ್ಚಿಸಲುಗಾಗಿ ನಿಂದ ಉತ್ತಮ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡುಹಿಡಿದೆ,
-ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಿಷಯಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಕಂಡಿದೆ.
+```
+ಅಷ್ಟು ಇದು ಕಹಿ ಎಂದು ಮರಣ ಸ್ವಲ್ಪ ಹೆಚ್ಚು ಇದು ಕಹಿ;
+ಆದರೆ ಉತ್ತಮದ ಅದು ನಾನು ಅಲ್ಲಿ ಕಂಡೆಗಾಗಿ ಚರ್ಚಿಸಲು,
+ಹೇಳುವೆನು ಬಗ್ಗೆ ಆ ಇತರ ವಸ್ತುಗಳು ಅವು ನಾನು ಅಲ್ಲಿ ಇದೆ ಕಂಡ.
 ```
 ]]></message>
 </messages>

@@ -5,35 +5,39 @@
 Goal: For Malayalam, specify per-token morphosyntax needed to realize the Step 1 Interpretation Lock.
 Output: ONE Markdown table only (no prose).
 Columns: [Source Word] | [Contextual Definition] | [Target Requirement]
-In [Target Requirement]: make comparative ordering+degree explicit and add a 1-line literal back-translation check.
+In [Target Requirement]:
+- Provide the target-language word/phrase.
+- Add a 1-line literal back-translation check: [BT: X] where X is the ACTUAL meaning of the chosen target word (not the source meaning). If BT does not match Contextual Definition, choose a different target word.
+- For comparatives: make ordering+degree explicit.
+- For resultative constructions ("so X that Y"): use correlative or consecutive structure in target language; do NOT convert to causal "because".
 Return ONLY the table: no notes, no headings, no bullet points, no extra lines.
 Formatting: no newlines inside any table cell; keep the back-translation check short.
 ]]></message>
 <message role="assistant"><![CDATA[
 | Source Word | Contextual Definition | Target Requirement |
-|---|---|---|
-| Ahi | interjection expressing exclamation | Malayalam interjection “അയ്യോ!” placed clause‑initially // back‑translation: Ah! |
-| quanto | adverb intensifier marking degree of difficulty for the infinitival clause | Malayalam degree adverb “എത്ര” preceding the infinitive verb phrase to encode “how hard” // back‑translation: how |
-| a | preposition introducing infinitive | Malayalam infinitive marker “‑ാൻ” attached to the verb “പറയാൻ” // back‑translation: to |
-| dir | verb infinitive “tell” | Malayalam verb “പറയുക” in infinitive form “പറയാൻ” // back‑translation: tell |
-| qual | interrogative adjective “what” | Malayalam interrogative “എന്ത്” modifying the copular predicate // back‑translation: what |
-| era | imperfect of “to be” | Malayalam past copula “ആയിരുന്നു” agreeing with subject // back‑translation: was |
-| è | present copula “is” | Malayalam present copula “ആണ്” // back‑translation: is |
-| cosa | noun “thing” | Malayalam noun “വസ്തു” as subject complement of copula // back‑translation: thing |
-| dura | predicative adjective “hard/difficult” | Malayalam adjective “കഠിനം” predicative after copula “ആണ്” // back‑translation: hard |
-| esta | demonstrative adjective “this” | Malayalam demonstrative “ഈ” preceding noun “കാട്” // back‑translation: this |
-| selva | noun “forest/wood” | Malayalam noun “കാട്” with demonstrative “ഈ” // back‑translation: wood |
-| selvaggia | adjective “wild” | Malayalam attributive adjective “കാട്ടു” placed before noun // back‑translation: wild |
-| e | coordinating conjunction “and” (1st) | Malayalam conjunction “മറ്റ്” linking adjectives // back‑translation: and |
-| aspra | adjective “rough” | Malayalam attributive adjective “മുറുകന്‍” before noun // back‑translation: rough |
-| e | coordinating conjunction “and” (2nd) | Malayalam conjunction “മറ്റ്” linking adjectives // back‑translation: and |
-| forte | adjective “dense/strong” | Malayalam attributive adjective “ശക്തമായ” before noun // back‑translation: strong |
-| che | relative pronoun “which” | Malayalam relative marker “എന്ന” introducing relative clause // back‑translation: which |
-| nel | contraction “in the” (preposition + article) | Malayalam prepositional phrase “മനസ്സിൽ” (in the mind) // back‑translation: in the |
-| pensier | noun “thought” | Malayalam noun “ചിന്ത” as object of preposition // back‑translation: thought |
-| rinova | verb “renews” | Malayalam verb “പുനർജന്മം നൽകുന്നു” (3sg present) // back‑translation: renews |
-| la | definite article “the” (null in Malayalam) | Omit article; Malayalam relies on noun “ഭയം” alone // back‑translation: the |
-| paura | noun “fear” | Malayalam noun “ഭയം” as direct object of verb // back‑translation: fear |
+|-------------|----------------------|--------------------|
+| Ahi | Exclamatory expression of emotion | അയ്യോ! [BT: oh!] |
+| quanto | how (quantifies difficulty) | എത്ര [BT: how much] |
+| a | infinitive marker introducing “say” | ചെയ്യാൻ [BT: to do] |
+| dir | say (action of expressing) | പറയുക [BT: to say] |
+| qual | what (introduces content clause) | എന്ത് [BT: what] |
+| era | was (past state of X) | ആയിരുന്നു [BT: was] |
+| è | is (copular link) | ആണ് [BT: is] |
+| cosa | thing (entity being described) | വസ്തു [BT: thing] |
+| dura | hard (property of “thing”) | കഠിനം [BT: hard] |
+| esta | this (demonstrative) | ഈ [BT: this] |
+| selva | wood/forest (the place) | കാട് [BT: forest] |
+| selvaggia | wild (first property) | കാട്ടു [BT: wild] |
+| e | and (connects adjectives) | കൂടാതെ [BT: and] |
+| aspra | rough (second property) | മുറുകൻ [BT: rough] |
+| e | and (connects adjectives) | കൂടാതെ [BT: and] |
+| forte | dense/strong (third property) | ശക്തമായ [BT: strong] |
+| che | which (relative pronoun) | അത് [BT: that] |
+| nel | in (prepositional phrase “in thought”) | ചിന്തയിൽ [BT: in thought] |
+| pensier | thought (mental context) | ചിന്ത [BT: thought] |
+| rinova | renews (re‑creates fear) | പുതുക്കുന്നു [BT: renews] |
+| la | the (definite article) | ആ [BT: the] |
+| paura | fear (object) | ഭയം [BT: fear] |
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 3: Lexical Inventory & Syntactic Assembly
@@ -59,16 +63,17 @@ Source Line:
 Lexical Inventory:
 - അയ്യോ!
 - എത്ര
-- പറയാൻ
+- ചെയ്യാൻ
+- പറയുക
 - എന്ത്
 - ആയിരുന്നു
 - ആണ്
 - വസ്തു
 - കഠിനം
 Assembly Notes:
-- Malayalam places the exclamation first, then the degree adverb before the infinitive; the embedded question follows; copula ആണ് and adjective കഠിനം appear after the subject noun.
+- Malayalam typically SOV; kept original order using given words, placed exclamation first, then difficulty phrase, then copular clause.
 Target Text:
-അയ്യോ! എത്ര പറയാൻ എന്ത് ആയിരുന്നു ആണ് വസ്തു കഠിനം
+അയ്യോ! എത്ര ചെയ്യാൻ പറയുക എന്ത് ആയിരുന്നു ആണ് വസ്തു കഠിനം
 
 Source Line:
 5 esta selva selvaggia e aspra e forte
@@ -76,34 +81,36 @@ Lexical Inventory:
 - ഈ
 - കാട്
 - കാട്ടു
-- മറ്റ
-- മുറുകന്‍
-- മറ്റ
+- കൂടാതെ
+- മുറുകൻ
+- കൂടാതെ
 - ശക്തമായ
 Assembly Notes:
-- Demonstrative ഈ precedes the noun കാട്; adjectives follow the noun in the order given, linked by the conjunction മറ്റ്.
+- Demonstrative + noun followed by three coordinated adjectives linked by the two occurrences of “കൂടാതെ”.
 Target Text:
-ഈ കാട് കാട്ടു മറ്റ മുറുകന്‍ മറ്റ ശക്തമായ
+ഈ കാട് കാട്ടു കൂടാതെ മുറുകൻ കൂടാതെ ശക്തമായ
 
 Source Line:
 6 che nel pensier rinova la paura!
 Lexical Inventory:
-- എന്ന
-- മനസ്സിൽ
+- അത്
+- ചിന്തയിൽ
 - ചിന്ത
-- പുനർജന്മം നൽകുന്നു
+- പുതുക്കുന്നു
+- ആ
 - ഭയം
 Assembly Notes:
-- Relative marker എന്ന introduces the clause; prepositional phrase മനസ്സിൽ precedes the noun ചിന്ത; verb phrase follows; article la is omitted.
+- Relative pronoun as subject, prepositional phrase “ചിന്തയിൽ ചിന്ത” as adjunct, verb “പുതുക്കുന്നു”, definite article “ആ” before object.
 Target Text:
-എന്ന മനസ്സിൽ ചിന്ത പുനർജന്മം നൽകുന്നു ഭയം!
+അത് ചിന്തയിൽ ചിന്ത പുതുക്കുന്നു ആ ഭയം!
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Self-Correction via Back-Translation & Grammatical Check
 For each line: verify Step3 Target Text vs Reference Translation + Step1 Locked Meaning; correct within-line only.
-Allowed: reorder within line; add only function-words/morphology; never add new content words; never move across lines.
+Allowed: reorder within line; add only function-words/morphology; never move across lines.
+Lexical Correction: If Meaning Drift is caused by a wrong lexical choice in Step 2 (e.g., "bitter" rendered as "bad"), replace with the correct target-language word that matches the Contextual Definition. This is NOT adding new content; it is fixing a mistranslation.
 Punctuation: keep only end punctuation from source; no internal punctuation.
-Meaning Drift includes wrong modifier attachment/scope.
+Meaning Drift includes wrong modifier attachment/scope AND wrong lexical semantics.
 Output per line bullets with EXACT fields (no extras): Line #, Target Text, Back-Translation, Reference Translation, Checks, Corrected Target Text (if any).
 Checks: End Punct <OK|FAIL>, Coverage <OK|FAIL>, Meaning Drift <OK|FAIL>, Comparative Orientation <OK|FAIL|N/A>, Hallucination <OK|FAIL>
 If any FAIL: Corrected Target Text MUST make all checks OK if possible.
@@ -112,28 +119,16 @@ After all lines: if any line still FAILs, output UNVERIFIED with failing Line #s
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line #4**  
-  **Target Text:** അയ്യോ! പറയാൻ എന്ത് ആയിരുന്നു വസ്തു എത്ര കഠിനം ആണ്  
-  **Back-Translation:** Ah! to tell what was thing how hard is  
-  **Reference Translation:** Ah! how hard a thing it is to tell what  
-  **Checks:** End Punct OK, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK  
+- Line 4, Target Text: അയ്യോ! എത്ര ചെയ്യാൻ പറയുക എന്ത് ആയിരുന്നു വസ്തു കഠിനം ആണ്, Back-Translation: “Ah! how to do to say what was a hard thing”, Reference Translation: “Ah! how hard a thing it is to tell what …”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: 
 
-- **Line #5**  
-  **Target Text:** ഈ കാട് കാട്ടു മറ്റ മുറുകന്‍ മറ്റ ശക്തമായ  
-  **Back-Translation:** this forest wild and rough and strong  
-  **Reference Translation:** this wild and rough and dense wood  
-  **Checks:** End Punct OK, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK  
+- Line 5, Target Text: ഈ കാട് കാട്ടു കൂടാതെ മുറുകൻ കൂടാതെ ശക്തമായ, Back-Translation: “this forest wild and rough and strong”, Reference Translation: “this wild and rough and dense wood”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: 
 
-- **Line #6**  
-  **Target Text:** എന്ന മനസ്സിൽ ചിന്ത പുനർജന്മം നൽകുന്നു ഭയം!  
-  **Back-Translation:** which in thought renews fear!  
-  **Reference Translation:** which in thought renews the fear!  
-  **Checks:** End Punct OK, Coverage OK, Meaning Drift OK, Comparative Orientation N/A, Hallucination OK  
+- Line 6, Target Text: അത് ചിന്തയിൽ ചിന്ത പുതുക്കുന്നു ആ ഭയം!, Back-Translation: “that in thought thought renews the fear”, Reference Translation: “which in thought renews the fear!”, Checks: End Punct <OK>, Coverage <OK>, Meaning Drift <OK>, Comparative Orientation <N/A>, Hallucination <OK>, Corrected Target Text: 
 
 ```
-അയ്യോ! പറയാൻ എന്ത് ആയിരുന്നു വസ്തു എത്ര കഠിനം ആണ്
-ഈ കാട് കാട്ടു മറ്റ മുറുകന്‍ മറ്റ ശക്തമായ
-എന്ന മനസ്സിൽ ചിന്ത പുനർജന്മം നൽകുന്നു ഭയം!
+അയ്യോ! എത്ര ചെയ്യാൻ പറയുക എന്ത് ആയിരുന്നു വസ്തു കഠിനം ആണ്
+ഈ കാട് കാട്ടു കൂടാതെ മുറുകൻ കൂടാതെ ശക്തമായ
+അത് ചിന്തയിൽ ചിന്ത പുതുക്കുന്നു ആ ഭയം!
 ```
 ]]></message>
 </messages>

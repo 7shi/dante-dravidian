@@ -4,8 +4,8 @@ from llm import LLMClient, history_to_xml, xml_to_history
 from translate import step1, translate, get_result
 
 # model = "ollama:gpt-oss:120b"
-model = "groq:openai/gpt-oss-120b"
-# model = "openrouter:openai/gpt-oss-120b:free"
+# model = "groq:openai/gpt-oss-120b"
+model = "openrouter:openai/gpt-oss-120b:free"
 think = False
 temperature = 0.1
 
@@ -56,16 +56,16 @@ for i in range(3):
         if os.path.exists(xml_file):
             with open(xml_file, 'r', encoding='utf-8') as f:
                 history = xml_to_history(f.read())
+            text = get_result(history).rstrip()
         else:
             print()
             print("-" * 60)
             print(f"Testing translation to {lang}...")
             print("-" * 60)
-            history = translate(client, lang)[2:]
+            history, text = translate(client, lang)
             with open(f"test/{i+1}-{lang}.xml", 'w', encoding='utf-8') as f:
-                f.write(history_to_xml(history))
-        translated_text = get_result(history).rstrip()
-        lines = [f"{i3+k+1} {line}" for k, line in enumerate(translated_text.splitlines())]
+                f.write(history_to_xml(history[2:]))
+        lines = [f"{i3+k+1} {line}" for k, line in enumerate(text.splitlines())]
         result[lang] = "\n".join(lines)
 
     # Save combined result
