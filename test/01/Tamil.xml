@@ -23,43 +23,41 @@ ché la diritta via era smarrita.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Tamil Alignment Table**
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
-|-------------|----------------------|----------------------|--------------------------------------|--------|
-| **Nel** | preposition + definite article “in the” | **நடுவில்** (part of) | “in the middle” | OK |
-| **mezzo** | noun “middle, midpoint” | **நடுவில்** (part of) | “middle” | OK |
-| **del** | preposition + definite article “of the” | **நடுவில் / பயணத்தின்** (part of) | “of the” (genitive) | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|--------------------------------------|----------------------|--------------------------------------|--------|
+| **Nel** | preposition + definite article “in the” (locative) | **நடுவில்** | “in the middle” | OK |
+| **mezzo** | noun “midpoint, middle” | **நடுவில்** | “in the middle” | OK |
+| **del** | genitive article “of the” (links *mezzo* to *cammin*) | – | – | **UNNECESSARY** (Italian article not expressed in Tamil) |
 | **cammin** | noun “road, journey” | **பயணத்தின்** | “of the journey” | OK |
-| **di** | preposition “of” | **பயணத்தின்** (part of) | “of” | OK |
+| **di** | preposition “of” (links *cammin* to *nostra vita*) | – | – | **UNNECESSARY** |
 | **nostra** | possessive adjective “our” | **எங்கள்** | “our” | OK |
 | **vita** | noun “life” | **வாழ்க்கையின்** | “of life” | OK |
-| **mi** | reflexive pronoun “myself” | **தன்னை** | “myself” | OK |
-| **ritrovai** | verb “found” (passato remoto) | **கண்டேன்** | “found” | OK |
-| **per** | preposition “through, within” | **காடில்** (part of) | “in” | OK |
+| **mi** | reflexive pronoun “myself” (object of *ritrovai*) | **தன்னை** | “myself” | OK |
+| **ritrovai** | verb “found (myself)” (passato remoto) | **கண்டேன்** | “found” | OK |
+| **per** | preposition “through/within” (spatial) | – (expressed by locative suffix **‑இல்** on *காடில்*) | – | **UNNECESSARY** (no separate word) |
 | **una** | indefinite article “a” | **ஒரு** | “a” | OK |
 | **selva** | noun “forest, wood” | **காடு** | “forest” | OK |
 | **oscura** | adjective “dark” | **இருண்ட** | “dark” | OK |
-| **ché** | conjunction “for, because” (causal) | **ஏனெனில்** | “because” | **WRONG** (should be omitted or rendered as a resultative, not a causal “because”) |
-| **la** | definite article “the” | — (not expressed) | — | **MISSING** |
+| **ché** | conjunction “for, because” (causal) | **ஏனெனில்** | “because” | OK |
+| **la** | definite article “the” | – | – | **UNNECESSARY** |
 | **diritta** | adjective “right, straight, correct” | **சரியான** | “correct/right” | OK |
 | **via** | noun “way, path” | **பாதை** | “way” | OK |
-| **era** | verb “was” (imperfect of *essere*) | — (implied in predicate) | — | **MISSING** |
-| **smarrita** | past participle “lost, missed” | **இழந்துவிட்டது** | “has been lost / missed” | OK |
+| **era** | copular verb “was / had been” (imperfect) | – (implicit in **இழந்துவிட்டது**) | – | **UNNECESSARY** |
+| **smarrita** | past participle used adjectivally “lost, missed” | **இழந்துவிட்டது** | “had been lost / missed” | OK |
 
 ---
 
 ### Items Requiring Attention
-- **WRONG:** `ché` – rendered as “ஏனெனில்” (causal “because”). The source clause is a resultative (“for the right way had been missed”), so the conjunction should be omitted or expressed with a resultative particle, not a causal “because”.
-- **MISSING:** `la` – the definite article has no direct equivalent in Tamil and was omitted (acceptable, but flagged as missing for completeness).
-- **MISSING:** `era` – the copular verb “was” is not explicitly present in the Tamil clause; the meaning is carried by the past‑perfect verb “இழந்துவிட்டது”. This omission is noted. 
-
-No grammatical agreement errors were detected in the Tamil translation.
+- **UNNECESSARY**: `del`, `di`, `per`, `la`, `era` – Italian articles, prepositions, or auxiliary verb that are naturally omitted in Tamil because the language expresses these relations via case suffixes or verb morphology.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all translated elements convey the intended meaning and agree in gender/number where applicable.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -76,22 +74,22 @@ Output final Tamil text in ONE code block, line by line (no extra prose).
 - Line 1:
   - Original: எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்
   - Issue: none
-  - Corrected: எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்  
+  - Corrected: no change  
 
 - Line 2:
   - Original: நான் ஒரு இருண்ட காடில் தன்னை கண்டேன்,
-  - Issue: wrong reflexive pronoun (“தன்னை”); should be “என்னை”.
-  - Corrected: நான் ஒரு இருண்ட காடில் **என்னை** கண்டேன்,  
+  - Issue: none
+  - Corrected: no change  
 
 - Line 3:
-  - Original: சரியான பாதை இழந்துவிட்டது.
-  - Issue: missing resultative connector and implicit copula; the clause should stand alone without “ché”.
-  - Corrected: **சரியான பாதை இழந்துவிட்டது.**  
+  - Original: ஏனெனில் சரியான பாதை இழந்துவிட்டது.
+  - Issue: none
+  - Corrected: no change  
 
-```text
+```
 எங்கள் வாழ்க்கையின் பயணத்தின் நடுவில்
-நான் ஒரு இருண்ட காடில் என்னை கண்டேன்,
-சரியான பாதை இழந்துவிட்டது.
+நான் ஒரு இருண்ட காடில் தன்னை கண்டேன்,
+ஏனெனில் சரியான பாதை இழந்துவிட்டது.
 ```
 ]]></message>
 </messages>

@@ -18,48 +18,53 @@ Direi das outras coisas que eu vi lá.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Step 3)**  
+**Word‑to‑Word Alignment Table (source → Portuguese)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Portuguese) | Back‑Translation (EN) | Status |
-|-------------|--------------------------------------|--------------------------------|------------------------|--------|
-| Tant' | adverb “to such a degree” (intensifier) | **Tão** | “so / such” | OK |
-| è | copular verb “is” | **é** | “is” | OK |
-| amara | adjective “bitter” | **amarga** | “bitter” | **GRAMMAR** (gender mismatch – should be *amargo* for a neuter/masc. referent) |
-| che | conjunction “that” (resultative) | **que** | “that” | OK |
-| poco | adverb “little” (slight degree) | **pouco** | “little” | OK |
-| è | copular verb “is” (comparative clause) | **é** | “is” | OK |
-| più | comparative adverb “more” | **mais** | “more” | OK |
-| morte | noun “death” | **morte** | “death” | OK |
-| ma | coordinating conjunction “but” | **Mas** | “but” | OK |
-| per | preposition “in order to” (purpose) | **para** | “to / in order to” | OK |
-| trattar | infinitive verb “to treat / discuss” | **tratar** | “to treat / discuss” | OK |
-| del | contraction *di + il* “of the” | **do** | “of the” | OK |
-| ben | noun “good” | **bem** | “good” | OK |
-| ch' | relative pronoun “that” | **que** | “that” | OK |
-| i' | pronoun “I” | **eu** | “I” | OK |
-| vi | adverb “there” (locative) | **lá** | “there” | OK |
-| trovai | verb “found” (preterite) | **encontrei** | “found” | OK |
-| dirò | future verb “I will tell” | **Direi** | “I will tell” | OK |
-| de | preposition “of” | **das** | “of the” (plural fem.) | OK |
-| l'altre | adjective “other” (fem. pl.) | **outras** | “other” | OK |
-| cose | noun “things” (fem. pl.) | **coisas** | “things” | OK |
-| ch' | relative pronoun “that” | **que** | “that” | OK |
-| i' | pronoun “I” | **eu** | “I” | OK |
-| v' | clitic pronoun “vi” (locative “there”) | **lá** | “there” | OK |
-| ho | auxiliary verb “have” (perfect) | — | — | **MISSING** |
-| scorte | past participle “seen” | — | — | **MISSING** |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|-------------------|--------|
+| **Tant'** | “so” (intensifier) | **Tão** | “so” | OK |
+| **è** | copular “is” | **é** | “is” | OK |
+| **amara** | adjective “bitter” | **amarga** | “bitter” | **GRAMMAR** (adjective gender does not agree with the neuter pronoun *isso*) |
+| **che** | conjunction “that” | **que** | “that” | OK |
+| **poco** | adverb “little” | **pouco** | “little” | OK |
+| **è** | copular “is” | **é** | “is” | OK |
+| **più** | comparative “more” | **mais** | “more” | OK |
+| **morte** | noun “death” | **morte** | “death” | OK |
+| **ma** | coordinating “but” | **Mas** | “but” | OK |
+| **per** | preposition of purpose “in order to” | **para** | “for / to” | OK |
+| **trattar** | infinitive “treat / discuss” | **tratar** | “to treat / discuss” | OK |
+| **del** | “of the” (de + il) | **do** | “of the” | OK |
+| **ben** | noun “good” | **bem** | “good” (as abstract concept) | OK |
+| **ch'** | relative pronoun “that” | **que** | “that” | OK |
+| **i'** | pronoun “I” | **eu** | “I” | OK |
+| **vi** | adverb “there” (locative) | **lá** | “there” | OK |
+| **trovai** | verb “found” (past) | **encontrei** | “found” | OK |
+| **dirò** | future “I will tell” | **Direi** | “I will tell” | OK |
+| **de** | preposition “of” | **das** | “of the” (de + as) | OK |
+| **l'altre** | adjective “other” (plural) | **outras** | “other (feminine plural)” | OK |
+| **cose** | noun “things” | **coisas** | “things” | OK |
+| **ch'** | relative pronoun “that” | **que** | “that” | OK |
+| **i'** | pronoun “I” | **eu** | “I” | OK |
+| **v'** | clitic locative “there” (part of *v'ho*) | — | — | **MISSING** (locative expressed only by final *lá*) |
+| **ho** | auxiliary “have” (perfect) | — | — | **MISSING** (Portuguese uses simple past) |
+| **scorte** | past participle “seen” | **vi** | “saw” | OK |
+| **isso** *(added in Portuguese)* | — | **isso** | “this/that” | **UNNECESSARY** (no explicit pronoun in the Italian source) |
 
 ---
 
-### Items Requiring Attention
-- **GRAMMAR:** *amarga* – gender agreement error; the adjective should be masculine (*amargo*) or the sentence re‑phrased to match a feminine noun.
-- **MISSING:** *ho* (auxiliary “have”) – not rendered in the Portuguese version.
-- **MISSING:** *scorte* (past participle “seen”) – the perfect aspect is collapsed into the simple past *vi*; the auxiliary and participle are therefore omitted.
+### Summary of Issues  
+
+- **GRAMMAR**: *amarga* does not agree with the neuter pronoun *isso* (gender mismatch).  
+- **MISSING**: the clitic *v'* (locative “there”) and the auxiliary *ho* are not represented as separate items in the Portuguese version; their meanings are merged into the verb *vi* and the simple past tense.  
+- **UNNECESSARY**: the pronoun *isso* is inserted in Portuguese for syntactic completeness but has no counterpart in the source line.  
+
+All other lexical items are correctly aligned and preserve the intended meaning.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -73,25 +78,23 @@ Output format (use nested bullet list, not table):
 Output final Portuguese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 7:
-  - Original: **Tão amarga é isso que a morte é pouco mais;**
-  - Issue: **GRAMMAR** – adjective gender mismatch (*amarga* vs. neuter “isso”).
-  - Corrected: **Tão amargo é isso que a morte é pouco mais;**
-
-- Line 8:
-  - Original: **Mas para tratar do bem que eu encontrei lá,**
+- Line 7:
+  - Original: Tão amarga é isso que a morte é pouco mais;
+  - Issue: GRAMMAR (adjective gender), UNNECESSARY (pronoun “isso”)
+  - Corrected: Tão amargo é que a morte é pouco mais;
+- Line 8:
+  - Original: Mas para tratar do bem que eu encontrei lá,
   - Issue: none
-  - Corrected: **no change**
+  - Corrected: no change
+- Line 9:
+  - Original: Direi das outras coisas que eu vi lá.
+  - Issue: none
+  - Corrected: no change
 
-- Line 9:
-  - Original: **Direi das outras coisas que eu vi lá.**
-  - Issue: **MISSING** – auxiliary “ho” and participle “scorte” not rendered.
-  - Corrected: **Direi das outras coisas que eu tenho visto lá.**
-
-```text
-Tão amargo é isso que a morte é pouco mais;
+```
+Tão amargo é que a morte é pouco mais;
 Mas para tratar do bem que eu encontrei lá,
-Direi das outras coisas que eu tenho visto lá.
+Direi das outras coisas que eu vi lá.
 ```
 ]]></message>
 </messages>

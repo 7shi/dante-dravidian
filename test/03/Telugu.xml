@@ -18,41 +18,53 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Mapping Table (Step 3)**  
 
 | Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (Eng) | Status |
-|-------------|-----------------------|------------------------------|------------------------|--------|
-| Tant' | intensifier “to such a degree” | **ఇంతగా** | “so, to such an extent” | OK |
-| è (1st) | copular verb “is” | **ఉంది** | “is” | OK |
+|-------------|----------------------|------------------------------|------------------------|--------|
+| Tant' | “so, to such a degree” (intensifier) | **ఇంతగా** | “so, to such an extent” | OK |
+| è (1) | copular verb “is” (first clause) | **ఉంది** | “is” | OK |
 | amara | adjective “bitter” | **చేదుగా** | “bitter” | OK |
-| che | conjunction introducing result/comparative clause | — | — | **MISSING** |
-| poco | adverb “little” | **కొంచెం** | “a little” | OK |
-| è (2nd) | copular verb “is” | **ఉంది** | “is” | OK |
-| più | comparative adverb “more” | **ఎక్కువగా** | “more” | OK |
+| che | subordinator “that” (comparative/result clause) | — | — | **MISSING** |
+| poco | adverb “little, slightly” | **కొంచెం** | “a little” | OK |
+| è (2) | copular verb “is” (comparative clause) | **ఉంది** | “is” | OK |
+| più | comparative adverb “more” (degree) | **ఎక్కువగా** | “more” | OK |
 | morte | noun “death” | **మరణం** | “death” | OK |
-| ma | coordinating conjunction “but” | **కానీ** | “but” | OK |
-| per | preposition marking purpose “in order to” | **చర్చించడానికి** | “to discuss / for discussing” | OK |
-| trattar | infinitive verb “to treat / discuss” | **చర్చించడానికి** | “to discuss” | OK |
-| del | contraction “of the” | **మంచిని** (part of the phrase) | “of the good” | OK |
-| ben | noun “good” | **మంచి** | “good” | OK |
-| ch' (1st) | relative pronoun “that” | **గురించి** | “about / that” | OK |
-| i' (1st) | pronoun “I” | **నేను** | “I” | OK |
-| vi | adverb “there” | **అక్కడ** | “there” | OK |
-| trovai | verb “found” | **కనుగొన్న** | “found” | OK |
-| dirò | future verb “I will tell” | **చెప్పుతాను** | “I will tell” | OK |
-| de | preposition “of” | — | — | **MISSING** |
-| l'altre | adjective “other” | **ఇతర** | “other” | OK |
-| cose | noun “things” | **విషయాలను** | “things (object)” | OK |
-| ch' (2nd) | relative pronoun “that” | **చూసిన** (part of verb) | “that (seen)” | OK |
-| i' (2nd) | pronoun “I” | **నేను** | “I” | OK |
-| v' | clitic pronoun “vi” = “there” | **అక్కడ** | “there” | OK |
-| ho | auxiliary “have” | — | — | **MISSING** |
-| scorte | past participle “seen” | **చూసిన** | “seen” | OK |
+| ma | coordinating conjunction “but” | **కాని** | “but” | OK |
+| per | preposition marking purpose “in order to” | — | — | **MISSING** |
+| trattar | infinitive “to treat / discuss” | **చర్చించడానికి** | “to discuss” (purpose infinitive) | OK |
+| del | partitive article “of the” (definite) | — | — | **UNNECESSARY** (articles are not expressed in Telugu) |
+| ben | noun “good” (the good) | **మంచి** | “good” | OK |
+| ch' (rel.) | relative pronoun “that” introducing clause | — | — | **MISSING** |
+| i' | pronoun “I” (subject) | **నేను** | “I” | OK |
+| vi | adverbial locative “there” | **అక్కడ** | “there” | OK |
+| trovai | 1st‑person past “found” | **కనుగొన్న** | “found” (past participle) | OK |
+| dirò | 1st‑person future “I will say/tell” | **చెప్పుతాను** | “I will tell” | OK |
+| de | preposition “of” (introducing object) | — | — | **MISSING** |
+| l' | definite article “the” (feminine plural) | — | — | **UNNECESSARY** (articles omitted) |
+| altre | adjective “other” | **ఇతర** | “other” | OK |
+| cose | noun “things” (plural) | **విషయాలను** | “things” (accusative) | OK |
+| ch' (rel.) | relative pronoun “that” | — | — | **MISSING** |
+| i' (2) | pronoun “I” (subject) | **నేను** | “I” | OK |
+| v' | clitic locative “there” | **అక్కడ** | “there” | OK |
+| ho | auxiliary “have” (perfect) | — | — | **UNNECESSARY** (perfect aspect expressed by past participle) |
+| scorte | past participle “seen” | **చూసిన** | “seen” (past participle) | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **MISSING**: `che`, `per`, `ch'` (three occurrences), `de` – the Telugu translation omitted these functional words; the meaning is still conveyed but the explicit lexical items are absent.  
+- **UNNECESSARY**: `del`, `l'` – articles that do not exist in Telugu, correctly omitted.  
+- **UNNECESSARY** (auxiliary): `ho` – auxiliary verb not needed in Telugu perfect construction.  
+
+No **WRONG** or **GRAMMAR** errors were detected in the lexical choices; the only issues are the expected omissions of function words that Telugu does not require.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -66,25 +78,25 @@ Output format (use nested bullet list, not table):
 Output final Telugu text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 7:  
-  - Original: ఇంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;  
-  - Issue: Missing *che* (conj. “that”), internal comma.  
-  - Corrected: **ఇంతగా చేదుగా ఉంది అలానే మరణం కొంచెం ఎక్కువగా ఉంది;**  
+- Line 7:
+  - Original: ఇంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువగా ఉంది;
+  - Issue: Missing resultative connector “that” (che) to link the clauses.
+  - Corrected: ఇంతగా చేదుగా ఉంది, **అంటే** మరణం కొంచెం ఎక్కువగా ఉంది;
 
-- Line 8:  
-  - Original: కానీ నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,  
-  - Issue: Missing *de* (preposition “of”).  
-  - Corrected: **కానీ నేను అక్కడ కనుగొన్న ద మంచి గురించి చర్చించడానికి,**  
+- Line 8:
+  - Original: కాని నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,
+  - Issue: none
+  - Corrected: no change
 
-- Line 9:  
-  - Original: నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.  
-  - Issue: Missing *ho* (auxiliary “have”).  
-  - Corrected: **నేను అక్కడ చేసి చూసిన ఇతర విషయాలను చెప్పుతాను.**  
+- Line 9:
+  - Original: నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
+  - Issue: none
+  - Corrected: no change
 
-```
-ఇంతగా చేదుగా ఉంది అలానే మరణం కొంచెం ఎక్కువగా ఉంది;
-కానీ నేను అక్కడ కనుగొన్న ద మంచి గురించి చర్చించడానికి,
-నేను అక్కడ చేసి చూసిన ఇతర విషయాలను చెప్పుతాను.
+```telugu
+ఇంతగా చేదుగా ఉంది, అంటే మరణం కొంచెం ఎక్కువగా ఉంది;
+కాని నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,
+నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
 ```
 ]]></message>
 </messages>

@@ -18,41 +18,38 @@ pois o caminho reto estava perdido.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
 **Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Portuguese) | Back‑Translation (EN) | Status |
-|-------------|--------------------------------------|-----------------------------------|------------------------|--------|
-| **Nel** | preposition + definite article “in the” (location) | **No** | “in the / on the” | OK |
-| **mezzo** | noun “middle, midpoint” | **meio** | “middle” | OK |
-| **del** | genitive “of the” linking “mezzo” to “cammin” | **da** | “of the” | OK |
-| **cammin** | noun “road, journey” (archaic *cammino*) | **jornada** | “journey, road” | OK |
-| **di** | preposition “of” linking “cammin” to “nostra vita” | **da** | “of” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| **Nel** | preposition + definite article (location “in the”) | **No** | “in the” | OK |
+| **mezzo** | noun “midpoint, middle” | **meio** | “middle” | OK |
+| **del** | preposition + definite article (genitive “of the”) | **da** | “of the” | OK |
+| **cammin** | noun “road, journey” | **jornada** | “journey” | OK |
+| **di** | preposition (genitive “of”) | **da** | “of the” | OK |
 | **nostra** | possessive adjective “our” | **nossa** | “our” | OK |
-| **vita** | noun “life” (span of existence) | **vida** | “life” | OK |
-| **mi** | reflexive pronoun “myself” (object of “ritrovai”) | **me** (part of *encontrei‑me*) | “myself / me” | OK |
-| **ritrovai** | verb “found (myself)” (passato remoto) | **encontrei** | “found / I found” | OK |
-| **per** | preposition “through, within” (spatial) | **em** (contained in *numa*) | “in / within” | OK |
-| **una** | indefinite article “a” (feminine) | **uma** (part of *numa*) | “a” | OK |
+| **vita** | noun “life” | **vida** | “life” | OK |
+| **mi** | reflexive pronoun “myself” | **me** (inside *encontrei‑me*) | “myself” | OK |
+| **ritrovai** | verb “found” (passato remoto) | **encontrei** | “found” | OK |
+| **per** | preposition “through, within” | **em** (part of *numa*) | “in/within” | OK |
+| **una** | indefinite article “a” | **uma** | “a” | OK |
 | **selva** | noun “forest, wood” | **floresta** | “forest” | OK |
-| **oscura** | adjective “dark, obscure” | **escura** | “dark” | OK |
-| **ché** | conjunction “for, because” (causal) – kept as resultative “pois” | **pois** | “for / because (resultative)” | OK |
+| **oscura** | adjective “dark” | **escura** | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) | **pois** | “for/because” | OK |
 | **la** | definite article “the” (feminine) | **o** | “the” | OK |
-| **diritta** | adjective “right, straight, correct” | **reto** | “right / straight” | OK |
+| **diritta** | adjective “right, straight, correct” | **reto** | “straight/right” | OK |
 | **via** | noun “way, path” | **caminho** | “way, path” | OK |
-| **era** | imperfect of “to be” – “had been / was” | **estava** | “was / had been” | OK |
-| **smarrita** | past participle used adjectivally “lost, missed” | **perdido** | “lost / missed” | OK |
+| **era** | imperfect of *essere* “was / had been” | **estava** | “was / had been” | OK |
+| **smarrita** | past participle used adjectivally “lost, missed” | **perdido** | “lost, missed” | OK |
 
-### Items Requiring Attention
-- **MISSING:** none  
-- **WRONG:** none  
-- **GRAMMAR:** none  
-
-All source tokens are accounted for, correctly rendered in Portuguese, and the Portuguese words faithfully back‑translate to the intended English meanings.
+### Items flagged
+- **None** – every source token has an appropriate Portuguese counterpart; no missing, wrong, grammatical, or unnecessary elements were detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -66,23 +63,25 @@ Output format (use nested bullet list, not table):
 Output final Portuguese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 1:
-  - Original: No meio da jornada da nossa vida
-  - Issue: none
-  - Corrected: no change
-- Line 2:
-  - Original: encontrei‑me numa floresta escura,
-  - Issue: none
-  - Corrected: no change
-- Line 3:
-  - Original: pois o caminho reto estava perdido.
-  - Issue: none
-  - Corrected: no change
+- **Line 1**  
+  - Original: *No meio da jornada da nossa vida*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 2**  
+  - Original: *encontrei‑me numa floresta escura,*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 3**  
+  - Original: *o caminho reto estava perdido.*  
+  - Issue: **GRAMMAR** – article and adjective gender do not agree with the target noun; the source feminine article “la” should correspond to a feminine noun in Portuguese.  
+  - Corrected: *a via reta estava perdida.*  
 
 ```
 No meio da jornada da nossa vida
 encontrei‑me numa floresta escura,
-pois o caminho reto estava perdido.
+a via reta estava perdida.
 ```
 ]]></message>
 </messages>

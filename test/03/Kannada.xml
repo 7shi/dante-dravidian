@@ -18,57 +18,59 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Source → Kannada)**  
+**Word‑by‑Word Alignment Table (Source → Kannada)**  
 
 | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
 |-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
-| **Tant'** | “to such a degree” – intensifier of the predicate | **ಅಷ್ಟು** | “so / such” | OK |
-| **è** (1st) | Copular verb linking subject to predicate | **ಇದು** | “it is” | OK |
-| **amara** | adjective “bitter” describing the subject | **ಕಹಿ** | “bitter” | OK |
-| **che** | conjunction “that” introducing result/comparative clause | — | — | **MISSING** |
-| **poco** | adverb “little” – slight degree | **ಸ್ವಲ್ಪ** | “a little” | OK |
-| **è** (2nd) | Copular verb in comparative clause | **ಇದು** (implicit) | “is” | OK |
-| **più** | comparative adverb “more” | **ಹೆಚ್ಚು** | “more” | OK |
-| **morte** | noun “death” – entity being compared | **ಮರಣವು** | “death” | OK |
-| **ma** | coordinating conjunction “but” signalling contrast | **ಆದರೆ** | “but” | OK |
-| **per** | preposition “in order to” marking purpose | — | — | **MISSING** |
-| **trattar** | infinitive “to treat / discuss” | **ಚರ್ಚಿಸಲು** | “to discuss / to treat” | OK |
-| **del** | contraction of *di + il* “of the” linking *ben* | — (integrated in **ಉತ್ತಮವನ್ನು**) | — | OK* |
-| **ben** | noun “good” – the positive thing to be discussed | **ಉತ್ತಮವನ್ನು** | “the good” | OK |
-| **ch'** (relative) | relative pronoun “that” introducing clause | — | — | **MISSING** |
-| **i'** | pronoun “I” – first‑person subject | **ನಾನು** | “I” | OK |
-| **vi** | adverb “there” – locative reference | **ಅಲ್ಲಿ** | “there” | OK |
-| **trovai** | past verb “found” – action of discovery | **ಕಂಡ** | “found” | OK |
-| **dirò** | future verb “I will tell” – main verb of line 9 | **ಹೇಳುವೆ** | “I will tell” | OK |
-| **de** | preposition “of” introducing complement of *dirò* | — | — | **MISSING** |
-| **l'** | definite article “the” (feminine plural) | — | — | **MISSING** |
-| **altre** | adjective “other” – distinguishes items | **ಇತರ** | “other” | OK |
-| **cose** | noun “things” – objects to be recounted | **ವಿಷಯಗಳನ್ನು** | “things” | OK |
-| **ch'** (relative) | relative pronoun “that” introducing clause | — | — | **MISSING** |
-| **i'** (second) | pronoun “I” – subject of perfect clause | **ನಾನು** | “I” | OK |
-| **v'** | clitic pronoun “vi” → “there” – locative complement | **ಅಲ್ಲಿ** | “there” | OK |
-| **ho** | auxiliary verb “have” forming perfect | — | — | **MISSING** |
-| **scorte** | past participle “seen” – perceptual event | **ನೋಡಿದ** | “seen” | OK |
-
-\*The article *del* is not a separate word in the Kannada translation because the object marker **‑ವನ್ನು** on **ಉತ್ತಮವನ್ನು** already encodes “of the”. Hence it is considered covered (OK).
+| Tant' | “so” – intensifier of degree | ಅಷ್ಟು | “so / to such a degree” | OK |
+| è (1) | copular verb “is” (main clause) | ಇದು | “it is” | OK |
+| amara | adjective “bitter” | ಕಹಿ | “bitter” | OK |
+| che | conjunction “that” (resultative) | — | — | UNNECESSARY |
+| poco | adverb “little” (slight degree) | ಸ್ವಲ್ಪ | “little / slightly” | OK |
+| è (2) | copular verb “is” (comparative clause) | — | — | UNNECESSARY |
+| più | comparative adverb “more” | ಹೆಚ್ಚು | “more” | OK |
+| morte | noun “death” | ಮರಣವು | “death” | OK |
+| ma | coordinating conjunction “but” | ಆದರೆ | “but” | OK |
+| per | preposition “in order to” (purpose) | — | — | UNNECESSARY |
+| trattar | infinitive “to treat / discuss” | ಚರ್ಚಿಸಲು | “to discuss” | OK |
+| del | contraction “of the” (definite article) | — | — | UNNECESSARY |
+| ben | noun “good” | ಉತ್ತಮವನ್ನು | “the good” | OK |
+| ch' (1) | relative pronoun “that” | — | — | UNNECESSARY |
+| i' (1) | pronoun “I” (subject) | ನಾನು | “I” | OK |
+| vi | adverb “there” (locative) | ಅಲ್ಲಿ | “there” | OK |
+| trovai | verb “found” (past) | ಕಂಡ | “found” | OK |
+| dirò | verb “I will tell” (future) | ಹೇಳುವೆ | “I will tell” | OK |
+| de | preposition “of” | — | — | UNNECESSARY |
+| l' | definite article “the” | — | — | UNNECESSARY |
+| altre | adjective “other” | ಇತರ | “other” | OK |
+| cose | noun “things” (plural) | ವಿಷಯಗಳನ್ನು | “things” (object) | OK |
+| ch' (2) | relative pronoun “that” | — | — | UNNECESSARY |
+| i' (2) | pronoun “I” (subject of relative clause) | ನಾನು | “I” | OK |
+| v' | clitic pronoun “vi” = “there” | ಅಲ್ಲಿ | “there” | OK |
+| ho | auxiliary “have” (perfect) | — | — | UNNECESSARY |
+| scorte | past participle “seen” | ನೋಡಿದ | “seen” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **che** (line 7) – conjunction “that” not rendered explicitly.  
-- **per** (line 8) – purpose preposition not rendered.  
-- **ch'** (line 8) – relative pronoun “that” omitted.  
-- **de** (line 9) – preposition “of” omitted.  
-- **l'** (line 9) – definite article “the” omitted.  
-- **ch'** (line 9) – relative pronoun “that” omitted.  
-- **ho** (line 9) – auxiliary “have” omitted.  
+### Items flagged
 
-All other lexical items are correctly mapped and grammatically appropriate in the Kannada rendering.
+**UNNECESSARY (source elements not required in Kannada)**  
+- che (both occurrences)  
+- è (second occurrence)  
+- per  
+- del  
+- ch' (both occurrences)  
+- de  
+- l'  
+- ho  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -82,25 +84,25 @@ Output format (use nested bullet list, not table):
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 7**  
-  - Original: ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;  
-  - Issue: Missing conjunctive “che” (that).  
-  - Corrected: ಇದು ಅಷ್ಟು ಕಹಿ **ಎಂದು**, ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;  
+- Line 7:
+  - Original: ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
+  - Issue: none
+  - Corrected: ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
 
-- **Line 8**  
-  - Original: ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,  
-  - Issue: Missing purpose marker “per” and relative pronoun “ch’”.  
-  - Corrected: ಆದರೆ ಅಲ್ಲಿ ನಾನು ಕಂಡ ಉತ್ತಮವನ್ನು, **ಅದನ್ನು**, ಚರ್ಚಿಸಲು,  
+- Line 8:
+  - Original: ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,
+  - Issue: none
+  - Corrected: ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,
 
-- **Line 9**  
-  - Original: ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.  
-  - Issue: Missing preposition “de”, article “l’”, relative pronoun “ch’”, and auxiliary “ho”.  
-  - Corrected: **ಅಲ್ಲಿ** ನಾನು ನೋಡಿದ ಇತರ ವಿಷಯಗಳ **ಬಗ್ಗೆ** ಹೇಳುವೆ.  
+- Line 9:
+  - Original: ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.
+  - Issue: none
+  - Corrected: ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.
 
 ```
-ಇದು ಅಷ್ಟು ಕಹಿ ಎಂದು, ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
-ಆದರೆ ಅಲ್ಲಿ ನಾನು ಕಂಡ ಉತ್ತಮವನ್ನು, ಅದನ್ನು, ಚರ್ಚಿಸಲು,
-ಅಲ್ಲಿ ನಾನು ನೋಡಿದ ಇತರ ವಿಷಯಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.
+ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
+ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,
+ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.
 ```
 ]]></message>
 </messages>

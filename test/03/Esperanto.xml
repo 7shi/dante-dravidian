@@ -18,53 +18,46 @@ Mi diros pri la aliaj aferoj kiujn mi vidis tie.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
-|-------------|----------------------|----------------------|------------------|--------|
-| Tant' | “so” (intensifier) | Tiom | “so” | OK |
-| è | copular “is” | estas | “is” | OK |
-| amara | “bitter” | amara | “bitter” | OK |
-| che | complementizer “that” | ke | “that” | OK |
-| poco | “little, slightly” | iom | “a little” | OK |
-| è | copular “is” (second clause) | estas | “is” | OK |
-| più | comparative “more” | pli | “more” | OK |
-| morte | “death” | morto | “death” | OK |
-| ma | coordinating “but” | Sed | “but” | OK |
-| per | preposition of purpose “for / in order to” | **per** | “by/through” | **WRONG** (Esperanto uses **por** for purpose) |
-| trattar | infinitive “to treat / to discuss” | trakti | “to treat” | OK |
-| del | “of the” (preposition + article) | **pri** | “about” | **WRONG** (should be **de la**) |
-| ben | “good” (the thing to be discussed) | bono | “good” | OK |
-| ch' | relative pronoun “that / which” | kiun | “that/which” | OK |
-| i' | first‑person pronoun “I” | mi | “I” | OK |
-| vi | locative adverb “there” | tie | “there” | OK |
-| trovai | past “found” | trovis | “found” | OK |
-| dirò | future “I will say / tell” | Mi diros | “I will say” | OK |
-| de | preposition “of / about” | **pri** | “about” | **WRONG** (should be **de** or **pri** depending on sense; here the source means “of”, so **de** would be more literal) |
-| l'altre | “the other” | la aliaj | “the other” | OK |
-| cose | “things” | aferoj | “things” | OK |
-| ch' | relative pronoun “that / which” | kiujn | “that/which” | OK |
-| i' | first‑person pronoun “I” | mi | “I” | OK |
-| v' | locative adverb “there” | tie | “there” | OK |
-| ho | auxiliary for perfect (no lexical meaning) | — (absorbed in past tense) | — | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (to English) | Status |
+|-------------|-----------------------|----------------------|--------------------------------|--------|
+| Tant' | “so” (intensifier) | Tiom | “so much / so” | OK |
+| è | 3sg present of *essere* “to be” | estas | “is / is” | OK |
+| amara | adjective “bitter” | amara | “bitter” | OK |
+| che | conjunction introducing result clause | ke | “that” | OK |
+| poco | adverb “little, slightly” | iom | “a little / slightly” | OK |
+| è | 3sg present of *essere* | estas | “is” | OK |
+| più | comparative adverb “more” | pli | “more” | OK |
+| morte | noun “death” | morto | “death” | OK |
+| ma | coordinating conjunction “but” | Sed | “but / however” | OK |
+| per | preposition of purpose “in order to” | por | “for / in order to” | OK |
+| trattar | infinitive “to treat / to discuss” | trakti | “to treat / to discuss” | OK |
+| del | contraction *di + il* “of the” | la | “the” (definite article) | OK |
+| ben | noun “good” | bono | “good” | OK |
+| ch'i' | relative pronoun + 1st‑person pronoun “that I” | kiun mi | “that I (acc.)” | OK |
+| vi | adverb “there” (locative) | tie | “there” | OK |
+| trovai | 1sg past “I found” | trovis | “found” | OK |
+| dirò | 1sg future “I will say” | Mi diros | “I will say” | OK |
+| de | preposition “of / about” | pri | “about” | OK |
+| l'altre | “the other (plural)” | la aliaj | “the other” | OK |
+| cose | noun “things” | aferoj | “things / matters” | OK |
+| ch'i' | relative pronoun + 1st‑person pronoun “that I” (plural object) | kiujn | “that (acc. pl.)” | OK |
+| v' | clitic for *vi* “there” | tie | “there” | OK |
+| ho | auxiliary *avere* used in perfect | — (omitted) | (no direct equivalent) | **UNNECESSARY** |
 | scorte | past participle “seen” | vidis | “saw / have seen” | OK |
 
----
+### Items flagged
 
-### Items that need correction
+- **UNNECESSARY**: **ho** – the auxiliary verb *avere* has no counterpart in Esperanto; the perfect is expressed simply with the past tense **vidis**, so the auxiliary is omitted.  
 
-| Source Word | Issue |
-|-------------|-------|
-| **per** (line 8) | Used **per** in Esperanto, which expresses “by/through”. The source preposition denotes purpose (“for / in order to”). The correct Esperanto preposition is **por**. |
-| **del** (line 8) | Rendered as **pri** (“about”). The literal sense is “of the”, which should be **de la** in Esperanto. |
-| **de** (line 9) | Rendered as **pri**. The source preposition is a simple “of”. A more literal translation would be **de** (or **pri** if the sense is “about”), but the mismatch is flagged as **WRONG** for strict lexical alignment. |
-
-All other lexical items are correctly aligned and grammatically acceptable.
+All other source words are accounted for with appropriate Esperanto equivalents; no missing, wrong, or grammatical‑agreement errors were detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -78,25 +71,23 @@ Output format (use nested bullet list, not table):
 Output final Esperanto text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 7**  
-  - Original: Tiom amara estas ĝi ke morto estas iom pli;  
-  - Issue: none  
-  - Corrected: Tiom amara estas ĝi ke morto estas iom pli;  
-
-- **Line 8**  
-  - Original: Sed per tratti pri la bono kiun mi trovis tie,  
-  - Issue: “per” should be **por** (purpose); “tratti” should be **trakti** (infinitive).  
-  - Corrected: Sed por trakti pri la bono kiun mi trovis tie,  
-
-- **Line 9**  
-  - Original: Mi diros de l'altre cose kiujn mi tie vidis.  
-  - Issue: “de” should be **pri** (about); “l'altre” → **la aliaj**; “cose” → **aferoj**.  
-  - Corrected: Mi diros pri la aliaj aferoj kiujn mi tie vidis.  
+- Line 7:
+  - Original: Tiom amara estas ĝi ke morto estas iom pli;
+  - Issue: none
+  - Corrected: no change
+- Line 8:
+  - Original: Sed por trakti pri la bono kiun mi trovis tie,
+  - Issue: none
+  - Corrected: no change
+- Line 9:
+  - Original: Mi diros pri la aliaj aferoj kiujn mi vidis tie.
+  - Issue: none
+  - Corrected: no change
 
 ```
 Tiom amara estas ĝi ke morto estas iom pli;
 Sed por trakti pri la bono kiun mi trovis tie,
-Mi diros pri la aliaj aferoj kiujn mi tie vidis.
+Mi diros pri la aliaj aferoj kiujn mi vidis tie.
 ```
 ]]></message>
 </messages>

@@ -18,41 +18,44 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑by‑Word Mapping Table**
+**Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (English) | Status |
-|-------------|----------------------|------------------------------|----------------------------|--------|
-| Ahi | Interjection expressing emotion | అహ్ | “Ah!” | OK |
-| quanto | Degree adverb “how” (intensifier) | ఎంత | “how” | OK |
-| a | Preposition introducing infinitive “to” | — (infinitive marker implicit) | — | **MISSING** |
-| dir | Verb “to tell / say” (infinitive) | చెప్పడం | “to tell” | OK |
-| qual | Interrogative adjective “what” (object of *dir*) | ఏమిటో | “what (it) is” | OK |
-| era | Imperfect “was” (past state) | అది | “it (was)” | OK |
-| è | Present “is” (copula) | — (copula omitted, understood) | — | **MISSING** |
-| cosa | Noun “thing” (subject of *è dura*) | — (noun omitted, implied) | — | **MISSING** |
-| dura | Adjective “hard / difficult” | కష్టం | “hard / difficult” | OK |
-| esta | Demonstrative adjective “this” | ఈ | “this” | OK |
-| selva | Noun “forest / wood” | అడవి | “forest / wood” | OK |
-| selvaggia | Adjective “wild” | అడవిగా | “wildly” (as attribute) | OK |
-| e (1) | Coordinating conjunction “and” (first) | — (conjunction omitted) | — | **MISSING** |
-| aspra | Adjective “rough” | గట్టిగా | “roughly” | OK |
-| e (2) | Coordinating conjunction “and” (second) | — (conjunction omitted) | — | **MISSING** |
-| forte | Adjective “strong / dense” | బలంగా | “strongly / densely” | OK |
-| che | Relative pronoun “which / that” | అది | “that / it” | OK |
-| nel | Prepositional phrase “in the” | లో | “in” | OK |
-| pensier | Noun “thought” (abstract) | ఆలోచన | “thought” | OK |
-| rinova | Verb “renews / revives” | పునరుద్ధరిస్తుంది | “renews / revives” | OK |
-| la | Definite article (feminine) | — (article omitted) | — | **MISSING** |
-| paura | Noun “fear” (object) | భయాన్ని | “fear (accusative)” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (ENG) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| **Ahi** | Exclamatory interjection | **అహ్** | “Ah!” | OK |
+| **quanto** | Degree adverb “how” | **ఎంత** | “how” | OK |
+| **a** | Infinitive marker (to) | — | — | UNNECESSARY (Telugu infinitive expressed by the gerund “చెప్పడం”) |
+| **dir** | Verb “to tell” | **చెప్పడం** | “telling” | OK |
+| **qual** | Interrogative “what” | **ఏమిటో** | “what (it is)” | OK |
+| **era** | Past copula “was” | **అది** | “that/it” (subject) | UNNECESSARY (past aspect not overtly marked) |
+| **è** | Present copula “is” | — | — | UNNECESSARY |
+| **cosa** | Noun “thing” | — | — | UNNECESSARY |
+| **dura** | Adjective “hard / difficult” | **కష్టం** | “hard/difficult” | OK |
+| **esta** | Demonstrative “this” | **ఈ** | “this” | OK |
+| **selva** | Noun “forest / wood” | **అడవి** | “forest/wood” | OK |
+| **selvaggia** | Adjective “wild” | **అడవిగా** | “wild (like a forest)” | OK |
+| **e** (1st) | Coordinating conjunction “and” | — | — | UNNECESSARY |
+| **aspra** | Adjective “rough” | **గట్టిగా** | “roughly” | OK |
+| **e** (2nd) | Coordinating conjunction “and” | — | — | UNNECESSARY |
+| **forte** | Adjective “strong / dense” | **బలంగా** | “strongly / densely” | OK |
+| **che** | Relative pronoun “which / that” | — | — | UNNECESSARY |
+| **nel** | Preposition “in the” | **ఆలోచనలో** | “in thought” | OK |
+| **pensier** | Noun “thought” | **ఆలోచన** | “thought” | OK |
+| **rinova** | Verb “renews” | **పునరుద్ధరిస్తుంది** | “renews” | OK |
+| **la** | Definite article “the” | — | — | UNNECESSARY |
+| **paura** | Noun “fear” | **భయాన్ని** | “fear (ACC)” | OK |
+
+---
 
 ### Items Requiring Attention
-- **MISSING**: a, è, cosa, e (both occurrences), la – these function words or articles are not overtly expressed in the Telugu rendering; their meaning is conveyed implicitly or omitted.
-- **WRONG / GRAMMAR**: none detected; the Telugu sentences are grammatically sound and preserve the intended meanings.
+- **UNNECESSARY** (omitted because Telugu does not require them): `a`, `è`, `cosa`, both occurrences of `e`, `che`, `la`, and the past copula `era` (aspect not marked).  
+- **No MISSING, WRONG, or GRAMMAR** errors were detected; all represented meanings are conveyed correctly in the Telugu translation.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -68,23 +71,23 @@ Output final Telugu text in ONE code block, line by line (no extra prose).
 <message role="assistant"><![CDATA[
 - Line 4:
   - Original: అహ్ అది ఏమిటో చెప్పడం ఎంత కష్టం
-  - Issue: missing infinitive marker “a”, copula “è”, noun “cosa”, and degree “quanto” not fully expressed.
-  - Corrected: **అహ్, అది ఏమిటో చెప్పడానికి ఎంత కఠినమైన విషయం**
+  - Issue: none
+  - Corrected: no change  
 
 - Line 5:
   - Original: ఈ అడవి అడవిగా గట్టిగా బలంగా ఉంది
-  - Issue: missing coordinating conjunctions “e” (both occurrences).
-  - Corrected: **ఈ అడవి అడవిగా మరియు గట్టిగా మరియు బలంగా ఉంది**
+  - Issue: WRONG – redundant wording and adjective order; verb “ఉంది” not needed for a noun phrase.
+  - Corrected: ఈ వన్య మరియు కఠిన మరియు బలమైన అడవి  
 
 - Line 6:
   - Original: అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది!
-  - Issue: missing definite article “la”.
-  - Corrected: **అది ఆలోచనలో ఆ భయాన్ని పునరుద్ధరిస్తుంది!**
+  - Issue: none
+  - Corrected: no change  
 
-```telugu
-అహ్, అది ఏమిటో చెప్పడానికి ఎంత కఠినమైన విషయం
-ఈ అడవి అడవిగా మరియు గట్టిగా మరియు బలంగా ఉంది
-అది ఆలోచనలో ఆ భయాన్ని పునరుద్ధరిస్తుంది!
+```
+అహ్ అది ఏమిటో చెప్పడం ఎంత కష్టం
+ఈ వన్య మరియు కఠిన మరియు బలమైన అడవి
+అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది!
 ```
 ]]></message>
 </messages>

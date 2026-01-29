@@ -18,45 +18,46 @@ que no pensamento renova o medo!
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Mapping Table (Step 3)**  
 
 | Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
 |-------------|----------------------|--------------------|------------------------|--------|
-| Ahi | Exclamatory expression of emotion | Ah | “Ah” | OK |
-| quanto | Degree intensifier “how” | quão | “how” | OK |
-| a | Preposition marking infinitive | *(missing)* | – | **MISSING** |
-| dir | Verb “to tell” | dizer | “to say / tell” | OK |
-| qual | Interrogative adjective “what” | o que | “what” | OK |
-| era | Imperfect verb “was” | era | “was” | OK |
-| è | Present copular verb “is” | é | “is” | OK |
-| cosa | Abstract noun “thing” | *(missing)* | – | **MISSING** |
-| dura | Adjective “hard / difficult” | difícil | “hard / difficult” | OK |
+| Ahi | Interjection “Ah!” | Ah | “Ah!” | OK |
+| quanto | Adverb intensifier “how” | quão | “how” | OK |
+| a | Preposition infinitive marker “to” | *(omitted)* | – | UNNECESSARY |
+| dir | Verb infinitive “tell” | dizer | “to say / tell” | OK |
+| qual | Interrogative adjective “what” | que | “what / that” | OK |
+| era | Verb imperfect “was” | era | “was” | OK |
+| è | Verb present “is” | é | “is” | OK |
+| cosa | Noun “thing” | *(omitted)* | – | MISSING |
+| dura | Adjective “hard” | difícil | “difficult” | OK |
 | esta | Demonstrative adjective “this” | esta | “this” | OK |
 | selva | Noun “forest / wood” | selva | “forest / wood” | OK |
 | selvaggia | Adjective “wild” | selvagem | “wild” | OK |
-| e (1) | Coordinating conjunction “and” | e | “and” | OK |
+| e | Coordinating conjunction “and” | e | “and” | OK |
 | aspra | Adjective “rough” | áspera | “rough” | OK |
-| e (2) | Coordinating conjunction “and” | e | “and” | OK |
+| e | Coordinating conjunction “and” | e | “and” | OK |
 | forte | Adjective “strong / dense” | densa | “dense” | OK |
 | che | Relative pronoun “which / that” | que | “that / which” | OK |
-| nel | Prepositional phrase “in the” | no | “in the” | OK |
+| nel | Contraction “in the” | no | “in the” | OK |
 | pensier | Noun “thought” | pensamento | “thought” | OK |
 | rinova | Verb “renews” | renova | “renews” | OK |
 | la | Definite article “the” | o | “the” | OK |
-| paura! | Noun “fear” (exclamatory) | medo! | “fear!” | OK |
+| paura! | Noun “fear!” | medo! | “fear!” | OK |
 
 ---
 
-### Items Needing Attention
-- **MISSING**: `a` (preposition introducing the infinitive)  
-- **MISSING**: `cosa` (noun “thing”)  
+### Issues Detected
+- **MISSING**: *cosa* – the noun “thing” is not expressed in the Portuguese rendering.  
+- **UNNECESSARY**: *a* – the infinitive marker required in Italian is not needed in Portuguese and was therefore omitted.  
 
-All other lexical correspondences are correct and grammatically appropriate.
+All other items are correctly translated and grammatically appropriate.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -70,21 +71,23 @@ Output format (use nested bullet list, not table):
 Output final Portuguese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 4:
+- Line 4:
   - Original: Ah quão difícil é dizer o que era
-  - Issue: MISSING preposition “a”, MISSING noun “cosa”
-  - Corrected: Ah quão difícil é a dizer qual era a coisa
-- Line 5:
+  - Issue: MISSING “coisa dura”
+  - Corrected: Ah quão difícil é dizer o que era coisa dura  
+
+- Line 5:
   - Original: esta selva selvagem e áspera e densa
   - Issue: none
-  - Corrected: no change
-- Line 6:
+  - Corrected: no change  
+
+- Line 6:
   - Original: que no pensamento renova o medo!
   - Issue: none
-  - Corrected: no change
+  - Corrected: no change  
 
 ```
-Ah quão difícil é a dizer qual era a coisa
+Ah quão difícil é dizer o que era coisa dura
 esta selva selvagem e áspera e densa
 que no pensamento renova o medo!
 ```

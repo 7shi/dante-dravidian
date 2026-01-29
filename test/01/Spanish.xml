@@ -18,37 +18,38 @@ pues el camino recto se había perdido.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Spanish translation)**  
+**Word‑by‑Word Alignment Table (Spanish translation)**  
 
 | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
 |-------------|--------------------------------------|----------------------|------------------------|--------|
-| Nel | preposition + definite article (location inside a larger span) | En | “in / upon” | OK |
-| mezzo | noun (central point of a stretch) | medio | “midway / middle” | OK |
-| del | preposition + definite article (genitive linking) | del | “of the” | OK |
-| cammin | noun (path taken through life) | camino | “road / journey” | OK |
-| di | preposition (links “cammin” to “nostra vita”) | de | “of” | OK |
-| nostra | possessive adjective (belonging to the speaker and companions) | nuestra | “our” | OK |
-| vita | noun (span of human existence) | vida | “life” | OK |
-| mi | reflexive pronoun (speaker as experiencer) | me | “myself” | OK |
-| ritrovai | verb (act of encountering oneself) | encontré | “found” | OK |
-| per | preposition (spatial context = within) | dentro | “within” | OK |
-| una | indefinite article (non‑specific) | una | “a” | OK |
-| selva | noun (dark, wooded area) | selva | “forest / wood” | OK |
-| oscura | adjective (lacking light, metaphorically confusing) | oscura | “dark” | OK |
-| ché | conjunction (introduces causal clause) | pues | “for / because” | OK |
-| la | definite article (specifies a particular way) | el | “the” | OK |
-| diritta | adjective (the correct, direct path) | recto | “right / straight” | OK |
-| via | noun (the intended route through life) | camino | “way / road” | OK |
-| era | verb (copular linking subject to predicate, imperfect) | se había | “had been” | OK |
-| smarrita | past participle used as adjective (state of being lost) | perdido | “missed / lost” | OK |
+| **Nel** | “in” + “the” (preposition + article) marking location inside a span | **En** | “in / on” | OK |
+| **mezzo** | the central point of a stretch | **medio** | “middle / midway” | OK |
+| **del** | genitive linking “mezzo” to “cammin” | **del** | “of the” | OK |
+| **cammin** | the path taken through life | **camino** | “road / path” | OK |
+| **di** | links “cammin” to “nostra vita” | **de** | “of” | OK |
+| **nostra** | belonging to the speaker and companions | **nuestra** | “our” | OK |
+| **vita** | the span of human existence | **vida** | “life” | OK |
+| **mi** | reflexive pronoun, the speaker as experiencer | **me** | “myself / me” | OK |
+| **ritrovai** | act of encountering oneself in a place (past) | **encontré** | “found” | OK |
+| **per** | preposition indicating spatial context | **dentro de** | “within / inside” | OK |
+| **una** | indefinite article, non‑specific forest | **una** | “a” | OK |
+| **selva** | a dark, wooded area | **selva** | “forest / wood” | OK |
+| **oscura** | lacking light, metaphorically confusing | **oscura** | “dark” | OK |
+| **ché** | causal conjunction introducing reason | **pues** | “for / because (resultative)” | OK |
+| **la** | definite article specifying a particular way (feminine) | **el** | “the” | OK |
+| **diritta** | the correct, direct path | **recto** | “right / straight” | OK |
+| **via** | the intended route through life (feminine) | **camino** | “way / road” | OK |
+| **era** | copular verb linking subject to predicate (imperfect) | **se había** | “had been / was” | OK |
+| **smarrita** | state of being not found or gone astray (feminine) | **perdido** | “lost / missed” | OK |
 
-### Issues Detected
-*None* – every source token has a corresponding Spanish translation that respects the intended meaning and grammatical function.
+### Items flagged after the table
+- **None** – every source token finds an appropriate counterpart in the Spanish rendering, and no grammatical mismatches or unnecessary elements were detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -62,18 +63,20 @@ Output format (use nested bullet list, not table):
 Output final Spanish text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 1:
-  - Original: En medio del camino de nuestra vida
-  - Issue: none
-  - Corrected: no change
-- Line 2:
-  - Original: me encontré dentro de una selva oscura,
-  - Issue: none
-  - Corrected: no change
-- Line 3:
-  - Original: pues el camino recto se había perdido.
-  - Issue: none
-  - Corrected: no change
+- **Line 1**  
+  - Original: En medio del camino de nuestra vida  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: me encontré dentro de una selva oscura,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: pues el camino recto se había perdido.  
+  - Issue: none  
+  - Corrected: no change  
 
 ```
 En medio del camino de nuestra vida

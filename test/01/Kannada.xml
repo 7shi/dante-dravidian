@@ -18,43 +18,39 @@ ché la diritta via era smarrita.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Source → Kannada)**  
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
-|-------------|--------------------------------------|--------------------------------|--------------------------|--------|
-| **Nel** | preposition + definite article “in the” (location) | **ಮಧ್ಯದಲ್ಲಿ** | “in the middle” | OK |
-| **mezzo** | noun “midway, middle” | **ಮಧ್ಯ** | “middle” | OK |
-| **del** | genitive “of the” linking “mezzo” to “cammin” | **ದ** | “of” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------|----------------------------|--------|
+| **Nel** | preposition + definite article (in + the) marking location inside | **ಮಧ್ಯದಲ್ಲಿ** | “in the middle” | OK |
+| **mezzo** | noun “middle, midpoint” | **ಮಧ್ಯ** | “mid‑point” | OK |
+| **del** | genitive linker “of the” | **‑ದ** (suffix on *ಮಾರ್ಗ*) | “‑of” | OK |
 | **cammin** | noun “road, journey” | **ಮಾರ್ಗ** | “road” | OK |
-| **di** | preposition “of” linking to “nostra vita” | **ದ** | “of” | OK |
+| **di** | preposition “of” (genitive) | **‑ದ** (suffix on *ಜೀವನ*) | “‑of” | OK |
 | **nostra** | possessive adjective “our” | **ನಮ್ಮ** | “our” | OK |
 | **vita** | noun “life” | **ಜೀವನ** | “life” | OK |
-| **mi** | reflexive pronoun “myself” (object of ritrovai) | **ನನ್ನನ್ನು** | “myself” | OK |
-| **ritrovai** | verb “found” (past remote) | **ಕಂಡೆ** | “found” | OK |
-| **per** | preposition “within/through” (spatial) | **ನಲ್ಲಿ** | “in” | OK |
-| **una** | indefinite article “a” (non‑specific) | — | — | **MISSING** |
-| **selva** | noun “forest, wood” | **ಕಾಡು** | “forest” | OK |
-| **oscura** | adjective “dark” (metaphoric) | **ಕತ್ತಲೆ** | “dark” | OK |
-| **ché** | conjunction “for, because” (causal) | — | — | **MISSING** |
-| **la** | definite article “the” (specifies way) | — | — | **MISSING** |
-| **diritta** | adjective “right, straight, correct” | **ಸರಿಯಾದ** | “right/correct” | OK |
+| **mi** | reflexive pronoun “myself” (object) | **ನನ್ನನ್ನು** | “myself” | OK |
+| **ritrovai** | verb “found” (past) | **ಕಂಡೆ** | “found” | OK |
+| **per** | preposition “within/through” | **ಒಳಗೆ** | “within” | OK |
+| **una** | indefinite article “a” (feminine) | — | — | **UNNECESSARY** (Kannada omits the article) |
+| **selva** | noun “forest, wood” | **ಕಾಡು** | “forest/wood” | OK |
+| **oscura** | adjective “dark” | **ಕತ್ತಲೆಯ** | “dark (genitive)” | OK |
+| **ché** | conjunction “for / because” introducing cause | **ಏಕೆಂದರೆ** | “because / for” | OK |
+| **la** | definite article “the” (feminine) | — | — | **UNNECESSARY** (no article in Kannada) |
+| **diritta** | adjective “right, straight, correct” | **ಸರಿಯಾದ** | “right / correct” | OK |
 | **via** | noun “way, path” | **ಮಾರ್ಗ** | “way” | OK |
-| **era** | verb “was” (imperfect of *essere*) | **ಇತ್ತು** | “was” | OK |
-| **smarrita** | past participle “missed, lost” | **ಕಳೆದುಹೋಗಿತ್ತು** | “had been missed / was lost” | OK |
+| **era** | copular verb “was / had been” (imperfect) | **ಇತ್ತು** | “was / had been” | OK |
+| **smarrita** | past participle used adjectivally “missed, lost” | **ಕಳೆದುಹೋಗಿತ್ತು** | “had been missed / lost” | OK |
 
----
-
-### Items Needing Attention
-- **una** – no direct article in Kannada; the translation omits it.  
-- **ché** – causal conjunction omitted; the Kannada clause stands alone.  
-- **la** – definite article not expressed in Kannada; omitted.  
-
-All other lexical correspondences are correctly rendered with appropriate grammatical agreement.
+### Items Requiring Attention
+- **UNNECESSARY**: `una`, `la` – articles that do not have a direct counterpart in Kannada and are naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -68,25 +64,25 @@ Output format (use nested bullet list, not table):
 Output final Kannada text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 1:
-  - Original: ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
-  - Issue: none
+- Line 1:
+  - Original: Nel mezzo del cammin di nostra vita  
+  - Issue: none  
   - Corrected: ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ  
 
-- Line 2:
-  - Original: ನಾನು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
-  - Issue: missing indefinite article “ಒಂದು”
-  - Corrected: ನಾನು ಒಂದು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,  
+- Line 2:
+  - Original: mi ritrovai per una selva oscura,  
+  - Issue: none  
+  - Corrected: ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,  
 
-- Line 3:
-  - Original: ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
-  - Issue: missing conjunction “ಆದ್ದರಿಂದ” and definite article “ಆ”
-  - Corrected: ಆದ್ದರಿಂದ ಆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.  
+- Line 3:
+  - Original: ché la diritta via era smarrita.  
+  - Issue: none  
+  - Corrected: ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.  
 
-```kannada
+```
 ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
-ನಾನು ಒಂದು ಕತ್ತಲೆ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
-ಆದ್ದರಿಂದ ಆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
+ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
+ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
 ```
 ]]></message>
 </messages>

@@ -18,52 +18,46 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table (Step 3)**  
+**Word‑to‑Word Mapping Table**
 
-| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (Eng.) | Status |
-|---|-------------|--------------------------------------|------------------------------|--------------------------|--------|
-| 1 | **Tant'** | “so”, intensifier of degree | **இவ்வளவு** | “so much / to this extent” | OK |
-| 2 | **è** | copular verb “is” (present) | **உள்ளது** | “is” | OK |
-| 3 | **amara** | adjective “bitter” | **கசப்பாக** | “bitterly” | OK |
-| 4 | **che** | resultative conjunction “that” | — | — | **MISSING** |
-| 5 | **poco** | adverb “little, slightly” | **கொஞ்சம்** | “a little” | OK |
-| 6 | **è** | copular verb “is” (present) | **உள்ளது** | “is” | OK |
-| 7 | **più** | comparative adverb “more” | **அதிகமாக** | “more” | OK |
-| 8 | **morte** | noun “death” | **மரணம்** | “death” | OK |
-| 9 | **ma** | coordinating conjunction “but” | **ஆனால்** | “but” | OK |
-|10| **per** | preposition of purpose “in order to” | **பேசுவதற்காக** | “for speaking / in order to speak” | OK |
-|11| **trattar** | infinitive “to treat / discuss” | **பேசுவதற்கு** | “to speak / to discuss” | OK |
-|12| **del** | preposition + article “of the” (introducing *ben*) | **நல்லதைப்** | “of the good” | OK |
-|13| **ben** | noun “good” | **நல்லது** | “good” | OK |
-|14| **ch'** | relative pronoun “that” (introducing clause) | — | — | **MISSING** |
-|15| **i'** | pronoun “I” (subject) | **நான்** | “I” | OK |
-|16| **vi** | adverb “there” (locative) | **அங்கே** | “there” | OK |
-|17| **trovai** | verb “found” (preterite) | **கண்ட** | “found” | OK |
-|18| **dirò** | future verb “I will tell” | **சொல்லுவேன்** | “I will tell” | OK |
-|19| **de** | preposition “of” (part of *de l'altre*) | **மற்றவற்றை** (part) | “of the other things” | OK |
-|20| **l'** | definite article “the” (part of *l'altre*) | **மற்றவற்றை** (part) | “the other things” | OK |
-|21| **altre** | adjective “other” (plural) | **மற்ற** | “other” | OK |
-|22| **cose** | noun “things” (plural) | **மற்றவற்றை** (part) | “things” | OK |
-|23| **ch'** | relative pronoun “that” (introducing clause) | — | — | **MISSING** |
-|24| **i'** | pronoun “I” (subject) | **நான்** | “I” | OK |
-|25| **v'** | clitic “there” (locative) | **அங்கே** | “there” | OK |
-|26| **ho** | auxiliary “have” (perfect) | — | — | **MISSING** |
-|27| **scorte** | past participle “seen” | **பார்த்த** | “seen” | OK |
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Tant' | “so” (intensifier) | இவ்வளவு | “so much” | OK |
+| è | copular “is” (1st occurrence) | உள்ளது | “is” | OK |
+| amara | “bitter” | கசப்பாக | “bitterly” | OK |
+| che | conjunction “that” (introduces comparative clause) | மற்றும் | “and” | **WRONG** (should be “என்று” or similar) |
+| poco | adverb of degree “little” | கொஞ்சம் | “a little” | OK |
+| è | copular “is” (2nd occurrence) | உள்ளது | “is” | OK |
+| più | comparative “more” | அதிகமாக | “more” | OK |
+| morte | noun “death” | மரணம் | “death” | OK |
+| ma | coordinating “but” | ஆனால் | “but” | OK |
+| per | preposition of purpose “for / in order to” | பேசுவதற்காக | “in order to speak” | OK |
+| trattar | infinitive “to treat / discuss” | பேசுவது | “to speak / discuss” | OK |
+| del | “of the” (preposition + article) | நல்லதைப் | “the good (obj.)” | OK |
+| ben | noun “good” | நல்லதை | “good” | OK |
+| ch'i' | relative pronoun + subject “that I” | நான் | “I” | OK |
+| vi | adverb “there” (locative) | அங்கே | “there” | OK |
+| trovai | 1st‑person past “found” | கண்ட | “found” | OK |
+| dirò | 1st‑person future “I will say” | சொல்லுவேன் | “I will tell” | OK |
+| de | preposition “of” | மற்றவற்றைச் | “of the other things” | OK |
+| l'altre | adjective “the other” | மற்றவற்றை | “the other” | OK |
+| cose | noun “things” | மற்றவற்றை | “things” | OK |
+| ch'i' (2nd) | relative pronoun + subject “that I” | நான் | “I” | OK |
+| v'ho | auxiliary “have” (perfect) | பார்த்த | “have seen / saw” | OK |
+| scorte | past participle “seen” | பார்த்த | “seen” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **che** (line 7) – resultative conjunction not rendered in Tamil.  
-- **ch'** (line 8) – relative pronoun “that” omitted.  
-- **ch'** (line 9) – relative pronoun “that” omitted.  
-- **ho** (line 9) – auxiliary “have” (perfect) omitted.  
+### Issues Detected
+- **WRONG:** *che* was rendered as **மற்றும்** (“and”), which does not convey the comparative “that” meaning. A more appropriate Tamil connective would be **என்று** or **அதனால்**.  
 
-All other lexical items are present and correctly translated; no gender, number, or case agreement errors were detected in the Tamil output.
+No other source words are missing, and no grammatical agreement errors were found in the Tamil rendering. No unnecessary elements from the source were retained in the target.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -77,25 +71,25 @@ Output format (use nested bullet list, not table):
 Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 7**  
-  - Original: அது இவ்வளவு கசப்பாக உள்ளது மற்றும் மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;  
-  - Issue: missing resultative conjunction “che”.  
-  - Corrected: அது இவ்வளவு கசப்பாக உள்ளது **என** மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;  
+- Line 7:
+  - Original: அது இவ்வளவு கசப்பாக உள்ளது மற்றும் மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
+  - Issue: **WRONG** – the connective “che” was rendered as “மற்றும்” (and) instead of a comparative/resultative connector; also internal punctuation is avoided.
+  - Corrected: அது இவ்வளவு கசப்பாக உள்ளது என்று மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
 
-- **Line 8**  
-  - Original: ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,  
-  - Issue: missing relative pronoun “ch'”.  
-  - Corrected: ஆனால் நான் அங்கே கண்ட நல்லதைப் **என்று** பற்றி பேசுவதற்காக,  
+- Line 8:
+  - Original: ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,
+  - Issue: none
+  - Corrected: இல்லை (no change)
 
-- **Line 9**  
-  - Original: நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.  
-  - Issue: missing relative pronoun “ch'” and auxiliary “ho”.  
-  - Corrected: நான் அங்கே **பார்த்துள்ள** **என்று** மற்றவற்றைச் சொல்லுவேன்.  
+- Line 9:
+  - Original: நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.
+  - Issue: none
+  - Corrected: இல்லை (no change)
 
-```Tamil
-அது இவ்வளவு கசப்பாக உள்ளது என மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
-ஆனால் நான் அங்கே கண்ட நல்லதைப் என்று பற்றி பேசுவதற்காக,
-நான் அங்கே பார்த்துள்ள என்று மற்றவற்றைச் சொல்லுவேன்.
+```
+அது இவ்வளவு கசப்பாக உள்ளது என்று மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
+ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,
+நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.
 ```
 ]]></message>
 </messages>

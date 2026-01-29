@@ -10,54 +10,54 @@ So bitter is it that death is little more. But in order to treat of the good tha
 
 # Telugu
 
-7 ఇంతగా చేదుగా ఉంది అలానే మరణం కొంచెం ఎక్కువగా ఉంది;
-8 కానీ నేను అక్కడ కనుగొన్న ద మంచి గురించి చర్చించడానికి,
-9 నేను అక్కడ చేసి చూసిన ఇతర విషయాలను చెప్పుతాను.
+7 ఇంతగా చేదుగా ఉంది, అంటే మరణం కొంచెం ఎక్కువగా ఉంది;
+8 కాని నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,
+9 నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
 
 # Tamil
 
-7 அது இவ்வளவு கசப்பாக உள்ளது என மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
-8 ஆனால் நான் அங்கே கண்ட நல்லதைப் என்று பற்றி பேசுவதற்காக,
-9 நான் அங்கே பார்த்துள்ள என்று மற்றவற்றைச் சொல்லுவேன்.
+7 அது இவ்வளவு கசப்பாக உள்ளது என்று மரணம் அதைவிட கொஞ்சம் அதிகமாக உள்ளது;
+8 ஆனால் நான் அங்கே கண்ட நல்லதைப் பற்றி பேசுவதற்காக,
+9 நான் அங்கே பார்த்த மற்றவற்றைச் சொல்லுவேன்.
 
 # Kannada
 
-7 ಇದು ಅಷ್ಟು ಕಹಿ ಎಂದು, ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
-8 ಆದರೆ ಅಲ್ಲಿ ನಾನು ಕಂಡ ಉತ್ತಮವನ್ನು, ಅದನ್ನು, ಚರ್ಚಿಸಲು,
-9 ಅಲ್ಲಿ ನಾನು ನೋಡಿದ ಇತರ ವಿಷಯಗಳ ಬಗ್ಗೆ ಹೇಳುವೆ.
+7 ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
+8 ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,
+9 ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.
 
 # Malayalam
 
-7 ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്പം മാത്രമേ കൂടുതലുള്ളൂ;
-8 എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് വേണ്ടി സംസാരിക്കാൻ,
-9 ഞാൻ അവിടെ കണ്ടിട്ടുണ്ട് മറ്റുള്ള കാര്യങ്ങളെക്കുറിച്ച് പറയും.
+7 ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്പം മാത്രമേ കൂടുതലുള്ളു;
+8 എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് സംസാരിക്കാൻ,
+9 ഞാൻ അവിടെ കണ്ട മറ്റുള്ള കാര്യങ്ങളെക്കുറിച്ച് പറയും.
 
 # Japanese
 
-7 それほど苦く死はほんの少しだけそれ以上に苦い;
-8 しかし私がそこで見つけた善について論じるために,
-9 私はそこで見た他の事柄について語ろう.
+7 それほど苦く死はほんの少しだけそれ以上だ；
+8 しかしそこで見つけた善について論じるために、  
+9 私がそこで見た他の事柄について語ります。
 
 # French
 
-7 Si amère qu’elle est, la mort n’est que légèrement plus;
+7 Si amère est‑elle que la mort n’est que légèrement plus;
 8 mais pour traiter du bien que j’ai trouvé là,
-9 je dirai les autres choses que j’ai vues là.
+9 je dirai des autres choses que j’ai vues là.
 
 # Spanish
 
-7 Tan amarga es que la muerte es poco más;
-8 pero para tratar del bien que allí yo encontré,
-9 diré de las otras cosas que allí yo he visto.
+7 Tan amarga que la muerte es poco más;
+8 pero para tratar del bien que allí encontré,
+9 diré de las otras cosas que allí he visto.
 
 # Portuguese
 
-7 Tão amargo é isso que a morte é pouco mais;
+7 Tão amargo é que a morte é pouco mais;
 8 Mas para tratar do bem que eu encontrei lá,
-9 Direi das outras coisas que eu tenho visto lá.
+9 Direi das outras coisas que eu vi lá.
 
 # Esperanto
 
 7 Tiom amara estas ĝi ke morto estas iom pli;
 8 Sed por trakti pri la bono kiun mi trovis tie,
-9 Mi diros pri la aliaj aferoj kiujn mi tie vidis.
+9 Mi diros pri la aliaj aferoj kiujn mi vidis tie.

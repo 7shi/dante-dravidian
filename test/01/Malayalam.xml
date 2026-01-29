@@ -18,42 +18,43 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table (Source → Malayalam)**  
+**Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|--------------------|----------------------------|--------|
-| **Nel** | preposition + definite article (in + the) | **മധ്യത്തിൽ** | “in the middle” | **MISSING** (no separate word for the preposition+article) |
-| **mezzo** | noun “middle, midpoint” | **മധ്യത്തിൽ** | “in the middle” | OK |
-| **del** | preposition + definite article (of + the) – genitive linking “cammin” | **വഴിയുടെ** | “of the road” | OK |
-| **cammin** | noun “road, journey” (archaic *cammino*) | **വഴിയുടെ** | “of the road” | OK |
-| **di** | preposition linking “cammin” to “nostra vita” | **ജീവിതത്തിന്റെ** | “of life” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **Nel** | preposition + definite article “in the” | *(omitted – expressed by case suffix)* | – | UNNECESSARY |
+| **mezzo** | noun “midway, middle” | **മധ്യത്തിൽ** | “in the middle” | OK |
+| **del** | genitive marker “of the” | *(omitted – expressed by “‑യുടെ” suffix)* | – | UNNECESSARY |
+| **cammin** | noun “road, journey” | **വഴി** | “road” | OK |
+| **di** | preposition “of” (genitive) | *(omitted – expressed by “‑യുടെ” suffix)* | – | UNNECESSARY |
 | **nostra** | possessive adjective “our” | **നമ്മുടെ** | “our” | OK |
-| **vita** | noun “life” | **ജീവിതത്തിന്റെ** | “of life” | OK |
-| **mi** | reflexive pronoun (1st sg.) – “myself” | **താനെ** | “myself” | OK |
-| **ritrovai** | verb (passato remoto) “found” | **കണ്ടെത്തി** | “found” | OK |
-| **per** | preposition “within/through” (spatial) | **കാട്ടിൽ** | “in the forest” | OK |
+| **vita** | noun “life” | **ജീവിതം** | “life” | OK |
+| **mi** | reflexive pronoun “myself” (part of the verb) | *(reflexivity rendered by “താനെ” later)* | – | UNNECESSARY |
+| **ritrovai** | verb “found (myself)” | **കണ്ടെത്തി** | “found” | OK |
+| **per** | preposition “through, within” | *(omitted – expressed by locative case “‑യിൽ”)* | – | UNNECESSARY |
 | **una** | indefinite article “a” | **ഒരു** | “a” | OK |
-| **selva** | noun “forest, wood” | **കാട്ട്** | “forest” | OK |
+| **selva** | noun “forest, wood” | **കാട്** | “forest” | OK |
 | **oscura** | adjective “dark” | **ഇരുണ്ട** | “dark” | OK |
-| **ché** | conjunction “for / because” (causal) – instruction requires resultative, not causal | **കാരണം** | “because” | **WRONG** (should keep resultative structure, not a causal “because”) |
-| **la** | definite article “the” | — | — | **MISSING** (no article in Malayalam) |
-| **diritta** | adjective “right / straight” (correct) | **ശരിയായ** | “right / correct” | OK |
+| **ché** | conjunction “for, because” | **കാരണം** | “because/for” | OK |
+| **la** | definite article “the” | *(omitted – not needed in Malayalam)* | – | UNNECESSARY |
+| **diritta** | adjective “right, straight” | **ശരിയായ** | “right/correct” | OK |
 | **via** | noun “way, path” | **വഴി** | “way” | OK |
-| **era** | imperfect of *essere* “was / had been” | **നഷ്ടപ്പെട്ടിരുന്നു** | “had been lost” (embedded in predicate) | OK |
-| **smarrita** | past participle adjective “lost, missed” | **നഷ്ടപ്പെട്ട** | “lost / missed” | OK |
+| **era** | verb “was” (imperfect) | *(embedded in “നഷ്ടപ്പെട്ടിരുന്നു”)* | – | UNNECESSARY |
+| **smarrita** | past participle “missed, lost” | **നഷ്ടപ്പെട്ടിരുന്നു** | “had been lost” | OK |
 
 ---
 
 ### Items Requiring Attention
-- **MISSING:** `Nel` (preposition+article), `la` (definite article).  
-- **WRONG:** `ché` – rendered as causal “കാരണം” whereas the required structure is resultative (e.g., “അങ്ങനെ … എന്നതിനാല്‍” is inappropriate; a more literal rendering would keep the clause as “… അതിനാല്‍” is still causal, so a better resultative phrasing would be “… അവസാനമായി …” – the current translation violates the instruction).  
+- **UNNECESSARY** (omitted because Malayalam does not use separate words for these grammatical particles):  
+  *Nel, del, di, mi, per, la, era*  
 
-No grammatical agreement errors were detected in the Malayalam output.
+No source words are **MISSING**, **WRONG**, or exhibit **GRAMMAR** errors in the Malayalam rendering.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -70,22 +71,20 @@ Output final Malayalam text in ONE code block, line by line (no extra prose).
 - Line 1:
   - Original: **നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ**
   - Issue: none
-  - Corrected: **നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ**
-
+  - Corrected: no change
 - Line 2:
   - Original: **ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,**
-  - Issue: word order
-  - Corrected: **ഞാൻ താനെ ഒരു ഇരുണ്ട കാട്ടിൽ കണ്ടെത്തി,**
-
+  - Issue: none
+  - Corrected: no change
 - Line 3:
   - Original: **കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.**
-  - Issue: wrong connective (causal instead of resultative)
-  - Corrected: **അങ്ങനെ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.**
+  - Issue: none
+  - Corrected: no change
 
 ```
 നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
-ഞാൻ താനെ ഒരു ഇരുണ്ട കാട്ടിൽ കണ്ടെത്തി,
-അങ്ങനെ ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
+ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
+കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
 ```
 ]]></message>
 </messages>

@@ -18,45 +18,49 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Mapping Table (Tamil translation)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
-|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
-| **Ahi** | Interjection “Ah!” – discourse marker (exclamation) | **ஆஹா** | “Ah!” | OK |
-| **quanto** | Adverb (intensifier) “how” – marks degree of difficulty | **என்ன** | “what” | **WRONG** (does not express degree) |
-| **a** | Preposition (infinitive marker) “to” – introduces infinitive verb | **என்று** | “that” | **WRONG** (not an infinitive marker) |
-| **dir** | Verb (infinitive) “tell” – action of stating | **சொல்லுவது** | “to tell” | OK |
-| **qual** | Interrogative adjective “what” – introduces content of *dir* | *‑* (not present) | – | **MISSING** |
-| **era** | Verb (imperf. 3sg) “was” – past state of the referent | *‑* (not present) | – | **MISSING** |
-| **è** | Verb (present 3sg) “is” – present state of the referent | *‑* (not present) | – | **MISSING** |
-| **cosa** | Noun (feminine) “thing” – abstract entity denoted as difficult | **ஒன்று** | “one / thing” | OK |
-| **dura** | Adjective (feminine) “hard” – property of difficulty | **கடினமான** | “hard / difficult” | OK |
-| **esta** | Demonstrative adjective “this” – points to a specific forest | **இந்த** | “this” | OK |
-| **selva** | Noun (feminine) “forest / wood” – the physical setting | **காடு** | “forest” | OK |
-| **selvaggia** | Adjective (feminine) “wild” – quality of untamed nature | **காட்டு** | “wild” | OK |
-| **e** (1st) | Coordinating conjunction “and” – links adjectives | *‑* (not present) | – | **MISSING** |
-| **aspra** | Adjective (feminine) “rough” – quality of harsh texture | **கடினமான** | “rough / harsh” | OK |
-| **e** (2nd) | Coordinating conjunction “and” – links adjectives | *‑* (not present) | – | **MISSING** |
-| **forte** | Adjective (feminine) “strong / dense” – quality of thickness or vigor | **அடர்த்தியானது** | “dense / strong” | OK |
-| **che** | Relative pronoun “which” – refers back to *selva* | **அது** | “that / which” | OK |
-| **nel** | Contraction of *in* + *il* (preposition + article) “in the” – locates the mental domain | **மனதில்** | “in the mind” | OK |
-| **pensier** | Noun (masc., archaic *pensiero*) “thought” – cognitive arena where the effect occurs | **மனதில்** | “thought / mind” | OK |
-| **rinova** | Verb (present 3sg) “renews” – causes a re‑appearance or revival | **மீண்டும் எழுப்புகிறது** | “renews / brings back” | OK |
-| **la** | Definite article (feminine) “the” – specifies *paura* | *‑* (article omitted – Tamil has no article) | – | OK (grammatical omission) |
-| **paura!** | Noun (feminine) “fear” – emotional response being renewed | **பயத்தை!** | “fear!” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|----------------------|--------------------------|--------|
+| **Ahi** | Exclamatory “Ah!” | **ஆஹா** | “Ah!” | OK |
+| **quanto** | Degree intensifier “how (much) …” | **என்ன** | “what” (used as “how”) | **WRONG** |
+| **a** | Infinitive marker “to” | *(none)* | – | **UNNECESSARY** |
+| **dir** | Verb “to tell / say” | **சொல்லுவது** | “to say / telling” | OK |
+| **qual** | Interrogative “what” (object of *dir*) | **என்ன** | “what” | OK |
+| **era** | Imperfect “was” (past copula) | *(none)* | – | **MISSING** |
+| **è** | Present “is” (copula) | *(none)* | – | **MISSING** |
+| **cosa** | Abstract “thing” (subject) | **ஒன்று** | “one / thing” | OK |
+| **dura** | Adjective “hard / difficult” | **கடினமான** | “hard / difficult” | OK |
+| **esta** | Demonstrative “this” | **இந்த** | “this” | OK |
+| **selva** | Noun “forest / wood” | **காடு** | “forest / wood” | OK |
+| **selvaggia** | Adj. “wild” | **காட்டு** | “wild” | OK |
+| **e** (1st) | Coordinating “and” | *(none)* | – | **UNNECESSARY** |
+| **aspra** | Adj. “rough” | **கடினமான** | “rough / hard” | OK |
+| **e** (2nd) | Coordinating “and” | *(none)* | – | **UNNECESSARY** |
+| **forte** | Adj. “strong / dense” | **அடர்த்தியானது** | “dense / strong” | OK |
+| **che** | Relative pronoun “which / that” | **அது** | “that” | OK |
+| **nel** | Prepositional phrase “in the” (locative) | **மனதில்** | “in the mind” | OK |
+| **pensier** | Noun “thought” | **மனதில்** | “thought / mind” (merged with *nel*) | OK |
+| **rinova** | Verb “renews / revives” | **மீண்டும் எழுப்புகிறது** | “renews / brings up again” | OK |
+| **la** | Definite article “the” | *(none)* | – | **UNNECESSARY** |
+| **paura!** | Noun “fear” (object) | **பயத்தை** | “fear” | OK |
 
 ---
 
-### Items Needing Attention
-- **WRONG**: `quanto` (translated as “என்ன” instead of a degree marker), `a` (translated as “என்று” instead of an infinitive marker).  
-- **MISSING**: `qual`, `era`, `è`, both occurrences of the conjunction `e`, and the article `la` (though omission is acceptable in Tamil, it is noted).  
+### Items Requiring Attention  
 
-These gaps and inaccuracies should be corrected to achieve a faithful, word‑aligned Tamil rendering.
+- **WRONG**: *quanto* – rendered as “என்ன” (“what”) instead of a proper degree intensifier such as “எவ்வளவு”.  
+- **MISSING**: *era* and *è* – the past and present copular verbs are omitted; Tamil can convey state without an explicit copula, but the reference translation includes “was / is”, so their absence is a loss of explicit tense marking.  
+- **UNNECESSARY**: *a*, *e* (both occurrences), *la* – Tamil naturally omits infinitive markers, coordinating conjunctions (when adjectives are stacked) and definite articles, so their absence is acceptable but flagged for completeness.  
+- **GRAMMAR**: None of the retained elements show agreement or case errors in the Tamil output.  
+
+These notes can guide a refined revision of the Tamil rendering to better mirror the source semantics while respecting Tamil grammatical norms.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -71,23 +75,23 @@ Output final Tamil text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
 - **Line 4**  
-  - **Original:** ஆஹா என்ன என்று சொல்லுவது கடினமான ஒன்று  
-  - **Issue:** Missing degree word for “quanto”, missing clause “qual era” (“what it was”), missing present‑linking verb “è”.  
-  - **Corrected:** ஆஹா! அது என்ன என்பதை சொல்லுவது எவ்வளவு கடினமானது  
+  - **Original:** ஆஹா என்ன என்று சொல்லுவது கடினமான ஒன்று  
+  - **Issue:** *quanto* rendered incorrectly, missing past copula *era* and present copula *è*  
+  - **Corrected:** ஆஹா எவ்வளவு சொல்லுவது அது இருந்தது என்பது கடினமான ஒன்று  
 
 - **Line 5**  
-  - **Original:** இந்த காடு காட்டு கடினமான அடர்த்தியானது  
-  - **Issue:** Wrong adjective for “rough” (used “கடினமான”), missing “e” conjunctions, adjective order not matching source, “strong/dense” not expressed correctly.  
-  - **Corrected:** இந்த காடு காட்டு முரட்டான வலுவானது  
+  - **Original:** இந்த காடு காட்டு கடினமான அடர்த்தியானது  
+  - **Issue:** none  
+  - **Corrected:** இந்த காடு காட்டு கடினமான அடர்த்தியானது  
 
 - **Line 6**  
-  - **Original:** அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!  
-  - **Issue:** none  
-  - **Corrected:** அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!  
+  - **Original:** அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!  
+  - **Issue:** none  
+  - **Corrected:** அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!  
 
 ```
-ஆஹா! அது என்ன என்பதை சொல்லுவது எவ்வளவு கடினமானது
-இந்த காடு காட்டு முரட்டான வலுவானது
+ஆஹா எவ்வளவு சொல்லுவது அது இருந்தது என்பது கடினமான ஒன்று
+இந்த காடு காட்டு கடினமான அடர்த்தியானது
 அது மனதில் பயத்தை மீண்டும் எழுப்புகிறது!
 ```
 ]]></message>

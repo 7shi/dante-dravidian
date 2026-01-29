@@ -18,43 +18,47 @@ que en el pensamiento renueva el miedo!
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Mapping Table (Step 3)**  
 
-| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
-|-------------|-----------------------|--------------------|------------------|--------|
-| Ahi | Exclamatory expression of emotion | Ay | “Ah!” | OK |
-| quanto | Degree intensifier “how” | cuánto | “how” | OK |
-| a | Infinitive marker (to) | *‑* | – | **MISSING** |
-| dir | Action “to tell” | decir | “to tell” | OK |
-| qual | Interrogative “what” | qué | “what” | OK |
-| era | Past copula “was” | era | “was” | OK |
-| è | Present copula “is” | *‑* | – | **MISSING** |
-| cosa | Abstract “thing” | cosa | “thing” | OK |
-| dura | Property “hard/difficult” | dura | “hard” | OK |
-| esta | Demonstrative “this” | esta | “this” | OK |
-| selva | Noun “forest/wood” | selva | “forest” | OK |
-| selvaggia | Adj. “wild” | salvaje | “wild” | OK |
-| e (1) | Coordinating “and” | y | “and” | OK |
-| aspra | Adj. “rough” | áspera | “rough” | OK |
-| e (2) | Coordinating “and” | y | “and” | OK |
-| forte | Adj. “strong/dense” | fuerte | “strong/dense” | OK |
-| che | Relative pronoun “which/that” | que | “which/that” | OK |
-| nel | Prepositional phrase “in the” | en el | “in the” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| Ahi | Interjection expressing emotion | Ay | “Ah!” | OK |
+| quanto | Adverb (intensifier) “how” | cuánto cuesta | “how much it costs / how hard” | OK |
+| a | Preposition/infinitive marker | *(omitted)* | – | **UNNECESSARY** |
+| dir | Verb (infinitive) “to tell” | decir | “to tell” | OK |
+| qual | Interrogative adjective “what” | qué | “what” | OK |
+| era | Verb (imperf. 3 sg) “was” | era | “was” | OK |
+| è | Verb (present 3 sg) “is” | *(omitted)* | – | **UNNECESSARY** |
+| cosa | Noun “thing” (abstract) | cosa | “thing” | OK |
+| dura | Adjective “hard / difficult” | dura | “hard / difficult” | OK |
+| esta | Demonstrative adjective “this” | esta | “this” | OK |
+| selva | Noun “forest / wood” | selva | “forest / wood” | OK |
+| selvaggia | Adjective “wild” | salvaje | “wild” | OK |
+| e | Coordinating conjunction “and” | y | “and” | OK |
+| aspra | Adjective “rough” | áspera | “rough” | OK |
+| e | Coordinating conjunction “and” | y | “and” | OK |
+| forte | Adjective “strong / dense” | fuerte | “strong / dense” | OK |
+| che | Relative pronoun “which / that” | que | “which / that” | OK |
+| nel | Preposition + article “in the” | en | “in” | OK |
 | pensier | Noun “thought” | pensamiento | “thought” | OK |
 | rinova | Verb “renews” | renueva | “renews” | OK |
-| la | Definite article (fem.) “the” | el | “the” (masc.) | **GRAMMAR** (gender mismatch) |
-| paura | Noun “fear” | miedo | “fear” | OK |
+| la | Definite article (feminine) “the” | el | “the” (masc.) | OK |
+| paura! | Noun “fear” (with exclamation) | miedo! | “fear!” | OK |
 
 ---
 
 ### Issues Detected
-- **Missing translations:** `a`, `è` (infinitive marker and present copula were omitted).
-- **Grammar error:** `la` → `el` (gender disagreement; should be feminine “la”).
+- **UNNECESSARY**:  
+  - **a** – the infinitive marker required in Italian is not needed in Spanish.  
+  - **è** – the copular “is” is omitted in the Spanish clause because the adjective follows the noun directly.  
+
+No missing, wrong, or grammatical‑agreement errors were found.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -68,23 +72,21 @@ Output format (use nested bullet list, not table):
 Output final Spanish text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 4**  
-  - Original: Ay cuánto cuesta decir qué era cosa dura  
-  - Issue: missing copula “es”  
-  - Corrected: Ay cuánto cuesta decir qué era **es** cosa dura  
+- Line 4:
+  - Original: Ay cuánto cuesta decir qué era cosa dura
+  - Issue: none
+  - Corrected: no change
+- Line 5:
+  - Original: esta selva salvaje y áspera y fuerte
+  - Issue: none
+  - Corrected: no change
+- Line 6:
+  - Original: que en el pensamiento renueva el miedo!
+  - Issue: none
+  - Corrected: no change
 
-- **Line 5**  
-  - Original: esta selva salvaje y áspera y fuerte  
-  - Issue: none  
-  - Corrected: no change  
-
-- **Line 6**  
-  - Original: que en el pensamiento renueva el miedo!  
-  - Issue: none  
-  - Corrected: no change  
-
-```text
-Ay cuánto cuesta decir qué era es cosa dura
+```
+Ay cuánto cuesta decir qué era cosa dura
 esta selva salvaje y áspera y fuerte
 que en el pensamiento renueva el miedo!
 ```

@@ -18,45 +18,47 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Japanese Mapping Table**
+**Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
-|-------------|----------------------|----------------------|------------------------|--------|
-| Ahi | Exclamatory “Ah!” | ああ | “Ah” | OK |
-| quanto | Degree‑intensifier “how (much)” | 何で | “what‑by” (incorrect for “how”) | **WRONG** |
-| a | Infinitive marker “to” | – (infinitive expressed by 語ること) | – | **MISSING** |
-| dir | Verb “to tell” | 語る | “to tell” | OK |
-| qual | Interrogative “what” | 何 | “what” | OK |
-| era | Past copula “was” (within “qual era”) | であるか | “is‑that” (captures the past‑state meaning) | OK |
-| è | Present copula “is” (topic) | は | “topic marker” | OK |
-| cosa | Abstract “thing” | こと | “thing” (nominaliser) | OK |
-| dura | Adjective “hard / difficult” | 困難だ | “is difficult” | OK |
-| esta | Demonstrative “this” | この | “this” | OK |
-| selva | Noun “forest / wood” | 森 | “forest” | OK |
-| selvaggia | Adj. “wild” | 野生 | “wild” | OK |
-| e (1st) | Coordinating “and” (linking adjectives) | で | “with / and” (particle linking) | OK |
-| aspra | Adj. “rough” | 荒くて | “rough‑and” (te‑form) | OK |
-| e (2nd) | Coordinating “and” (linking adjectives) | – (omitted) | – | **MISSING** |
-| forte | Adj. “strong / dense” | 濃い | “dense” | OK |
-| che | Relative pronoun “which / that” | それは | “that (as subject)” | OK |
-| nel | Prepositional phrase “in the” | の中で | “in …” | OK |
-| pensier | Noun “thought” | 思考 | “thought” | OK |
-| rinova | Verb “renews” | 新たにする | “makes anew” | OK |
-| la | Definite article “the” (object) | – (article not expressed in Japanese) | – | **MISSING** |
-| paura! | Noun “fear” (object) | 恐怖 | “fear” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Ahi | exclamation “Ah!” | ああ | “Ah!” | OK |
+| quanto | intensifier “how” | — | — | **MISSING** |
+| a | infinitive marker “to” | — (implicit in 語ること) | — | **UNNECESSARY** (Japanese has no separate infinitive marker) |
+| dir | “tell” | 語る | “to tell” | OK |
+| qual | interrogative “what” | 何 | “what” | OK |
+| era | past “was” | である | “to be” (as in 何であるか) | OK |
+| è | present “is” | だ (in 困難だ) | “is” | OK |
+| cosa | “thing” | — | — | **MISSING** |
+| dura | “hard / difficult” | 困難だ | “difficult” | OK |
+| esta | demonstrative “this” | この | “this” | OK |
+| selva | “forest / wood” | 森 | “forest” | OK |
+| selvaggia | “wild” | 野生 | “wild” | OK |
+| e (1st) | coordinating “and” | で | “and/with” (connective) | OK |
+| aspra | “rough” | 荒くて | “rough and” | OK |
+| e (2nd) | coordinating “and” | — | — | **UNNECESSARY** (conjunction already expressed by くて) |
+| forte | “strong / dense” | 濃い | “dense” | OK |
+| che | relative pronoun “which / that” | それは | “it (as topic)” | OK |
+| nel | preposition “in the” | の中で | “in …” | OK |
+| pensier | “thought” | 思考 | “thought” | OK |
+| rinova | “renews” | 新たにする | “to renew” | OK |
+| la | definite article “the” | — | — | **UNNECESSARY** (articles are not used in Japanese) |
+| paura | “fear” | 恐怖 | “fear” | OK |
 
 ---
 
-### Items Requiring Attention
-- **WRONG**: *quanto* → rendered as **何で**, which does not convey the intended degree meaning “how”. A more appropriate translation would be **どれほど** or **いかに**.
-- **MISSING**: *a* (infinitive marker) – Japanese expresses the infinitive with the nominaliser **こと**, so the marker itself is absent.
-- **MISSING**: second *e* (the second “and” linking *aspra* and *forte*) – omitted in the Japanese phrase; could be rendered with **と** or by keeping the te‑form chain.
-- **MISSING**: *la* (definite article) – Japanese lacks articles; omission is acceptable, but noted for completeness.
+### Items to Review  
+
+- **MISSING:** `quanto`, `cosa` – the degree intensifier “how” and the noun “thing” are not expressed in the Japanese rendering.  
+- **UNNECESSARY:** `a`, second `e`, `la` – Japanese does not require an infinitive marker, a second explicit conjunction, or a definite article.  
+- **GRAMMAR:** none detected; the Japanese sentences are grammatically sound.  
+- **WRONG:** none detected.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -70,24 +72,22 @@ Output format (use nested bullet list, not table):
 Output final Japanese text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 4**  
-  - **Original:** Ahi quanto a dir qual era è cosa dura  
-  - **Issue:** “quanto” was mistranslated; infinitive marker “a” was not represented.  
-  - **Corrected:** ああ、どれほど語ることは何だったことが困難だ  
-
-- **Line 5**  
-  - **Original:** esta selva selvaggia e aspra e forte  
-  - **Issue:** second coordinating “e” was omitted.  
-  - **Corrected:** この野生で荒くてと濃い森  
-
-- **Line 6**  
-  - **Original:** che nel pensier rinova la paura!  
-  - **Issue:** none  
-  - **Corrected:** それは思考の中で恐怖を新たにする！  
+- Line 4:
+  - Original: ああ、何であるかを語ることは困難だ
+  - Issue: missing “quanto” (how) and “cosa” (thing)
+  - Corrected: ああ、何であるかを語ることはどれほど困難なことか
+- Line 5:
+  - Original: この野生で荒くて濃い森
+  - Issue: none
+  - Corrected: no change
+- Line 6:
+  - Original: それは思考の中で恐怖を新たにする！
+  - Issue: none
+  - Corrected: no change
 
 ```
-ああ、どれほど語ることは何だったことが困難だ
-この野生で荒くてと濃い森
+ああ、何であるかを語ることはどれほど困難なことか
+この野生で荒くて濃い森
 それは思考の中で恐怖を新たにする！
 ```
 ]]></message>

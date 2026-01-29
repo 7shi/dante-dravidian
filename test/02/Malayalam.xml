@@ -18,54 +18,45 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑by‑Word Mapping Table**
 
-| # | Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
-|---|-------------|-----------------------|----------------------------------|-----------------------------|--------|
-| 1 | Ahi | Interjection – exclamation of emotion | **അഹ്** | “Ah!” | OK |
-| 2 | quanto | Adverb intensifier “how” (degree) | **എത്ര** | “how” | OK |
-| 3 | a | Preposition / infinitive marker “to” | *(none)* | – | **MISSING** |
-| 4 | dir | Verb infinitive “tell” | **പറയാൻ** | “to tell” | OK |
-| 5 | qual | Interrogative adjective “what” | **എന്താണെന്ന്** | “what … is” | OK |
-| 6 | era | Verb imperfect “was” | *(none)* | – | **MISSING** |
-| 7 | è | Verb present “is” (copula) | **…മാണെന്ന്** (part of **കാര്യമാണെന്ന്**) | “is” | OK |
-| 8 | cosa | Noun “thing” | **കാര്യം** | “thing” | OK |
-| 9 | dura | Adjective “hard” | **കഠിനമായ** | “hard” | OK |
-|10| esta | Demonstrative adjective “this” | **ഈ** | “this” | OK |
-|11| selva | Noun “forest / wood” | **കാട്ടു** | “forest / wood” | OK |
-|12| selvaggia | Adjective “wild” | *(none)* | – | **MISSING** |
-|13| e (1st) | Coordinating conjunction “and” | **വും** (conj. suffix) | “and” | OK |
-|14| aspra | Adjective “rough” | **സാന്ദ്രവുമായ** | “dense” | **WRONG** (semantic mismatch) |
-|15| e (2nd) | Coordinating conjunction “and” | **വുമായ** (conj. suffix) | “and” | OK |
-|16| forte | Adjective “strong / dense” | **മരവനം** | “wood / forest” | **WRONG** (semantic mismatch) |
-|17| che | Relative pronoun “which” | *(none)* | – | **MISSING** |
-|18| nel | Contraction “in the” (preposition + article) | **ചിന്തയിൽ** | “in thought” | OK |
-|19| pensier | Noun “thought” | **ചിന്ത** | “thought” | OK |
-|20| rinova | Verb “renews” | **പുതുക്കുന്നു** | “renews” | OK |
-|21| la | Definite article “the” | *(none)* | – | **MISSING** |
-|22| paura | Noun “fear” | **ഭയത്തെ** | “the fear” | OK |
+| Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|----------------------|----------------------------------|-----------------------------|--------|
+| Ahi | Interjection expressing lament | **അഹ്** | “Ah!” | OK |
+| quanto | Degree adverb “how …” | **എത്ര** | “how” / “how much” | OK |
+| a | Infinitive marker (to) | — (encoded in the suffix **‑ാൻ** of “പറയാൻ”) | — | UNNECESSARY |
+| dir | Verb “to tell” | **പറയാൻ** | “to tell” | OK |
+| qual | Interrogative “what” | **എന്താണെന്ന്** | “what … is” | OK |
+| era | Imperfect “was” | **എന്താണെന്ന്** | “what … is” (covers past) | OK |
+| è | Present “is” | **എന്താണെന്ന്** | “what … is” (covers present) | OK |
+| cosa | Noun “thing” | **കാര്യം** | “thing” | OK |
+| dura | Adjective “hard / difficult” | **കഠിനമായ** | “hard / difficult” | OK |
+| esta | Demonstrative “this” | **ഈ** | “this” | OK |
+| selva | Noun “forest / wood” | **കാട്ടു** (or **മരവനം**) | “forest / wood” | OK |
+| selvaggia | Adjective “wild” | — (not expressed) | — | **MISSING** |
+| e (1) | Coordinating conjunction “and” (linking selvaggia and aspra) | **യും** (as part of *കഠിനവും*) | “and” | OK |
+| aspra | Adjective “rough” | **കഠിനവും** (hard/rough) | “hard / rough” | OK |
+| e (2) | Coordinating conjunction “and” (linking aspra and forte) | **വുമായ** (as part of *സാന്ദ്രവുമായ*) | “and” | OK |
+| forte | Adjective “strong / dense” | **സാന്ദ്രവുമായ** | “dense” | OK |
+| che | Relative pronoun “which” | — (implicit in the relative clause) | — | UNNECESSARY |
+| nel | Preposition + article “in the” | **ചിന്തയിൽ** | “in thought” | OK |
+| pensier | Noun “thought” | **ചിന്ത** (within *ചിന്തയിൽ*) | “thought” | OK |
+| rinova | Verb “renews” | **പുതുക്കുന്നു** | “renews” | OK |
+| la | Definite article “the” | — (articles not used in Malayalam) | — | UNNECESSARY |
+| paura! | Noun “fear” (exclamatory) | **ഭയത്തെ!** | “fear!” | OK |
 
 ---
 
-### Items Needing Attention
-**Missing translations**  
-- `a` (infinitive marker)  
-- `era` (past “was”)  
-- `selvaggia` (“wild”)  
-- `che` (relative pronoun “which”)  
-- `la` (definite article “the”)  
-
-**Wrong/semantically inaccurate translations**  
-- `aspra` rendered as **സാന്ദ്രവുമായ** (“dense”) – should convey “rough”.  
-- `forte` rendered as **മരവനം** (“wood/forest”) – should convey “strong / dense”.  
-
-**Grammar issues**  
-- None detected in the Malayalam output (agreement, case, etc., are acceptable).
+### Items Requiring Attention
+- **MISSING**: **selvaggia** – the notion “wild” is not rendered in the Malayalam translation.  
+- **UNNECESSARY** (source words omitted because Malayalam does not require them): **a**, **che**, **la**.  
+- No **WRONG** or **GRAMMAR** errors were detected in the target rendering of the mapped items.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -79,25 +70,25 @@ Output format (use nested bullet list, not table):
 Output final Malayalam text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 4**  
-  - Original: അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്  
-  - Issue: Missing pronoun “it” and past verb “was” (qual era).  
-  - Corrected: **അഹ് അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്**  
+- Line 4:
+  - Original: Ahi quanto a dir qual era è cosa dura
+  - Issue: none
+  - Corrected: അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യം  
 
-- **Line 5**  
-  - Original: ഈ കാട്ടു കഠിനവും സാന്ദ്രവുമായ മരവനം  
-  - Issue: Missing adjective “wild” (selvaggia) and wrong noun “മരവനം”.  
-  - Corrected: **ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്ടു**  
+- Line 5:
+  - Original: esta selva selvaggia e aspra e forte
+  - Issue: MISSING – the adjective “wild” (selvaggia) was not rendered
+  - Corrected: ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്  
 
-- **Line 6**  
-  - Original: ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!  
-  - Issue: Missing relative pronoun “which/it”.  
-  - Corrected: **അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!**  
+- Line 6:
+  - Original: che nel pensier rinova la paura!
+  - Issue: none
+  - Corrected: ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!  
 
-```malayalam
-അഹ് അത് എന്തായിരുന്നു എന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യമാണെന്ന്
-ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്ടു
-അത് ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
+```
+അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യം
+ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്
+ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
 ```
 ]]></message>
 </messages>

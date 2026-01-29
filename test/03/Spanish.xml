@@ -18,48 +18,55 @@ diré de las otras cosas que allí he visto.
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Mapping Table**
+**Word‑to‑Word Alignment Table (Spanish translation of lines 7‑9)**  
 
-| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
-|-------------|----------------------|----------------------|-----------------------|--------|
-| **Tant'** | “to such a degree” (intensifier) | **Tan** | “so / such” | OK |
-| **è** (1st) | Copular verb “is” | **es** | “is” | OK |
-| **amara** | adjective “bitter” | **amarga** | “bitter” | OK |
-| **che** | resultative subordinator “that” | **que** | “that” | OK |
-| **poco** | adverb of slight degree “little” | **poco** | “little” | OK |
-| **è** (2nd) | Copular verb “is” (comparative clause) | **es** | “is” | OK |
-| **più** | comparative adverb “more” | **más** | “more” | OK |
-| **morte** | noun “death” | **muerte** | “death” | OK |
-| **ma** | coordinating conjunction “but” | **pero** | “but” | OK |
-| **per** | preposition of purpose “in order to” | **para** | “for / to” | OK |
-| **trattar** | infinitive “to treat / discuss” | **tratar** | “to treat / discuss” | OK |
-| **del** | contraction of *di + il* “of the” | **del** | “of the” | OK |
-| **ben** | noun “good” (the good thing) | **bien** | “good” | OK |
-| **ch'** | relative pronoun “that/which” | **que** | “that / which” | OK |
-| **i'** | first‑person pronoun “I” (subject of relative clause) | — (implicit in verb) | “I” (understood) | **MISSING** |
-| **vi** | locative adverb “there” | **allí** | “there” | OK |
-| **trovai** | 1st‑person past “found” | **encontré** | “I found” | OK |
-| **dirò** | 1st‑person future “I will say/tell” | **diré** | “I will tell” | OK |
-| **de** | preposition “of” (introducing complement) | **de** | “of” | OK |
-| **l'altre** | definite article + adjective “the other” | **las** | “the (feminine plural)” | OK |
-| **cose** | noun “things” | **cosas** | “things” | OK |
-| **ch'** | relative pronoun “that/which” | **que** | “that / which” | OK |
-| **i'** | first‑person pronoun “I” (subject of perfect) | — (implicit in verb) | “I” (understood) | **MISSING** |
-| **v'ho** | auxiliary “have” + clitic “there” → perfect “have (seen)” | **he** | “have” (auxiliary) | OK |
-| **scorte** | past participle “seen” | **visto** | “seen” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Spanish) | Back‑Translation (≈ English) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------------|--------|
+| Tant' | “to such a degree” – intensifier of the predicate | **Tan** | “so / such” | OK |
+| è | copular verb linking subject to predicate | **es** | “is” | OK |
+| amara | adjective describing the quality of the subject (bitter) | **amarga** | “bitter” | OK |
+| che | subordinator introducing result/comparative clause | **que** | “that” | OK |
+| poco | adverb quantifier indicating slight degree | **poco** | “little / slightly” | OK |
+| è | copular verb in comparative clause | **es** | “is” | OK |
+| più | comparative adverb marking increase | **más** | “more” | OK |
+| morte | noun, the entity being compared (death) | **la muerte** | “the death” | OK |
+| ; | (punctuation) | **;** | – | – |
+| ma | coordinating conjunction signalling contrast | **pero** | “but” | OK |
+| per | preposition marking purpose | **para** | “in order to / for” | OK |
+| trattar | infinitive verb “to discuss / to treat” | **tratar** | “to treat / to discuss” | OK |
+| del | contraction *di + il* → “of the” | **del** | “of the” | OK |
+| ben | noun “good” (the positive thing) | **bien** | “good” | OK |
+| ch' | relative pronoun introducing clause | **que** | “that / which” | OK |
+| i' | first‑person pronoun “I” (subject of relative clause) | *(omitted – Spanish drops subject pronoun)* | “I” | **UNNECESSARY** |
+| vi | locative adverb “there” (place of finding) | **allí** | “there” | OK |
+| trovai | 1st‑person past “found” | **encontré** | “I found” | OK |
+| , | (punctuation) | **,** | – | – |
+| dirò | 1st‑person future “I will tell” | **diré** | “I will say / tell” | OK |
+| de | preposition introducing complement of *dirò* | **de** | “of / about” | OK |
+| l'altre | definite article + adjective “the other” (plural) | **las otras** | “the other (feminine plural)” | OK |
+| cose | noun “things” (plural) | **cosas** | “things” | OK |
+| ch' | relative pronoun introducing clause | **que** | “that / which” | OK |
+| i' | first‑person pronoun “I” (subject of perfect) | *(omitted – Spanish drops subject pronoun)* | “I” | **UNNECESSARY** |
+| v' | clitic locative “there” (part of *v'ho*) | **allí** | “there” | OK |
+| ho | auxiliary verb “have” (forms perfect) | **he** | “have (aux.)” | OK |
+| scorte | past participle “seen” | **visto** | “seen” | OK |
+| . | (punctuation) | **.** | – | – |
 
 ---
 
-### Items to Review
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - `i'` (twice) – the subject pronoun “I” is omitted in Spanish because the verb inflection already indicates the subject.  
+- **GRAMMAR**:  
+  - The clause **“Tan amarga es que la muerte es poco más;”** is syntactically awkward in Spanish; a more natural rendering would be “Tan amarga es que la muerte es poco más.” The current form is acceptable for a literal translation but would be flagged as a minor grammatical oddity.  
 
-- **MISSING**: the pronoun **i'** (first‑person “I”) appears twice (lines 8 and 9) but is not explicitly rendered in the Spanish translation; the subject is only implied by the verb forms *encontré* and *he visto*.
-- No **WRONG** lexical choices were identified.
-- No **GRAMMAR** errors were detected in the Spanish output (agreement, gender, number are all correct).
+All other source tokens have appropriate Spanish equivalents and are correctly aligned.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -73,23 +80,25 @@ Output format (use nested bullet list, not table):
 Output final Spanish text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- Line 7:
-  - Original: Tan amarga es que la muerte es poco más;
-  - Issue: none
-  - Corrected: no change
-- Line 8:
-  - Original: pero para tratar del bien que allí encontré,
-  - Issue: missing subject pronoun “yo”
-  - Corrected: pero para tratar del bien que allí **yo** encontré,
-- Line 9:
-  - Original: diré de las otras cosas que allí he visto.
-  - Issue: missing subject pronoun “yo”
-  - Corrected: diré de las otras cosas que allí **yo** he visto.
+- **Line 7**  
+  - Original: Tan amarga **es** que la muerte es poco más;  
+  - Issue: GRAMMAR – the copula “es” after “amarga” makes the clause unidiomatic.  
+  - Corrected: Tan amarga que la muerte es poco más;  
+
+- **Line 8**  
+  - Original: pero para tratar del bien que allí encontré,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 9**  
+  - Original: diré de las otras cosas que allí he visto.  
+  - Issue: none  
+  - Corrected: no change  
 
 ```text
-Tan amarga es que la muerte es poco más;
-pero para tratar del bien que allí yo encontré,
-diré de las otras cosas que allí yo he visto.
+Tan amarga que la muerte es poco más;
+pero para tratar del bien que allí encontré,
+diré de las otras cosas que allí he visto.
 ```
 ]]></message>
 </messages>

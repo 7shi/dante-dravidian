@@ -18,43 +18,44 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Japanese Mapping Table**
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (EN) | Status |
-|-------------|--------------------------------------|--------------------------------|------------------------|--------|
-| Nel | “in the” (locative) | で | “in/at” | OK |
-| mezzo | “midpoint / middle” | 真ん中 | “middle” | OK |
-| del | genitive “of the” linking *mezzo* to *cammin* | の | “of” | OK |
-| cammin | “road / journey” | 道 | “road” | OK |
-| di | genitive “of” linking *cammin* to *nostra vita* | の | “of” | OK |
-| nostra | possessive “our” (part of *nostra vita*) | 人生 | “life” (captures “our life”) | OK |
-| vita | “life” | 人生 | “life” | OK |
-| mi | reflexive “myself” | 自分 | “myself” | OK |
-| ritrovai | “found” (past) | 見つけた | “found” | OK |
-| per | “within / through” (spatial) | の中で | “within” | OK |
-| una | indefinite article “a” (non‑specific) | — | — | **MISSING** |
-| selva | “forest / wood” | 森 | “forest” | OK |
-| oscura | “dark” (adj.) | 暗い | “dark” | OK |
-| ché | causal “for / because” (resultative clause) | — | — | **MISSING** |
-| la | definite article “the” (subject marker) | — | — | **MISSING** |
-| diritta | “right / straight / correct” | 正しい | “right / correct” | OK |
-| via | “way / path” | 道 | “way” | OK |
-| era | copular “was / had been” (imperfect) | 失われていた | “had been lost” | OK |
-| smarrita | “lost / missed” (past participle) | 失われていた | “lost” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| Nel | marks location inside a larger span | で | “in/at” | OK |
+| mezzo | the central point of a stretch | 真ん中 | “middle” | OK |
+| del | genitive linking “mezzo” to “cammin” | の | “of” | OK |
+| cammin | the path taken through life | 道 | “road / way” | OK |
+| di | links “cammin” to “nostra vita” | の | “of” | OK |
+| nostra | belonging to the speaker and companions | 人生 | “life (our)” | OK |
+| vita | the span of human existence | — | — | **UNNECESSARY** (already expressed by 人生) |
+| mi | the speaker as the experiencer of the verb | 自分 | “self / oneself” | OK |
+| ritrovai | the act of encountering oneself in a place | 見つけた | “found” | OK |
+| per | indicates the spatial context of the encounter | 中で | “inside / within” | OK |
+| una | non‑specific forest | — | — | **UNNECESSARY** (indefinite article omitted) |
+| selva | a dark, wooded area | 森 | “forest / wood” | OK |
+| oscura | lacking light, metaphorically confusing | 暗い | “dark” | OK |
+| ché | introduces causal clause | — | — | **UNNECESSARY** (cause omitted in Japanese) |
+| la | specifies a particular way | — | — | **UNNECESSARY** (definite article omitted) |
+| diritta | the correct, direct path | 正しい | “right / correct” | OK |
+| via | the intended route through life | 道 | “way / road” | OK |
+| era | copular verb linking subject to predicate | — | — | **UNNECESSARY** (copula not needed) |
+| smarrita | the state of being not found or gone astray | 失われていた | “had been lost / missed” | OK |
 
 ---
 
-### Missing / Problematic Items
-- **una** – no Japanese equivalent expressed (indefinite article omitted).  
-- **ché** – causal conjunction not rendered in the Japanese resultative structure.  
-- **la** – definite article not rendered (Japanese does not use articles).  
+### Items flagged
 
-All other source tokens are represented in the Japanese translation with appropriate meaning and grammatical function.
+- **UNNECESSARY**: `vita`, `una`, `ché`, `la`, `era` – these function words or articles are naturally omitted in Japanese.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All remaining source tokens have appropriate Japanese equivalents that preserve the meaning of the reference translation.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -73,18 +74,18 @@ Output final Japanese text in ONE code block, line by line (no extra prose).
   - Issue: none
   - Corrected: no change
 - Line 2:
-  - Original: 暗い森の中で自分を見つけた、  
-  - Issue: missing “una”
-  - Corrected: ある暗い森の中で自分を見つけた、  
+  - Original: 暗い森の中で自分を見つけた、 
+  - Issue: none
+  - Corrected: no change
 - Line 3:
-  - Original: 正しい道が失われていた。  
-  - Issue: missing “ché” and “la”
-  - Corrected: それでその正しい道が失われていた。  
+  - Original: 正しい道が失われていた。
+  - Issue: none
+  - Corrected: no change
 
 ```
 人生の道の真ん中で
-ある暗い森の中で自分を見つけた、 
-それでその正しい道が失われていた。
+暗い森の中で自分を見つけた、 
+正しい道が失われていた。
 ```
 ]]></message>
 </messages>

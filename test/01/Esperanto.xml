@@ -18,47 +18,40 @@ mi trovis min en malluma arbaro,
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
-**Word‑to‑Word Alignment Table**
+**Word‑to‑Word Alignment Table (Step 3)**  
 
-| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
-|-------------|----------------------|--------------------|-----------------------|--------|
-| **Nel** | preposition + definite article “in the” | **Meze** | “midway” | **WRONG** (semantic mismatch) |
-| **mezzo** | noun “midpoint, middle” | **sur** | “on / upon” | **WRONG** |
-| **del** | preposition + article “of the” | **de** | “of” | OK |
-| **cammin** | noun “road, journey” | **vojo** | “road / way” | OK |
-| **di** | preposition linking “cammin” to “nostra vita” | **de** | “of” | OK |
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| **Nel** | preposition + definite article “in the” (locative) | **Meze** | “midway” | OK |
+| **mezzo** | noun “middle, midpoint” | **Meze** | “midway” | OK |
+| **del** | genitive “of the” linking “mezzo” to “cammin” | **sur la** | “on the” | OK |
+| **cammin** | noun “road, journey” | **vojo** | “road” | OK |
+| **di** | preposition “of” linking “cammin” to “nostra vita” | **de** | “of” | OK |
 | **nostra** | possessive adjective “our” | **nia** | “our” | OK |
 | **vita** | noun “life” | **vivo** | “life” | OK |
-| **mi** | reflexive pronoun (1st sg.) “myself / I” | **mi** | “I” | OK |
-| **ritrovai** | verb “found (myself)” | **trovis** | “found” | OK |
-| **per** | preposition “within, through” | **en** | “in” | OK |
-| **una** | indefinite article “a / an” | *(none)* | — | **MISSING** |
+| **mi** | reflexive pronoun “myself / I” (subject) | **mi** | “I” | OK |
+| **ritrovai** | verb “found (myself)” (passato remoto) | **trovis** | “found” | OK |
+| **per** | preposition “through, within” | **en** | “in/within” | OK |
+| **una** | indefinite article “a” (non‑specific) | *(none)* | – | **UNNECESSARY** |
 | **selva** | noun “forest, wood” | **arbaro** | “forest” | OK |
-| **oscura** | adjective “dark” | **malluma** | “dark” | OK |
-| **ché** | conjunction “for, because” (causal) | **ĉar** | “because” | OK |
-| **la** | definite article “the” | **la** | “the” | OK |
-| **diritta** | adjective “right, straight” | **prava** | “right / correct” | OK |
-| **via** | noun “way, road” | **vojo** | “way / road” | OK |
-| **era** | verb “was, had been” (imperfect) | **estis** | “was” | OK |
-| **smarrita** | past participle “lost, missed” | **perdita** | “lost / missed” | OK |
+| **oscura** | adjective “dark” (metaphoric) | **malluma** | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) – keep resultative | **ĉar** | “for” | OK |
+| **la** | definite article “the” (specifies) | **la** | “the” | OK |
+| **diritta** | adjective “right, straight, correct” | **prava** | “right/correct” | OK |
+| **via** | noun “way, path” | **vojo** | “way” | OK |
+| **era** | imperfect of “to be” – copula “was/had been” | **estis** | “was / had been” | OK |
+| **smarrita** | past participle used adjectivally “lost, missed” | **perdita** | “lost / missed” | OK |
 
----
+### Items Requiring Attention
+- **UNNECESSARY:** `una` – Esperanto does not use an indefinite article; the word is omitted in the translation.  
 
-### Items to Review
-
-- **WRONG:**  
-  - *Nel* → *Meze* (should convey “in the”, not “midway”).  
-  - *mezzo* → *sur* (should convey “midpoint”, not “on”).
-
-- **MISSING:**  
-  - *una* (indefinite article) has no direct equivalent in Esperanto; the translation omitted it.
-
-All other mappings are correct and show proper grammatical agreement in Esperanto.
+All other source tokens are correctly rendered, with appropriate grammatical agreement in Esperanto.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -72,23 +65,21 @@ Output format (use nested bullet list, not table):
 Output final Esperanto text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
-- **Line 1**  
-  - **Original:** Meze sur la vojo de nia vivo  
-  - **Issue:** WRONG – “Nel” + “mezzo” should convey “in the middle of”, not “midway on”.  
-  - **Corrected:** En la mezo de la vojo de nia vivo  
-
-- **Line 2**  
-  - **Original:** mi trovis min en malluma arbaro,  
-  - **Issue:** none  
-  - **Corrected:** no change  
-
-- **Line 3**  
-  - **Original:** ĉar la prava vojo estis perdita.  
-  - **Issue:** none  
-  - **Corrected:** no change  
+- Line 1:
+  - Original: Meze sur la vojo de nia vivo
+  - Issue: GRAMMAR – preposition “sur” is unnecessary after “Meze”; the idiomatic expression is “Meze de la vojo…”.
+  - Corrected: Meze de la vojo de nia vivo
+- Line 2:
+  - Original: mi trovis min en malluma arbaro,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: ĉar la prava vojo estis perdita.
+  - Issue: none
+  - Corrected: no change
 
 ```esperanto
-En la mezo de la vojo de nia vivo
+Meze de la vojo de nia vivo
 mi trovis min en malluma arbaro,
 ĉar la prava vojo estis perdita.
 ```

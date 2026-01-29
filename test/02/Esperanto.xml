@@ -18,40 +18,43 @@ kiu en penso renovigas la timon!
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ]]></message>
 <message role="assistant"><![CDATA[
 **Word‑to‑Word Mapping Table**
 
-| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
-|-------------|----------------------|--------------------|------------------|--------|
-| Ahi | Exclamatory expression of emotion | Aĥi | Ah! | OK |
-| quanto | Degree intensifier “how” | kiom | how | OK |
-| a | Infinitive marker “to” | *(none)* | to | **MISSING** |
-| dir | Verb “tell” | diri | to tell | OK |
-| qual | Interrogative “what” | kio | what | OK |
-| era | Past copula “was” | estis | was | OK |
-| è | Present copula “is” | estas | is | OK |
-| cosa | Noun “thing” | afero | thing | OK |
-| dura | Adjective “hard / difficult” | malfacila | hard / difficult | OK |
-| esta | Demonstrative “this” | ĉi tiu | this | OK |
-| selva | Noun “forest / wood” | arbaro | forest / wood | OK |
-| selvaggia | Adjective “wild” | sovaĝa | wild | OK |
-| e (1) | Coordinating conjunction “and” | kaj | and | OK |
-| aspra | Adjective “rough” | aspra | rough | OK |
-| e (2) | Coordinating conjunction “and” | kaj | and | OK |
-| forte | Adjective “dense / strong” | densa | dense | OK |
-| che | Relative pronoun “which” | kiu | which | OK |
-| nel | Preposition + article “in the” | en | in | OK |
-| pensier | Noun “thought” | penso | thought | OK |
-| rinova | Verb “renews” | renovigas | renews | OK |
-| la | Definite article “the” | la | the | OK |
-| paura! | Noun “fear” (accusative) | timon! | fear | OK |
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Ahi | Exclamatory expression of emotion | **Aĥi** | “Ah!” | OK |
+| quanto | Degree intensifier “how” | **kiom** | “how” | OK |
+| a | Infinitive marker “to” (pre‑position) | — | — | **UNNECESSARY** |
+| dir | Action of stating or describing | **diri** | “to tell” | OK |
+| qual | Interrogative “what” introducing content | **kio** | “what” | OK |
+| era | Past state of the referent | **estis** | “was” | OK |
+| è | Present state of the referent | **estas** | “is” | OK |
+| cosa | Abstract entity denoted as difficult | **afero** | “thing” | OK |
+| dura | Property of difficulty | **malfacila** | “hard / difficult” | OK |
+| esta | Demonstrative “this” | **ĉi tiu** | “this” | OK |
+| selva | The physical setting (forest/wood) | **arbaro** | “forest / wood” | OK |
+| selvaggia | Quality of untamed nature | **sovaĝa** | “wild” | OK |
+| e (1) | Coordinating conjunction “and” | **kaj** | “and” | OK |
+| aspra | Quality of harsh texture | **aspra** | “rough” | OK |
+| e (2) | Coordinating conjunction “and” | **kaj** | “and” | OK |
+| forte | Quality of thickness or vigor (dense) | **densa** | “dense” | OK |
+| che | Relative pronoun “which” | **kiu** | “which” | OK |
+| nel | Preposition “in the” | **en** | “in” | OK |
+| pensier | Cognitive arena where the effect occurs | **penso** | “thought” | OK |
+| rinova | Causes a re‑appearance or revival | **renovigas** | “renews” | OK |
+| la | Definite article “the” | **la** | “the” | OK |
+| paura! | Emotional response being renewed (fear) | **timon!** | “fear” (accusative) | OK |
 
 ### Issues Detected
-- **MISSING**: *a* (infinitive marker “to”) has no explicit counterpart in the Esperanto rendering. All other items are correctly translated and grammatically sound.
+- **UNNECESSARY**: the source infinitive marker **a** has no counterpart in Esperanto because the infinitive is expressed by the verb ending **‑i** (“diri”).  
+
+No other missing, wrong, or grammatical errors were found.
 ]]></message>
 <message role="user"><![CDATA[
 ### Step 4: Correction & Final Output
@@ -66,24 +69,24 @@ Output final Esperanto text in ONE code block, line by line (no extra prose).
 ]]></message>
 <message role="assistant"><![CDATA[
 - Line 4:
-  - Original: **Aĥi kiom malfacila afero estas diri kio ĝi estis**
-  - Issue: Missing infinitive marker “a” (to)
-  - Corrected: **Aĥi kiom malfacila afero estas **por** diri kio ĝi estis**
+  - Original: Aĥi kiom malfacila afero estas diri kio ĝi estis
+  - Issue: none
+  - Corrected: no change  
 
 - Line 5:
-  - Original: **ĉi tiu sovaĝa kaj aspra kaj densa arbaro**
+  - Original: ĉi tiu sovaĝa kaj aspra kaj densa arbaro
   - Issue: none
-  - Corrected: no change
+  - Corrected: no change  
 
 - Line 6:
-  - Original: **kiu en penso renovigas la timon!**
-  - Issue: none
-  - Corrected: no change
+  - Original: kiu en penso renovigas la timon!
+  - Issue: missing definite article before “penso”
+  - Corrected: kiu en **la** penso renovigas la timon!
 
 ```esperanto
-Aĥi kiom malfacila afero estas por diri kio ĝi estis
+Aĥi kiom malfacila afero estas diri kio ĝi estis
 ĉi tiu sovaĝa kaj aspra kaj densa arbaro
-kiu en penso renovigas la timon!
+kiu en la penso renovigas la timon!
 ```
 ]]></message>
 </messages>
