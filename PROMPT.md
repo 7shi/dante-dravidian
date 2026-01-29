@@ -55,9 +55,10 @@ Rules:
 ### Step 3: Word Table & Coverage Check
 Build a word table from Step 2 translation, mapping each source word to its target equivalent.
 Output: ONE Markdown table (all lines combined).
-Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR]
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
 Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
-After the table, list any MISSING, WRONG, or GRAMMAR items.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
 ```
 
 ```
