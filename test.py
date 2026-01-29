@@ -1,14 +1,14 @@
 """Test for quick debugging."""
-import os
+
+from pathlib import Path
 from llm import LLMClient, history_to_xml, xml_to_history
 from translate import step1, translate, get_result
 
-# model = "ollama:gpt-oss:120b"
-# model = "groq:openai/gpt-oss-120b"
-model = "openrouter:openai/gpt-oss-120b:free"
-think = False
-temperature = 0.1
-
+# MODEL = "ollama:gpt-oss:120b"
+# MODEL = "groq:openai/gpt-oss-120b"
+MODEL = "openrouter:openai/gpt-oss-120b:free"
+THINK = False
+TEMPERATURE = 0.1
 LANGUAGES = [
     # Dravidian languages
     "Telugu", "Tamil", "Kannada", "Malayalam",
@@ -22,15 +22,13 @@ LANGUAGES = [
     # Constructed language
     "Esperanto",
 ]
+testdir = Path("test")
 
 # Read test data
 with open("tokenize/inferno/01.txt", "r", encoding="utf-8") as f:
     it = [l.split("|")[0] for line in f if (l := line.strip())]
 with open("en-norton/inferno-01.txt", "r", encoding="utf-8") as f:
     en = [l for line in f if (l := line.strip())]
-
-# Create output directory
-os.makedirs("test", exist_ok=True)
 
 # Process 3-line chunks
 result_all = {}
@@ -53,23 +51,24 @@ for i in range(3):
     print("=" * 60)
     result = {"Italian": source_text, "English": reference}
 
+    # Create output directory
+    outdir = testdir / f"{i+1:02d}"
+    outdir.mkdir(parents=True, exist_ok=True)
+
     # Step 1
-    client = LLMClient(model, think, temperature=temperature)
-    xml_file = f"test/{i+1}-1.xml"
-    if os.path.exists(xml_file):
-        with open(xml_file, 'r', encoding='utf-8') as f:
-            client.history = xml_to_history(f.read())
+    client = LLMClient(MODEL, THINK, temperature=TEMPERATURE)
+    xml_file = outdir / "_step1.xml"
+    if xml_file.exists():
+        client.history = xml_to_history(xml_file.read_text(encoding="utf-8"))
     else:
         step1(client, source_text, reference)
-        with open(xml_file, 'w', encoding='utf-8') as f:
-            f.write(history_to_xml(client.history))
+        xml_file.write_text(history_to_xml(client.history), encoding="utf-8")
 
     # Steps 2-5 and final translation for each target language
     for j, lang in enumerate(LANGUAGES):
-        xml_file = f"test/{i+1}-{lang}.xml"
-        if os.path.exists(xml_file):
-            with open(xml_file, 'r', encoding='utf-8') as f:
-                history = xml_to_history(f.read())
+        xml_file = outdir / f"{lang}.xml"
+        if xml_file.exists():
+            history = xml_to_history(xml_file.read_text(encoding="utf-8"))
             text = get_result(history).rstrip()
         else:
             print()
@@ -77,13 +76,12 @@ for i in range(3):
             print(f"Testing translation to {lang}...")
             print("-" * 60)
             history, text = translate(client, lang)
-            with open(f"test/{i+1}-{lang}.xml", 'w', encoding='utf-8') as f:
-                f.write(history_to_xml(history[2:]))
+            xml_file.write_text(history_to_xml(history[2:]), encoding="utf-8")
         lines = [f"{i3+k+1} {line}" for k, line in enumerate(text.splitlines())]
         result[lang] = "\n".join(lines)
 
     # Save combined result
-    output_file = f"test/{i+1}.txt"
+    output_file = testdir / f"{i+1:02d}.txt"
     with open(output_file, 'w', encoding='utf-8') as f:
         for i, (lang, text) in enumerate(result.items()):
             if i:
@@ -92,7 +90,7 @@ for i in range(3):
             result_all.setdefault(lang, []).append(text)
 
 # Save all results
-with open("test/all.txt", 'w', encoding='utf-8') as f:
+with open(testdir / "all.txt", 'w', encoding='utf-8') as f:
     for i, (lang, texts) in enumerate(result_all.items()):
         sep = " " if lang == "English" else "\n\n"
         if i:
