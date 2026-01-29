@@ -131,4 +131,4 @@ if not args.step1:
             continue
         output_file = alldir / f"{lang}.txt"
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write("\n\n".join(texts))
+            f.write("\n\n".join(texts) + "\n")
