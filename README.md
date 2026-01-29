@@ -10,35 +10,26 @@ This project uses the following Italian text source:
 
 ## Methodology
 
-**Note**: See [PROMPT.md](PROMPT.md) for the full methodology.
+This project targets **local LLMs** (e.g., GPT-OSS 120B) with limited instruction-following capability. Complex multi-step instructions often cause smaller models to lose track of requirements or produce malformed output.
 
-The project is based on a structured prompting methodology designed to overcome the limitations of LLMs when dealing with high-difficulty translations (classical texts, low-resource languages, and languages with significantly different word orders like SOV).
-
-### Design Philosophy
-
-This project targets **local LLMs** (e.g., 120B-parameter open-source models) with limited instruction-following capability. Complex multi-step instructions often cause smaller models to lose track of requirements or produce malformed output.
-
-The original approach used a bottom-up method: build a word table first, then assemble words into sentences. However, this led to grammatical collapse, especially for complex syntactic structures like nested relative clauses and purpose clauses. The problem is that **assembling words into proper word order is not part of normal LLM training**. LLMs are trained on natural text generation and translation, not on puzzle-like word rearrangement tasks.
+The original approach used a bottom-up method: build a word table first, then assemble words into sentences. However, this led to grammatical collapse, especially for complex syntactic structures like nested relative clauses and purpose clauses. The problem is that assembling words into proper word order is not part of normal LLM training. LLMs are trained on natural text generation and translation, not on puzzle-like word rearrangement tasks.
 
 The current top-down approach (translate first → verify coverage → fix errors) aligns with what LLMs actually learned during training:
+
 1. **Translation**: Abundantly present in training data
 2. **Coverage checking**: A comparison/verification task
 3. **Correction**: An editing task LLMs handle well
 
 This leverages the model's natural translation ability while using structured checks to catch omissions.
 
-Core principles:
-- **Context Lock**: Use an English reference translation to fix meaning and disambiguate polysemous words.
-- **Translate First**: Let the model produce natural word order, then verify rather than construct.
-- **Coverage Check**: Build word tables *after* translation to identify missing or wrong items.
-- **Simplicity over Perfection**: Accept imperfect output; keep prompts minimal to avoid confusing smaller models.
-
 ### 4-Stage Structured Translation
 
-1.  **Source-Reference Alignment & Semantic Analysis**: Aligns the Italian source with an English reference translation. Produces an "Interpretation Lock" (truth-conditions per line) and a token-by-token alignment table with contextual definitions.
-2.  **Direct Translation**: Translates each source line into the target language, guided by the reference translation and Step 1 analysis. Preserves line count and end punctuation.
-3.  **Word Table & Coverage Check**: Builds a word table mapping each source word to its target equivalent, with back-translation and status (OK/MISSING/WRONG). Lists any items requiring correction.
+1.  **Source-Reference Alignment & Semantic Analysis**: Aligns the Italian source with an English reference translation to establish a **Context Lock** that fixes meaning and disambiguates polysemous words. Produces an "Interpretation Lock" (truth-conditions per line) and a token-by-token alignment table with contextual definitions.
+2.  **Direct Translation**: Translates each source line into the target language, guided by the reference translation and Step 1 analysis. This **translate-first approach** lets the model produce natural word order rather than constructing it from individual words. Preserves line count and end punctuation.
+3.  **Word Table & Coverage Check**: Builds a word table *after* translation to verify completeness, mapping each source word to its target equivalent with back-translation and status (OK/MISSING/WRONG). Lists any items requiring correction.
 4.  **Correction & Final Output**: Fixes MISSING or WRONG items from Step 3. Outputs the corrected translation in a single code block.
+
+**Note**: See [PROMPT.md](PROMPT.md) for the full prompts and [test/README.md](test/README.md) for translation results and analysis.
 
 ## Project Structure
 
@@ -83,11 +74,10 @@ A script for quick debugging and verification of the translation pipeline. It pr
 uv run test.py
 ```
 
-**Results and Evaluation**:
+**Results**:
 
 - `test/*.xml`: Detailed 4-stage translation logs for each chunk and language.
 - `test/*.txt`: Combined final translations for comparison.
-- `test/README.md`: A summary of the translations with critiques and rankings of the LLM's performance in each language (evaluated by GPT-5.2).
 
 ## Related Previous Projects
 
