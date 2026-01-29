@@ -221,8 +221,8 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 **Points of criticism (GPT-5.2)**:
 
-- Line 7: Missing an explicit comparator (“ol ĝi”); 「morto estas iom pli」 is incomplete/ambiguous.
 - Line 4: Phrasing/punctuation could be cleaner but meaning is still recoverable (OK for literal-first).
+- Line 7: Missing an explicit comparator (“ol ĝi”); 「morto estas iom pli」 is incomplete/ambiguous.
 
 ## Ranking (GPT-5.2)
 
