@@ -40,7 +40,7 @@ for i in range(3):
     i3 = i * 3
     lines = it[i3:i3+3]
     source_text = ""
-    for j in range(3):
+    for j in range(len(lines)):
         line = f"{i3+j+1} {lines[j]}"
         print(line)
         if j:
@@ -89,10 +89,12 @@ for i in range(3):
             f.write(f"# {lang}\n\n{text}\n")
             result_all.setdefault(lang, []).append(text)
 
-# Save all results
-with open(testdir / "all.txt", 'w', encoding='utf-8') as f:
-    for i, (lang, texts) in enumerate(result_all.items()):
-        sep = " " if lang == "English" else "\n\n"
-        if i:
-            f.write("\n")
-        f.write(f"# {lang}\n\n{sep.join(texts)}\n")
+# Save results by language
+alldir = testdir / "all"
+alldir.mkdir(parents=True, exist_ok=True)
+for lang, texts in result_all.items():
+    if lang in ["Italian", "English"]:
+        continue
+    output_file = alldir / f"{lang}.txt"
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write("\n\n".join(texts))
