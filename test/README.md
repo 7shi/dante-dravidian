@@ -47,8 +47,8 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 2: Reflexive meaning is broken ("I found myself"); the use of 「తాను」 reads like a 3rd-person/self pronoun mismatch.
 - Line 3: The causal clause is garbled; it doesn’t clearly express “because the right way was lost”.
 - Line 7: Comparative relation is muddled (reads like “also… death is a little more”); missing a clear “death is little more [bitter] than it”.
-- Line 9: Adds an unsupported action nuance (「చేసి」 in 「చేసి చూసిన」), not present in the source.
 - Line 8: Stray/typo-like particle in 「కనుగొన్న ద మంచి」 (OK for literal-first).
+- Line 9: Adds an unsupported action nuance (「చేసి」 in 「చేసి చూసిన」), not present in the source.
 
 ## Tamil (GPT-OSS 120B)
 
@@ -69,9 +69,9 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 **Points of criticism (GPT-5.2)**:
 
 - Line 3: The causal link (“for/because”) is omitted; it reads as a standalone statement.
+- Line 7: Ellipsis after “more” is acceptable given the preceding “bitter” (OK for literal-first).
 - Line 8: Grammatical noise in 「நல்லதைப் என்று பற்றி」 weakens “to treat of the good (that) I found there”.
 - Line 9: 「பார்த்துள்ள என்று」 is ungrammatical/unstable and disrupts “the other things I have seen there”.
-- Line 7: Ellipsis after “more” is acceptable given the preceding “bitter” (OK for literal-first).
 
 ## Kannada (GPT-OSS 120B)
 
