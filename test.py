@@ -81,7 +81,7 @@ for i in range(3):
         result[lang] = "\n".join(lines)
 
     # Save combined result
-    output_file = testdir / f"{i+1:02d}.txt"
+    output_file = outdir / f"_all.txt"
     with open(output_file, 'w', encoding='utf-8') as f:
         for i, (lang, text) in enumerate(result.items()):
             if i:
