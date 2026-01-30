@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Olhei ao alto e vi seus ombros  
+já vestidas pelos raios do planeta  
+que conduz as pessoas diretamente por toda rua.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Portuguese) | Back‑Translation (to English) | Status |
+|-------------|--------------------------------------|-----------------------------------|--------------------------------|--------|
+| guardai | Performed the act of directing gaze upward | Olhei | “looked” | OK |
+| in | Marks spatial direction of the gaze | ao | “to the / on the” | OK |
+| alto | Destination of the upward look | alto | “high / up” | OK |
+| e | Connects two coordinated perceptual actions | e | “and” | OK |
+| vidi | Performed the act of visual perception | vi | “saw” | OK |
+| le | Definite article, fem. plural (“the”) | – (omitted) | – | **UNNECESSARY** |
+| sue | Possessive adjective indicating ownership | seus | “its / his / her” | OK |
+| spalle | The body part observed (shoulders) | ombros | “shoulders” | OK |
+| vestite | State of being covered by rays (clothed) | vestidas | “clothed” | **GRAMMAR** (should be *vestidos* to agree with *ombros*) |
+| già | Temporal marker indicating prior completion (already) | já | “already” | OK |
+| de' | Preposition introducing source of rays (of) | pelos | “by the / of the” | OK |
+| raggi | Light‑like emanations from the planet (rays) | raios | “rays” | OK |
+| del | Preposition introducing planet as origin (of the) | do | “of the” | OK |
+| pianeta | Celestial body emitting the rays (planet) | planeta | “planet” | OK |
+| che | Relative pronoun introducing clause (that) | que | “that” | OK |
+| mena | Performs guiding action (leadeth) | conduz | “leads” | OK |
+| dritto | Manner complement (straight / aright) | diretamente | “directly / straight” | OK |
+| altrui | Recipients of guidance (people) | as pessoas | “the people” | OK |
+| per | Preposition indicating route (along) | por | “along / by” | OK |
+| ogne | Determiner quantifying paths (every) | toda | “every / all” | OK |
+| calle | Routes over which guidance occurs (path) | rua | “road / street” | OK |
+
+### Items to Review
+- **UNNECESSARY:** *le* – the Italian definite article is not required in Portuguese; its meaning is carried by the possessive *seus*.
+- **GRAMMAR:** *vestite* → *vestidas* – adjective gender/number does not agree with the masculine plural noun *ombros*; the correct form should be **vestidos**.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 16**  
+  - Original: Olhei ao alto e vi seus ombros  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 17**  
+  - Original: já vestidas pelos raios do planeta  
+  - Issue: **GRAMMAR** – adjective must agree with masculine plural “ombros”  
+  - Corrected: já **vestidos** pelos raios do planeta  
+
+- **Line 18**  
+  - Original: que conduz as pessoas diretamente por toda rua.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Olhei ao alto e vi seus ombros
+já vestidos pelos raios do planeta
+que conduz as pessoas diretamente por toda rua.
+```
+]]></message>
+</messages>

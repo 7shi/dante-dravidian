@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ఆమెకు అంత చెడైన దుష్ట స్వభావం ఉంది,  
+ఆమె ఎప్పుడూ తన లొభించే కోరికను తీరించదు,  
+ఆమె భోజనానికి తర్వాత ముందు కన్నా ఎక్కువ ఆకలిగా ఉంటుంది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Telugu → English) | Status |
+|-------------|-----------------------|----------------------|--------------------------------------|--------|
+| e (97) | clause‑linking conjunction | — | — | **UNNECESSARY** (omitted) |
+| ha (97) | verb “has” (possession) | ఉంది | “exists / has” | **OK** |
+| natura | noun “nature” (inherent quality) | స్వభావం | “nature” | **OK** |
+| sì | degree adverb “so” (intensifier) | అంత | “so / that much” | **OK** |
+| malvagia | adjective “malign” | చెడైన | “malicious / evil” | **OK** |
+| e (second) | coordinating conjunction “and” (joins adjectives) | — | — | **UNNECESSARY** |
+| ria | adjective “evil” | దుష్ట | “wicked / evil” | **OK** |
+| che (98) | relative pronoun “that” | — | — | **UNNECESSARY** |
+| mai | adverb “never” | ఎప్పుడూ | “ever / never” | **OK** |
+| non | negative particle “not” (part of double‑negative) | — | — | **UNNECESSARY** (negation expressed in verb) |
+| empie | verb “fills / satisfies” | — | — | **MISSING** (positive verb not rendered) |
+| la | definite article “the” | — | — | **UNNECESSARY** |
+| bramosa | adjective “greedy” | లొభించే | “greedy / covetous” | **OK** |
+| voglia | noun “will / desire” | కోరికను | “desire (accusative)” | **OK** |
+| e (99) | coordinating conjunction “and” | — | — | **UNNECESSARY** |
+| dopo | preposition “after” | తర్వాత | “after” | **OK** |
+| ’l (elided *il*) | definite article “the” | — | — | **UNNECESSARY** |
+| pasto | noun “meal” | భోజనానికి | “to the meal” (dative) | **OK** |
+| ha (99) | verb “has” (state) | ఉంటుంది | “is / exists” | **OK** |
+| più | comparative adverb “more” | అధిక | “more / greater” | **OK** |
+| fame | noun “hunger” | ఆకలిగా | “hungry (adverbial) / hunger” | **OK** |
+| che (comparative) | comparative conjunction “than” | కన్నా | “than” | **OK** |
+| pria | adverb “before” | ముందు | “before” | **OK** |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: e (97), e (second), che (98), non, la, e (99), ’l, e (97) – these function words are naturally omitted in Telugu.
+- **MISSING**: empie – the positive verb “fills / satisfies” is not explicitly present; its meaning is conveyed together with the negation in the verb “తీరించదు”.
+- No **WRONG**, **GRAMMAR**, or **UNNECESSARY** lexical items beyond the expected omissions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 97:
+  - Original: ఆమెకు అంత చెడైన దుష్ట స్వభావం ఉంది,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 98:
+  - Original: ఆమె ఎప్పుడూ తన లొభించే కోరికను తీరించదు,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 99:
+  - Original: ఆమె భోజనానికి తర్వాత ముందు కన్నా ఎక్కువ ఆకలిగా ఉంటుంది.
+  - Issue: none
+  - Corrected: no change  
+
+```
+ఆమెకు అంత చెడైన దుష్ట స్వభావం ఉంది,
+ఆమె ఎప్పుడూ తన లొభించే కోరికను తీరించదు,
+ఆమె భోజనానికి తర్వాత ముందు కన్నా ఎక్కువ ఆకలిగా ఉంటుంది.
+```
+]]></message>
+</messages>

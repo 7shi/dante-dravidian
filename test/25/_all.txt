@@ -1,0 +1,63 @@
+# Italian
+
+73 Poeta fui, e cantai di quel giusto
+74 figliuol d'Anchise che venne di Troia,
+75 poi che 'l superbo Ilïón fu combusto.
+
+# English
+
+Poet was I, and sang of that just son of Anchises who came from Troy after proud Ilion had been burned.
+
+# Telugu
+
+73 నేను కవి, ఆ న్యాయమైనవాడి గురించి పాడాను
+74 అంకిసెస్ కుమారుడు, ట్రోయ్ నుండి వచ్చిన,
+75 అప్పుడు గర్వమయిన ఇలియన్ కాల్చబడిన తర్వాత.
+
+# Tamil
+
+73 நான் கவிஞர் மற்றும் அந்த நீதிமானை பற்றி பாடினேன்
+74 அன்சிஸ் மகன் ட்ராயிலிருந்து வந்தவர்,
+75 பெருமைமிக்க இலியோன் எரிக்கப்பட்ட பிறகு.
+
+# Kannada
+
+73 ನಾನು ಕವಿ, ಮತ್ತು ಆ ನ್ಯಾಯಯುತನ ಬಗ್ಗೆ ಹಾಡಿದೆ
+74 ಅಂಚಿಸಸ್‌ರ ಮಗ, ಟ್ರಾಯಿಂದ ಬಂದ,
+75 ಆದ ನಂತರ ಗರ್ವಿ ಇಲಿಯಾನ್ ಸುಟ್ಟುಹೋಯಿತು.
+
+# Malayalam
+
+73 കവി ഞാൻ ആയിരുന്നു ആ നീതിയുള്ളവനെക്കുറിച്ച് ഞാൻ പാടി
+74 അങ്കിസിന്റെ മകൻ ട്രോയി നിന്നു വന്നവൻ,
+75 അഭിമാനിയായ ഇലിയോൺ കത്തിക്കപ്പെട്ടതിന് ശേഷം.
+
+# Japanese
+
+73 私は詩人でそしてあの正しいことを歌った
+74 アンキセスの息子でトロイから来た、 
+75 誇り高いイリオンが燃やされた後に。
+
+# French
+
+73 Poète j'étais et chantai ce juste
+74 fils d'Anchise qui vint de Troie,
+75 après que le fier Ilion fut brûlé.
+
+# Spanish
+
+73 Poeta fui y canté de aquel justo
+74 hijo de Anquises que vino de Troya,
+75 después que el orgulloso Ilión fue quemado.
+
+# Portuguese
+
+73 Poeta fui e cantei aquele justo
+74 filho de Âncise que veio de Troia,
+75 depois que o orgulhoso Ilion foi queimado.
+
+# Esperanto
+
+73 Poeto estis mi kaj kantis pri tiu justa
+74 filo de Anchiso kiu venis de Trojo,
+75 post la fiera Ilio estis bruligita.

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+34 y no se apartaba delante de mi rostro,  
+35 sino que impedía tanto mi camino,  
+36 que para volver me volteaba a menudo.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Spanish translation from Step 2)**  
+
+| Source Word | Contextual Definition (locked meaning) | Target Word / Phrase | Back‑Translation (Spanish → English) | Status |
+|-------------|----------------------------------------|----------------------|---------------------------------------|--------|
+| **e** | Coordinating conjunction linking clause | **y** | “and” | OK |
+| **non** | Negation of the predicate | **no** | “not” | OK |
+| **mi** | 1st‑person clitic (dative/accusative) referring to the speaker | **mi** | “my” (possessive) | OK |
+| **si** | Reflexive marker of the verb “partire” | **se** | “self‑” (reflexive) | OK |
+| **partia** | Imperfect “to move / depart” (negated) | **apartaba** | “was moving / was departing” | OK |
+| **dinanzi** | Preposition “in front of / before” | **delante** | “in front” | OK |
+| **al** | Preposition + definite article “to the” (introducing the noun) | **de** | “of / from” (used in the Spanish PP *delante de*) | OK |
+| **volto** | Noun “face” (object of the spatial relation) | **rostro** | “face” | OK |
+| **anzi** | Contrastive adverb “instead, nay” | **sino** | “but rather / instead” | OK |
+| **‘mpediva** (impediva) | Imperfect “to hinder” (resultative) | **impedía** | “was hindering” | OK |
+| **tanto** | Degree adverb “so, to such an extent” | **tanto** | “so” | OK |
+| **il** | Definite article (masc. sing.) | — (omitted) | — | **UNNECESSARY** (article not required in Spanish) |
+| **mio** | Possessive adjective “my” | **mi** | “my” | OK |
+| **cammino** | Noun “road, path” (object of hindrance) | **camino** | “road” | OK |
+| **ch’** (che) | Subordinating conjunction “that” | **que** | “that” | OK |
+| **i’** (io) | 1st‑person singular pronoun “I” (subject) | — (implicit) | — | **UNNECESSARY** (subject pronoun dropped in Spanish) |
+| **fui** | Past‑historic of *essere* “was” (auxiliary) | — (omitted) | — | **UNNECESSARY** (auxiliary not expressed in Spanish) |
+| **per** | Preposition “for, in order to” | **para** | “for / in order to” | OK |
+| **ritornar** | Infinitive “to return” (purpose) | **volver** | “to return” | OK |
+| **più** | Comparative adverb “more” (used with “volte”) | **a** | part of the fixed phrase *a menudo* | OK |
+| **volte** | Noun “times” (frequency) | **menudo** | part of *a menudo* → “often” | OK |
+| **vòlto** | Past‑historic “turned” (main verb) | **volteaba** | “was turning” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**:  
+  - **il** – the Italian definite article is not needed in Spanish.  
+  - **i’** – the subject pronoun “I” is dropped because Spanish allows a null subject.  
+  - **fui** – the auxiliary “was” is not expressed in the Spanish imperfect.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 34:
+  - Original: y no se apartaba delante de mi rostro,
+  - Issue: none
+  - Corrected: no change
+- Line 35:
+  - Original: sino que impedía tanto mi camino,
+  - Issue: none
+  - Corrected: no change
+- Line 36:
+  - Original: que para volver me volteaba a menudo.
+  - Issue: none
+  - Corrected: no change
+
+```
+y no se apartaba delante de mi rostro,
+sino que impedía tanto mi camino,
+que para volver me volteaba a menudo.
+```
+]]></message>
+</messages>

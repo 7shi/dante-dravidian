@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+சற்று ஓய்வு எடுத்த பின் என் சோர்வான உடல்,  
+நான் மீண்டும் புறநகர் சரிவில் பாதையைத் தொடர்ந்தேன்,  
+அப்படியே உறுதியான கால் எப்போதும் கீழே இருந்தது.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Tamil)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (Eng) | Status |
+|-------------|----------------------|------------------------------|------------------------|--------|
+| **Poi** | temporal adverb “after” | **பின்** | after | OK |
+| **ch'èi** | “that I” (conj. + aux.) | – (subject omitted, implied) | – | UNNECESSARY |
+| **posato** | verb “rested” (perfect) | **ஓய்வு எடுத்த** | rested | OK |
+| **un** | indefinite article “a” | – | – | UNNECESSARY |
+| **poco** | adverb of quantity “little” | **சற்று** | a little | OK |
+| **il** | definite article “the” | – | – | UNNECESSARY |
+| **corpo** | noun “body” | **உடல்** | body | OK |
+| **lasso** | adjective “weary” | **சோர்வான** | weary | OK |
+| **ripresi** | verb “resumed / took again” | **தொடர்ந்தேன்** | resumed / continued | OK |
+| **via** | noun “way, path” | **பாதையைத்** | the way | OK |
+| **per** | preposition “along” (case‑marked) | **சரிவில்** | on / along | OK |
+| **la** | definite article “the” | – | – | UNNECESSARY |
+| **piaggia** | noun “slope, hillside” | **சரிவு** | slope | OK |
+| **diserta** | adjective “deserted, empty” | **புறநகர்** | outskirts / deserted (≈) | **WRONG** |
+| **sì** | adverb/conj. “so (that)” | **அப்படியே** | so (resultative) | OK |
+| **che** | conjunction “that” (introducing result clause) | – | – | UNNECESSARY |
+| **'l** | definite article “the” (before *piè*) | – | – | UNNECESSARY |
+| **piè** | noun “foot” (the firm one) | **கால்** | foot | OK |
+| **fermo** | adjective “firm, steady” | **உறுதியான** | firm | OK |
+| **sempre** | adverb “always” | **எப்போதும்** | always | OK |
+| **era** | imperfect of *essere* “was” | **இருந்தது** | was | OK |
+| **'l** | definite article “the” (before *più*) | – | – | UNNECESSARY |
+| **più** | comparative particle “more” (used with *basso*) | – (comparative expressed by *கீழே*) | – | UNNECESSARY |
+| **basso** | adjective “lower” (comparative) | **கீழே** | lower | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Status | Source Word(s) | Issue |
+|--------|----------------|-------|
+| **WRONG** | **diserta** | Rendered as **புறநகர்** (“outskirts”), which does not convey the sense of “deserted / empty”. A more accurate Tamil rendering would be **வெறிச்சூழல்** or **வெறிச்சரிவு**. |
+| **UNNECESSARY** | ch'èi, un, il, la, 'l (×4), più, che | Italian articles, conjunctions, and the comparative particle have no direct equivalents in Tamil; their omission is natural. |
+| **UNNECESSARY** | (implicit) subject pronoun for “I” (ch'èi) | Tamil often drops the explicit subject when the verb inflection already indicates it. |
+
+No **MISSING** or **GRAMMAR** errors were detected; all required meanings are present in the Tamil translation, and agreement (gender/number) is appropriate for Tamil.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 28:
+  - Original: Poi ch'èi posato un poco il corpo lasso,
+  - Issue: none
+  - Corrected: சற்று ஓய்வு எடுத்த பின் என் சோர்வான உடல்,
+- Line 29:
+  - Original: ripresi via per la piaggia diserta,
+  - Issue: WRONG – “diserta” was rendered as “புறநகர்” (outskirts) which does not convey “deserted”. It should express a deserted slope.
+  - Corrected: நான் மீண்டும் வெறிச்சரிவில் பாதையை எடுத்தேன்,
+- Line 30:
+  - Original: sì che 'l piè fermo sempre era 'l più basso.
+  - Issue: none
+  - Corrected: அப்படியே உறுதியான கால் எப்போதும் கீழே இருந்தது.
+
+```
+சற்று ஓய்வு எடுத்த பின் என் சோர்வான உடல்,
+நான் மீண்டும் வெறிச்சரிவில் பாதையை எடுத்தேன்,
+அப்படியே உறுதியான கால் எப்போதும் கீழே இருந்தது.
+```
+]]></message>
+</messages>

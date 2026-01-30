@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+మరియు ఆమె నా ముఖం ముందు కదలలేదు,
+అయితే ఆమె నా మార్గాన్ని ఎంతో అడ్డుకుంది,
+అది నేను తిరిగి రావడానికి తరచుగా తిరిగాను.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|------------------------------|--------------------------|--------|
+| e | Coordinating conjunction “And” | మరియు | “and” | OK |
+| non | Negation “did not” | కదలలేదు | “did not move” | OK |
+| mi | 1st‑person clitic (dative) – not rendered in the English reference (subject is “she”) | — | — | UNNECESSARY |
+| si | Reflexive marker of *partire* | — | — | UNNECESSARY |
+| partia | Imperfect “move / depart” | కదలలేదు | “did not move” | OK |
+| dinanzi | Preposition “before / in front of” | ముందు | “in front of” | OK |
+| al | Contraction *a + il* (to + the) – definite article | — | — | UNNECESSARY |
+| volto | Noun “face” | ముఖం | “face” | OK |
+| anzi | Contrastive adverb “nay / rather” | అయితే | “but / rather” | OK |
+| ‘mpediva (impediva) | Imperfect “hindered” | అడ్డుకుంది | “hindered” | OK |
+| tanto | Degree adverb “so, to such an extent” | ఎంతో | “so, very” | OK |
+| il | Definite article “the” | — | — | UNNECESSARY |
+| mio | Possessive adjective “my” | నా | “my” | OK |
+| cammino | Noun “road, path” (object of hindrance) | మార్గాన్ని | “road (ACC)” | OK |
+| ch’ (che) | Subordinating conjunction “that” | అది | “that” | OK |
+| i’ (io) | 1st‑person pronoun “I” | నేను | “I” | OK |
+| fui | Past‑historic of *essere* “was / had been” (auxiliary) | — | — | UNNECESSARY |
+| per | Preposition “for, in order to” | రావడానికి | “to (return)” | OK |
+| ritornar | Infinitive “to return” | రావడానికి | “to return” | OK |
+| più | Comparative adverb “more” (used with *volte* → “oftentimes”) | తరచుగా | “often” | OK |
+| volte | Noun “times” (frequency) | — | — | UNNECESSARY |
+| vòlto | Past‑historic “turned” | తిరిగాను | “I turned” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *mi, si, al, il, fui, volte* – Italian clitics, articles or auxiliary verbs that have no separate lexical counterpart in the Telugu rendering.  
+- **OK**: All other mappings convey the intended meaning and respect Telugu grammar (case marking on *మార్గాన్ని*, verb agreement, etc.).  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected in the final Telugu sentences.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 34:
+  - Original: మరియు ఆమె నా ముఖం ముందు కదలలేదు,
+  - Issue: none
+  - Corrected: no change
+- Line 35:
+  - Original: అయితే ఆమె నా మార్గాన్ని ఎంతో అడ్డుకుంది,
+  - Issue: none
+  - Corrected: no change
+- Line 36:
+  - Original: అది నేను తిరిగి రావడానికి తరచుగా తిరిగాను.
+  - Issue: none
+  - Corrected: no change
+
+```
+మరియు ఆమె నా ముఖం ముందు కదలలేదు,
+అయితే ఆమె నా మార్గాన్ని ఎంతో అడ్డుకుంది,
+అది నేను తిరిగి రావడానికి తరచుగా తిరిగాను.
+```
+]]></message>
+</messages>

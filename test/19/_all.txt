@@ -1,0 +1,63 @@
+# Italian
+
+55 E qual è quei che volontieri acquista,
+56 e giugne 'l tempo che perder lo face,
+57 che 'n tutti suoi pensier piange e s'attrista;
+
+# English
+
+And such as he is who gaineth willingly, and the time arrives that makes him lose, who in all his thoughts weeps and is sad,
+
+# Telugu
+
+55 మరియు అతను స్వచ్ఛందంగా సంపాదించే వాడు,
+56 మరియు అతనిని కోల్పోయేలా చేసే సమయం వస్తుంది,
+57 అతని అన్ని ఆలోచనల్లో అతను ఏడుస్తూ దుఃఖిస్తాడు;
+
+# Tamil
+
+55 மற்றும் அவர் விரும்பி பெறுபவர்,
+56 மற்றும் அவர் இழக்கச் செய்யும் காலம் வருகிறது,
+57 அவர் தனது எல்லா சிந்தனைகளிலும் அழுகிறார் மற்றும் மனம் வருந்துகிறார்;
+
+# Kannada
+
+55 ಮತ್ತು ಅವನು ಸ್ವಯಂ ಇಷ್ಟಪಟ್ಟು ಪಡೆಯುವವನು,
+56 ಮತ್ತು ಸಮಯ ಬರುತ್ತದೆ ಅದು ಅವನನ್ನು ಕಳೆದುಕೊಳ್ಳುವಂತೆ ಮಾಡುತ್ತದೆ,
+57 ಅವನ ಎಲ್ಲಾ ಚಿಂತನೆಗಳಲ್ಲಿ ಅವನು ಅಳುತ್ತಾನೆ ಮತ್ತು ದುಃಖಿಸುತ್ತಾನೆ;
+
+# Malayalam
+
+55 മറ്റും അവൻ പോലെ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,
+56 മറ്റും സമയം വരുന്നു അവനെ നഷ്ടപ്പെടുത്തുന്ന,
+57 അവന്റെ എല്ലാ ചിന്തകളിലും അവൻ കരഞ്ഞു ദുഃഖിതനാണ്;
+
+# Japanese
+
+55 そして、喜んで得る者は、彼のようである,
+56 そして、彼を失わせる時間がやって来る,
+57 彼はすべての思考の中で泣き、悲しむ;
+
+# French
+
+55 Et tel qu’il est, qui acquiert volontiers,
+56 et le temps arrive, qui le fait perdre,
+57 qui dans toutes ses pensées pleure et s’attriste;
+
+# Spanish
+
+55 Y tal es él que adquiere voluntariamente,
+56 y llega el tiempo que le hace perder,
+57 que en todos sus pensamientos llora y se entristece;
+
+# Portuguese
+
+55 E tal como ele é quem adquire de bom grado,
+56 e chega o tempo que o faz perder,
+57 que em todos os seus pensamentos chora e se entristece;
+
+# Esperanto
+
+55 Kaj tia estas tiu kiu volonte akiras,
+56 kaj alvenas la tempo kiu igas lin perdi,
+57 kiu en ĉiuj liaj pensoj ploras kaj malĝojas;

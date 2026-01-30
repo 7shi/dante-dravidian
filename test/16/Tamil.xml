@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+46 அவர் என் எதிராக வருகிறான் என்று தோன்றியது  
+47 உயர்ந்த தலை மற்றும் பசித்துணர்ச்சி உடைய,  
+48 அதனால் காற்று அவரை பயந்து நடுங்கியது என்று தோன்றியது.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (to English) | Status |
+|-------------|--------------------------------------|------------------------------|-------------------------------|--------|
+| Questi | demonstrative pronoun, the threatening opponent | அவர் | “he” | OK |
+| parea | “seemed” – speaker’s perception of a past state | தோன்றியது | “seemed” | OK |
+| che (1) | complementizer introducing the motion clause | என்று | “that” | OK |
+| contra | preposition “against” (direction opposite to speaker) | எதிராக | “against” | OK |
+| me | 1st‑person pronoun, object of *contra* | என் | “my / me” | OK |
+| venisse | imperfect subjunctive of *venire* – “to be coming” (unreal past) | வருகிறான் | “is coming” | OK |
+| con (1) | preposition “with” (first attribute) | — (omitted) | — | UNNECESSARY |
+| la | definite article (feminine singular) | — (omitted) | — | UNNECESSARY |
+| test' | noun “head” | தலை | “head” | OK |
+| alta | adjective “high” (describing the head) | உயர்ந்த | “high” | OK |
+| e | coordinating conjunction “and” | மற்றும் | “and” | OK |
+| con (2) | preposition “with” (second attribute) | — (omitted) | — | UNNECESSARY |
+| rabbiosa | adjective “ravenous” (intensifying hunger) | பசித்துணர்ச்சி | “ravenous (hunger)” | OK |
+| fame | noun “hunger” | உடைய | “having” (as part of “having ravenous hunger”) | OK |
+| sì | resultative adverb “so that” | அதனால் | “so that” | OK |
+| che (2) | complementizer introducing the result clause | என்று | “that” | OK |
+| parea (2) | “seemed” – perception of the air’s reaction | தோன்றியது | “seemed” | OK |
+| che (3) | complementizer before the innermost clause (subject‑verb) | — (omitted) | — | UNNECESSARY |
+| l'aere | noun “the air” (subject of trembling) | காற்று | “the air” | OK |
+| ne | clitic pronoun referring back to the opponent (cause) | அவரை | “him” (object) | OK |
+| tremesse | imperfect subjunctive of *tremare* – “trembled” | நடுங்கியது | “trembled” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `con` (both occurrences), `la`, `con` (second), `che` (the third occurrence before *l'aere*).  
+  These function words are naturally omitted in Tamil and do not affect meaning.  
+
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All source tokens are represented in the Tamil translation, and the grammatical relations are preserved appropriately for Tamil.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 46**  
+  - Original: அவர் என் எதிராக வருகிறான் என்று தோன்றியது  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 47**  
+  - Original: உயர்ந்த தலை மற்றும் பசித்துணர்ச்சி உடைய,  
+  - Issue: WRONG – the phrase “பசித்துணர்ச்சி” does not convey the noun “hunger”; it should be expressed as “பசித்த பசி”.  
+  - Corrected: உயர்ந்த தலை மற்றும் பசித்த பசி உடைய,  
+
+- **Line 48**  
+  - Original: அதனால் காற்று அவரை பயந்து நடுங்கியது என்று தோன்றியது.  
+  - Issue: none  
+  - Corrected: no change  
+
+```tamil
+அவர் என் எதிராக வருகிறான் என்று தோன்றியது
+உயர்ந்த தலை மற்றும் பசித்த பசி உடைய,
+அதனால் காற்று அவரை பயந்து நடுங்கியது என்று தோன்றியது.
+```
+]]></message>
+</messages>

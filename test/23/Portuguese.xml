@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Não homem homem já fui,
+e meus pais foram lombardos,
+mantuanos por pátria ambos.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-------------------------------------------|--------------------|------------------------|--------|
+| Rispuosemi | “He answered me” (predicate verb) |  *(none)* |  *(none)* | **MISSING** |
+| Non | Negation particle | Não | “not” | OK |
+| omo (1) | Predicate nominal “man” (negated) | homem | “man” | OK |
+| omo (2) | Predicate nominal “man” (affirmed) | homem | “man” | OK |
+| già | Temporal adverb “once” | já | “already / once” | OK |
+| fui | Copular verb “I was” | fui | “I was” | OK |
+| e | Coordinating conjunction “and” | e | “and” | OK |
+| li | Definite article “the” (marks *parenti*) |  *(omitted)* |  *(none)* | **UNNECESSARY** |
+| parenti | Noun “parents” | pais | “parents” | OK |
+| miei | Possessive adjective “my” | meus | “my” | OK |
+| furon | Copular verb “were” | foram | “were” | OK |
+| lombardi | Predicate nominal “Lombards” | lombardos | “Lombards” | OK |
+| mantoani | Predicate nominal “Mantuans” | mantuanos | “Mantuans” | OK |
+| per | Preposition “by” (basis of identification) | por | “by” | OK |
+| patrïa | Noun “country” (criterion of identity) | pátria | “country” | OK |
+| ambedui | Quantifier “both” (applies to speaker + parents) | ambos | “both” | OK |
+
+---
+
+### Items to Review
+- **MISSING:** *Rispuosemi* – the reporting verb “He answered me” was omitted in the Portuguese rendering.  
+- **UNNECESSARY:** *li* – the Italian definite article “the” is not required in Portuguese; the translation correctly omitted it.  
+
+All other lexical items are present, correctly translated, and agree in gender/number with the Portuguese target.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 67:
+  - Original: Não homem homem já fui,
+  - Issue: MISSING reporting verb
+  - Corrected: Ele respondeu‑me: «Não homem, homem já fui,
+- Line 68:
+  - Original: e meus pais foram lombardos,
+  - Issue: none
+  - Corrected: no change
+- Line 69:
+  - Original: mantuanos por pátria ambos.
+  - Issue: none
+  - Corrected: no change
+
+```
+Ele respondeu‑me: «Não homem, homem já fui,
+e meus pais foram lombardos,
+mantuanos por pátria ambos.
+```
+]]></message>
+</messages>

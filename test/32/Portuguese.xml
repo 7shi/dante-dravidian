@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+pois esta besta, por causa da qual tu gritas,
+não deixa ninguém passar pelo seu caminho,
+mas tanto o impede que o mata;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Portuguese) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| **ché** | causal conjunction introducing the reason for the cry | **pois** | “because / for that reason” | OK |
+| **questa** | demonstrative adjective specifying the beast | **esta** | “this” (feminine) | OK |
+| **bestia** | the animal that causes the trouble | **besta** | “beast” | OK |
+| **per** | preposition introducing the relative clause “for which” | **por** (in “por causa da qual”) | “for / because of” | OK |
+| **la** | definite article inside the relative phrase (merged in Portuguese) | — | — | **UNNECESSARY** |
+| **qual** | relative pronoun referring back to *bestia* | **qual** | “which” | OK |
+| **tu** | second‑person pronoun, the addressee who cries | **tu** | “you” | OK |
+| **gride** | verb “cry out” (2 sg.) | **gritas** | “you cry out” | OK |
+| **non** | negation of the permissive action | **não** | “not” | OK |
+| **lascia** | verb “allows / lets” (negated) | **deixa** | “lets / allows” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **ninguém** | “no one / anyone” | OK |
+| **pasar** | infinitive “to pass” | **passar** | “to pass” | OK |
+| **per** | preposition “through / along” | **pelo** (contraction of *por* + *o*) | “through / along the” | OK |
+| **la** | definite article inside the possessive phrase (merged) | — | — | **UNNECESSARY** |
+| **sua** | possessive adjective “its” | **seu** | “its / his” (masc. sg.) | OK |
+| **via** | noun “way / path” | **caminho** | “way / path” | OK |
+| **ma** | coordinating conjunction contrasting clauses | **mas** | “but” | OK |
+| **tanto** | adverb of degree “so much” | **tanto** | “so much” | OK |
+| **lo** | masculine accusative pronoun “him” (object of hindrance) | **o** | “him / it” | OK |
+| **'mpedisce** | verb “hinders / impedes” (3 sg.) | **impede** | “hinders” | OK |
+| **che** | complementizer introducing result clause | **que** | “that” | OK |
+| **l'uccide** | verb “kills him” (3 sg.) | **mata** | “kills” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: the Italian definite article **la** (appears twice) is absorbed into Portuguese prepositional contractions (*por causa da* and *pelo*), so it has no direct counterpart.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; gender, number, and verb‑person agreement are correct in the Portuguese rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 94**  
+  - Original: *pois esta besta, por causa da qual tu gritas,*  
+  - Issue: none  
+  - Corrected: *pois esta besta, por causa da qual tu gritas,*  
+
+- **Line 95**  
+  - Original: *não deixa ninguém passar pelo seu caminho,*  
+  - Issue: none  
+  - Corrected: *não deixa ninguém passar pelo seu caminho,*  
+
+- **Line 96**  
+  - Original: *mas tanto o impede que o mata;*  
+  - Issue: none  
+  - Corrected: *mas tanto o impede que o mata;*  
+
+```
+pois esta besta, por causa da qual tu gritas,
+não deixa ninguém passar pelo seu caminho,
+mas tanto o impede que o mata;
+```
+]]></message>
+</messages>

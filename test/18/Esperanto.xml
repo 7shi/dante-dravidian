@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ŝi alportis al mi tiom da pezo  
+kun la timo kiu venis de ŝia vidaĵo,  
+ke mi perdis la esperon pri la alteco.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| **questa** | demonstrative pronoun, “she” (female agent) | **ŝi** | “she” | OK |
+| **mi** | 1st‑person dative pronoun, experiencer | **mi** | “me / to me” | OK |
+| **porse** | remote past of *porre* “to cause, give” | **alportis** | “brought / caused” | OK |
+| **tanto** | adverb of quantity, “so much” | **tiom** | “so much” | OK |
+| **di** | preposition “of” (linking quantity to noun) | **da** | “of” (partitive) | OK |
+| **gravezza** | noun “heaviness, weight (emotional)” | **pezo** | “weight” | OK |
+| **con** | preposition “with” (introducing accompaniment) | **kun** | “with” | OK |
+| **la** | definite article, marks a specific noun | **la** | “the” | OK |
+| **paura** | noun “fear” | **timo** | “fear” | OK |
+| **ch'uscia** | relative clause “that came / emerged” | **kiu venis** | “that came” | OK |
+| **di** | preposition “from” (source of fear) | **de** | “from” | OK |
+| **sua** | possessive adjective “her” | **ŝia** | “her” | OK |
+| **vista** | noun “sight, view” | **vidaĵo** | “sight” | OK |
+| **ch'io** | relative pronoun + subject “that I” | **ke mi** | “that I” | OK |
+| **perdei** | remote past of *perdere* “to lose” | **perdis** | “lost” | OK |
+| **la** | definite article, marks “hope” | **la** | “the” | OK |
+| **speranza** | noun “hope” | **esperon** | “hope” | OK |
+| **de** | preposition “of” (linking hope to its content) | **pri** | “about / concerning” | OK |
+| **l'altezza** | noun “the height” (metaphoric goal) | **alteco** | “the height” | OK |
+
+### Items Requiring Attention
+- **None** – every source token is represented in the Esperanto translation, and no grammatical mismatches or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: ŝi alportis al mi tiom da pezo
+  - Issue: WRONG – verb “alportis” does not convey the causative meaning of “porse”.
+  - Corrected: ŝi kaŭzis al mi tiom da pezo
+- Line 53:
+  - Original: kun la timo kiu venis de ŝia vidaĵo,
+  - Issue: none
+  - Corrected: no change
+- Line 54:
+  - Original: ke mi perdis la esperon pri la alteco.
+  - Issue: WRONG – preposition “pri” should be “de” to match “de l’altezza”.
+  - Corrected: ke mi perdis la esperon de la alteco.
+
+```esperanto
+ŝi kaŭzis al mi tiom da pezo
+kun la timo kiu venis de ŝia vidaĵo,
+ke mi perdis la esperon de la alteco.
+```
+]]></message>
+</messages>

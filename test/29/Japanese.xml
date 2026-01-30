@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+あなたは私の師であり私の作者です,
+あなたは唯一私が美しい様式を得た相手です
+それは私に名誉をもたらした.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Tu | 2nd‑person singular pronoun, subject | あなたは | “you (topic)” | OK |
+| se' | Copular verb “are” (present) | です | “are / is” | OK |
+| lo | Definite article (masc. sg.) | — | — | UNNECESSARY |
+| mio | Possessive adjective “my” | 私の | “my” | OK |
+| maestro | Noun “master, teacher” | 師 | “master” | OK |
+| e | Coordinating conjunction “and” | であり | “and” (linking predicates) | OK |
+| 'l | Definite article (masc. sg.) | — | — | UNNECESSARY |
+| mio (2nd) | Possessive adjective “my” | 私の | “my” | OK |
+| autore | Noun “author, creator” | 作者 | “author” | OK |
+| tu (2nd line) | 2nd‑person singular pronoun, subject | あなたは | “you (topic)” | OK |
+| se' (2nd) | Copular verb “are” | です | “are / is” | OK |
+| solo | Adverb/adjective “alone, only” | 唯一 | “only, sole” | OK |
+| colui | Demonstrative pronoun “the one (who…)” | 相手 | “the person / the one” | OK |
+| da | Preposition “from” | — | — | UNNECESSARY |
+| cu' | Relative pronoun “whom” | — | — | UNNECESSARY |
+| io | 1st‑person singular pronoun, subject of embedded clause | 私が | “I (subject)” | OK |
+| tolsi (tossi) | Verb “took” (preterite) | 得た | “took / obtained” | OK |
+| lo (line 87) | Definite article (masc. sg.) | — | — | UNNECESSARY |
+| bello | Adjective “fair, beautiful” | — | — | UNNECESSARY |
+| stilo | Noun “style” | それは | “that (style)” | OK |
+| che | Relative pronoun “that/which” | — | — | UNNECESSARY |
+| m'ha | Contraction “mi ha” = “has (to) me” | 私に | “to me” | OK |
+| fatto | Past participle “done” | もたらした | “brought / caused” | OK |
+| onore | Noun “honor” | 名誉 | “honor” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (articles, prepositions, relative pronouns, and the adjective “bello” that are naturally omitted in Japanese):
+  - lo (twice), ’l, da, cu', lo (line 87), bello, che.  
+
+All other source words are correctly rendered in the Japanese translation (status **OK**).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: あなたは私の師であり私の作者です,
+  - Issue: none
+  - Corrected: あなたは私の師であり私の作者です,
+- Line 86:
+  - Original: あなたは唯一私が美しい様式を得た相手です
+  - Issue: grammar – “唯一” needs to modify “相手” as a noun phrase
+  - Corrected: あなたは私が美しい様式を得た唯一の相手です
+- Line 87:
+  - Original: それは私に名誉をもたらした.
+  - Issue: none
+  - Corrected: それは私に名誉をもたらした.
+
+```
+あなたは私の師であり私の作者です,
+あなたは私が美しい様式を得た唯一の相手です
+それは私に名誉をもたらした.
+```
+]]></message>
+</messages>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tiam la timo iom kvietiĝis,  
+kiu en la lago de mia koro daŭris  
+la nokton kiun mi trapasis tiel kompateme.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Allor | temporal adverb “then” | **Tiam** | “then” | OK |
+| fu | copular past “was” | *(omitted)* | – | **MISSING** |
+| la | definite article “the” (1st) | **la** | “the” | UNNECESSARY |
+| paura | noun “fear” | **timo** | “fear” | OK |
+| un | indefinite article “a” | *(omitted)* | – | **UNNECESSARY** |
+| poco | degree adverb “little” | **iom** | “a little” | OK |
+| queta | adjective/past‑participle “quieted” | **kvietiĝis** | “quieted” | OK |
+| che | relative pronoun “which” | **kiu** | “which” | OK |
+| nel | preposition+article “in the” | **en** | “in” | OK |
+| lago | noun “lake” | **lago** | “lake” | OK |
+| del | preposition+article “of the” | **de** | “of” | OK |
+| cor | noun “heart” | **koro** | “heart” | OK |
+| m'era | auxiliary “had been” (pluperfect) | *(omitted)* | – | **MISSING** |
+| durata | verb “lasted” | **daŭris** | “lasted” | OK |
+| la | definite article “the” (2nd) | **la** | “the” | UNNECESSARY |
+| notte | noun “night” | **nokton** | “night” (acc.) | OK |
+| ch'i' | relative pronoun “that” (object) | **kiun** | “that” | OK |
+| passai | verb “passed” (simple past) | **trapasis** | “passed” | OK |
+| con | preposition “with” | *(omitted)* | – | **UNNECESSARY** |
+| tanta | quantitative adjective “so much” | **tiel** | “so” (adverb) | OK |
+| pieta | noun “pity / piteously” | **kompateme** | “compassionately” | **WRONG** |
+
+### Items to Review
+- **MISSING**: *fu*, *m'era* – the past‑copular and pluperfect auxiliaries are not expressed explicitly in the Esperanto version.  
+- **UNNECESSARY**: *la* (both occurrences), *un*, *con* – Esperanto does not require these articles or the preposition in the given construction.  
+- **WRONG**: *pieta* → *kompateme* – the target renders “with compassion” rather than the intended “so piteously”; a closer rendering would be **pite** or **malbone**.  
+
+No GRAMMAR errors were detected in the Esperanto output.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: `Tiam la timo iom kvietiĝis,`  
+  - Issue: missing past‑copular “was”.  
+  - Corrected: `Tiam la timo **estis** iom kvietigita,`
+
+- **Line 20**  
+  - Original: `kiu en la lago de mia koro daŭris`  
+  - Issue: missing pluperfect auxiliary “had been”.  
+  - Corrected: `kiu en la lago de mia koro **estis** daŭrinta`
+
+- **Line 21**  
+  - Original: `la nokton kiun mi trapasis tiel kompateme.`  
+  - Issue: wrong rendering of “so piteously” and omitted preposition “con”.  
+  - Corrected: `la nokton kiun mi trapasis **kun tiom da kompatemo**.`
+
+```esperanto
+Tiam la timo estis iom kvietigita,
+kiu en la lago de mia koro estis daŭrinta
+la nokton kiun mi trapasis kun tiom da kompatemo.
+```
+]]></message>
+</messages>

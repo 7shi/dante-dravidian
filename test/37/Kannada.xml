@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಅವನು ಅವಳನ್ನು ಪ್ರತಿ ಪಟ್ಟಣದ ಮೂಲಕ ಹಿಂಬಾಲಿಸುವನು,  
+ಅವನು ಅವಳನ್ನು ನರಕಕ್ಕೆ ಹಿಂತಿರುಗಿಸುವವರೆಗೆ,  
+ಅಲ್ಲಿ ಅಸೂಯೆ ಮೊದಲಿಗೆ ಅವಳನ್ನು ಕಳುಹಿಸಿದ ಸ್ಥಳ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|-----------------------|-------------------------------|----------------------------|--------|
+| Questi | the male agent who performs the hunting | ಅವನು | “he” | OK |
+| la | female patient of the hunt | ಅವಳನ್ನು | “her (ACC)” | OK |
+| caccerà | future action of pursuing | ಹಿಂಬಾಲಿಸುವನು | “will hunt / pursue” | OK |
+| per | marks traversal across locations | ಮೂಲಕ | “through / by” | OK |
+| ogne | quantifier over towns | ಪ್ರತಿ | “every” | OK |
+| villa | individual location being traversed | ಪಟ್ಟಣದ | “of town” | OK |
+| fin | introduces temporal limit | ವರೆಗೆ | “until” | OK |
+| che | introduces clause expressing the endpoint | — (clause suffix already expressed) | — | **UNNECESSARY** |
+| l'avrà | auxiliary forming future perfect | — (embedded in verb) | — | **UNNECESSARY** |
+| rimessa | action of returning her to a place | ಹಿಂತಿರುಗಿಸುವ | “set back / return” | OK |
+| ne | introduces locative complement | ಗೆ | “to / toward” | OK |
+| lo | definite article “the” | — (articles omitted) | — | **UNNECESSARY** |
+| 'nferno | destination where she is placed | ನರಕ | “hell” | OK |
+| là | locative reference for the following clause | ಅಲ್ಲಿ | “there” | OK |
+| onde | introduces causal clause linking envy to the sending | ಅಲ್ಲಿ | “there / whence” (same as “là”) | OK |
+| 'nvidia | personified force that initiates the sending | ಅಸೂಯೆ | “envy” | OK |
+| prima | temporal qualifier indicating the initial occurrence | ಮೊದಲಿಗೆ | “first” | OK |
+| dipartilla | future action of dispatching her, caused by envy | ಕಳುಹಿಸಿದ | “sent” (past participle used as future sense) | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `che`, `l'avrà`, `lo` – Kannada does not require separate words for these grammatical particles; their functions are absorbed into verb morphology or omitted articles.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 109:
+  - Original: ಅವನು ಅವಳನ್ನು ಪ್ರತಿ ಪಟ್ಟಣದ ಮೂಲಕ ಹಿಂಬಾಲಿಸುವನು,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 110:
+  - Original: ಅವನು ಅವಳನ್ನು ನರಕಕ್ಕೆ ಹಿಂತಿರುಗಿಸುವವರೆಗೆ,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 111:
+  - Original: ಅಲ್ಲಿ ಅಸೂಯೆ ಮೊದಲಿಗೆ ಅವಳನ್ನು ಕಳುಹಿಸಿದ ಸ್ಥಳ.
+  - Issue: none
+  - Corrected: no change  
+
+```
+ಅವನು ಅವಳನ್ನು ಪ್ರತಿ ಪಟ್ಟಣದ ಮೂಲಕ ಹಿಂಬಾಲಿಸುವನು,
+ಅವನು ಅವಳನ್ನು ನರಕಕ್ಕೆ ಹಿಂತಿರುಗಿಸುವವರೆಗೆ,
+ಅಲ್ಲಿ ಅಸೂಯೆ ಮೊದಲಿಗೆ ಅವಳನ್ನು ಕಳುಹಿಸಿದ ಸ್ಥಳ.
+```
+]]></message>
+</messages>

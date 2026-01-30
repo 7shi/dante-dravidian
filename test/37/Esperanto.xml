@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Li ĉasos ŝin tra ĉiu urbo,
+Ĝis kiam li revenigos ŝin al la infero,
+Tie de kie enviado unue sendis ŝin.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Esperanto → English) | Status |
+|-------------|-----------------------|----------------------|------------------------------------------|--------|
+| Questi | male agent, subject | Li | **He** | OK |
+| la | accusative clitic, “her” | ŝin | **her** | OK |
+| caccerà | future of “hunt” | ĉasos | **will hunt** | OK |
+| per | preposition “through” | tra | **through** | OK |
+| ogne | determiner “every” | ĉiu | **every** | OK |
+| villa | noun “town” | urbo | **town** | OK |
+| fin | temporal subordinator “until” | Ĝis | **until** | OK |
+| che | temporal subordinator “when” | kiam | **when** | OK |
+| l'avrà | future auxiliary “will have” (marks future perfect) | li | **he** (subject of the following verb) | OK |
+| rimessa | “set back / return” (future perfect) | revenigos | **will set back** | OK |
+| ne | preposition “in / to” (archaic “ne lo ’nferno”) | al | **to** | OK |
+| lo | masculine definite article “the” (redundant in Esperanto) | — | — | UNNECESSARY |
+| ’nferno | noun “hell” | infero | **hell** | OK |
+| là | adverb of place “there” | Tie | **there** | OK |
+| onde | relative adverb “whence” | de kie | **whence** | OK |
+| ’nvidia | personified “envy” (cause) | enviado | **messenger / envoy** | **WRONG** (should be *invido* or *invideco*) |
+| prima | temporal adverb “first” | unue | **first** | OK |
+| dipartilla | future “will send forth” (with clitic “‑la”) | sendis | **sent** | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **WRONG**: *’nvidia* → **enviado**. The Esperanto word *enviado* means “messenger”, not “envy”. The correct translation should be **invido** (noun) or **invideco** (abstract noun).  
+- **UNNECESSARY**: *lo* (definite article) – Esperanto does not use articles, so the element is naturally omitted.  
+- No source words are **MISSING**; every source token has a corresponding target element (even if the target element is a grammatical placeholder).  
+- No **GRAMMAR** errors were detected in the Esperanto sentences (agreement, case, word order are all acceptable).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: Li ĉasos ŝin tra ĉiu urbo,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 2:  
+  - Original: Ĝis kiam li revenigos ŝin al la infero,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 3:  
+  - Original: Tie de kie enviado unue sendis ŝin.  
+  - Issue: WRONG – “enviado” does not mean “envy”.  
+  - Corrected: Tie de kie **invido** unue sendis ŝin.  
+
+```
+Li ĉasos ŝin tra ĉiu urbo,
+Ĝis kiam li revenigos ŝin al la infero,
+Tie de kie invido unue sendis ŝin.
+```
+]]></message>
+</messages>

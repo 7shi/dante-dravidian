@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Molti son li animali a cui s'ammoglia,  
+Many are the animals with which she wives,  
+
+e più saranno ancora, infin che ’l veltro  
+and there shall be more yet, till the hound  
+
+verrà, che la farà morir con doglia.  
+shall come, that will make her die of grief.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Telugu translation)**  
+
+| Source Word | Contextual Definition (sense) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|------------------------------|------------------------------|--------------------------|--------|
+| Molti | Quantifier “many” | అనేక | many | OK |
+| son | Copular verb “are” (present) | — (copula omitted) | are | UNNECESSARY (Telugu often drops “to be”) |
+| li | Definite article, plural | — | the | UNNECESSARY |
+| animali | Noun “animals” | జంతువులు | animals | OK |
+| a | Preposition “with” (introducing relative clause) | — | with | UNNECESSARY |
+| cui | Relative pronoun “which / whom” | — | which | UNNECESSARY |
+| s'ammoglia | Verb “wives / takes as spouse” (reflexive) | వివాహం చేసుకునే | (she) weds / takes as spouse | OK |
+| e | Coordinating conjunction “and” | మరియు | and | OK |
+| più | Comparative adverb “more” | ఇంకా ఎక్కువ | more / still more | OK |
+| saranno | Future copula “shall be” | ఉంటాయి | will be | OK |
+| ancora | Temporal adverb “still / yet” | ఇంకా | still / yet | OK |
+| infin | Subordinating conjunction “till / until” | వచ్చేవరకు | until (the hound comes) | OK |
+| che | Relative/conjunctive “that” (introducing result clause) | — | that | UNNECESSARY |
+| ’l | Definite article “the” (elided *il*) | — | the | UNNECESSARY |
+| veltro | Noun “hound” | వేటగాడు | hound | OK |
+| verrà | Future verb “shall come” | వస్తాడు | will come | OK |
+| la | Object pronoun “her” | ఆమెను | her (object) | OK |
+| farà | Causative verb “will make” | మరణింపజేస్తాడు (part of phrase) | will cause to die | OK |
+| morir | Infinitive “die” | (combined in “మరణింపజేస్తాడు”) | die | OK |
+| con | Preposition “of” (in “die of grief”) | తో | with / of | OK |
+| doglia | Noun “grief” | దుఃఖం | grief | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: *son, li, a, cui, che, ’l* – these function words are not required in Telugu and were omitted or absorbed by case/agreement morphology.  
+- **OK**: All content‑bearing words (nouns, verbs, adverbs, quantifiers) are rendered appropriately.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected in the Telugu rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: అనేక జంతువులు ఆమె వివాహం చేసుకునేవి,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: మరియు ఇంకా ఎక్కువ జంతువులు ఉంటాయి, వేటగాడు వచ్చే వరకు  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: వేటగాడు వస్తాడు, అది ఆమెను దుఃఖంతో మరణింపజేస్తుంది.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+అనేక జంతువులు ఆమె వివాహం చేసుకునేవి,
+మరియు ఇంకా ఎక్కువ జంతువులు ఉంటాయి, వేటగాడు వచ్చే వరకు
+వేటగాడు వస్తాడు, అది ఆమెను దుఃఖంతో మరణింపజేస్తుంది.
+```
+]]></message>
+</messages>

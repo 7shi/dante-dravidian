@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+79 അപ്പോൾ നീ ആ വിർജിലിയോ ആ സ്രോതസ്സോ ആണോ  
+80 അത് സംസാരത്തിന്റെ അത്രവലിയ നദി ഒഴുക്കുന്നുണ്ടോ?  
+81 ഞാൻ അവനോട് ലജ്ജാശീലമായ മുഖം കൊണ്ട് മറുപടി നൽകി.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|-----------------------|----------------------|--------------------------|--------|
+| Or | temporal marker “Now/then” | **അപ്പോൾ** | “then / now” | OK |
+| se' | copular verb linking “tu” to predicate | **ആണോ** | “is (it)?” (question‑copula) | OK |
+| tu | 2nd‑person singular pronoun | **നീ** | “you” | OK |
+| quel | demonstrative adjective modifying *Virgilio* | **ആ** | “that” | OK |
+| Virgilio | proper noun, the poet | **വിർജിലിയോ** | “Virgil” | OK |
+| e | coordinating conjunction “and” | *(omitted)* | – | **UNNECESSARY** (conjunction not required in Malayalam) |
+| quella | demonstrative adjective modifying *fonte* | **ആ** | “that” | OK |
+| fonte | metaphorical source of speech | **സ്രോതസ്സോ** | “fount / source” | OK |
+| che | relative pronoun introducing clause | **അത്** | “that” | OK |
+| spandi | verb “to spread / pour forth” | **ഒഴുക്കുന്നുണ്ടോ** | “does (it) flow?” | OK |
+| di | preposition “of” (genitive) | *(suffix ‑ത്തിന്റെ attached to “സംസാര”)* | – | **UNNECESSARY** (expressed by a suffix, not a separate word) |
+| parlar | noun “speech” (used substantively) | **സംസാര** (within **സംസാരത്തിന്റെ**) | “speech” | OK |
+| sì | degree adverb “so” | **അത്ര** | “so” | OK |
+| largo | adjective “large” | **വലിയ** | “large” | OK |
+| fiume | noun “river / stream” | **നദി** | “river / stream” | OK |
+| rispuos' | verb “replied” | **മറുപടി നൽകി** | “gave a reply / replied” | OK |
+| io | 1st‑person singular pronoun | **ഞാൻ** | “I” | OK |
+| lui | 3rd‑person indirect object “to him” | **അവനോട്** | “to him” | OK |
+| con | preposition “with” (instrument) | **കൊണ്ട്** | “with” | OK |
+| vergognosa | adjective “bashful” | **ലജ്ജാശീലമായ** | “bashful” | OK |
+| fronte | noun “front / face” | **മുഖം** | “face / front” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: **e**, **di** – Malayalam naturally omits an explicit coordinating conjunction and expresses the genitive relation with a suffix rather than a separate preposition.  
+
+No source words are missing, and no grammatical or lexical errors were detected in the Malayalam rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 79:  
+  - Original: അപ്പോൾ നീ ആ വിർജിലിയോ ആ സ്രോതസ്സോ ആണോ  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 80:  
+  - Original: അത് സംസാരത്തിന്റെ അത്രവലിയ നദി ഒഴുക്കുന്നുണ്ടോ?  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 81:  
+  - Original: ഞാൻ അവനോട് ലജ്ജാശീലമായ മുഖം കൊണ്ട് മറുപടി നൽകി.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+അപ്പോൾ നീ ആ വിർജിലിയോ ആ സ്രോതസ്സോ ആണോ
+അത് സംസാരത്തിന്റെ അത്രവലിയ നദി ഒഴുക്കുന്നുണ്ടോ?
+ഞാൻ അവനോട് ലജ്ജാശീലമായ മുഖം കൊണ്ട് മറുപടി നൽകി.
+```
+]]></message>
+</messages>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+112 Ond' io per lo tuo me' penso e discerno
+113 che tu mi segui, e io sarò tua guida,
+114 e trarrotti di qui per loco etterno;
+Reference Translation (provided):
+Wherefore I think and deem it for thy best that thou follow me, and I will be thy guide, and will lead thee hence through the eternal place
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 112** *Ond' io per lo tuo me' penso e discerno* → **Locked Meaning**:  
+  The speaker states that, **for the addressee’s ultimate good**, he **thinks** and **judges** that the addressee **should follow him**.  
+
+- **Line 113** *che tu mi segui, e io sarò tua guida,* → **Locked Meaning**:  
+  The proposition that **the addressee follows the speaker** is affirmed, and the speaker **commits** to being **the addressee’s guide**.  
+
+- **Line 114** *e trarrotti di qui per loco etterno;* → **Locked Meaning**:  
+  The speaker will **lead** the addressee **away from the present place** to **an eternal location**.  
+
+
+
+---  
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **Ond'** | adverb / causal conjunction | *Wherefore* | introduces a reason for the following statement | discourse marker |
+| **io** | 1st‑person singular pronoun (subject) | *I* | the speaker | subject of *penso* & *discerno* |
+| **per** | preposition | *for* | marks purpose/benefit | introduces the benefactive phrase *lo tuo me'* |
+| **lo** | neuter definite article/pronoun | *the* (referring to “best”) | specifies the abstract noun *me'* | determiner of *me'* |
+| **tuo** | possessive adjective (2nd‑person) | *thy* | indicates ownership of the “best” by the addressee | modifier of *me'* |
+| **me'** | abstract noun (≈ *best*) | *best* | the addressee’s highest good | object of preposition *per* |
+| **penso** | 1st‑sg present indicative verb | *think* | mental act of the speaker | predicate verb (cognitive) |
+| **e** | coordinating conjunction | *and* | links two predicates | connector |
+| **discerno** | 1st‑sg present indicative verb | *deem* | judgment act of the speaker | predicate verb (evaluative) |
+| **che** | subordinating conjunction | *that* | introduces a complement clause | clause introducer |
+| **tu** | 2nd‑sg pronoun (subject) | *thou* | the addressee | subject of *segui* |
+| **mi** | 1st‑sg pronoun (object) | *me* | the speaker as object of following | direct object of *segui* |
+| **segui** | 2nd‑sg present indicative verb | *follow* | action expected of the addressee | predicate verb (imperative‑like) |
+| **e** | coordinating conjunction | *and* | links two coordinated clauses | connector |
+| **io** | 1st‑sg pronoun (subject) | *I* | the speaker | subject of *sarò* |
+| **sarò** | 1st‑sg future indicative verb | *will be* | future state of the speaker | predicate verb (copular) |
+| **tua** | 2nd‑sg possessive adjective | *thy* | ownership of the forthcoming noun | modifier of *guida* |
+| **guida** | feminine singular noun | *guide* | role the speaker will assume | predicative complement of *sarò* |
+| **e** | coordinating conjunction | *and* | links the previous clause with the next action | connector |
+| **trarrotti** | 2nd‑sg future indicative verb (from *trarre* “to draw/lead”) | *will lead* | future action directed at the addressee | predicate verb (transitive) |
+| **di** | preposition | *from* | marks departure point | introduces *qui* |
+| **qui** | adverb of place | *here* | current location | complement of *di* |
+| **per** | preposition | *through* | marks the route/medium | introduces *loco etterno* |
+| **loco** | masculine singular noun (archaic *luogo*) | *place* | the destination space | object of *per* |
+| **etterno** | masculine singular adjective | *eternal* | describes the nature of the destination | modifier of *loco* |
+
+*The table respects the locked meanings above: each source token is paired with its functional counterpart in the reference translation, its contextual sense, and its grammatical role within the three lines.*
+]]></message>
+</messages>

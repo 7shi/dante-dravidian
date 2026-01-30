@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+C’est pourquoi je pense et juge que c’est pour ton bien que tu me suives  
+Et je serai ton guide,  
+et je te conduirai d’ici vers le lieu éternel;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (French translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| **Ond'** | causal conjunction introducing a reason | **C’est pourquoi** | “that’s why / therefore” | OK |
+| **io** | 1st‑person singular pronoun (subject) | **je** | “I” | OK |
+| **per** | preposition marking benefit/purpose | **pour** | “for” | OK |
+| **lo** | neuter definite article (part of *lo tuo me'*) | — (omitted) | — | **UNNECESSARY** |
+| **tuo** | 2nd‑person possessive adjective (“your”) | **ton** | “your” | OK |
+| **me'** | abstract noun meaning “the best / good” | **bien** | “good / benefit” | OK |
+| **penso** | verb “think” (cognitive) | **pense** | “think” | OK |
+| **e** | coordinating conjunction “and” | **et** | “and” | OK |
+| **discerno** | verb “deem / judge” (evaluative) | **juge** | “judge” | OK |
+| **che** | subordinating conjunction “that” | **que** | “that” | OK |
+| **tu** | 2nd‑person singular pronoun (subject) | **tu** | “you” | OK |
+| **mi** | 1st‑person pronoun (object) | **me** | “me” | OK |
+| **segui** | verb “follow” (indicative) | **suives** *(as written)* | “you follow” | **WRONG / GRAMMAR** |
+| **e** | coordinating conjunction “and” | **et** | “and” | OK |
+| **io** | 1st‑person singular pronoun (subject) | **je** | “I” | OK |
+| **sarò** | future copular verb “will be” | **serai** | “will be” | OK |
+| **tua** | 2nd‑person possessive adjective “your” | **ton** | “your” | OK |
+| **guida** | noun “guide” (role) | **guide** | “guide” | OK |
+| **e** | coordinating conjunction “and” | **et** | “and” | OK |
+| **trarrotti** | future 2nd‑sg verb “you will lead” | **conduirai** | “I will lead” | OK |
+| **di** | preposition “from” (part of *di qui*) | **d’ici** (combined) | “from here” | OK |
+| **qui** | adverb of place “here” (part of *di qui*) | **d’ici** (combined) | “from here” | OK |
+| **per** | preposition “through / toward” | **vers** | “toward” | OK |
+| **loco** | noun “place” (archaic *luogo*) | **lieu** | “place” | OK |
+| **etterno** | adjective “eternal” | **éternel** | “eternal” | OK |
+
+---
+
+### Items Requiring Attention
+- **segui → suives** – The French clause after *que* requires the **indicative** mood (*tu me suis*). The subjunctive form *suives* is incorrect (WRONG/GRAMMAR).  
+- **lo** – The neuter article has no direct counterpart in French and is naturally omitted (UNNECESSARY).  
+
+All other source tokens are adequately represented in the French translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: C’est pourquoi je pense et juge que c’est pour ton bien que tu me **suives**  
+  - Issue: **WRONG/GRAMMAR** – after *que* the verb must be in the indicative (*tu me suis*).  
+  - Corrected: C’est pourquoi je pense et juge que c’est pour ton bien que tu me **suis**  
+
+- **Line 113**  
+  - Original: Et je serai ton guide,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 114**  
+  - Original: et je te conduirai d’ici vers le lieu éternel;  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+C’est pourquoi je pense et juge que c’est pour ton bien que tu me suis
+Et je serai ton guide,
+et je te conduirai d’ici vers le lieu éternel;
+```
+]]></message>
+</messages>

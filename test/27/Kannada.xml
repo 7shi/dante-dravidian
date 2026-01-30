@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,  
+ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?  
+ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|--------------------------------|--------------------------|--------|
+| Or | temporal marker “now/then” | ಆಗ | “then” | OK |
+| se' | copular verb “are” (2nd sg.) | — *(copula omitted in Kannada)* | — | **UNNECESSARY** |
+| tu | 2nd sg. pronoun “you” | ನೀನು | “you” | OK |
+| quel | demonstrative “that” (modifying *Virgilio*) | ಆ | “that” | OK |
+| Virgilio | proper noun, the poet Virgil | ವರ್ಜಿಲ್ | “Virgil” | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| quella | demonstrative “that” (modifying *fonte*) | ಆ | “that” | OK |
+| fonte | metaphorical “source, fount” | ಮೂಲ (in “ಮೂಲವೇ”) | “source” | OK |
+| che | relative pronoun “which” | ಅದು | “that” (as a relative) | OK |
+| spandi | verb “poureth forth” | ಹರಿಸುವುದೇ | “does (it) flow?” | OK |
+| di | preposition “of” (genitive) | ಮಾತಿನ | “of speech” | OK |
+| parlar | noun “speech” (infinitive used substantively) | ಮಾತು (in “ಮಾತಿನ”) | “speech” | OK |
+| sì | degree adverb “so” | ಅಷ್ಟು | “so” | OK |
+| largo | adjective “large” | ವಿಶಾಲ | “large” | OK |
+| fiume | noun “river/stream” | ನದಿಯನ್ನು | “river (acc.)” | OK |
+| rispuos' | verb “replied” | ಉತ್ತರಿಸಿದೆ | “replied” | OK |
+| io | 1st sg. pronoun “I” | ನಾನು | “I” | OK |
+| lui | 3rd sg. indirect object “to him” | ಅವನಿಗೆ | “to him” | OK |
+| con | preposition “with” | ಮುಖದೊಂದಿಗೆ | “with the face” | OK |
+| vergognosa | adjective “bashful” | ಲಜ್ಜೆಯ | “bashful” | OK |
+| fronte | noun “front (of the face)” | ಮುಖ | “face/front” | OK |
+
+---
+
+### Items flagged in the mapping
+
+- **se'** – the Italian copular verb “are” has no explicit equivalent in the Kannada translation (the copula is naturally omitted). → **UNNECESSARY**  
+
+All other source words are represented with appropriate Kannada equivalents, and no grammatical mismatches or missing items were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 79:
+  - Original: ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,
+  - Issue: none
+  - Corrected: ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,
+- Line 80:
+  - Original: ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?
+  - Issue: none
+  - Corrected: ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?
+- Line 81:
+  - Original: ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+  - Issue: none
+  - Corrected: ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+
+```
+ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,
+ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?
+ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+```
+]]></message>
+</messages>

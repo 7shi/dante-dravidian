@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+28 కొంచెం విశ్రాంతి తీసుకున్న తర్వాత నా అలసటతో ఉన్న శరీరం,  
+29 నేను మళ్లీ మార్గాన్ని తీసుకుని నిర్జన పర్వతపు దారిలో నడిచాను,  
+30 అలా స్థిరమైన పాదం ఎప్పుడూ దిగువన ఉండేది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Telugu)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|------------------------------|--------------------------|--------|
+| **Poi** | temporal adverb “after” | **తర్వాత** | “after” | OK |
+| **ch'èi** | subordinating conjunction + auxiliary “that I have” (introduces perfect) | **(omitted – subject is implicit)** | – | **UNNECESSARY** (pronoun/auxiliary can be dropped in Telugu) |
+| **posato** | verb “rested” (perfect) | **విశ్రాంతి తీసుకున్న** | “had taken rest” | OK |
+| **un** | indefinite article “a” | **(omitted)** | – | **UNNECESSARY** |
+| **poco** | adverb of quantity “little” | **కొంచెం** | “a little” | OK |
+| **il** | definite article “the” | **(omitted)** | – | **UNNECESSARY** |
+| **corpo** | noun “body” | **శరీరం** | “body” | OK |
+| **lasso,** | adjective “weary” (describing body) | **అలసటతో ఉన్న** | “being weary” | OK |
+| **ripresi** | verb “resumed / took again” | **మళ్లీ తీసుకుని** | “again taking” | OK |
+| **via** | noun “way, path” | **మార్గాన్ని** | “the way (ACC)” | OK |
+| **per** | preposition “along, through” | **దారిలో** | “in the path” | OK |
+| **la** | definite article “the” | **(omitted)** | – | **UNNECESSARY** |
+| **piaggia** | noun “slope, hillside” (archaic) | **పర్వతపు దారి** | “mountain path” | **WRONG** (does not convey “slope”) |
+| **diserta,** | adjective “deserted, empty” | **నిర్జన** | “deserted” | OK |
+| **sì** | adverb/conjunctive “so, thus” (resultative) | **అలా** | “so” | OK |
+| **che** | conjunction “that” (introduces result clause) | **(implicit in “అలా …” )** | – | **UNNECESSARY** |
+| **'l** | definite article “the” (before “piè”) | **(omitted)** | – | **UNNECESSARY** |
+| **piè** | noun “foot” (the firm foot) | **పాదం** | “foot” | OK |
+| **fermo** | adjective “firm, steady” | **స్థిరమైన** | “firm/steady” | OK |
+| **sempre** | adverb “always” | **ఎప్పుడూ** | “always” | OK |
+| **era** | imperfect of “to be” – copula “was” | **ఉండేది** | “was” | OK |
+| **'l** | definite article “the” (before comparative) | **(omitted)** | – | **UNNECESSARY** |
+| **più** | comparative particle “more” (forms “more low”) | **(implicit in “దిగువన” )** | – | **UNNECESSARY** |
+| **basso.** | adjective “low, lower” (comparative) | **దిగువన** | “lower” | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Type | Source Word(s) | Issue |
+|------|----------------|-------|
+| **UNNECESSARY** | ch'èi, un, il (×3), la, che, 'l (×3), più | Articles, auxiliary, and conjunctions that are not required in Telugu. |
+| **WRONG** | piaggia | Rendered as “పర్వతపు దారి” (“mountain path”) which does **not** convey the notion of a “slope / hillside”. A more accurate rendering would be “ఢాళి” or “ఢాళి పక్క”. |
+| **MISSING** | (none) – every source token appears in the translation, though some are omitted as per Telugu grammar. |
+| **GRAMMAR** | (none) – the Telugu clauses respect agreement and case. |
+
+**Summary:**  
+The translation captures the overall meaning, but the lexical choice for **piaggia** should be corrected to reflect “slope”. All articles, auxiliary “ch’èi”, and some conjunctions are naturally omitted in Telugu and are therefore marked **UNNECESSARY** rather than errors.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 28:  
+  - Original: కొంచెం విశ్రాంతి తీసుకున్న తర్వాత నా అలసటతో ఉన్న శరీరం,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 29:  
+  - Original: నేను మళ్లీ మార్గాన్ని తీసుకుని నిర్జన పర్వతపు దారిలో నడిచాను,  
+  - Issue: WRONG (“పర్వతపు దారి” does not convey “slope”; should be “ఢాళి”)  
+  - Corrected: నేను మళ్లీ మార్గాన్ని తీసుకుని నిర్జన ఢాళిలో నడిచాను,  
+
+- Line 30:  
+  - Original: అలా స్థిరమైన పాదం ఎప్పుడూ దిగువన ఉండేది.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+కొంచెం విశ్రాంతి తీసుకున్న తర్వాత నా అలసటతో ఉన్న శరీరం,
+నేను మళ్లీ మార్గాన్ని తీసుకుని నిర్జన ఢాళిలో నడిచాను,
+అలా స్థిరమైన పాదం ఎప్పుడూ దిగువన ఉండేది.
+```
+]]></message>
+</messages>

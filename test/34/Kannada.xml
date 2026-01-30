@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+100 ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,  
+101 ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ  
+102 ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| Molti | “many” – quantifier of **animali** | ಅನೇಕ | many | OK |
+| son | copular “are” (linking subject to predicate) | — (omitted) | — | UNNECESSARY |
+| li | definite article “the” (plural) | — (omitted) | — | UNNECESSARY |
+| animali | “animals” – the beings being wedded | ಪ್ರಾಣಿಗಳು | animals | OK |
+| a | preposition “with / to” introducing relative clause | ಅವಳಿಗೆ | to her / for her | OK |
+| cui | relative pronoun “which / whom” (object of *a*) | — (integrated in “ಅವಳಿಗೆ”) | — | UNNECESSARY |
+| s'ammoglia | verb “wives / marries” (reflexive) | ಮದುವೆಯಾಗುವವು | will marry | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | and | OK |
+| più | comparative adverb “more” (degree) | ಇನ್ನೂ ಹೆಚ್ಚು | more / still more | OK |
+| saranno | future copula “shall be” (future existence) | ಸೇರಿಕೊಳ್ಳುತ್ತವೆ | will join / will be added | OK |
+| ancora | adverb “still / yet” (temporal) | — (implicit) | — | UNNECESSARY |
+| infin | subordinating conjunction “until / till” | …ಬರುವವರೆಗೆ | until … comes | OK |
+| che (1) | relative pronoun “that” introducing the hound clause | — (implicit in “…ಬರುವವರೆಗೆ”) | — | UNNECESSARY |
+| ’l | definite article “the” (masc. sg.) | — (omitted) | — | UNNECESSARY |
+| veltro | noun “hound” (subject of future clause) | ಹೊಂಡು | hound | OK |
+| verrà | future verb “shall come” (event) | ಬರುತ್ತದೆ | will come | OK |
+| che (2) | conjunction “that” introducing result clause | ಅದು | that | OK |
+| la | pronoun “her” (direct object) | ಅವಳನ್ನು | her | OK |
+| farà | causative verb “will make / will cause” | ತರುವದು | will bring / cause | OK |
+| morir | infinitive “to die” | ಮರಣಕ್ಕೆ | to death (die) | OK |
+| con | preposition “of / with” (cause) |ದಿಂದ | by / of | OK |
+| doglia | noun “grief” (cause of death) | ದುಃಖ | grief | OK |
+
+---
+
+### Items Flagged
+
+- **UNNECESSARY** (omitted because Kannada does not require them): `son`, `li`, `cui`, `ancora`, `che` (first), `’l`.
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are conveyed, and agreement (gender/number) is appropriate for Kannada.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 100:  
+  - Original: ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,  
+  - Issue: none  
+  - Corrected: ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,  
+
+- Line 101:  
+  - Original: ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ  
+  - Issue: none  
+  - Corrected: ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ  
+
+- Line 102:  
+  - Original: ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.  
+  - Issue: none  
+  - Corrected: ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.  
+
+```
+ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,
+ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ
+ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.
+```
+]]></message>
+</messages>

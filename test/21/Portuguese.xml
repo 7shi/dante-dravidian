@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Enquanto eu descia ao lugar baixo,
+diante dos meus olhos me foi apresentado um que
+por longo silêncio parecia fraco.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **Mentre** | Temporal subordinator introducing a simultaneous clause | **enquanto** | while | OK |
+| **ch'** | Subordinating conjunction linking “che io …” | — *(function covered by “enquanto”)* | — | **UNNECESSARY** |
+| **i'** | 1st sg personal pronoun, agent of the verb | **eu** | I | OK |
+| **rovinava** | Imperfect verb “was falling / descending” | **descia** | was descending | OK |
+| **in** | Preposition indicating direction toward a location | **ao** | to the | OK |
+| **basso** | Adjective “low” | **baixo** | low | OK |
+| **loco** | Noun “place” | **lugar** | place | OK |
+| **dinanzi** | Adverb / preposition “before” (spatial) | **diante** | before | OK |
+| **a** | Preposition linking to “li occhi” | — *(covered by “diante”)* | — | **UNNECESSARY** |
+| **li** | Definite article, plural “the” | **dos** | of the / the | OK |
+| **occhi** | Noun “eyes” | **olhos** | eyes | OK |
+| **mi** | Dative clitic “to me” (experiencer) | **me** | to me | OK |
+| **si** | Reflexive pronoun used in passive construction | — *(passive expressed by “foi”) *| — | **UNNECESSARY** |
+| **fu** | Auxiliary verb “was” (past remote) | **foi** | was | OK |
+| **offerto** | Past participle “presented / offered” | **apresentado** | presented | OK |
+| **chi** | Relative pronoun “one who” | **um que** | one who | OK |
+| **per** | Preposition “through” (cause/means) | **por** | through | OK |
+| **lungo** | Adjective “long” | **longo** | long | OK |
+| **silenzio** | Noun “silence” | **silêncio** | silence | OK |
+| **parea** | Verb “seemed” | **parecia** | seemed | OK |
+| **fioco** | Adjective “hoarse / weak” | **fraco** | weak | OK |
+
+---
+
+### Items flagged in the alignment  
+
+- **UNNECESSARY**: `ch'`, `a`, `si` – these elements are required in the Italian source for grammatical completeness but are naturally omitted in Portuguese because their functions are already expressed by other words (`enquanto`, `diante`, `foi`).  
+
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are represented in the Portuguese translation with correct meaning and appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 61**  
+  - Original: Enquanto eu descia ao lugar baixo,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 62**  
+  - Original: diante dos meus olhos me foi apresentado um que  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 63**  
+  - Original: por longo silêncio parecia fraco.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Enquanto eu descia ao lugar baixo,
+diante dos meus olhos me foi apresentado um que
+por longo silêncio parecia fraco.
+```
+]]></message>
+</messages>

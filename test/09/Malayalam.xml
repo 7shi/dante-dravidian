@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അങ്ങനെ എന്റെ ആത്മാവ് ഇപ്പോഴും പറക്കുകയായിരുന്നു,  
+അത് പിന്നിലേക്ക് തിരിഞ്ഞു പാസിനെ വീണ്ടും നോക്കാൻ  
+പാസ് ഒരിക്കലും ജീവിച്ച വ്യക്തിയെ വിട്ടിട്ടില്ല.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|----------------------|----------------------------------|-----------------------------|--------|
+| così | resultative adverb linking previous clause | **അങ്ങനെ** | “so / thus” | OK |
+| l'animo | speaker’s soul, subject of the clause | **ആത്മാവ്** | “soul” | OK |
+| mio | possessive adjective, “my” | **എന്റെ** | “my” | OK |
+| ch'ancor | relative pronoun + adverb “still” | **ഇപ്പോഴും** | “still” | OK |
+| fuggiva | imperfect verb, ongoing flight | **പറക്കുകയായിരുന്നു** | “was flying / was fleeing” | OK |
+| si | reflexive clitic (no separate word in Malayalam) | — | — | **UNNECESSARY** |
+| volse | past‑remote verb, “turned” | **തിരിഞ്ഞു** | “turned” | OK |
+| a (1) | preposition of direction (to) in *a retro* | — | — | **UNNECESSARY** |
+| retro | noun used adverbially, “backward” | **പിന്നിലേക്ക്** | “backwards / to the back” | OK |
+| a (2) | preposition introducing infinitive purpose | — | — | **UNNECESSARY** |
+| rimirar | infinitive “to look again” | **വീണ്ടും നോക്കാൻ** | “to look again” | OK |
+| lo | definite article (masc. sing.) | — | — | **UNNECESSARY** |
+| passo | noun, “pass” (mountain pass) | **പാസ്** | “pass” | OK |
+| che | relative pronoun “which” (integrated in Malayalam) | — | — | **UNNECESSARY** |
+| non | negation particle | **ഒരിക്കലും** | “never / not” | OK |
+| lasciò | past‑remote verb “left” (negative sense) | **വിട്ടിട്ടില്ല** | “has not left” | OK |
+| già | adverb “already” (not expressed) | — | — | **MISSING** |
+| mai | adverb “never” (covered by “ഒരിക്കലും”) | **ഒരിക്കലും** | “never” | OK |
+| persona | noun “person” | **വ്യക്തി** | “person” | OK |
+| viva | adjective “living” | **ജീവിച്ച** | “living” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *si, a (first), a (second), lo, che* – Malayalam does not require separate words for these grammatical particles.
+- **MISSING**: *già* – the notion “already” is not rendered in the Malayalam translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: അങ്ങനെ എന്റെ ആത്മാവ് ഇപ്പോഴും പറക്കുകയായിരുന്നു,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 26:
+  - Original: അത് പിന്നിലേക്ക് തിരിഞ്ഞു പാസിനെ വീണ്ടും നോക്കാൻ
+  - Issue: none
+  - Corrected: no change  
+
+- Line 27:
+  - Original: പാസ് ഒരിക്കലും ജീവിച്ച വ്യക്തിയെ വിട്ടിട്ടില്ല.
+  - Issue: missing “già” (already)
+  - Corrected: പാസ് ഇതുവരെ ഒരിക്കലും ജീവിച്ച വ്യക്തിയെ വിട്ടിട്ടില്ല.  
+
+```
+അങ്ങനെ എന്റെ ആത്മാവ് ഇപ്പോഴും പറക്കുകയായിരുന്നു,
+അത് പിന്നിലേക്ക് തിരിഞ്ഞു പാസിനെ വീണ്ടും നോക്കാൻ
+പാസ് ഇതുവരെ ഒരിക്കലും ജീവിച്ച വ്യക്തിയെ വിട്ടിട്ടില്ല.
+```
+]]></message>
+</messages>

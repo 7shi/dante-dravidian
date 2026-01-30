@@ -1,0 +1,63 @@
+# Italian
+
+133 che tu mi meni là dov' or dicesti,
+134 sì ch'io veggia la porta di san Pietro
+135 e color cui tu fai cotanto mesti».
+
+# English
+
+that thou lead me thither whom thou now hast said, so that I may see the gate of St. Peter, and those whom thou makest so afflicted.”
+
+# Telugu
+
+133 నీవు నన్ను అక్కడికి నడిపించు, నీవు ఇప్పుడే చెప్పిన చోట,
+134 అలా నేను సెయింట్ పీటర్ గేటు చూడగలను
+135 మరియు నీవు ఎంతో బాధపడే వారిని.
+
+# Tamil
+
+133 நீ என்னை அங்கே அழைத்துச் செல்ல, நீ இப்போது சொன்ன இடத்திற்கு,
+134 அதனால் நான் புனித பீட்டரின் கதவைக் காண முடியும்
+135 மற்றும் நீ மிகவும் துயரப்படுத்தும் அவர்களை».
+
+# Kannada
+
+133 ನೀನು ಈಗ ಹೇಳಿದಂತೆ, ನನ್ನನ್ನು ಅಲ್ಲಿ ಕರೆದೊಯ್ಯು,
+134 ಅದರಿಂದ ನಾನು ಸಂತ ಪೀಟರ್‌ರ ದ್ವಾರವನ್ನು ನೋಡಲು ಸಾಧ್ಯವಾಗಲಿ
+135 ಮತ್ತು ನೀನು ಇಷ್ಟು ದುಃಖಿತರನ್ನಾಗಿಸುವವರು».
+
+# Malayalam
+
+133 നീ എന്നെ അവിടെ നയിക്കട്ടെ, നീ ഇപ്പോൾ പറഞ്ഞതുപോലെ,
+134 അങ്ങനെ ഞാൻ സെയ്ന്റ് പീറ്ററിന്റെ വാതിൽ കാണാൻ കഴിയും
+135 മറ്റും നീ അത്രയും ദുഃഖിതരാക്കുന്നവരും».
+
+# Japanese
+
+133 あなたが今言ったその場所へ私を導いてくれ,
+134 私が聖ペテロの門を見ることができるように
+135 そしてあなたがとても苦しめる人々
+
+# French
+
+133 que tu me conduises là où tu l’as dit maintenant,
+134 pour que je voie la porte de Saint Pierre
+135 et ceux que tu rends si affligés”.
+
+# Spanish
+
+133 que tú me lleves allí donde ahora has dicho,
+134 para que yo vea la puerta de San Pedro
+135 y a los que tú haces tan afligidos».
+
+# Portuguese
+
+133 que me leves até lá onde agora disseste,
+134 para que eu veja a porta de São Pedro
+135 e aqueles a quem fazes tão afligidos»
+
+# Esperanto
+
+133 ke vi konduku min tien kiun vi nun diris,
+134 por ke mi vidu la pordon de Sankta Petro
+135 kaj tiuj kiujn vi tiel afliktas».

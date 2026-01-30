@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E eu a ele poeta eu te imploro  
+por aquele Deus que tu não conheceste,  
+para que eu fuja este mal e pior,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| **E** | Conjunction linking this clause to the previous discourse | **E** | “And” | OK |
+| **io** (1st) | 1st‑person singular pronoun, subject of the speech act | **eu** | “I” | OK |
+| **a** | Preposition marking the addressee of the speech | **a** | “to” | OK |
+| **lui** | 3rd‑person masculine dative pronoun, the male addressee | **ele** | “him” | OK |
+| **Poeta** | Vocative noun identifying the addressee’s role | **poeta** | “Poet” | OK |
+| **io** (2nd) | 1st‑person singular pronoun, subject of “richiedo” | **eu** | “I” | OK |
+| **ti** | 2nd‑person singular pronoun, direct object of the beseeching | **te** | “you” (object) | OK |
+| **richeggio** | Verb “to beseech, implore” (present) | **imploro** | “I beseech” | OK |
+| **per** | Preposition introducing the instrumental basis of the request | **por** | “by” (instrumental) | OK |
+| **quello** | Demonstrative determiner “that” (specifying the God) | **aquele** | “that” | OK |
+| **Dio** | Proper noun “God” | **Deus** | “God” | OK |
+| **che** | Relative pronoun introducing the clause “that you did not know” | **que** | “who/that” | OK |
+| **tu** | 2nd‑person singular pronoun, subject of the relative clause | **tu** | “you” | OK |
+| **non** | Negation particle | **não** | “not” | OK |
+| **conoscesti** | Verb (past) “you did not know” | **conheceste** | “you did not know” | OK |
+| **acciò** | Purpose conjunction “in order that” | **para** | “for” (purpose) | OK |
+| **ch'io** | Subordinating conjunction + subject “that I” | **que eu** | “that I” | OK |
+| **fuga** | Verb (subjunctive) “may escape” | **fuja** | “may escape” | OK |
+| **questo** | Demonstrative adjective “this” | **este** | “this” | OK |
+| **male** | Noun “ill, a negative condition” | **mal** | “ill” | OK |
+| **e** | Coordinating conjunction “and” | **e** | “and” | OK |
+| **peggio** | Comparative adjective “worse” (more severe) | **pior** | “worse” | OK |
+
+### Issues Detected
+- **None.** All source words are represented in the Portuguese translation, the grammatical agreements (gender, number) are correct, and no unnecessary elements were added.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 130**  
+  - Original: E eu a ele poeta eu te imploro  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 131**  
+  - Original: por aquele Deus que tu não conheceste,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 132**  
+  - Original: para que eu fuja este mal e pior,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+E eu a ele poeta eu te imploro
+por aquele Deus que tu não conheceste,
+para que eu fuja este mal e pior,
+```
+]]></message>
+</messages>

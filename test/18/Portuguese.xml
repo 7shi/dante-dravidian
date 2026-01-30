@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+esta me impôs tanta gravidade  
+com o medo que surgia da sua vista,  
+que perdi a esperança da altura.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Portuguese) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| **questa** | female agent who acts | **esta** | “this (she)” | OK |
+| **mi** | recipient/experiencer of the caused state | **me** | “me” | OK |
+| **porse** | “caused”, act of bringing about a feeling | **impôs** | “imposed / caused” | OK |
+| **tanto** | high degree of the following noun | **tanta** | “so much” (feminine) | OK |
+| **di** (line 52) | preposition linking quantity to noun (“of”) | — (omitted) | — | **UNNECESSARY** |
+| **gravezza** | the affective state “heaviness” | **gravidade** | “heaviness / gravity” | OK |
+| **con** | preposition “with” introducing an accompanying circumstance | **com** | “with” | OK |
+| **la** | definite article marking a specific noun | **o** | “the” (masc.) | OK |
+| **paura** | emotion “fear” that arises from seeing her | **medo** | “fear” | OK |
+| **ch'uscia** | relative clause verb “that came out / emerged” | **que surgia** | “that emerged” | OK |
+| **di** (line 53) | preposition “from” indicating source | **da** | “from” | OK |
+| **sua** | possessive adjective “her” | **sua** | “her” | OK |
+| **vista** | “sight” – the visual perception of the female agent | **vista** | “sight” | OK |
+| **ch'io** | relative pronoun introducing the clause “that I …” | **que** | “that” | OK |
+| **perdei** | “lost” – act of no longer possessing | **perdi** | “lost” | OK |
+| **la** | definite article marking a specific noun | **a** | “the” (fem.) | OK |
+| **speranza** | mental expectation “hope” | **esperança** | “hope” | OK |
+| **de** | preposition “of” linking hope to its content | **da** | “of” | OK |
+| **l'altezza** | metaphorical “height” – lofty goal | **altura** | “height” | OK |
+
+### Issues Detected
+- **UNNECESSARY**: *di* (line 52) – the Italian preposition “di” is not required in Portuguese because the noun *gravidade* can stand without a linking preposition in this construction.  
+
+No other missing, wrong, or grammatical problems were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: **esta me impôs tanta gravidade**
+  - Issue: none
+  - Corrected: **esta me impôs tanta gravidade**
+
+- Line 53:
+  - Original: **com o medo que surgia da sua vista,**
+  - Issue: none
+  - Corrected: **com o medo que surgia da sua vista,**
+
+- Line 54:
+  - Original: **que perdi a esperança da altura.**
+  - Issue: none
+  - Corrected: **que perdi a esperança da altura.**
+
+```
+esta me impôs tanta gravidade
+com o medo que surgia da sua vista,
+que perdi a esperança da altura.
+```
+]]></message>
+</messages>

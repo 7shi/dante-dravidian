@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അങ്ങനെ എന്നെ ശാന്തിയില്ലാത്ത മൃഗമാക്കി,  
+അത്, എനിക്ക് എതിരായി വരികയും, ക്രമേണ  
+എന്നെ പിന്നോട്ട് തള്ളിയിരുന്നു അവിടെ സൂര്യൻ മൌനമായിടത്ത്.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **tal** | “such” (demonstrative) | **അങ്ങനെ** | “so / thus” | OK |
+| **mi** | 1st‑person singular object | **എന്നെ** | “me” | OK |
+| **fece** | causative “made” | **മൃഗമാക്കി** | “made (into) a beast” | OK |
+| **la** | definite article “the” | – (omitted) | – | **UNNECESSARY** |
+| **bestia** | “beast” | **മൃഗം** (contained in **മൃഗമാക്കി**) | “beast” | OK |
+| **sanza** | preposition “without” | **ശാന്തിയില്ലാത്ത** | “without peace” | OK |
+| **pace** | “repose / peace” | **ശാന്തി** (within **ശാന്തിയില്ലാത്ത**) | “peace” | OK |
+| **che** | relative pronoun “that” | **അത്** | “that” | OK |
+| **venendomi** | gerund “coming on (to) me” | **വരികയും** | “coming (to) me” | OK |
+| **'ncontro** | preposition “against” | **എതിരായി** | “against” | OK |
+| **a** (1st) | part of idiom “a poco a poco” (incremental) | – (merged) | – | **UNNECESSARY** |
+| **poco** (1st) | “little” (degree) | – (merged) | – | **UNNECESSARY** |
+| **a** (2nd) | part of idiom “a poco a poco” | – (merged) | – | **UNNECESSARY** |
+| **poco** (2nd) | “little” (degree) | – (merged) | – | **UNNECESSARY** |
+| **mi** (line 60) | 1st‑person singular object | **എന്നെ** | “me” | OK |
+| **ripigneva** | imperfect “was pushing back” | **തള്ളിയിരുന്നു** | “was pushing” | OK |
+| **là** | adverb of place “there” | **അവിടെ** | “there” | OK |
+| **dove** | relative adverb “where” | **മൌനമായിടത്ത്** (contains “where”) | “where” | OK |
+| **'l** | definite article “the” | – (omitted) | – | **UNNECESSARY** |
+| **sol** | noun “Sun” | **സൂര്യൻ** | “Sun” | OK |
+| **tace** | verb “is silent” | **മൌനമായിടത്ത്** (contains “silent”) | “silent” | OK |
+
+---
+
+### Issues Detected
+- **UNNECESSARY**: Articles **la** and **'l** are omitted in Malayalam (natural, no loss of meaning).  
+- **UNNECESSARY**: The four particles **a, poco, a, poco** are absorbed into the single Malayalam adverb **ക്രമേണ**; they do not appear as separate words.  
+- **GRAMMAR / PUNCTUATION**: Line 59 in the Malayalam output lacks the required trailing comma (the source line ends with a comma). This is a punctuation error.  
+
+No **MISSING** or **WRONG** lexical items were found; all source meanings are represented in the target translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 58:
+  - Original: tal mi fece la bestia sanza pace,
+  - Issue: none
+  - Corrected: അങ്ങനെ എന്നെ ശാന്തിയില്ലാത്ത മൃഗമാക്കി,
+- Line 59:
+  - Original: che, venendomi 'ncontro, a poco a poco
+  - Issue: missing commas and missing verb “coming on”
+  - Corrected: അത്, എനിക്ക് എതിരായി വരികയും, ക്രമേണ
+- Line 60:
+  - Original: mi ripigneva là dove 'l sol tace.
+  - Issue: none
+  - Corrected: എന്നെ പിന്നോട്ട് തള്ളിയിരുന്നു അവിടെ സൂര്യൻ മൌനമായിടത്ത്.
+
+```
+അങ്ങനെ എന്നെ ശാന്തിയില്ലാത്ത മൃഗമാക്കി,
+അത്, എനിക്ക് എതിരായി വരികയും, ക്രമേണ
+എന്നെ പിന്നോട്ട് തള്ളിയിരുന്നു അവിടെ സൂര്യൻ മൌനമായിടത്ത്.
+```
+]]></message>
+</messages>

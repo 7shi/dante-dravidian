@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Temp' era dal principio del mattino,  
+മറ്റും 'ല സോൾ മോണ്ടാവ 'ൻ സൂ കോൺ ക്വെല്ലെ സ്റ്റെല്ലെ  
+അവൻ കൂടെ എന്ന നക്ഷത്രങ്ങൾ ദൈവിക പ്രേമം ഉണ്ടായ പോൾ
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (derived from the Step 2 “translation”)**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (as it appears in the Step 2 output) | Back‑Translation (English) | Status |
+|-------------|-------------------------------------------|----------------------------------------------------------|-----------------------------|--------|
+| **Temp'** | The temporal interval being spoken about | Temp' | “time” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **era** | Predicate of existence for the time | era | “was” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **dal** | Introduces the locative phrase “principio del mattino” | dal | “from the” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **principio** | The initial point of the morning | principio | “beginning” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **del** | Links “principio” to “mattino” | del | “of the” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **mattino,** | The daily period that is beginning (punctuated) | mattino, | “morning,” (unchanged) | **WRONG** – not rendered in Malayalam |
+| **e** | Joins the first clause with the second | മറ്റും | “and” (Malayalam) | **OK** |
+| **'l** | Definite article determining “sol” | ’ല | “the” (article, transliterated) | **WRONG** – should be omitted or rendered as Malayalam article (അത്) |
+| **sol** | The celestial body that is moving | സോൾ | “Sun” (transliterated) | **OK** (acceptable transliteration) |
+| **montava** | Ongoing upward motion of the Sun | മോണ്ടാവ | “was mounting” (transliterated) | **WRONG** – should be a Malayalam verb (ഉയരുന്നു) |
+| **'n** | Directional preposition within “'n sù” | ’ൻ | “up” (transliterated) | **WRONG** – should be Malayalam directional adverb (മുകളിലേക്ക്) |
+| **sù** | Directional adverb completing “upward” | സൂ | “upward” (transliterated) | **WRONG** – same as above |
+| **con** | Introduces the accompanying entities | കോൺ | “with” (transliterated) | **WRONG** – should be Malayalam preposition (ഒപ്പം) |
+| **quelle** | Demonstrative adjective specifying “stars” | ക്വെല്ലെ | “those” (transliterated) | **WRONG** – should be Malayalam demonstrative (അവ) |
+| **stelle** | The luminous bodies accompanying the Sun | സ്റ്റെല്ലെ | “stars” (transliterated) | **WRONG** – should be Malayalam noun (നക്ഷത്രങ്ങൾ) |
+| **ch'eran** | Relative clause verb “that were” | അവൻ | “that were” (Malayalam “he”) | **WRONG** – should be a relative pronoun + verb (അവിടെ) |
+| **con** (2nd) | Marks accompaniment of “lui” | കൂടെ | “with” (Malayalam) | **OK** (acceptable) |
+| **lui** | The entity (the Sun) with which the stars were together | എന്ന | “him” (Malayalam “that”) | **WRONG** – should be Malayalam pronoun (അവന്) |
+| **quando** | Temporal clause marker “when” | നക്ഷത്രങ്ങൾ | “when” (incorrectly rendered as “stars”) | **WRONG** |
+| **l'amor** | Divine principle that acts | ദൈവിക | “Divine” (adjective) | **WRONG** – missing “Love” |
+| **divino** | Qualifies “Love” as sacred | പ്രേമം | “Love” (Malayalam) | **WRONG** – adjective placed after noun, missing agreement |
+| **(implicit verb)** | (elided verb “set in motion”) | ഉണ്ടായ | “set in motion” (Malayalam “created”) | **UNNECESSARY** – verb not present in source line |
+| **(implicit continuation)** | (continuation of the clause) | പോൾ | “that” (conjunctive) | **UNNECESSARY** – not in source |
+
+---
+
+### Items Requiring Attention  
+
+**MISSING** (source elements not represented at all):  
+- None – every source token appears in the Step 2 output, but many are merely transliterated or left unchanged.
+
+**WRONG** (incorrect lexical choice, mistranslation, or inappropriate transliteration):  
+- Temp', era, dal, principio, del, mattino, ’l, montava, ’n, sù, con (first), quelle, stelle, ch'eran, lui, quando, l'amor, divino.
+
+**GRAMMAR** (agreement or syntactic errors):  
+- ’l – article retained though Malayalam does not use gendered articles.  
+- con (first) – transliterated “കോൺ” does not function as a Malayalam preposition.  
+- con (second) – correct form “കൂടെ” but the surrounding clause lacks proper verb agreement.  
+- divino – adjective placed after noun without proper agreement.
+
+**UNNECESSARY** (elements that are superfluous in Malayalam):  
+- The transliterated article ’l (Malayalam normally omits articles).  
+- The verb “ഉണ്ടായ” and conjunction “പോൾ” that were inserted to fill a gap but do not correspond to any source token.
+
+---
+
+**Summary:** The Step 2 “translation” largely failed to render the Italian source into proper Malayalam. Most tokens are either left unchanged, transliterated, or replaced by unrelated Malayalam words, resulting in numerous **WRONG** and **GRAMMAR** issues. A correct Malayalam rendering would require dropping unnecessary articles, using appropriate Malayalam verbs (e.g., “ഉയരുന്നു”), prepositions (ഒപ്പം), demonstratives (അവ), and nouns (നക്ഷത്രങ്ങൾ), and preserving the semantic relations indicated in the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 37**  
+  - **Original:** Temp' era dal principio del mattino,  
+  - **Issue:** All words left untranslated (MISSING/WRONG).  
+  - **Corrected:** കാലം പ്രഭാതത്തിന്റെ തുടക്കത്തിൽ ആയിരുന്നു,
+
+- **Line 38**  
+  - **Original:** മറ്റും 'ല സോൾ മോണ്ടാവ 'ൻ സൂ കോൺ ക്വെല്ലെ സ്റ്റെല്ലെ  
+  - **Issue:** Mixed Latin script, transliterations, missing Malayalam verbs and prepositions (WRONG/GRAMMAR).  
+  - **Corrected:** സൂര്യൻ ആ നക്ഷത്രങ്ങളോടൊപ്പം മുകളിലേക്ക് ഉയരുകയായിരുന്നു
+
+- **Line 39**  
+  - **Original:** അവൻ കൂടെ എന്ന നക്ഷത്രങ്ങൾ ദൈവിക പ്രേമം ഉണ്ടായ പോൾ  
+  - **Issue:** Incorrect verb forms and particle usage (GRAMMAR).  
+  - **Corrected:** അവൻ കൂടെ ഉണ്ടായിരുന്ന നക്ഷത്രങ്ങൾ ദൈവിക പ്രേമം ഉണ്ടായപ്പോൾ
+
+```
+കാലം പ്രഭാതത്തിന്റെ തുടക്കത്തിൽ ആയിരുന്നു,
+സൂര്യൻ ആ നക്ഷത്രങ്ങളോടൊപ്പം മുകളിലേക്ക് ഉയരുകയായിരുന്നു
+അവൻ കൂടെ ഉണ്ടായിരുന്ന നക്ഷത്രങ്ങൾ ദൈവിക പ്രേമം ഉണ്ടായപ്പോൾ
+```
+]]></message>
+</messages>

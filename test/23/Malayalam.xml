@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അവൻ എന്നോട് മറുപടി പറഞ്ഞു മനുഷ്യൻ അല്ല മനുഷ്യൻ ഞാൻ ഒരിക്കൽ ആയിരുന്നു,
+എന്റെ മാതാപിതാക്കൾ ലൊംബാർഡുകൾ ആയിരുന്നു,
+രാജ്യത്തെ അടിസ്ഥാനമാക്കി ഞങ്ങൾ രണ്ടുപേരും മാൻറ്റുവാനുകൾ ആണ്.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|-------------------------------------------|----------------------------------|-----------------------------|--------|
+| Rispuosemi | “He answered me” (speech act) | **അവൻ എന്നോട് മറുപടി പറഞ്ഞു** | “He answered me” | OK |
+| Non | Negation of the predicate “man” | **അല്ല** | “not” | OK |
+| omo (1) | Predicate nominal: speaker is **not** a man (present) | **മനുഷ്യൻ** | “man” | OK |
+| omo (2) | Predicate nominal: speaker **was** a man (past) | **മനുഷ്യൻ** | “man” | OK |
+| già | Temporal adverb indicating past (“once”) | **ഒരിക്കൽ** | “once” | OK |
+| fui | Copular verb “was” (1st sg.) | **ആയിരുന്നു** | “was” | OK |
+| e | Coordinating conjunction linking clauses (“and”) | — | — | **MISSING** |
+| li | Definite article marking “the” (plural) | — | — | **UNNECESSARY** (articles are omitted in Malayalam) |
+| parenti | Noun “parents” (plural) | **മാതാപിതാക്കൾ** | “parents” | OK |
+| miei | Possessive adjective “my” | **എന്റെ** | “my” | OK |
+| furon | Copular verb “were” (3rd pl.) | **ആയിരുന്നു** | “were” | OK |
+| lombardi | Ethnic noun “Lombards” (plural) | **ലൊംബാർഡുകൾ** | “Lombards” | OK |
+| mantoani | Noun “Mantuans” (plural) | **മാൻറ്റുവാനുകൾ** | “Mantuans” | OK |
+| per | Preposition introducing basis “by” | **രാജ്യത്തെ അടിസ്ഥാനമാക്കി** | “by country” | OK |
+| patrïa | Noun “country” (basis of identity) | **രാജ്യം** | “country” | OK |
+| ambedui | Quantifier “both” (referring to speaker + parents) | **ഞങ്ങൾ രണ്ടുപേരും** | “both of us” | OK |
+
+### Items Requiring Attention
+- **MISSING:** `e` (the coordinating conjunction “and”) was omitted in the Malayalam rendering.  
+- **UNNECESSARY:** `li` (definite article) is naturally omitted in Malayalam and therefore has no direct counterpart.  
+
+All other source tokens are represented adequately, with correct grammatical agreement and appropriate lexical choices.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 67:
+  - Original: അവൻ എന്നോട് മറുപടി പറഞ്ഞു മനുഷ്യൻ അല്ല മനുഷ്യൻ ഞാൻ ഒരിക്കൽ ആയിരുന്നു,
+  - Issue: missing colon after “മറുപടി പറഞ്ഞു” and missing internal comma after “അല്ല”.
+  - Corrected: **അവൻ എന്നോട് മറുപടി പറഞ്ഞു: മനുഷ്യൻ അല്ല, മനുഷ്യൻ ഞാൻ ഒരിക്കൽ ആയിരുന്നു,**
+
+- Line 68:
+  - Original: എന്റെ മാതാപിതാക്കൾ ലൊംബാർഡുകൾ ആയിരുന്നു,
+  - Issue: missing coordinating conjunction “and”.
+  - Corrected: **മറ്റും എന്റെ മാതാപിതാക്കൾ ലൊംബാർഡുകൾ ആയിരുന്നു,**
+
+- Line 69:
+  - Original: രാജ്യത്തെ അടിസ്ഥാനമാക്കി ഞങ്ങൾ രണ്ടുപേരും മാൻറ്റുവാനുകൾ ആണ്.
+  - Issue: word order and phrasing not aligned with source; “both” should modify the subject, not appear as separate phrase.
+  - Corrected: **മാൻറ്റുവാനുകൾ രാജ്യത്തെ അടിസ്ഥാനത്തിൽ ഇരുവരും.**
+
+```
+അവൻ എന്നോട് മറുപടി പറഞ്ഞു: മനുഷ്യൻ അല്ല, മനുഷ്യൻ ഞാൻ ഒരിക്കൽ ആയിരുന്നു,
+മറ്റും എന്റെ മാതാപിതാക്കൾ ലൊംബാർഡുകൾ ആയിരുന്നു,
+മാൻറ്റുവാനുകൾ രാജ്യത്തെ അടിസ്ഥാനത്തിൽ ഇരുവരും.
+```
+]]></message>
+</messages>

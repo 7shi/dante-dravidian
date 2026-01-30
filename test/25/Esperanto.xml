@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+73 Poeto estis mi kaj kantis pri tiu justa  
+74 filo de Anchiso kiu venis de Trojo,  
+75 post la fiera Ilio estis bruligita.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Esperanto)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-------------------------------------------|--------------------|------------------------|--------|
+| Poeta | speaker’s artistic identity (poet) | Poeto | poet | OK |
+| fui | copular past “was” + speaker identity | estis mi | was I | OK |
+| e | coordinator linking two clauses | kaj | and | OK |
+| cantai | past action “sang” about something | kantis | sang | OK |
+| di | preposition introducing object of singing | pri | about/of | OK |
+| quel | demonstrative determiner “that” | tiu | that | OK |
+| giusto | adjective describing the son as just | justa | just | OK |
+| figliuol | male child, son of Anchises | filo | son | OK |
+| d'Anchise | genitive indicating parent‑child relation | de Anchiso | of Anchises | OK |
+| che (relative) | introduces relative clause “who …” | kiu | who | OK |
+| venne | past motion “came” from Troy | venis | came | OK |
+| di (origin) | preposition marking source/origin | de | from | OK |
+| Troia | proper name “Troy” | Trojo | Troy | OK |
+| poi | temporal adverb “after” | post | after | OK |
+| che (subordinating) | resultative/conjunctive “that” (linking clause) – not needed in Esperanto | — | — | **UNNECESSARY** |
+| 'l | definite article “the” | la | the | OK |
+| superbo | adjective “proud” | fiera | proud | OK |
+| Ilïón | proper name “Ilion” (the city) | Ilio | Ilion | OK |
+| fu | auxiliary copula “was” (passive) | estis | was | OK |
+| combusto | past participle passive “burned” | bruligita | burned | OK |
+
+### Items flagged
+- **UNNECESSARY**: the second *che* (line 75) – Esperanto does not require a conjunction here; the temporal adverb *post* already conveys the relationship.  
+
+No source words are missing, wrongly translated, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 73:
+  - Original: Poeto estis mi kaj kantis pri tiu justa
+  - Issue: none
+  - Corrected: no change  
+
+- Line 74:
+  - Original: filo de Anchiso kiu venis de Trojo,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 75:
+  - Original: post la fiera Ilio estis bruligita.
+  - Issue: UNNECESSARY (the source conjunction “che” is omitted, which is appropriate in Esperanto)
+  - Corrected: no change  
+
+```
+Poeto estis mi kaj kantis pri tiu justa
+filo de Anchiso kiu venis de Trojo,
+post la fiera Ilio estis bruligita.
+```
+]]></message>
+</messages>

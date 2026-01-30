@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అప్పుడు భయం కొంచెం నిశ్శబ్దమైంది,  
+అది నా హృదయపు సరస్సులో కొనసాగింది  
+నేను ఎంతో దయతో గడిపిన రాత్రి.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Allor | “then, at that moment” | **అప్పుడు** | “then” | OK |
+| fu | copular past “was” (part of “was quieted”) | **నిశ్శబ్దమైంది** | “became quiet” | OK |
+| la | definite article (fem.) | — | — | UNNECESSARY |
+| paura | “fear” | **భయం** | “fear” | OK |
+| un | indefinite article (masc.) | — | — | UNNECESSARY |
+| poco | degree adverb “a little” | **కొంచెం** | “a little” | OK |
+| queta | adjective “quieted” | **నిశ్శబ్దమైంది** | “quieted / became quiet” | OK |
+| che | relative pronoun “which” | **అది** | “that / which” | OK |
+| nel | “in the” (in + the) | **సరస్సులో** | “in the lake” | OK |
+| lago | “lake” | **సరస్సు** | “lake” | OK |
+| del | genitive “of the” | **హృదయపు** | “of the heart” | OK |
+| cor | “heart” (poetic) | **హృదయం** | “heart” | OK |
+| m'era | pluperfect auxiliary “had (to me) been” | — | — | UNNECESSARY |
+| durata | verb “had lasted” | **కొనసాగింది** | “continued / lasted” | OK |
+| la | definite article (fem.) | — | — | UNNECESSARY |
+| notte | “night” | **రాత్రి** | “night” | OK |
+| ch'i' | relative pronoun “that” | — | — | UNNECESSARY |
+| passai | “I passed” (simple past) | **గడిపిన** | “passed / endured” | OK |
+| con | preposition “with” | **తో** | “with” | OK |
+| tanta | degree adjective “so much” | **ఎంతో** | “so much” | OK |
+| pieta | “pity” | **దయ** | “pity / compassion” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: `la` (twice), `un`, `m'era`, `ch'i'` – articles, auxiliary, and relative pronoun are naturally omitted in Telugu.  
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 19:
+  - Original: అప్పుడు భయం కొంచెం నిశ్శబ్దమైంది,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 20:
+  - Original: అది నా హృదయపు సరస్సులో కొనసాగింది
+  - Issue: none
+  - Corrected: no change  
+
+- Line 21:
+  - Original: నేను ఎంతో దయతో గడిపిన రాత్రి.
+  - Issue: none
+  - Corrected: no change  
+
+```
+అప్పుడు భయం కొంచెం నిశ్శబ్దమైంది,
+అది నా హృదయపు సరస్సులో కొనసాగింది
+నేను ఎంతో దయతో గడిపిన రాత్రి.
+```
+]]></message>
+</messages>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ನಾನು ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ಪಡೆದ ನಂತರ ನನ್ನ ದಣಿದ ದೇಹ,  
+ನಾನು ಮರುಮಾರ್ಗವನ್ನು ನಿರ್ಜನ ತೊಗಟೆಯ ಮೂಲಕ ತೆಗೆದುಕೊಂಡೆ,  
+ಅದರಿಂದ ದೃಢವಾದ ಪಾದ ಯಾವಾಗಲೂ ಕೆಳಗಿರುವುದು.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|----------------------|----------------------|----------------------------|--------|
+| Poi | temporal adverb “after” | ನಂತರ | after | OK |
+| ch’èi | 1st‑person perfect auxiliary “I have” | ನಾನು | I | OK |
+| posato | past participle of *posare* “to rest” | ಪಡೆದ | taken / had | OK |
+| un | indefinite article “a” | — | (none) | **UNNECESSARY** |
+| poco | adverb of quantity “little” | ಸ್ವಲ್ಪ | a little | OK |
+| il | definite article “the” (masc.) | — | (none) | **UNNECESSARY** |
+| corpo | noun “body” | ದೇಹ | body | OK |
+| lasso | adjective “weary” | ದಣಿದ | weary | OK |
+| ripresi | 1st‑person past “I resumed / took up again” | ತೆಗೆದುಕೊಂಡೆ | took / resumed | OK |
+| via | noun “way, path” | ಮಾರ್ಗವನ್ನು | the way | OK |
+| per | preposition “along, through” | ಮೂಲಕ | through / along | OK |
+| la | definite article “the” (fem.) | — | (none) | **UNNECESSARY** |
+| piaggia | noun (archaic) “slope, hillside” | ತೊಗಟೆ | slope | OK |
+| diserta | adjective “deserted, empty” | ನಿರ್ಜನ | deserted | OK |
+| sì | resultative adverb “so” | ಅದರಿಂದ | so (as a result) | OK |
+| che | subordinating conjunction “that” | — | (none) | **UNNECESSARY** |
+| ’l (article) | definite article “the” (masc.) | — | (none) | **UNNECESSARY** |
+| piè | noun “foot” | ಪಾದ | foot | OK |
+| fermo | adjective “firm, steady” | ದೃಢವಾದ | firm | OK |
+| sempre | adverb “always” | ಯಾವಾಗಲೂ | always | OK |
+| era | imperfect of *essere* “was” | — | (none) | **UNNECESSARY** |
+| ’l (article) | definite article “the” (masc.) | — | (none) | **UNNECESSARY** |
+| più | comparative particle “more / –er” | — | (none) | **UNNECESSARY** |
+| basso | adjective “low, lower” | ಕೆಳಗಿರುವುದು | is lower | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *un, il, la, ’l (×3), che, era, più* – Italian articles, conjunctions, and the comparative particle have no direct lexical counterpart in Kannada and are naturally omitted.  
+- **OK**: All other source words are represented in the Kannada translation with appropriate lexical items and correct grammatical agreement.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 28:
+  - Original: Poi ch'èi posato un poco il corpo lasso,
+  - Issue: none
+  - Corrected: no change  
+- Line 29:
+  - Original: ripresi via per la piaggia diserta,
+  - Issue: none
+  - Corrected: no change  
+- Line 30:
+  - Original: sì che ’l piè fermo sempre era ’l più basso.
+  - Issue: none
+  - Corrected: no change  
+
+```kannada
+ನಾನು ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ಪಡೆದ ನಂತರ ನನ್ನ ದಣಿದ ದೇಹ,
+ನಾನು ಮರುಮಾರ್ಗವನ್ನು ನಿರ್ಜನ ತೊಗಟೆಯ ಮೂಲಕ ತೆಗೆದುಕೊಂಡೆ,
+ಅದರಿಂದ ದೃಢವಾದ ಪಾದ ಯಾವಾಗಲೂ ಕೆಳಗಿರುವುದು.
+```
+]]></message>
+</messages>

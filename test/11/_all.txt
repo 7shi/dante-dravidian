@@ -1,0 +1,63 @@
+# Italian
+
+31 Ed ecco, quasi al cominciar de l'erta,
+32 una lonza leggera e presta molto,
+33 che di pel macolato era coverta;
+
+# English
+
+And lo! almost at the beginning of the steep a she-leopard, light and very nimble, which was covered with a spotted coat.
+
+# Telugu
+
+31 మరియు, చూడు, పర్వత‑పథం యొక్క ప్రారంభంలో సుమారు,
+32 ఒక స్త్రీ‑చీత, తేలికైనది మరియు చాలా చురుకైనది,
+33 అది దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+
+# Tamil
+
+31 மற்றும் இதோ! சாய்ந்த பாதையின் தொடக்கத்திற்கு சுமார்,
+32 ஒரு பெண் புலி இலகுவாகவும் மிகவும் வேகமாகவும்,
+33 அது புள்ளிகளுடன் கூடிய தோலால் மூடப்பட்டிருந்தது;
+
+# Kannada
+
+31 ಮತ್ತು ಇಲ್ಲಿದೆ, ಸುಮಾರು ಏರಿಕೆಯ ಪ್ರಾರಂಭದಲ್ಲಿ,
+32 ಒಂದು ಚಿರತೆ ಹಗುರ ಮತ್ತು ಬಹಳ ಚುರುಕಾದ,
+33 ಮಚ್ಚುಮಚ್ಚು ಚುಕ್ಕೆಗಳಿರುವ ಕೂದಲಿನಿಂದ ಮುಚ್ಚಲ್ಪಟ್ಟಿತ್ತು;
+
+# Malayalam
+
+31 കയറ്റത്തിന്റെ ആരംഭം അടുത്തു,
+32 ഒരു ലഘുവായ വളരെ ചപലമായ ചിതലു,
+33 അത് ചുവട്ടുള്ള മുടിയാൽ മൂടപ്പെട്ടിരുന്നു;
+
+# Japanese
+
+31 そしてほら急な道の始まりのほぼそこに，
+32 軽くてとてもすばやい雌豹が，
+33 斑点のある毛皮に覆われていた；
+
+# French
+
+31 Et voilà, presque au commencement de la pente,
+32 une panthère légère et très agile,
+33 qui était couverte d'un pelage maculé;
+
+# Spanish
+
+31 Y he aquí, casi al comienzo de la cuesta,
+32 una leona ligera y muy ágil,
+33 que estaba cubierta de pelaje manchado;
+
+# Portuguese
+
+31 E eis quase ao início da ladeira,
+32 uma leoparda leve e muito ágil,
+33 que era coberta de pelagem manchada;
+
+# Esperanto
+
+31 Kaj jen preskaŭ ĉe la komenco de la kruta vojo,
+32 leopardo malpeza kaj tre rapida,
+33 kiu estis kovrita per makulita mantelo;

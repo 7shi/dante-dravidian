@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+すべての領域で彼は支配しそこでも統治する;  
+そこは彼の都市であり高き座である:  
+ああそこに選ばれた者は幸せだ！
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Japanese translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (to English) | Status |
+|-------------|----------------------|----------------------|--------------------------------|--------|
+| In | preposition “in” (introduces the domain “all parts”) | で (as part of **領域で**) | “in” (locative) | OK |
+| tutte | adjective “all” (quantifier) | すべての | “all” | OK |
+| parti | noun “parts” (the set of regions) | 領域 | “regions / parts” | OK |
+| impera | verb “governs” (exerts rule) | 支配し | “governs” (conjunctive) | OK |
+| e | conjunction “and” (coordinates two predicates) | し (conjunctive) | “and” (as connective) | OK |
+| quivi | adverb “there” (place of reign) | そこでも | “there also” | OK |
+| regge | verb “reigns” (holds sovereign authority) | 統治する | “reigns” | OK |
+| quivi | adverb “there” (place of city & seat) | そこは | “there is” | OK |
+| è | copular verb “is” (asserts existence) | である | “is” | OK |
+| la | definite article (feminine singular) | — (omitted) | *(none)* | **UNNECESSARY** |
+| sua | possessive adjective “his” (ownership) | 彼の | “his” | OK |
+| città | noun “city” (urban domain) | 都市 | “city” | OK |
+| e | conjunction “and” (coordinates “city” and “seat”) | であり | “and” (copular conjunction) | OK |
+| l'alto | adjective “lofty” (qualifies seat) | 高き | “lofty” | OK |
+| seggio | noun “seat” (throne) | 座 | “seat” | OK |
+| oh | interjection “O” (vocative) | ああ | “oh” (exclamation) | OK |
+| felice | adjective “happy” (state of the chosen) | 幸せだ | “happy” | OK |
+| colui | pronoun “he / the one” (subject of election) | 者は | “the one (subject)” | OK |
+| cu' | relative pronoun “who/whom” (introduces relative clause) | — (omitted) | *(none)* | **UNNECESSARY** |
+| ivi | adverb “there” (location of election) | そこに | “there” (locative) | OK |
+| elegge | verb “elects” (chooses) | 選ばれた | “was chosen / elected” (passive) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la` (definite article) – Japanese does not use articles.  
+- **UNNECESSARY**: `cu'` (relative pronoun) – the relative clause is expressed without an explicit pronoun in Japanese.  
+
+No source words are missing, incorrectly translated, or grammatically mismatched in the Japanese rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 127**  
+  - Original: すべての領域で彼は支配しそこでも統治する;  
+  - Issue: none  
+  - Corrected: すべての領域で彼は支配しそこでも統治する;  
+
+- **Line 128**  
+  - Original: そこは彼の都市であり高き座である:  
+  - Issue: none  
+  - Corrected: そこは彼の都市であり高き座である:  
+
+- **Line 129**  
+  - Original: ああそこに選ばれた者は幸せだ！  
+  - Issue: none  
+  - Corrected: ああそこに選ばれた者は幸せだ！  
+
+```
+すべての領域で彼は支配しそこでも統治する;
+そこは彼の都市であり高き座である:
+ああそこに選ばれた者は幸せだ！
+```
+]]></message>
+</messages>

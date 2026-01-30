@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tiam li iris antaŭen kaj mi tenis ilin malantaŭ li.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| Allor | Temporal adverb marking a transition (“then”) | **Tiam** | then | OK |
+| si | Reflexive clitic indicating the subject acts on itself | – (omitted) | – (reflexive) | **UNNECESSARY** |
+| mosse | Verb “move onward” (action of proceeding forward) | **iris antaŭen** | went onward | OK |
+| e | Coordinating conjunction linking two clauses | **kaj** | and | OK |
+| io | First‑person singular pronoun, the speaker | **mi** | I | OK |
+| li | Masculine plural direct‑object pronoun (“them”) | **ilin** | them | OK |
+| tenni | Verb “keep, hold” | **tenis** | kept | OK |
+| dietro | Locative adverb meaning “behind (him)” | **malantaŭ li** | behind him | OK |
+
+### Items flagged
+- **UNNECESSARY**: *si* – the reflexive clitic has no counterpart in Esperanto and is naturally omitted.  
+
+No other missing, wrong, or grammatical errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 136:
+  - Original: Tiam li iris antaŭen kaj mi tenis ilin malantaŭ li.
+  - Issue: none
+  - Corrected: no change
+
+```
+Tiam li iris antaŭen kaj mi tenis ilin malantaŭ li.
+```
+]]></message>
+</messages>

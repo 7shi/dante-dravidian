@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E uma loba, que de todas as cobiças  
+parecia carregada em sua magreza,  
+e muitas gentes fez já viver desolados,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Ed | Coordinating conjunction “And” | **E** | “and” | OK |
+| una | Indefinite article, fem. sg. “a” | **uma** | “a” | OK |
+| lupa | Noun, fem. sg. “she‑wolf” | **loba** | “she‑wolf” | OK |
+| che | Relative pronoun “who” | **que** | “who” | OK |
+| di | Preposition “with” | **de** | “of/with” | OK |
+| tutte | Quantifier “all” | **todas** | “all” | OK |
+| brame | Noun, pl. “cravings” | **cobiças** | “cravings” | OK |
+| sembrava | Imperfect verb “seemed” | **parecia** | “seemed” | OK |
+| carca | Adjective “laden” | **carregada** | “laden” | OK |
+| ne | Preposition “in” | **em** | “in” | OK |
+| la | Definite article (part of “la sua”) | – | “the” | **UNNECESSARY** |
+| sua | Possessive adjective “her” | **sua** | “her” | OK |
+| magrezza | Noun “meagreness, thinness” | **magreza** | “thinness” | OK |
+| e | Coordinating conjunction “and” | **e** | “and” | OK |
+| molte | Quantifier “many” | **muitas** | “many” | OK |
+| genti | Noun, pl. “folk, people” | **gentes** | “people” | OK |
+| fé | Past‑remote of *fare* “made” | **fez** | “made” | OK |
+| già | Temporal adverb “already” | **já** | “already” | OK |
+| viver | Infinitive “to live” | **viver** | “to live” | OK |
+| grame | Noun “forlornness, grief” | **desolados** | “forlorn, desolate” | OK |
+
+### Issues Detected
+- **UNNECESSARY**: *la* – the Italian definite article is not required in Portuguese; it was omitted in the translation.  
+
+No other missing, wrong, or grammatical errors were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 49**:
+  - Original: `E uma loba, que de todas as cobiças`
+  - Issue: internal comma (UNNECESSARY)
+  - Corrected: `E uma loba que de todas as cobiças`
+
+- **Line 50**:
+  - Original: `parecia carregada em sua magreza,`
+  - Issue: none
+  - Corrected: `parecia carregada em sua magreza,`
+
+- **Line 51**:
+  - Original: `e muitas gentes fez já viver desolados,`
+  - Issue: verb‑subject agreement (GRAMMAR) – “fez” should agree with plural “gentes”
+  - Corrected: `e muitas gentes fizeram já viver desolados,`
+
+```text
+E uma loba que de todas as cobiças
+parecia carregada em sua magreza,
+e muitas gentes fizeram já viver desolados,
+```
+]]></message>
+</messages>

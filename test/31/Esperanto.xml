@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+«Al vi konvenas teni alian vojaĝon»,  
+Li respondis post kiam li vidis min plori,  
+«se vi volas eskapi de ĉi tiu sovaĝa loko;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| A | preposition marking dative “to you” | Al | “to” | OK |
+| te | 2nd‑person singular pronoun (accusative) | vi | “you” | OK |
+| convien | impersonal verb “it is fitting / obligatory” | konvenas | “it is fitting / obligatory” | OK |
+| tenere | infinitive “to hold / undertake” | teni | “to hold” | OK |
+| altro | adjective “another” (modifying a noun) | alian | “another” (accusative) | OK |
+| vïaggio | noun “journey” (accusative) | vojaĝon | “journey” | OK |
+| rispuose | 3rd‑sg. past verb “replied” | respondis | “replied” | OK |
+| poi | adverb “after” (temporal) | post | “after” | OK |
+| che | conjunction “when” (temporal) | kiam | “when” | OK |
+| lagrimar | infinitive “to weep” | plori | “to weep” | OK |
+| mi | 1st‑sg. pronoun (accusative) | min | “me” | OK |
+| vide | 3rd‑sg. past verb “saw” | vidis | “saw” | OK |
+| se | conditional conjunction “if” | se | “if” | OK |
+| vuo' | 2nd‑sg. verb “you want” (desire) | vi volas | “you want” | OK |
+| campar | infinitive “to escape” | eskapi | “to escape” | OK |
+| d'esto | preposition + demonstrative “of/from this” | de ĉi tiu | “from this” | OK |
+| loco | noun “place” | loko | “place” | OK |
+| selvaggio | adjective “savage, wild” | sovaĝa | “savage” | OK |
+
+---
+
+### Issues Detected
+- **MISSING:** none  
+- **WRONG:** none  
+- **GRAMMAR:** none  
+- **UNNECESSARY:** none  
+
+All source tokens are accounted for, correctly rendered in Esperanto, and no grammatical mismatches were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: «Al vi konvenas teni alian vojaĝon»,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2:**  
+  - Original: Li respondis post kiam li vidis min plori,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3:**  
+  - Original: «se vi volas eskapi de ĉi tiu sovaĝa loko;»  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+«Al vi konvenas teni alian vojaĝon»,  
+Li respondis post kiam li vidis min plori,  
+«se vi volas eskapi de ĉi tiu sovaĝa loko;»
+```
+]]></message>
+</messages>

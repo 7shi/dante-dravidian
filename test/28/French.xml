@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ô honneur et lumière des autres poètes,
+Accorde moi la longue étude et le grand amour
+qui m'a fait chercher ton volume.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑French Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| O | vocative interjection addressing abstract entities | Ô | “O” | OK |
+| de | preposition indicating belonging/association | des | “of the” | OK |
+| li | definite article, masc. plural (“the”) – not required in French | — | — | UNNECESSARY |
+| altri | adjective “other” | autres | “other” | OK |
+| poeti | noun “poets” | poètes | “poets” | OK |
+| onore | abstract noun “honor” | honneur | “honor” | OK |
+| e | coordinating conjunction “and” | et | “and” | OK |
+| lume | abstract noun “light” | lumière | “light” | OK |
+| vagliami | imperative request “grant me / make useful for me” | Accorde moi | “grant me” | **GRAMMAR** (missing hyphen – should be *Accorde‑moi*) |
+| ’l (1) | definite article “the” (masc. sing.) before “lungo studio” | la | “the” (feminine, because *étude* is fem.) | OK |
+| lungo | adjective “long” | longue | “long” | OK |
+| studio | noun “study” | étude | “study” | OK |
+| e (2) | coordinating conjunction “and” | et | “and” | OK |
+| ’l (2) | definite article “the” (masc. sing.) before “grande amore” | le | “the” | OK |
+| grande | adjective “great” | grand | “great” | OK |
+| amore | noun “love” | amour | “love” | OK |
+| che | relative pronoun “which/that” | qui | “which” | OK |
+| m' | enclitic pronoun “me” | m' | “me” | OK |
+| ha | auxiliary verb “has” | a | “has” | OK |
+| fatto | past participle “made” | fait | “made” | OK |
+| cercar | infinitive “search” | chercher | “search” | OK |
+| lo | definite article “the” (masc. sing.) – not required in French | — | — | UNNECESSARY |
+| tuo | possessive adjective “your” | ton | “your” | OK |
+| volume | noun “volume” (book/poem) | volume | “volume” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *li*, *lo* – Italian articles that have no separate counterpart in the French translation.  
+- **GRAMMAR**: *Accorde moi* – the French imperative with a clitic pronoun should be hyphenated (*Accorde‑moi*).  
+
+No missing or outright wrong lexical choices were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 82**  
+  - Original: Ô honneur et lumière des autres poètes,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 83**  
+  - Original: Accorde moi la longue étude et le grand amour  
+  - Issue: GRAMMAR – missing hyphen in the imperative with the clitic pronoun  
+  - Corrected: Accorde‑moi la longue étude et le grand amour  
+
+- **Line 84**  
+  - Original: qui m'a fait chercher ton volume.  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+Ô honneur et lumière des autres poètes,
+Accorde‑moi la longue étude et le grand amour
+qui m'a fait chercher ton volume.
+```
+]]></message>
+</messages>

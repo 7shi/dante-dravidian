@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+その時恐れは少し静まった、  
+それは私の心の湖の中で続いていた  
+私がとても哀れみをもって過ごした夜。
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Japanese) | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------------------|------------------------|--------|
+| Allor | temporal adverb “then” | その時 | “then / at that time” | OK |
+| fu | copular verb “was” (auxiliary for *quieted*) | — (copula omitted) | — | UNNECESSARY |
+| la (1) | definite article “the” (modifying *paura*) | — (article omitted) | — | UNNECESSARY |
+| paura | noun “fear” | 恐れ | “fear” | OK |
+| un | indefinite article “a” (part of degree phrase) | — (article omitted) | — | UNNECESSARY |
+| poco | adverb of degree “little” | 少し | “a little” | OK |
+| queta | adjective “quieted” (predicative) | 静まった | “quieted” | OK |
+| che | relative pronoun “which” introducing clause | それは | “that (as) which” | OK |
+| nel | preposition + article “in the” | 湖の中で | “in the lake” | OK |
+| lago | noun “lake” | 湖 | “lake” | OK |
+| del | preposition + article “of the” (genitive) | の | “of” | OK |
+| cor | noun “heart” (poetic *cor*) | 心 | “heart” | OK |
+| m'era | auxiliary “had been” (pluperfect) | — (pluperfect expressed by 続いていた) | — | UNNECESSARY |
+| durata | past participle “lasted” | 続いていた | “had lasted / continued” | OK |
+| la (2) | definite article “the” (modifying *notte*) | — (article omitted) | — | UNNECESSARY |
+| notte | noun “night” | 夜 | “night” | OK |
+| ch'i' | relative pronoun “that I” | 私が | “I (subject)” | OK |
+| passai | verb “passed” (remote past) | 過ごした | “passed / spent” | OK |
+| con | preposition “with” | をもって | “with (by means of)” | OK |
+| tanta | adjective “so (much)” | とても | “so / very” | OK |
+| pieta | noun “pity” | 哀れみ | “pity” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *fu, la (both occurrences), un, m'era, la (second)* – Japanese does not require explicit copula or articles; the meaning is conveyed without them.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were found; all source meanings are represented in the Japanese translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 19:
+  - Original: その時恐れは少し静まった、  
+  - Issue: none  
+  - Corrected: その時恐れは少し静まった、  
+
+- Line 20:
+  - Original: それは私の心の湖の中で続いていた  
+  - Issue: none  
+  - Corrected: それは私の心の湖の中で続いていた  
+
+- Line 21:
+  - Original: 私がとても哀れみをもって過ごした夜。  
+  - Issue: none  
+  - Corrected: 私がとても哀れみをもって過ごした夜。  
+
+```
+その時恐れは少し静まった、
+それは私の心の湖の中で続いていた
+私がとても哀れみをもって過ごした夜。
+```
+]]></message>
+</messages>

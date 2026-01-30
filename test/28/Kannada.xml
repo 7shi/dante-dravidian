@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಓ, ಇತರ ಕವಿಗಳ ಗೌರವ ಮತ್ತು ಬೆಳಕು,
+ನನ್ನ ದೀರ್ಘ ಅಧ್ಯಯನ ಮತ್ತು ಮಹಾ ಪ್ರೀತಿಯನ್ನು ನನಗೆ ಉಪಯೋಗಿಸು
+ಇವುಗಳು ನನ್ನನ್ನು ನಿನ್ನ ಗ್ರಂಥವನ್ನು ಹುಡುಕಲು ಮಾಡಿವೆ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Eng.) | Status |
+|-------------|-----------------------|--------------------|--------------------------|--------|
+| O | vocative interjection addressing abstract entities | ಓ | “O” | OK |
+| de | preposition “of” linking honor & light to other poets | — | — | UNNECESSARY |
+| li | definite article plural “the” | — | — | UNNECESSARY |
+| altri | adjective “other” modifying *poeti* | ಇತರ | “other” | OK |
+| poeti | noun “poets” (genitive) | ಕವಿಗಳ | “of poets” | OK |
+| onore | noun “honor” | ಗೌರವ | “honor” | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| lume | noun “light” | ಬೆಳಕು | “light” | OK |
+| vagliami | imperative “make (it) useful to me” | ಉಪಯೋಗಿಸು | “use / make useful” | OK |
+| ’l (article before *lungo*) | definite article “the” | — | — | UNNECESSARY |
+| lungo | adjective “long” | ದೀರ್ಘ | “long” | OK |
+| studio | noun “study” | ಅಧ್ಯಯನ | “study” | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| ’l (article before *grande*) | definite article “the” | — | — | UNNECESSARY |
+| grande | adjective “great” | ಮಹಾ | “great” | OK |
+| amore | noun “love” (accusative) | ಪ್ರೀತಿಯನ್ನು | “love” | OK |
+| che | relative pronoun “which” | — | — | UNNECESSARY |
+| m' | clitic pronoun “me” (object) | ನನ್ನನ್ನು | “me” | OK |
+| ha | auxiliary verb “has” (perfect) | ಮಾಡಿವೆ | “has made” (part of verb) | OK |
+| fatto | past participle “made” | ಮಾಡಿವೆ | “made” | OK |
+| cercar | infinitive “to search” | ಹುಡುಕಲು | “to search” | OK |
+| lo | definite article “the” | — | — | UNNECESSARY |
+| tuo | possessive adjective “your” | ನಿನ್ನ | “your” | OK |
+| volume | noun “volume” (accusative) | ಗ್ರಂಥವನ್ನು | “volume / book” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `de`, `li`, `’l` (twice), `che`, `lo` – Italian articles, prepositions, and relative pronoun are naturally omitted in Kannada; their meaning is conveyed by case marking or word order.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected in the mapping.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:
+  - Original: ಓ, ಇತರ ಕವಿಗಳ ಗೌರವ ಮತ್ತು ಬೆಳಕು,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 83:
+  - Original: ನನ್ನ ದೀರ್ಘ ಅಧ್ಯಯನ ಮತ್ತು ಮಹಾ ಪ್ರೀತಿಯನ್ನು ನನಗೆ ಉಪಯೋಗಿಸು
+  - Issue: missing accusative case marker after “ಅಧ್ಯಯನ”
+  - Corrected: ನನ್ನ ದೀರ್ಘ ಅಧ್ಯಯನವನ್ನು ಮತ್ತು ಮಹಾ ಪ್ರೀತಿಯನ್ನು ನನಗೆ ಉಪಯೋಗಿಸು  
+
+- Line 84:
+  - Original: ಇವುಗಳು ನನ್ನನ್ನು ನಿನ್ನ ಗ್ರಂಥವನ್ನು ಹುಡುಕಲು ಮಾಡಿವೆ.
+  - Issue: resultative construction can be expressed more naturally with “ಹುಡುಕುವಂತೆ”
+  - Corrected: ಇವುಗಳು ನನ್ನನ್ನು ನಿನ್ನ ಗ್ರಂಥವನ್ನು ಹುಡುಕುವಂತೆ ಮಾಡಿವೆ.  
+
+```kannada
+ಓ, ಇತರ ಕವಿಗಳ ಗೌರವ ಮತ್ತು ಬೆಳಕು,
+ನನ್ನ ದೀರ್ಘ ಅಧ್ಯಯನವನ್ನು ಮತ್ತು ಮಹಾ ಪ್ರೀತಿಯನ್ನು ನನಗೆ ಉಪಯೋಗಿಸು
+ಇವುಗಳು ನನ್ನನ್ನು ನಿನ್ನ ಗ್ರಂಥವನ್ನು ಹುಡುಕುವಂತೆ ಮಾಡಿವೆ.
+```
+]]></message>
+</messages>

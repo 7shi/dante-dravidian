@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+నేను అతనిని మహా ఎడారిలో చూసినప్పుడు,  
+అతనికి నేను నన్ను కరుణించు అని అరిచాను,  
+నీవు ఏవైనా నీడ లేదా నిజమైన మనిషి అయినా!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Telugu)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Quando | “when” (temporal subordinator) | **చూసినప్పుడు** | “when (I) saw” | OK |
+| vidi | “saw” (past‑tense verb) | **చూసిన** | “saw” | OK |
+| costui | demonstrative “this man” | **అతనిని** | “him” (acc.) | OK |
+| nel | “in the” (prep + article) | **లో** | “in” | OK |
+| gran | “great, large” (adj.) | **మహా** | “great” | OK |
+| diserto | “desert” (noun) | **ఎడారి** | “desert” | OK |
+| «Miserere | imperative “have pity” | **కరుణించు** | “have mercy” | OK |
+| di | preposition “of / on” (part of *di me*) | — | — | **UNNECESSARY** (Telugu marks the object with case ending) |
+| me» | pronoun “me” (acc.) | **నన్ను** | “me” | OK |
+| gridi | “I cried / shouted” (past) | **అరిచాను** | “I shouted” | OK |
+| a | preposition “to” (dative) | **కు** | “to” | OK |
+| lui, | pronoun “him” (dative) | **అతనికి** | “to him” | OK |
+| «qual | “whatever” (free‑relative) | **ఏవైనా** | “whatever” | OK |
+| che | relative particle (linker) | — | — | **UNNECESSARY** (no separate word in Telugu) |
+| tu | second‑person pronoun “you” | **నీవు** | “you” | OK |
+| sii, | subjunctive “be” (non‑assertive) | **అయినా** | “be (if/though)” | OK |
+| od (1) | disjunction “or” | **లేదా** | “or” | OK |
+| ombra | “shade, shadow” (noun) | **నీడ** | “shade” | OK |
+| od (2) | disjunction “or” | **లేదా** | “or” | OK |
+| omo | “man, human” (noun) | **మనిషి** | “man” | OK |
+| certo! | “certain, real” (adj.) | **నిజమైన** | “real / genuine” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `di` (preposition) – Telugu expresses the object with the accusative suffix **‑ను** on *నన్ను*, so a separate preposition is not needed.  
+- **UNNECESSARY**: `che` – the relative particle has no lexical counterpart in Telugu; the clause is linked implicitly.  
+
+All other source tokens are represented correctly, with appropriate grammatical agreement in the Telugu rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 64:
+  - Original: నేను అతనిని మహా ఎడారిలో చూసినప్పుడు,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 65:
+  - Original: అతనికి నేను నన్ను కరుణించు అని అరిచాను,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 66:
+  - Original: నీవు ఏవైనా నీడ లేదా నిజమైన మనిషి అయినా!
+  - Issue: none
+  - Corrected: no change  
+
+```
+నేను అతనిని మహా ఎడారిలో చూసినప్పుడు,
+అతనికి నేను నన్ను కరుణించు అని అరిచాను,
+నీవు ఏవైనా నీడ లేదా నిజమైన మనిషి అయినా!
+```
+]]></message>
+</messages>

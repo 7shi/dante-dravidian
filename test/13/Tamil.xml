@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+காலை ஆரம்பத்தின் தொடக்கத்தில் நேரம் இருந்தது,  
+சூரியன் அந்த நட்சத்திரங்களுடன் மேலே ஏறிக் கொண்டிருந்தது  
+அவை அவனுடன் இருந்தன தெய்வீக அன்பு நிகழும் போது
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (Tamil) | Back‑Translation (Tamil → English) | Status |
+|-------------|------------------------------------------|------------------------------|--------------------------------------|--------|
+| Temp' | time (the temporal interval) | நேரம் | “time” | OK |
+| era | was (copular past) | இருந்தது | “was / existed” | OK |
+| dal | from the (prepositional phrase introducing “principio”) | — (expressed by the case suffix **‑த்தில்** in *தொடக்கத்தில்*) | “at / in” (implicit) | UNNECESSARY |
+| principio | beginning (initial point) | தொடக்கத்தில் | “at the beginning” | OK |
+| del | of the (genitive linking “principio” to “mattino”) | — (expressed by the genitive suffix **‑த்தின்** in *ஆரம்பத்தின்*) | “of” (implicit) | UNNECESSARY |
+| mattino | morning (daily period) | காலை | “morning” | OK |
+| e | and (clausal coordinator) | — (conjunction omitted in Tamil) | (none) | UNNECESSARY |
+| 'l | the (definite article) | — (articles not used in Tamil) | (none) | UNNECESSARY |
+| sol | Sun (celestial body) | சூரியன் | “the Sun” | OK |
+| montava | was mounting (progressive upward motion) | ஏறிக் கொண்டிருந்தது | “was rising / mounting” | OK |
+| 'n | in (part of directional idiom “'n sù”) | — (direction expressed by **மேலே**) | “upward” (implicit) | UNNECESSARY |
+| sù | up (direction) | மேலே | “upward / above” | OK |
+| con (1) | with (accompaniment) | — (expressed inside **நட்சத்திரங்களுடன்**) | “with” (implicit) | UNNECESSARY |
+| quelle | those (demonstrative) | அந்த | “those” | OK |
+| stelle | stars (luminous bodies) | நட்சத்திரங்களுடன் | “with the stars” (the noun **நட்சத்திரங்கள்** + **உடன்**) | OK |
+| ch'eran | that were (relative clause verb) | இருந்தன | “were” | OK |
+| con (2) | with (accompaniment) | அவனுடன் | “with him” | OK |
+| lui | him (the Sun) | அவன் | “him / the Sun” | OK |
+| quando | when (temporal subordinator) | போது | “when” | OK |
+| l'amor | Love (divine principle) | அன்பு | “Love” | OK |
+| divino | Divine (adjective) | தெய்வீக | “Divine” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *dal, del, e, 'l, 'n (second occurrence), con (first occurrence)* – these Italian function words are absorbed by case endings or omitted in Tamil, which naturally does not use separate articles or many prepositions.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all content‑bearing words are correctly rendered.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 37:
+  - Original: காலை ஆரம்பத்தின் தொடக்கத்தில் நேரம் இருந்தது,
+  - Issue: Redundant phrase “ஆரம்பத்தின் தொடக்கத்தில்”; should be a single locative expression.
+  - Corrected: காலை தொடக்கத்தில் நேரம் இருந்தது,
+- Line 38:
+  - Original: சூரியன் அந்த நட்சத்திரங்களுடன் மேலே ஏறிக் கொண்டிருந்தது
+  - Issue: none
+  - Corrected: no change
+- Line 39:
+  - Original: அவை அவனுடன் இருந்தன தெய்வீக அன்பு நிகழும் போது
+  - Issue: none
+  - Corrected: no change
+
+```
+காலை தொடக்கத்தில் நேரம் இருந்தது,
+சூரியன் அந்த நட்சத்திரங்களுடன் மேலே ஏறிக் கொண்டிருந்தது
+அவை அவனுடன் இருந்தன தெய்வீக அன்பு நிகழும் போது
+```
+]]></message>
+</messages>

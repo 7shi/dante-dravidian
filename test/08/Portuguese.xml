@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E como aqueles que com fôlego exaurido,  
+saiu do mar para a margem,  
+volta‑se para a água perigosa e olha,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **E** | Coordinating conjunction linking to previous discourse | **E** | “and” | OK |
+| **come** | Comparative particle introducing similitude | **como** | “as” | OK |
+| **quei** | Demonstrative plural noun, “those” (generic subject) | **aqueles** | “those” | OK |
+| **che** | Relative pronoun introducing clause “who …” | **que** | “who” | OK |
+| **con** | Preposition marking instrument/state | **com** | “with” | OK |
+| **lena** | Feminine noun “breath” (state of exhaustion) | **fôlego** | “breath” | OK |
+| **affannata** | Adjective “exhausted, spent” | **exaurido** | “exhausted” | OK |
+| **uscito** | Verb “issued, came out” (past participle used as verb) | **saiu** | “came out / left” | OK |
+| **fuor** | Preposition “out of” (directional) | **do** | “out of” (contraction of *de* + *o*) | OK |
+| **del** | Preposition + definite article “of the” (introducing *pelago*) | **do** (merged with *fuor*) | “of the” (implicit in *do*) | OK |
+| **pelago** | Noun “sea, ocean” | **mar** | “sea” | OK |
+| **a** (preposition) | Preposition indicating destination | **para** | “to / for” | OK |
+| **la** | Definite article “the” (feminine) | **a** | “the” | OK |
+| **riva** | Noun “shore, bank” | **margem** | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | **volta‑se** (part of verb) | “himself” (reflexive) | OK |
+| **volge** | Verb “turns, directs oneself” | **volta‑se** | “turns” | OK |
+| **a** (preposition) | Preposition introducing target of turn | **para** | “to” | OK |
+| **l'acqua** | Definite noun phrase “the water” | **a água** | “the water” | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **perigosa** | “perilous” | OK |
+| **e** | Coordinating conjunction “and” | **e** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **olha** | “looks, gazes” | OK |
+
+### Items Requiring Attention
+- **None.** All source tokens are accounted for, and the Portuguese rendering respects the meaning, grammatical agreement, and natural syntax. No missing, wrong, grammatical, or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: `E como aqueles que com fôlego exaurido,`  
+  - Issue: **WRONG** – “aqueles” is plural; the reference meaning is singular (“one”).  
+  - Corrected: `E como aquele que com fôlego exaurido,`
+
+- **Line 23**  
+  - Original: `saiu do mar para a margem,`  
+  - Issue: none  
+  - Corrected: `saiu do mar para a margem,`
+
+- **Line 24**  
+  - Original: `volta‑se para a água perigosa e olha,`  
+  - Issue: none  
+  - Corrected: `volta‑se para a água perigosa e olha,`
+
+```text
+E como aquele que com fôlego exaurido,
+saiu do mar para a margem,
+volta‑se para a água perigosa e olha,
+```
+]]></message>
+</messages>

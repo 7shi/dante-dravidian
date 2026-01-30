@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+che tu mi meni là dov' or dicesti,  
+sì ch'io veggia la porta di san Pietro  
+e color cui tu fai cotanto mesti».  
+
+**Tamil translation**
+
+நீ என்னை அங்கே அழைத்துச் செல்ல, நீ இப்போது சொன்ன இடத்திற்கு,  
+அதனால் நான் புனித பீட்டரின் கதவைக் காண முடியும்  
+மற்றும் நீ மிகவும் துயரப்படுத்தும் அவர்களை».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Tamil)**  
+
+| # | Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|---|-------------|-----------------------|------------------------------|-----------------------------|--------|
+| 1 | che | complementizer “that” introducing the clause | — | — | **UNNECESSARY** (Tamil omits the complementizer) |
+| 2 | tu | 2nd person singular pronoun, subject of *meni* | **நீ** | “you” | OK |
+| 3 | mi | 1st person singular pronoun, object of *meni* | **என்னை** | “me” | OK |
+| 4 | meni | verb “to lead, guide” | **அழைத்துச் செல்ல** | “lead” (infinitive) | OK |
+| 5 | là | adverb of place “there” | **அங்கே** | “there” | OK |
+| 6 | dov' | relative adverb “where / to which place” | **இடத்திற்கு** | “to the place” | OK |
+| 7 | or | temporal adverb “now” | **இப்போது** | “now” | OK |
+| 8 | dicesti | verb “you said” (past) | **சொன்ன** | “said” | OK |
+| 9 | sì | resultative adverb “so, thus” | **அதனால்** | “so that / therefore” | OK |
+|10 | ch' | complementizer “that” (introducing purpose clause) | — | — | **UNNECESSARY** |
+|11 | io | 1st person singular pronoun, subject of *veggia* | **நான்** | “I” | OK |
+|12 | veggia | subjunctive verb “may see” | **காண** | “see” (potential) | OK |
+|13 | la | definite article “the” (feminine) | — | — | **UNNECESSARY** |
+|14 | porta | noun “gate” (direct object) | **கதவைக்** | “gate‑ACC” | OK |
+|15 | di | preposition “of” (genitive) | **‑இன்** (as suffix in *பீட்டரின்*) | “‑of” | OK |
+|16 | san | honorific “Saint” | **புனித** | “holy / saint” | OK |
+|17 | Pietro | proper name “Peter” | **பீட்டர்** | “Peter” | OK |
+|18 | e | coordinating conjunction “and” | **மற்றும்** | “and” | OK |
+|19 | color | demonstrative plural “those” | **அவர்களை** | “those (people)” | OK |
+|20 | cui | relative pronoun “whom/which” | — | — | **UNNECESSARY** |
+|21 | tu (2nd) | 2nd person singular pronoun, subject of *fai* | **நீ** | “you” | OK |
+|22 | fai | verb “you make / cause” | **துயரப்படுத்தும்** | “make sad / afflict” (present participle) | OK |
+|23 | cotanto | degree adverb “so much, very” | **மிகவும்** | “very” | OK |
+|24 | mesti | adjective “afflicted, sad” (high degree) | **துயரப்படுத்தும்** (same verb as above) | “afflicted” (expressed via verb) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *che*, *ch'*, *la*, *cui* – these function words are naturally omitted in Tamil and therefore have no direct lexical counterpart in the translation.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the Tamil rendering respects number, gender, and case conventions of the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 133**  
+  - Original: `che tu mi meni là dov' or dicesti,`  
+  - Issue: none  
+  - Corrected: `நீ என்னை அங்கே அழைத்துச் செல்ல, நீ இப்போது சொன்ன இடத்திற்கு,`
+
+- **Line 134**  
+  - Original: `sì ch'io veggia la porta di san Pietro`  
+  - Issue: none  
+  - Corrected: `அதனால் நான் புனித பீட்டரின் கதவைக் காண முடியும்`
+
+- **Line 135**  
+  - Original: `e color cui tu fai cotanto mesti».`  
+  - Issue: none  
+  - Corrected: `மற்றும் நீ மிகவும் துயரப்படுத்தும் அவர்களை».`
+
+```
+நீ என்னை அங்கே அழைத்துச் செல்ல, நீ இப்போது சொன்ன இடத்திற்கு,
+அதனால் நான் புனித பீட்டரின் கதவைக் காண முடியும்
+மற்றும் நீ மிகவும் துயரப்படுத்தும் அவர்களை».
+```
+]]></message>
+</messages>

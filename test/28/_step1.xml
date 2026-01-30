@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+82 «O de li altri poeti onore e lume,
+83 vagliami 'l lungo studio e 'l grande amore
+84 che m'ha fatto cercar lo tuo volume.
+Reference Translation (provided):
+“O honor and light of the other poem I may the long seal avail me, and the great love, which have made me search thy volume!
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 82** «O de li altri poeti onore e lume, → Locked Meaning**  
+  The speaker vocatively addresses the *abstract entities* **honor** and **light** that *belong to* the **other poets**.  In truth‑conditional terms:  
+  *∃x∃y[honor(x) ∧ light(y) ∧ ∀z (z∈poets₍other₎ → (x∈property(z) ∧ y∈property(z))) ∧ vocative(O, x, y)]*  
+
+- **Line 83** vagliami 'l lungo studio e 'l grande amore → Locked Meaning**  
+  The speaker *asks* that his **long study** and his **great love** be *weighed, measured, or made useful* for him.  In truth‑conditional terms:  
+  *request(speaker, make_useful(long‑study, speaker) ∧ make_useful(great‑love, speaker))*  
+
+- **Line 84** che m'ha fatto cercar lo tuo volume. → Locked Meaning**  
+  The **long study** and **great love** *have caused* the speaker to **search for the addressee’s volume** (i.e., the poem or book).  In truth‑conditional terms:  
+  *cause(long‑study ∧ great‑love, search(speaker, volume(addressee)))*  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| O | interjection (vocative) | “O” | Direct address to the invoked entities | Vocative particle |
+| de | preposition | “of” | Marks possession/association | Prepositional complement |
+| li | definite article, masc. plural | “the” | Determines “altri poeti” | Determiner |
+| altri | adjective, masc. plural | “other” | Specifies which poets | Attribute of “poeti” |
+| poeti | noun, masc. plural | “poets” | The group whose honor & light are invoked | Noun, object of preposition “de” |
+| onore | noun, masc. singular | “honor” | Abstract quality belonging to the poets | Subject of vocative clause |
+| e | coordinating conjunction | “and” | Links two abstract qualities | Connector |
+| lume | noun, masc. singular | “light” | Abstract quality belonging to the poets | Subject of vocative clause |
+| vagliami | verb (imperative 2nd sg.) + enclitic *‑mi* | “let … avail me” / “grant me” | Request that something be useful to the speaker | Main verb, request clause |
+| ’l | contracted article “il” (def. masc. sing.) | “the” | Determines “lungo studio” | Determiner |
+| lungo | adjective, masc. sing. | “long” | Describes the extent of the study | Attribute of “studio” |
+| studio | noun, masc. singular | “study” | The speaker’s prolonged scholarly effort | Direct object of “vagliami” |
+| e | coordinating conjunction | “and” | Links two resources requested | Connector |
+| ’l | contracted article “il” | “the” | Determines “grande amore” | Determiner |
+| grande | adjective, masc. sing. | “great” | Qualifies the intensity of love | Attribute of “amore” |
+| amore | noun, masc. singular | “love” | The speaker’s passionate feeling | Direct object of “vagliami” |
+| che | relative pronoun | “which” | Introduces clause explaining cause | Subordinator |
+| m' | enclitic pronoun “mi” (object) | “me” | Marks the experiencer of “ha fatto” | Indirect object |
+| ha | auxiliary verb (3rd sg. pres.) | “has” | Forms perfect with “fatto” | Auxiliary |
+| fatto | past participle | “made” | Indicates causation | Main verb of relative clause |
+| cercar | infinitive of “cercare” | “search” | Action prompted by the cause | Complement of “fatto” |
+| lo | definite article “il” (masc. sing.) | “the” | Determines “tuo volume” | Determiner |
+| tuo | possessive adjective | “thy” | Shows ownership by addressee | Attribute of “volume” |
+| volume | noun, masc. singular | “volume” | The work (poem/book) being sought | Direct object of “cercar” |
+
+*The table respects the locked meanings above: each Italian token is paired with the English lexical item that conveys the same sense in the reference translation, and its grammatical function is indicated as it contributes to the truth‑conditional interpretation.*
+]]></message>
+</messages>

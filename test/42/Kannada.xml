@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆ ಮೇಲಿನಲ್ಲಿರುವ ಸಾಮ್ರಾಟ್‌ಗಾಗಿ,  
+ಅವನ ಕಾನೂನಿಗೆ ನಾನು ಬಂಡಾಯ ಮಾಡಿದ್ದರಿಂದ,  
+ಅವನು ತನ್ನ ನಗರಕ್ಕೆ ನನ್ನ ಮೂಲಕ ಯಾರೂ ಬರಬಾರದು ಎಂದು ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| **ché** | causal conjunction “for / because” | **ಆ** | “that / for” | OK |
+| **quello** | demonstrative “that” (emperor) | **ಆ** | “that” | OK |
+| **imperador** | noun “Emperor” | **ಸಾಮ್ರಾಟ್** | “emperor” | OK |
+| **che** (rel.) | relative “who” | **—** (implicit in “ಮೇಲಿನಲ್ಲಿರುವ”) | (rel. clause encoded) | UNNECESSARY |
+| **là** | adverb “there” (above) | **ಮೇಲಿನಲ್ಲಿರುವ** | “the one that is above” | OK |
+| **sù** | adverb “up / above” | **ಮೇಲಿನಲ್ಲಿರುವ** | “the one that is above” | OK |
+| **regna** | verb “reigns” | **—** (implied by “ಮೇಲಿನಲ್ಲಿರುವ”) | (reign is understood) | UNNECESSARY |
+| **perch'** | causal “because” | **ಮಾಡಿದ್ದರಿಂದ** | “because (I) did …” | OK |
+| **i'** | 1st‑person pronoun “I” | **ನಾನು** | “I” | OK |
+| **fu'** | copular past “was” | **—** (tense expressed in “ಮಾಡಿದ್ದರಿಂದ”) | (past sense already in suffix) | UNNECESSARY |
+| **ribellante** | adjective “rebellious” | **ಬಂಡಾಯ** | “rebellion” | OK |
+| **a** | preposition “to / against” | **ಗೆ** | “to / against” | OK |
+| **la** | definite article (feminine) | **—** (no article in Kannada) | (article omitted) | UNNECESSARY |
+| **sua** | possessive “his” (referring to emperor) | **ಅವನ** | “his” | OK |
+| **legge** | noun “law” | **ಕಾನೂನು** | “law” | OK |
+| **non** | negation “not” | **ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ** (part of “does not wish”) | “does not wish” | OK |
+| **vuol** | volitional “wills / wants” | **ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ** | “does not wish” | OK |
+| **che** (complementiser) | “that” introducing content of will | **ಎಂದು** | “that / as” | OK |
+| **'n** | preposition “in / into” | **ಗೆ** | “to / into” | OK |
+| **sua** (city) | possessive “his” (city) | **ತನ್ನ** | “his” | OK |
+| **città** | noun “city” | **ನಗರ** | “city” | OK |
+| **per** | preposition “through” | **ಮೂಲಕ** | “through / by means of” | OK |
+| **me** | pronoun “me” (instrument) | **ನನ್ನ** | “my / by me” | OK |
+| **si** | impersonal pronoun “one / anyone” | **ಯಾರೂ** | “anyone” | OK |
+| **vegna** | verb “come” (subjunctive) | **ಬರಬಾರದು** | “should not come” | OK |
+
+---
+
+### Items that required special attention  
+
+- **UNNECESSARY**:  
+  - *che* (relative) – the relative clause is expressed by the participial phrase “ಮೇಲಿನಲ್ಲಿರುವ”.  
+  - *regna* – the notion of “reigning” is conveyed by “ಮೇಲಿನಲ್ಲಿರುವ” and does not need a separate verb.  
+  - *fu'* – past‑state copula is absorbed in the suffix “‑ದ್ದರಿಂದ”.  
+  - *la* – Kannada does not use definite articles.  
+
+- **No GRAMMAR errors** were detected; gender, number and case agreement are appropriate for Kannada.  
+
+All other source tokens have appropriate Kannada equivalents that preserve the meaning of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 124:
+  - Original: ಆ ಮೇಲಿನಲ್ಲಿರುವ ಸಾಮ್ರಾಟ್‌ಗಾಗಿ,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 125:
+  - Original: ಅವನ ಕಾನೂನಿಗೆ ನಾನು ಬಂಡಾಯ ಮಾಡಿದ್ದರಿಂದ,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 126:
+  - Original: ಅವನು ತನ್ನ ನಗರಕ್ಕೆ ನನ್ನ ಮೂಲಕ ಯಾರೂ ಬರಬಾರದು ಎಂದು ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ.
+  - Issue: none
+  - Corrected: no change  
+
+```
+ಆ ಮೇಲಿನಲ್ಲಿರುವ ಸಾಮ್ರಾಟ್‌ಗಾಗಿ,
+ಅವನ ಕಾನೂನಿಗೆ ನಾನು ಬಂಡಾಯ ಮಾಡಿದ್ದರಿಂದ,
+ಅವನು ತನ್ನ ನಗರಕ್ಕೆ ನನ್ನ ಮೂಲಕ ಯಾರೂ ಬರಬಾರದು ಎಂದು ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ.
+```
+]]></message>
+</messages>

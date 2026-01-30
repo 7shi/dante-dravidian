@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+112 Por isso penso e julgo que seja para o teu bem  
+113 que me segues e eu serei teu guia,  
+114 e te levarei daqui para o lugar eterno;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (locked meaning) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------------------------|--------------------|------------------------|--------|
+| Ond' | causal conjunction introducing the reason for the following statement | Por isso | therefore / thus | OK |
+| io | 1st‑person singular pronoun (subject) – “I” | – (subject omitted) | I | UNNECESSARY |
+| per | preposition marking benefactive purpose | para | for | OK |
+| lo | definite article referring to the abstract noun *me'* | o | the | OK |
+| tuo | 2nd‑person possessive adjective – “your” | teu | your | OK |
+| me' | abstract noun meaning “the addressee’s highest good” | bem | good | OK |
+| penso | verb “think” (cognitive) | penso | think | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| discerno | verb “judge, deem” (evaluative) | julgo | judge / deem | OK |
+| che | complementizer introducing a clause – “that” | que | that | OK |
+| tu | 2nd‑person pronoun (subject) – “you” | – (subject omitted) | you | UNNECESSARY |
+| mi | 1st‑person object pronoun – “me” | me | me | OK |
+| segui | verb “follow” (imperative‑like) | segues | follow | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| io | 1st‑person pronoun (subject) – “I” | eu | I | OK |
+| sarò | future copular verb “will be” | serei | will be | OK |
+| tua | 2nd‑person possessive adjective – “your” | teu | your | OK |
+| guida | noun “guide” (role) | guia | guide | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| trarrotti | future transitive verb “will lead” (directed at addressee) | levarei | will lead | OK |
+| di | preposition “from” | de | from | OK |
+| qui | adverb of place “here” | aqui | here | OK |
+| per | preposition “through” (route/medium) | para | through | OK |
+| loco | noun “place” (destination) | lugar | place | OK |
+| etterno | adjective “eternal” (describing the place) | eterno | eternal | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *io* (line 112) – Portuguese omits the explicit subject.  
+- **UNNECESSARY**: *tu* (line 113) – Portuguese omits the explicit second‑person subject.  
+
+All other source words are correctly rendered in the Portuguese translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: Por isso penso e julgo que seja para o teu bem  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 113**  
+  - Original: que me segues e eu serei teu guia,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 114**  
+  - Original: e te levarei daqui para o lugar eterno;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Por isso penso e julgo que seja para o teu bem
+que me segues e eu serei teu guia,
+e te levarei daqui para o lugar eterno;
+```
+]]></message>
+</messages>

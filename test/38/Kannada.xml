@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆದ್ದರಿಂದ ನಾನು ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ ಯೋಚಿಸಿ ನಿರ್ಣಯಿಸುತ್ತೇನೆ  
+ನೀವು ನನ್ನನ್ನು ಅನುಸರಿಸಿ ನಾನು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ,  
+ಮತ್ತು ನಾನು ನಿಮಗೆ ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳದಿಂದ ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ ಕರೆದೊಯ್ಯುವೆ;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| **Ond'** | causal conjunction “wherefore” | **ಆದ್ದರಿಂದ** | therefore / wherefore | OK |
+| **io** | 1st‑person singular subject | **ನಾನು** | I | OK |
+| **per** | preposition “for” (benefactive) | **ಹಿತಕ್ಕಾಗಿ** | for the good / for the benefit | OK |
+| **lo** | definite article (neuter) | — | — | UNNECESSARY |
+| **tuo** | 2nd‑person possessive “thy” | **ನಿಮ್ಮ** | your | OK |
+| **me'** | abstract noun “best / good” | **ಹಿತ** | good, benefit | OK |
+| **penso** | verb “think” (cognitive) | **ಯೋಚಿಸಿ** | think (gerund) | OK |
+| **e** | coordinating conjunction “and” (links *penso* & *discerno*) | — | — | UNNECESSARY |
+| **discerno** | verb “deem / judge” (evaluative) | **ನಿರ್ಣಯಿಸುತ್ತೇನೆ** | I deem / I judge | OK |
+| **che** | subordinating conjunction “that” (introduces clause) | — | — | UNNECESSARY |
+| **tu** | 2nd‑person singular subject | **ನೀವು** | you | OK |
+| **mi** | 1st‑person object pronoun “me” | **ನನ್ನನ್ನು** | me (object) | OK |
+| **segui** | verb “follow” (imperative‑like) | **ಅನುಸರಿಸಿ** | follow (gerund) | OK |
+| **e** | coordinating conjunction “and” (links clauses) | — | — | UNNECESSARY |
+| **io** | 1st‑person singular subject (future) | **ನಾನು** | I | OK |
+| **sarò** | future copular “will be” | **ನಾಗುವೆ** (within **ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ**) | will be | OK |
+| **tua** | 2nd‑person possessive “thy” | **ನಿಮ್ಮ** | your | OK |
+| **guida** | noun “guide” (role) | **ಮಾರ್ಗದರ್ಶಕ** | guide | OK |
+| **e** | coordinating conjunction “and” (starts final clause) | **ಮತ್ತು** | and | OK |
+| **trarrotti** | future transitive “will lead” | **ಕರೆದೊಯ್ಯುವೆ** | will lead | OK |
+| **di** | preposition “from” | **ಸ್ಥಳದಿಂದ** (part of phrase) | from (the place) | OK |
+| **qui** | adverb “here” | **ಇಲ್ಲಿ** | here | OK |
+| **per** | preposition “through” (route) | **ಮೂಲಕ** (within **ಸ್ಥಳದ ಮೂಲಕ**) | through | OK |
+| **loco** | noun “place” | **ಸ್ಥಳ** | place | OK |
+| **etterno** | adjective “eternal” | **ಶಾಶ್ವತ** (modifying **ಸ್ಥಳ**) | eternal | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `lo`, `e` (three occurrences), `che` – articles and some conjunctions are naturally omitted in Kannada.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 112:
+  - Original: ಆದ್ದರಿಂದ ನಾನು ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ ಯೋಚಿಸಿ ನಿರ್ಣಯಿಸುತ್ತೇನೆ
+  - Issue: none
+  - Corrected: ಆದ್ದರಿಂದ ನಾನು ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ ಯೋಚಿಸಿ ನಿರ್ಣಯಿಸುತ್ತೇನೆ  
+
+- Line 113:
+  - Original: ನೀವು ನನ್ನನ್ನು ಅನುಸರಿಸಿ ನಾನು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ,
+  - Issue: none
+  - Corrected: ನೀವು ನನ್ನನ್ನು ಅನುಸರಿಸಿ ನಾನು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ,  
+
+- Line 114:
+  - Original: ಮತ್ತು ನಾನು ನಿಮಗೆ ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳದಿಂದ ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ ಕರೆದೊಯ್ಯುವೆ;
+  - Issue: none
+  - Corrected: ಮತ್ತು ನಾನು ನಿಮಗೆ ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳದಿಂದ ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ ಕರೆದೊಯ್ಯುವೆ;  
+
+```
+ಆದ್ದರಿಂದ ನಾನು ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ ಯೋಚಿಸಿ ನಿರ್ಣಯಿಸುತ್ತೇನೆ
+ನೀವು ನನ್ನನ್ನು ಅನುಸರಿಸಿ ನಾನು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ,
+ಮತ್ತು ನಾನು ನಿಮಗೆ ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳದಿಂದ ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ ಕರೆದೊಯ್ಯುವೆ;
+```
+]]></message>
+</messages>

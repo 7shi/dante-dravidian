@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+君は別の道を取るべきだ、  
+彼は私が泣いているのを見て答えた、  
+もしこの野蛮な場所から逃れたいなら；
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| A | dative preposition “to” (marks the indirect object) | – | – | **UNNECESSARY** (no Japanese equivalent) |
+| te | 2nd‑person singular pronoun “you” (accusative) | 君は | “you” (topic) | OK |
+| convien | impersonal verb “it is obligatory / it behoves” | べきだ | “should / ought to” | OK |
+| tenere | infinitive “to hold / undertake” | 取る | “to take / hold” | OK |
+| altro | adjective “another” | 別の | “another” | OK |
+| vïaggio | noun “journey / course” | 道 | “road / path (metaphorical journey)” | OK |
+| rispuose | verb “replied” (3sg past) | 答えた | “replied” | OK |
+| poi | adverb “after” (temporal) | – | – | **UNNECESSARY** (expressed by the te‑form) |
+| che | conjunction “that / when” (subordinator) | – | – | **UNNECESSARY** (expressed by the te‑form) |
+| lagrimar | infinitive “to weep” | 泣いている | “weeping” (progressive) | OK |
+| mi | 1st‑person singular pronoun “me” (accusative) | 私が | “I (subject of weeping)” | OK |
+| vide | verb “saw” (3sg past) | 見て | “seeing / having seen” (te‑form) | OK |
+| se | conditional conjunction “if” | もし | “if” | OK |
+| vuo' | verb “wish / want” (2sg present) | 逃げたい | “want to escape” (desire expressed) | OK |
+| campar | infinitive “to escape” | – | – | **UNNECESSARY** (merged into 逃げたい) |
+| d' | preposition “from / of” | から | “from” | OK |
+| esto | demonstrative adjective “this” | この | “this” | OK |
+| loco | noun “place” | 場所 | “place” | OK |
+| selvaggio | adjective “savage” | 野蛮な | “savage / barbaric” | OK |
+
+---
+
+### Items to Note  
+
+**UNNECESSARY (source side – omitted in Japanese)**  
+- **A** – Japanese does not require a dative preposition here.  
+- **poi** – Temporal “after” is encoded by the te‑form of the verb.  
+- **che** – Subordinating “that/when” is likewise encoded by the te‑form.  
+- **campar** – The meaning “to escape” is subsumed in the desire form **逃げたい**.
+
+**UNNECESSARY (target side – added for Japanese grammar)**  
+- **彼は** – Subject pronoun added for clarity; not present in the source.  
+- **のを** – Nominalizer required for the “see …” construction; not in the source.  
+- **なら** – Conditional ending needed in Japanese; the source already has the conditional conjunction **se**.  
+
+No missing, wrong, or grammar‑agreement errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: 君は別の道を取るべきだ、
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: 彼は私が泣いているのを見て答えた、
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: もしこの野蛮な場所から逃れたいなら；
+  - Issue: none
+  - Corrected: no change
+
+```
+君は別の道を取るべきだ、
+彼は私が泣いているのを見て答えた、
+もしこの野蛮な場所から逃れたいなら；
+```
+]]></message>
+</messages>

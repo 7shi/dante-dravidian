@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tal me hizo la bestia sin reposo,
+que viniéndome contra poco a poco,
+me empujaba allí donde el sol calla.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| tal | “such” – points to the following description | tal | such | OK |
+| mi | 1st‑person singular clitic pronoun (accusative) – experiencer | me | me | OK |
+| fece | verb, 3rd sg. remote past of *fare* – causative “made” | hizo | made | OK |
+| la | definite article, fem. singular – marks *bestia* as specific | la | the | OK |
+| bestia | noun, fem. singular – “beast” lacking peace | bestia | beast | OK |
+| sanza | preposition (archaic *senza*) – “without” | sin | without | OK |
+| pace | noun, fem. singular – “repose, peace” | reposo | repose | OK |
+| che | relative pronoun – introduces clause describing the beast | que | that | OK |
+| venendomi | gerund of *venire* + clitic *mi* – “coming on against me” | viniéndome | coming on against me | OK |
+| 'ncontro | preposition (contraction of *contro*) – “against” | contra | against | OK |
+| a *(first)* | preposition (part of idiom *a poco a poco*) – incremental marker | — | — | **UNNECESSARY** |
+| poco *(first)* | adverb – “little”, degree modifier | poco | little | OK |
+| a *(second)* | preposition – part of idiom *poco a poco* | a | by | OK |
+| poco *(second)* | adverb – “little”, degree modifier | poco | little | OK |
+| mi *(line 60)* | 1st‑person singular clitic pronoun – object of push | me | me | OK |
+| ripigneva | verb, 3rd sg. imperfect of *ripignare* – “was pushing back” | empujaba | was pushing | OK |
+| là | adverb of place – “thither, there” | allí | there | OK |
+| dove | relative adverb of place – “where” | donde | where | OK |
+| 'l | clitic article (elided *il*) – definite article for *sol* | el | the | OK |
+| sol | noun, masc. singular – “Sun” | sol | Sun | OK |
+| tace | verb, 3rd sg. present of *tacere* – “is silent” | calla | is silent | OK |
+
+### Items Flagged
+- **UNNECESSARY**: the first *a* in the sequence *a poco a poco* has no counterpart in the Spanish idiom *poco a poco* and is therefore omitted.  
+
+No missing, wrong, or grammatical‑agreement errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 58**  
+  - Original: `tal me hizo la bestia sin reposo,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 59**  
+  - Original: `que viniéndome contra poco a poco,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 60**  
+  - Original: `me empujaba allí donde el sol calla.`  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+tal me hizo la bestia sin reposo,
+que viniéndome contra poco a poco,
+me empujaba allí donde el sol calla.
+```
+]]></message>
+</messages>

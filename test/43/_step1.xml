@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+127 In tutte parti impera e quivi regge;
+128 quivi è la sua città e l'alto seggio:
+129 oh felice colui cu' ivi elegge!».
+Reference Translation (provided):
+In all parts He governs and them He reigns: there in His city and His lofty seat. O happy he whom thereto He elects!”
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – ONE BULLET PER SOURCE LINE**
+
+- **Line 127** *In tutte parti impera e quivi regge;* → In every part of the world the Sovereign (He) **governs** those parts, and **there** (at the same place) He **reigns**.  
+- **Line 128** *quivi è la sua città e l’alto seggio:* → At that very place there **is** the Sovereign’s **city** and His **lofty seat**.  
+- **Line 129** *oh felice colui cu’ ivi elegge!* → “O happy” is the one **whom** He **elects** **there** (i.e., the one chosen for that place).  
+
+---
+
+## Token‑by‑Token Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition (truth‑condition) | Grammatical Role |
+|-------------|------------|----------------------|------------------------------------------|------------------|
+| In | preposition | **In** | introduces the domain “all parts” | locative adjunct |
+| tutte | adjective (fem. pl.) | **all** | quantifies “parts” → ∀x (Part(x) → …) | attributive modifier |
+| parti | noun (fem. pl.) | **parts** | the set of spatial divisions of the world | head of noun phrase |
+| impera | verb 3sg pres. ind. (im‑) | **governs** | He exercises rule over each part | predicate verb |
+| e | conjunction | **and** | coordinates two predicates | coordinator |
+| quivi | adverb | **there** | locative reference for the second predicate | locative adjunct |
+| regge | verb 3sg pres. ind. (reg‑) | **reigns** | He holds sovereign authority at “there” | predicate verb |
+| quivi | adverb | **there** | locative anchor for existence statements | locative adjunct |
+| è | verb 3sg pres. ind. (essere) | **is** | asserts existence of city and seat | copular verb |
+| la | definite article (fem. sing.) | **the** | marks “city” as a specific entity | determiner |
+| sua | possessive adjective (fem. sing.) | **His** | denotes ownership by the Sovereign | attributive modifier |
+| città | noun (fem. sing.) | **city** | the Sovereign’s urban domain | head of noun phrase |
+| e | conjunction | **and** | coordinates “city” with “seat” | coordinator |
+| l’ | contraction of *il* (def. article masc. sing.) | **the** | marks “seat” as a specific entity | determiner |
+| alto | adjective (masc. sing.) | **lofty** | qualifies the seat’s stature | attributive modifier |
+| seggio | noun (masc. sing.) | **seat** | the Sovereign’s elevated throne | head of noun phrase |
+| oh | interjection | **O** | vocative exclamation addressing the listener | discourse particle |
+| felice | adjective (masc. sing.) | **happy** | describes the emotional state of the chosen one | predicative adjective |
+| colui | pronoun (masc. sing.) | **he** | refers to the individual being elected | subject pronoun |
+| cu’ | relative pronoun (contraction of *che* “who/whom”) | **whom** | introduces the relative clause identifying the elected | relative pronoun |
+| ivi | adverb | **there** / **thereto** | locative complement of the act of electing | locative adjunct |
+| elegge | verb 3sg pres. ind. (eleg‑) | **elects** | He selects the individual at “there” | predicate verb |
+
+*Notes*  
+
+- The Italian **quivi** and **ivi** both render English “there”, but in the source they serve distinct discourse functions: **quivi** points to the place of rule/reign, while **ivi** points to the place of election.  
+- The contraction **l’** is the elided masculine definite article preceding the adjective **alto**; together they translate to “the lofty”.  
+- Punctuation marks (semicolon, colon, exclamation) are not listed as lexical items but signal clause boundaries that correspond to the English punctuation in the reference.
+]]></message>
+</messages>

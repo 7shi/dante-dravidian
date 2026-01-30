@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Nun ĉu vi estas tiu Virgil kaj tiu fonto  
+kiu verŝas tiel larĝan fluon de parolo,  
+Mi respondis al li kun honta frunto.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Or | temporal marker “now/then” | **Nun** | now/then | OK |
+| se' | copular verb “are” | **estas** | are | OK |
+| tu | 2nd‑person pronoun “you” | **vi** | you | OK |
+| quel | demonstrative “that” (modifying *Virgilio*) | **tiu** | that | OK |
+| Virgilio | proper name “Virgil” | **Virgil** | Virgil | OK |
+| e | coordinating conjunction “and” | **kaj** | and | OK |
+| quella | demonstrative “that” (modifying *fonte*) | **tiu** | that | OK |
+| fonte | metaphorical “fount, source” | **fonto** | fount/source | OK |
+| che | relative pronoun “which” | **kiu** | which | OK |
+| spandi | verb “poureth forth, spread” | **verŝas** | pours/spreads | OK |
+| di | preposition “of” | **de** | of | OK |
+| parlar | noun “speech” | **parolo** | speech | OK |
+| sì | degree adverb “so” | **tiel** | so | OK |
+| largo | adjective “large” (accusative) | **larĝan** | large (ACC) | OK |
+| fiume | noun “river/stream” (accusative) | **fluon** | stream/river (ACC) | OK |
+| rispuos' | past verb “replied” | **respondis** | replied | OK |
+| io | 1st‑person pronoun “I” | **Mi** | I | OK |
+| lui | 3rd‑person pronoun “to him” | **li** | him | OK |
+| con | preposition “with” | **kun** | with | OK |
+| vergognosa | adjective “bashful, ashamed” | **honta** | bashful | OK |
+| fronte | noun “front, forehead” | **frunto** | forehead/front | OK |
+
+### Items to Review
+- **Missing:** none  
+- **Wrong:** none  
+- **Grammar errors:** none  
+- **Unnecessary elements:** none  
+
+All source words are accounted for, correctly rendered in Esperanto, and the grammatical agreements are satisfied.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79:**  
+  - Original: `Nun ĉu vi estas tiu Virgil kaj tiu fonto`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 80:**  
+  - Original: `kiu verŝas tiel larĝan fluon de parolo,`  
+  - Issue: punctuation wrong (should end with “?” as in the source)  
+  - Corrected: `kiu verŝas tiel larĝan fluon de parolo?`  
+
+- **Line 81:**  
+  - Original: `Mi respondis al li kun honta frunto.`  
+  - Issue: none  
+  - Corrected: no change  
+
+```esperanto
+Nun ĉu vi estas tiu Virgil kaj tiu fonto
+kiu verŝas tiel larĝan fluon de parolo?
+Mi respondis al li kun honta frunto.
+```
+]]></message>
+</messages>

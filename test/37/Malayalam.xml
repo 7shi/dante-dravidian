@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അവൻ അവളെ ഓരോ പട്ടണത്തിലൂടെയും വേട്ടയാടും,
+അവൻ അവളെ നരകത്തിലേക്ക് തിരികെ വെച്ചതുവരെ,
+അവിടെ ഇർഷം ആദ്യം അവളെ പുറപ്പെടുവിച്ചു.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Questi | male agent (He) | **അവൻ** | “he” | OK |
+| la | her (direct object) | **അവളെ** | “her” | OK |
+| caccerà | shall hunt | **വേട്ടയാടും** | “shall hunt” | OK |
+| per | through (preposition) | **…ത്തിലൂടെ** (as part of *പട്ടണത്തിലൂടെയും*) | “through” | OK |
+| ogne | every | **ഓരോ** | “each / every” | OK |
+| villa | town | **പട്ടണം** (root of *പട്ടണത്തിലൂടെയും*) | “town” | OK |
+| fin | till / until (temporal limit) | **വെച്ചതുവരെ** | “until (he) has set” | OK |
+| che | that (subordinator) | — (expressed by the suffix *‑തുവരെ*) | — | UNNECESSARY |
+| l’avrà | shall have (auxiliary) | — (included in *വെച്ചതുവരെ*) | — | UNNECESSARY |
+| rimessa | set back | **വെച്ച** (in *വെച്ചതുവരെ*) | “set” | OK |
+| ne | in (preposition) | **…ത്തിലേക്ക്** (as part of *നരകത്തിലേക്ക്*) | “into” | OK |
+| lo | the (definite article) | — (articles are omitted in Malayalam) | — | UNNECESSARY |
+| ’nferno | hell | **നരകം** (root of *നരകത്തിലേക്ക്*) | “hell” | OK |
+| là | there (locative) | **അവിടെ** | “there” | OK |
+| onde | whence (relative adverb) | — (contextualised by *അവിടെ*) | — | UNNECESSARY |
+| ’nvidia | envy (personified force) | **ഇർഷം** | “envy” | OK |
+| prima | first (temporal qualifier) | **ആദ്യം** | “first” | OK |
+| dipartilla | shall send forth | **പുറപ്പെടുവിച്ചു** | “sent forth” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `che`, `l’avrà`, `lo`, `onde` – Malayalam does not require separate words for these grammatical particles; their functions are expressed by verb morphology or context.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 109:
+  - Original: അവൻ അവളെ ഓരോ പട്ടണത്തിലൂടെയും വേട്ടയാടും,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 110:
+  - Original: അവൻ അവളെ നരകത്തിലേക്ക് തിരികെ വെച്ചതുവരെ,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 111:
+  - Original: അവിടെ ഇർഷം ആദ്യം അവളെ പുറപ്പെടുവിച്ചു.
+  - Issue: none
+  - Corrected: no change  
+
+```
+അവൻ അവളെ ഓരോ പട്ടണത്തിലൂടെയും വേട്ടയാടും,
+അവൻ അവളെ നരകത്തിലേക്ക് തിരികെ വെച്ചതുവരെ,
+അവിടെ ഇർഷം ആദ്യം അവളെ പുറപ്പെടുവിച്ചു.
+```
+]]></message>
+</messages>

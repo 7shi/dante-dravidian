@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+121 A le quai poi se tu vorrai salire,
+122 anima fia a ciò più di me degna:
+123 con lei ti lascerò nel mio partire;
+Reference Translation (provided):
+to whom if thou wilt thereafter ascend, then shall be a soul more worthy than I for that. With her I will leave thee at my departure;
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 121** *“A le quai poi se tu vorrai salire,”* → **Locked Meaning**  
+  *There is a set of addressees (the ones) such that, if you (the addressee) will wish to ascend thereafter, the following clause holds.*  
+
+- **Line 122** *“anima fia a ciò più di me degna:”* → **Locked Meaning**  
+  *A soul (S) will be more worthy than I (the speaker) with respect to that (the ascent).  
+  Comparative: A = worthiness of S, B = worthiness of I; relation > (more), no explicit degree modifier (plain “more”).*  
+
+- **Line 123** *“con lei ti lascerò nel mio partire;”* → **Locked Meaning**  
+  *I will leave you (the addressee) together with her at the moment of my departure.*  
+
+
+
+---
+
+### Consistent Markdown Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **A** | preposition | *to* | marks the direction of the following relational clause | head of prepositional phrase introducing the addressee |
+| **le** | definite article (plural, fem.) | *the* | specifies the group “those” | determiner within the noun phrase *le quai* |
+| **quai** | relative pronoun (masc./fem., plural) | *whom* | refers to the addressees addressed by the speaker | head of relative clause, object of preposition *A* |
+| **poi** | adverb | *thereafter* | indicates temporal succession after the present moment | modifier of the conditional clause |
+| **se** | subordinating conjunction | *if* | introduces the conditional clause | links condition to main clause |
+| **tu** | personal pronoun (2nd sg.) | *thou* | the addressee of the conditional | subject of the verb *vorrai* |
+| **vorrai** | verb (future, 2nd sg.) | *wilt* | expresses volition in the future | predicate of the conditional clause |
+| **salire** | infinitive verb | *ascend* | the action the addressee may wish to perform | complement of *vorrai* (future‑infinitive construction) |
+| **anima** | noun (feminine, singular) | *soul* | the entity that will be compared in worth | subject of the verb *fia* |
+| **fia** | verb (future, 3rd sg. of *essere*) | *shall be* | predicts the state of the soul | copular predicate linking *anima* to *degna* |
+| **a** | preposition | *for* | introduces the domain of worthiness | head of PP *a ciò* |
+| **ciò** | demonstrative pronoun (neuter) | *that* | points to the previously mentioned ascent | object of preposition *a* |
+| **più** | comparative adverb | *more* | marks the comparative increase in worthiness | modifier of the adjective *degna* |
+| **di** | preposition | *than* | introduces the standard of comparison | head of PP *di me* |
+| **me** | personal pronoun (1st sg. accusative) | *I* | the speaker, serving as the comparison baseline | object of preposition *di* |
+| **degna** | adjective (feminine, singular) | *worthy* | attributes worthiness to the soul | predicative complement of *fia* |
+| **con** | preposition | *with* | introduces the companion in the departure | head of PP *con lei* |
+| **lei** | personal pronoun (3rd sg. fem.) | *her* | the female companion mentioned | object of preposition *con* |
+| **ti** | personal pronoun (2nd sg. accusative) | *thee* | the addressee who will be left | direct object of *lascerò* |
+| **lascerò** | verb (future, 1st sg.) | *will leave* | the speaker’s future action of parting | main predicate of the clause |
+| **nel** | contraction of *in* + *il* (preposition + definite article) | *at the* | locates the action within the event of departure | head of PP *nel mio partire* |
+| **mio** | possessive adjective (1st sg.) | *my* | denotes ownership of the departure | determiner within the noun phrase *mio partire* |
+| **partire** | infinitive verb | *departure* (noun‑like) | the event of the speaker’s leaving | object of preposition *nel* (treated as a nominalized infinitive) |
+
+*The table respects the locked meanings above: each Italian token is paired with its English counterpart, a concise definition in context, and its grammatical function within the three‑line passage.*
+]]></message>
+</messages>

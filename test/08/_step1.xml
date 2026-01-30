@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+22 E come quei che con lena affannata,
+23 uscito fuor del pelago a la riva,
+24 si volge a l'acqua perigliosa e guata,
+Reference Translation (provided):
+And even as one who with spent breath, issued out of the sea upon the shore, turns to the perilous water and gazes,
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 22** – *E come quei che con lena affannata,* → **Locked Meaning**  
+  There exists an individual **X** such that **X** is being compared (via *come*) to a previously mentioned group (*quei* “those”). **X** is described by the relative clause *che con lena affannata* – **X** possesses the state *lena affannata* (“spent breath”). The conjunction *E* links this comparison to the preceding discourse.  
+
+- **Line 23** – *uscito fuor del pelago a la riva,* → **Locked Meaning**  
+  The same individual **X** has performed the motion *uscito* (“issued”) from the region *fuor del pelago* (“out of the sea”) to the region *a la riva* (“upon the shore”).  
+
+- **Line 24** – *si volge a l'acqua perigliosa e guata,* → **Locked Meaning**  
+  The individual **X** reflexively *si volge* (“turns”) toward the entity *l'acqua perigliosa* (“the perilous water”) and subsequently *guata* (“gazes”) at it.  
+
+---
+
+### Source‑Reference Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **E** | Coordinating conjunction | *And* | Links the current clause to the previous narrative. | Conjunction |
+| **come** | Comparative adverb (introducing similitude) | *as* | Marks a similarity relation between the subject and a prior figure. | Comparative particle |
+| **quei** | Demonstrative pronoun, masculine plural | *one* (generic “those”) | Refers to a person(s) previously evoked; here functions as the head of the noun phrase. | Demonstrative noun (subject) |
+| **che** | Relative pronoun | *who* | Introduces the relative clause that qualifies *quei*. | Relative clause introducer |
+| **con** | Preposition | *with* | Introduces the instrumental complement expressing the means/state. | Prepositional marker |
+| **lena** | Feminine singular noun (archaic “breath”) | *spent* (as part of “spent breath”) | Denotes the breath that has been exhausted. | Noun (object of *con*) |
+| **affannata** | Feminine singular adjective (past participle used adjectivally) | *breath* (as part of “spent breath”) | Qualifies *lena* as exhausted. | Adjective (modifier of *lena*) |
+| **uscito** | Past participle used as verb (transitive, active) | *issued* | Describes the motion of exiting. | Verb (main predicate) |
+| **fuor** | Preposition (archaic form of *fuori*) | *out* | Marks departure from a location. | Prepositional marker |
+| **del** | Contraction of *di* + *il* (preposition + definite article) | *of the* | Introduces the noun *pelago*. | Prepositional article |
+| **pelago** | Masculine singular noun | *sea* | The body of water being left. | Noun (object of *del*) |
+| **a** | Preposition | *upon* | Indicates destination. | Prepositional marker |
+| **la** | Definite article, feminine singular | *the* | Introduces *riva*. | Article |
+| **riva** | Feminine singular noun | *shore* | Destination location. | Noun (object of *a*) |
+| **si** | Reflexive pronoun (3rd person) | *(reflexive marker for “turns”)* | Shows the subject acts upon itself. | Reflexive clitic |
+| **volge** | Present indicative verb | *turns* | Main action of re‑orienting. | Verb (main predicate) |
+| **a** | Preposition | *to* | Introduces the target of the turn. | Prepositional marker |
+| **l'acqua** | Contraction of article *la* + noun *acqua* (feminine singular) | *the water* | The perilous element being faced. | Noun phrase (object of *a*) |
+| **perigliosa** | Feminine singular adjective | *perilous* | Qualifies *acqua* as dangerous. | Adjective (modifier of *acqua*) |
+| **e** | Coordinating conjunction | *and* | Links two successive actions. | Conjunction |
+| **guata** | Present indicative verb | *gazes* | Secondary action performed by the subject. | Verb (secondary predicate) |
+
+*The table respects the “Locked Meaning” for each line, pairing each Italian token with its English counterpart, a concise contextual definition, and the grammatical function it fulfills in the passage.*
+]]></message>
+</messages>

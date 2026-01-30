@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நான் ஜூலியோவின் கீழ் தாமதமாக இருந்தாலும் பிறந்தேன்,  
+நான் நல்ல ஆகஸ்டஸின் கீழ் ரோம் நகரில் வாழ்ந்தேன்  
+தவறான மற்றும் பொய்யான கடவுள்களின் காலத்தில்.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|-----------------------|------------------------------|-----------------------------|--------|
+| Nacqui | “was born” (1st sg perfect) | **பிறந்தேன்** | was born | OK |
+| sub | preposition “under” (temporal/political) | **கீழ்** | under | OK |
+| Iulio | proper name “Julio” | **ஜூலியோவின்** | Julio’s | OK |
+| ancor | concessive adverb “though” | **இருந்தாலும்** | although | OK |
+| che | subordinating conjunction “that” | — | — | **UNNECESSARY** (merged into “இருந்தாலும்”) |
+| fosse | subjunctive “was” (part of concessive clause) | — | — | **UNNECESSARY** (merged into “இருந்தாலும்”) |
+| tardi | adjective “late” (adverbial) | **தாமதமாக** | late (as adverb) | OK |
+| e | coordinating conjunction “and” | — | — | **UNNECESSARY** (omitted in Tamil) |
+| vissi | verb “lived” (1st sg perfect) | **வாழ்ந்தேன்** | lived | OK |
+| a | preposition “at / in” (locative) | **இல்** (as part of “ரோம் நகரில்”) | in | OK |
+| Roma | proper name “Rome” | **ரோம்** | Rome | OK |
+| sotto | preposition “under” | **கீழ்** | under | OK |
+| ’l | definite article “the” | — | — | **UNNECESSARY** (articles not used in Tamil) |
+| buono | adjective “good” | **நல்ல** | good | OK |
+| Augusto | proper name “Augustus” | **ஆகஸ்டஸின்** | Augustus’s | OK |
+| nel | contraction “in the” | **இல்** (as part of “காலத்தில்”) | in | OK |
+| tempo | noun “time” | **காலத்தில்** | time (locative) | OK |
+| de | preposition “of” | **இன்** | of | OK |
+| li | definite article plural “the” | — | — | **UNNECESSARY** (articles omitted) |
+| dèi | noun “gods” | **கடவுள்களின்** | gods’ | OK |
+| falsi | adjective “false” | **தவறான** | false | OK |
+| e | coordinating conjunction “and” | **மற்றும்** | and | OK |
+| bugiardi | adjective “lying” | **பொய்யான** | lying | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `che`, `fosse`, `e` (line 71), `’l`, `li` – these source elements have no separate lexical counterpart in Tamil because the language expresses the same meaning without them.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 70:
+  - Original: நான் ஜூலியோவின் கீழ் தாமதமாக இருந்தாலும் பிறந்தேன்,
+  - Issue: none
+  - Corrected: no change
+- Line 71:
+  - Original: நான் நல்ல ஆகஸ்டஸின் கீழ் ரோம் நகரில் வாழ்ந்தேன்
+  - Issue: none
+  - Corrected: no change
+- Line 72:
+  - Original: தவறான மற்றும் பொய்யான கடவுள்களின் காலத்தில்.
+  - Issue: none
+  - Corrected: no change
+
+```
+நான் ஜூலியோவின் கீழ் தாமதமாக இருந்தாலும் பிறந்தேன்,
+நான் நல்ல ஆகஸ்டஸின் கீழ் ரோம் நகரில் வாழ்ந்தேன்
+தவறான மற்றும் பொய்யான கடவுள்களின் காலத்தில்.
+```
+]]></message>
+</messages>

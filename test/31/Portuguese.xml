@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+«A ti convém manter outra viagem»,  
+Ele respondeu quando me viu chorando,  
+«se quiseres escapar deste lugar selvagem;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Portuguese) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| A | preposition (dative) “to” | **A** | “to” | OK |
+| te | 2nd‑person singular pronoun (accusative) “you” | **ti** | “you” | OK |
+| convien | impersonal verb of necessity/obligation | **convém** | “it behoves / it is proper” | OK |
+| tenere | infinitive “to hold / undertake” | **manter** | “to keep / maintain” | OK |
+| altro | adjective “another” | **outra** | “another” | OK |
+| vïaggio | noun “journey / course” | **viagem** | “journey / course” | OK |
+| rispuose | 3rd sg. past verb “replied” | **respondeu** | “replied” | OK |
+| poi | adverb “after / then” | **quando** | “when” (temporal) | OK |
+| che | conjunction “that / when” (subordinate) | — (absorbed in **quando**) | — | **UNNECESSARY** |
+| lagrimar | infinitive “to weep” | **chorando** | “weeping” (gerund) | OK |
+| mi | 1st‑person singular pronoun “me” | **me** | “me” | OK |
+| vide | 3rd sg. past verb “saw” | **viu** | “saw” | OK |
+| se | conditional conjunction “if” | **se** | “if” | OK |
+| vuo' | verb “wish / want” | **quiseres** | “you wish” (future subjunctive) | OK |
+| campar | infinitive “to escape” | **escapar** | “to escape” | OK |
+| d'esto | preposition “from this” | **deste** | “from this” | OK |
+| loco | noun “place” | **lugar** | “place” | OK |
+| selvaggio | adjective “savage / wild” | **selvagem** | “savage” | OK |
+
+---
+
+### Items to Note  
+
+- **UNNECESSARY**:  
+  - **che** – not rendered separately; its function is merged into the temporal conjunction **quando**.  
+  - The pronoun **Ele** that appears at the start of the second Portuguese sentence is an added subject required by Portuguese grammar but has no counterpart in the Italian source; it is therefore **UNNECESSARY** with respect to source‑to‑target alignment.  
+
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All source lexical items are accounted for, and the Portuguese rendering respects gender, number, and syntactic agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: «A ti convém manter outra viagem»,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2:**  
+  - Original: Ele respondeu quando me viu chorando,  
+  - Issue: UNNECESSARY subject pronoun “Ele” (not present in source)  
+  - Corrected: Respondeu quando me viu chorando,  
+
+- **Line 3:**  
+  - Original: «se quiseres escapar deste lugar selvagem;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+«A ti convém manter outra viagem»,  
+Respondeu quando me viu chorando,  
+«se quiseres escapar deste lugar selvagem;
+```
+]]></message>
+</messages>

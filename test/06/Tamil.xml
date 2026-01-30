@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நான் உயரமாகப் பார்த்து, அதன் தோள்களை கண்டேன்  
+அவை ஏற்கனவே கிரகத்தின் கதிர்களால் அலங்கரிக்கப்பட்டுள்ளன  
+அது ஒவ்வொரு பாதையிலும் மனிதர்களை நேராக வழிநடத்துகிறது.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| guardai | “looked upward” – speaker’s first perceptual action | **நான் உயரமாகப் பார்த்து** | “I looked upward” | OK |
+| in | preposition marking direction of the look | **உயரமாகப்** (part of the adverbial phrase) | “upward” (as part of “looked upward”) | OK |
+| alto | “high” – destination of the gaze | **உயரமாக** | “highly / upward” | OK |
+| e | coordinating conjunction “and” linking two actions | *(omitted; comma used instead)* | – | **UNNECESSARY** |
+| vidi | “saw” – speaker’s second perceptual action | **கண்டேன்** | “saw” | OK |
+| le | definite article (feminine plural) for “spalle” | *(omitted)* | – | **UNNECESSARY** |
+| sue | possessive adjective “its” referring to the shoulders | **அதன்** | “its” | OK |
+| spalle | “shoulders” – direct object of “vidi” | **தோள்களை** | “shoulders (ACC)” | OK |
+| vestite | past participle “clothed” – state of the shoulders | **அலங்கரிக்கப்பட்டுள்ளன** | “are clothed” | OK |
+| già | adverb “already” – temporal marker | **ஏற்கனவே** | “already” | OK |
+| de' | preposition “of” introducing the source of rays | **கிரகத்தின்** (genitive) | “of the planet” | OK |
+| raggi | “rays” – emanations from the planet | **கதிர்களால்** (instrumental) | “by rays” | OK |
+| del | preposition “of” (part of the genitive phrase) | *(included in “கிரகத்தின்”)* | – | **UNNECESSARY** |
+| pianeta | “planet” – celestial body emitting the rays | **கிரகம்** (within “கிரகத்தின்”) | “planet” | OK |
+| che | relative pronoun “that” introducing the clause | *(omitted)* | – | **UNNECESSARY** |
+| mena | verb “leadeth” – planet’s guiding action | **வழிநடத்துகிறது** | “leads / guides” | OK |
+| dritto | adverb “aright / straight” – manner of leading | **நேராக** | “straightly” | OK |
+| altrui | “men” – recipients of the guidance | **மனிதர்களை** | “people / men (ACC)” | OK |
+| per | preposition “along / for” indicating route | *(omitted; encoded in “பாதையிலும்”)* | – | **UNNECESSARY** |
+| ogne | determiner “every” – quantifier of paths | **ஒவ்வொரு** | “every” | OK |
+| calle | “path” – route over which guidance occurs | **பாதையிலும்** (path + locative suffix) | “in each path” | OK |
+| **(punctuation)** | internal comma after “பார்த்து” (not present in source) | **,** | – | **WRONG** |
+
+---
+
+### Issues Detected
+- **UNNECESSARY**: e, le, del, per, che – Tamil naturally omits these conjunctions/articles/prepositions.
+- **WRONG**: The comma after “பார்த்து” is an internal punctuation mark that does not appear in the source line; it violates the “no internal punctuation” rule.
+- No **MISSING**, **WRONG** (lexical), or **GRAMMAR** (agreement) errors besides the punctuation note.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 16:
+  - Original: **நான் உயரமாகப் பார்த்து, அதன் தோள்களை கண்டேன்**
+  - Issue: Internal punctuation (comma) not allowed.
+  - Corrected: **நான் உயரமாகப் பார்த்து அதன் தோள்களை கண்டேன்**
+
+- Line 17:
+  - Original: **அவை ஏற்கனவே கிரகத்தின் கதிர்களால் அலங்கரிக்கப்பட்டுள்ளன**
+  - Issue: none
+  - Corrected: **அவை ஏற்கனவே கிரகத்தின் கதிர்களால் அலங்கரிக்கப்பட்டுள்ளன**
+
+- Line 18:
+  - Original: **அது ஒவ்வொரு பாதையிலும் மனிதர்களை நேராக வழிநடத்துகிறது.**
+  - Issue: none
+  - Corrected: **அது ஒவ்வொரு பாதையிலும் மனிதர்களை நேராக வழிநடத்துகிறது.**
+
+```
+நான் உயரமாகப் பார்த்து அதன் தோள்களை கண்டேன்
+அவை ஏற்கனவே கிரகத்தின் கதிர்களால் அலங்கரிக்கப்பட்டுள்ளன
+அது ஒவ்வொரு பாதையிலும் மனிதர்களை நேராக வழிநடத்துகிறது.
+```
+]]></message>
+</messages>

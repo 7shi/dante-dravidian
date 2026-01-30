@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+そしてすべての欲望を抱く雌狼  
+か細さの中で重く見えるほど、  
+そして多くの人々をすでに悲しみの中で生きさせた、
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Ed | coordinating conjunction “And” | そして | “and” | OK |
+| una | indefinite article (fem. sg.) | *(omitted)* | – | UNNECESSARY |
+| lupa | “she‑wolf”, subject of the clause | 雌狼 | “she‑wolf” | OK |
+| che | relative pronoun “who” | *(implicit in the relative clause)* | – | UNNECESSARY |
+| di | preposition “with / of” (linking “all cravings”) | の (as part of すべての) | “of” | OK |
+| tutte | universal quantifier “all” | すべての | “all” | OK |
+| brame | plural noun “cravings, desires” | 欲望 | “desires” | OK |
+| sembrava | imperfect copular verb “seemed” | 見えるほど | “seemed” | OK |
+| carca | adjective “laden, heavy” | 重く | “heavy / laden” | OK |
+| ne | preposition “in” (locative) | の中で | “in” | OK |
+| la | definite article (fem. sg.) | *(omitted)* | – | UNNECESSARY |
+| sua | possessive adjective “her” | *(omitted)* | – | UNNECESSARY |
+| magrezza | noun “meagreness, thinness” | か細さ | “thinness” | OK |
+| e | coordinating conjunction “and” | そして | “and” | OK |
+| molte | quantitative adjective “many” | 多くの | “many” | OK |
+| genti | plural noun “folk, people” | 人々 | “people” | OK |
+| fé | past‑remote of *fare* “made, caused” | 生きさせた | “made live” | OK |
+| già | temporal adverb “already” | すでに | “already” | OK |
+| viver | infinitive “to live” | 生きさせた (as part of the causative) | “to live” | OK |
+| grame | noun “grief, forlornness” | 悲しみ | “sadness / grief” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *una*, *la*, *sua*, *che* – Japanese naturally omits articles and explicit relative pronouns in this construction.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 49:
+  - Original: そしてすべての欲望を抱く雌狼、  
+  - Issue: none  
+  - Corrected: そしてすべての欲望を抱く雌狼、  
+
+- Line 50:
+  - Original: か細さの中で重く見えるほど、  
+  - Issue: missing possessive “her” (her meagreness)  
+  - Corrected: 彼女のか細さの中で重く見えるほど、  
+
+- Line 51:
+  - Original: そして多くの人々をすでに悲しみの中で生きさせた、  
+  - Issue: adverb placement; “already” should precede the verb phrase  
+  - Corrected: そしてすでに多くの人々を悲しみの中で生きさせた、  
+
+```text
+そしてすべての欲望を抱く雌狼、  
+彼女のか細さの中で重く見えるほど、  
+そしてすでに多くの人々を悲しみの中で生きさせた、  
+```
+]]></message>
+</messages>

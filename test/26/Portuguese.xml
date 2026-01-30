@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Mas tu por que retornas a tanta chatice?  
+Por que não subes o monte deleitoso  
+Que é princípio e causa de toda alegria?
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation | Status |
+|-------------|--------------------------------------|--------------------|------------------|--------|
+| Ma | adversative conjunction introducing a contrast | Mas | but | OK |
+| tu | 2nd person singular pronoun, subject of the clause | tu | you | OK |
+| perché *(line 76)* | interrogative adverb asking for a cause | por que | why | OK |
+| ritorni | verb 2sg present “to return” | retornas | you return | OK |
+| a | preposition marking destination | a | to | OK |
+| tanta | intensifying adjective (high degree) | tanta | so great | OK |
+| noia | feminine noun “annoyance / boredom” | chatice | annoyance / boredom | OK |
+| perché *(line 77)* | interrogative adverb asking for a cause (second question) | por que | why | OK |
+| non | negative particle | não | not | OK |
+| sali | verb 2sg present “to ascend / climb” | subes | you ascend | OK |
+| il | definite article, masc. sg. | o | the | OK |
+| dilettoso | adjective masc. sg. “delightful, delectable” | deleitoso | delightful | OK |
+| monte | noun masc. sg. “mountain” | monte | mountain | OK |
+| ch’è | relative pronoun + copula “which is” | Que | which | OK |
+| principio | noun masc. sg. “origin, source” | princípio | principle / source | OK |
+| e | coordinating conjunction | e | and | OK |
+| cagion | noun fem. sg. “cause” (archaic) | causa | cause | OK |
+| di | preposition marking genitive | de | of | OK |
+| tutta | quantifier adjective fem. sg. “all, every” | toda | every | OK |
+| gioia | noun fem. sg. “joy” | alegria | joy | OK |
+
+### Issues Summary
+- **MISSING:** –  
+- **WRONG:** –  
+- **GRAMMAR:** –  
+- **UNNECESSARY:** –  
+
+All source tokens are represented in the Portuguese translation with appropriate lexical choices and correct grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 76:**  
+  - Original: Mas tu por que retornas a tanta chatice?  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 77:**  
+  - Original: Por que não subes o monte deleitoso  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 78:**  
+  - Original: Que é princípio e causa de toda alegria?  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Mas tu por que retornas a tanta chatice?
+Por que não subes o monte deleitoso
+Que é princípio e causa de toda alegria?
+```
+]]></message>
+</messages>

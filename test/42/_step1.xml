@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+124 ché quello imperador che là sù regna,
+125 perch' i' fu' ribellante a la sua legge,
+126 non vuol che 'n sua città per me si vegna.
+Reference Translation (provided):
+for that Emperor who reigneth them above, because I was rebellious to His law, wills not that into His city any one should come through me.
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 1 – Interpretation Lock (one bullet per source line)**  
+
+- **Line 124** `ché quello imperador che là sù regna,` → **Locked Meaning**:  
+  *There exists an individual *X *who is an emperor and who reigns in the realm that is “up there” (i.e., above the speaker). The speaker points to this emperor as the cause of what follows.*  
+
+- **Line 125** `perch' i' fu' ribellante a la sua legge,` → **Locked Meaning**:  
+  *The speaker (the “I” of the clause) was in a state of rebellion toward the law belonging to that emperor.*  
+
+- **Line 126** `non vuol che 'n sua città per me si vegna.` → **Locked Meaning**:  
+  *The emperor does **not** will (i.e., does not desire) that anyone (impersonal “one”) should come into his city **through** the speaker.*  
+
+*(No comparative or degree expressions are present, so no A > B or “slightly” specifications are needed.)*  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition (truth‑condition) | Grammatical Role |
+|-------------|------------|----------------------|------------------------------------------|------------------|
+| **ché** | conjunction (causal) | **for** / **because** | introduces the cause‑effect relation of the whole clause | subordinating conjunction |
+| **quello** | demonstrative pronoun (masc. sing.) | **that** | points to a specific emperor previously or contextually known | determiner of *imperador* |
+| **imperador** | noun (masc. sing., archaic spelling) | **Emperor** | the sovereign figure who reigns above | head noun of noun phrase |
+| **che** | relative pronoun | **who** | links *imperador* to the subordinate clause describing his reign | subject of *regna* |
+| **là** | adverb of place | **there** | denotes a location remote from the speaker, the “above” realm | locative modifier of *sù* |
+| **sù** | adverb of direction/height | **above** | specifies the vertical position of the emperor’s reign | adverbial complement of *regna* |
+| **regna** | verb, 3sg present indicative (regnare) | **reigneth** | asserts that the emperor holds sovereign power in that place | predicate of relative clause |
+| **perch'** | contraction of *perché* (conjunction) | **because** | introduces the reason for the emperor’s will | causal subordinating conjunction |
+| **i'** | pronoun, 1st person singular (archaic *io*) | **I** | the speaker who performed the rebellion | subject of *fu'* |
+| **fu'** | verb, 1st person singular past of *essere* (archaic *fu*) | **was** | states a past state of the speaker | copular verb linking *i'* to *ribellante* |
+| **ribellante** | adjective/participle (masc. sing.) | **rebellious** | the speaker’s attitude toward the emperor’s law | predicative complement of *fu'* |
+| **a** | preposition | **to** | marks the target of the rebellion | prepositional complement of *ribellante* |
+| **la** | definite article (fem. sing.) | **His** (possessive article) | part of the possessive construction *la sua* | determiner of *legge* |
+| **sua** | possessive adjective (fem. sing.) | **His** | indicates ownership of the law by the emperor | modifier of *legge* |
+| **legge** | noun (fem. sing.) | **law** | the set of rules belonging to the emperor | object of preposition *a* |
+| **non** | adverb of negation | **not** | negates the following volitional verb | negation particle for *vuol* |
+| **vuol** | verb, 3sg present indicative (volere) | **wills** | expresses the emperor’s desire (or lack thereof) | main verb of clause |
+| **che** | conjunction (complementiser) | **that** | introduces the content of the emperor’s will | subordinating conjunction |
+| **'n** | contraction of *in* (preposition) | **into** | marks the destination (the emperor’s city) | prepositional complement of *vegna* |
+| **sua** | possessive adjective (fem. sing.) | **His** | denotes the city belongs to the emperor | determiner of *città* |
+| **città** | noun (fem. sing.) | **city** | the urban place ruled by the emperor | object of preposition *'n* |
+| **per** | preposition | **through** | indicates the mediating role of the speaker | prepositional complement of *vegna* |
+| **me** | pronoun, 1st person singular (object) | **me** | the speaker as the conduit for entry | object of preposition *per* |
+| **si** | impersonal reflexive pronoun | **one** (impersonal) | denotes an unspecified person | subject of the subjunctive verb *vegna* |
+| **vegna** | verb, 3sg present subjunctive (venire) | **should come** | expresses a desired (but denied) action of entering the city | predicate of the impersonal clause |
+
+*All entries respect the “locked” truth‑conditions given above, preserving the logical relations between the source tokens and the reference translation.*
+]]></message>
+</messages>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అతను నా మీదకు వస్తున్నాడని కనిపించింది  
+తల ఎత్తుగా మరియు ఆకలితో నిండినట్లుగా,  
+అలా గాలి అతనితో కంపిస్తున్నట్లు కనిపించింది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Questi | demonstrative pronoun, “this one / he” | అతను | “he” | OK |
+| parea | “seemed” (perceptual verb) | కనిపించింది | “seemed / appeared” | OK |
+| che (1) | complementizer introducing clause | — | — | UNNECESSARY |
+| contra | preposition “against, opposite to” | **నా మీదకు** | “to my (against me)” | GRAMMAR (should be “నా మీద” for natural Telugu) |
+| me | 1st‑person pronoun, object of “against” | నా | “my / me” | OK |
+| venisse | subjunctive “to be coming” | **వస్తున్నాడని** | “that he is coming” | OK |
+| con (1) | preposition “with” (introducing first attribute) | — | — | UNNECESSARY |
+| la | definite article “the” | — | — | UNNECESSARY |
+| test' | noun “head” | తల | “head” | OK |
+| alta | adjective “high, raised” (describing head) | ఎత్తుగా | “highly / raised” | OK |
+| e | coordinating conjunction “and” | మరియు | “and” | OK |
+| con (2) | preposition “with” (introducing second attribute) | — | — | UNNECESSARY |
+| rabbiosa | adjective “ravenous, fierce” (modifying hunger) | ఆకలితో | “with hunger” (carries the sense of intensity) | OK |
+| fame | noun “hunger” | నిండినట్లుగా | “as if filled (with hunger)” | OK |
+| sì | resultative adverb “so, thus” | **అలా** | “so / thus” | OK |
+| che (2) | complementizer for result clause | — | — | UNNECESSARY |
+| parea (2) | “seemed” (in result clause) | కనిపించింది | “seemed / appeared” | OK |
+| che (3) | complementizer for innermost clause | — | — | UNNECESSARY |
+| l'aere | noun “air” | గాలి | “air” | OK |
+| ne | clitic pronoun “of it / because of him” (causal) | **అతనితో** | “with him / because of him” | OK |
+| tremesse | subjunctive “trembled” | కంపిస్తున్నట్లు | “as if trembling” | OK |
+
+### Items Flagged
+
+- **GRAMMAR**: *contra* → “నా మీదకు”. In natural Telugu the locative/ablative “నా మీద” (or “నా వైపు”) would be preferred; the added “కు” creates a non‑standard case ending.
+- **UNNECESSARY**: All occurrences of the complementizer “che”, the article “la”, and the preposition “con” (both instances) do not have direct equivalents in Telugu and are therefore omitted.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 46:
+  - Original: అతను నా మీదకు వస్తున్నాడని కనిపించింది
+  - Issue: **GRAMMAR** – “నా మీదకు” is non‑standard; should be “నా మీద”.
+  - Corrected: అతను నా మీద వస్తున్నాడని కనిపించింది  
+
+- Line 47:
+  - Original: తల ఎత్తుగా మరియు ఆకలితో నిండినట్లుగా,
+  - Issue: **WRONG** – “నిండినట్లుగా” adds meaning not present in the source; the phrase should simply convey “with ravenous hunger”.
+  - Corrected: తల ఎత్తుగా, ఆకలితో,  
+
+- Line 48:
+  - Original: అలాగే గాలి అతనితో కంపిస్తున్నట్లు కనిపించింది.
+  - Issue: none
+  - Corrected: no change  
+
+```telugu
+అతను నా మీద వస్తున్నాడని కనిపించింది
+తల ఎత్తుగా, ఆకలితో,
+అలా గాలి అతనితో కంపిస్తున్నట్లు కనిపించింది.
+```
+]]></message>
+</messages>

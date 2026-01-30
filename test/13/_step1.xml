@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+37 Temp' era dal principio del mattino,
+38 e 'l sol montava 'n sù con quelle stelle
+39 ch'eran con lui quando l'amor divino
+Reference Translation (provided):
+The time was at the beginning of the morning, and the Sun was mounting upward with those stars that were with him when Love Divine first set in motion those beautiful things;
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 37** `Temp' era dal principio del mattino,` → **Locked Meaning**: *There existed a time that was situated at the beginning of the morning.*  
+- **Line 38** `e 'l sol montava 'n sù con quelle stelle` → **Locked Meaning**: *The Sun was moving upward together with those stars.*  
+- **Line 39** `ch'eran con lui quando l'amor divino` → **Locked Meaning**: *Those stars were with him at the moment when Divine Love (first) set things in motion.*  
+
+---
+
+### Token‑by‑Token Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition (truth‑conditions) | Grammatical Role |
+|-------------|------------|----------------------|------------------------------------------|------------------|
+| **Temp'** | Noun (abbr. *tempo*) | *time* | The temporal interval being spoken about | Subject of “era” |
+| **era** | Verb, 3 sg imperf. of *essere* | *was* | Predicate of existence for the time | Copular verb linking subject to locative complement |
+| **dal** | Preposition + definite article (*da + il*) | *at* / *from the* | Introduces the locative phrase “principio del mattino” | Prepositional head |
+| **principio** | Noun | *beginning* | The initial point of the morning | Noun head of the prepositional complement |
+| **del** | Preposition + definite article (*di + il*) | *of* | Links “principio” to “mattino” | Prepositional head |
+| **mattino** | Noun | *morning* | The daily period that is beginning | Complement of “principio” |
+| **e** | Coordinating conjunction | *and* | Joins the first clause with the second | Clause connector |
+| **'l** | Definite article (*il*) | *the* | Determines “sol” | Determiner |
+| **sol** | Noun | *Sun* | The celestial body that is moving | Subject of “montava” |
+| **montava** | Verb, 3 sg imperf. of *montare* | *was mounting* | Ongoing upward motion of the Sun | Main verb of the clause |
+| **'n** | Preposition (*in*) – part of the idiom “'n sù” | *up* | Marks direction of the motion | Directional preposition within adverbial phrase |
+| **sù** | Adverb | *ward* (together “upward”) | Completes the directional meaning of “'n” | Directional adverb forming the adverbial phrase “upward” |
+| **con** | Preposition | *with* | Introduces the accompanying entities | Prepositional head |
+| **quelle** | Demonstrative adjective | *those* | Specifies which stars are meant | Determiner modifying “stelle” |
+| **stelle** | Noun | *stars* | The luminous bodies accompanying the Sun | Object of the preposition “con” |
+| **ch'eran** | Relative pronoun + verb (*che + erano*) | *that were* | Relates the stars to the preceding clause and asserts their state | Subject of the relative clause |
+| **con** | Preposition | *with* | Marks accompaniment of the pronoun “lui” | Prepositional head |
+| **lui** | Pronoun (3 sg) | *him* | The entity (the Sun) with which the stars were together | Object of the preposition “con” |
+| **quando** | Subordinating conjunction | *when* | Introduces a temporal subordinate clause | Temporal clause marker |
+| **l'amor** | Noun with article (*l’ + amor*) | *Love* | The divine principle that acts | Subject of the (elided) verb in the next line |
+| **divino** | Adjective | *Divine* | Qualifies “Love” as sacred | Attribute of “l’amor” |
+
+*The table respects the locked meanings above: each Italian token is paired with the English word(s) that convey the same truth‑conditions in the given context, and its grammatical function within the clause is indicated.*
+]]></message>
+</messages>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+por esta bestia por la cual tú gritas,  
+no permite a nadie pasar por su camino,  
+pero tanto lo impide que lo mata;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → Spanish)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| **ché** | causal conjunction “because” | **por** | “for / because of” | **WRONG** (causal sense not rendered as a conjunction) |
+| **questa** | demonstrative adjective “this” | **esta** | “this” | OK |
+| **bestia** | noun “beast” | **bestia** | “beast” | OK |
+| **per** (1) | preposition “for” (introducing relative clause) | **por** | “for” | OK |
+| **la** (1) | definite article within relative pronoun | **la** | “the” | OK |
+| **qual** | relative pronoun “which” | **cual** | “which” | OK |
+| **tu** | 2nd‑person singular pronoun “you” | **tú** | “you” | OK |
+| **gride** | verb “cry out” | **gritas** | “you cry out” | OK |
+| **non** | negation “not” | **no** | “not” | OK |
+| **lascia** | verb “allows / lets” | **permite** | “allows” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **nadie** | “no one” | OK |
+| **pasar** | infinitive “to pass” | **pasar** | “to pass” | OK |
+| **per** (2) | preposition “through / along” | **por** | “through” | OK |
+| **la** (2) | definite article of *via* | — (omitted) | — | **UNNECESSARY** (article not needed in Spanish) |
+| **sua** | possessive adjective “its” | **su** | “its” | OK |
+| **via** | noun “way, path” | **camino** | “way / path” | OK |
+| **ma** | coordinating conjunction “but” | **pero** | “but” | OK |
+| **tanto** | adverb of degree “so much” | **tanto** | “so much” | OK |
+| **lo** | pronoun “him” (direct object) | **lo** | “him” | OK |
+| **'mpedisce** | verb “hinders” | **impide** | “hinders” | OK |
+| **che** | complementizer “that” (introducing result clause) | **que** | “that” | OK |
+| **l’uccide** | verb phrase “kills him” | **mata** | “kills” | OK |
+
+---
+
+### Items to Review  
+
+- **WRONG:** *ché* – rendered as **por** instead of a causal conjunction (e.g., “porque”).  
+- **UNNECESSARY:** second occurrence of *la* (article before *sua via*) – omitted in Spanish because the possessive *su* already marks the noun.  
+
+All other source words are accounted for and correctly translated with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: *por esta bestia por la cual tú gritas,*  
+  - Issue: **WRONG** – causal conjunction “ché” rendered as “por” instead of “porque”.  
+  - Corrected: *porque esta bestia, por la cual tú gritas,*  
+
+- **Line 2:**  
+  - Original: *no permite a nadie pasar por su camino,*  
+  - Issue: none  
+  - Corrected: *no permite a nadie pasar por su camino,*  
+
+- **Line 3:**  
+  - Original: *pero tanto lo impide que lo mata;*  
+  - Issue: none  
+  - Corrected: *pero tanto lo impide que lo mata;*  
+
+```text
+porque esta bestia, por la cual tú gritas,
+no permite a nadie pasar por su camino,
+pero tanto lo impide que lo mata;
+```
+]]></message>
+</messages>

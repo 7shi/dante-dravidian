@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Vi estas mia majstro kaj mia aŭtoro,  
+Vi estas sola tiu, de kiu mi prenis  
+la bela stilo, kiu faris al mi honoron.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Esperanto) | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------------------|------------------------|--------|
+| Tu | 2nd‑person singular pronoun (subject) | Vi | you | OK |
+| se' | Verb *sei* – present indicative 2nd sg, copula | estas | are | OK |
+| lo | Definite article, masc. singular (acc.) | — | — | UNNECESSARY |
+| mio | Possessive adjective, masc. singular | mia | my | OK |
+| maestro | Noun, masc. singular – “master” | majstro | master | OK |
+| e | Coordinating conjunction “and” | kaj | and | OK |
+| 'l | Definite article *il* (masc. sing., acc.) | — | — | UNNECESSARY |
+| autore | Noun, masc. singular – “author” | aŭtoro | author | OK |
+| tu | 2nd‑person singular pronoun (subject) | Vi | you | OK |
+| se' | Verb *sei* – copula | estas | are | OK |
+| solo | Adverb/adj. “alone”, exclusivity | sola | alone | OK |
+| colui | Demonstrative pronoun “the one (who)” | tiu | that one | OK |
+| da | Preposition “from” | de | from | OK |
+| cu' | Relative pronoun *cui* (ablative) | kiu | whom/which | OK |
+| io | 1st‑person singular pronoun (subject) | mi | I | OK |
+| tolsi | Verb *tossi* – preterite 1st sg “took” | prenis | took | OK |
+| lo | Definite article, masc. singular (acc.) | — | — | UNNECESSARY |
+| bello | Adjective “fair, beautiful” | bela | fair/beautiful | OK |
+| stilo | Noun “style” | stilo | style | OK |
+| che | Relative pronoun introducing clause | kiu | that | OK |
+| m'ha | Contraction *mi ha* (auxiliary + clitic) – “has … me” | faris al mi | has done to me | OK |
+| fatto | Past participle of *fare* – “done” | faris | did/made | OK |
+| onore | Noun “honor” | honoron | honor | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `lo` (twice) and `'l` – Italian definite articles have no direct counterpart in Esperanto; they are omitted naturally.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all remaining source items are correctly rendered in the Esperanto translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: Vi estas mia majstro kaj mia aŭtoro,
+  - Issue: none
+  - Corrected: no change
+- Line 86:
+  - Original: Vi estas sola tiu, de kiu mi prenis
+  - Issue: none
+  - Corrected: no change
+- Line 87:
+  - Original: la bela stilo, kiu faris al mi honoron.
+  - Issue: none
+  - Corrected: no change
+
+```
+Vi estas mia majstro kaj mia aŭtoro,
+Vi estas sola tiu, de kiu mi prenis
+la bela stilo, kiu faris al mi honoron.
+```
+]]></message>
+</messages>

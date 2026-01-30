@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ನಾನು ಅವನನ್ನು ಮಹಾ ಮರುಭೂಮಿಯಲ್ಲಿ ನೋಡಿದಾಗ,
+ನಾನು ಅವನಿಗೆ ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು ಎಂದು ಕೂಗಿದೆ,
+ನೀನು ಯಾವರೂ ಆಗಿದ್ದರೂ ನೆರಳು ಆಗಿರಲಿ ಅಥವಾ ನಿಜವಾದ ಮಾನವ ಆಗಿರಲಿ!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|----------------------|--------------------------|--------|
+| Quando | temporal “when” (introduces clause) | ನೋಡಿದಾಗ | “when (I) saw” | OK |
+| vidi | “saw” (past) | ನೋಡಿದ | “saw” | OK |
+| costui | demonstrative “him” | ಅವನನ್ನು | “him (ACC)” | OK |
+| nel | preposition “in” + article “the” | ಮರುಭೂಮಿಯಲ್ಲಿ | “in the desert” | OK |
+| gran | adjective “great” | ಮಹಾ | “great” | OK |
+| diserto | noun “desert” | ಮರುಭೂಮಿಯಲ್ಲಿ | “desert (LOC)” | OK |
+| Miserere | imperative “have pity” | ಕರುಣೆ ಮಾಡು | “have pity” | OK |
+| di | preposition “on” (target of pity) | ಮೇಲೆ | “on” | OK |
+| me | pronoun “me” | ನನ್ನ | “my” (object) | OK |
+| gridai | “I cried / shouted” (past) | ಕೂಗಿದೆ | “cried / shouted” | OK |
+| a | preposition “to” (dative) | — | (absorbed in “ಅವನಿಗೆ”) | UNNECESSARY |
+| lui | pronoun “him” (dative) | ಅವನಿಗೆ | “to him” | OK |
+| qual | relative “whatever” | ಯಾವರೂ | “whatever” | OK |
+| che | relative particle (introduces clause) | — | (no lexical equivalent) | UNNECESSARY |
+| tu | pronoun “you” (2nd sg) | ನೀನು | “you” | OK |
+| sii | subjunctive “be” | ಆಗಿದ್ದರೂ | “be (if/though)” | OK |
+| od (1st) | disjunction “or” | ಅಥವಾ | “or” | OK |
+| ombra | noun “shade” | ನೆರಳು | “shade” | OK |
+| od (2nd) | disjunction “or” | — | (single “ಅಥವಾ” already covers both) | UNNECESSARY |
+| omo | noun “man” | ಮಾನವ | “man / human” | OK |
+| certo | adjective “certain / real” | ನಿಜವಾದ | “real / certain” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**:  
+  - **a** – the dative preposition is merged into the Kannada dative pronoun “ಅವನಿಗೆ”.  
+  - **che** – relative particle has no standalone word in Kannada.  
+  - **od (2nd)** – only one “ಅಥವಾ” is needed to link the two alternatives; the second “od” is therefore redundant.  
+
+All other source tokens are represented correctly (OK) with appropriate grammatical agreement in the Kannada translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 64:
+  - Original: ನಾನು ಅವನನ್ನು ಮಹಾ ಮರುಭೂಮಿಯಲ್ಲಿ ನೋಡಿದಾಗ,
+  - Issue: none
+  - Corrected: ನಾನು ಅವನನ್ನು ಮಹಾ ಮರುಭೂಮಿಯಲ್ಲಿ ನೋಡಿದಾಗ,
+
+- Line 65:
+  - Original: ನಾನು ಅವನಿಗೆ ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು ಎಂದು ಕೂಗಿದೆ,
+  - Issue: none
+  - Corrected: ನಾನು ಅವನಿಗೆ ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು ಎಂದು ಕೂಗಿದೆ,
+
+- Line 66:
+  - Original: ನೀನು ಯಾವರೂ ಆಗಿದ್ದರೂ ನೆರಳು ಆಗಿರಲಿ ಅಥವಾ ನಿಜವಾದ ಮಾನವ!
+  - Issue: none
+  - Corrected: ನೀನು ಯಾವರೂ ಆಗಿದ್ದರೂ ನೆರಳು ಆಗಿರಲಿ ಅಥವಾ ನಿಜವಾದ ಮಾನವ!
+
+```
+ನಾನು ಅವನನ್ನು ಮಹಾ ಮರುಭೂಮಿಯಲ್ಲಿ ನೋಡಿದಾಗ,
+ನಾನು ಅವನಿಗೆ ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು ಎಂದು ಕೂಗಿದೆ,
+ನೀನು ಯಾವರೂ ಆಗಿದ್ದರೂ ನೆರಳು ಆಗಿರಲಿ ಅಥವಾ ನಿಜವಾದ ಮಾನವ!
+```
+]]></message>
+</messages>

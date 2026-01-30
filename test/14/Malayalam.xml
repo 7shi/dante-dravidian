@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+കാലത്തിന്റെ ആദ്യമണിയും മധുരകാലവും;  
+അവയൊക്കെ എനിക്ക് നല്ല പ്രതീക്ഷയുടെ കാരണമായി  
+അവിടെ ഉള്ള ചിതറിച്ചർമ്മമുള്ള കാട്ടുമൃഗത്തെക്കുറിച്ച്.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (Malayalam → English) | Status |
+|-------------|--------------------------------------|-------------------------------|------------------------------------------|--------|
+| **mosse** | “first moment / hour” | **ആദ്യമണിയും** | “first moment” | OK |
+| **di** (prep. “of”) | genitive linking “prima” to “mosse” | **കാലത്തിന്റെ** | “of time” (genitive) | OK |
+| **prima** | “first” (temporal) | **ആദ്യ** (part of ആദ്യമണിയും) | “first” | OK |
+| **quelle** | demonstrative “those” | **അവയൊക്കെ** | “those” | OK |
+| **cose** | “things” (beautiful) | **മധുരകാലവും** | “sweet season” (interpreted as “beautiful things”) | OK |
+| **belle** | “beautiful / sweet” | **മധുര** (part of മധുരകാലവും) | “sweet” | OK |
+| **sì** | resultative “so … that” | — (not rendered) | — | **MISSING** |
+| **ch'a** | causal “that …” | **എനിക്ക്** | “to me” (used as indirect object) | **WRONG** |
+| **bene** | “good” (quality of hope) | **നല്ല** | “good” | OK |
+| **sperar** | infinitive “to hope” | **പ്രതീക്ഷ** | “hope” | OK |
+| **m'era** | “to me was” (experiencer) | **കാരണമായി** | “as a cause” (used as predicate) | **WRONG** |
+| **cagione** | “cause / occasion” | **കാരണമായി** | “as a cause” | OK |
+| **di** (line 42) | preposition “of / concerning” | — (not rendered) | — | **MISSING** |
+| **quella** | demonstrative “that” (referring to beast) | **അവിടെ** | “there” (locative, not demonstrative) | **WRONG** |
+| **fiera** | “wild beast” | **കാട്ടുമൃഗം** (stem in കാട്ടുമൃഗത്തെക്കുറിച്ച്) | “wild animal” | OK |
+| **a** | preposition “with” | **ഉള്ള** | “with / having” | OK |
+| **la** | definite article “the” (feminine) | — (article omitted) | — | **UNNECESSARY** |
+| **gaetta** | “dappled / speckled” | **ചിതറിച്ചർമ്മമുള്ള** | “spotted / dappled” | OK |
+| **pelle** | “skin” (attribute of beast) | — (not rendered) | — | **MISSING** |
+
+---
+
+### Summary of Issues  
+
+- **MISSING**:  
+  - *sì* (resultative “so”) – omitted, breaking the “so … that” construction.  
+  - *di* (line 42) – the preposition “of / concerning” is absent.  
+  - *pelle* – the attribute “skin” is not expressed.  
+
+- **WRONG**:  
+  - *ch'a* rendered as **എനിക്ക്** (“to me”) instead of a causal/conjunctive marker.  
+  - *m'era* rendered as **കാരണമായി** (“as a cause”) rather than the copular “to me was”.  
+  - *quella* rendered as **അവിടെ** (“there”) instead of the demonstrative “that”.  
+
+- **UNNECESSARY**:  
+  - *la* – the definite article is naturally omitted in Malayalam; its inclusion would be redundant.  
+
+- **GRAMMAR**: None of the rendered Malayalam words show overt agreement errors, but the omission of the resultative particle (*sì*) and the mis‑rendering of *ch'a* and *m'era* affect the clause‑linking grammar.  
+
+These points indicate that the Step 2 translation needs revision to faithfully preserve the logical structure and all lexical items of the source.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 40**  
+  - Original: കാലത്തിന്റെ ആദ്യമണിയും മധുരകാലവും;  
+  - Issue: none  
+  - Corrected: കാലത്തിന്റെ ആദ്യമണിയും മധുരകാലവും;  
+
+- **Line 41**  
+  - Original: അവയൊക്കെ എനിക്ക് നല്ല പ്രതീക്ഷയുടെ കാരണമായി  
+  - Issue: missing resultative “so” (sì), wrong rendering of “ch’a”, missing proper “to me was” structure.  
+  - Corrected: അങ്ങനെ, നല്ല പ്രതീക്ഷ എനിക്ക് കാരണമായി  
+
+- **Line 42**  
+  - Original: അവിടെ ഉള്ള ചിതറിച്ചർമ്മമുള്ള കാട്ടുമൃഗത്തെക്കുറിച്ച്.  
+  - Issue: wrong demonstrative, missing “that”, missing explicit “skin” (pelle).  
+  - Corrected: അത് കാട്ടുമൃഗം ചിതറിച്ചർമ്മമുള്ള തൊലിയുള്ളതിനെക്കുറിച്ച്.  
+
+```malayalam
+കാലത്തിന്റെ ആദ്യമണിയും മധുരകാലവും;
+അങ്ങനെ, നല്ല പ്രതീക്ഷ എനിക്ക് കാരണമായി
+അത് കാട്ടുമൃഗം ചിതറിച്ചർമ്മമുള്ള തൊലിയുള്ളതിനെക്കുറിച്ച്.
+```
+]]></message>
+</messages>

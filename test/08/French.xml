@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Et comme ceux qui avec souffle épuisé,
+Sorti du large vers la rive,
+Se tourne vers l'eau périlleuse et regarde,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (FR → EN) | Status |
+|-------------|----------------------|----------------------|-----------------------------|--------|
+| **E** | coordinating conjunction linking to previous clause | **Et** | “and” | OK |
+| **come** | comparative particle “as” | **comme** | “as” | OK |
+| **quei** | demonstrative plural “those” (generic) | **ceux** | “those” | OK |
+| **che** | relative pronoun “who” | **qui** | “who” | OK |
+| **con** | preposition “with” (instrumental) | **avec** | “with” | OK |
+| **lena** | noun “breath” (archaic) | **souffle** | “breath” | OK |
+| **affannata** | adjective “spent, exhausted” | **épuisé** | “exhausted” | OK |
+| **uscito** | verb “issued, came out” | **Sorti** | “came out” | OK |
+| **fuor** | preposition “out (of)” | **du** | “of the” (part of “du”) | OK* |
+| **del** | article “the” (genitive) | **du** | “of the” (part of “du”) | OK* |
+| **pelago** | noun “sea, ocean” | **large** | “wide” (incorrect for “sea”) | **WRONG** |
+| **a** (line 23) | preposition “to, toward” (destination) | **vers** | “towards” | OK |
+| **la** | definite article feminine singular | **la** | “the” | OK |
+| **riva** | noun “shore” | **rive** | “shore” | OK |
+| **si** | reflexive pronoun (3rd person) | **Se** | “himself/ herself” (reflexive marker) | OK |
+| **volge** | verb “turns” | **tourne** | “turns” | OK |
+| **a** (line 24) | preposition “to, toward” (target) | **vers** | “towards” | OK |
+| **l'acqua** | noun “the water” | **l'eau** | “the water” | OK |
+| **perigliosa** | adjective “perilous, dangerous” | **périlleuse** | “perilous” | OK |
+| **e** | coordinating conjunction “and” | **et** | “and” | OK |
+| **guata** | verb “gazes, looks at” | **regarde** | “looks, gazes” | OK |
+
+\* *“fuor del”* is rendered together as the French contraction **du** (“de + le”). Because French does not separate the two English‑style prepositions, we treat the mapping as acceptable.
+
+---
+
+### Items Requiring Attention  
+
+| Issue | Source Word(s) | Reason |
+|-------|----------------|--------|
+| **WRONG** | **pelago** | Rendered as **large** (“wide”) which does not convey the meaning “sea”. The correct French term should be **mer** (or **océan**). |
+| **GRAMMAR** | – | No agreement or gender errors were detected in the current French rendering. |
+| **UNNECESSARY** | – | All source elements have a counterpart in the French version (even if the article‑preposition fusion creates a single French word). |
+| **MISSING** | – | No source word is omitted; every Italian token is represented (again, “fuor” + “del” → “du”). |
+
+**Summary:** The only lexical inaccuracy is the translation of **pelago** as **large**; it should be replaced with **mer** (or **océan**) to preserve the intended meaning. All other mappings are satisfactory.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 22:
+  - Original: Et comme ceux qui avec souffle épuisé,
+  - Issue: Wrong demonstrative (plural) and missing article; phrasing not fully idiomatic.
+  - Corrected: Et comme celui qui avec le souffle épuisé,
+
+- Line 23:
+  - Original: Sorti du large vers la rive,
+  - Issue: Incorrect translation of “pelago” and prepositional article.
+  - Corrected: Sorti de la mer à la rive,
+
+- Line 24:
+  - Original: Se tourne vers l'eau périlleuse et regarde,
+  - Issue: None (preposition adjusted to match source).
+  - Corrected: Se tourne à l'eau périlleuse et regarde,
+
+```text
+Et comme celui qui avec le souffle épuisé,
+Sorti de la mer à la rive,
+Se tourne à l'eau périlleuse et regarde,
+```
+]]></message>
+</messages>

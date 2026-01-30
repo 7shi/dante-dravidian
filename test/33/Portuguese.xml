@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+e tem natureza tão maléfica e perversa,  
+que jamais sacia a vontade ávida,  
+e depois da refeição tem mais fome que antes.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation | Status |
+|-------------|--------------------------------------|--------------------|------------------|--------|
+| e (97) | coordinating conjunction linking clauses | e | “and” | OK |
+| ha | 3sg present of *avere* – possession | tem | “has” | OK |
+| natura | the inherent quality/disposition of the subject | natureza | “nature” | OK |
+| sì | intensifier of degree (“so”) | tão | “so” | OK |
+| malvagia | adjective – malign, harmful | maléfica | “malign” | OK |
+| e (97‑2) | conjunction joining adjectives | e | “and” | OK |
+| ria | adjective – evil, perverse | perversa | “evil” | OK |
+| che (98) | relative pronoun introducing clause | que | “that” | OK |
+| mai | adverb of total negation (“never”) | jamais | “never” | OK |
+| non | negative particle (double‑negative) | — (covered by *jamais*) | — | UNNECESSARY |
+| empie | verb – to fill, satisfy | sacia | “sates” | OK |
+| la | definite article (feminine) | a | “the” | OK |
+| bramosa | adjective – greedy, eager | ávida | “greedy” | OK |
+| voglia | noun – desire, will | vontade | “will” | OK |
+| e (99) | coordinating conjunction | e | “and” | OK |
+| dopo | preposition of time “after” | depois | “after” | OK |
+| ’l | elided definite article *il* (“the”) | da | “of the” | OK |
+| pasto | noun – meal, food | refeição | “meal” | OK |
+| ha (99) | 3sg present of *avere* – possession/state | tem | “has” | OK |
+| più | comparative adverb “more” | mais | “more” | OK |
+| fame | noun – hunger | fome | “hunger” | OK |
+| che (99) | comparative conjunction “than” | que | “than” | OK |
+| pria | adverb of time “before” | antes | “before” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:** *non* – the negative particle is not needed in Portuguese because the adverb *jamais* already conveys total negation. No other tokens are missing, wrong, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: e tem natureza tão maléfica e perversa,  
+  - Issue: none  
+  - Corrected: e tem natureza tão maléfica e perversa,  
+
+- **Line 2:**  
+  - Original: que jamais sacia a vontade ávida,  
+  - Issue: none  
+  - Corrected: que jamais sacia a vontade ávida,  
+
+- **Line 3:**  
+  - Original: e depois da refeição tem mais fome que antes.  
+  - Issue: none  
+  - Corrected: e depois da refeição tem mais fome que antes.  
+
+```
+e tem natureza tão maléfica e perversa,
+que jamais sacia a vontade ávida,
+e depois da refeição tem mais fome que antes.
+```
+]]></message>
+</messages>

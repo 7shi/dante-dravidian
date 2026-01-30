@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ನಿನಗೆ ಇನ್ನೊಂದು ಪ್ರಯಾಣವನ್ನು ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಗತ್ಯ,  
+ಅವನು ನನ್ನ ಕಣ್ಣೀರು ಹರಿಯುವುದನ್ನು ಕಂಡು ಉತ್ತರಿಸಿದನು,  
+ನೀನು ಈ ಕಾಡು ಸ್ಥಳದಿಂದ ಪಾರಾಗಲು ಬಯಸಿದರೆ;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Kannada) | Back‑Translation | Status |
+|-------------|----------------------|-------------------------------|------------------|--------|
+| **A** | preposition (dative) “to” | **ಗೆ** | “to” | OK |
+| **te** | 2nd‑person singular pronoun (accusative) “you” | — | “you” | UNNECESSARY (pronoun is encoded in the dative suffix “ಗೆ”) |
+| **convien** | modal verb expressing necessity/obligation | **ಅಗತ್ಯ** | “necessary / obligatory” | OK |
+| **tenere** | infinitive “to hold / undertake” | **ತೆಗೆದುಕೊಳ್ಳುವುದು** | “to take / hold” | OK |
+| **altro** | adjective “another” | **ಇನ್ನೊಂದು** | “another” | OK |
+| **vïaggio** | noun “journey / course” (object) | **ಪ್ರಯಾಣವನ್ನು** | “journey (object)” | OK |
+| **rispuose** | verb “replied” | **ಉತ್ತರಿಸಿದನು** | “replied” | OK |
+| **poi** | adverb “after / when” (temporal connective) | **ಕಂಡು** | “having seen / after seeing” | OK |
+| **che** | conjunction “when” | — | “when” | UNNECESSARY (its function is merged into “ಕಂಡು”) |
+| **lagrimar** | infinitive “weeping” | **ಹರಿಯುವುದನ್ನು** | “the act of weeping” | OK |
+| **mi** | pronoun “me” (object) | **ನನ್ನ** | “my” (possessive, part of “my tears”) | OK |
+| **vide** | verb “saw” | **ಕಂಡು** | “saw / see” | OK |
+| **se** | conditional conjunction “if” | **ಬಯಸಿದರೆ** | “if (you) wish” | OK |
+| **vuo'** | verb “wish / desire” | **ಬಯಸಿದರೆ** | “wish / desire” | OK |
+| **campar** | infinitive “to escape” | **ಪಾರಾಗಲು** | “to escape” | OK |
+| **d'** | preposition “from” | **ಸ್ಥಳದಿಂದ** | “from (place)” | OK |
+| **esto** | demonstrative adjective “this” | **ಈ** | “this” | OK |
+| **loco** | noun “place” | **ಸ್ಥಳ** | “place” | OK |
+| **selvaggio** | adjective “savage” | **ಕಾಡು** | “savage / wild” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:** `te`, `che` – these elements are not expressed as separate words in Kannada because their meanings are absorbed by case marking (`ಗೆ`) and the conjunctive verb form (`ಕಂಡು`).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: ನಿನಗೆ ಇನ್ನೊಂದು ಪ್ರಯಾಣವನ್ನು ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಗತ್ಯ,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: ಅವನು ನನ್ನ ಕಣ್ಣೀರು ಹರಿಯುವುದನ್ನು ಕಂಡು ಉತ್ತರಿಸಿದನು,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: ನೀನು ಈ ಕಾಡು ಸ್ಥಳದಿಂದ ಪಾರಾಗಲು ಬಯಸಿದರೆ;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+ನಿನಗೆ ಇನ್ನೊಂದು ಪ್ರಯಾಣವನ್ನು ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಗತ್ಯ,
+ಅವನು ನನ್ನ ಕಣ್ಣೀರು ಹರಿಯುವುದನ್ನು ಕಂಡು ಉತ್ತರಿಸಿದನು,
+ನೀನು ಈ ಕಾಡು ಸ್ಥಳದಿಂದ ಪಾರಾಗಲು ಬಯಸಿದರೆ;
+```
+]]></message>
+</messages>

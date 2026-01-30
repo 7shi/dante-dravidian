@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+上に君臨するあの皇帝のために、  
+彼の法に反逆していたので、  
+彼は自分の都市に私を通して誰も来ることを望まない。
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase (Japanese) | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|--------------------------------|------------------------|--------|
+| **ché** | causal “for” (introduces cause) | のために | “for” | OK |
+| **quello** | demonstrative “that” | あの | “that” | OK |
+| **imperador** | noun “Emperor” | 皇帝 | “Emperor” | OK |
+| **che** (rel.) | relative pronoun “who” | — (integrated in clause) | — | UNNECESSARY |
+| **là** | adverb “there” (location above) | 上に | “up/above” | OK |
+| **sù** | adverb “above” (direction) | 上に | “up/above” | OK |
+| **regna** | verb “reigns” | 君臨する | “reign” | OK |
+| **perch'** | causal “because” | ので | “because” | OK |
+| **i'** | 1st‑person pronoun “I” | — (omitted) | — | UNNECESSARY |
+| **fu'** | copular “was” (past state) | していた | “was doing” | OK |
+| **ribellante** | adjective “rebellious” | 反逆 | “rebellion” | OK |
+| **a** | preposition “to” (target of rebellion) | に | “to” | OK |
+| **la** | definite article (feminine) | — (omitted) | — | UNNECESSARY |
+| **sua** | possessive “his” (referring to the emperor) | 彼の | “his” | OK |
+| **legge** | noun “law” | 法 | “law” | OK |
+| **non** | negation “not” | 望まない (part) | “does not want” | OK |
+| **vuol** | volitional “wills / wants” | 望まない (part) | “does not want” | OK |
+| **che** (comp.) | complementiser “that” introducing content of will | — (integrated) | — | UNNECESSARY |
+| **'n** | preposition “into” | に | “into” | OK |
+| **sua** | possessive “his” (city) | 自分の | “his own” | OK |
+| **città** | noun “city” | 都市 | “city” | OK |
+| **per** | preposition “through” | を通して | “through” | OK |
+| **me** | pronoun “me” (instrument) | 私 | “me” | OK |
+| **si** | impersonal pronoun “one” (subject of subjunctive) | — (omitted) | — | UNNECESSARY |
+| **vegna** | verb “come” (subjunctive) | 来る | “come” | OK |
+
+---
+
+### Items to Note
+- **UNNECESSARY**: `che` (relative), `i'`, `la`, `che` (complementiser), `si` – these source elements have no overt counterpart in Japanese because the language does not require them for grammaticality.
+- **MISSING / WRONG / GRAMMAR**: none. All required meanings are represented, and no agreement or syntactic errors are present in the Japanese rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: 上に君臨するあの皇帝のために、
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: 彼の法に反逆していたので、
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: 彼は自分の都市に私を通して誰も来ることを望まない。
+  - Issue: none
+  - Corrected: no change
+
+```
+上に君臨するあの皇帝のために、
+彼の法に反逆していたので、
+彼は自分の都市に私を通して誰も来ることを望まない。
+```
+]]></message>
+</messages>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+എല്ലാ ഭാഗങ്ങളിലും അവൻ ഭരണം നടത്തുന്നു, അവിടെ അവൻ രാജ്യം ചെയ്യുന്നു;  
+അവിടെ അവന്റെ നഗരം കൂടാതെ അവന്റെ ഉയർന്ന സിംഹാസനം ഉണ്ട്:  
+ഓ സന്തോഷവാനായവൻ അവിടെ അവൻ തിരഞ്ഞെടുക്കുന്നവൻ!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|------------------------------------------|----------------------------------|-----------------------------|--------|
+| In | locative “in” (introduces domain) | **ഭാഗങ്ങളിലും** | “in parts” | OK |
+| tutte | universal quantifier “all” | **എല്ലാ** | “all” | OK |
+| parti | set of “parts” (spatial divisions) | **ഭാഗങ്ങളിൽ** | “parts” | OK |
+| impera | verb “governs” (exerts rule) | **ഭരണം നടത്തുന്നു** | “governs” | OK |
+| e (line 127) | coordinator “and” linking two predicates | — | — | **MISSING** |
+| quivi | locative “there” (point of rule) | **അവിടെ** | “there” | OK |
+| regge | verb “reigns” (holds sovereign authority) | **രാജ്യം ചെയ്യുന്നു** | “reigns” | OK |
+| quivi (line 128) | locative “there” (point of existence) | **അവിടെ** | “there” | OK |
+| è | copular “is/exists” | **ഉണ്ട്** | “is/exists” | OK |
+| la | definite article (feminine) – not lexical in Malayalam | — | — | **UNNECESSARY** |
+| sua | possessive adjective “His” | **അവന്റെ** | “His” | OK |
+| città | noun “city” (urban domain) | **നഗരം** | “city” | OK |
+| e (line 128) | coordinator “and” | **കൂടാതെ** | “and” | OK |
+| l'alto | adjective “lofty” (high‑standing) | **ഉയർന്ന** | “lofty” | OK |
+| seggio | noun “seat” (throne) | **സിംഹാസനം** | “seat” | OK |
+| oh | interjection “O” (vocative) | **ഓ** | “O” | OK |
+| felice | adjective “happy” (state of joy) | **സന്തോഷവാനായ** | “happy” | OK |
+| colui | pronoun “he” (the one) | **അവൻ** | “he” | OK |
+| cu' | relative pronoun “whom” (object of elect) | **അവനെ** | “whom” | OK |
+| ivi | locative “there/thereto” (place of election) | **അവിടെ** | “there” | OK |
+| elegge | verb “elects” (chooses) | **തിരഞ്ഞെടുക്കുന്നു** | “elects” | OK |
+
+---
+
+### Items Requiring Attention
+- **MISSING**: the conjunction **e** in line 127 (“and”) was omitted in the Malayalam rendering.
+- **UNNECESSARY**: the article **la** (definite article) has no counterpart in Malayalam and was therefore omitted, which is appropriate for the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 127:  
+  - Original: എല്ലാ ഭാഗങ്ങളിലും അവൻ ഭരണം നടത്തുന്നു, അവിടെ അവൻ രാജ്യം ചെയ്യുന്നു;  
+  - Issue: Missing coordinating conjunction “and”.  
+  - Corrected: എല്ലാ ഭാഗങ്ങളിലും അവൻ ഭരണം നടത്തുന്നു, **മറ്റും** അവിടെ അവൻ രാജ്യം ചെയ്യുന്നു;  
+
+- Line 128:  
+  - Original: അവിടെ അവന്റെ നഗരം കൂടാതെ അവന്റെ ഉയർന്ന സിംഹാസനം ഉണ്ട്:  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 129:  
+  - Original: ഓ സന്തോഷവാനായവൻ അവിടെ അവൻ തിരഞ്ഞെടുക്കുന്നവൻ!  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+എല്ലാ ഭാഗങ്ങളിലും അവൻ ഭരണം നടത്തുന്നു, മറ്റും അവിടെ അവൻ രാജ്യം ചെയ്യുന്നു;
+അവിടെ അവന്റെ നഗരം കൂടാതെ അവന്റെ ഉയർന്ന സിംഹാസനം ഉണ്ട്:
+ഓ സന്തോഷവാനായവൻ അവിടെ അവൻ തിരഞ്ഞെടുക്കുന്നവൻ!
+```
+]]></message>
+</messages>

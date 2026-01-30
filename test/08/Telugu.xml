@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+22 మరియు కూడా శ్వాస అయిపోయినవాడిగా,  
+23 సముద్రం నుండి తీరానికి వచ్చి,  
+24 ప్రమాదకరమైన నీటిని చూసి దాన్ని గమనిస్తాడు,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Telugu)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (ENG) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| **E** | coordinating conjunction “and” | **మరియు** | “and” | OK |
+| **come** | comparative particle “as” (introducing similitude) | **కూడా** | “also” | **WRONG** (does not convey the comparative “as”) |
+| **quei** | demonstrative pronoun “those / one” | – (omitted) | – | **UNNECESSARY** (demonstrative not required in Telugu) |
+| **che** | relative pronoun “who” | – (omitted) | – | **UNNECESSARY** |
+| **con** | preposition “with” (instrumental) | – (omitted) | – | **UNNECESSARY** |
+| **lena** | noun “breath” | **శ్వాస** | “breath” | OK |
+| **affannata** | adjective “spent, exhausted” | **అయిపోయిన** (part of **అయిపోయినవాడిగా**) | “spent / exhausted” | OK |
+| **uscito** | verb “issued, came out” | **వచ్చి** | “came / issued” | OK |
+| **fuor** | preposition “out (of)” | **నుండి** | “from” | OK (semantic match) |
+| **del** | preposition + article “of the” | – (omitted) | – | **UNNECESSARY** |
+| **pelago** | noun “sea” | **సముద్రం** | “sea” | OK |
+| **a** (line 23) | preposition “to / upon” | **తీరానికి** | “to the shore” | OK |
+| **la** | definite article “the” (feminine) | – (omitted) | – | **UNNECESSARY** |
+| **riva** | noun “shore” | **తీరానికి** (within the same phrase) | “to the shore” | OK |
+| **si** | reflexive pronoun (3rd person) | – (omitted) | – | **UNNECESSARY** |
+| **volge** | verb “turns (oneself)” | **చూసి** | “looking / having looked” | **WRONG** (does not express the act of turning) |
+| **a** (line 24) | preposition “to” (introducing object) | – (omitted) | – | **UNNECESSARY** |
+| **l'acqua** | noun “the water” | **నీటిని** | “the water (acc.)” | OK |
+| **perigliosa** | adjective “perilous” | **ప్రమాదకరమైన** | “perilous” | OK |
+| **e** | coordinating conjunction “and” | – (omitted) | – | **UNNECESSARY** |
+| **guata** | verb “gazes, looks at” | **గమనిస్తాడు** | “observes / watches” | OK (close semantic match) |
+
+---
+
+### Items Requiring Attention  
+
+- **WRONG**:  
+  - **come** – rendered as “కూడా” (“also”) instead of a comparative “as”.  
+  - **volge** – rendered as “చూసి” (“looked”) instead of “turns”.  
+
+- **UNNECESSARY** (source elements naturally omitted in Telugu):  
+  - **quei, che, con, del, la, si, a** (second occurrence), **e**.  
+
+No **MISSING**, **GRAMMAR**, or other errors were detected beyond the categories above.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: మరియు కూడా శ్వాస అయిపోయినవాడిగా,  
+  - Issue: “come” (comparative “as”) was rendered incorrectly.  
+  - Corrected: మరియు కూడా శ్వాస అయిపోయినవాడిలా,  
+
+- **Line 23**  
+  - Original: సముద్రం నుండి తీరానికి వచ్చి,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 24**  
+  - Original: ప్రమాదకరమైన నీటిని చూసి దాన్ని గమనిస్తాడు,  
+  - Issue: “volge” (turns) was rendered as “చూసి” (looked).  
+  - Corrected: ప్రమాదకరమైన నీటికి తిరుగుతుంది మరియు గమనిస్తాడు,  
+
+```telugu
+మరియు కూడా శ్వాస అయిపోయినవాడిలా,
+సముద్రం నుండి తీరానికి వచ్చి,
+ప్రమాదకరమైన నీటికి తిరుగుతుంది మరియు గమనిస్తాడు,
+```
+]]></message>
+</messages>

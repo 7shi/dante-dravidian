@@ -1,0 +1,63 @@
+# Italian
+
+43 l'ora del tempo e la dolce stagione;
+44 ma non sì che paura non mi desse
+45 la vista che m'apparve d'un leone.
+
+# English
+
+But not so that the sight which appeared to me of a lion did not give me fear.
+
+# Telugu
+
+43 సమయపు గంట మరియు మధురమైన ఋతువు;
+44 కాని అంతగా కాదు లయన్‌ యొక్క దర్శనం నాకు భయాన్ని ఇవ్వలేదు
+45 లయన్‌ యొక్క దర్శనం నాకు కనిపించింది.
+
+# Tamil
+
+43 நேரத்தின் மணி மற்றும் இனிய காலம்;
+44 ஆனால் அப்படியில்லை அது எனக்கு பயத்தை அளிக்காது
+45 சிங்கத்தின் காட்சி அது எனக்கு தோன்றியது.
+
+# Kannada
+
+43 ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;
+44 ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ
+45 ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+
+# Malayalam
+
+43 സമയത്തിന്റെ മണിക്കൂറും മധുരകാലവും;
+44 പക്ഷേ അത്രയല്ല സിംഹത്തിന്റെ ദൃശ്യം എന്നെ ഭയം കൊടുക്കാത്തത്
+45 സിംഹത്തിന്റെ ദൃശ്യം എനിക്ക് പ്രത്യക്ഷപ്പെട്ടു.
+
+# Japanese
+
+43 時間の瞬間と甘美な季節;
+44 しかし私に現れたライオンの姿が私に恐怖を与えなかったほどではない
+45 私に現れたライオンの姿.
+
+# French
+
+43 l'heure du temps et la douce saison;
+44 mais pas ainsi que la peur ne me donna
+45 la vue qui m'apparut d'un lion.
+
+# Spanish
+
+43 la hora del tiempo y la dulce estación;
+44 pero no así que el miedo no me diera
+45 la vista que me apareció de un león.
+
+# Portuguese
+
+43 a hora do tempo e a doce estação;
+44 mas não assim que o medo não me desse
+45 a visão que apareceu‑me de um leão.
+
+# Esperanto
+
+43 la horo de tempo kaj la dolĉa sezono;
+44 sed ne tiel ke la timo ne donu al mi
+45 la vidaĵo kiu al mi aperis de leono.

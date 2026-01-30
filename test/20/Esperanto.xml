@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tiel mi igis min besto sen ripozo,
+ke venante kontraŭ mi iom post iom
+mi puŝis min reen tien kie la suno silentas.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| # | Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (EN) | Status |
+|---|-------------|--------------------------------|------------------------------|------------------------|--------|
+| 1 | tal | “such” – demonstrative adjective | tiel | “thus / so” | OK |
+| 2 | mi (line 58) | “me” – 1st‑person pronoun (object) | mi | “me” (subject of *igis*) | OK |
+| 3 | fece | “made” – causative verb | igis | “made / caused” | OK |
+| 4 | la | “the” – definite article | *(none)* | – | **WRONG** (article omitted) |
+| 5 | bestia | “beast” – noun | besto | “beast” | OK |
+| 6 | sanza | “without” – preposition | sen | “without” | OK |
+| 7 | pace | “repose” – noun | ripozo | “rest / repose” | OK |
+| 8 | che | “that” – relative pronoun | ke | “that” (conjunction) | OK |
+| 9 | venendomi | “coming on against me” – gerund + clitic | venante **+** kontraŭ mi | “coming, against me” | OK |
+|10 | ’ncontro | “against” – preposition | kontraŭ | “against” | OK |
+|11 | a (first) | part of idiom “a poco a poco” – incremental marker | *(none)* | – | **UNNECESSARY** (idiom expressed by “iom post iom”) |
+|12 | poco (first) | “little” – adverb of degree | iom | “a little” | OK |
+|13 | a (second) | part of idiom “a poco a poco” – incremental marker | *(none)* | – | **UNNECESSARY** |
+|14 | poco (second) | “little” – adverb of degree | iom | “a little” | OK |
+|15 | mi (line 60) | “me” – 1st‑person pronoun (subject) | mi | “I / me” | OK |
+|16 | ripigneva | “was pushing” – imperfect verb | puŝis | “pushed” | OK |
+|17 | là | “thither” – adverb of place | tien | “there / thither” | OK |
+|18 | dove | “where” – relative adverb of place | kie | “where” | OK |
+|19 | ’l | “the” – definite article (elided) | la | “the” | OK |
+|20 | sol | “Sun” – noun | suno | “Sun” | OK |
+|21 | tace | “is silent” – verb | silentas | “is silent” | OK |
+
+### Items Requiring Attention
+- **WRONG**: **la** (line 58) – the definite article required in Esperanto is missing before *besto*; the clause should read “… la beston …* or “… beston …” with proper accusative.
+- **GRAMMAR** (implicit): The construction *“tiel mi igis mi n besto”* is ungrammatical in Esperanto; a correct resultative would be *“tiel mi igis min esti besto”* or *“tiel mi igis min beston”*. This is reflected in the **WRONG** status for the missing article and the overall clause.
+- **UNNECESSARY**: Both occurrences of the preposition **a** that belong to the Italian idiom *a poco a poco* are not needed in Esperanto because the idiom is rendered by *iom post iom*.
+- No other **MISSING**, **WRONG**, **GRAMMAR**, or **UNNECESSARY** items were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 58**  
+  - Original: tiel mi igis min besto sen ripozo,  
+  - Issue: Missing definite article and resultative case; should be “la beston”.  
+  - Corrected: **tiel mi igis min la beston sen ripozo,**  
+
+- **Line 59**  
+  - Original: ke venante kontraŭ mi iom post iom  
+  - Issue: Missing end‑comma.  
+  - Corrected: **ke venante kontraŭ mi iom post iom,**  
+
+- **Line 60**  
+  - Original: mi puŝis min reen tien kie la suno silentas.  
+  - Issue: none  
+  - Corrected: **no change**  
+
+```
+tiel mi igis min la beston sen ripozo,
+ke venante kontraŭ mi iom post iom,
+mi puŝis min reen tien kie la suno silentas.
+```
+]]></message>
+</messages>

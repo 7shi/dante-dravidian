@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+115 നീ അവിടെയുണ്ടാകുന്ന നിരാശാജനകമായ കരച്ചിലുകൾ കേൾക്കും,  
+116 നീ പുരാതന ദുഃഖിത ആത്മാക്കളെ കാണും,  
+117 ഓരോന്നും രണ്ടാം മരണത്തെ വിളിച്ചോതുന്നു;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|------------------------------------------|----------------------|----------------------------|--------|
+| ove | relative adverb of place “where” | അവിടെയുണ്ടാകുന്ന | “that which is there / where” | OK |
+| udirai | future 2nd sg “you will hear” | കേൾക്കും | “you will hear” | OK |
+| le | definite article, fem. pl | — | — | UNNECESSARY |
+| disperate | adjective “despairing” | നിരാശാജനകമായ | “despair‑causing” | OK |
+| strida | noun “shrieks” (pl.) | കരച്ചിലുകൾ | “shouts / cries” | OK |
+| vedrai | future 2nd sg “you will see” | കാണും | “you will see” | OK |
+| li | definite article, masc. pl | — | — | UNNECESSARY |
+| antichi | adjective “ancient” | പുരാതന | “ancient” | OK |
+| spiriti | noun “spirits” (pl.) | ആത്മാക്കളെ | “spirits (acc.)” | OK |
+| dolenti | adjective “woeful” | ദുഃഖിത | “sorrowful / woeful” | OK |
+| ch' (che) | relative pronoun “who” introducing clause | — | — | UNNECESSARY |
+| a | preposition “to / toward” | — | — | UNNECESSARY |
+| la | definite article, fem. sg | — | — | UNNECESSARY |
+| seconda | ordinal adjective “second” | രണ്ടാം | “second” | OK |
+| morte | noun “death” (fem.) | മരണത്തെ | “death (acc.)” | OK |
+| ciascun | distributive quantifier “each” | ഓരോന്നും | “each (one)” | OK |
+| grida | verb “shouts / cries out” (3rd sg) | വിളിച്ചോതുന്നു | “calls out / shouts” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: le, li, ch', a, la – Italian articles and the relative pronoun/preposition have no direct equivalents in Malayalam and are correctly omitted.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All source tokens are accounted for, and the Malayalam rendering respects the intended meanings and grammatical requirements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 115:
+  - Original: നീ അവിടെയുണ്ടാകുന്ന നിരാശാജനകമായ കരച്ചിലുകൾ കേൾക്കും,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 116:
+  - Original: നീ പുരാതന ദുഃഖിത ആത്മാക്കളെ കാണും,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 117:
+  - Original: ഓരോന്നും രണ്ടാം മരണത്തെ വിളിച്ചോതുന്നു;
+  - Issue: none
+  - Corrected: no change  
+
+```malayalam
+നീ അവിടെയുണ്ടാകുന്ന നിരാശാജനകമായ കരച്ചിലുകൾ കേൾക്കും,
+നീ പുരാതന ദുഃഖിത ആത്മാക്കളെ കാണും,
+ഓരോന്നും രണ്ടാം മരണത്തെ വിളിച്ചോതുന്നു;
+```
+]]></message>
+</messages>

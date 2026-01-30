@@ -1,0 +1,63 @@
+# Italian
+
+91 «A te convien tenere altro vïaggio»,
+92 rispuose, poi che lagrimar mi vide,
+93 «se vuo' campar d'esto loco selvaggio;
+
+# English
+
+“Thee it behoves to hold another course,” he replied, when he saw me weeping, “if thou wishest to escape from this savage place;
+
+# Telugu
+
+91 నీకు మరో ప్రయాణం తీసుకోవాలి,
+92 అతను నన్ను కన్నీరు పోస్తున్నాను చూసి ప్రతిస్పందించాడు,
+93 నీవు ఈ క్రూరమైన స్థలాన్ని విడిచిపోవాలనుకుంటే;
+
+# Tamil
+
+91 உனக்கு மற்றொரு பயணத்தை எடுத்துக் கொள்ள வேண்டும்,
+92 அவர் பதிலளித்தார் அவர் என்னை அழுததை கண்டபோது,
+93 நீ இந்த காட்டு இடத்திலிருந்து தப்ப விரும்பினால்;
+
+# Kannada
+
+91 ನಿನಗೆ ಇನ್ನೊಂದು ಪ್ರಯಾಣವನ್ನು ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಗತ್ಯ,
+92 ಅವನು ನನ್ನ ಕಣ್ಣೀರು ಹರಿಯುವುದನ್ನು ಕಂಡು ಉತ್ತರಿಸಿದನು,
+93 ನೀನು ಈ ಕಾಡು ಸ್ಥಳದಿಂದ ಪಾರಾಗಲು ಬಯಸಿದರೆ;
+
+# Malayalam
+
+91 നിനക്കു മറ്റൊരു യാത്ര കൈവശം വെയ്ക്കേണ്ടതുണ്ട്,
+92 അവൻ മറുപടി നൽകി അവൻ എന്നെ കരയുന്നത് കണ്ടപ്പോൾ,
+93 നീ ഈ കാട്ടുപോലുള്ള സ്ഥലത്തിൽ നിന്ന് രക്ഷപ്പെടാൻ ആഗ്രഹിച്ചാൽ;
+
+# Japanese
+
+91 君は別の道を取るべきだ、
+92 彼は私が泣いているのを見て答えた、
+93 もしこの野蛮な場所から逃れたいなら；
+
+# French
+
+91 «Il te convient de prendre un autre chemin», 
+92 Il répondit quand il me vit pleurer, 
+93 «Si tu veux échapper à ce lieu sauvage;»
+
+# Spanish
+
+91 Te conviene tomar otro camino,
+92 respondió, cuando vio que lloraba,
+93 si deseas escapar de este lugar salvaje;
+
+# Portuguese
+
+91 «A ti convém manter outra viagem»,  
+92 Respondeu quando me viu chorando,  
+93 «se quiseres escapar deste lugar selvagem;
+
+# Esperanto
+
+91 «Al vi konvenas teni alian vojaĝon»,  
+92 Li respondis post kiam li vidis min plori,  
+93 «se vi volas eskapi de ĉi tiu sovaĝa loko;»

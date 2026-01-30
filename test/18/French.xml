@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+elle me donna tant de lourdeur  
+avec la peur qui sortait de sa vue,  
+que je perdis l'espoir de la hauteur.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → French)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| **questa** (line 52) | female agent who acts | **elle** | “she” | OK |
+| **mi** (52) | recipient/experiencer of the caused state | **me** | “me” | OK |
+| **porse** (52) | caused / gave (remote past) | **donna** | “gave” | OK |
+| **tanto** (52) | high degree, “so much” | **tant** | “so much” | OK |
+| **di** (52) | preposition linking quantity to noun (“of”) | **de** | “of” | OK |
+| **gravezza** (52) | affective state “heaviness” | **lourdeur** | “heaviness” | OK |
+| **con** (53) | preposition introducing accompanying circumstance (“with”) | **avec** | “with” | OK |
+| **la** (53) | definite article, feminine singular (“the”) | **la** | “the” | OK |
+| **paura** (53) | emotion “fear” | **peur** | “fear” | OK |
+| **ch'uscia** (53) | relative clause verb “that emerged / came out” | **qui sortait** | “that came out” | OK |
+| **di** (53) | preposition indicating source (“from”) | **de** | “from” | OK |
+| **sua** (53) | possessive adjective, “her” | **sa** | “her” | OK |
+| **vista** (53) | noun “sight, visual perception” | **vue** | “sight” | OK |
+| **ch'io** (54) | relative pronoun + subject “that I” | **que je** | “that I” | OK |
+| **perdei** (54) | verb “lost” (remote past) | **perdis** | “lost” | OK |
+| **la** (54) | definite article before *speranza* (contracts to *l’*) | **l'** | “the” | OK |
+| **speranza** (54) | mental expectation “hope” | **espoir** | “hope” | OK |
+| **de** (54) | preposition linking hope to its content (“of”) | **de** | “of” | OK |
+| **l'altezza** (54) | noun phrase “the height” (metaphoric lofty goal) | **la hauteur** | “the height” | OK |
+
+### Issues Detected
+- **None** – every source token is represented in the French translation, and all mappings are grammatically correct. No missing, wrong, or unnecessary elements were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: elle me donna tant de lourdeur
+  - Issue: none
+  - Corrected: elle me donna tant de lourdeur
+- Line 53:
+  - Original: avec la peur qui sortait de sa vue,
+  - Issue: none
+  - Corrected: avec la peur qui sortait de sa vue,
+- Line 54:
+  - Original: que je perdis l'espoir de la hauteur.
+  - Issue: none
+  - Corrected: que je perdis l'espoir de la hauteur.
+
+```text
+elle me donna tant de lourdeur
+avec la peur qui sortait de sa vue,
+que je perdis l'espoir de la hauteur.
+```
+]]></message>
+</messages>

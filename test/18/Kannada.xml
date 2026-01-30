@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+52 ಅವಳು ನನಗೆ ಇಷ್ಟು ಭಾರವನ್ನು ತಂದಳು  
+53 ಅವಳ ದೃಷ್ಟಿಯಿಂದ ಉಂಟಾದ ಭಯದೊಂದಿಗೆ,  
+54 ನಾನು ಎತ್ತರದ ನಿರೀಕ್ಷೆಯನ್ನು ಕಳೆದುಕೊಂಡೆ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Kannada) | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------------------|------------------------|--------|
+| **questa** | demonstrative pronoun, fem. sg., subject – “she” (the female agent) | ಅವಳು | she | OK |
+| **mi** | 1st sg. dative clitic – “to me” (experiencer) | ನನಗೆ | to me | OK |
+| **porse** | remote past of *porre* “to give, cause” – “caused / gave” | ತಂದಳು | gave / caused | OK |
+| **tanto** | adverb of quantity – “so much” | ಇಷ್ಟು | so much | OK |
+| **di** | preposition “of” linking quantity to noun | — (expressed by the case suffix on ಭಾರವನ್ನು) | of | UNNECESSARY |
+| **gravezza** | noun “heaviness” – the affective state | ಭಾರವನ್ನು | heaviness | OK |
+| **con** | preposition “with” introducing an accompanying circumstance | ದೊಂದಿಗೆ | with | OK |
+| **la** | definite article – “the” (fem.) | — (articles are omitted in Kannada) | the | UNNECESSARY |
+| **paura** | noun “fear” – the emotion that arises | ಭಯ | fear | OK |
+| **ch'uscia** | relative clause verb “that came out / arose” | ಉಂಟಾದ | that came | OK |
+| **di** | preposition “of / from” introducing source of fear | — (expressed inside ದೃಷ್ಟಿಯಿಂದ) | from | UNNECESSARY |
+| **sua** | possessive adjective “her” (possessor of sight) | ಅವಳ | her | OK |
+| **vista** | noun “sight” – the visual perception | ದೃಷ್ಟಿ | sight | OK |
+| **ch'io** | relative pronoun + subject “that I” – introduces clause | ನಾನು | I | OK |
+| **perdei** | remote past of *perdere* “to lose” – “lost” | ಕಳೆದುಕೊಂಡೆ | lost | OK |
+| **la** | definite article – “the” (fem.) | — (articles omitted) | the | UNNECESSARY |
+| **speranza** | noun “hope” – the mental expectation | ನಿರೀಕ್ಷೆ | hope | OK |
+| **de** | preposition “of” linking hope to its content | — (genitive suffix ‑ದ on ಎತ್ತರ) | of | UNNECESSARY |
+| **l'altezza** | noun “height” – the lofty goal/aspiration | ಎತ್ತರ | height | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `di` (line 52), `la` (line 53), `di` (line 53), `la` (line 54), `de` (line 54) – Italian articles and prepositions that have no separate lexical counterpart in Kannada; their semantic contribution is absorbed by case marking or omitted as per Kannada grammar.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: ಅವಳು ನನಗೆ ಇಷ್ಟು ಭಾರವನ್ನು ತಂದಳು
+  - Issue: none
+  - Corrected: no change
+- Line 53:
+  - Original: ಅವಳ ದೃಷ್ಟಿಯಿಂದ ಉಂಟಾದ ಭಯದೊಂದಿಗೆ,
+  - Issue: none
+  - Corrected: no change
+- Line 54:
+  - Original: ನಾನು ಎತ್ತರದ ನಿರೀಕ್ಷೆಯನ್ನು ಕಳೆದುಕೊಂಡೆ.
+  - Issue: none
+  - Corrected: no change
+
+```
+ಅವಳು ನನಗೆ ಇಷ್ಟು ಭಾರವನ್ನು ತಂದಳು
+ಅವಳ ದೃಷ್ಟಿಯಿಂದ ಉಂಟಾದ ಭಯದೊಂದಿಗೆ,
+ನಾನು ಎತ್ತರದ ನಿರೀಕ್ಷೆಯನ್ನು ಕಳೆದುಕೊಂಡೆ.
+```
+]]></message>
+</messages>

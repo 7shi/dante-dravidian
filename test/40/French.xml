@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+et tu verras ceux qui sont contents  
+dans le feu parce qu'ils espèrent venir  
+quand il sera aux gens bénis.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| e | coordinating conjunction (sequential) | et | and | OK |
+| vederai | future verb 2nd sg. “you will see” | verras | will see | OK |
+| color | demonstrative pronoun “those (people)” | ceux | those | OK |
+| che (rel.) | relative pronoun introducing clause “who” | qui | who | OK |
+| son | present copula “are” | sont | are | OK |
+| contenti | adjective “contented, satisfied” | contents | contented | OK |
+| nel | preposition “in the” | dans | in | OK |
+| foco | noun “fire” | feu | fire | OK |
+| perché | causal conjunction “because” | parce que | because | OK |
+| speran | present verb “they hope” | espèrent | they hope | OK |
+| di | preposition introducing infinitive “to” (not required in French) | — | — | UNNECESSARY |
+| venire | infinitive “to come” | venir | to come | OK |
+| quando | temporal conjunction “whenever” | quand | when | OK |
+| che (idiomatic) | particle in *quando che* (no lexical meaning) | — | — | UNNECESSARY |
+| sia | subjunctive “may be” (potential) | sera | will be | OK |
+| a | preposition “to” (direction) | à | to | OK |
+| le | definite article feminine plural “the” | les | the (pl.) | OK |
+| beate | adjective “blessed” | bénis | blessed | OK |
+| genti | noun “folk, people” | gens | people | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `di` (preposition before infinitive) – French infinitives do not need a preceding preposition.  
+- **UNNECESSARY**: `che` in the idiom *quando che* – French expresses the temporal clause with *quand* alone.  
+
+All other source words are correctly rendered in the French translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 118:  
+  - Original: *et tu verras ceux qui sont contents*  
+  - Issue: none  
+  - Corrected: *et tu verras ceux qui sont contents*  
+
+- Line 119:  
+  - Original: *dans le feu parce qu'ils espèrent venir*  
+  - Issue: none  
+  - Corrected: *dans le feu parce qu'ils espèrent venir*  
+
+- Line 120:  
+  - Original: *quand il sera aux gens bénis.*  
+  - Issue: none  
+  - Corrected: *quand il sera aux gens bénis.*  
+
+```text
+et tu verras ceux qui sont contents
+dans le feu parce qu'ils espèrent venir
+quand il sera aux gens bénis.
+```
+]]></message>
+</messages>

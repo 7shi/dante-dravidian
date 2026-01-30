@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അപ്പോൾ ഭയം അല്പം ശാന്തമായി,
+എന്റെ ഹൃദയത്തിന്റെ തടാകത്തിൽ അത് നിലനിന്നിരുന്നു
+ഞാൻ അത്യന്തം ദയയോടെ കടന്ന രാത്രി.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Allor | temporal adverb “then” | **അപ്പോൾ** | “then” | OK |
+| fu | copular verb “was” (past) | — (copula omitted) | — | UNNECESSARY |
+| la (1) | definite article “the” (before *paura*) | — (article omitted) | — | UNNECESSARY |
+| paura | noun “fear” | **ഭയം** | “fear” | OK |
+| un | indefinite article “a” | — (article omitted) | — | UNNECESSARY |
+| poco | adverb of degree “little, a bit” | **അൽപം** | “a little” | OK |
+| queta* | adjective/past participle “quieted” | **ശാന്തമായി** | “quieted / became quiet” | OK |
+| che | relative pronoun “which” | **അത്** | “that / it” | OK |
+| nel | preposition “in the” | **തടാകത്തിൽ** (part of “തടാകത്തിൽ”) | “in the lake” | OK |
+| lago | noun “lake” | **തടാകത്തിൽ** | “lake (in …)” | OK |
+| del | preposition “of the” (genitive) | **ഹൃദയത്തിന്റെ** | “of the heart” | OK |
+| cor | noun “heart” (poetic *cor*) | **ഹൃദയം** (within **ഹൃദയത്തിന്റെ**) | “heart” | OK |
+| m'era | auxiliary “had been” (pluperfect) | **നിലനിന്നിരുന്നു** (part of the verb) | “had been / had lasted” | OK |
+| durata | past participle “lasted” | **നിലനിന്നിരുന്നു** (same verb) | “lasted” | OK |
+| la (2) | definite article “the” (before *notte*) | — (article omitted) | — | UNNECESSARY |
+| notte | noun “night” | **രാത്രി** | “night” | OK |
+| ch'i' | relative pronoun + pronoun “that I” | **ഞാൻ** | “I” (subject of the clause) | OK |
+| passai | verb “passed” (remote past) | **കടന്ന** | “passed / endured” | OK |
+| con | preposition “with” | **ദയയോടെ** (contains “with”) | “with pity” | OK |
+| tanta | adjective “so much” (degree) | **അത്യന്തം** | “so” / “very” | OK |
+| pieta* | noun “pity” | **ദയ** (within **ദയയോടെ**) | “pity” | OK |
+
+\* Spelling in the source is archaic (*queta*, *pieta*); the modern equivalents are *quieta* and *pietà*.
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *fu*, *la* (both occurrences), *un* – Italian articles and copula are naturally omitted in Malayalam.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source words are represented in the Malayalam rendering with appropriate meaning and grammatical fit.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 19:
+  - Original: അപ്പോൾ ഭയം **അല്പം** ശാന്തമായി,
+  - Issue: Wrong spelling of “അല്പം” (should be “അൽപം”).
+  - Corrected: അപ്പോൾ ഭയം **അൽപം** ശാന്തമായി,
+- Line 20:
+  - Original: എന്റെ ഹൃദയത്തിന്റെ തടാകത്തിൽ അത് നിലനിന്നിരുന്നു
+  - Issue: none
+  - Corrected: no change
+- Line 21:
+  - Original: ഞാൻ അത്യന്തം ദയയോടെ കടന്ന രാത്രി.
+  - Issue: none
+  - Corrected: no change
+
+```malayalam
+അപ്പോൾ ഭയം അൽപം ശാന്തമായി,
+എന്റെ ഹൃദയത്തിന്റെ തടാകത്തിൽ അത് നിലനിന്നിരുന്നു
+ഞാൻ അത്യന്തം ദയയോടെ കടന്ന രാത്രി.
+```
+]]></message>
+</messages>

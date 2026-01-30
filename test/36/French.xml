@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+De cette humble Italie sera le salut  
+pour laquelle mourut la vierge Camilla,  
+Eurialos et Turnus et Nisus blessés.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| Di | Prepositional complement of *salute* | De | of | OK |
+| quella | Demonstrative specifying the particular Italy | cette | that | OK |
+| umile | Attribute describing Italy’s modest character | humble | humble | OK |
+| Italia | The nation that will become the salvation | Italie | Italy | OK |
+| fia | Future copular verb asserting a forthcoming state | sera | shall be | OK |
+| salute | The state of being saved; the promised outcome for Italy | salut | salvation | OK |
+| per | Introduces the causal prepositional phrase linking the previous clause to Camilla’s death | pour | for | OK |
+| cui | Relative pronoun referring back to the salvation of Italy; marks the cause of death | laquelle | which | OK |
+| morì | Simple past indicating Camilla’s death | mourut | died | OK |
+| la | Definite article specifying the noun “vergine” | la | the | OK |
+| vergine | Title/epithet of Camilla, indicating her purity | vierge | virgin | OK |
+| Cammilla | Proper name of the virgin who died | Camilla | Camilla | OK |
+| Eurialo | One of the three wounded heroes | Eurialos | Eurialos | **WRONG** (lexical form differs) |
+| e | Coordinating conjunction linking the three names | et | and | OK |
+| Turno | Second wounded hero | Turnus | Turnus | **WRONG** (lexical form differs) |
+| e | Second coordinating conjunction | et | and | OK |
+| Niso | Third wounded hero | Nisus | Nisus | **WRONG** (lexical form differs) |
+| di | Introduces the adjectival participle phrase describing the state of the heroes | de | of | OK |
+| ferute | Past participle used adjectivally to denote the condition of the heroes | blessés | wounded | OK |
+
+---
+
+### Items to Review
+
+- **UNNECESSARY**: French definite article **“le”** in “le salut” (not present in the source).  
+- **WRONG**: Lexical mismatches for the proper names **Eurialos**, **Turnus**, **Nisus** (source has *Eurialo, Turno, Niso*).  
+- **MISSING**: none.  
+- **GRAMMAR**: none detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 106:  
+  - Original: *De cette humble Italie sera le salut*  
+  - Issue: none  
+  - Corrected: *De cette humble Italie sera le salut*  
+
+- Line 107:  
+  - Original: *pour laquelle mourut la vierge Camilla,*  
+  - Issue: none  
+  - Corrected: *pour laquelle mourut la vierge Camilla,*  
+
+- Line 108:  
+  - Original: *Eurialos et Turnus et Nisus blessés.*  
+  - Issue: WRONG (proper‑name forms)  
+  - Corrected: *Eurialo et Turno et Niso blessés.*  
+
+```text
+De cette humble Italie sera le salut
+pour laquelle mourut la vierge Camilla,
+Eurialo et Turno et Niso blessés.
+```
+]]></message>
+</messages>

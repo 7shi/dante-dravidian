@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+மற்றும் ஒரு நரி எல்லா ஆசைகளுடனும்  
+அவளின் மெலிந்த தன்மையில் சுமையடைந்ததாகத் தோன்றியது,  
+மற்றும் ஏற்கனவே பல மக்களை துயரத்தில் வாழச் செய்தது,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|----------------------|----------------------|-------------------------------------|--------|
+| Ed | Coordinating conjunction “and” | **மற்றும்** | “and” | OK |
+| una | Indefinite article “a” (introduces a singular noun) | **ஒரு** | “a” | OK |
+| lupa | Feminine noun “she‑wolf”, subject | **நரி** | “wolf (female) ” | OK |
+| che | Relative pronoun introducing a clause | — (integrated in the clause) | — | **UNNECESSARY** |
+| di | Preposition “with” (association) | **…உடனும்** (part of **ஆசைகளுடனும்**) | “with” | OK |
+| tutte | Universal quantifier “all” | **எல்லா** | “all” | OK |
+| brame | Plural noun “cravings, desires” | **ஆசைகள்** | “desires” | OK |
+| sembiava | Imperfect copular verb “seemed” | **தோன்றியது** | “seemed” | OK |
+| carca | Predicative adjective “laden, burdened” | **சுமையடைந்ததாக** | “as being laden” | OK |
+| ne | Preposition “in” (locative) | **…இல்** (part of **தன்மையில்**) | “in” | OK |
+| la | Definite article (part of possessive construction) | — (absorbed in **அவளின்**) | — | **UNNECESSARY** |
+| sua | Possessive adjective “her” | **அவளின்** | “her” | OK |
+| magrezza | Noun “meagreness, thinness” | **மெலிந்த தன்மை** | “thinness” | OK |
+| e | Coordinating conjunction “and” | **மற்றும்** | “and” | OK |
+| molte | Quantifier “many” | **பல** | “many” | OK |
+| genti | Plural noun “folk, people” | **மக்களை** | “people (object) ” | OK |
+| fé | Past‑remote of *fare* “made, caused” | **செய்தது** | “made” | OK |
+| già | Temporal adverb “already” | **ஏற்கனவே** | “already” | OK |
+| viver | Infinitive “to live” | **வாழ** (in **வாழச்**) | “to live” | OK |
+| grame | Noun “grief, forlornness” (state) | **துயரத்தில்** (from **துயரத்தில் வாழச்**) | “in sorrow” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **che**, **la** – Tamil does not require an explicit relative pronoun or a definite article in this construction; their meanings are conveyed implicitly.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 49:
+  - Original: மேலும் ஒரு நரி எல்லா ஆசைகளுடனும்
+  - Issue: missing end punctuation (comma)
+  - Corrected: மேலும் ஒரு நரி எல்லா ஆசைகளுடனும்,
+
+- Line 50:
+  - Original: அவளின் மெலிந்த தன்மையில் சுமையடைந்ததாகத் தோன்றியது,
+  - Issue: none
+  - Corrected: no change
+
+- Line 51:
+  - Original: மேலும் ஏற்கனவே பல மக்களை துயரத்தில் வாழச் செய்தது,
+  - Issue: none
+  - Corrected: no change
+
+```
+மேலும் ஒரு நரி எல்லா ஆசைகளுடனும்,
+அவளின் மெலிந்த தன்மையில் சுமையடைந்ததாகத் தோன்றியது,
+மேலும் ஏற்கனவே பல மக்களை துயரத்தில் வாழச் செய்தது,
+```
+]]></message>
+</messages>

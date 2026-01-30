@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ,  
+ಸಮುದ್ರದಿಂದ ಹೊರಬಂದು ತೀರದ ಮೇಲೆ,  
+ಅಪಾಯಕರ ನೀರಿಗೆ ತಿರುಗಿ ನೋಡುವನು,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|----------------------|-------------------------------|-----------------------------|--------|
+| **E** | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
+| **come** | Comparative particle “as, like” | **ವಂತೆ** (as part of *ಮುಗಿದವನಂತೆ*) | “like” | OK |
+| **quei** | Demonstrative pronoun “those / one” | **ವನಂತೆ** (implied “one”) | “one” | OK |
+| **che** | Relative pronoun “who” introducing clause | — (implicit in the Kannada clause) | “who” | **MISSING** |
+| **con** | Preposition “with” (instrumental) | **ಶ್ವಾಸದ** (genitive “of breath”) | “with” | OK |
+| **lena** | Noun “breath” (archaic) | **ಶ್ವಾಸ** | “breath” | OK |
+| **affannata** | Past participle adjective “exhausted, spent” | **ಮುಗಿದ** | “exhausted” | OK |
+| **uscito** | Verb “issued, came out” | **ಹೊರಬಂದು** | “came out” | OK |
+| **fuor** | Preposition “out (of)” | **ಹೊರ** (embedded in *ಹೊರಬಂದು*) | “out” | OK |
+| **del** | Preposition + article “of the” (genitive) | **ಸಮುದ್ರದಿಂದ** (from the sea) | “of the” | OK |
+| **pelago** | Noun “sea, ocean” | **ಸಮುದ್ರ** | “sea” | OK |
+| **a** | Preposition “to, upon” (direction) | **ಮೇಲೆ** (in *ತೀರದ ಮೇಲೆ*) | “upon” | OK |
+| **la** | Definite article (feminine singular) | — (articles omitted in Kannada) | “the” | **UNNECESSARY** |
+| **riva** | Noun “shore” | **ತೀರ** | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | **ತಿರುಗಿ** (reflexive verb form) | “himself” (implicit) | OK |
+| **volge** | Verb “turns” | **ತಿರುಗಿ** | “turns” | OK |
+| **a** (second occurrence) | Preposition “to” (dative) | **ಗೆ** (in *ನೀರಿಗೆ*) | “to” | OK |
+| **l'acqua** | Noun “water” | **ನೀರು** | “water” | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **ಅಪಾಯಕರ** | “perilous” | OK |
+| **e** | Coordinating conjunction “and” | **ಮತ್ತು** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **ನೋಡುವನು** | “gazes” | OK |
+
+---
+
+### Items Requiring Attention
+- **MISSING:** *che* – the relative pronoun “who” is not overtly expressed in the Kannada rendering; the clause is understood without an explicit marker.  
+- **UNNECESSARY:** *la* – the definite article is naturally omitted in Kannada and therefore does not appear in the translation.  
+
+All other source tokens are represented adequately in the Kannada output, with appropriate grammatical agreement and lexical choice.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 22:
+  - Original: ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ,
+  - Issue: Missing relative pronoun “che” (who).
+  - Corrected: ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ, ಯಾರು,
+
+- Line 23:
+  - Original: ಸಮುದ್ರದಿಂದ ಹೊರಬಂದು ತೀರದ ಮೇಲೆ,
+  - Issue: none
+  - Corrected: no change
+
+- Line 24:
+  - Original: ಅಪಾಯಕರ ನೀರಿಗೆ ತಿರುಗಿ ನೋಡುವನು,
+  - Issue: none
+  - Corrected: no change
+
+```
+ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ, ಯಾರು,
+ಸಮುದ್ರದಿಂದ ಹೊರಬಂದು ತೀರದ ಮೇಲೆ,
+ಅಪಾಯಕರ ನೀರಿಗೆ ತಿರುಗಿ ನೋಡುವನು,
+```
+]]></message>
+</messages>

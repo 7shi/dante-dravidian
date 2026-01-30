@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+et elle a une nature si malveillante et cruelle,  
+qu'elle ne satisfait jamais son désir avide,  
+et après le repas elle a plus faim qu'avant.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| e (97) | coordinating conjunction “and” | **et** | “and” | OK |
+| ha | 3sg present of *avere* – “has” | **a** | “has” | OK |
+| natura | feminine noun – “nature, disposition” | **nature** | “nature” | OK |
+| sì | degree adverb – “so” (high degree) | **si** | “so” | OK |
+| malvagia | adjective – “malign, harmful” | **malveillante** | “malignant” | OK |
+| e (97) | coordinating conjunction – “and” | **et** | “and” | OK |
+| ria | adjective – “evil” | **cruelle** | “cruel, evil” | OK |
+| che (98) | relative pronoun – “that” | **qu'** | “that” | OK |
+| mai | negative adverb – “never” | **jamais** | “never” | OK |
+| non | negative particle – part of double negation | **ne** | “not” | OK |
+| empie | verb – “sates, satisfies” | **satisfait** | “satisfies” | OK |
+| la | definite article – “the” (marks *voglia* as specific) | **son** | “his/her” (possessive) | **WRONG** |
+| bramosa | adjective – “greedy, eager” | **avide** | “greedy” | OK |
+| voglia | noun – “will, desire” | **désir** | “desire” | OK |
+| e (99) | coordinating conjunction – “and” | **et** | “and” | OK |
+| dopo | preposition – “after” (temporal) | **après** | “after” | OK |
+| ’l | elided definite article *il* – “the” | **le** | “the” | OK |
+| pasto | noun – “meal, food” | **repas** | “meal” | OK |
+| ha (99) | 3sg present of *avere* – “has” | **a** | “has” | OK |
+| più | comparative adverb – “more” | **plus** | “more” | OK |
+| fame | noun – “hunger” | **faim** | “hunger” | OK |
+| che (99) | comparative conjunction – “than” | **qu'** | “than” | OK |
+| pria | adverb of time – “before” | **avant** | “before” | OK |
+| **(extra French word)** | indefinite article required in French – “a” | **une** | “a” (indefinite article) | **UNNECESSARY** |
+
+---
+
+### Issues Detected
+- **WRONG:** *la* → rendered as **son** (possessive) instead of a direct article equivalent.
+- **UNNECESSARY:** French indefinite article **une** before *nature* has no counterpart in the Italian source.  
+
+No missing source tokens, grammatical agreement errors, or other unnecessary elements were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 97:
+  - Original: *et elle a une nature si malveillante et cruelle,*
+  - Issue: none
+  - Corrected: *et elle a une nature si malveillante et cruelle,*
+
+- Line 98:
+  - Original: *qu'elle ne satisfait jamais son désir avide,*
+  - Issue: WRONG (article “son” does not reflect the source definite article)
+  - Corrected: *qu'elle ne satisfait jamais le désir avide,*
+
+- Line 99:
+  - Original: *et après le repas elle a plus faim qu'avant.*
+  - Issue: none
+  - Corrected: *et après le repas elle a plus faim qu'avant.*
+
+```
+et elle a une nature si malveillante et cruelle,
+qu'elle ne satisfait jamais le désir avide,
+et après le repas elle a plus faim qu'avant.
+```
+]]></message>
+</messages>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Y como aquel que con aliento agotado,  
+salió fuera del mar a la orilla,  
+se vuelve al agua peligrosa y mira,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Spanish Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **E** | Coordinating conjunction linking to previous discourse | **Y** | “and” | OK |
+| **come** | Comparative particle introducing similitude | **como** | “as” | OK |
+| **quei** | Demonstrative pronoun, masculine plural, generic “those” | **aquel** | “that one” (masc. singular) | OK |
+| **che** | Relative pronoun introducing clause “who” | **que** | “who/that” | OK |
+| **con** | Preposition marking instrument/state | **con** | “with” | OK |
+| **lena** | Feminine noun “breath” (archaic) | **aliento** | “breath” | OK |
+| **affannata** | Adjective “spent, exhausted” qualifying *lena* | **agotado** | “exhausted / spent” | OK |
+| **uscito** | Past participle used as verb “issued, came out” | **salió** | “went out, issued” | OK |
+| **fuor** | Preposition “out of” (archaic form of *fuori*) | **fuera** | “out” | OK |
+| **del** | Contraction *di + il* “of the” | **del** | “of the” | OK |
+| **pelago** | Masculine noun “sea, ocean” | **mar** | “sea” | OK |
+| **a** | Preposition indicating destination | **a** | “to / upon” | OK |
+| **la** | Definite article, feminine singular | **la** | “the” | OK |
+| **riva** | Feminine noun “shore” | **orilla** | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | **se** | (reflexive marker) | OK |
+| **volge** | Verb “turns, directs oneself” | **vuelve** | “turns, returns” | OK |
+| **a** (before *l'acqua*) | Preposition introducing the water | **al** (a + el) | “to the” | OK |
+| **l'acqua** | Definite noun “the water” | **agua** | “water” | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **peligrosa** | “dangerous” | OK |
+| **e** | Coordinating conjunction “and” | **y** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **mira** | “looks, gazes” | OK |
+
+### Issues Summary
+- **Missing:** none  
+- **Wrong:** none  
+- **Grammar:** none (all gender/number agreements are correct)  
+- **Unnecessary:** none  
+
+All source tokens are accounted for, correctly rendered in Spanish, and preserve the meaning and grammatical relations of the original Italian lines.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: Y como aquel que con aliento agotado,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 23**  
+  - Original: salió fuera del mar a la orilla,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 24**  
+  - Original: se vuelve al agua peligrosa y mira,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Y como aquel que con aliento agotado,
+salió fuera del mar a la orilla,
+se vuelve al agua peligrosa y mira,
+```
+]]></message>
+</messages>

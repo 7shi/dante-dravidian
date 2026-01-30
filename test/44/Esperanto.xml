@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Kaj mi al li: «Poeto, mi vin petas  
+per tiu Dio, kiun vi ne konis,  
+por ke mi forkuru ĉi tiun malbonon kaj pli malbonan,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| E | discourse connector “and” | **Kaj** | and | OK |
+| io | speaker, 1st sg. nominative | **mi** | I | OK |
+| a | preposition “to” (dative) | **al** | to | OK |
+| lui | male addressee, 3rd sg. dative | **li** | him | OK |
+| Poeta | vocative “Poet” | **Poeto** | Poet | OK |
+| io (second) | speaker, 1st sg. nominative (subject of “petas”) | **mi** | I | OK |
+| ti | 2nd sg. accusative “you” (object of beseeching) | **vin** | you (obj.) | OK |
+| richeggio | verb “beseech” (present) | **petas** | beseech | OK |
+| per | preposition introducing instrumental basis | **per** | by / through | OK |
+| quello | demonstrative “that” (specifying the God) | **tiu** | that | OK |
+| Dio | noun “God” | **Dio** | God | OK |
+| che | relative pronoun “whom” | **kiun** | whom | OK |
+| tu | 2nd sg. nominative “you” (subject of relative clause) | **vi** | you | OK |
+| non | negation particle | **ne** | not | OK |
+| conosciesti | verb “you did not know” (past) | **konis** | knew (past) | OK |
+| acciò | purpose conjunction “in order that” | **por** | for / in order that | OK |
+| ch'io | subordinating “that” (introducing purpose clause) | **ke** | that | OK |
+| fuga | verb “may escape” (subjunctive) | **forkursu** | may escape | OK |
+| questo | demonstrative “this” (object of escape) | **ĉi tiun** | this (acc.) | OK |
+| male | noun “ill” (negative condition) | **malbonon** | ill / bad thing | OK |
+| e | coordinating conjunction “and” | **kaj** | and | OK |
+| peggio | comparative adjective “worse” | **pli malbonan** | more bad / worse | OK |
+
+### Items Requiring Attention
+- **None** – every source word has an appropriate Esperanto counterpart; no missing, wrong, grammatical, or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 130:
+  - Original: Kaj mi al li: «Poeto, mi vin petas
+  - Issue: none
+  - Corrected: no change
+- Line 131:
+  - Original: per tiu Dio, kiun vi ne konis,
+  - Issue: none
+  - Corrected: no change
+- Line 132:
+  - Original: por ke mi forkuru ĉi tiun malbonon kaj pli malbonan,
+  - Issue: none
+  - Corrected: no change
+
+```
+Kaj mi al li: «Poeto, mi vin petas
+per tiu Dio, kiun vi ne konis,
+por ke mi forkuru ĉi tiun malbonon kaj pli malbonan,
+```
+]]></message>
+</messages>

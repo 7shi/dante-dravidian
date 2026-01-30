@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tiel mia animo, kiu ankoraŭ flugis,
+turniĝis reen por rigardi la pason
+kiu neniam forlasis vivantan personon.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| così | resultative adverb “so” | tiel | “so / thus” | OK |
+| l'animo | “the soul” (subject) | animo | “soul” | UNNECESSARY (article “l’” dropped – Esperanto has no definite article) |
+| mio | possessive adjective “my” | mia | “my” | OK |
+| ch'ancor | relative pronoun “which” + adverb “still” | kiu ankoraŭ | “which still” | OK |
+| fuggiva | imperfect “was fleeing / flying” | flugis | “flew / was flying” | OK |
+| si | reflexive clitic (the soul turns **itself**) | – (reflexivity encoded in *turniĝis*) | – | UNNECESSARY |
+| volse | past “turned” (reflexive) | turniĝis | “turned (reflexively)” | OK |
+| a (1) | preposition introducing direction “to” (part of *a retro*) | – (merged into *reen*) | – | UNNECESSARY |
+| retro | noun used adverbially “back” | reen | “backward” | OK |
+| a (2) | preposition introducing purpose “to” (before infinitive) | por | “for / in order to” | OK |
+| rimirar | infinitive “to look again” | rigardi | “to look / to gaze” | OK |
+| lo | definite article “the” (masc.) | la | “the” | OK |
+| passo | “the pass” (object) | pason | “the pass” (accusative) | OK |
+| che | relative pronoun “which” | kiu | “which” | OK |
+| non | negation particle “not” | neniam | “never” (combined with *mai*) | OK |
+| lasciò | past “left” | forlasis | “left / abandoned” | OK |
+| già | temporal adverb “already” | – (omitted) | – | **MISSING** |
+| mai | adverb “never” (intensifier) | neniam | “never” (covers both *non* + *mai*) | OK |
+| persona | noun “person” | personon | “person” (accusative) | OK |
+| viva | adjective “living” (agreeing with *persona*) | vivantan | “living” (accusative) | OK |
+
+### Items to Address
+- **MISSING:** *già* (“already”) – not rendered in the Esperanto line; the translation could add *jam* or *jam antaŭe* if the nuance is required.
+- **UNNECESSARY:** *l’* (definite article), *si* (reflexive clitic), first *a* (directional preposition) – Esperanto does not need these elements; their meaning is conveyed by other words or morphology.
+- **GRAMMAR:** None detected; all retained words agree in case, number, and gender.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: “tiel mia animo, kiu ankoraŭ flugis,”
+  - Issue: none
+  - Corrected: no change
+
+- Line 26:
+  - Original: “turniĝis reen por rigardi la pason”
+  - Issue: WRONG – the verb omitted the “again” sense of *rimirar*
+  - Corrected: “turniĝis reen por rimiri la pason”
+
+- Line 27:
+  - Original: “kiu neniam forlasis vivantan personon.”
+  - Issue: MISSING – the adverb *già* (“already”) was not rendered
+  - Corrected: “kiu jam neniam forlasis vivantan personon.”
+
+```
+tiel mia animo, kiu ankoraŭ flugis,
+turniĝis reen por rimiri la pason
+kiu jam neniam forlasis vivantan personon.
+```
+]]></message>
+</messages>

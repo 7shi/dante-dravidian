@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ஆனால் நீ ஏன் இவ்வளவு பெரிய சலிப்புக்கு திரும்புகிறாய்?  
+நீ ஏன் அந்த இனிய மலைக்கு ஏறவில்லை?  
+அது எல்லா மகிழ்ச்சியின் மூலமும் காரணமும் ஆகும்?
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| Ma | Conjunction, adversative “but” | **ஆனால்** | “but” | OK |
+| tu | 2nd person singular pronoun, subject | **நீ** | “you” | OK |
+| perché (1) | Interrogative adverb “why” | **ஏன்** | “why” | OK |
+| ritorni | Verb “return (to)” (2nd sg.) | **திரும்புகிறாய்** | “you return” | OK |
+| a | Preposition “to” (marks goal) | — (encoded in **சலிப்புக்கு**) | “to” (dative case) | UNNECESSARY |
+| tanta | Intensifier “so great / very” | **இவ்வளவு பெரிய** | “so great” | OK |
+| noia | Noun “annoyance / boredom” | **சலிப்புக்கு** | “to annoyance” | OK |
+| perché (2) | Interrogative adverb “why” | **ஏன்** | “why” | OK |
+| non | Negative particle “not” | — (negation built into **ஏறவில்லை**) | “not” (implicit) | UNNECESSARY |
+| sali | Verb “ascend / climb” (2nd sg.) | **ஏறவில்லை** | “did not ascend” | OK |
+| il | Definite article (masc. sing.) | **அந்த** | “that / the” | OK |
+| dilettoso | Adjective “delightful / delectable” | **இனிய** | “delightful” | OK |
+| monte | Noun “mountain” (masc.) | **மலைக்கு** | “to the mountain” | OK |
+| ch’è | Relative pronoun + copula “which is” | **அது** | “that (is)” | OK |
+| principio | Noun “source / principle” | **மூலமும்** | “source and” | OK |
+| e | Coordinating conjunction “and” | — (suffix **‑மும்** attaches to nouns) | “and” (implicit) | UNNECESSARY |
+| cagion | Noun “cause” | **காரணமும்** | “cause and” | OK |
+| di | Preposition “of” (genitive) | — (genitive **‑இன்** on **மகிழ்ச்சியின்**) | “of” (implicit) | UNNECESSARY |
+| tutta | Quantifier “all / every” | **எல்லா** | “all / every” | OK |
+| gioia | Noun “joy” | **மகிழ்ச்சியின்** | “of joy” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `a`, `non`, `e`, `di` – Tamil expresses these relations via case endings or verb morphology, so separate words are not needed.  
+- **MISSING / WRONG / GRAMMAR**: none detected. All source meanings are represented in the Tamil rendering, and agreement (person, number) is correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 76:
+  - Original: ஆனால் நீ ஏன் இவ்வளவு பெரிய சலிப்புக்கு திரும்புகிறாய்?
+  - Issue: none
+  - Corrected: no change  
+
+- Line 77:
+  - Original: நீ ஏன் அந்த இனிய மலைக்கு ஏறவில்லை?
+  - Issue: none
+  - Corrected: no change  
+
+- Line 78:
+  - Original: அது எல்லா மகிழ்ச்சியின் மூலமும் காரணமும் ஆகும்?
+  - Issue: none
+  - Corrected: no change  
+
+```
+ஆனால் நீ ஏன் இவ்வளவு பெரிய சலிப்புக்கு திரும்புகிறாய்?
+நீ ஏன் அந்த இனிய மலைக்கு ஏறவில்லை?
+அது எல்லா மகிழ்ச்சியின் மூலமும் காரணமும் ஆகும்?
+```
+]]></message>
+</messages>

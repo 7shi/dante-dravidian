@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+88 Vedi la bestia per cu' io mi volsi;
+89 aiutami da lei, famoso saggio,
+90 ch'ella mi fa tremar le vene e i polsi».
+Reference Translation (provided):
+Behold the beast because of which I turned; help me against her, famous sage, for she makes any veins and pulses tremble.”
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 88** *Vedi la bestia per cu' io mi volsi;* → **Locked Meaning**:  
+  The speaker issues an imperative command (*Vedi*) for the hearer to perceive a particular beast (*la bestia*). The prepositional phrase *per cu'* (“because of which”) establishes that this beast is the causal antecedent of the speaker’s self‑directed turning action (*io mi volsi*).  
+
+- **Line 89‑90** *aiutami da lei, famoso saggio, ch'ella mi fa tremar le vene e i polsi»* → **Locked Meaning**:  
+  The speaker petitions the addressee (*aiutami*) to act **against** a female entity (*da lei*). The appeal is addressed to a “famous sage” (*famoso saggio*). The subordinate clause *ch'ella mi fa tremar le vene e i polsi* asserts that she causes the speaker’s veins and pulses to tremble.  
+
+---
+
+### Source‑Reference Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **Vedi** | 2nd sg. imperative of *vedere* | *Behold* | Command to visually attend | Predicate (imperative) |
+| **la** | Definite article, fem. sg. | *the* | Marks the noun *bestia* as specific | Determiner |
+| **bestia** | Noun, fem. sg. | *beast* | The creature that is the causal factor | Direct object of *Vedi* |
+| **per** | Preposition | *because of* | Introduces causal relation | Prepositional head |
+| **cu'** (≈ *cui*) | Relative pronoun, dative/ablative | *which* | Refers back to *bestia* as cause | Relative clause complement |
+| **io** | 1st sg. personal pronoun, nominative | *I* | The speaker who turns | Subject of *volsi* |
+| **mi** | 1st sg. reflexive pronoun, accusative | (implicit) | Marks the turning as self‑directed | Reflexive object of *volsi* |
+| **volsi** | 1st sg. past historic of *volgere* | *turned* | Action performed by the speaker | Predicate (finite verb) |
+| **aiutami** | 1st sg. imperative of *aiutare* + enclitic *‑mi* | *help me* | Request for assistance directed at addressee | Predicate (imperative) |
+| **da** | Preposition | *against* | Indicates opposition toward *lei* | Prepositional head |
+| **lei** | 3rd sg. personal pronoun, feminine, ablative | *her* | The female entity opposed to | Object of preposition *da* |
+| **famoso** | Adjective, masc. sg. (agreeing with *saggio*) | *famous* | Attribute of the addressed sage | Modifier of *saggio* |
+| **saggio** | Noun, masc. sg. | *sage* | The addressee of the request | Vocative (address) |
+| **ch'ella** (≈ *che ella*) | Conjunction + 3rd sg. pronoun *ella* | *for she* | Introduces causal clause | Subordinator |
+| **mi** | 1st sg. pronoun, accusative | (implicit) | Marks the speaker as experiencer of trembling | Direct object of *fa* |
+| **fa** | 3rd sg. present of *fare* | *makes* | Causative verb for trembling | Predicate of subordinate clause |
+| **tremar** | Infinitive of *tremare* | *tremble* | Action caused by *ella* | Complement of *fa* |
+| **le** | Definite article, fem. pl. | *any* (article) | Introduces plural noun *vene* | Determiner |
+| **vene** | Noun, fem. pl. | *veins* | Body parts that tremble | Direct object of *tremar* |
+| **e** | Coordinating conjunction | *and* | Links two body‑part nouns | Connector |
+| **i** | Definite article, masc. pl. | *the* (article) | Introduces plural noun *polsi* | Determiner |
+| **polsi** | Noun, masc. pl. | *pulses* | Second set of body parts that tremble | Direct object of *tremar* |
+
+*The table respects the locked meanings above, pairing each Italian token with its English counterpart, a concise contextual definition, and its syntactic/grammatical function within the two lines.*
+]]></message>
+</messages>

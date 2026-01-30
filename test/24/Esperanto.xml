@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Mi naskiĝis sub Julio kvankam malfrue,  
+kaj mi vivis en Romo sub la bona Augusto  
+en la tempo de la falsaj kaj mensogaj dioj.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Nacqui | “I was born” (1st sg perfect) | naskiĝis | “was born” | OK |
+| sub | preposition “under” (temporal/political) | sub | “under” | OK |
+| Iulio | proper name “Julio” (ruler) | Julio | “Julio” | OK |
+| ancor | concessive adverb “though, even if” | kvankam | “though” | OK |
+| che | subordinating conjunction introducing subjunctive clause | kvankam | “though” (covers the whole concessive clause) | OK |
+| fosse | 3rd sg imperfect subjunctive of *essere* “was” (in concessive clause) | kvankam | “though” (covers the state “it was late”) | OK |
+| tardi | adjective used adverbially “late” | malfrue | “late” | OK |
+| e | coordinating conjunction “and” | kaj | “and” | OK |
+| vissi | “I lived” (1st sg perfect) | vivis | “lived” | OK |
+| a | preposition “at, in” (locative) | en | “in” | OK |
+| Roma | proper name “Rome” (locative) | Romo | “Rome” | OK |
+| sotto | preposition “under” (political) | sub | “under” | OK |
+| ’l | definite article “the” (masc. sing.) | la | “the” | OK |
+| buono | adjective “good” (qualifying Augustus) | bona | “good” | OK |
+| Augusto | proper name “Augustus” | Augusto | “Augustus” | OK |
+| nel | contraction “in the” (prepositional) | en | “in” | OK |
+| tempo | noun “time” (epoch) | tempo | “time” | OK |
+| de | preposition “of” | de | “of” | OK |
+| li | definite article “the” (masc. pl.) | la | “the” | OK |
+| dèi | noun “gods” (plural) | dioj | “gods” | OK |
+| falsi | adjective “false” (plural) | falsaj | “false” | OK |
+| e | coordinating conjunction “and” | kaj | “and” | OK |
+| bugiardi | adjective “lying” (plural) | mensogaj | “lying” | OK |
+
+### Items Requiring Attention
+- **None** – every source token is represented in the Esperanto translation, and all grammatical agreements (number, case, article usage) are correct. No missing, wrong, or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 70**:
+  - Original: Mi naskiĝis sub Julio kvankam malfrue,
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 71**:
+  - Original: kaj mi vivis en Romo sub la bona Augusto
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 72**:
+  - Original: en la tempo de la falsaj kaj mensogaj dioj.
+  - Issue: none
+  - Corrected: no change  
+
+```
+Mi naskiĝis sub Julio kvankam malfrue,
+kaj mi vivis en Romo sub la bona Augusto
+en la tempo de la falsaj kaj mensogaj dioj.
+```
+]]></message>
+</messages>

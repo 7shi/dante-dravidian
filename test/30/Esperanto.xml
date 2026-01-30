@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Vidu la beston pro kiu mi turniĝis;  
+Helpu min kontraŭ ŝi fama saĝulo,  
+ĉar ŝi igas la vejnojn kaj la pulsojn tremi».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|-------------------|--------|
+| Vedi | “see / behold” (imperative) | Vidu | “see / behold” | OK |
+| la | definite article, marks *bestia* | la | “the” | OK |
+| bestia | “the beast” (direct object) | beston | “the beast” (acc.) | OK |
+| per | causal preposition “because of” | pro | “because of / for” | OK |
+| cu' | relative pronoun “which” | kiu | “which” | OK |
+| io | 1st‑person singular subject “I” | mi | “I” | OK |
+| mi | 1st‑person reflexive pronoun “myself” | mi | “myself” | OK |
+| volsi | “I turned” (reflexive past) | turniĝis | “I turned” (reflexive) | OK |
+| aiutami | “help me” (imperative + object) | Helpu min | “help me” | OK |
+| da | preposition “against” | kontraŭ | “against” | OK |
+| lei | 3rd‑person feminine pronoun “her” | ŝi | “she / her” | OK |
+| famoso | adjective “famous” | fama | “famous” | OK |
+| saggio | noun “sage” (vocative) | saĝulo | “sage” | OK |
+| ch'ella | causal conjunction “for” + pronoun “she” | ĉar ŝi | “for she” | OK |
+| mi (object) | experiencer “me” of trembling | — | — | **MISSING** |
+| fa | causative verb “makes” | igas | “makes / causes” | OK |
+| tremar | infinitive “to tremble” | tremi | “to tremble” | OK |
+| le | definite article introducing *vene* | la | “the” | OK |
+| vene | plural “veins” (object) | vejnojn | “veins” (acc.) | OK |
+| e | coordinating conjunction “and” | kaj | “and” | OK |
+| i | definite article introducing *polsi* | la | “the” | OK |
+| polsi | plural “pulses” (object) | pulsojn | “pulses” (acc.) | OK |
+
+### Items Requiring Attention
+- **MISSING:** the reflexive/object pronoun *mi* in “ch'ella **mi** fa tremar …” has no counterpart in the Esperanto rendering. A possible inclusion would be *min* after *igas* (e.g., “ŝi igas **min** …”).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 88:**  
+  - Original: Vidu la beston pro kiu mi turniĝis;  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 89:**  
+  - Original: Helpu min kontraŭ ŝi fama saĝulo,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 90:**  
+  - Original: ĉar ŝi igas la vejnojn kaj la pulsojn tremi».  
+  - Issue: MISSING object pronoun “min” after *igas*  
+  - Corrected: ĉar ŝi igas **min** tremi la vejnojn kaj la pulsojn».  
+
+```
+Vidu la beston pro kiu mi turniĝis;
+Helpu min kontraŭ ŝi fama saĝulo,
+ĉar ŝi igas min tremi la vejnojn kaj la pulsojn».
+```
+]]></message>
+</messages>

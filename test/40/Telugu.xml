@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+118 అప్పుడు నీవు సంతృప్తిగా ఉన్న వారిని చూస్తావు  
+119 అగ్నిలో వారు రావాలని ఆశిస్తున్నారు  
+120 అది ఎప్పుడైనా ఆశీర్వదిత ప్రజలకు చేరుతుంది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Telugu Translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **e** | coordinating conjunction “And then” | **అప్పుడు** | “then” | OK |
+| **vederai** | future verb “you will see” | **చూస్తావు** | “you will see” | OK |
+| **color** | demonstrative pronoun “those (people)” | **వారిని** | “those (people)” | OK |
+| **che** (rel. pron.) | relative pronoun “who” | — (integrated in **ఉన్న**) | — | UNNECESSARY |
+| **son** | copula “are” | **ఉన్న** | “are” | OK |
+| **contenti** | adjective “contented” | **సంతృప్తిగా** | “contentedly” | OK |
+| **nel** | preposition “in the” | **అగ్నిలో** | “in fire” | OK |
+| **foco** | noun “fire” | **అగ్ని** (within **అగ్నిలో**) | “fire” | OK |
+| **perché** | causal conjunction “because” | — (omitted) | — | UNNECESSARY |
+| **speran** | verb “they hope” | **ఆశిస్తున్నారు** | “they hope” | OK |
+| **di** | infinitive marker “to” | — (omitted) | — | UNNECESSARY |
+| **venire** | infinitive “come” | **రావాలని** | “to come” | OK |
+| **quando** | temporal adverb “whenever” | **ఎప్పుడైనా** | “whenever” | OK |
+| **che** (particle) | idiomatic particle in *quando che* | — (omitted) | — | UNNECESSARY |
+| **sia** | subjunctive “it may be” | **అది** | “it” (contextual “may be”) | OK |
+| **a** | preposition “to” (dative) | **కు** (as part of **ప్రజలకు**) | “to” | OK |
+| **le** | definite article “the” (feminine plural) | — (omitted) | — | UNNECESSARY |
+| **beate** | adjective “blessed” | **ఆశీర్వదిత** | “blessed” | OK |
+| **genti** | noun “folk, people” | **ప్రజలు** (within **ప్రజలకు**) | “people” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**:  
+  - *che* (line 118) – relative pronoun not expressed in Telugu.  
+  - *perché* – causal conjunction omitted; Telugu conveys meaning without it.  
+  - *di* – infinitive marker omitted.  
+  - *che* (line 120) – idiomatic particle omitted.  
+  - *le* – definite article omitted (Telugu lacks articles).  
+
+All other source words are correctly rendered (OK) with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 118:
+  - Original: **అప్పుడు నీవు సంతృప్తిగా ఉన్న వారిని చూస్తావు**
+  - Issue: none
+  - Corrected: no change  
+
+- Line 119:
+  - Original: **అగ్నిలో వారు రావాలని ఆశిస్తున్నారు**
+  - Issue: none
+  - Corrected: no change  
+
+- Line 120:
+  - Original: **అది ఎప్పుడైనా ఆశీర్వదిత ప్రజలకు చేరుతుంది**
+  - Issue: none
+  - Corrected: no change  
+
+```
+అప్పుడు నీవు సంతృప్తిగా ఉన్న వారిని చూస్తావు
+అగ్నిలో వారు రావాలని ఆశిస్తున్నారు
+అది ఎప్పుడైనా ఆశీర్వదిత ప్రజలకు చేరుతుంది
+```
+]]></message>
+</messages>

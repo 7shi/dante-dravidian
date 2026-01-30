@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Y tal es él que adquiere voluntariamente,  
+y llega el tiempo que le hace perder,  
+que en todos sus pensamientos llora y se entristece;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **E** (line 55) | Coordinating conjunction linking to previous clause | **Y** | “and” | OK |
+| **qual** | Relative pronoun “such as” | **tal** | “such” / “such as” | OK |
+| **è** | Copular verb “is” | **es** | “is” | OK |
+| **quei** | Demonstrative pronoun referring to the person | **él** | “he” | OK |
+| **che** (1) | Relative pronoun introducing clause about *quei* | **que** | “who / that” | OK |
+| **volontieri** | Adverb of willingness | **voluntariamente** | “willingly” | OK |
+| **acquista** | Verb “acquires / gains” | **adquiere** | “acquires” | OK |
+| **e** (line 56) | Coordinating conjunction | **y** | “and” | OK |
+| **giugne** | Verb “arrives” | **llega** | “arrives” | OK |
+| **'l** | Definite article (elided *il*) “the” | **el** | “the” | OK |
+| **tempo** | Noun “time” | **tiempo** | “time” | OK |
+| **che** (2) | Relative pronoun “that” | **que** | “that” | OK |
+| **perder** | Infinitive “to lose” | **perder** | “lose” | OK |
+| **lo** | Clitic pronoun object “him” | **le** | “him” (indirect object) | OK |
+| **face** | Causative verb “makes” | **hace** | “makes” | OK |
+| **che** (3) | Relative pronoun “who” | **que** | “who” | OK |
+| **'n** | Preposition “in” | **en** | “in” | OK |
+| **tutti** | Quantifier “all” | **todos** | “all” | OK |
+| **suoi** | Possessive adjective “his” | **sus** | “his” | OK |
+| **pensier** | Noun “thought(s)” | **pensamientos** | “thoughts” | OK |
+| **piange** | Verb “weeps” | **llora** | “weeps” | OK |
+| **e** (second) | Coordinating conjunction | **y** | “and” | OK |
+| **s'attrista** | Reflexive verb “becomes sad” | **se entristece** | “gets sad / is saddened” | OK |
+
+### Coverage Check
+- **Missing:** none  
+- **Wrong:** none  
+- **Grammar errors:** none (all gender/number agreements are correct)  
+- **Unnecessary elements:** none (every source token has a natural Spanish counterpart)  
+
+All source words are accounted for, and the Spanish rendering respects the meaning and grammatical requirements of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 55**:
+  - Original: `Y tal es él que adquiere voluntariamente,`
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 56**:
+  - Original: `y llega el tiempo que le hace perder,`
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 57**:
+  - Original: `que en todos sus pensamientos llora y se entristece;`
+  - Issue: none
+  - Corrected: no change  
+
+```
+Y tal es él que adquiere voluntariamente,
+y llega el tiempo que le hace perder,
+que en todos sus pensamientos llora y se entristece;
+```
+]]></message>
+</messages>

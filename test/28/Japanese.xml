@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+おお他の詩人たちの名誉と光よ、  
+長い研究と大きな愛を私に役立たせて  
+私にあなたの書物を探させた。
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| O | vocative interjection | おお | “O” | OK |
+| de | “of” (possessive) | の | “of” | OK |
+| li | definite article (the) | — | — | UNNECESSARY |
+| altri | “other” (specifying poets) | 他の | “other” | OK |
+| poeti | “poets” | 詩人たち | “poets” | OK |
+| onore | “honor” (abstract quality) | 名誉 | “honor” | OK |
+| e | coordinating conjunction “and” | と | “and” | OK |
+| lume | “light” (abstract quality) | 光 | “light” | OK |
+| vagliami | 2nd sg. imperative “let … avail me” (request) | 役立たせて | “make (it) useful to me” | OK |
+| ’l (first) | definite article “the” (before *lungo*) | — | — | UNNECESSARY |
+| lungo | “long” (describing study) | 長い | “long” | OK |
+| studio | “study” (scholarly effort) | 研究 | “study” | OK |
+| e (second) | coordinating conjunction “and” | と | “and” | OK |
+| ’l (second) | definite article “the” (before *grande*) | — | — | UNNECESSARY |
+| grande | “great” (intensifier) | 大きな | “great/large” | OK |
+| amore | “love” (passionate feeling) | 愛 | “love” | OK |
+| che | relative pronoun “which” (introduces cause clause) | — | — | UNNECESSARY |
+| m' | enclitic pronoun “me” (indirect object) | 私に | “to me” | OK |
+| ha | auxiliary “has” (perfect) | — | — | UNNECESSARY |
+| fatto | main verb “made” (causative) | させた | “made (cause) …” | OK |
+| cercar | infinitive “search” | 探す | “search” | OK |
+| lo | definite article “the” (before *tuo*) | — | — | UNNECESSARY |
+| tuo | possessive “thy” | あなたの | “your” | OK |
+| volume | “volume” (book/poem) | 書物 | “book” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *li, ’l (twice), ’l (second), lo, ha, che* – Italian articles, auxiliary, and relative pronoun have no direct equivalents in Japanese and are naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were found; all retained elements convey the intended meaning and agree with Japanese grammatical requirements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:
+  - Original: おお他の詩人たちの名誉と光よ、  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 83:
+  - Original: 長い研究と大きな愛を私に役立たせて  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 84:
+  - Original: 私にあなたの書物を探させた。  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+おお他の詩人たちの名誉と光よ、  
+長い研究と大きな愛を私に役立たせて  
+私にあなたの書物を探させた。
+```
+]]></message>
+</messages>

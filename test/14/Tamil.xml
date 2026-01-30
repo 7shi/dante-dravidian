@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நேரத்தின் முதல் மணி, இனிய காலம்;  
+அதனால் நல்ல நம்பிக்கை எனக்கு காரணமாக இருந்தது  
+அந்த புள்ளியுள்ள தோலுடன் கூடிய காட்டுப் புலி குறித்து
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|----------------------|------------------------------|-----------------------------|--------|
+| mosse | initial moment / hour | மணி | hour | OK |
+| di (1st) | genitive “of” linking *prima* to *mosse* | *(none – expressed by the suffix ‑த்தின் in “நேரத்தின்”)* | of | UNNECESSARY |
+| prima | first / earliest | முதல் | first | OK |
+| quelle | demonstrative “those” | *(none – omitted in Tamil)* | those | UNNECESSARY |
+| cose | “things”, rendered as “season” | காலம் | season | OK |
+| belle | beautiful / sweet | இனிய | sweet | OK |
+| sì | resultative “so (that)” | அதனால் | so that | OK |
+| ch’a | conjunction “that” (introducing result) | *(none – result already expressed by “அதனால்”)* | that | UNNECESSARY |
+| bene | good | நல்ல | good | OK |
+| sperar | to hope (infinitive) | நம்பிக்கை | hope | OK |
+| m'era | “to me was” (experiencer) | எனக்கு | to me | OK |
+| cagione | occasion / cause | காரணமாக | as cause / occasion | OK |
+| di (2nd) | genitive “of” linking *quella* to *fiera* | *(none – expressed by the compound “காட்டுப் புலி”)* | of | UNNECESSARY |
+| quella | demonstrative “that” | அந்த | that | OK |
+| fiera | wild beast | காட்டுப் புலி | wild beast | OK |
+| a | preposition “with” (instrument) | *(none – incorporated in “தோலுடன்”)* | with | UNNECESSARY |
+| la | definite article “the” | *(none – Tamil has no article)* | the | UNNECESSARY |
+| gaetta | dappled / speckled | புள்ளியுள்ள | dappled | OK |
+| pelle | skin | தோல் | skin | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (omitted because Tamil expresses the relation grammatically or does not use the element):  
+  - *di* (both occurrences)  
+  - *quelle*  
+  - *ch’a*  
+  - *a*  
+  - *la*  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected in the Tamil rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 40:
+  - Original: **நேரத்தின் முதல் மணி, இனிய காலம்;**
+  - Issue: Internal punctuation (comma) not allowed.
+  - Corrected: **நேரத்தின் முதல் மணி இனிய காலம்;**
+
+- Line 41:
+  - Original: **அதனால் நல்ல நம்பிக்கை எனக்கு காரணமாக இருந்தது**
+  - Issue: none
+  - Corrected: **no change**
+
+- Line 42:
+  - Original: **அந்த புள்ளியுள்ள தோலுடன் கூடிய காட்டுப் புலி குறித்து**
+  - Issue: none
+  - Corrected: **no change**
+
+```
+நேரத்தின் முதல் மணி இனிய காலம்;
+அதனால் நல்ல நம்பிக்கை எனக்கு காரணமாக இருந்தது
+அந்த புள்ளியுள்ள தோலுடன் கூடிய காட்டுப் புலி குறித்து
+```
+]]></message>
+</messages>

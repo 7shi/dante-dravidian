@@ -1,0 +1,63 @@
+# Italian
+
+10 Io non so ben ridir com' i' v'intrai,
+11 tant' era pien di sonno a quel punto
+12 che la verace via abbandonai.
+
+# English
+
+I cannot well recount how I entered it, so full was I of slumber at that point where I abandoned the true way.
+
+# Telugu
+
+10 నేను ఎలా ప్రవేశించానో బాగా చెప్పలేను,
+11 ఆ సమయంలో నేను నిద్రలో పూర్తిగా నిండిపోయి ఉండేవాడిని
+12 అప్పుడు నేను నిజమైన మార్గాన్ని వదిలేశాను.
+
+# Tamil
+
+10 நான் அதை எப்படி நுழைந்தேன் என்பதை நன்றாக சொல்ல முடியவில்லை,
+11 அந்தக் காலத்தில் நான் தூக்கத்தில் முழுமையாக நிரம்பியிருந்தேன்
+12 அங்கு நான் உண்மையான பாதையை விட்டுவிட்டேன்.
+
+# Kannada
+
+10 ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+11 ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಾ ತುಂಬಿದ್ದೆ
+12 ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+
+# Malayalam
+
+10 ഞാൻ അത് എങ്ങനെ പ്രവേശിച്ചതെന്ന് നന്നായി പറയാൻ കഴിയില്ല,
+11 അന്നത്തെ നിമിഷത്തിൽ ഞാൻ ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു
+12 അവിടെ ഞാൻ സത്യമായ വഴിയെ ഉപേക്ഷിച്ചു.
+
+# Japanese
+
+10 私はそれに入った様子をうまく語れない,
+11 その時は眠りでとても満ちていた
+12 そこで私は真実の道を捨てた.
+
+# French
+
+10 Je ne peux pas bien raconter comment je suis entré,
+11 J’étais tellement plein de sommeil à ce moment
+12 où j’abandonnai le vrai chemin.
+
+# Spanish
+
+10 No puedo relatar bien cómo entré,
+11 Estaba tan lleno de sueño en ese punto
+12 donde abandoné la vía verdadera.
+
+# Portuguese
+
+10 Não consigo bem relatar como entrei,
+11 eu estava tão cheio de sono naquele ponto
+12 onde abandonei o caminho verdadeiro.
+
+# Esperanto
+
+10 Mi ne povas bone rakonti kiel mi eniris ĝin,
+11 tiel plena de dormemo mi estis tiutempe
+12 kie mi forlasis la veran vojon.

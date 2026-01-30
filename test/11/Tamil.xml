@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+31 மற்றும் இதோ! சாய்ந்த பாதையின் தொடக்கத்திற்கு சுமார்,  
+32 ஒரு பெண் புலி இலகுவாகவும் மிகவும் வேகமாகவும்,  
+33 அது புள்ளிகளுடன் கூடிய தோலால் மூடப்பட்டிருந்தது;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Tamil) | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|------------------------------|--------------------------|--------|
+| Ed | discourse marker “and” | **மற்றும்** | “and” | OK |
+| ecco, | exclamatory pointer “lo!” | **இதோ!** | “here it is!” | OK |
+| quasi | degree adverb “almost” | **சுமார்** | “almost” | OK |
+| al | preposition + article “to the” (introduces dative) | **தொடக்கத்திற்கு** | “to the beginning” | OK |
+| cominciar | noun “beginning” | **தொடக்கத்திற்கு** | “to the beginning” | OK |
+| de | genitive “of” | **பாதையின்** | “of the path” | OK |
+| l'erta, | noun “the steep” (the steep path) | **சாய்ந்த** | “steep” | OK |
+| una | indefinite article “a” | **ஒரு** | “a” | OK |
+| lonza | noun “she‑leopard” | **பெண் புலி** | “female leopard” | OK |
+| leggera | adjective “light” | **இலகுவாகவும்** | “light‑ly and …” | OK |
+| e | coordinating conjunction “and” (links adjectives) | — (conjunction expressed by the suffix **‑வும்** on the adjectives) | — | **UNNECESSARY** |
+| presta | adjective “nimble / swift” | **வேகமாகவும்** | “swift‑ly and …” | OK |
+| molto, | intensifier “very” | **மிகவும்** | “very” | OK |
+| che | relative pronoun “which / that” | **அது** | “that” | OK |
+| di | preposition “with / of” (introduces attribute) | **கூடிய** | “having” | OK |
+| pel | noun “coat / fur” | **தோலால்** | “by the coat” | OK |
+| macolato | adjective “spotted” | **புள்ளிகளுடன்** | “with spots” | OK |
+| era | auxiliary verb “was” (imperfect) | **இருந்தது** | “was” | OK |
+| coverta; | past participle “covered” (passive) | **மூடப்பட்ட** | “covered” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **e** – Tamil does not need an explicit coordinating conjunction between the two adjectival predicates; the suffix **‑வும்** on each adjective already conveys the “and” relationship.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected in the current translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 31:
+  - Original: மற்றும் இதோ! சாய்ந்த பாதையின் தொடக்கத்திற்கு சுமார்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 32:
+  - Original: ஒரு பெண் புலி இலகுவாகவும் மிகவும் வேகமாகவும்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 33:
+  - Original: அது புள்ளிகளுடன் கூடிய தோலால் மூடப்பட்டிருந்தது;
+  - Issue: none
+  - Corrected: no change  
+
+```
+மற்றும் இதோ! சாய்ந்த பாதையின் தொடக்கத்திற்கு சுமார்,
+ஒரு பெண் புலி இலகுவாகவும் மிகவும் வேகமாகவும்,
+அது புள்ளிகளுடன் கூடிய தோலால் மூடப்பட்டிருந்தது;
+```
+]]></message>
+</messages>

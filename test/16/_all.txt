@@ -1,0 +1,63 @@
+# Italian
+
+46 Questi parea che contra me venisse
+47 con la test' alta e con rabbiosa fame,
+48 sì che parea che l'aere ne tremesse.
+
+# English
+
+He seemed to be coming against me, with head high and with ravening hunger, so that it seemed that the air was affrighted at him.
+
+# Telugu
+
+46 అతను నా మీద వస్తున్నాడని కనిపించింది
+47 తల ఎత్తుగా, ఆకలితో,
+48 అలా గాలి అతనితో కంపిస్తున్నట్లు కనిపించింది.
+
+# Tamil
+
+46 அவர் என் எதிராக வருகிறான் என்று தோன்றியது
+47 உயர்ந்த தலை மற்றும் பசித்த பசி உடைய,
+48 அதனால் காற்று அவரை பயந்து நடுங்கியது என்று தோன்றியது.
+
+# Kannada
+
+46 ಅವನು ನನ್ನ ವಿರುದ್ಧ ಬರುತ್ತಿದ್ದ ಎಂದು ತೋರುತ್ತಿತ್ತು
+47 ತಲೆಯು ಎತ್ತರವಾಗಿದ್ದು, ಹಸಿವು ಕಾಡುವಂತೆ,
+48 ಆದ್ದರಿಂದ ಗಾಳಿ ಅವನಿಂದ ಕಂಪಿಸುತ್ತಿತ್ತು ಎಂದು ತೋರುತ್ತಿತ್ತು.
+
+# Malayalam
+
+46 അവൻ എനിക്ക് വിരുദ്ധമായി വരുന്നതായി തോന്നി
+47 ഉയർന്ന തലയും ക്രൂരമായ വിശപ്പും കൂടെ,
+48 അങ്ങനെ വായു അവനെക്കുറിച്ച് കുലുങ്ങുന്നതായി തോന്നി.
+
+# Japanese
+
+46 彼は私に向かって来るように見えた
+47 頭を高く上げ、貪欲な飢えを抱えて、 
+48 それで、空気が彼に対して震えているように見えた。
+
+# French
+
+46 Celui‑ci semblait que venir contre moi
+47 avec la tête haute et avec une faim vorace,
+48 si bien que cela semblait que l’air tremblait de lui.
+
+# Spanish
+
+46 Parecía que él venía contra mí.
+47 con la cabeza alta y con hambre rabiosa,
+48 de modo que parecía que el aire temblaba por él.
+
+# Portuguese
+
+46 Ele parecia estar vindo contra mim
+47 com a cabeça alta e fome voraz,
+48 de modo que parecia que o ar tremia.
+
+# Esperanto
+
+46 Li ŝajnis veni kontraŭ mi
+47 kun alta kapo kaj kun rabia malsato,
+48 tiel ke ŝajnis ke la aero tremis pro li.

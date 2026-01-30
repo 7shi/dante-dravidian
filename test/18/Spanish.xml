@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ella me causó tanta pesadez  
+con el miedo que surgía de su vista,  
+que perdí la esperanza de la altura.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Spanish) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|----------------------------|--------|
+| questa | female agent who acts | ella | she | OK |
+| mi | recipient / experiencer of the caused state | me | me | OK |
+| porse | “caused”, act of bringing about a feeling | causó | caused | OK |
+| tanto | high degree of the following noun | tanta | so much / such a great | OK |
+| di (1) | links the quantity adverb to the noun | de | of | OK |
+| gravezza | affective state “heaviness” | pesadez | heaviness | OK |
+| con | introduces an accompanying circumstance | con | with | OK |
+| la (before paura) | marks *paura* as specific | el | the | OK |
+| paura | emotion that arises from seeing her | miedo | fear | OK |
+| ch'uscia | relative clause verb “that came out / emerged” | que surgía | that came / emerged | OK |
+| di (2) | source of the fear | de | from | OK |
+| sua | possessor of *vista* | su | her | OK |
+| vista | visual perception of the female agent | vista | sight | OK |
+| ch'io | relative pronoun introducing clause “that I …” | que | that | OK |
+| perdei | “lost”, act of no longer possessing | perdí | lost | OK |
+| la (before speranza) | marks *speranza* as specific | la | the | OK |
+| speranza | mental expectation that is lost | esperanza | hope | OK |
+| de | links *speranza* to its content | de | of | OK |
+| l’altezza | “the height”, metaphorical lofty goal | la altura | the height | OK |
+
+### Issues Found
+- **None.** All source words are represented in the Spanish translation, grammatical agreements are correct, and no unnecessary elements are present.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 52**:
+  - Original: *ella me causó tanta pesadez*
+  - Issue: none
+  - Corrected: *no change*
+
+- **Line 53**:
+  - Original: *con el miedo que surgía de su vista,*
+  - Issue: none
+  - Corrected: *no change*
+
+- **Line 54**:
+  - Original: *que perdí la esperanza de la altura.*
+  - Issue: none
+  - Corrected: *no change*
+
+```text
+ella me causó tanta pesadez
+con el miedo que surgía de su vista,
+que perdí la esperanza de la altura.
+```
+]]></message>
+</messages>

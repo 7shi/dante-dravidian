@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Mi rigardis supren kaj vidis ĝiajn ŝultrojn  
+vestitaj jam per la radioj de la planedo  
+kiu gvidas homojn rekte laŭ ĉiu vojo.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| guardai | “looked upward” (perceptual verb) | **rigardis** | looked | OK |
+| in | preposition of direction “in” | — | — | **UNNECESSARY** |
+| alto | “high” (spatial direction) | **supren** | upward / high | OK |
+| e | coordinating conjunction “and” | **kaj** | and | OK |
+| vidi | “saw” (perceptual verb) | **vidis** | saw | OK |
+| le | definite article (fem. pl. acc.) “the” | — | — | **UNNECESSARY** |
+| sue | possessive adjective “its” | **ĝiajn** | its (plural accusative) | OK |
+| spalle | noun “shoulders” (acc.) | **ŝultrojn** | shoulders | OK |
+| vestite | past participle “clothed” | **vestitaj** | clothed | OK |
+| già | adverb “already” | **jam** | already | OK |
+| de' | preposition “of” (di + i) | — | — | **UNNECESSARY** |
+| raggi | noun “rays” (pl.) | **radioj** | rays | OK |
+| del | preposition + article “of the” (di + il) | **de la** | of the | OK |
+| pianeta | noun “planet” | **planedo** | planet | OK |
+| che | relative pronoun “that” | **kiu** | that / who | OK |
+| mena | verb “leads” | **gvidas** | leads | OK |
+| dritto | adverb “straight / aright” | **rekte** | straight | OK |
+| altrui | noun “people” (indirect object) | **homojn** | people | OK |
+| per | preposition “along” | **laŭ** | along / according to | OK |
+| ogne | adjective “every” | **ĉiu** | every | OK |
+| calle | noun “path” (sing.) | **vojo** | path | OK |
+
+### Items to Note
+- **UNNECESSARY**: `in`, `le`, `de'` – Italian articles/prepositions that Esperanto does not require in this construction.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 16:
+  - Original: Mi rigardis supren kaj vidis ĝiajn ŝultrojn
+  - Issue: none
+  - Corrected: no change  
+
+- Line 17:
+  - Original: vestitaj jam per la radioj de la planedo
+  - Issue: none
+  - Corrected: no change  
+
+- Line 18:
+  - Original: kiu gvidas homojn rekte laŭ ĉiu vojo.
+  - Issue: none
+  - Corrected: no change  
+
+```
+Mi rigardis supren kaj vidis ĝiajn ŝultrojn
+vestitaj jam per la radioj de la planedo
+kiu gvidas homojn rekte laŭ ĉiu vojo.
+```
+]]></message>
+</messages>

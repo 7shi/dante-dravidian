@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Vois la bête à cause de laquelle je me suis tourné;  
+aide‑moi contre elle sage célèbre,  
+car elle me fait trembler les veines et les pulsations».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Italian → French)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Vedi | imperative “see / behold” | **Vois** | “see” | OK |
+| la | definite article, fem. sg. | **la** | “the” | OK |
+| bestia | “beast” (the creature) | **bête** | “beast” | OK |
+| per | preposition introducing cause | **à** | “to / at” (part of “à cause”) | OK |
+| cu' | relative pronoun “which” (causal) | **laquelle** | “which” | OK |
+| io | 1st sg. pronoun “I” | **je** | “I” | OK |
+| mi | reflexive pronoun “myself” | **me** | “myself” | OK |
+| volsi | “turned” (self‑directed) | **suis tourné** | “am turned” | OK |
+| aiutami | imperative “help me” | **aide‑moi** | “help‑me” | OK |
+| da | preposition “against” | **contre** | “against” | OK |
+| lei | 3rd sg. fem. pronoun “her” | **elle** | “her” | OK |
+| famoso | adjective “famous” | **célèbre** | “famous” | OK |
+| saggio | noun “sage” (addressed) | **sage** | “sage” | OK |
+| ch'ella | causal conjunction + pronoun “that she / for she” | **car elle** | “for she” | OK |
+| mi (2nd) | pronoun “me” (experiencer) | **me** | “me” | OK |
+| fa | causative verb “makes” | **fait** | “makes” | OK |
+| tremar | infinitive “to tremble” | **trembler** | “to tremble” | OK |
+| le | definite article, fem. pl. | **les** | “the” (pl.) | OK |
+| vene | “veins” | **veines** | “veins” | OK |
+| e | coordinating conjunction “and” | **et** | “and” | OK |
+| i | definite article, masc. pl. | **les** | “the” (pl.) | OK |
+| polsi | “pulses” (body parts) | **pulsations** | “pulses” | OK |
+
+---
+
+### Issues Detected
+- **GRAMMAR**:  
+  - *“contre elle sage célèbre,”* – In French the adjective phrase should be set off by a comma or reordered (e.g., *“contre elle, sage célèbre,”*). Without internal punctuation the string is ungrammatical.  
+
+No **MISSING**, **WRONG**, or **UNNECESSARY** items were found; all source tokens have a corresponding French rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 88:  
+  - Original: *Vois la bête à cause de laquelle je me suis tourné;*  
+  - Issue: none  
+  - Corrected: *Vois la bête à cause de laquelle je me suis tourné;*  
+
+- Line 89:  
+  - Original: *aide‑moi contre elle sage célèbre,*  
+  - Issue: GRAMMAR – missing comma after “elle” for proper French syntax.  
+  - Corrected: *aide‑moi contre elle, sage célèbre,*  
+
+- Line 90:  
+  - Original: *car elle me fait trembler les veines et les pulsations”.*  
+  - Issue: GRAMMAR – incorrect closing punctuation; should match source “»”.  
+  - Corrected: *car elle me fait trembler les veines et les pulsations»*  
+
+```text
+Vois la bête à cause de laquelle je me suis tourné;
+aide‑moi contre elle, sage célèbre,
+car elle me fait trembler les veines et les pulsations»
+```
+]]></message>
+</messages>

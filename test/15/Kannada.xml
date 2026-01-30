@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;  
+ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ  
+ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| l'ora | “the hour” (temporal noun) | ಗಂಟೆ (within “ಸಮಯದ ಗಂಟೆ”) | hour | OK |
+| del | genitive “of” linking *tempo* to *ora* | ಸಮಯದ (genitive suffix “‑ದ”) | of time | OK |
+| tempo | “time” | ಸಮಯ | time | OK |
+| e | coordinating “and” | ಮತ್ತು | and | OK |
+| la (1) | definite article, fem. sing. | — (omitted) | — | UNNECESSARY |
+| dolce | adjective “sweet” | ಮಧುರ | sweet | OK |
+| stagione | noun “season” | ಋತು | season | OK |
+| ma | coordinating “but” | ಆದರೆ | but | OK |
+| non (1) | first negation in “non sì” (part of “not so”) | ಇಷ್ಟು (part of “ಇಷ್ಟು ಆಗಿರದಂತೆ”) | so (negated) | OK |
+| sì | degree adverb “so” | ಇಷ್ಟು (same phrase) | so | OK |
+| che (1) | subordinator “that” introducing clause | ಆಗಿರದಂತೆ (clausal marker) | that … not | OK |
+| paura | noun “fear” | ಭಯ | fear | OK |
+| non (2) | second negation, negates the verb “give” | ನೀಡದಂತೆ (part of phrase) | not give | OK |
+| mi | indirect object “to me” | ನನಗೆ | to me | OK |
+| desse | subjunctive “give” (potential causation) | ನೀಡದಂತೆ (verb) | give (negated) | OK |
+| la (2) | article before *vista* | — (omitted) | — | UNNECESSARY |
+| vista | noun “sight, view” | ದೃಶ್ಯವು | sight | OK |
+| che (2) | relative pronoun “which” | — (omitted) | — | UNNECESSARY |
+| m'apparve | verb phrase “appeared to me” | ನನಗೆ ಕಾಣಿಸಿತು | appeared to me | OK |
+| d'un | preposition + indefinite article “of a” | ಸಿಂಹದ (genitive) | of the lion | OK |
+| leone. | noun “lion” | ಸಿಂಹ | lion | OK |
+
+### Summary of Issues
+- **UNNECESSARY**:  
+  - `la` (both occurrences) – Italian definite article has no direct counterpart in Kannada.  
+  - `che` (second occurrence) – relative pronoun omitted because Kannada embeds the relative meaning in the clause.  
+
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are represented with appropriate Kannada equivalents, preserving the meaning of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 43:
+  - Original: ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;
+  - Issue: none
+  - Corrected: ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;
+- Line 44:
+  - Original: ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ
+  - Issue: none
+  - Corrected: ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ
+- Line 45:
+  - Original: ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+  - Issue: none
+  - Corrected: ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+
+```
+ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;
+ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ
+ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+```
+]]></message>
+</messages>

@@ -1,0 +1,63 @@
+# Italian
+
+22 E come quei che con lena affannata,
+23 uscito fuor del pelago a la riva,
+24 si volge a l'acqua perigliosa e guata,
+
+# English
+
+And even as one who with spent breath, issued out of the sea upon the shore, turns to the perilous water and gazes,
+
+# Telugu
+
+22 మరియు కూడా శ్వాస అయిపోయినవాడిలా,
+23 సముద్రం నుండి తీరానికి వచ్చి,
+24 ప్రమాదకరమైన నీటికి తిరుగుతుంది మరియు గమనిస్తాడు,
+
+# Tamil
+
+22 மற்றும் சோர்ந்த மூச்சுடன் இருக்கும் ஒருவரைப் போல,
+23 கடலிலிருந்து வெளியே வந்து கரை மீது,
+24 அவர் ஆபத்தான நீருக்குத் திரும்பி பார்ப்பார்,
+
+# Kannada
+
+22 ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ, ಯಾರು,
+23 ಸಮುದ್ರದಿಂದ ಹೊರಬಂದು ತೀರದ ಮೇಲೆ,
+24 ಅಪಾಯಕರ ನೀರಿಗೆ ತಿರುಗಿ ನೋಡುವನು,
+
+# Malayalam
+
+22 മറ്റും അതുപോലെ ശ്വാസം തീർന്നവൻ പോലെ,
+23 കടലിൽ നിന്ന് പുറത്ത് തീരത്തിലേക്ക്,
+24 അപകടകരമായ ജലത്തിലേക്ക് തിരിഞ്ഞു നോക്കുന്നു,
+
+# Japanese
+
+22 そして、息切れした者のように、
+23 海を抜けて岸に出て、
+24 危険な水に向き直り、見つめる、
+
+# French
+
+22 Et comme celui qui avec le souffle épuisé,
+23 Sorti de la mer à la rive,
+24 Se tourne à l'eau périlleuse et regarde,
+
+# Spanish
+
+22 Y como aquel que con aliento agotado,
+23 salió fuera del mar a la orilla,
+24 se vuelve al agua peligrosa y mira,
+
+# Portuguese
+
+22 E como aquele que com fôlego exaurido,
+23 saiu do mar para a margem,
+24 volta‑se para a água perigosa e olha,
+
+# Esperanto
+
+22 Kaj kiel iu kiu kun elĉerpita spiro,
+23 eliris el la maro al la bordo,
+24 turnas sin al la danĝera akvo kaj rigardas,

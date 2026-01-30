@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+49 Ed una lupa, che di tutte brame
+50 sembiava carca ne la sua magrezza,
+51 e molte genti fé già viver grame,
+Reference Translation (provided):
+And a she-wolf, who with all cravings seemed laden in her meagreness, and already had made many folk to live forlorn,
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 49** *Ed una lupa, che di tutte brame* →  
+  *Ed* = additive conjunction “And”; *una* = indefinite article introducing a singular feminine noun; *lupa* = the female wolf, the referent of the clause; *che* = relative pronoun introducing a descriptive subordinate clause; *di* = preposition expressing accompaniment/association “with”; *tutte* = universal quantifier “all” modifying the following noun; *brame* = plural noun denoting “cravings, desires”.  
+
+- **Line 50** *sembiava carca ne la sua magrezza,* →  
+  *sembiava* = imperfect copular verb “seemed” (states a perceived condition); *carca* = adjectival predicate “laden, burdened”; *ne* = preposition “in” (locative/constitutive); *la* = definite article (here part of the possessive construction “la sua” = “her”); *sua* = possessive adjective “her”; *magrezza* = noun “meagreness, thinness”.  
+
+- **Line 51** *e molte genti fé già viver grame,* →  
+  *e* = additive conjunction “and”; *molte* = quantitative adjective “many”; *genti* = plural noun “folk, people”; *fé* = past‑remote of *fare* “made, caused”; *già* = temporal adverb “already”; *viver* = infinitive verb “to live”; *grame* = noun “grief, forlornness”, the state into which the folk are caused to live.  
+
+
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| Ed | Conjunction (coordinating) | **And** | Adds a new proposition to the discourse | Coordinating conjunction |
+| una | Indefinite article (fem. sg.) | **a** | Introduces a singular, non‑specific noun | Determiner (indefinite) |
+| lupa | Noun, fem. sg. | **she‑wolf** | Female wolf, the subject of the clause | Subject noun |
+| che | Relative pronoun (fem. sg.) | **who** | Introduces a relative clause describing *lupa* | Relative pronoun |
+| di | Preposition | **with** | Marks accompaniment/association of cravings | Prepositional complement |
+| tutte | Quantifier / adjective (fem. pl.) | **all** | Universal quantifier over *brame* | Determiner (quantifier) |
+| brame | Noun, fem. pl. | **cravings** | Desires or appetites | Direct object of the relative clause |
+| sembrava | Verb (imperf. 3sg, *sembrare*) | **seemed** | States a perceived condition | Copular verb (predicate) |
+| carca | Adjective (fem. sg.) | **laden** | Burdened, heavily loaded | Predicative adjective |
+| ne | Preposition | **in** | Locative/compositional relation to *magrezza* | Prepositional complement |
+| la | Definite article (fem. sg.) | *(part of “her”)** | Article used in the possessive phrase “la sua” | Determiner (definite) |
+| sua | Possessive adjective (fem. sg.) | **her** | Indicates ownership by the wolf | Possessive determiner |
+| magrezza | Noun, fem. sg. | **meagreness** | Thinness, slenderness | Noun of state (complement) |
+| e | Conjunction (coordinating) | **and** | Adds a further clause | Coordinating conjunction |
+| molte | Quantifier / adjective (fem. pl.) | **many** | Indicates a large quantity of *genti* | Determiner (quantifier) |
+| genti | Noun, fem. pl. | **folk** | People, a collective group | Direct object of *fé* |
+| fé | Verb (past‑remote 3sg, *fare*) | **had made** | Causative action producing a state | Main verb (causative) |
+| già | Adverb | **already** | Marks prior completion relative to narrative time | Temporal adverb |
+| viver | Infinitive verb (*vivere*) | **to live** | The action caused in the folk | Infinitival complement |
+| grame | Noun, fem. sg. | **forlorn** (as a state) | Sorrow, grief; the condition the folk are made to live in | Object complement (state noun) |
+
+*The table respects the locked meanings established above, pairing each Italian token with its English counterpart, a concise contextual definition, and its grammatical function within the sentence.*
+]]></message>
+</messages>

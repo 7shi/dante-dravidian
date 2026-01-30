@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆ ವಿನಮ್ರ ಇಟಲಿಗೆ ಅವನು ರಕ್ಷಣೆಯಾಗುವನು  
+ಆದಕ್ಕಾಗಿ ಕಮಿಲ್ಲಾ ಕನ್ಯೆ ಮರಣವಾಯಿತು,  
+ಯೂರಿಯಾಲಸ್, ಟರ್ನಸ್ ಮತ್ತು ನಿಸಸ್ ತಮ್ಮ ಗಾಯಗಳಿಂದ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|--------------------------------|--------------------------|--------|
+| Di | Preposition introducing the genitive relationship “of” | ಆ | “that” (demonstrative) | OK |
+| quella | Demonstrative determiner “that” | ಆ | “that” | OK |
+| umile | Attribute “humble” | ವಿನಮ್ರ | “humble” | OK |
+| Italia | Proper noun “Italy” | ಇಟಲಿ | “Italy” | OK |
+| fia | Future copular verb “shall be” | ಆಗುವನು | “will become” | OK |
+| salute | Noun “salvation” (state of being saved) | ರಕ್ಷಣ | “salvation” | OK |
+| per | Preposition introducing the causal/resultative phrase “for which” | ಆದಕ್ಕಾಗಿ | “for that” | OK |
+| cui | Relative pronoun “which/that” (refers to the salvation) | — | *(none)* | **MISSING** |
+| morì | Simple past “died” | ಮರಣವಾಯಿತು | “died” | OK |
+| la | Definite article (feminine) – not required in Kannada | — | *(none)* | **UNNECESSARY** |
+| vergine | Noun “virgin” (title/epithet) | ಕನ್ಯೆ | “virgin” | OK |
+| Cammilla | Proper name “Camilla” | ಕಮಿಲ್ಲಾ | “Camilla” | OK |
+| Eurialo | Proper name “Euryalus” | ಯೂರಿಯಾಲಸ್ | “Euryalus” | OK |
+| e (1st) | Coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| Turno | Proper name “Turnus” | ಟರ್ನಸ್ | “Turnus” | OK |
+| e (2nd) | Coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| Niso | Proper name “Nisus” | ನಿಸಸ್ | “Nisus” | OK |
+| di | Preposition “of” (introducing the adjectival phrase) | ತಮ್ಮ | “their” (possessive) | **WRONG** (does not convey the same “of” relation) |
+| ferute | Past participle used adjectivally “wounded” | ಗಾಯಗಳಿಂದ | “by their wounds” | **WRONG** (expresses cause rather than the adjectival state “wounded”) |
+
+---
+
+### Items Requiring Attention
+- **MISSING:** *cui* – the relative pronoun is not rendered separately in the Kannada version.  
+- **UNNECESSARY:** *la* – Kannada does not use definite articles, so the article is naturally omitted.  
+- **WRONG:** *di* – rendered as the possessive “ತಮ್ಮ” instead of the prepositional “of”.  
+- **WRONG:** *ferute* – rendered as “ಗಾಯಗಳಿಂದ” (“by their wounds”) rather than the adjectival state “wounded”.  
+
+All other tokens are correctly mapped and grammatically appropriate in the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 106:  
+  - Original: ಆ ವಿನಮ್ರ ಇಟಲಿಗೆ ಅವನು ರಕ್ಷಣೆಯಾಗುವನು  
+  - Issue: none  
+  - Corrected: ಆ ವಿನಮ್ರ ಇಟಲಿಗೆ ಅವನು ರಕ್ಷಣೆಯಾಗುವನು  
+
+- Line 107:  
+  - Original: ಆದಕ್ಕಾಗಿ ಕಮಿಲ್ಲಾ ಕನ್ಯೆ ಮರಣವಾಯಿತು,  
+  - Issue: missing relative pronoun “cui”  
+  - Corrected: ಆದಕ್ಕಾಗಿ **ಅದಕ್ಕೆ** ಕಮಿಲ್ಲಾ ಕನ್ಯೆ ಮರಣವಾಯಿತು,  
+
+- Line 108:  
+  - Original: ಯೂರಿಯಾಲಸ್, ಟರ್ನಸ್ ಮತ್ತು ನಿಸಸ್ ತಮ್ಮ ಗಾಯಗಳಿಂದ.  
+  - Issue: wrong preposition “di” and wrong rendering of “ferute” (wounded)  
+  - Corrected: ಯೂರಿಯಾಲಸ್, ಟರ್ನಸ್ ಮತ್ತು ನಿಸಸ್ **ಗಾಯಗೊಂಡರು**.  
+
+```kannada
+ಆ ವಿನಮ್ರ ಇಟಲಿಗೆ ಅವನು ರಕ್ಷಣೆಯಾಗುವನು
+ಆದಕ್ಕಾಗಿ ಅದಕ್ಕೆ ಕಮಿಲ್ಲಾ ಕನ್ಯೆ ಮರಣವಾಯಿತು,
+ಯೂರಿಯಾಲಸ್, ಟರ್ನಸ್ ಮತ್ತು ನಿಸಸ್ ಗಾಯಗೊಂಡರು.
+```
+]]></message>
+</messages>

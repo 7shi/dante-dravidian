@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நான் கவிஞர் மற்றும் அந்த நீதிமானை பற்றி பாடினேன்  
+அன்சிஸ் மகன் ட்ராயிலிருந்து வந்தவர்,  
+பெருமைமிக்க இலியோன் எரிக்கப்பட்ட பிறகு.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|------------------------------------------|----------------------|----------------------------|--------|
+| Poeta | poet (identity of speaker) | கவிஞர் | poet | OK |
+| fui | copular “was” (identifies speaker as poet) | நான் | I (implied “was”) | OK |
+| , | punctuation (separator) | – | – | UNNECESSARY |
+| e | coordinating “and” | மற்றும் | and | OK |
+| cantai | past action “sang” | பாடினேன் | sang | OK |
+| di | preposition “about/of” | பற்றி | about | OK |
+| quel | demonstrative “that” | அந்த | that | OK |
+| giusto | adjective “just” (property of the son) | நீதிமானை | just (person) | OK |
+| figliuol | noun “son” (child of Anchises) | மகன் | son | OK |
+| d'Anchise | genitive “of Anchises” | அன்சிஸ் | Anchises (possessor) | OK |
+| che | relative pronoun “who” (introduces clause) | – | – | UNNECESSARY |
+| venne | past motion “came” | வந்தவர் | came | OK |
+| di | preposition “from” (source) | இலிருந்து | from | OK |
+| Troia | proper noun “Troy” (origin) | ட்ராய் | Troy | OK |
+| , | punctuation (separator) | – | – | UNNECESSARY |
+| poi | temporal adverb “after” | பிறகு | after | OK |
+| che | subordinating “that” (resultative) | – | – | UNNECESSARY |
+| 'l | definite article “the” | – | – | UNNECESSARY |
+| superbo | adjective “proud” (attribute of Ilion) | பெருமைமிக்க | proud | OK |
+| Ilïón | proper noun “Ilion” (city) | இலியோன் | Ilion | OK |
+| fu | auxiliary “was” (passive) | – | – | UNNECESSARY |
+| combusto | past participle “burned” (passive) | எரிக்கப்பட்ட | burned | OK |
+| . | period (sentence terminator) | . | . | UNNECESSARY |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: commas (`,`), relative pronoun **che** (both occurrences), definite article **'l**, auxiliary **fu**, subordinating **che** (resultative), period (`.`) – these functionally disappear or are expressed by punctuation only in Tamil.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All lexical items that carry meaning in the source have appropriate Tamil equivalents, and no grammatical mismatches were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 73**  
+  - Original: நான் கவிஞர் மற்றும் அந்த நீதிமானை பற்றி பாடினேன்  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 74**  
+  - Original: அன்சிஸ் மகன் ட்ராயிலிருந்து வந்தவர்,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 75**  
+  - Original: பெருமைமிக்க இலியோன் எரிக்கப்பட்ட பிறகு.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+நான் கவிஞர் மற்றும் அந்த நீதிமானை பற்றி பாடினேன்
+அன்சிஸ் மகன் ட்ராயிலிருந்து வந்தவர்,
+பெருமைமிக்க இலியோன் எரிக்கப்பட்ட பிறகு.
+```
+]]></message>
+</messages>

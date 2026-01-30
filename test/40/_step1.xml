@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+118 e vederai color che son contenti
+119 nel foco, perché speran di venire
+120 quando che sia a le beate genti.
+Reference Translation (provided):
+And then thou shalt see those who are contented in the fire, because they hope to come, whenever it may be, to the blessed folk;
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 118** *e vederai color che son contenti* → **Locked Meaning**: *The addressee will see those persons who are in a state of contentment.*  
+- **Line 119** *nel foco, perché speran di venire* → **Locked Meaning**: *In the fire, because they hope to come (to the promised place).*  
+- **Line 120** *quando che sia a le beate genti.* → **Locked Meaning**: *Whenever it may be, to the blessed folk.*  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **e** | conjunction (coordinating) | *And then* | Connects this clause to the preceding narrative; introduces a sequential action. | Coordinating conjunction |
+| **vederai** | verb, future indicative, 2nd person singular of *vedere* | *thou shalt see* | Future action performed by the addressee: to perceive visually. | Finite verb (future) |
+| **color** | pronoun, masculine plural demonstrative (*col·or*) | *those* | Refers to a group of persons previously or contextually salient. | Demonstrative pronoun (subject) |
+| **che** | relative pronoun (masc./fem. plural) | *who* | Introduces a relative clause describing *color*. | Relative pronoun |
+| **son** | verb, present indicative, 3rd person plural of *essere* | *are* | Copular verb linking subject to predicate adjective. | Finite verb (present) |
+| **contenti** | adjective, masculine plural, past participle used predicatively | *contented* | State of being satisfied or at peace. | Predicate adjective |
+| **nel** | preposition *in* + definite article *il* (contraction) | *in the* | Marks location inside something. | Prepositional phrase (locative) |
+| **foco** | noun, masculine singular (*foco*) | *fire* | The element of flame; here metaphorical or literal place of trial. | Noun (object of preposition) |
+| **perché** | conjunction, causal | *because* | Introduces a reason for the preceding clause. | Subordinating conjunction |
+| **speran** | verb, present indicative, 3rd person plural of *sperare* | *they hope* | Expresses expectation or desire for a future event. | Finite verb (present) |
+| **di** | preposition introducing infinitive | *to* (as part of infinitive marker) | Marks the infinitive complement of *speran*. | Preposition (infinitive marker) |
+| **venire** | verb, infinitive of *venire* | *come* | The action hoped for: arrival or movement toward a place. | Non‑finite verb (infinitive) |
+| **quando** | adverb/conjunction of time | *whenever* | Introduces a temporal clause, indicating any time the condition holds. | Temporal conjunction |
+| **che** | particle (part of the idiom *quando che*) | — (integral to *quando che*) | Reinforces the temporal clause; no separate lexical meaning. | Particle (idiomatic) |
+| **sia** | verb, present subjunctive, 3rd person singular of *essere* | *it may be* | Expresses potentiality or uncertainty within the temporal clause. | Subjunctive verb (present) |
+| **a** | preposition | *to* | Marks direction toward the following noun phrase. | Prepositional marker (direction) |
+| **le** | definite article, feminine plural | *the* | Determines the noun *genti*. | Definite article (feminine plural) |
+| **beate** | adjective, feminine plural, past participle of *benedire* used predicatively | *blessed* | Qualifies *genti* as holy or fortunate. | Predicate adjective |
+| **genti** | noun, feminine plural (*genti*) | *folk* | Collective term for people, here the “blessed” community. | Noun (object of preposition) |
+
+*The table reflects the one‑to‑one alignment between each source token and its functional counterpart in the reference translation, preserving the locked truth‑conditions expressed above.*
+]]></message>
+</messages>

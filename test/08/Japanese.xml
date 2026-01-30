@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E come quei che con lena affannata,  
+→ そして、息切れした者のように、  
+
+uscito fuor del pelago a la riva,  
+→ 海を抜けて岸に出て、  
+
+si volge a l'acqua perigliosa e guata,  
+→ 危険な水に向き直り、見つめる、
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| **E** | Coordinating conjunction linking to previous discourse | そして | “and then” | OK |
+| **come** | Comparative particle introducing similarity | のように | “like / as” | OK |
+| **quei** | Demonstrative pronoun, masculine plural, “those” (subject) | 者 | “person / one” | OK |
+| **che** | Relative pronoun introducing the clause “che con lena affannata” | — (implicit) | — | UNNECESSARY |
+| **con** | Preposition “with” (instrumental) | — (implicit) | — | UNNECESSARY |
+| **lena** | Noun “breath” | 息 | “breath” | OK |
+| **affannata** | Adjective “spent, exhausted” (modifying *lena*) | 切れた | “exhausted / cut” (as part of “息切れした”) | OK |
+| **uscito** | Verb “issued, exited” | 抜けて | “exits / goes out” | OK |
+| **fuor** | Preposition “out of” (spatial) | — (included in 抜けて) | — | UNNECESSARY |
+| **del** | Preposition + article “of the” | の | “of” | OK |
+| **pelago** | Noun “sea” | 海 | “sea” | OK |
+| **a** (1st) | Preposition “to, upon” (direction toward *riva*) | に | “to / at” | OK |
+| **la** | Definite article (feminine singular) | — (omitted) | — | UNNECESSARY |
+| **riva** | Noun “shore” | 岸 | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | — (implicit in 向き直り) | — | UNNECESSARY |
+| **volge** | Verb “turns” (reflexive) | 向き直り | “turns (around)” | OK |
+| **a** (2nd) | Preposition “to” (target of the turn) | に | “to” | OK |
+| **l'acqua** | Noun “the water” | 水 | “water” | OK |
+| **perigliosa** | Adjective “perilous” | 危険な | “dangerous / perilous” | OK |
+| **e** | Coordinating conjunction “and” linking two verbs | 、 | “and” (realised as a comma) | OK |
+| **guata** | Verb “gazes” | 見つめる | “gazes / looks at” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *che, con, fuor, la, si* – Japanese does not require these grammatical particles/words; their meanings are absorbed by other elements or are implicit.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 22:
+  - Original: そして、息切れした者のように、  
+  - Issue: none  
+  - Corrected: そして、息切れした者のように、  
+
+- Line 23:
+  - Original: 海を抜けて岸に出て、  
+  - Issue: none  
+  - Corrected: 海を抜けて岸に出て、  
+
+- Line 24:
+  - Original: 危険な水に向き直り、見つめる、  
+  - Issue: none  
+  - Corrected: 危険な水に向き直り、見つめる、  
+
+```
+そして、息切れした者のように、
+海を抜けて岸に出て、
+危険な水に向き直り、見つめる、
+```
+]]></message>
+</messages>

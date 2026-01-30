@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+40 సమయపు మొదటి క్షణం, మధుర ఋతువు;  
+41 అలా, నాకు మంచి ఆశకు కారణమైంది  
+42 ఆ బొద్దు చర్మం కలిగిన వన్య జంతువు గురించి
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Telugu → English) | Status |
+|-------------|-----------------------|----------------------|--------------------------------------|--------|
+| **mosse** | “hour / moment” (first hour) | **క్షణం** | “moment / hour” | OK |
+| **di** (1st) | genitive “of” (‑ prima) | **సమయపు** | “of time” | OK |
+| **prima** | “first” | **మొదటి** | “first” | OK |
+| **quelle** | demonstrative “those” | — | — | **MISSING** |
+| **cose** | “things” (beautiful things) | — | — | **MISSING** |
+| **belle** | adjective “beautiful / sweet” | **మధుర** | “sweet” | OK |
+| **sì** | resultative adverb “so” (introduces result) | **అలా** | “so / thus” | OK |
+| **ch’a** | causal/resultative conjunction “that” (so that) | **అలా** | “so / thus” (covers the whole “so that” clause) | OK |
+| **bene** | adverb “good / well” (quality of hope) | **మంచి** | “good” | OK |
+| **sperar** | infinitive “to hope” | **ఆశ** | “hope” (noun) | **WRONG** (verb rendered as noun) |
+| **m'era** | “to me was” (experiencer) | **నాకు** | “to me” | OK |
+| **cagione** | “occasion / cause” | **కారణమైంది** | “became the cause / occasion” | OK |
+| **di** (2nd) | preposition “concerning / about” | **గురించి** | “about / concerning” | OK |
+| **quella** | demonstrative “that” | **ఆ** | “that” | OK |
+| **fiera** | “wild beast” | **వన్య జంతువు** | “wild animal / beast” | OK |
+| **a** (preposition) | “with” (attribute) | **కలిగిన** | “having / with” | OK |
+| **la** | definite article (feminine singular) | — | — | **UNNECESSARY** (Telugu has no articles) |
+| **gaetta** | adjective “dappled / speckled” | **బొద్దు** | “dappled / speckled” | OK |
+| **pelle** | noun “skin” | **చర్మం** | “skin” | OK |
+
+### Items Requiring Attention
+- **MISSING**: *quelle*, *cose* – the demonstrative “those” and the noun “things” are not expressed in the Telugu rendering.
+- **WRONG**: *sperar* – rendered as the noun **ఆశ** (“hope”) instead of a verb form (e.g., **ఆశించుట** “to hope”).  
+- **UNNECESSARY**: *la* – Telugu does not use definite articles, so the article is naturally omitted.  
+- **GRAMMAR**: No overt agreement errors were detected in the word‑level mapping; the only structural issue is the internal comma in line 40, which is a punctuation matter rather than a lexical error.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 40:
+  - Original: 40 mosse di prima quelle cose belle;
+  - Issue: MISSING “quelle”, “cose”; wording needed for “mosse di prima”.
+  - Corrected: **మొదటి క్షణాల్లో ఆ అందమైన విషయాలు;**
+
+- Line 41:
+  - Original: 41 sì ch'a bene sperar m'era cagione
+  - Issue: WRONG verb form for “sperar”.
+  - Corrected: **అలా, నాకు మంచి ఆశించడానికి కారణమైంది**
+
+- Line 42:
+  - Original: 42 di quella fiera a la gaetta pelle
+  - Issue: none (already includes “quella” and proper structure).
+  - Corrected: **ఆ బొద్దు చర్మం కలిగిన వన్య జంతువు గురించి**  
+
+```
+మొదటి క్షణాల్లో ఆ అందమైన విషయాలు;
+అలా, నాకు మంచి ఆశించడానికి కారణమైంది
+ఆ బొద్దు చర్మం కలిగిన వన్య జంతువు గురించి
+```
+]]></message>
+</messages>

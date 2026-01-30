@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E tal como ele é quem adquire de bom grado,
+e chega o tempo que o faz perder,
+que em todos os seus pensamentos chora e se entristece;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Portuguese) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|-----------------------------------|------------------------|--------|
+| **E** | Coordinating conjunction linking to previous discourse | **E** | “and” | OK |
+| **qual** | Interrogative/relative pronoun used as “such as” | **tal como** | “such as” | OK |
+| **è** | Copular verb linking subject to description | **é** | “is” | OK |
+| **quei** | Demonstrative pronoun referring to the individual | **ele** | “he” | OK |
+| **che** | Relative pronoun introducing a clause about *quei* | **quem** | “who” | OK |
+| **volontieri** | Adverb indicating willingness (manner) | **de bom grado** | “willingly” | OK |
+| **acquista** | Verb “acquire/gain” (main action) | **adquire** | “acquires” | OK |
+| **e** | Coordinating conjunction linking next clause | **e** | “and” | OK |
+| **giugne** | Verb “arrives” (event of time coming) | **chega** | “arrives” | OK |
+| **'l** | Definite article (elided *il*) specifying *tempo* | **o** | “the” | OK |
+| **tempo** | Noun “time” (temporal entity) | **tempo** | “time” | OK |
+| **che** | Relative pronoun introducing clause describing *tempo* | **que** | “that” | OK |
+| **perder** | Infinitive “lose” (action caused by time) | **perder** | “lose” | OK |
+| **lo** | Clitic pronoun (accusative, 3 sg masc.) referring to *quei* | **o** | “him” | OK |
+| **face** | Causative verb linking time to loss | **faz** | “makes” | OK |
+| **che** | Relative pronoun referring back to the individual | **que** | “who” | OK |
+| **'n** | Preposition (contraction of *in*) marking mental space | **em** | “in” | OK |
+| **tutti** | Quantifier “all” | **todos** | “all” | OK |
+| **suoi** | Possessive adjective “his” | **seus** | “his” | OK |
+| **pensier** | Noun “thoughts” (mental contents) | **pensamentos** | “thoughts” | OK |
+| **piange** | Verb “weeps” (emotional reaction) | **chora** | “weeps” | OK |
+| **e** | Coordinating conjunction linking two predicates | **e** | “and” | OK |
+| **s'attrista** | Reflexive verb “is sad” (emotional state) | **se entristece** | “becomes sad” | OK |
+
+### Issues Detected
+- **None**. All source tokens have appropriate Portuguese equivalents; no missing, wrong, grammatical, or unnecessary items were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 55:
+  - Original: E tal como ele é quem adquire de bom grado,
+  - Issue: none
+  - Corrected: no change
+- Line 56:
+  - Original: e chega o tempo que o faz perder,
+  - Issue: none
+  - Corrected: no change
+- Line 57:
+  - Original: que em todos os seus pensamentos chora e se entristece;
+  - Issue: none
+  - Corrected: no change
+
+```
+E tal como ele é quem adquire de bom grado,
+e chega o tempo que o faz perder,
+que em todos os seus pensamentos chora e se entristece;
+```
+]]></message>
+</messages>

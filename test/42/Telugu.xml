@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అందుకే ఆ సామ్రాట్ ఆకాశంలో పాలిస్తాడు,  
+ఎందుకంటే నేను అతని చట్టానికి తిరుగుబాటు చేశాను,  
+అతను తన నగరంలో నన్ను ద్వారా ఎవ్వరూ రాకూడదని కోరుకుంటాడు.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Telugu translation)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|------------------------------|--------------------------|--------|
+| **ché** | causal “for that” (introduces cause) | **అందుకే** | “so / for that” | OK |
+| **quello** | demonstrative “that” (points to emperor) | **ఆ** | “that” | OK |
+| **imperador** | noun “Emperor” | **సామ్రాట్** | “emperor” | OK |
+| **che** (rel. pron.) | “who” – introduces relative clause | — (implicit in Telugu) | (none) | **UNNECESSARY** |
+| **là** | adverb “there” (location up‑high) | **ఆకాశంలో** | “in the sky / up there” | OK |
+| **sù** | adverb “above” (vertical direction) | **ఆకాశంలో** | “in the sky / above” | OK |
+| **regna** | verb “reigns” (present) | **పాలిస్తాడు** | “reigns” | OK |
+| **perch'** | causal “because” (introduces reason) | **ఎందుకంటే** | “because” | OK |
+| **i'** | 1st‑person pronoun “I” | **నేను** | “I” | OK |
+| **fu'** | copular past “was” (state) | — (not rendered) | (none) | **UNNECESSARY** |
+| **ribellante** | adjective “rebellious” (to the law) | **తిరుగుబాటు** | “rebellion / rebellious” | OK |
+| **a** | preposition “to” (dative) | **కు** | “to” | OK |
+| **la** | definite article (feminine) – part of *la sua legge* | — (articles omitted in Telugu) | (none) | **UNNECESSARY** |
+| **sua** | possessive “his” (referring to emperor) | **అతని** | “his” | OK |
+| **legge** | noun “law” | **చట్టానికి** | “to the law” | OK |
+| **non** | negation “does not” (negates will) | — (negation expressed in clause) | (none) | **UNNECESSARY** |
+| **vuol** | verb “wills / wants” (present) | **కోరుకుంటాడు** | “wants” | OK |
+| **che** (subord. conj.) | complementiser “that” (introduces content of will) | — (implicit) | (none) | **UNNECESSARY** |
+| **'n** | preposition “in” (locative) | **లో** | “in” | OK |
+| **sua** (2nd) | possessive “his” (city) | **తన** | “his” | OK |
+| **città** | noun “city” (locative) | **నగరంలో** | “in the city” | OK |
+| **per** | preposition “through” (means) | **ద్వారా** | “through” | OK |
+| **me** | pronoun “me” (object) | **నన్ను** | “me” | OK |
+| **si** | impersonal pronoun “one/anyone” | **ఎవ్వరూ** | “anyone” | OK |
+| **vegna** | verb “should come” (subjunctive, negated later) | **రాకూడదని** | “should not come” | OK |
+
+---
+
+### Items flagged after the table  
+
+- **UNNECESSARY**: `che` (both occurrences), `fu'`, `la`, `non`, `che` (subordinating), because Telugu does not require explicit relative pronouns, copular “was”, definite articles, or a separate negation particle; the meaning is conveyed by other morphological means.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 124:
+  - Original: **అందుకే ఆ సామ్రాట్ ఆకాశంలో పాలిస్తాడు,**
+  - Issue: none
+  - Corrected: **అందుకే ఆ సామ్రాట్ ఆకాశంలో పాలిస్తాడు,**
+
+- Line 125:
+  - Original: **ఎందుకంటే నేను అతని చట్టానికి తిరుగుబాటు చేశాను,**
+  - Issue: none
+  - Corrected: **ఎందుకంటే నేను అతని చట్టానికి తిరుగుబాటు చేశాను,**
+
+- Line 126:
+  - Original: **అతను తన నగరంలో నన్ను ద్వారా ఎవ్వరూ రాకూడదని కోరుకుంటాడు.**
+  - Issue: none
+  - Corrected: **అతను తన నగరంలో నన్ను ద్వారా ఎవ్వరూ రాకూడదని కోరుకుంటాడు.**
+
+```
+అందుకే ఆ సామ్రాట్ ఆకాశంలో పాలిస్తాడు,
+ఎందుకంటే నేను అతని చట్టానికి తిరుగుబాటు చేశాను,
+అతను తన నగరంలో నన్ను ద్వారా ఎవ్వరూ రాకూడదని కోరుకుంటాడు.
+```
+]]></message>
+</messages>

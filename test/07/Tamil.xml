@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அப்போது பயம் சிறிது அமைதியாகியது,  
+என் இதயத்தின் ஏரியில் அது நீடித்தது  
+நான் மிகவும் இரக்கத்துடன் கடந்து சென்ற இரவு.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Allor | “then, at that moment” | **அப்போது** | then | OK |
+| fu | copular auxiliary “was” (pluperfect) | — (implicit in “அமைதியாகியது”) | — | UNNECESSARY |
+| la (1) | definite article (fem. sing.) | — (articles omitted in Tamil) | — | UNNECESSARY |
+| paura | noun “fear” | **பயம்** | fear | OK |
+| un | indefinite article “a” | — (articles omitted) | — | UNNECESSARY |
+| poco | adverb of degree “a little” | **சிறிது** | a little | OK |
+| queta | adjective/past‑participle “quieted” | **அமைதியாகியது** | quieted / became quiet | OK |
+| , | comma (source punctuation) | **,** | , | OK |
+| che | relative pronoun “which/that” | — (clause integrated without explicit pronoun) | — | UNNECESSARY |
+| nel | preposition “in the” | **இல்** | in | OK |
+| lago | noun “lake” | **ஏரி** | lake | OK |
+| del | preposition “of the” (genitive) | **இன்** | of | OK |
+| cor | noun “heart” (poetic *cor*) | **இதயம்** | heart | OK |
+| m'era | clitic + auxiliary “had (to me) been” | — (experiencer not expressed) | — | UNNECESSARY |
+| durata | verb “lasted” (pluperfect) | **நீடித்தது** | lasted | OK |
+| la (2) | definite article (fem. sing.) | — (omitted) | — | UNNECESSARY |
+| notte | noun “night” | **இரவு** | night | OK |
+| ch'i' | relative pronoun “that” (with elision) | — (integrated) | — | UNNECESSARY |
+| i' | pronoun “I” | **நான்** | I | OK |
+| passai | verb “passed” (remote past) | **கடந்து சென்ற** | passed / went through | OK |
+| con | preposition “with” | **உடன்** | with | OK |
+| tanta | adjective “so much” | **மிகவும்** | so | OK |
+| pieta | noun “pity” | **இரக்கம்** | pity | OK |
+| . | period (source punctuation) | **.** | . | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: fu, la (1), un, che, m'era, la (2), ch'i'  
+  (These elements are required in Italian but are naturally omitted or absorbed in Tamil.)  
+
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 19:
+  - Original: அப்போது பயம் சிறிது அமைதியாகியது,
+  - Issue: none
+  - Corrected: அப்போது பயம் சிறிது அமைதியாகியது,
+- Line 20:
+  - Original: என் இதயத்தின் ஏரியில் அது நீடித்தது
+  - Issue: none
+  - Corrected: என் இதயத்தின் ஏரியில் அது நீடித்தது
+- Line 21:
+  - Original: நான் மிகவும் இரக்கத்துடன் கடந்து சென்ற இரவு.
+  - Issue: none
+  - Corrected: நான் மிகவும் இரக்கத்துடன் கடந்து சென்ற இரவு.
+
+```
+அப்போது பயம் சிறிது அமைதியாகியது,
+என் இதயத்தின் ஏரியில் அது நீடித்தது
+நான் மிகவும் இரக்கத்துடன் கடந்து சென்ற இரவு.
+```
+]]></message>
+</messages>

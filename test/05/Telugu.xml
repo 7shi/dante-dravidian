@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+కానీ నేను కొండ పాదానికి చేరుకున్న తర్వాత,  
+అక్కడ ఆ లోయ ముగిసింది  
+అది నా హృదయాన్ని భయంతో నింపింది,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|------------------------------|--------------------------|--------|
+| Ma | coordinating conjunction “but” | **కానీ** | but | OK |
+| poi | adverb of time “after, later” | **తర్వాత** | after / later | OK |
+| ch'i' | “che io” – relative/complementizer + 1st‑person pronoun “that I” | **నేను** | I | OK |
+| fui | auxiliary “was” in perfect “fui giunto” | **చేరుకున్న** | arrived / had arrived | OK |
+| al | preposition + article “to the” (governing *piè*) | **కు** (as part of *పాదానికి*) | to (the) | OK |
+| piè | noun “foot (of a hill)” | **పాదానికి** | foot (of) | OK |
+| d'un | preposition + indefinite article “of a” | **—** (article omitted) | — | **UNNECESSARY** |
+| colle | noun “hill” | **కొండ** | hill | OK |
+| giunto | past participle “arrived, reached” | **చేరుకున్న** (same as *fui*) | arrived | OK |
+| là | demonstrative adverb “there, where” | **అక్కడ** | there / where | OK |
+| dove | relative adverb “where” | **అక్కడ** | where | OK |
+| terminava | imperfect “was ending” | **ముగిసింది** | ended | OK |
+| quella | demonstrative adjective “that” | **ఆ** | that | OK |
+| valle | noun “valley” | **లోయ** | valley | OK |
+| che | relative pronoun “which” (refers to *valle*) | **అది** | which / that | OK |
+| m'avea | pluperfect “had (to) me” – causal “had caused me” | **నా** (possessive “my”) | my | OK |
+| di | preposition “of/with” linking *paura* to *compunto* | **తో** | with | OK |
+| paura | noun “fear” | **భయం** | fear | OK |
+| il | definite article “the” (masc.) | **—** (article omitted) | — | **UNNECESSARY** |
+| cor | noun “heart” (metaphoric) | **హృదయం** | heart | OK |
+| compunto | past participle “pierced, filled” | **నింపింది** | filled / pierced | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: `d'un` (Italian article “a” not required in Telugu), `il` (definite article “the” omitted in Telugu).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: కానీ నేను కొండ పాదానికి చేరుకున్న తర్వాత,
+  - Issue: none
+  - Corrected: కానీ నేను కొండ పాదానికి చేరుకున్న తర్వాత,
+- Line 14:
+  - Original: అక్కడ ఆ లోయ ముగిసింది
+  - Issue: none
+  - Corrected: అక్కడ ఆ లోయ ముగిసింది
+- Line 15:
+  - Original: అది నా హృదయాన్ని భయంతో నింపింది,
+  - Issue: none
+  - Corrected: అది నా హృదయాన్ని భయంతో నింపింది,
+
+```
+కాని నేను కొండ పాదానికి చేరుకున్న తర్వాత,
+అక్కడ ఆ లోయ ముగిసింది
+అది నా హృదయాన్ని భయంతో నింపింది,
+```
+]]></message>
+</messages>

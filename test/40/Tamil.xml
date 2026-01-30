@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அப்பொழுது நீ திருப்தியுள்ளவர்களை காண்பாய்  
+நெருப்பில் அவர்கள் வர விரும்புகிறார்கள்  
+எப்போது அது புனிதமான மக்களுக்காக இருக்கும்.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|-----------------------|----------------------|-------------------------------------|--------|
+| e | conjunction introducing a sequential action (“then”) | **அப்பொழுது** | “then / at that time” | OK |
+| vederai | future 2nd sg. verb “you will see” | **காண்பாய்** | “you will see” | OK |
+| color | demonstrative plural “those (people)” | **திருப்தியுள்ளவர்களை** | “the contented ones (ACC)” | OK |
+| che (rel.) | relative pronoun “who” | *(omitted)* | — | UNNECESSARY |
+| son | copular verb “are” | *(omitted)* | — | UNNECESSARY |
+| contenti | predicate adjective “contented” | **திருப்தியுள்ள** | “contented” | OK |
+| nel | locative preposition+article “in the” | **நெருப்பில்** | “in the fire” | OK |
+| foco | noun “fire” | **நெருப்பு** | “fire” | OK |
+| perché | causal conjunction “because” | *(omitted – resultative structure kept)* | — | UNNECESSARY |
+| speran | present 3rd pl. verb “they hope” | **விரும்புகிறார்கள்** | “they hope / want” | OK |
+| di | infinitive marker “to” | *(omitted)* | — | UNNECESSARY |
+| venire | infinitive “to come” | **வர** | “to come” | OK |
+| quando | temporal adverb “whenever” | **எப்போது** | “when / whenever” | OK |
+| che (particle) | particle in idiom “quando che” (reinforces temporality) | *(omitted)* | — | UNNECESSARY |
+| sia | subjunctive “may be” | **இருக்கும்** | “be / will be” | **GRAMMAR** (subjunctive nuance lost) |
+| a | preposition “to / for” (direction) | **க்காக** | “for / toward” | OK |
+| le | definite article, feminine plural “the” | *(omitted)* | — | UNNECESSARY |
+| beate | adjective “blessed” | **புனிதமான** | “blessed / holy” | OK |
+| genti | noun “folk, people” | **மக்கள்** | “people” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *che* (rel.), *son*, *perché*, *di*, *che* (particle), *le* – these function words have no direct lexical counterpart in Tamil and are naturally omitted.
+- **GRAMMAR**: *sia* – rendered with the indicative **இருக்கும்** instead of a subjunctive‑like form; Tamil lacks a true subjunctive, but the nuance of “may be” is not fully captured.  
+- No **MISSING** or **WRONG** lexical items; all content words are represented.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 118:  
+  - Original: அப்பொழுது நீ திருப்தியுள்ளவர்களை காண்பாய்  
+  - Issue: none  
+  - Corrected: அப்பொழுது நீ திருப்தியுள்ளவர்களை காண்பாய்  
+
+- Line 119:  
+  - Original: நெருப்பில் அவர்கள் வர விரும்புகிறார்கள்  
+  - Issue: none  
+  - Corrected: நெருப்பில் அவர்கள் வர விரும்புகிறார்கள்  
+
+- Line 120:  
+  - Original: எப்போது அது புனிதமான மக்களுக்காக இருக்கும்.  
+  - Issue: GRAMMAR – the verb does not convey the potential/subjunctive sense of “may be”.  
+  - Corrected: எப்போது அது புனிதமான மக்களுக்காக இருந்தாலும்.  
+
+```
+அப்பொழுது நீ திருப்தியுள்ளவர்களை காண்பாய்
+நெருப்பில் அவர்கள் வர விரும்புகிறார்கள்
+எப்போது அது புனிதமான மக்களுக்காக இருந்தாலும்.
+```
+]]></message>
+</messages>

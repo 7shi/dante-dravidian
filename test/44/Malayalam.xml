@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+എന്നും അവനോട്: «കവിയേ, ഞാൻ നിന്നെ അപേക്ഷിക്കുന്നു  
+നീ അറിയാത്ത ആ ദൈവം വഴി,  
+അങ്ങനെ ഞാൻ ഈ ദുർഭാഗ്യവും അതിനേക്കാൾ മോശവുമായതും നിന്ന് രക്ഷപ്പെടാൻ,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Eng.) | Status |
+|-------------|-----------------------|--------------------|--------------------------|--------|
+| **E** | coordinating conjunction linking to previous clause | **എന്നും** | “and” | OK |
+| **io** | 1st person singular subject of the speech act | **ഞാൻ** | “I” | OK |
+| **a** | preposition marking the addressee (dative) | — *(not overtly expressed)* | — | **UNNECESSARY** |
+| **lui** | 3rd person masculine dative referent “him” | **അവനോട്** | “to him” | OK |
+| **Poeta** | vocative noun “Poet” | **കവിയേ** | “Poet!” (vocative) | OK |
+| **io** (second occurrence) | 1st person singular subject of the beseeching | **ഞാൻ** | “I” | OK |
+| **ti** | 2nd person singular object of the beseeching | **നിന്നെ** | “you” (object) | OK |
+| **richeggio** | verb “beseech” (present) | **അപേക്ഷിക്കുന്നു** | “beseech” | OK |
+| **per** | preposition introducing the instrumental/causal basis | **വഴി** | “by/through” | OK |
+| **quello** | demonstrative “that” (specifying the God) | **ആ** | “that” | OK |
+| **Dio** | noun “God” (specific deity) | **ദൈവം** | “God” | OK |
+| **che** | relative pronoun introducing the clause “that you did not know” | — *(implicit in Malayalam) | — | **UNNECESSARY** |
+| **tu** | 2nd person singular subject of the relative clause | **നീ** | “you” | OK |
+| **non** | negation particle | — *(encoded in “അറിയാത്ത”) | — | **UNNECESSARY** |
+| **conoscesti** | verb “did not know” (past) | **അറിയാത്ത** | “did not know” (participle) | OK |
+| **acciò** | purpose conjunction “in order that” | **അങ്ങനെ** | “so that / in order that” | OK |
+| **ch'io** | contraction of “che io” – “that I” (subject of purpose clause) | **ഞാൻ** | “I” | OK |
+| **fuga** | verb “may escape” (subjunctive) | **രക്ഷപ്പെടാൻ** | “to escape” (infinitive) | OK |
+| **questo** | demonstrative “this” (referring to the ill) | **ഈ** | “this” | OK |
+| **male** | noun “ill, misfortune” | **ദുർഭാഗ്യം** | “ill, misfortune” | OK |
+| **e** | coordinating conjunction “and” linking two objects | — *(absorbed in the suffix “‑യും”) | — | **UNNECESSARY** |
+| **peggio** | comparative adjective “worse” (more severe) | **മോശവുമായതും** | “worse” (as part of the coordinated phrase) | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `a`, `che`, `non`, `e` – these source particles are not overtly realized in Malayalam because the language expresses the same relations through case marking, participial forms, or suffixes.  
+- **No MISSING or WRONG entries** – every source lexical item is accounted for either by a direct Malayalam counterpart or by a justified omission.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 130:  
+  - Original: എന്നും അവനോട്: «കവിയേ, ഞാൻ നിന്നെ അപേക്ഷിക്കുന്നു  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 131:  
+  - Original: നീ അറിയാത്ത ആ ദൈവം വഴി,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 132:  
+  - Original: അങ്ങനെ ഞാൻ ഈ ദുർഭാഗ്യവും അതിനേക്കാൾ മോശവുമായതും നിന്ന് രക്ഷപ്പെടാൻ,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+എന്നും അവനോട്: «കവിയേ, ഞാൻ നിന്നെ അപേക്ഷിക്കുന്നു
+നീ അറിയാത്ത ആ ദൈവം വഴി,
+അങ്ങനെ ഞാൻ ഈ ദുർഭാഗ്യവും അതിനേക്കാൾ മോശവുമായതും നിന്ന് രക്ഷപ്പെടാൻ,
+```
+]]></message>
+</messages>

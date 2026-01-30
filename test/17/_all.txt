@@ -1,0 +1,63 @@
+# Italian
+
+49 Ed una lupa, che di tutte brame
+50 sembiava carca ne la sua magrezza,
+51 e molte genti fé già viver grame,
+
+# English
+
+And a she-wolf, who with all cravings seemed laden in her meagreness, and already had made many folk to live forlorn,
+
+# Telugu
+
+49 మరియు అన్ని కోరికలలో ఉన్న ఒక నక్క
+50 ఆమె సన్నితనంలో భారంగా కనిపించింది,
+51 మరియు ఇప్పటికే అనేక ప్రజలను దుఃఖంగా జీవించడానికి చేసింది,
+
+# Tamil
+
+49 மேலும் ஒரு நரி எல்லா ஆசைகளுடனும்,
+50 அவளின் மெலிந்த தன்மையில் சுமையடைந்ததாகத் தோன்றியது,
+51 மேலும் ஏற்கனவே பல மக்களை துயரத்தில் வாழச் செய்தது,
+
+# Kannada
+
+49 ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ,
+50 ಅವಳ ಸೊಂಪಿನಲ್ಲಿ ಭಾರವಾದಂತೆ ತೋರುತ್ತಿತ್ತು,
+51 ಮತ್ತು ಈಗಾಗಲೇ ಅನೇಕ ಜನರನ್ನು ದುಃಖಭರಿತವಾಗಿ ಬದುಕುವಂತೆ ಮಾಡಿತ್ತು,
+
+# Malayalam
+
+49 മറ്റൊരു സ്ത്രീ നരി, എല്ലാ ആഗ്രഹങ്ങളോടും,
+50 അവളുടെ ക്ഷീണതയിൽ ഭാരമുള്ളതുപോലെ തോന്നി,
+51 മറ്റും പല ജനങ്ങളെയും ഇതിനകം ദുഃഖിതരായി ജീവിക്കാൻ നിർബന്ധിച്ചു,
+
+# Japanese
+
+49 そしてすべての欲望を抱く雌狼、  
+50 彼女のか細さの中で重く見えるほど、  
+51 そしてすでに多くの人々を悲しみの中で生きさせた、
+
+# French
+
+49 Et une louve, qui de toutes les convoitises
+50 semblait chargée dans sa maigreur,
+51 et déjà faisait vivre de nombreux gens dans le désespoir,
+
+# Spanish
+
+49 y una loba que de todas las ansias
+50 parecía cargada en su magreza,
+51 y a mucha gente hizo ya vivir en la desdicha,
+
+# Portuguese
+
+49 E uma loba que de todas as cobiças
+50 parecia carregada em sua magreza,
+51 e muitas gentes fizeram já viver desolados,
+
+# Esperanto
+
+49 Kaj lupino, kiu kun ĉiuj deziroj,
+50 ŝajnis ŝarĝita en sia maldikeco,
+51 kaj jam faris multajn homojn vivi en malĝojo,

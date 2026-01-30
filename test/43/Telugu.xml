@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అన్ని భాగాలలో ఆయన పాలిస్తాడు, అక్కడ ఆయన రాజ్యాన్ని నిర్వహిస్తాడు;  
+అక్కడ ఆయన నగరం మరియు ఆయన ఉన్నత సింహాసనం ఉంది:  
+ఓ సంతోషవంతుడా, ఆయన అక్కడ ఎన్నుకున్నవాడు!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase (Telugu) | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|------------------------------|------------------------|--------|
+| In | locative “in” (introduces domain “all parts”) | **లో** (as part of “అన్ని భాగాలలో”) | in | OK |
+| tutte | universal quantifier “all” | **అన్ని** | all | OK |
+| parti | set of spatial divisions → “parts” | **భాగాలు** (appears in “భాగాలలో”) | parts | OK |
+| impera | “governs” – He rules over each part | **పాలిస్తాడు** | governs | OK |
+| e | coordinates two predicates | *(omitted – comma used instead)* | and | UNNECESSARY |
+| quivi (1) | locative “there” for the second predicate | **అక్కడ** | there | OK |
+| regge | “reigns” – holds sovereign authority there | **నిర్వహిస్తాడు** | reigns | OK |
+| quivi (2) | locative “there” for existence statements | **అక్కడ** | there | OK |
+| è | copular “is” – asserts existence | **ఉంది** | is | OK |
+| la | definite article (feminine singular) | *(omitted)* | the | UNNECESSARY |
+| sua | possessive “his” (refers to Sovereign) | **ఆయన** | his | OK |
+| città | “city” – the Sovereign’s urban domain | **నగరం** | city | OK |
+| e (2) | coordinates “city” with “seat” | **మరియు** | and | OK |
+| l' | definite article (masc. sing.) before adjective | *(omitted)* | the | UNNECESSARY |
+| alto | adjective “lofty” – qualifies the seat | **ఉన్నత** | lofty | OK |
+| seggio | “seat” – the Sovereign’s throne | **సింహాసనం** | seat | OK |
+| oh | vocative interjection “O” | **ఓ** | O | OK |
+| felice | adjective “happy” – describes the chosen one | **సంతోషవంతుడా** | happy | OK |
+| colui | pronoun “he” – the individual elected | **అయన** | he | OK |
+| cu' | relative pronoun “who/whom” introducing clause | *(omitted)* | whom | UNNECESSARY |
+| ivi | locative “there/thereto” – place of election | **అక్కడ** | there | OK |
+| elegge | “elects” – He selects the individual there | **ఎన్నుకున్నవాడు** | elects | OK |
+
+---
+
+### Items Not Marked **OK**
+
+| Source Word | Issue |
+|-------------|-------|
+| e (first) | Conjunction omitted; Telugu often drops “and” when a comma suffices. |
+| la | Definite article unnecessary in Telugu. |
+| l' | Definite article unnecessary in Telugu. |
+| cu' | Relative pronoun unnecessary; clause is expressed without an explicit pronoun. |
+| e (second) | (No issue – retained as “మరియు”). |
+| **All other tokens** are correctly rendered with appropriate gender, number, and case. |
+
+No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 127:  
+  - Original: అన్ని భాగాలలో ఆయన పాలిస్తాడు, అక్కడ ఆయన రాజ్యాన్ని నిర్వహిస్తాడు;  
+  - Issue: none  
+  - Corrected: అన్ని భాగాలలో ఆయన పాలిస్తాడు, అక్కడ ఆయన రాజ్యాన్ని నిర్వహిస్తాడు;  
+
+- Line 128:  
+  - Original: అక్కడ ఆయన నగరం మరియు ఆయన ఉన్నత సింహాసనం ఉంది:  
+  - Issue: none  
+  - Corrected: అక్కడ ఆయన నగరం మరియు ఆయన ఉన్నత సింహాసనం ఉంది:  
+
+- Line 129:  
+  - Original: ఓ సంతోషవంతుడా, ఆయన అక్కడ ఎన్నుకున్నవాడు!  
+  - Issue: none  
+  - Corrected: ఓ సంతోషవంతుడా, ఆయన అక్కడ ఎన్నుకున్నవాడు!  
+
+```
+అన్ని భాగాలలో ఆయన పాలిస్తాడు, అక్కడ ఆయన రాజ్యాన్ని నిర్వహిస్తాడు;
+అక్కడ ఆయన నగరం మరియు ఆయన ఉన్నత సింహాసనం ఉంది:
+ఓ సంతోషవంతుడా, ఆయన అక్కడ ఎన్నుకున్నవాడు!
+```
+]]></message>
+</messages>

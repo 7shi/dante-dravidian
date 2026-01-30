@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tu és o meu mestre e o meu autor,  
+tu és só aquele de quem eu tirei  
+o belo estilo que me fez honra.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|-----------------------|--------|
+| Tu | addressee (subject) | Tu | “you” (subject) | OK |
+| se' | copular verb “to be” (2nd sg) | és | “are” | OK |
+| lo | definite article, masc. sing. (acc.) | o | “the” (masc.) | OK |
+| mio | possessive adjective, masc. sing. | meu | “my” | OK |
+| maestro | noun, “master” | mestre | “master” | OK |
+| e | coordinating conjunction | e | “and” | OK |
+| 'l | definite article, masc. sing. (acc.) | o | “the” (masc.) | OK |
+| mio | possessive adjective, masc. sing. | meu | “my” | OK |
+| autore | noun, “author” | autor | “author” | OK |
+| tu | addressee (subject) | tu | “you” (subject) | OK |
+| se' | copular verb “to be” (2nd sg) | és | “are” | OK |
+| solo | adverb/adjective “alone, only” | só | “only/alone” | OK |
+| colui | demonstrative pronoun “the one” | aquele | “that one” | OK |
+| da | preposition “from” | de | “from” | OK |
+| cu' | relative pronoun “whom” | quem | “whom” | OK |
+| io | 1st‑person singular pronoun (subject) | eu | “I” | OK |
+| tolsi | verb “took” (1st sg) | tirei | “took” | OK |
+| lo | definite article, masc. sing. (acc.) | o | “the” (masc.) | OK |
+| bello | adjective “fair, beautiful” | belo | “beautiful/fair” | OK |
+| stilo | noun “style” | estilo | “style” | OK |
+| che | relative pronoun “that” | que | “that” (relative) | OK |
+| m'ha | clitic “me” + auxiliary “has” | me | “me” (object pronoun) | OK |
+| fatto | past participle “done” | fez | “did/made” | OK |
+| onore | noun “honor” | honra | “honor” | OK |
+
+### Issues Detected
+- **None**. All source tokens are represented in the Portuguese translation, the meanings correspond, and grammatical agreement (gender, number, person) is correct. No unnecessary elements were added, and no elements are missing or incorrectly rendered.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: Tu és o meu mestre e o meu autor,
+  - Issue: none
+  - Corrected: no change
+- Line 86:
+  - Original: tu és só aquele de quem eu tirei
+  - Issue: none
+  - Corrected: no change
+- Line 87:
+  - Original: o belo estilo que me fez honra.
+  - Issue: none
+  - Corrected: no change
+
+```
+Tu és o meu mestre e o meu autor,
+tu és só aquele de quem eu tirei
+o belo estilo que me fez honra.
+```
+]]></message>
+</messages>

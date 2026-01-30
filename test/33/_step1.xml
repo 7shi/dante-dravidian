@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+97 e ha natura sì malvagia e ria,
+98 che mai non empie la bramosa voglia,
+99 e dopo 'l pasto ha più fame che pria.
+Reference Translation (provided):
+and she has a nature so malign and evil that she never sates her greedy will, and after food is hungrier than before.
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 97** – *e ha natura sì malvagia e ria* → **Locked Meaning**:  
+  There exists an individual *she* such that she **has** a *nature* *N* and *N* possesses the properties **malign** and **evil** to a high degree (the degree is signalled by the intensifier *so*).  
+
+- **Line 98** – *che mai non empie la bramosa voglia* → **Locked Meaning**:  
+  For every moment *t* it is **not** the case that *she* **sates** (fills) her **greedy will**; i.e., she **never** satisfies that desire.  
+
+- **Line 99** – *e dopo ’l pasto ha più fame che pria* → **Locked Meaning (comparative)**:  
+  Let *H₁* be the level of *hunger* **after** the meal and *H₀* the level of *hunger* **before** the meal. The relation is **H₁ > H₀** (she is **more** hungry after eating than she was before).  
+
+
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **e** (97) | Coordinating conjunction | *and* | Links the clause to the previous discourse | Clause‑linking conjunction |
+| **ha** | 3rd‑person singular present indicative of *avere* | *has* | Predicate verb expressing possession | Main verb (predicator) |
+| **natura** | Feminine singular noun | *nature* | The inherent quality or disposition of the subject | Direct object of *ha* |
+| **sì** | Adverb of degree | *so* | Intensifier marking a high degree of the following adjectives | Degree modifier of *malvagia* |
+| **malvagia** | Feminine singular adjective | *malign* | Describes the nature as morally harmful | Attribute of *natura* |
+| **e** (97) | Coordinating conjunction | *and* | Conjoins two adjectival predicates | Conjunction within noun phrase |
+| **ria** | Feminine singular adjective (archaic form of *ria* = *evil*) | *evil* | Further describes the nature as morally bad | Attribute of *natura* |
+| **che** (98) | Relative pronoun | *that* | Introduces a relative clause modifying *natura* | Clause introducer (relative) |
+| **mai** | Negative adverb | *never* | Negates the occurrence of the following action | Negation of the clause’s eventuality |
+| **non** | Negative particle (double‑negative construction) | *not* | Works with *mai* to reinforce total negation | Negation particle |
+| **empie** | 3rd‑person singular present indicative of *empire* (fill, satisfy) | *sates* | Action of fulfilling a desire | Main verb of the relative clause |
+| **la** | Definite article (feminine singular) | *the* | Marks the noun *voglia* as specific | Determiner for *voglia* |
+| **bramosa** | Feminine singular adjective | *greedy* | Qualifies the *will* as eager or insatiable | Attribute of *voglia* |
+| **voglia** | Feminine singular noun | *will* (desire) | The object of satisfaction; the desire being referred to | Direct object of *empie* |
+| **e** (99) | Coordinating conjunction | *and* | Connects the previous clause with the following clause | Clause‑linking conjunction |
+| **dopo** | Preposition | *after* | Introduces a temporal adjunct | Temporal preposition |
+| **’l** | Definite article (elided *il*) | *the* | Specifies the noun *pasto* | Determiner for *pasto* |
+| **pasto** | Masculine singular noun | *food* / *meal* | The event that marks the temporal reference point | Object of the preposition *dopo* |
+| **ha** | 3rd‑person singular present indicative of *avere* | *has* | Predicate verb expressing a state of hunger | Main verb (predicator) |
+| **più** | Comparative adverb | *more* | Marks a higher degree of the following noun *fame* | Degree modifier (comparative) |
+| **fame** | Feminine singular noun | *hunger* | The internal state being compared | Subject complement of *ha* |
+| **che** (99) | Comparative conjunction | *than* | Introduces the standard of comparison | Comparative clause introducer |
+| **pria** | Adverb of time | *before* | Refers to the earlier temporal point (prior to the meal) | Temporal reference point in the comparison |
+
+*The table lists each token in the three Italian lines, its morphological tag, the English word(s) it aligns with in the reference translation, a brief definition that captures its meaning in this specific context, and the grammatical function it fulfills within the sentence.*
+]]></message>
+</messages>

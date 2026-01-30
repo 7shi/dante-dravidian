@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+La tempo estis je la komenco de la mateno,  
+kaj la suno leviĝis supren kun tiuj steloj  
+kiuj estis kun li kiam la Dia Amo
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (to English) | Status |
+|-------------|------------------------------------------|----------------------|-------------------------------|--------|
+| Temp' | a period of time | **tempo** | “time” | OK |
+| era | existed / was | **estis** | “was” | OK |
+| dal | from the (introducing a locative) | **je** | “at / on” (time‑preposition) | OK |
+| principio | the first point | **komenco** | “beginning” | OK |
+| del | of the (linking noun) | **de la** | “of the” | OK |
+| mattino | the morning | **mateno** | “morning” | OK |
+| e | and (connects clauses) | **kaj** | “and” | OK |
+| 'l | the (definite article) | **la** | “the” | OK |
+| sol | the Sun | **suno** | “Sun” | OK |
+| montava | was mounting / moving upward (imperfect) | **leviĝis** | “rose / lifted” (perfect) | **WRONG** (aspect shift) |
+| 'n | (part of the idiom “'n sù”, directional) | **supren** | “upward” | **UNNECESSARY** (merged with *sù*) |
+| sù | upward (direction) | **supren** | “upward” | **UNNECESSARY** (merged with *'n*) |
+| con | together with (preposition) | **kun** | “with” | OK |
+| quelle | those (demonstrative) | **tiuj** | “those” | OK |
+| stelle | stars (celestial bodies) | **steloj** | “stars” | OK |
+| ch'eran | that were (relative clause) | **kiuj estis** | “that were” | OK |
+| con (2nd) | together with (preposition) | **kun** | “with” | OK |
+| lui | him (the Sun) | **li** | “him / it” | OK |
+| quando | when (temporal subordinator) | **kiam** | “when” | OK |
+| l'amor | Love (abstract noun) | **Amo** | “Love” | OK |
+| divino | Divine (adjective) | **Dia** | “Divine” | OK |
+
+---
+
+### Items to Review  
+
+- **WRONG**: *montava* → **leviĝis** (the source verb is imperfective “was mounting”; the target verb is perfective “rose”.)  
+- **UNNECESSARY**: *'n* and *sù* → both merged into the single Esperanto adverb **supren**; the separate source tokens are not needed in the target language.  
+
+No missing source words; all have a corresponding target element.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 37**  
+  - Original: `La tempo estis je la komenco de la mateno,`  
+  - Issue: none  
+  - Corrected: `La tempo estis je la komenco de la mateno,`  
+
+- **Line 38**  
+  - Original: `kaj la suno leviĝis supren kun tiuj steloj`  
+  - Issue: **WRONG** – verb “leviĝis” expresses a completed action, while the source “montava” denotes an ongoing past action.  
+  - Corrected: `kaj la suno estis leviĝanta supren kun tiuj steloj`  
+
+- **Line 39**  
+  - Original: `kiuj estis kun li kiam la Dia Amo`  
+  - Issue: none  
+  - Corrected: `kiuj estis kun li kiam la Dia Amo`  
+
+```esperanto
+La tempo estis je la komenco de la mateno,
+kaj la suno estis leviĝanta supren kun tiuj steloj
+kiuj estis kun li kiam la Dia Amo
+```
+]]></message>
+</messages>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அங்கு நீங்கள் துயரமான கத்தல்களை கேட்பீர்கள்,  
+நீங்கள் பழமையான துயரமுள்ள ஆவிகளை காண்பீர்கள்,  
+அவர்கள் ஒவ்வொருவரும் இரண்டாவது மரணத்தை அறிவிக்கிறார்கள்;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|------------------------------------------|------------------------------|----------------------------|--------|
+| ove | “where” – locative introducer of the clause | **அங்கு** | “there” | OK |
+| udirai | future action “you will hear” | **கேட்பீர்கள்** | “you will hear” | OK |
+| le | definite article, fem. pl (marks *strida*) | — (omitted) | — | UNNECESSARY |
+| disperate | “despairing” – attribute of the shrieks | **துயரமான** | “despairing” | OK |
+| strida | plural noun “shrieks” – object of *udirai* | **கத்தல்களை** | “shrieks (pl.)” | OK |
+| vedrai | future action “you will see” | **காண்பீர்கள்** | “you will see” | OK |
+| li | definite article, masc. pl (marks *spiriti*) | — (omitted) | — | UNNECESSARY |
+| antichi | “ancient” – temporal attribute of *spiriti* | **பழமையான** | “ancient” | OK |
+| spiriti | plural noun “spirits” – object of *vedrai* | **ஆவிகளை** | “spirits (pl.)” | OK |
+| dolenti | “woeful” – predicative of *spiriti* | **துயரமுள்ள** | “woeful” | OK |
+| ch’ (che) | relative pronoun “who” introducing clause about *spiriti* | **அவர்கள்** | “they / who” | OK |
+| a | preposition “to/toward” – direction of the shout | — (implicit in verb) | — | UNNECESSARY |
+| la | definite article, fem. sg (marks *morte*) | — (omitted) | — | UNNECESSARY |
+| seconda | ordinal “second” – attribute of *morte* | **இரண்டாவது** | “second” | OK |
+| morte | noun “death” – object of the preposition | **மரணத்தை** | “death (obj.)” | OK |
+| ciascun | distributive quantifier “each” – applies to *spiriti* | **ஒவ்வொருவரும்** | “each (person)” | OK |
+| grida | verb “shouts / proclaims” – action of each spirit | **அறிவிக்கிறார்கள்** | “announce / proclaim” | OK |
+
+---
+
+### Items Flagged
+
+- **UNNECESSARY**: `le`, `li`, `la` (Italian definite articles have no direct counterpart in Tamil and are naturally omitted).  
+- **UNNECESSARY**: `a` (the directional preposition is absorbed by the Tamil verb *அறிவிக்கிறார்கள்* “announce/proclaim”).  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 115:
+  - Original: அங்கு நீங்கள் துயரமான கத்தல்களை கேட்பீர்கள்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 116:
+  - Original: நீங்கள் பழமையான துயரமுள்ள ஆவிகளை காண்பீர்கள்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 117:
+  - Original: அவர்கள் ஒவ்வொருவரும் இரண்டாவது மரணத்தை அறிவிக்கிறார்கள்;
+  - Issue: none
+  - Corrected: no change  
+
+```
+அங்கு நீங்கள் துயரமான கத்தல்களை கேட்பீர்கள்,
+நீங்கள் பழமையான துயரமுள்ள ஆவிகளை காண்பீர்கள்,
+அவர்கள் ஒவ்வொருவரும் இரண்டாவது மரணத்தை அறிவிக்கிறார்கள்;
+```
+]]></message>
+</messages>

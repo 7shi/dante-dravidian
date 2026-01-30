@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ഓ മറ്റുള്ള കവികളുടോ മാനവും പ്രകാശവും,
+എന്റെ ദീർഘമായ പഠനവും മഹത്തായ സ്നേഹവും എന്നെ സഹായിക്കട്ടെ
+ഇത് എന്നെ നിങ്ങളുടെ ഗ്രന്ഥം തിരയാൻ പ്രേരിപ്പിച്ചു.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------|----------------------------|--------|
+| O | Vocative particle addressing abstract entities | ഓ | “O” (vocative) | OK |
+| de | Preposition “of” (possessive/associative) | *(expressed by the genitive suffix in “കവികളുടോ”)* | – | UNNECESSARY |
+| li | Definite article, masc. plural | *(omitted)* | – | UNNECESSARY |
+| altri | Adjective “other” modifying “poeti” | മറ്റുള്ള | “other” | OK |
+| poeti | Noun “poets”, object of “de” | കവികളുടോ | “of the poets” (genitive) | OK |
+| onore | Abstract noun “honor” | മാനവും | “honor and” (conjunctive suffix) | OK |
+| e | Coordinating conjunction “and” | *(conjunctive suffix “‑വും” already attached to neighbouring nouns)* | – | UNNECESSARY |
+| lume | Abstract noun “light” | പ്രകാശവും | “light and” (conjunctive suffix) | OK |
+| vagliami | Imperative “grant me / make useful to me” | സഹായിക്കട്ടെ | “let (it) help” (request) | OK |
+| ’l (il) | Definite article “the” (before “lungo”) | *(omitted)* | – | UNNECESSARY |
+| lungo | Adjective “long” | ദീർഘമായ | “long” | OK |
+| studio | Noun “study” | പഠനവും | “study and” (conjunctive suffix) | OK |
+| e | Coordinating conjunction “and” | *(conjunctive suffix “‑വും” already attached)* | – | UNNECESSARY |
+| ’l (il) | Definite article “the” (before “grande”) | *(omitted)* | – | UNNECESSARY |
+| grande | Adjective “great” | മഹത്തായ | “great” | OK |
+| amore | Noun “love” | സ്നേഹവും | “love and” (conjunctive suffix) | OK |
+| che | Relative pronoun “which / that” introducing clause | ഇത് | “this / that” | OK |
+| m' (mi) | Enclitic pronoun “to me” (indirect object) | എന്നെ | “me” | OK |
+| ha | Auxiliary verb (present perfect) | *(integrated in “പ്രേരിപ്പിച്ചു”)* | – | UNNECESSARY |
+| fatto | Past participle “made” (causative) | പ്രേരിപ്പിച്ചു | “caused / made” | OK |
+| cercar | Infinitive “to search” | തിരയാൻ | “to search” | OK |
+| lo | Definite article “the” (before “volume”) | *(omitted)* | – | UNNECESSARY |
+| tuo | Possessive adjective “your” | നിങ്ങളുടെ | “your” | OK |
+| volume | Noun “volume” (book) | ഗ്രന്ഥം | “book / volume” | OK |
+
+---
+
+### Items Requiring Attention  
+
+**UNNECESSARY (source words not needed as separate items in Malayalam)**  
+- de, li, ’l (three occurrences), e (two occurrences), ha, lo  
+
+**MISSING / WRONG / GRAMMAR** – none detected.  
+
+All source tokens are accounted for; where Malayalam naturally omits a word (articles, conjunction “e”, auxiliary “ha”), the omission is marked **UNNECESSARY** rather than an error.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:  
+  - Original: ഓ മറ്റുള്ള കവികളുടോ മാനവും പ്രകാശവും,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 83:  
+  - Original: എന്റെ ദീർഘമായ പഠനവും മഹത്തായ സ്നേഹവും എന്നെ സഹായിക്കട്ടെ  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 84:  
+  - Original: ഇത് എന്നെ നിങ്ങളുടെ ഗ്രന്ഥം തിരയാൻ പ്രേരിപ്പിച്ചു.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+ഓ മറ്റുള്ള കവികളുടോ മാനവും പ്രകാശവും,
+എന്റെ ദീർഘമായ പഠനവും മഹത്തായ സ്നേഹവും എന്നെ സഹായിക്കട്ടെ
+ഇത് എന്നെ നിങ്ങളുടെ ഗ്രന്ഥം തിരയാൻ പ്രേരിപ്പിച്ചു.
+```
+]]></message>
+</messages>

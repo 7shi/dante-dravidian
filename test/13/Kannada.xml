@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Temp' era dal principio del mattino,  
+e 'l sol montava 'n sù con quelle stelle  
+ch'eran con lui quando l'amor divino  
+
+**Kannada translation**
+
+ಸಮಯ ಬೆಳಗಿನ ಪ್ರಾರಂಭದಲ್ಲಿ ಇತ್ತು,  
+ಮತ್ತು ಸೂರ್ಯವು ಆ ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ ಮೇಲಕ್ಕೆ ಏರುತ್ತಿತ್ತು  
+ಅವು ಅವನೊಂದಿಗೆ ಇದ್ದವು ದಿವ್ಯ ಪ್ರೇಮವು ಆಗಿದ್ದಾಗ
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Kannada translation from Step 2)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (Kannada) | Back‑Translation (English) | Status |
+|-------------|-------------------------------------------|--------------------------------|----------------------------|--------|
+| **Temp'** | “time” – the temporal interval being spoken about | ಸಮಯ | “time” | OK |
+| **era** | copular predicate “was” – existence of the time | ಇತ್ತು | “was” | OK |
+| **dal** | preposition “from/at” introducing the locative phrase “principio del mattino” | — (expressed by the case suffix **‑ದಲ್ಲಿ** in *ಪ್ರಾರಂಭದಲ್ಲಿ*) | “in” (locative) | UNNECESSARY |
+| **principio** | “beginning” – the initial point of the morning | ಪ್ರಾರಂಭ | “beginning” | OK |
+| **del** | genitive preposition linking “principio” to “mattino” | — (expressed by the genitive suffix **‑ಗಿನ** in *ಬೆಳಗಿನ*) | “of” (genitive) | UNNECESSARY |
+| **mattino** | “morning” – the daily period that is beginning | ಬೆಳಗಿನ | “of the morning” | OK |
+| **e** | coordinating conjunction “and” linking two clauses | ಮತ್ತು | “and” | OK |
+| **'l** | definite article “the” (masc. sing.) | — (articles are omitted in Kannada) | — | UNNECESSARY |
+| **sol** | “Sun” – the celestial body that is moving | ಸೂರ್ಯವು | “the Sun” | OK |
+| **montava** | imperfect verb “was mounting” – ongoing upward motion | ಏರುತ್ತಿತ್ತು | “was rising / mounting” | OK |
+| **'n** | preposition “in” (part of the idiom “'n sù” = upward) | — (merged into *ಮೇಲಕ್ಕೆ*) | “in” (directional) | UNNECESSARY |
+| **sù** | adverb “upward” – direction of the Sun’s motion | ಮೇಲಕ್ಕೆ | “upward / upwardward” | OK |
+| **con** | preposition “with” – accompaniment | — (merged into *ಆ ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ*) | “with” (directional) | UNNECESSARY |
+| **quelle** | demonstrative adjective “those” – specifies the stars | ಆ | “those” | OK |
+| **stelle** | “stars” – luminous bodies accompanying the Sun | ನಕ್ಷತ್ರಗಳು | “stars” | OK |
+| **ch'eran** | relative clause “that were” – states the condition of the stars | ಅವು | “they (those) … were” | OK |
+| **con** | preposition “with” – marks accompaniment of the Sun | — (merged into *ಅವನೊಂದಿಗೆ*) | “with” | UNNECESSARY |
+| **lui** | pronoun “him” – refers to the Sun | ಅವನ | “him / his” | OK |
+| **quando** | subordinating conjunction “when” – introduces temporal clause | ಆಗಿದ್ದಾಗ | “when … was” | OK |
+| **l'amor** | noun “Love” – the divine principle acting | ದಿವ್ಯ ಪ್ರೇಮ | “Divine Love” | OK |
+| **divino** | adjective “Divine” – qualifies “Love” | — (already encoded in *ದಿವ್ಯ*) | “Divine” | UNNECESSARY |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `'l`, `dal`, `del`, `'n`, `con` (both occurrences), `divino` – these grammatical particles are naturally absorbed by case‑suffixes or omitted in Kannada and therefore do not appear as independent words.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the translation respects number, gender and case agreement in Kannada.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 37:
+  - Original: ಸಮಯ ಬೆಳಗಿನ ಪ್ರಾರಂಭದಲ್ಲಿ ಇತ್ತು,
+  - Issue: none
+  - Corrected: no change  
+- Line 38:
+  - Original: ಮತ್ತು ಸೂರ್ಯವು ಆ ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ ಮೇಲಕ್ಕೆ ಏರುತ್ತಿತ್ತು
+  - Issue: none
+  - Corrected: no change  
+- Line 39:
+  - Original: ಅವು ಅವನೊಂದಿಗೆ ಇದ್ದವು ದಿವ್ಯ ಪ್ರೇಮವು ಆಗಿದ್ದಾಗ
+  - Issue: none
+  - Corrected: no change  
+
+```
+ಸಮಯ ಬೆಳಗಿನ ಪ್ರಾರಂಭದಲ್ಲಿ ಇತ್ತು,
+ಮತ್ತು ಸೂರ್ಯವು ಆ ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ ಮೇಲಕ್ಕೆ ಏರುತ್ತಿತ್ತು
+ಅವು ಅವನೊಂದಿಗೆ ಇದ್ದವು ದಿವ್ಯ ಪ್ರೇಮವು ಆಗಿದ್ದಾಗ
+```
+]]></message>
+</messages>

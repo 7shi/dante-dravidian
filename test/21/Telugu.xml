@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,  
+నా కళ్ల ముందు ఒకరు కనిపించారు  
+దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Telugu)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Telugu) | Back‑Translation (Eng) | Status |
+|-------------|----------------------|------------------------------|------------------------|--------|
+| Mentre | temporal conjunction “while” | **పడుతున్నప్పుడు** | “while (falling)” | OK |
+| ch'i' | contraction of “che io” – “that I / while I” (subject = I) | **నేను** | “I” | OK |
+| rovinava | imperfect “was falling / going down” | **పడుతున్న** | “was falling” | OK |
+| in | preposition of direction “to, into” | **కు** | “to” | OK |
+| basso | adjective “low, low‑lying” | **దిగువ** | “low” | OK |
+| loco | noun “place, location” (dative) | **స్థలానికి** | “to the place” | OK |
+| dinanzi | adverb/preposition “before, in front of” | **ముందు** | “before / in front of” | OK |
+| a | preposition linking “dinanzi a” (to) – not needed in Telugu | — | — | **UNNECESSARY** |
+| li | definite article “the” (plural) – Telugu has no articles | — | — | **UNNECESSARY** |
+| occhi | noun “eyes” (possessive) | **కళ్ల** | “eyes” | OK |
+| mi | 1st‑sg dative “to me / my” (experiencer) | **నా** | “my” | OK |
+| si | reflexive/impersonal pronoun in passive construction | — | — | **UNNECESSARY** |
+| fu | auxiliary verb “was” (remote past) | — | — | **UNNECESSARY** |
+| offerto | past participle “offered, presented” | **కనిపించారు** | “appeared / was seen” | OK |
+| chi | relative pronoun “who, that” | **అతను** | “he / that one” | OK |
+| per | preposition “through, by means of” | **ద్వారా** | “through” | OK |
+| lungo | adjective “long” | **దీర్ఘ** | “long” | OK |
+| silenzio | noun “silence” | **నిశ్శబ్దం** | “silence” | OK |
+| parea | imperfect “seemed, appeared” | **అనిపించాడు** | “seemed” | OK |
+| fioco | adjective “hoarse, weak, faint” | **బలహీనంగా** | “weakly / faintly” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: `a`, `li`, `si`, `fu` – these function words are not required in Telugu and were omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all retained lexical items convey the intended meaning and agree in gender/number with Telugu grammar.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,
+  - Issue: none
+  - Corrected: నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,
+- Line 62:
+  - Original: నా కళ్ల ముందు ఒకరు కనిపించారు
+  - Issue: GRAMMAR – verb agreement (plural form)
+  - Corrected: నా కళ్ల ముందు ఒకరు కనిపించాడు
+- Line 63:
+  - Original: దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+  - Issue: none
+  - Corrected: దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+
+```
+నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,
+నా కళ్ల ముందు ఒకరు కనిపించాడు
+దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+```
+]]></message>
+</messages>

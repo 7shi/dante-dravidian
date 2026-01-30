@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Entonces eres tú ese Virgilio y esa fuente  
+que derrama de habla tan amplio río?,  
+respondí yo a él con frente vergonzosa.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Or | temporal marker “now/then” | Entonces | “then” | OK |
+| se' | copular “are” (2nd sg.) | eres | “are” | OK |
+| tu | 2nd sg. pronoun, addressee | tú | “you” | OK |
+| quel | demonstrative “that” (modifying *Virgilio*) | ese | “that” | OK |
+| Virgilio | proper noun, poet | Virgilio | “Virgil” | OK |
+| e | coordinating conjunction “and” | y | “and” | OK |
+| quella | demonstrative “that” (modifying *fonte*) | esa | “that” | OK |
+| fonte | metaphorical source of speech | fuente | “fount” | OK |
+| che | relative pronoun “which/that” | que | “which” | OK |
+| spandi | verb “poureth forth” | derrama | “pours out” | OK |
+| di | preposition “of” | de | “of” | OK |
+| parlar | noun “speech” (infinitive used substantively) | habla | “speech” | OK |
+| sì | degree adverb “so” | tan | “so” | OK |
+| largo | adjective “large” | amplio | “large” | OK |
+| fiume | metaphorical “river/stream” of speech | río | “river” | **GRAMMAR** (adjective order should be *río tan amplio*) |
+| rispuos' | past verb “replied” | respondí | “replied” | OK |
+| io | 1st sg. pronoun “I” | yo | “I” | OK |
+| lui | 3rd sg. indirect object “to him” | él | “him” | OK |
+| con | preposition “with” | con | “with” | OK |
+| vergognosa | adjective “bashful” | vergonzosa | “bashful” | OK |
+| fronte | noun “front” (part of head) | frente | “forehead/front” | OK |
+
+---
+
+### Issues Detected
+- **GRAMMAR:** *fiume* → “río” rendered as **“tan amplio río”**; standard Spanish order is **“río tan amplio.”**  
+- **MISSING / WRONG / UNNECESSARY:** none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79:**  
+  - Original: Entonces eres tú ese Virgilio y esa fuente  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 80:**  
+  - Original: que derrama de habla tan amplio río?,  
+  - Issue: adjective order incorrect for Spanish and stray comma after the question mark  
+  - Corrected: que derrama de habla río tan amplio?  
+
+- **Line 81:**  
+  - Original: respondí yo a él con frente vergonzosa.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Entonces eres tú ese Virgilio y esa fuente
+que derrama de habla río tan amplio?
+respondí yo a él con frente vergonzosa.
+```
+]]></message>
+</messages>

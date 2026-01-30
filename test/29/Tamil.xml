@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நீ என் ஆசிரியரும் என் எழுத்தாளரும்,  
+நீ மட்டும் நான் அழகான பாணியை எடுத்தவர்  
+அந்த அழகான பாணி என்னை கௌரவப்படுத்தியது.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Tamil Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|-----------------------|----------------------|--------------------------------------|--------|
+| **Tu** | 2nd‑person singular pronoun, subject | **நீ** | “you” | OK |
+| **se'** | Copular verb “are” (present) | — (copula omitted in Tamil) | — | UNNECESSARY |
+| **lo** | Definite article (masc. sg.) | — (no article in Tamil) | — | UNNECESSARY |
+| **mio** | Possessive adjective “my” | **என்** | “my” | OK |
+| **maestro** | Noun “master, teacher” | **ஆசிரியர்** | “teacher / master” | OK |
+| **e** | Coordinating conjunction “and” | — (conjunction expressed by the suffix **‑ரும்** in *ஆசிரியரும்*) | — | UNNECESSARY |
+| **'l** | Definite article (masc. sg.) | — (no article) | — | UNNECESSARY |
+| **mio** (2nd) | Possessive adjective “my” | **என்** | “my” | OK |
+| **autore** | Noun “author, creator” | **எழுத்தாளர்** | “author / writer” | OK |
+| **tu** (line 86) | 2nd‑person singular pronoun, subject | **நீ** | “you” | OK |
+| **se'** (line 86) | Copular verb “are” | — (omitted) | — | UNNECESSARY |
+| **solo** | Adverb/adjective “alone, only” | **மட்டும்** | “only” | OK |
+| **colui** | Demonstrative pronoun “he, the one” | — (encoded in the suffix **‑வர்** of *எடுத்தவர்*) | — | UNNECESSARY |
+| **da** | Preposition “from” | — (not expressed) | — | UNNECESSARY |
+| **cu'** | Relative pronoun “whom” | — (integrated in *எடுத்தவர்*) | — | UNNECESSARY |
+| **io** | 1st‑person singular pronoun “I” | **நான்** | “I” | OK |
+| **tolsI** | Verb “took” (preterite) | **எடுத்த** | “took” | OK |
+| **lo** (line 87) | Definite article (masc. sg.) | — (no article) | — | UNNECESSARY |
+| **bello** | Adjective “fair, beautiful” | **அழகான** | “beautiful” | OK |
+| **stilo** | Noun “style” | **பாணி** | “style” | OK |
+| **che** | Relative pronoun “that” | **அந்த** | “that” | OK |
+| **m'ha** | Contraction *mi ha* – “has … me” (object pronoun + auxiliary) | **என்னை** | “me” | OK |
+| **fatto** | Past participle “done” (auxiliary) | — (meaning merged into the verb) | — | UNNECESSARY |
+| **onore** | Noun “honor” (result) | **கௌரவப்படுத்தியது** | “honored (him/her/it)” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: se', lo, e, 'l, colui, da, cu', lo (line 87), fatto – these elements have no direct lexical counterpart in Tamil because the target language does not require articles, a copula, or separate relative pronouns; the meaning is conveyed through morphology or context.
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are present and correctly rendered in the Tamil translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: நீ என் ஆசிரியரும் என் எழுத்தாளரும்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 86:
+  - Original: நீ மட்டும் நான் அழகான பாணியை எடுத்தவர்
+  - Issue: none
+  - Corrected: no change  
+
+- Line 87:
+  - Original: அந்த அழகான பாணி என்னை கௌரவப்படுத்தியது.
+  - Issue: none
+  - Corrected: no change  
+
+```
+நீ என் ஆசிரியரும் என் எழுத்தாளரும்,
+நீ மட்டும் நான் அழகான பாணியை எடுத்தவர்
+அந்த அழகான பாணி என்னை கௌரவப்படுத்தியது.
+```
+]]></message>
+</messages>

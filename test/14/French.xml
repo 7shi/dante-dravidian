@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+l'heure du temps et la saison douce;  
+si que, pour bien espérer, cela m'était une occasion  
+de cette bête sauvage à la peau tachetée.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (FR → EN) | Status |
+|-------------|-----------------------|----------------------|----------------------------|--------|
+| **mosse** | “first hour / moment” | **l'heure** | “the hour” | OK |
+| **di** | genitive “of” | **du** | “of the” | OK |
+| **prima** | “first, earliest” | *‑* | – | **MISSING** |
+| **quelle** | demonstrative “those” | **la** | “the” (feminine) | OK |
+| **cose** | “things, beautiful things (season)” | **saison** | “season” | OK |
+| **belle** | “beautiful / sweet” | **douce** | “sweet / gentle” | OK |
+| **sì** | resultative “so” | **si** | “so” | OK |
+| **ch'a** | causal “that” | **que** | “that” | OK |
+| **bene** | “good / well” | **bien** | “well / good” | OK |
+| **sperar** | “to hope” | **espérer** | “to hope” | OK |
+| **m'era** | “to me was” (experiencer) | **m'était** | “was to me” | OK |
+| **cagione** | “occasion, cause” | **occasion** | “occasion” | OK |
+| **di** (line 42) | genitive “of” | **de** | “of” | OK |
+| **quella** | demonstrative “that” | **cette** | “that” (feminine) | OK |
+| **fiera** | “wild beast” | **bête** | “beast” | OK |
+| **a** | preposition “with” | **à** | “with / to” | OK |
+| **la** | definite article “the” | **la** | “the” | OK |
+| **gaetta** | “dappled, speckled” | **tachetée** | “spotted / dappled” | OK |
+| **pelle** | “skin” | **peau** | “skin” | OK |
+| **et** (French) | conjunction “and” (adds “l'heure du temps **et** la saison…”) | *‑* | – | **UNNECESSARY** (not present in source) |
+| **,** (commas in line 41) | internal punctuation | *‑* | – | **UNNECESSARY** (source forbids internal punctuation) |
+| **.** (final period in line 42) | terminal punctuation | *‑* | – | **WRONG** (source line 42 has no end punctuation) |
+
+---
+
+### Items Requiring Attention
+- **MISSING:** *prima* – the notion “first” is not rendered in the French line.
+- **UNNECESSARY:** French conjunction **et** and the commas in line 41 are not present in the Italian source and violate the “no internal punctuation” rule.
+- **WRONG:** The final period after line 42 is extra; the source line ends without punctuation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 40**  
+  - Original: `l'heure du temps et la saison douce;`  
+  - Issue: missing *prima* (“première”), unnecessary conjunction **et**.  
+  - Corrected: `l'heure première du temps la saison douce;`  
+
+- **Line 41**  
+  - Original: `si que, pour bien espérer, cela m'était une occasion`  
+  - Issue: internal commas, superfluous **pour**, superfluous **cela**, missing result‑clause order.  
+  - Corrected: `si que bien espérer m'était une occasion`  
+
+- **Line 42**  
+  - Original: `de cette bête sauvage à la peau tachetée.`  
+  - Issue: extra final period.  
+  - Corrected: `de cette bête sauvage à la peau tachetée`  
+
+```text
+l'heure première du temps la saison douce;
+si que bien espérer m'était une occasion
+de cette bête sauvage à la peau tachetée
+```
+]]></message>
+</messages>

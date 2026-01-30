@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+106 Di quella umile Italia fia salute
+107 per cui morì la vergine Cammilla,
+108 Eurialo e Turno e Niso di ferute.
+Reference Translation (provided):
+Of that humble Italy shall he be the salvation, for which the virgin Camilla died, and Euryalus, Turnus and Nisus of their wounds.
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST**  
+
+- **Line 106** – *Di quella umile Italia fia salute* → **Locked Meaning**: There exists a specific Italy, characterized as *humble* (“quella umile Italia”), such that it will become *the salvation* (“fia salute”).  
+- **Line 107** – *per cui morì la vergine Cammilla* → **Locked Meaning**: The virgin Camilla died **because of** that (the salvation of humble Italy). The relative clause “cui … morì” ties the cause of Camilla’s death to the antecedent in line 106.  
+- **Line 108** – *Eurialo e Turno e Niso di ferute* → **Locked Meaning**: The three heroes Eurialo, Turno, and Niso are *wounded* (“di ferute”). The prepositional phrase “di ferute” predicates a state of injury on each of the three proper names.  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| **Di** | Prep (“di”) | *of* | Introduces the genitive relationship linking “salute” to “Italia”. | Prepositional complement of *salute* |
+| **quella** | Dem‑Adj (fem. sing.) | *that* | Demonstrative specifying the particular Italy being spoken of. | Determiner within the noun phrase “quella umile Italia” |
+| **umile** | Adj (fem. sing.) | *humble* | Attribute describing Italy’s modest character. | Attribute of the noun “Italia” |
+| **Italia** | PropN (fem.) | *Italy* | The nation that will become the salvation. | Head of the noun phrase “quella umile Italia” |
+| **fia** | Verb (Fut. 3sg of *essere*) | *shall be* | Future copular verb asserting a forthcoming state. | Predicate of the clause “fia salute” |
+| **salute** | Noun (fem. sing.) | *salvation* | The state of being saved; the promised outcome for Italy. | Subject complement of *fia* |
+| **per** | Prep | *for* | Introduces the causal prepositional phrase linking the previous clause to Camilla’s death. | Prepositional head of “per cui …” |
+| **cui** | RelPron (masc./fem. sing.) | *which* | Relative pronoun referring back to the salvation of Italy; marks the cause of death. | Relative pronoun introducing the clause “cui morì …” |
+| **morì** | Verb (Pst. 3sg of *morire*) | *died* | Simple past indicating Camilla’s death. | Main verb of the relative clause |
+| **la** | Def Art (fem. sing.) | *the* | Definite article specifying the noun “vergine”. | Determiner of “vergine” |
+| **vergine** | Noun (fem. sing.) | *virgin* | Title/epithet of Camilla, indicating her purity. | Noun phrase head “la vergine” (object of “morì”) |
+| **Cammilla** | PropN (fem.) | *Camilla* | Proper name of the virgin who died. | Direct object of “morì” |
+| **Eurialo** | PropN (masc.) | *Euryalus* | One of the three wounded heroes. | Subject of the predicative phrase “di ferute” |
+| **e** | Conj | *and* | Coordinating conjunction linking the three names. | Connector between coordinated nouns |
+| **Turno** | PropN (masc.) | *Turnus* | Second wounded hero. | Coordinated subject |
+| **e** | Conj | *and* | Second coordinating conjunction. | Connector |
+| **Niso** | PropN (masc.) | *Nisus* | Third wounded hero. | Coordinated subject |
+| **di** | Prep | *of* | Introduces the adjectival participle phrase describing the state of the heroes. | Prepositional head of “di ferute” |
+| **ferute** | Participle (Adj, fem. pl.) | *wounded* | Past participle used adjectivally to denote the condition of the heroes. | Predicative adjective modifying the coordinated subjects via the preposition “di” |
+
+*The table lists each token in the three source lines, its morphological analysis, the closest English equivalent from the reference translation, a brief contextual definition, and its grammatical function within the sentence.*
+]]></message>
+</messages>

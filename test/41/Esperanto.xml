@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Al tiuj se vi volos poste leviĝi,
+Animo estos pli inda ol mi pri tio:
+Kun ŝi mi lasos vin ĉe mia foriro;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| **A** | preposition introducing the addressees | **Al** | to | OK |
+| **le** | definite article (plural) | — | — | **UNNECESSARY** |
+| **quai** | relative pronoun “those” | **tiuj** | those | OK |
+| **poi** | adverb “later, thereafter” | **poste** | thereafter | OK |
+| **se** | conditional conjunction “if” | **se** | if | OK |
+| **tu** | 2nd‑person singular pronoun “you” | **vi** | you | OK |
+| **vorrai** | future verb “will want” | **volos** | will want | OK |
+| **salire** | infinitive “to ascend” | **leviĝi** | to ascend | OK |
+| **anima** | noun “soul” | **Animo** | soul | OK |
+| **fia** | future copula “shall be” | **estos** | shall be | OK |
+| **a** | preposition introducing the domain of worthiness | **pri** | for/about | OK |
+| **ciò** | demonstrative pronoun “that” | **tio** | that | OK |
+| **più** | comparative adverb “more” | **pli** | more | OK |
+| **di** | preposition introducing the standard of comparison “than” | **ol** | than | OK |
+| **me** | 1st‑person pronoun “I” (object) | **mi** | I | OK |
+| **degna** | adjective “worthy” | **inda** | worthy | OK |
+| **con** | preposition “with” | **Kun** | with | OK |
+| **lei** | pronoun “her” | **ŝi** | her | OK |
+| **ti** | 2nd‑person pronoun (accusative) “you” | **vin** | you | OK |
+| **lascerò** | future verb “will leave” | **lasos** | will leave | OK |
+| **nel** | contraction “in the” (preposition) | **ĉe** | at | OK |
+| **mio** | possessive adjective “my” | **mia** | my | OK |
+| **partire** | infinitive nominalized “departure” | **foriro** | departure | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *le* – Esperanto does not use definite articles, so the source article is omitted in the translation.  
+
+No other words are missing, wrong, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 121:
+  - Original: Al tiuj se vi volos poste leviĝi,
+  - Issue: none
+  - Corrected: no change
+- Line 122:
+  - Original: Animo estos pli inda ol mi pri tio:
+  - Issue: none
+  - Corrected: no change
+- Line 123:
+  - Original: Kun ŝi mi lasos vin ĉe mia foriro;
+  - Issue: none
+  - Corrected: no change
+
+```
+Al tiuj se vi volos poste leviĝi,
+Animo estos pli inda ol mi pri tio:
+Kun ŝi mi lasos vin ĉe mia foriro;
+```
+]]></message>
+</messages>

@@ -1,0 +1,63 @@
+# Italian
+
+100 Molti son li animali a cui s'ammoglia,
+101 e più saranno ancora, infin che 'l veltro
+102 verrà, che la farà morir con doglia.
+
+# English
+
+Many are the animals with which she wives, and there shall be more yet, till the hound shall come that will make her die of grief.
+
+# Telugu
+
+100 అనేక జంతువులు ఆమె వివాహం చేసుకునేవి,
+101 మరియు ఇంకా ఎక్కువ జంతువులు ఉంటాయి, వేటగాడు వచ్చే వరకు
+102 వేటగాడు వస్తాడు, అది ఆమెను దుఃఖంతో మరణింపజేస్తుంది.
+
+# Tamil
+
+100 அவள் திருமணம் செய்யும் பல விலங்குகள் உள்ளன,
+101 மேலும் பல விலங்குகள் சேரும் அது வரை
+102 நாய் வரும் அது அவளை துயரத்தால் இறக்க வைக்கும்.
+
+# Kannada
+
+100 ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,
+101 ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ
+102 ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.
+
+# Malayalam
+
+100 അവൾ വിവാഹം കഴിക്കുന്ന നിരവധി മൃഗങ്ങളുണ്ട്,
+101 കൂടുതൽ മൃഗങ്ങൾ കൂടി വരും ഹണ്ടു വരുന്നതുവരെ
+102 ഹണ്ടു വരും അത് അവളെ ദുഃഖത്തിൽ മരിക്കാൻ കാരണമാകും.
+
+# Japanese
+
+100 彼女が妻にする動物は多く、  
+101 さらに多くがこれからも増え続け、狼が来るまで、  
+102 狼が来るだろう、それが彼女を悲しみで死に至らせる。
+
+# French
+
+100 Beaucoup d'animaux avec lesquels elle se marie,
+101 et plus seront encore, jusqu'à ce que le lévrier
+102 viendra, qui la fera mourir de douleur.
+
+# Spanish
+
+100 Muchos son los animales con los que ella se casa,
+101 y habrá más aún, hasta que el sabueso
+102 vendrá, que la hará morir de dolor.
+
+# Portuguese
+
+100 Muitos são os animais com os quais ela se casa,
+101 e ainda haverá mais até que o cão venha
+102 que a fará morrer de tristeza.
+
+# Esperanto
+
+100 Multaj estas la bestoj kun kiuj ŝi edzigas,
+101 kaj pli estos ankoraŭ ĝis la hundo
+102 venos, kiu faros ŝin morti pro doloro.

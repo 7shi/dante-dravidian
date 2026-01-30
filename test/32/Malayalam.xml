@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ഈ മൃഗം അതിനാൽ നീ കരഞ്ഞു,
+അത് മറ്റുള്ളവരെ അതിന്റെ വഴിയിലൂടെ കടക്കാൻ അനുവദിക്കുന്നില്ല,
+പക്ഷേ അത് അവനെ അത്ര തടയുന്നു അതു അവനെ കൊല്ലുന്നു;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → Malayalam)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------|----------------------------------|--------------------------|--------|
+| **ché** | causal conjunction “because of which” | **അതിനാൽ** | “because” | OK |
+| **questa** | demonstrative “this” (modifies *bestia*) | **ഈ** | “this” | OK |
+| **bestia** | noun “beast, animal” (subject) | **മൃഗം** | “beast/animal” | OK |
+| **per** (line 94) | preposition introducing relative clause “for which” | **കാരണം** | “because” | OK |
+| **la** (line 94) | definite article (feminine singular) – no lexical meaning in Malayalam | — | — | **UNNECESSARY** |
+| **qual** | relative pronoun “which” (refers to *bestia*) | — | — | **UNNECESSARY** |
+| **tu** | 2nd‑person pronoun “you” (subject of *gride*) | **നീ** | “you” | OK |
+| **gride** | verb “cry out” (present) | **കരഞ്ഞു** | “cried” | OK |
+| **non** | negation particle “not” (negates *lascia*) | **അല്ല** | “not” (implicit in the negative verb) | OK |
+| **lascia** | verb “allows/lets” (present) | **അനുവദിക്കുന്നു** | “allows” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **മറ്റുള്ളവരെ** | “others” (accusative) | OK |
+| **pasar** | infinitive “to pass” | **കടക്കാൻ** | “to pass” | OK |
+| **per** (line 95) | preposition “through/along” (introduces *via*) | **വഴിയിലൂടെ** | “through the way” | OK |
+| **la** (line 95) | definite article (feminine singular) – omitted in Malayalam | — | — | **UNNECESSARY** |
+| **sua** | possessive adjective “its” (modifies *via*) | **അതിന്റേ** | “its” | OK |
+| **via** | noun “way, path” (object of *per*) | **വഴി** | “way” | OK |
+| **ma** | coordinating conjunction “but” (contrast) | **പക്ഷേ** | “but” | OK |
+| **tanto** | adverb of degree “so much” (quantifies hindrance) | **അത്ര** | “so much” | OK |
+| **lo** | pronoun “him” (direct object of *'mpedisce*) | **അവനെ** | “him” | OK |
+| **'mpedisce** | verb “hinders, blocks” (present) | **തടയുന്നു** | “hinders” | OK |
+| **che** | complementizer “that” (introduces result clause) | **അത്** | “that” | OK |
+| **l’uccide** | verb “kills him” (present) | **കൊല്ലുന്നു** | “kills” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - *la* (both occurrences) – definite article not expressed in Malayalam.  
+  - *qual* – relative pronoun absorbed into the causal construction “അതിനാൽ”.  
+
+All other source tokens have appropriate Malayalam equivalents; no missing, wrong, or grammatical errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: ഈ മൃഗം അതിനാൽ നീ കരഞ്ഞു,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: അത് മറ്റുള്ളവരെ അതിന്റെ വഴിയിലൂടെ കടക്കാൻ അനുവദിക്കുന്നില്ല,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: പക്ഷേ അത് അവനെ അത്ര തടയുന്നു അതു അവനെ കൊല്ലുന്നു;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+ഈ മൃഗം അതിനാൽ നീ കരഞ്ഞു,
+അത് മറ്റുള്ളവരെ അതിന്റെ വഴിയിലൂടെ കടക്കാൻ അനുവദിക്കുന്നില്ല,
+പക്ഷേ അത് അവനെ അത്ര തടയുന്നു അതു അവനെ കൊല്ലുന്നു;
+```
+]]></message>
+</messages>

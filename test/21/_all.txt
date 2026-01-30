@@ -1,0 +1,63 @@
+# Italian
+
+61 Mentre ch'i' rovinava in basso loco,
+62 dinanzi a li occhi mi si fu offerto
+63 chi per lungo silenzio parea fioco.
+
+# English
+
+While I was falling back to the low place, before mine eyes appeared one who through long silence seemed hoarse.
+
+# Telugu
+
+61 నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,
+62 నా కళ్ల ముందు ఒకరు కనిపించాడు
+63 దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+
+# Tamil
+
+61 நான் கீழ் இடத்திற்கு விழுந்து கொண்டிருந்தபோது,
+62 என் கண்களின் முன்னால் ஒன்று தோன்றியது
+63 நீண்ட அமைதியின் மூலம் அது மங்கியதாகத் தோன்றியது.
+
+# Kannada
+
+61 ನಾನು ಕೆಳಗಿನ ಸ್ಥಳಕ್ಕೆ ಇಳಿಯುತ್ತಿದ್ದಾಗ,
+62 ನನ್ನ ಕಣ್ಣುಗಳ ಮುಂದೆ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಪ್ರತ್ಯಕ್ಷವಾಯಿತು
+63 ದೀರ್ಘ ನಿಶ್ಯಬ್ದದ ಮೂಲಕ ಅವನು ಹುಸಿಯಂತೆ ತೋರುತ್ತಿದ್ದ.
+
+# Malayalam
+
+61 ഞാൻ താഴ്ന്ന സ്ഥലത്തേക്ക് വീഴുമ്പോൾ,
+62 എന്റെ കണ്ണുകൾക്ക് മുമ്പിൽ ഒരാൾ പ്രത്യക്ഷപ്പെട്ടു
+63 ദീർഘകാല നിശ്ശബ്ദതയിലൂടെ അവൻ ചൊറിച്ചിലായി തോന്നി.
+
+# Japanese
+
+61 低い場所へと下がっていたとき,
+62 目の前に現れた
+63 長い沈黙の後にかすれたように聞こえた.
+
+# French
+
+61 Alors que je retombais vers le lieu bas,
+62 devant mes yeux il m’a été présenté
+63 qui par un long silence semblait rauque.
+
+# Spanish
+
+61 Mientras que yo caía al lugar bajo,
+62 delante de los ojos se me presentó
+63 quien por largo silencio parecía débil.
+
+# Portuguese
+
+61 Enquanto eu descia ao lugar baixo,
+62 diante dos meus olhos me foi apresentado um que
+63 por longo silêncio parecia fraco.
+
+# Esperanto
+
+61 Dum mi falis reen al la malalta loko,
+62 antaŭ miaj okuloj al mi aperis iu
+63 kiu per longa silento ŝajnis raŭga.

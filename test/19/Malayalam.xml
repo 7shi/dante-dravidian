@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+മറ്റും അവൻ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,  
+മറ്റും സമയം വരുന്നു അവനെ നഷ്ടപ്പെടുത്തുന്ന,  
+അവന്റെ എല്ലാ ചിന്തകളിലും അവൻ കരഞ്ഞു ദുഃഖിതനാണ്;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation | Status |
+|-------------|----------------------|----------------------------------|------------------|--------|
+| **E** (line 55) | coordinating conjunction “and” | **മറ്റും** | “and also” | OK |
+| **qual** | “such as” (introduces a descriptive equivalence) | – | – | **MISSING** |
+| **è** | copular verb “is” | – (copula omitted) | – | **UNNECESSARY** |
+| **quei** | demonstrative pronoun referring to the individual “he” | **അവൻ** | “he” | OK |
+| **che** (line 55) | relative pronoun “who” | – (relative clause merged) | – | **UNNECESSARY** |
+| **volontieri** | adverb “willingly” (manner) | **സ്വമേധയാ** | “willingly” | OK |
+| **acquista** | verb “gaineth / acquires” | **സ്വന്തമാക്കുന്ന** | “acquires” | OK |
+| **e** (line 56) | coordinating conjunction “and” | **മറ്റും** | “and also” | OK |
+| **giugne** | verb “arrives” (event of time coming) | **വരുന്നു** | “arrives” | OK |
+| **'l** | definite article “the” | – (no article in Malayalam) | – | **UNNECESSARY** |
+| **tempo** | noun “time” (temporal entity) | **സമയം** | “time” | OK |
+| **che** (line 56) | relative pronoun “that” (introduces causal clause) | – (implicit) | – | **UNNECESSARY** |
+| **perder** | infinitive “lose” (action caused by time) | **നഷ്ടപ്പെടുത്തുന്ന** | “causing loss” | OK |
+| **lo** | object pronoun “him” (refers to *quei*) | **അവനെ** | “him” | OK |
+| **face** | verb “makes” (causative) | – (embedded in *നഷ്ടപ്പെടുത്തുന്ന*) | – | **UNNECESSARY** |
+| **che** (line 57) | relative pronoun “who” (refers back to the individual) | – (implicit) | – | **UNNECESSARY** |
+| **'n** | preposition “in” (locative for mental space) | **ചിന്തകളിലും** (part of the phrase) | “in” | OK |
+| **tutti** | quantifier “all” | **എല്ലാ** | “all” | OK |
+| **suoi** | possessive adjective “his” | **അവന്റെ** | “his” | OK |
+| **pensier** | noun “thoughts” | **ചിന്തകൾ** (within *ചിന്തകളിലും*) | “thoughts” | OK |
+| **piange** | verb “weeps” | **കരഞ്ഞു** | “wept” | OK |
+| **e** (line 57) | coordinating conjunction “and” | – (conjunction omitted) | – | **UNNECESSARY** |
+| **s'attrista** | reflexive verb “is sad” | **ദുഃഖിതനാണ്** | “is sad” | OK |
+
+---
+
+### Items Requiring Attention
+- **MISSING:** `qual` – the notion “such as” is not rendered explicitly in the Malayalam version.
+- **UNNECESSARY (omitted but acceptable):** `è`, `che` (three occurrences), `'l`, `face`, `e` (line 57). These elements are naturally dropped in Malayalam and do not constitute errors.
+- **WRONG / GRAMMAR:** None detected; the Malayalam sentences are grammatically sound and respect agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 55:
+  - Original: മറ്റും അവൻ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,
+  - Issue: Missing translation of “qual” (“such as”)
+  - Corrected: **മറ്റും അവൻ പോലെ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,**
+
+- Line 56:
+  - Original: മറ്റും സമയം വരുന്നു അവനെ നഷ്ടപ്പെടുത്തുന്ന,
+  - Issue: none
+  - Corrected: no change
+
+- Line 57:
+  - Original: അവന്റെ എല്ലാ ചിന്തകളിലും അവൻ കരഞ്ഞു ദുഃഖിതനാണ്;
+  - Issue: none
+  - Corrected: no change
+
+```
+മറ്റും അവൻ പോലെ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,
+മറ്റും സമയം വരുന്നു അവനെ നഷ്ടപ്പെടുത്തുന്ന,
+അവന്റെ എല്ലാ ചിന്തകളിലും അവൻ കരഞ്ഞു ദുഃഖിതനാണ്;
+```
+]]></message>
+</messages>

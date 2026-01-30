@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+46 Questi parea che contra me venisse
+47 con la test' alta e con rabbiosa fame,
+48 sì che parea che l'aere ne tremesse.
+Reference Translation (provided):
+He seemed to be coming against me, with head high and with ravening hunger, so that it seemed that the air was affrighted at him.
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 46** *Questi parea che contra me venisse* ⇒ **Locked Meaning**:  
+  There exists an entity **X** (the “Questi”) such that **X** *seemed* to be moving **against** the speaker (**me**). The speaker’s perception is that the proposition “**X** is coming against me” holds in the imagined past (imperfect/subjunctive mood).  
+
+- **Line 47** *con la test' alta e con rabbiosa fame,* ⇒ **Locked Meaning**:  
+  The same entity **X** possesses the property **head‑high** and the property **ravenous‑hunger**. Both properties are presented as simultaneous attributes of **X**, introduced by the preposition “with”.  
+
+- **Line 48** *sì che parea che l'aere ne tremesse.* ⇒ **Locked Meaning**:  
+  Consequently, it *seemed* that **the air** (**l’aere**) **trembled** because of **X** (the clitic **ne** = “because of it/him”). The result clause expresses that the air’s trembling is a reaction to **X**’s threatening presence.  
+
+---
+
+### Consistent Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|----------------------|------------------|
+| Questi | Demonstrative pronoun (masc. pl., poetic singular) | **He / this one** | The threatening opponent, the subject of “seemed”. | **Subject** of *parea* |
+| parea | Verb, 3rd sg. imperfect indicative of *parere* | **seemed** | Marks the speaker’s perception of a state in the past. | **Predicate** of main clause |
+| che (1) | Complementizer | **that** | Introduces the subordinate clause describing motion. | **Subordinator** of *contra me venisse* |
+| contra | Preposition | **against** | Indicates direction opposite to the speaker. | **Prepositional complement** of *venisse* |
+| me | Pronoun, 1st sg. accusative | **me** | The speaker, object of the preposition *contra*. | **Object of preposition** |
+| venisse | Verb, 3rd sg. imperfect subjunctive of *venire* | **to be coming** | Motion of **X** toward the speaker, unrealis mood. | **Verb** of subordinate clause |
+| con (1) | Preposition | **with** | Introduces the first attribute phrase. | **Prepositional head** |
+| la | Definite article (fem. sg.) | *(the)* | Determiner for *test’*. | **Determiner** |
+| test' | Noun (fem. sg., *testa*) | **head** | Physical part of **X**, bearing the attribute *alta*. | **Object of preposition** |
+| alta | Adjective (fem. sg.) | **high** | Describes the posture of **X**’s head. | **Attribute** of *test'* |
+| e | Coordinating conjunction | **and** | Links two parallel prepositional phrases. | **Connector** |
+| con (2) | Preposition | **with** | Introduces the second attribute phrase. | **Prepositional head** |
+| rabbiosa | Adjective (fem. sg.) | **ravening** | Qualifies the hunger as intense, ferocious. | **Attribute** of *fame* |
+| fame | Noun (fem. sg.) | **hunger** | The appetite driving **X**. | **Object of preposition** |
+| sì | Conjunctive adverb | **so that** | Marks a result clause. | **Result marker** |
+| che (2) | Complementizer | **that** | Introduces the result clause’s predicate. | **Subordinator** of *parea* |
+| parea (2) | Verb, 3rd sg. imperfect indicative of *parere* | **seemed** | Speaker’s perception of the air’s reaction. | **Predicate** of result clause |
+| che (3) | Complementizer | **that** | Introduces the innermost clause. | **Subordinator** of *tremesse* |
+| l'aere | Noun (masc. sg., with elided article *l’*) | **the air** | The ambient element that reacts. | **Subject** of *tremesse* |
+| ne | Clitic pronoun (3rd sg., partitive/causal) | **of it / because of him** | Refers back to **X**, indicating cause of trembling. | **Causal complement** of *tremesse* |
+| tremesse | Verb, 3rd sg. imperfect subjunctive of *tremare* | **trembled** | The air’s fearful response, unrealis mood. | **Verb** of innermost clause |
+
+*The table respects the truth‑conditions set out in the Interpretation Lock: the opponent (**Questi**) seemed to approach the speaker **against** him, bearing a **high head** and **ravenous hunger**, and this presence caused **the air** to **tremble**.*
+]]></message>
+</messages>

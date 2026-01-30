@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அந்த மிருகத்தைப் பாருங்கள் அது காரணமாக நான் திரும்பினேன்;  
+அவளுக்கு எதிராக எனக்கு உதவுங்கள் புகழ்பெற்ற ஞானி,  
+அவள் என் நரம்புகள் மற்றும் துடிப்புகளை நடுங்கச் செய்கிறாள்».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Tamil)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Tamil → English) | Status |
+|-------------|----------------------|----------------------|--------------------------------------|--------|
+| Vedi | imperative “see / behold” | **பாருங்கள்** | “(you) see / behold” | OK |
+| la | definite article (feminine) | **(அந்த)** | “the / that” (demonstrative) | UNNECESSARY |
+| bestia | “beast” (object) | **மிருகத்தைப்** | “the beast (ACC.)” | OK |
+| per | preposition “because of / for” | **காரணமாக** | “as a cause / because of” | OK |
+| cu' | relative pronoun “which / that” | **அது** | “that / it” | OK |
+| io | 1st‑person pronoun “I” | **நான்** | “I” | OK |
+| mi | reflexive pronoun “myself” | **(omitted)** | – | UNNECESSARY |
+| volsi | “turned” (self‑directed) | **திரும்பினேன்** | “I turned” | OK |
+| aiutami | “help me” (imperative) | **எனக்கு உதவுங்கள்** | “help me” | OK |
+| da | preposition “against” | **எதிராக** | “against” | OK |
+| lei | 3rd‑person feminine pronoun “her” | **அவளுக்கு** | “to her / her” (as object of “against”) | OK |
+| famoso | adjective “famous” | **புகழ்பெற்ற** | “famous” | OK |
+| saggio | noun “sage” (vocative) | **ஞானி** | “sage” | OK |
+| ch'ella | conjunction + pronoun “that she / for she” | **அவள்** | “she” | OK |
+| mi (in clause) | 1st‑person pronoun “my” (possessor) | **என்** | “my” | OK |
+| fa | verb “makes / causes” | **செய்கிறாள்** | “does / makes” (3rd‑sg) | OK |
+| tremar | infinitive “to tremble” | **நடுங்கச்** | “to cause to tremble” (causative stem) | OK |
+| le | definite article (feminine plural) | **(omitted)** | – | UNNECESSARY |
+| vene | “veins” (plural) | **நரம்புகள்** | “veins” | OK |
+| e | coordinating conjunction “and” | **மற்றும்** | “and” | OK |
+| i | definite article (masc. plural) | **(omitted)** | – | UNNECESSARY |
+| polsi | “pulses” (plural) | **துடிப்புகளை** | “pulses (ACC.)” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: `la`, `mi` (reflexive), `le`, `i` – Tamil does not use articles or a separate reflexive pronoun in these contexts.  
+- **No MISSING or WRONG entries** – every source token has a corresponding Tamil rendering (or a justified omission).  
+- **No GRAMMAR errors** – the Tamil translation respects agreement and case conventions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 88:
+  - Original: **Vedi la bestia per cu' io mi volsi;**
+  - Issue: none
+  - Corrected: **அந்த மிருகத்தைப் பாருங்கள் அது காரணமாக நான் திரும்பினேன்;**
+
+- Line 89:
+  - Original: **aiutami da lei, famoso saggio,**
+  - Issue: internal punctuation (comma) moved to line‑end only
+  - Corrected: **எனக்கு அவளுக்கு எதிராக உதவுங்கள் புகழ்பெற்ற ஞானி,**
+
+- Line 90:
+  - Original: **ch'ella mi fa tremar le vene e i polsi».**
+  - Issue: none
+  - Corrected: **அவள் என் நரம்புகள் மற்றும் துடிப்புகளை நடுங்கச் செய்கிறாள்»**
+
+```
+அந்த மிருகத்தைப் பாருங்கள் அது காரணமாக நான் திரும்பினேன்;
+எனக்கு அவளுக்கு எதிராக உதவுங்கள் புகழ்பெற்ற ஞானி,
+அவள் என் நரம்புகள் மற்றும் துடிப்புகளை நடுங்கச் செய்கிறாள்»
+```
+]]></message>
+</messages>

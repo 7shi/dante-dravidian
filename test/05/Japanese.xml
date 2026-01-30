@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+しかし、私が丘の麓に到着した後、  
+そこはあの谷が終わる場所で  
+その谷は私の心を恐怖で貫いていた、
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Japanese → English) | Status |
+|-------------|----------------------|----------------------|----------------------------------------|--------|
+| **Ma** | coordinating conjunction “but” | しかし | “but” | OK |
+| **poi** | adverb of time “after, later” | 後に | “after / later” | OK |
+| **ch'i'** (che + io) | “that I …”, introduces subordinate clause with speaker as subject | 私が | “I (subject)” | OK |
+| **fui** | auxiliary of *essere* in perfect “had been” | した | “did / was (aux.)” | OK |
+| **al** | preposition “to/at the” (a + il) | に | “to/at (locative particle)” | OK |
+| **piè** | noun “foot (of a hill)” | 麓 | “foot, base” | OK |
+| **d'un** | genitive “of a” (di + un) | の | “of / ’s (possessive particle)” | OK |
+| **colle** | noun “hill” | 丘 | “hill” | OK |
+| **giunto** | past participle “arrived, reached” | 到着 | “arrival, reach” | OK |
+| **là** | demonstrative adverb “there” | そこ | “there” | OK |
+| **dove** | relative adverb “where” (locative) – encoded by the surrounding clause in Japanese | — (implicit) | — | **UNNECESSARY** (no direct lexical equivalent) |
+| **terminava** | imperfect “was ending” | 終わる | “to end / ends” | OK |
+| **quella** | demonstrative adjective “that” | あの | “that (far)” | OK |
+| **valle** | noun “valley” | 谷 | “valley” | OK |
+| **che** | relative pronoun introducing clause “which …” | は | topic marker linking “その谷は …” | OK |
+| **m'avea** | pluperfect “had (to) me” – causal verb “had caused” | 貫いていた | “had pierced / had filled (with fear)” | OK |
+| **di** | preposition “with, by” (of) | で | “by/with (instrumental particle)” | OK |
+| **paura** | noun “fear” | 恐怖 | “fear” | OK |
+| **il** | definite article (masc. sing.) – not expressed in Japanese | — | — | **UNNECESSARY** |
+| **cor** | noun “heart” (archaic *cuore*) | 心 | “heart” | OK |
+| **compunto** | past participle “pierced, filled” (resultative) | 貫いていた | “pierced / filled (resultative)” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *dove* (no lexical counterpart; the locative meaning is conveyed by “そこは … 場所で”).  
+- **UNNECESSARY**: *il* (Japanese does not use definite articles).  
+
+All other source tokens have appropriate Japanese equivalents that preserve the meaning of the reference translation and respect the grammatical roles identified in Step 1.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: しかし、私が丘の麓に到着した後、  
+  - Issue: none  
+  - Corrected: しかし、私が丘の麓に到着した後、  
+
+- Line 14:
+  - Original: そこはあの谷が終わる場所で  
+  - Issue: none  
+  - Corrected: そこはあの谷が終わる場所で  
+
+- Line 15:
+  - Original: その谷は私の心を恐怖で貫いていた、  
+  - Issue: none  
+  - Corrected: その谷は私の心を恐怖で貫いていた、  
+
+```
+しかし、私が丘の麓に到着した後、
+そこはあの谷が終わる場所で
+その谷は私の心を恐怖で貫いていた、 
+```
+]]></message>
+</messages>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಮತ್ತು ಅವಳು ನನ್ನ ಮುಖದ ಮುಂದೆ ಚಲಿಸಲಿಲ್ಲ,  
+ಬದಲಿಗೆ ಅವಳು ನನ್ನ ಮಾರ್ಗವನ್ನು ಬಹಳವಾಗಿ ಅಡ್ಡಿಪಡಿಸಿತು,  
+ಹಿಂತಿರುಗಲು ನಾನು ಅನೇಕ ಬಾರಿ ತಿರುಗಿದ್ದೆ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Kannada translation)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| **e** | Coordinating conjunction linking clause to previous discourse | **ಮತ್ತು** | “and” | OK |
+| **non** | Negation of the predicate “move” | **ಚಲಿಸಲಿಲ್ಲ** (contains negation) | “did not move” | OK |
+| **mi** | 1st‑person dative/accusative clitic (refers to speaker) – not rendered in Kannada | — | — | **MISSING** |
+| **si** | Reflexive marker (part of in‑transitive “move”) – not needed in Kannada | — | — | **UNNECESSARY** |
+| **partia** | Imperfect “to depart / move” (negative) | **ಚಲಿಸಲಿಲ್ಲ** | “did not move” | OK |
+| **dinanzi** | Preposition “in front of / before” | **ಮುಂದೆ** | “in front of” | OK |
+| **al** | Definite article + preposition (introduces “volto”) – no equivalent in Kannada | — | — | **UNNECESSARY** |
+| **volto** | Noun “face” (object of spatial relation) | **ಮುಖ** | “face” | OK |
+| **anzi** | Contrastive adverb “nay, rather” | **ಬದಲಿಗೆ** | “instead” | OK |
+| **‘mpediva** (impediva) | Imperfect “hindered” (intensified) | **ಅಡ್ಡಿಪಡಿಸಿತು** | “hindered” | OK |
+| **tanto** | Degree adverb “so, to such an extent” | **ಬಹಳವಾಗಿ** | “so” (intensifier) | OK |
+| **il** | Definite article – not expressed in Kannada | — | — | **UNNECESSARY** |
+| **mio** | Possessive adjective “my” (modifies cammino) | **ನನ್ನ** | “my” | OK |
+| **cammino** | Noun “road, path” (object of hindrance) | **ಮಾರ್ಗ** | “road” | OK |
+| **ch’** (che) | Subordinating conjunction “that” introducing result clause | — | — | **UNNECESSARY** |
+| **i’** (io) | 1st‑person singular pronoun “I” (subject) | **ನಾನು** | “I” | OK |
+| **fui** | Past‑historic of “to be”, forming past state for the following verb | **ತಿರುಗಿದ್ದೆ** (contains past aspect) | “had turned” | OK |
+| **per** | Preposition “for, in order to” marking purpose | **ಹಿಂತಿರುಗಲು** (infinitive purpose) | “to return” | OK |
+| **ritornar** | Infinitive “to return” (goal) | **ಹಿಂತಿರುಗಲು** | “to return” | OK |
+| **più** | Comparative adverb “more” used with “volte” → frequency >1 | **ಅನೇಕ** | “many / oftentimes” | OK |
+| **volte** | Noun “times” (frequency noun) | **ಬಾರಿ** | “times” | OK |
+| **vòlto** | Past‑historic “turned” (main action) | **ತಿರುಗಿದ್ದೆ** | “had turned” | OK |
+
+### Items Requiring Attention
+- **MISSING:** `mi` – the dative/accusative clitic has no explicit counterpart in the Kannada rendering.  
+- **UNNECESSARY:** `si`, `al`, `il`, `ch’` – these function words (reflexive marker, articles, conjunction) are naturally omitted in Kannada.  
+
+All other source tokens are adequately represented with correct meaning and grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 34**  
+  - Original: ಮತ್ತು ಅವಳು ನನ್ನ ಮುಖದ ಮುಂದೆ ಚಲಿಸಲಿಲ್ಲ,  
+  - Issue: Missing representation of the dative clitic **mi**.  
+  - Corrected: ಮತ್ತು ಅವಳು **ನನ್ನಿಗೆ** ಮುಖದ ಮುಂದೆ ಚಲಿಸಲಿಲ್ಲ,  
+
+- **Line 35**  
+  - Original: ಬದಲಿಗೆ ಅವಳು ನನ್ನ ಮಾರ್ಗವನ್ನು ಬಹಳವಾಗಿ ಅಡ್ಡಿಪಡಿಸಿತು,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 36**  
+  - Original: ಹಿಂತಿರುಗಲು ನಾನು ಅನೇಕ ಬಾರಿ ತಿರುಗಿದ್ದೆ.  
+  - Issue: none  
+  - Corrected: no change  
+
+```kannada
+ಮತ್ತು ಅವಳು ನನ್ನಿಗೆ ಮುಖದ ಮುಂದೆ ಚಲಿಸಲಿಲ್ಲ,
+ಬದಲಿಗೆ ಅವಳು ನನ್ನ ಮಾರ್ಗವನ್ನು ಬಹಳವಾಗಿ ಅಡ್ಡಿಪಡಿಸಿತು,
+ಹಿಂತಿರುಗಲು ನಾನು ಅನೇಕ ಬಾರಿ ತಿರುಗಿದ್ದೆ.
+```
+]]></message>
+</messages>

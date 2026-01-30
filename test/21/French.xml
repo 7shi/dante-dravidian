@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+**61** Alors que je retombais vers le lieu bas,  
+**62** devant mes yeux il m’a été présenté  
+**63** qui après un long silence semblait rauque.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (FR → EN) | Status |
+|-------------|----------------------|----------------------|----------------------------|--------|
+| Mentre | temporal conjunction “while” | **Alors que** | “while / as” | OK |
+| ch' | subordinating conjunction “that / while” (part of *che*) | **que** | “that / that” | OK |
+| i' | 1st sg pronoun “I” | **je** | “I” | OK |
+| rovinava | imperfect “was falling / going down” | **retombais** | “was falling / was dropping” | OK |
+| in | preposition of direction “to / into” | **vers** | “towards” | OK |
+| basso | adjective “low” | **bas** | “low / low‑lying” | OK |
+| loco | noun “place, location” | **lieu** | “place” | OK |
+| dinanzi | adverb / preposition “before, in front of” | **devant** | “in front of / before” | OK |
+| a | preposition “to, at” (introducing *li occhi*) | — | — | **UNNECESSARY** (French “devant” already conveys the spatial relation) |
+| li | definite article “the” (plural) | — | — | **UNNECESSARY** (French uses possessive “mes” instead of a definite article) |
+| occhi | noun “eyes” | **yeux** | “eyes” | OK |
+| mi | 1st sg dative clitic “to me” | **m’** (in *m’a*) | “to me” (as part of “m’a”) | OK |
+| si | impersonal/reflexive pronoun (passive) | — | — | **UNNECESSARY** (passive is expressed by “a été” without a reflexive pronoun) |
+| fu | auxiliary “was” (remote past) | **a** (in *a été*) | “has / was” (auxiliary) | OK |
+| offerto | past participle “offered / presented” | **présenté** | “presented / offered” | OK |
+| chi | relative pronoun “who, one who” | **qui** | “who / that” | OK |
+| per | preposition “through, by means of” | **après** | “after” | **WRONG** (semantic mismatch; “après” denotes temporal succession, not the instrumental “through”) |
+| lungo | adjective “long” | **long** | “long” | OK |
+| silenzio | noun “silence” | **silence** | “silence” | OK |
+| parea | imperfect “seemed” | **semblait** | “seemed” | OK |
+| fioco | adjective “hoarse, weak, faint” | **rauque** | “hoarse / raspy” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `a`, `li`, `si` – French does not need these particles because the preposition “devant” and the passive construction “a été présenté” already convey the meaning.  
+- **WRONG**: `per` – rendered as **après** in French, which changes the relation from “through/by means of” to “after”. A more faithful rendering would be **par** or **au moyen de**.  
+
+All other source tokens are correctly represented (OK).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 61**  
+  - Original: *Alors que je retombais vers le lieu bas,*  
+  - Issue: none  
+  - Corrected: *Alors que je retombais vers le lieu bas,*  
+
+- **Line 62**  
+  - Original: *devant mes yeux il m’a été présenté*  
+  - Issue: none  
+  - Corrected: *devant mes yeux il m’a été présenté*  
+
+- **Line 63**  
+  - Original: *qui après un long silence semblait rauque.*  
+  - Issue: **WRONG** – “après” expresses temporal succession, not the instrumental “through”.  
+  - Corrected: *qui par un long silence semblait rauque.*  
+
+```text
+Alors que je retombais vers le lieu bas,
+devant mes yeux il m’a été présenté
+qui par un long silence semblait rauque.
+```
+]]></message>
+</messages>

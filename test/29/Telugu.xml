@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+85 నీవు నా గురువు మరియు నా రచయిత,  
+86 నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి  
+87 అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Telugu)**  
+
+| # | Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (ENG) | Status |
+|---|-------------|-----------------------|----------------------|------------------------|--------|
+| 1 | **Tu** | addressee of the discourse | **నీవు** | “you” | OK |
+| 2 | **se'** | copular verb linking subject to complement | *(omitted)* | – | UNNECESSARY |
+| 3 | **lo** | definite article, marks noun as definite | *(omitted)* | – | UNNECESSARY |
+| 4 | **mio** | possessive adjective, speaker’s possession | **నా** | “my” | OK |
+| 5 | **maestro** | noun, teacher/guide of speaker | **గురువు** | “master / teacher” | OK |
+| 6 | **e** | coordinating conjunction linking predicates | **మరియు** | “and” | OK |
+| 7 | **'l** | definite article (masc. sing.) | *(omitted)* | – | UNNECESSARY |
+| 8 | **mio** | possessive adjective, speaker’s possession | **నా** | “my” | OK |
+| 9 | **autore** | noun, creator of the speaker’s work | **రచయిత** | “author” | OK |
+|10| **tu** | repeated addressee | **నీవే** | “you (emphatic)” | OK |
+|11| **se'** | copular verb (again) | *(omitted)* | – | UNNECESSARY |
+|12| **solo** | adverb/adj. “alone”, exclusive | **ఏకైక** | “alone / only” | OK |
+|13| **colui** | demonstrative pronoun identifying the unique source | **వ్యక్తి** | “the one / person” | OK |
+|14| **da** | preposition “from” (source relation) | *(omitted)* | – | UNNECESSARY |
+|15| **cu'** | relative pronoun “whom” | *(omitted)* | – | UNNECESSARY |
+|16| **io** | 1st‑person singular pronoun (subject) | **నేను** | “I” | OK |
+|17| **tolsI** | verb “took” (preterite) | **తీసుకున్న** | “took” | OK |
+|18| **lo** | definite article rendered as demonstrative | **అది** | “that / it” | OK |
+|19| **bello** | adjective “fair / beautiful” | **అందమైన** | “beautiful” | OK |
+|20| **stilo** | noun “style” | **శైలి** | “style” | OK |
+|21| **che** | relative pronoun “that” | **అది** | “that / it” | OK |
+|22| **m'ha** | contraction *mi ha* (aux + object) | **నాకు** | “to me” | OK |
+|23| **fatto** | past participle “done” | **ఇచ్చింది** | “gave / did” | OK |
+|24| **onore** | noun “honor” | **గౌరవాన్ని** | “honor” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (omitted because Telugu does not use them):  
+  - se' (lines 85, 86) – copular verb  
+  - lo (line 85) – definite article  
+  - 'l (line 85) – definite article  
+  - da (line 86) – preposition “from”  
+  - cu' (line 86) – relative pronoun “whom”
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: నీవు నా గురువు మరియు నా రచయిత,
+  - Issue: none
+  - Corrected: నీవు నా గురువు మరియు నా రచయిత,
+
+- Line 86:
+  - Original: నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి
+  - Issue: none
+  - Corrected: నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి
+
+- Line 87:
+  - Original: అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+  - Issue: none
+  - Corrected: అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+
+```
+నీవు నా గురువు మరియు నా రచయిత,
+నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి
+అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+```
+]]></message>
+</messages>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+അപ്പോൾ നീ സന്തുഷ്ടരായവരെ കാണും  
+അഗ്നിയിൽ അവർ വരാൻ പ്രതീക്ഷിക്കുന്നതിനാൽ,  
+എപ്പോഴുമെങ്കിലും അത് ഭാഗ്യവാന്മാരായ ജനങ്ങളിലേക്കാണ്.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------------------|-----------------------------|--------|
+| e | coordinating conjunction “And then” | **അപ്പോൾ** | “then / at that time” | OK |
+| vederai | future verb “thou shalt see” | **കാണും** | “will see” | OK |
+| color | demonstrative pronoun “those” | **വരെ** (as part of “സന്തുഷ്ടരായവരെ”) | “those (people)” | OK |
+| che (relative) | relative pronoun “who” | — (relative clause is fused into the adjective) | — | UNNECESSARY |
+| son | copular verb “are” | — (state expressed by the adjective) | — | UNNECESSARY |
+| contenti | predicate adjective “contented” | **സന്തുഷ്ടരായ** | “contented” | OK |
+| nel | preposition “in the” | **അഗ്നിയിൽ** | “in the fire” | OK |
+| foco | noun “fire” | **അഗ്നി** (within “അഗ്നിയിൽ”) | “fire” | OK |
+| perché | causal conjunction “because” | **പ്രതീക്ഷിക്കുന്നതിനാൽ** | “because (they) hope” | OK |
+| speran | verb “they hope” | **പ്രതീക്ഷിക്കുന്ന** | “hoping” | OK |
+| di | infinitive marker “to” | **വരാൻ** (infinitive suffix “‑ാൻ”) | “to come” | OK |
+| venire | infinitive “come” | **വരാൻ** | “to come” | OK |
+| quando | temporal conjunction “whenever” | **എപ്പോഴുമെങ്കിലും** | “whenever” | OK |
+| che (idiom) | particle reinforcing “quando che” | — (no separate lexical item) | — | UNNECESSARY |
+| sia | subjunctive “it may be” | **ആണ്** | “is” (expresses potentiality in context) | OK |
+| a | preposition “to” | **ലേക്ക്** (within “ജനങ്ങളിലേക്കാണ്”) | “to” | OK |
+| le | definite article “the” (feminine plural) | — (articles are not expressed) | — | UNNECESSARY |
+| beate | adjective “blessed” | **ഭാഗ്യവാന്മാരായ** | “blessed” | OK |
+| genti | noun “folk” | **ജനങ്ങൾ** (within “ജനങ്ങളിലേക്കാണ്”) | “people / folk” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `che` (relative), `son`, `che` (idiomatic), `le` – Malayalam does not require separate words for these functions; the meaning is conveyed through morphology or is omitted.  
+- **OK**: All other source words have appropriate Malayalam equivalents with correct grammatical agreement. No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 118:
+  - Original: **അപ്പോൾ നീ സന്തുഷ്ടരായവരെ കാണും**
+  - Issue: none
+  - Corrected: **no change**
+
+- Line 119:
+  - Original: **അഗ്നിയിൽ അവർ വരാൻ പ്രതീക്ഷിക്കുന്നതിനാൽ,**
+  - Issue: trailing comma (source line has no end punctuation; internal commas are not allowed)
+  - Corrected: **അഗ്നിയിൽ അവർ വരാൻ പ്രതീക്ഷിക്കുന്നതിനാൽ**
+
+- Line 120:
+  - Original: **എപ്പോഴുമെങ്കിലും അത് ഭാഗ്യവാന്മാരായ ജനങ്ങളിലേക്കാണ്.**
+  - Issue: none
+  - Corrected: **no change**
+
+```
+അപ്പോൾ നീ സന്തുഷ്ടരായവരെ കാണും
+അഗ്നിയിൽ അവർ വരാൻ പ്രതീക്ഷിക്കുന്നതിനാൽ
+എപ്പോഴുമെങ്കിലും അത് ഭാഗ്യവാന്മാരായ ജനങ്ങളിലേക്കാണ്.
+```
+]]></message>
+</messages>

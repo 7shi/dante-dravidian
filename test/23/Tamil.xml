@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அவர் எனக்கு பதிலளித்தார் ஆண் அல்ல ஆண் நான் ஒருகாலம் இருந்தேன்,  
+என் பெற்றோர் லோம்பார்டுகள் இருந்தனர்,  
+நாங்கள் இருவரும் நாட்டின் அடிப்படையில் மான்டுவான்கள்.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Tamil)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| **Rispuosemi:** | “He answered me” (verb + enclitic) | **அவர் பதிலளித்தார்** | “He answered” | OK |
+| **«Non** | negation particle “not” | **அல்ல** | “not” | OK |
+| **omo,** (1st) | noun “man” (present) | **ஆண்** | “man” | OK |
+| **omo** (2nd) | noun “man” (past) | **ஆண்** | “man” | OK |
+| **già** | temporal adverb “once / already” | **ஒருகாலம்** | “once” | OK |
+| **fui,** | copular verb “was” (1st sg.) | **இருந்தேன்** | “was” | OK |
+| **e** | coordinating conjunction “and” | — | — | **MISSING** |
+| **li** | definite article “the” (masc. pl.) | — | — | **UNNECESSARY** |
+| **parenti** | noun “parents” (plural) | **பெற்றோர்** | “parents” | OK |
+| **miei** | possessive adjective “my” | **என்** | “my” | OK |
+| **furon** | copular verb “were” (3rd pl.) | **இருந்தனர்** | “were” | OK |
+| **lombardi,** | noun/adjective “Lombards” (plural) | **லோம்பார்டுகள்** | “Lombards” | OK |
+| **mantoani** | noun “Mantuans” (by country) | **மான்டுவான்கள்** | “Mantuans” | OK |
+| **per** | preposition “by / for” (basis of identification) | **ஆல்** | “by” | OK |
+| **patrïa** | noun “country / homeland” | **நாடு** | “country” | OK |
+| **ambedui.** | pronoun/adjective “both” (dual) | **இருவரும்** | “both” | OK |
+
+---
+
+### Items to Note  
+
+- **Missing**:  
+  - **e** – the coordinating conjunction “and” is present in the source but omitted in the Tamil rendering.  
+
+- **Unnecessary (source‑side)**:  
+  - **li** – the definite article “the” is not required in Tamil and therefore has no counterpart.  
+
+- **Unnecessary (target‑side)** – elements that appear in the Tamil translation but are not present in the source:  
+  - **எனக்கு** (“to me”) – added to convey the object of “answered”.  
+  - **நாங்கள்** (“we”) – introduced to express the dual subject implied by “ambedui”.  
+  - **மற்றும்** (if used) – a conjunction that could appear but is not in the current translation.  
+
+No **WRONG** or **GRAMMAR** errors were detected in the alignment; all mapped items preserve the intended truth‑conditions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 67:
+  - Original: அவர் எனக்கு பதிலளித்தார் ஆண் அல்ல ஆண் நான் ஒருகாலம் இருந்தேன்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 68:
+  - Original: என் பெற்றோர் லோம்பார்டுகள் இருந்தனர்,
+  - Issue: missing coordinating conjunction “e” (and)
+  - Corrected: மற்றும் என் பெற்றோர் லோம்பார்டுகள் இருந்தனர்,  
+
+- Line 69:
+  - Original: நாங்கள் இருவரும் நாட்டின் அடிப்படையில் மான்டுவான்கள்.
+  - Issue: none
+  - Corrected: no change  
+
+```
+அவர் எனக்கு பதிலளித்தார் ஆண் அல்ல ஆண் நான் ஒருகாலம் இருந்தேன்,
+மற்றும் என் பெற்றோர் லோம்பார்டுகள் இருந்தனர்,
+நாங்கள் இருவரும் நாட்டின் அடிப்படையில் மான்டுவான்கள்.
+```
+]]></message>
+</messages>

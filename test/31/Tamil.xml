@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+உனக்கு மற்றொரு பயணத்தை எடுத்துக் கொள்ள வேண்டும்,  
+அவர் பதிலளித்தார் அவர் என்னை அழுததை கண்டபோது,  
+நீ இந்த காட்டு இடத்திலிருந்து தப்ப விரும்பினால்;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| **A** | preposition (dative) “to” | *UNNECESSARY* (no separate word) | – | UNNECESSARY |
+| **te** | 2nd‑sg. pronoun (accusative) “you” | உனக்கு | “to you” | OK |
+| **convien** | modal “it behoves / must” | வேண்டும் | “must / is obligatory” | OK |
+| **tenere** | infinitive “to hold / undertake” | எடுத்துக் கொள்ள | “to take‑hold / undertake” | OK |
+| **altro** | adjective “another” | மற்றொரு | “another” | OK |
+| **vïaggio** | noun “journey / course” | பயணத்தை | “the journey (ACC)” | OK |
+| **rispuose** | verb “replied” | பதிலளித்தார் | “replied” | OK |
+| **poi** | adverb “after / when” (temporal) | கண்டபோது | “when (saw)” | OK |
+| **che** | conjunction “that / when” | *UNNECESSARY* (absorbed in “கண்டபோது”) | – | UNNECESSARY |
+| **lagrimar** | infinitive “to weep” | அழுததை | “the weeping” | OK |
+| **mi** | pronoun “me” (acc.) | என்னை | “me” | OK |
+| **vide** | verb “saw” | கண்ட | “saw” | OK |
+| **se** | conjunction “if” | *UNNECESSARY* (absorbed in “விரும்பினால்”) | – | UNNECESSARY |
+| **vuo'** | verb “wish / want” | விரும்பு | “wish / want” | OK |
+| **campar** | infinitive “to escape” | தப்ப | “escape” | OK |
+| **d'esto** | demonstrative “this” (genitive) | இந்த | “this” | OK |
+| **loco** | noun “place” | இடம் | “place” | OK |
+| **selvaggio** | adjective “savage / wild” | காட்டு | “wild / savage” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *A*, *che*, *se* – Italian functional words that have no independent lexical counterpart in Tamil; their meaning is encoded in the case‑marking or verb morphology.
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are present and grammatically correct in the Tamil rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: உனக்கு மற்றொரு பயணத்தை எடுத்துக் கொள்ள வேண்டும்,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: அவர் பதிலளித்தார் அவர் என்னை அழுததை கண்டபோது,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: நீ இந்த காட்டு இடத்திலிருந்து தப்ப விரும்பினால்;
+  - Issue: none
+  - Corrected: no change  
+
+```
+உனக்கு மற்றொரு பயணத்தை எடுத்துக் கொள்ள வேண்டும்,
+அவர் பதிலளித்தார் அவர் என்னை அழுததை கண்டபோது,
+நீ இந்த காட்டு இடத்திலிருந்து தப்ப விரும்பினால்;
+```
+]]></message>
+</messages>

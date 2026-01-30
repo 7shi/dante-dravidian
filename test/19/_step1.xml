@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+55 E qual è quei che volontieri acquista,
+56 e giugne 'l tempo che perder lo face,
+57 che 'n tutti suoi pensier piange e s'attrista;
+Reference Translation (provided):
+And such as he is who gaineth willingly, and the time arrives that makes him lose, who in all his thoughts weeps and is sad,
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 55** *E qual è quei che volontieri acquista,* → **Locked Meaning**:  
+  ∃ *x* [ *x* is the individual denoted by *quei* ∧ *qual è* asserts “such as he is” ∧ *volontieri acquista* holds of *x* (x willingly acquires/gains something) ].
+
+- **Line 56** *e giugne 'l tempo che perder lo face,* → **Locked Meaning**:  
+  ∃ *t* [ *t* = “the time” ∧ *giugne* (t arrives) ∧ ∃ *x* (the same *x* from line 55) ∧ *che perder lo face* means “that makes x lose” (t causes x to lose) ].
+
+- **Line 57** *che 'n tutti suoi pensier piange e s'attrista;* → **Locked Meaning**:  
+  ∀ *p* [ p ∈ *all his thoughts* → *x* weeps (πange) ∧ *x* becomes sad (s’attrista) ]; i.e., the same *x* weeps and is sad in every thought he has.  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|-----------------------|------------------|
+| **E** | Conj. (coordinating) | *And* | Connects clause to previous discourse | Clause‑initial coordinator |
+| **qual** | Interrogative/relative pronoun (used as “such as”) | *such as* | Introduces a descriptive equivalence | Predicative modifier |
+| **è** | Verb, 3sg present indicative of *essere* | *is* | Copular linking of subject to description | Predicate verb |
+| **quei** | Demonstrative pronoun (archaic 3sg) | *he* | Refers to the individual being described | Subject pronoun |
+| **che** | Relative pronoun | *who* | Introduces relative clause describing *quei* | Subordinator |
+| **volontieri** | Adverb | *willingly* | Manner of the acquisition | Adverbial modifier |
+| **acquista** | Verb, 3sg present indicative of *acquistare* | *gaineth* | Action of acquiring/gaining | Main verb of relative clause |
+| **e** | Conj. (coordinating) | *and* | Links the next clause to the previous | Clause‑initial coordinator |
+| **giugne** | Verb, 3sg present indicative of *giungere* | *arrives* | Event of the time coming | Main verb |
+| **'l** | Definite article (elided *il*) | *the* | Specifies the noun *tempo* | Determiner |
+| **tempo** | Noun, masculine singular | *time* | Temporal entity that arrives | Subject noun |
+| **che** | Relative pronoun | *that* | Introduces clause describing *tempo* | Subordinator |
+| **perder** | Infinitive of *perdere* | *lose* | Action caused by the time | Verb (infinitive complement) |
+| **lo** | Clitic pronoun (accusative, 3sg masc) | *him* | Direct object referring to *quei*/*he* | Object pronoun |
+| **face** | Verb, 3sg present indicative of *fare* (archaic *face*) | *makes* | Causative verb linking time to loss | Main verb of causal clause |
+| **che** | Relative pronoun | *who* | Refers back to the same individual | Subordinator |
+| **'n** | Preposition (contraction of *in*) | *in* | Locative preposition for mental space | Preposition |
+| **tutti** | Adjective (plural, masculine) | *all* | Quantifier for *pensier* | Determiner |
+| **suoi** | Possessive adjective (masc. plural) | *his* | Possessor of the thoughts | Possessive modifier |
+| **pensier** | Noun, masculine singular (archaic *pensiero*) | *thoughts* | Mental contents of the subject | Object of preposition |
+| **piange** | Verb, 3sg present indicative of *piangere* | *weeps* | Emotional reaction of the subject | Main verb |
+| **e** | Conj. (coordinating) | *and* | Connects two predicates of the subject | Coordinator |
+| **s'attrista** | Reflexive verb, 3sg present indicative of *attristarsi* | *is sad* | Subject’s emotional state | Predicative verb (reflexive) |
+
+*Notes*  
+
+- The table respects the exact token order of the source lines.  
+- Morphological tags are given in a simplified, pedagogical format (e.g., “Verb, 3sg present indicative”).  
+- “Contextual Definition” captures the meaning of each token as it functions in the specific clause, not a generic dictionary gloss.  
+- “Grammatical Role” indicates the syntactic function of the token within its clause (subject, object, modifier, etc.).
+]]></message>
+</messages>

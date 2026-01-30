@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+109 Questi la caccerà per ogne villa,
+110 fin che l'avrà rimessa ne lo 'nferno,
+111 là onde 'nvidia prima dipartilla.
+Reference Translation (provided):
+He shall hunt her through every town till he shall have set her back in hell, there whence envy first sent her forth.
+]]></message>
+<message role="assistant"><![CDATA[
+**Step 1 – Interpretation Lock (one bullet per source line)**  
+
+- **Line 109** – *Questi la caccerà per ogne villa* → **Locked Meaning**:  
+  There exists an agent **Questi** (the male figure) such that, in the future, he will **hunt** the patient **la** (her) **through every town** (for each location *villa*).  
+
+- **Line 110** – *fin che l’avrà rimessa ne lo ’nferno* → **Locked Meaning**:  
+  The hunting continues **until** the moment at which the agent **will have set** the patient **l’** (her) **back in hell** (*ne lo ’nferno*).  
+
+- **Line 111** – *là onde ’nvidia prima dipartilla* → **Locked Meaning**:  
+  At that place (**là**), **envy** (*’nvidia*) is the **first** cause that **sent** the patient **her** (*la*) **forth**.  
+
+---
+
+### Source‑Reference Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|-----------------------|------------------|
+| **Questi** | Demonstrative pronoun, nominative, singular (archaic) | *He* | The male agent who performs the hunting | Subject |
+| **la** | Clitic pronoun, accusative, feminine singular | *her* | Female patient of the hunt | Direct Object |
+| **caccerà** | Verb *cacciare*, future indicative, 3 sg | *shall hunt* | Future action of pursuing | Predicate (verb) |
+| **per** | Preposition | *through* | Marks traversal across locations | Prepositional complement |
+| **ogne** | Determiner (archaic *ogni*) | *every* | Quantifier over towns | Determiner of noun |
+| **villa** | Noun, feminine singular | *town* | Individual location being traversed | Object of preposition |
+| **fin** | Subordinating conjunction | *till* | Introduces temporal limit | Subordinator |
+| **che** | Complementizer (relative) | *that* | Introduces clause expressing the endpoint | Subordinator |
+| **l'** | Elided clitic pronoun (*la*) | *her* | Patient of the placement action | Direct Object of *rimessa* |
+| **avrà** | Auxiliary verb *avere*, future indicative, 3 sg | *shall have* | Forms the future‑perfect with *rimessa* | Auxiliary |
+| **rimessa** | Past participle of *rimettere* | *set back* | Action of returning her to a place | Main verb (participle) |
+| **ne** | Preposition (variant of *in*) | *in* | Introduces locative complement | Prepositional complement |
+| **lo** | Definite article, masculine singular | *the* | Determines the noun *’nferno* | Determiner |
+| **'nferno** | Noun, masculine singular (*inferno*) | *hell* | Destination where she is placed | Object of preposition |
+| **là** | Adverb of place | *there* | Locative reference for the following clause | Adverbial |
+| **onde** | Relative adverb/conjunction | *whence* | Introduces causal clause linking envy to the sending | Subordinator |
+| **'nvidia** | Noun, feminine singular (*invidia*) | *envy* | Personified force that initiates the sending | Subject of *dipartilla* |
+| **prima** | Adverb of time | *first* | Temporal qualifier indicating the initial occurrence | Adverbial modifier |
+| **dipartilla** | Verb *dipartire* (future, 3 sg) + enclitic pronoun *‑la* | *shall send forth* | Future action of dispatching her, caused by envy | Predicate (verb) with clitic object (*her*) |
+
+*Notes*  
+
+- The Italian **‘nvidia** is the elided form of **l’invidia**; the article is omitted in the English translation because the noun functions as a proper abstract agent.  
+- **dipartilla** combines the verb *dipartire* (“to send forth, dispatch”) with the clitic *‑la* (“her”), mirroring the English “sent her forth.”  
+- The future‑perfect construction **avrà rimessa** corresponds to “shall have set back,” marking the endpoint of the hunting episode.
+]]></message>
+</messages>

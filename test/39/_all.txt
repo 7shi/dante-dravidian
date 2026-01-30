@@ -1,0 +1,63 @@
+# Italian
+
+115 ove udirai le disperate strida,
+116 vedrai li antichi spiriti dolenti,
+117 ch'a la seconda morte ciascun grida;
+
+# English
+
+where thou shalt hear the despairing shrieks, shalt see the ancient spirits woeful who each proclaim the second death.
+
+# Telugu
+
+115 అక్కడ నీవు నిరాశా కేకలను వింటావు,
+116 నీవు పురాతన దుఃఖభరిత ఆత్మలను చూస్తావు,
+117 ప్రతి ఒక్కరు రెండవ మరణాన్ని అరుస్తారు;
+
+# Tamil
+
+115 அங்கு நீங்கள் துயரமான கத்தல்களை கேட்பீர்கள்,
+116 நீங்கள் பழமையான துயரமுள்ள ஆவிகளை காண்பீர்கள்,
+117 அவர்கள் ஒவ்வொருவரும் இரண்டாவது மரணத்தை அறிவிக்கிறார்கள்;
+
+# Kannada
+
+115 ಅಲ್ಲಿ ನೀನು ನಿರಾಶಾಜನಕ ಕೂಗನ್ನು ಕೇಳುವೆ,
+116 ನೀನು ಪ್ರಾಚೀನ ದುಃಖಭರಿತ ಆತ್ಮಗಳನ್ನು ನೋಡುವೆ,
+117 ಅವರು ಪ್ರತಿೊಬ್ಬರು ಎರಡನೇ ಮರಣವನ್ನು ಘೋಷಿಸುತ್ತಾರೆ;
+
+# Malayalam
+
+115 നീ അവിടെയുണ്ടാകുന്ന നിരാശാജനകമായ കരച്ചിലുകൾ കേൾക്കും,
+116 നീ പുരാതന ദുഃഖിത ആത്മാക്കളെ കാണും,
+117 ഓരോന്നും രണ്ടാം മരണത്തെ വിളിച്ചോതുന്നു;
+
+# Japanese
+
+115 そこではあなたは絶望的な叫び声を聞くだろう,
+116 あなたは古代の悲しげな霊を見るだろう,
+117 それぞれが第二の死に向かって叫ぶ;
+
+# French
+
+115 où tu entendras les cris désespérés,
+116 tu verras les anciens esprits affligés,
+117 qui chacun crie vers la seconde mort;
+
+# Spanish
+
+115 donde oirás los gritos desesperados,
+116 verás a los antiguos espíritus afligidos,
+117 que a la segunda muerte cada uno grita;
+
+# Portuguese
+
+115 onde ouvirás os gritos desesperados,
+116 verás os antigos espíritos dolorosos,
+117 que à segunda morte cada um grita;
+
+# Esperanto
+
+115 kie vi aŭdos la malesperajn kriojn,
+116 vi vidos la antikvajn dolorajn spiritojn,
+117 kiuj ĉiu krias al la dua morto;

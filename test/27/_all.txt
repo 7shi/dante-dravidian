@@ -1,0 +1,63 @@
+# Italian
+
+79 «Or se' tu quel Virgilio e quella fonte
+80 che spandi di parlar sì largo fiume?»,
+81 rispuos' io lui con vergognosa fronte.
+
+# English
+
+“Art thou then that Virgil and that fount which poureth forth so large a stream of speech?” replied I to him with bashful front:
+
+# Telugu
+
+79 ఇప్పుడు నీవే ఆ వర్జిలి ఆ మూలం
+80 అది మాట్లాడటానికి అంత పెద్ద నది వలె ప్రవహిస్తుందా?
+81 నేను అతనికి లజ్జతో కూడిన ముఖంతో సమాధానమిచ్చాను.
+
+# Tamil
+
+79 அப்பொழுது நீ அந்த விற்ஜில் மற்றும் அந்த ஊற்றா
+80 அது பேச்சின் மிகப் பெரிய நதியைப் பாய்ச்சுகிறதா?
+81 நான் அவனுக்கு வெட்கமான நெற்றியுடன் பதிலளித்தேன்.
+
+# Kannada
+
+79 ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,
+80 ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?
+81 ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+
+# Malayalam
+
+79 അപ്പോൾ നീ ആ വിർജിലിയോ ആ സ്രോതസ്സോ ആണോ
+80 അത് സംസാരത്തിന്റെ അത്രവലിയ നദി ഒഴുക്കുന്നുണ്ടോ?
+81 ഞാൻ അവനോട് ലജ്ജാശീലമായ മുഖം കൊണ്ട് മറുപടി നൽകി.
+
+# Japanese
+
+79 それで汝はあのヴァージルでありあの泉なのか
+80 それは語りという非常に大きな川を流すのか？
+81 私は恥ずかしげな顔で彼に答えた。
+
+# French
+
+79 Alors es‑tu ce Virgile et cette source
+80 qui répand un si large fleuve de parole?
+81 Je lui réponds avec un front honteux.
+
+# Spanish
+
+79 Entonces eres tú ese Virgilio y esa fuente
+80 que derrama de habla río tan amplio?
+81 respondí yo a él con frente vergonzosa.
+
+# Portuguese
+
+79 Então és tu aquele Virgílio e aquela fonte
+80 que derrama tão grande corrente de discurso?
+81 respondi a ele com fronte vergonhosa.
+
+# Esperanto
+
+79 Nun ĉu vi estas tiu Virgil kaj tiu fonto
+80 kiu verŝas tiel larĝan fluon de parolo?
+81 Mi respondis al li kun honta frunto.

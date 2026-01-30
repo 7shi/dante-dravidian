@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+64 Quando vi este homem no grande deserto,
+65 “Tem piedade de mim!” gritei a ele,
+66 “Seja o que fores sombra ou homem certo!”
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| Quando | temporal conjunction “when” | Quando | when | OK |
+| vidi | 1st sg passato remoto “saw” | vi | I saw | OK |
+| costui | demonstrative pronoun “him / this one” | este homem | this man | OK |
+| nel | preposition + definite article “in the” | no | in the | OK |
+| gran | adjective “great, large” | grande | great | OK |
+| diserto | noun “desert” | deserto | desert | OK |
+| Miserere | imperative “have pity” | **Tem piedade** | have pity | OK |
+| di | preposition “on / of” | de | of | OK |
+| me | 1st sg pronoun “me” | mim | me | OK |
+| gridi | 1st sg passato remoto “cried, shouted” | gritei | I shouted | OK |
+| a | preposition “to” | a | to | OK |
+| lui | 3rd sg pronoun “him” | ele | him | OK |
+| qual | relative pronoun “whatever / what” | o que | what | OK |
+| che | relative particle linking *qual* to the clause | – | – | **UNNECESSARY** |
+| tu | 2nd sg pronoun “you” | – | – | **UNNECESSARY** |
+| sii | subjunctive of *essere* “be” (2nd sg) | **Seja** | be | **GRAMMAR** (should be *Sejas* for 2nd sg) |
+| od | coordinating conjunction “or” | ou | or | OK |
+| ombra | noun “shade” | sombra | shade | OK |
+| od | coordinating conjunction “or” (second occurrence) | ou | or | OK |
+| omo | noun “man” | homem | man | OK |
+| certo | adjective “certain / real” | certo | certain | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: *che*, *tu* – Italian uses a relative particle and an explicit pronoun that Portuguese does not need; they are omitted naturally.  
+- **GRAMMAR**: *sii* → “Seja”. In Portuguese the 2nd‑person singular subjunctive of *ser* is **sejas**, not *seja*. The current translation contains an agreement error.  
+
+All other source tokens are correctly rendered in the Portuguese version.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**  
+  - Original: Quando vi este homem no grande deserto,  
+  - Issue: none  
+  - Corrected: Quando vi este homem no grande deserto,
+
+- **Line 65**  
+  - Original: “Tem piedade de mim!” gritei a ele,  
+  - Issue: none  
+  - Corrected: “Tem piedade de mim!” gritei a ele,
+
+- **Line 66**  
+  - Original: “Seja o que fores sombra ou homem certo!”  
+  - Issue: GRAMMAR – “Seja” and “fores” are 3rd‑person forms; they must be 2nd‑person singular subjunctive.  
+  - Corrected: “Sejas o que sejas sombra ou homem certo!”
+
+```
+Quando vi este homem no grande deserto,
+“Tem piedade de mim!” gritei a ele,
+“Sejas o que sejas sombra ou homem certo!”
+```
+]]></message>
+</messages>

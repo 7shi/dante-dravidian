@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Beaucoup sont les animaux avec lesquels elle se marie,  
+et plus en seront encore, jusqu'à ce que le lévrier  
+viendra, qui la fera mourir de douleur.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → French)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (French) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| Molti | large number of animals | **Beaucoup** | many / a lot | OK |
+| son | copular verb “are” | **sont** | are | OK |
+| li | definite article, plural masculine | **les** | the (pl.) | OK |
+| animali | plural noun “animals” | **animaux** | animals | OK |
+| a | preposition introducing relative clause “with which” | **avec** | with | OK |
+| cui | relative pronoun, object of the preposition | **lesquels** | which (masc. pl.) | OK |
+| s'ammoglia | reflexive verb “she wives / takes as spouse” | **se marie** | (she) marries / weds | OK |
+| e | coordinating conjunction “and” | **et** | and | OK |
+| più | comparative adverb “more” (indicating increase) | **plus** | more | OK |
+| saranno | future copular verb “shall be” | **seront** | will be | OK |
+| ancora | adverb “still / yet” (temporal) | **encore** | still / yet | OK |
+| infin | subordinating conjunction “until / till” | **jusqu'à** | until | OK |
+| che (line 101) | subordinator introducing the clause about the hound | **ce** (as part of *jusqu'à ce que*) | that (in “until that …”) | OK |
+| ’l | contracted definite article “the” (masc. sg.) | **le** | the (masc.) | OK |
+| veltro | noun “hound” (masc. sg.) | **lévrier** | hound | OK |
+| verrà | future verb “will come” | **viendra** | will come | OK |
+| che (line 102) | relative pronoun “that” introducing result clause | **qui** | who / that | OK |
+| la | clitic pronoun “her” (direct object) | **la** | her | OK |
+| farà | future causative verb “will make” | **fera** | will make | OK |
+| morir | infinitive “to die” | **mourir** | to die | OK |
+| con | preposition “with / of” (marking cause of death) | **de** | of | OK |
+| doglia | noun “grief / sorrow” | **douleur** | grief / pain | OK |
+
+### Items Requiring Attention
+- **None** – every source token is represented in the French translation, and all grammatical agreements (gender, number, verb forms) are correct. No unnecessary elements were added, and no missing or wrong mappings were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 100:  
+  - Original: **Beaucoup sont les animaux avec lesquels elle se marie,**  
+  - Issue: GRAMMAR – the quantifier needs “de” and the article “les” is redundant.  
+  - Corrected: **Beaucoup d'animaux avec lesquels elle se marie,**  
+
+- Line 101:  
+  - Original: **et plus en seront encore, jusqu'à ce que le lévrier**  
+  - Issue: UNNECESSARY – the pronoun “en” is not required; also smoother without it.  
+  - Corrected: **et plus seront encore, jusqu'à ce que le lévrier**  
+
+- Line 102:  
+  - Original: **viendra, qui la fera mourir de douleur.**  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+Beaucoup d'animaux avec lesquels elle se marie,
+et plus seront encore, jusqu'à ce que le lévrier
+viendra, qui la fera mourir de douleur.
+```
+]]></message>
+</messages>

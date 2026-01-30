@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+l'heure du temps et la douce saison;
+mais pas ainsi que la peur ne me donnait
+la vue qui m'apparut d'un lion.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| l'ora | “the hour” (temporal marker) | l'heure | the hour | OK |
+| del | preposition “of the” | du | of the | OK |
+| tempo | “time” | temps | time | OK |
+| e | coordinating conjunction “and” | et | and | OK |
+| la | definite article, fem. sing. | la | the (fem.) | OK |
+| dolce | adjective “sweet” | douce | sweet | OK |
+| stagione; | noun “season” (poetic image) | saison; | season | OK |
+| ma | coordinating conjunction “but” | mais | but | OK |
+| non*1* | first negation particle | pas | not (part of negation) | OK |
+| sì | resultative adverb “so” | ainsi | so / thus | OK |
+| che*1* | subordinating conjunction “that” | que | that | OK |
+| paura | noun “fear” | peur | fear | OK |
+| non*2* | second negation particle | ne | not (part of negation) | OK |
+| mi | 1st‑person singular indirect object “to me” | me | me | OK |
+| desse | verb “give” (3sg subjunctive imperfect) – potential cause of fear | donnait | gave / was giving | **GRAMMAR** (imperfect indicative ≠ subjunctive) |
+| la*2* | definite article, fem. sing. | la | the (fem.) | OK |
+| vista | noun “sight, view” | vue | sight / view | OK |
+| che*2* | relative pronoun “which” | qui | which | OK |
+| m'apparve | verb “appear” (3sg imperfect subjunctive) with clitic “to me” | m'apparut | appeared (to me) | **GRAMMAR** (historic past ≠ imperfect subjunctive) |
+| d'un | preposition + indefinite article “of a” | d'un | of a | OK |
+| leone. | noun “lion” | lion. | lion | OK |
+
+\* **non*1** = first occurrence of *non* (negates the comparative clause)  
+\* **non*2** = second occurrence of *non* (negates the verb)  
+\* **che*1** = subordinating “that” introducing the resultative clause  
+\* **che*2** = relative “which” introducing the descriptive clause  
+
+---
+
+### Items Requiring Attention
+- **desse → donnait** – Verb mood/tense mismatch (subjunctive → indicative). Marked **GRAMMAR**.  
+- **m'apparve → m'apparut** – Verb tense/mood mismatch (imperfect subjunctive → historic past). Marked **GRAMMAR**.  
+
+All other source tokens have appropriate French equivalents; no tokens are missing, wrong, or unnecessary.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 43**  
+  - Original: `l'heure du temps et la douce saison;`  
+  - Issue: none  
+  - Corrected: `l'heure du temps et la douce saison;`  
+
+- **Line 44**  
+  - Original: `mais pas ainsi que la peur ne me donnait`  
+  - Issue: verb mood/tense (indicative imperfect) – should be literary subjunctive to match the Italian subjunctive.  
+  - Corrected: `mais pas ainsi que la peur ne me donna`  
+
+- **Line 45**  
+  - Original: `la vue qui m'apparut d'un lion.`  
+  - Issue: none  
+  - Corrected: `la vue qui m'apparut d'un lion.`  
+
+```text
+l'heure du temps et la douce saison;
+mais pas ainsi que la peur ne me donna
+la vue qui m'apparut d'un lion.
+```
+]]></message>
+</messages>

@@ -1,0 +1,63 @@
+# Italian
+
+85 Tu se' lo mio maestro e 'l mio autore,
+86 tu se' solo colui da cu' io tolsi
+87 lo bello stilo che m'ha fatto onore.
+
+# English
+
+Thou art my master and my author; thou alone art he from whom I took the fair style that hath done me honor.
+
+# Telugu
+
+85 నీవు నా గురువు మరియు నా రచయిత,
+86 నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి
+87 అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+
+# Tamil
+
+85 நீ என் ஆசிரியரும் என் எழுத்தாளரும்,
+86 நீ மட்டும் நான் அழகான பாணியை எடுத்தவர்
+87 அந்த அழகான பாணி என்னை கௌரவப்படுத்தியது.
+
+# Kannada
+
+85 ನೀನು ನನ್ನ ಗುರು ಮತ್ತು ನನ್ನ ಲೇಖಕ,
+86 ನೀನು ಮಾತ್ರ ಅವನಿಂದ ನಾನು ತೆಗೆದುಕೊಂಡೆ
+87 ಆ ಸುಂದರ ಶೈಲಿ ಅದು ನನಗೆ ಗೌರವವನ್ನು ನೀಡಿದೆ.
+
+# Malayalam
+
+85 നീ എന്റെ അധ്യാപകനും എന്റെ രചയിതാവുമാണ്,
+86 നീ മാത്രം ആ വ്യക്തിയാണ് നിന്നിൽ നിന്ന് ഞാൻ എടുത്തു
+87 എനിക്ക് ആദരവ് നൽകിയ സുന്ദരമായ ശൈലി.
+
+# Japanese
+
+85 あなたは私の師であり私の作者です,
+86 あなたは私が美しい様式を得た唯一の相手です
+87 それは私に名誉をもたらした.
+
+# French
+
+85 Tu es mon maître et mon auteur,
+86 tu es seul celui de qui j’ai pris
+87 le beau style qui m’a fait honneur.
+
+# Spanish
+
+85 Tú eres mi maestro y mi autor,
+86 Tú eres solo aquel de quien tomé
+87 el bello estilo que me ha hecho honor.
+
+# Portuguese
+
+85 Tu és o meu mestre e o meu autor,
+86 tu és só aquele de quem eu tirei
+87 o belo estilo que me fez honra.
+
+# Esperanto
+
+85 Vi estas mia majstro kaj mia aŭtoro,
+86 Vi estas sola tiu, de kiu mi prenis
+87 la bela stilo, kiu faris al mi honoron.

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+இந்த மிருகத்தால் நீக் கத்துகிறாய்,  
+அதன் பாதையில் யாரும் செல்ல விடாது,  
+ஆனால் அவனை இவ்வளவு தடை செய்து அவனை கொல்கிறது;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| **ché** | causal conjunction “because of which” | **மிருகத்தால்** | “by the beast (because of the beast)” | OK |
+| **questa** | demonstrative “this” (modifying *bestia*) | **இந்த** | “this” | OK |
+| **bestia** | noun “beast” (the cause of the cry) | **மிருகம்** (within **மிருகத்தால்**) | “beast” | OK |
+| **per** | preposition introducing the relative clause “for which” | *(covered by instrumental case in **மிருகத்தால்** and **பாதையில்**)* | “by / on” | UNNECESSARY (explicit preposition not needed in Tamil) |
+| **la** | definite article (feminine singular) | – (no article in Tamil) | – | UNNECESSARY |
+| **qual** | relative pronoun “which” | – (implicit in Tamil) | – | UNNECESSARY |
+| **tu** | 2nd‑person pronoun “you” | **நீக்** | “you” | OK |
+| **gride** | verb “cry out” (present) | **கத்துகிறாய்** | “are crying out” | OK |
+| **non** | negation “not” | **விடாது** (part of the negative verb) | “does not allow” | OK |
+| **lascia** | verb “lets / allows” (negated) | **விடாது** (negative form) | “does not allow” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **யாரும்** | “anyone” | OK |
+| **pasar** | infinitive “to pass / go through” | **செல்ல** | “to go / pass” | OK |
+| **per** (2nd occurrence) | preposition “through / along” | **பாதையில்** (instrumental) | “on the path” | UNNECESSARY |
+| **la** (2nd occurrence) | definite article | – | – | UNNECESSARY |
+| **sua** | possessive adjective “its” | **அதன்** | “its” | OK |
+| **via** | noun “way / path” | **பாதையில்** | “path” | OK |
+| **ma** | coordinating conjunction “but” | **ஆனால்** | “but” | OK |
+| **tanto** | adverb of degree “so much / to such an extent” | **இவ்வளவு** | “so much” | OK |
+| **lo** | pronoun “him” (object of hindrance) | **அவனை** (first occurrence) | “him” | OK |
+| **'mpedisce** | verb “hinders / blocks” | **தடை செய்து** | “hinders and does” | OK |
+| **che** | complementizer “that” (introducing result clause) | – (implicit in Tamil) | – | UNNECESSARY |
+| **l’uccide** | verb “kills him” | **கொல்கிறது** (with second **அவனை**) | “kills him” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *per* (twice), *la* (twice), *qual*, *che* – Italian functional words that have no direct lexical counterpart in Tamil; their meaning is conveyed by case marking or context.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the Tamil rendering respects agreement, number, and verb‑subject alignment.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: இந்த மிருகத்தால் நீக் கத்துகிறாய்,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 2:  
+  - Original: அதன் பாதையில் யாரும் செல்ல விடாது,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 3:  
+  - Original: ஆனால் அவனை இவ்வளவு தடை செய்து அவனை கொல்கிறது;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+இந்த மிருகத்தால் நீக் கத்துகிறாய்,
+அதன் பாதையில் யாரும் செல்ல விடாது,
+ஆனால் அவனை இவ்வளவு தடை செய்து அவனை கொல்கிறது;
+```
+]]></message>
+</messages>

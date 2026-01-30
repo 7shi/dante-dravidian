@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Do mi pensas kaj taksas ke tio estas por via bono  
+Ke vi sekvas min kaj mi estos via gvidanto,  
+Kaj mi kondukos vin de ĉi tie tra la eterna loko;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| Ond' | causal conjunction “wherefore” | **Do** | therefore / thus | OK |
+| io | 1st‑person singular pronoun (subject) | **mi** | I | OK |
+| per | preposition “for” (benefactive) | **por** | for | OK |
+| lo | definite article referring to the abstract noun “best” | — (omitted) | — | **UNNECESSARY** |
+| tuo | 2nd‑person possessive adjective “your” | **via** | your | OK |
+| me' | abstract noun “best / highest good” | **bono** | good | OK |
+| penso | verb “think” | **pensas** | think | OK |
+| e (1) | coordinating conjunction “and” | **kaj** | and | OK |
+| discerno | verb “deem / judge” | **taksas** | deem | OK |
+| che | subordinating conjunction “that” | **Ke** | that | OK |
+| tu | 2nd‑person pronoun (subject) | **vi** | you | OK |
+| mi (object) | 1st‑person pronoun (object) | **min** | me | OK |
+| segui | verb “follow” | **sekvas** | follow | OK |
+| e (2) | coordinating conjunction “and” | **kaj** | and | OK |
+| io (2) | 1st‑person pronoun (subject) | **mi** | I | OK |
+| sarò | future copular “will be” | **estos** | will be | OK |
+| tua | 2nd‑person possessive adjective “your” | **via** | your | OK |
+| guida | noun “guide” | **gvidanto** | guide | OK |
+| e (3) | coordinating conjunction “and” | **Kaj** | and | OK |
+| trarrotti | future transitive verb “will lead” | **kondukos** | will lead | OK |
+| di | preposition “from” | **de** | from | OK |
+| qui | adverb of place “here” | **ĉi tie** | here | OK |
+| per (2) | preposition “through” | **tra** | through | OK |
+| loco | noun “place” | **loko** | place | OK |
+| etterno | adjective “eternal” | **etrena** | eternal | OK |
+
+---
+
+### Items Requiring Attention
+- **lo** – marked **UNNECESSARY** because Esperanto does not use a definite article for the abstract noun “best”; the meaning is conveyed by the noun *bono* alone.  
+
+All other source words are correctly rendered (status **OK**).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 112:  
+  - Original: **Do mi pensas kaj taksas ke tio estas por via bono**  
+  - Issue: none  
+  - Corrected: **Do mi pensas kaj taksas ke tio estas por via bono**  
+
+- Line 113:  
+  - Original: **Ke vi sekvas min, kaj mi estos via gvidanto,**  
+  - Issue: missing comma after “min” (the source has a comma there)  
+  - Corrected: **Ke vi sekvas min, kaj mi estos via gvidanto,**  
+
+- Line 114:  
+  - Original: **Kaj mi kondukos vin de ĉi tie tra la eterna loko;**  
+  - Issue: none  
+  - Corrected: **Kaj mi kondukos vin de ĉi tie tra la eterna loko;**  
+
+```
+Do mi pensas kaj taksas ke tio estas por via bono
+Ke vi sekvas min, kaj mi estos via gvidanto,
+Kaj mi kondukos vin de ĉi tie tra la eterna loko;
+```
+]]></message>
+</messages>

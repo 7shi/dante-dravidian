@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Em todas as partes Ele governa e lá reina;  
+Lá está sua cidade e o alto trono:  
+Ó feliz aquele que lá Ele escolhe!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|--------------------|-----------------------|--------|
+| In | locative preposition introducing the domain “all parts” | Em | in | OK |
+| tutte | universal quantifier adjective “all” | todas | all | OK |
+| parti | set of spatial divisions of the world | partes | parts | OK |
+| impera | “He governs each part” (exerts rule) | governa | governs | OK |
+| e | coordinating conjunction linking predicates | e | and | OK |
+| quivi | adverb locating the second predicate “there” | lá | there | OK |
+| regge | “He reigns” (holds sovereign authority) | reina | reigns | OK |
+| quivi *(second occurrence)* | adverb locating existence statements “there” | Lá | there | OK |
+| è | copular verb asserting existence | está | is/stands | OK |
+| la | definite article (fem. sing.) marking “città” | sua | (article omitted – possession expressed by “sua”) | UNNECESSARY* |
+| sua | possessive adjective “His” | sua | his | OK |
+| città | noun “city” (the Sovereign’s urban domain) | cidade | city | OK |
+| e | coordinating conjunction | e | and | OK |
+| l’ | definite article (masc. sing., elided) preceding “alto” | o | the | OK |
+| alto | adjective “lofty” qualifying the seat | alto | lofty | OK |
+| seggio | noun “seat” (throne) | trono | throne/seat | OK |
+| oh | interjection vocative “O” | Ó | O | OK |
+| felice | adjective describing the emotional state “happy” | feliz | happy | OK |
+| colui | pronoun referring to the elected individual “he” | aquele | that one / he | OK |
+| cu' | relative pronoun “whom” introducing the clause | que | who/whom | OK |
+| ivi | adverb locating the act of election “there” | lá | there | OK |
+| elegge | verb “elects” (He selects) | escolhe | elects/chooses | OK |
+
+\* **UNNECESSARY** – Italian “la” (definite article before *città*) is not required in Portuguese because possession is already expressed by the adjective *sua*; the article is omitted in the translation.
+
+---
+
+### Summary of Issues
+- **UNNECESSARY**: the article *la* in “la sua città” does not have a direct counterpart in Portuguese; the translation omits it, which is natural for Portuguese grammar. No other source items are missing, wrong, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 127**:  
+  - Original: *Em todas as partes Ele governa e lá reina;*  
+  - Issue: **GRAMMAR** – pronoun “Ele” should be lowercase when not sentence‑initial.  
+  - Corrected: *Em todas as partes **ele** governa e lá reina;*  
+
+- **Line 128**:  
+  - Original: *Lá está sua cidade e o alto trono:*  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 129**:  
+  - Original: *Ó feliz aquele que lá Ele escolhe!*  
+  - Issue: **GRAMMAR** – pronoun “Ele” should be lowercase.  
+  - Corrected: *Ó feliz aquele que lá **ele** escolhe!*  
+
+```text
+Em todas as partes ele governa e lá reina;
+Lá está sua cidade e o alto trono:
+Ó feliz aquele que lá ele escolhe!
+```
+]]></message>
+</messages>

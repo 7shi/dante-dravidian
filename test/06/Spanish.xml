@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+miré hacia lo alto y vi sus hombros  
+ya vestidas con los rayos del planeta  
+que guían a los hombres rectamente por cada camino.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Spanish translation from Step 2)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| guardai | Speaker performed the act of looking upward | miré | “I looked” | OK |
+| in | Preposition marking spatial direction of the gaze | hacia | “toward” | OK |
+| alto | Destination of the upward look (the “high”) | alto | “high” | OK |
+| e | Coordinating conjunction linking two perceptual actions | y | “and” | OK |
+| vidi | Speaker performed the act of seeing | vi | “I saw” | OK |
+| le | Definite article (fem. pl.) introducing “spalle” | – (article omitted) | – | **UNNECESSARY** |
+| sue | Possessive adjective indicating the shoulders belong to the antecedent | sus | “its / his” | OK |
+| spalle | Body part observed | hombros | “shoulders” | OK |
+| vestite | Shoulders are in the state of being clothed/covered | vestidas | “clothed” (fem. pl.) | OK |
+| già | Temporal adverb indicating the covering already holds | ya | “already” | OK |
+| de' | Preposition + article “of the” introducing the source of rays | con | “with” (expresses the means of clothed) | OK |
+| raggi | Light‑like emanations from the planet | rayos | “rays” | OK |
+| del | Preposition + article “of the” linking rays to the planet | del | “of the” | OK |
+| pianeta | Celestial body emitting the rays | planeta | “planet” | OK |
+| che | Relative pronoun introducing a defining clause about the planet | que | “that” | OK |
+| mena | Planet’s action of leading people straight along every path | guían* | “lead” (3rd pl.) | **GRAMMAR** (number mismatch; should be *guía*) |
+| dritto | Manner of the guiding action – straight, aright | rectamente | “straight / aright” | OK |
+| altrui | Recipients of the guidance – people in general | hombres | “men / people” | OK |
+| per | Preposition indicating the route of guidance | por | “along / through” | OK |
+| ogne | Quantifier meaning “every” | cada | “every” | OK |
+| calle | Route or way (archaic “via”) | camino | “path” | OK |
+
+\*The Spanish verb **guían** is plural, while the Italian **mena** is singular. The correct singular form would be **guía**; therefore the translation incurs a grammatical error.
+
+---
+
+### Issues Detected
+- **GRAMMAR:** *mena* → **guían** (number disagreement).  
+- **UNNECESSARY:** *le* (definite article) is dropped in Spanish because possession is expressed with the possessive *sus*; the article is not required.  
+
+No source words are missing, and all other mappings are semantically and syntactically appropriate.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 16**  
+  - Original: miré hacia lo alto y vi sus hombros  
+  - Issue: none  
+  - Corrected: miré hacia lo alto y vi sus hombros  
+
+- **Line 17**  
+  - Original: ya vestidas con los rayos del planeta  
+  - Issue: GRAMMAR – adjective gender disagreement (hombros is masculine)  
+  - Corrected: ya vestidos con los rayos del planeta  
+
+- **Line 18**  
+  - Original: que guían a los hombres rectamente por cada camino.  
+  - Issue: GRAMMAR – verb number disagreement (referent “planeta” is singular)  
+  - Corrected: que guía a los hombres rectamente por cada camino.  
+
+```text
+miré hacia lo alto y vi sus hombros
+ya vestidos con los rayos del planeta
+que guía a los hombres rectamente por cada camino.
+```
+]]></message>
+</messages>

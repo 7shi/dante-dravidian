@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+34 そして彼女は私の顔の前から離れなかった,  
+35 むしろ彼女は私の道をとても妨げた,  
+36 それで私は帰ろうとして何度も振り返った.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| e | Coordinating conjunction linking clause | そして | “and” | OK |
+| non | Negation adverb | 離れなかった | “did not move” (negated verb) | OK |
+| mi | 1st‑person clitic, interpreted as the female participant (subject) | 私の | “my / she (as subject)” | OK |
+| si | Reflexive clitic pronoun | – (implicit in 離れなかった) | – | UNNECESSARY |
+| partia | Imperfect of *partire* “to move, depart” | 離れなかった | “did not move” | OK |
+| dinanzi | Preposition “before, in front of” | 前から | “from in front of” | OK |
+| al | Contraction *a + il* (preposition + article) | – (article omitted) | – | UNNECESSARY |
+| volto | Noun “face” | 顔 | “face” | OK |
+| anzi | Adverb “instead, nay” | むしろ | “rather / nay” | OK |
+| ‘mpediva (impediva) | Imperfect of *impedire* “to hinder” | 妨げた | “hindered” | OK |
+| tanto | Adverb of degree “so, to such an extent” | とても | “very / so” | OK |
+| il | Definite article | – (article omitted) | – | UNNECESSARY |
+| mio | Possessive adjective “my” | 私の | “my” | OK |
+| cammino | Noun “road, path” | 道 | “road” | OK |
+| ch’ (che) | Subordinating conjunction “that” | それで | “so / therefore” | OK |
+| i’ (io) | 1st‑person pronoun “I” | 私 | “I” | OK |
+| fui | Past historic of *essere* “to be” (auxiliary) | 帰ろうとして | “in order to return (was about to)” | OK |
+| per | Preposition “for, in order to” | – (embedded in 帰ろうとして) | – | UNNECESSARY |
+| ritornar | Infinitive “to return” | 帰ろう | “to return” | OK |
+| più | Comparative adverb “more” (frequency) | 何度も | “oftentimes / many times” | OK |
+| volte | Noun “times” (frequency noun) | – (merged into 何度も) | – | UNNECESSARY |
+| vòlto | Past historic of *voltare* “to turn” | 振り返った | “turned / looked back” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *si*, *al*, *il*, *per*, *volte* – these elements have no direct lexical counterpart in Japanese and are naturally omitted or absorbed into other words.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are represented in the Japanese translation with appropriate meaning and grammatical function.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 34:
+  - Original: そして彼女は私の顔の前から離れなかった,
+  - Issue: none
+  - Corrected: そして彼女は私の顔の前から離れなかった,
+
+- Line 35:
+  - Original: むしろ彼女は私の道をとても妨げた,
+  - Issue: none
+  - Corrected: むしろ彼女は私の道をとても妨げた,
+
+- Line 36:
+  - Original: それで私は帰ろうとして何度も振り返った.
+  - Issue: none
+  - Corrected: それで私は帰ろうとして何度も振り返った.
+
+```
+そして彼女は私の顔の前から離れなかった,
+むしろ彼女は私の道をとても妨げた,
+それで私は帰ろうとして何度も振り返った.
+```
+]]></message>
+</messages>

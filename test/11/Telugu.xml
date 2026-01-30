@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+31 మరియు, చూడు, పర్వత‑పథం ప్రారంభంలో సుమారు,  
+32 ఒక స్త్రీ‑చీత, తేలికైనది మరియు చాలా చురుకైనది,  
+33 దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Telugu translation from Step 2)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Telugu → English) | Status |
+|-------------|----------------------|----------------------|--------------------------------------|--------|
+| **Ed** | coordinating conjunction “And” | **మరియు** | “and” | OK |
+| **ecco** | demonstrative exclamation “lo!” (pointing out) | **చూడు** | “see / look” (used to draw attention) | OK |
+| **quasi** | adverb “almost” (degree) | **సుమారు** | “almost / roughly” | OK |
+| **al** | preposition + article “at the” (locative) | — | — | **MISSING** (Telugu omits the equivalent) |
+| **cominciar** | noun “beginning” (of the steep) | **ప్రారంభంలో** | “at the beginning” | OK |
+| **de** | preposition “of” (genitive) | — | — | **MISSING** (Telugu expresses the relation without a separate word) |
+| **l'erta** | noun “the steep” (the ascent) | **పర్వత‑పథం** | “mountain‑path / steep way” | OK |
+| **una** | indefinite article “a” (introduces a new referent) | **ఒక** | “a / one” | OK |
+| **lonza** | noun “she‑leopard” | **స్త్రీ‑చీత** | “female leopard” | OK |
+| **leggera** | adjective “light” (weight/appearance) | **తేలికైనది** | “light (one)” | OK |
+| **e** | coordinating conjunction “and” | **మరియు** | “and” | OK |
+| **presta** | adjective “nimble” (agility) | **చురుకైనది** | “nimble (one)” | OK |
+| **molto** | adverb “very” (intensifier) | **చాలా** | “very” | OK |
+| **che** | relative pronoun “which” (introduces clause) | — | — | **MISSING** (relative clause is implicit in Telugu) |
+| **di** | preposition “with” (instrument) | — | — | **MISSING** (expressed inside “మచ్చలతో”) |
+| **pel** | noun “coat / fur” | **కోటు** | “coat / covering” | OK |
+| **macolato** | adjective “spotted” (pattern) | **మచ్చలతో** | “with spots” | OK |
+| **era** | verb “was” (copular, imperfect) | **ఉంది** | “is / was” (state) | OK |
+| **coverta** | past participle “covered” (state) | **కప్పబడి** | “covered” | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Type | Source Word(s) | Note |
+|------|----------------|------|
+| **MISSING** | **al**, **de**, **che**, **di** | These function words have no direct counterpart in the Telugu rendering; the meaning is conveyed implicitly. |
+| **UNNECESSARY** | (none) – all target words correspond to a source meaning; the omitted prepositions are not errors but natural in Telugu. |
+| **WRONG** | — | No lexical mistranslations detected. |
+| **GRAMMAR** | — | No agreement or case errors observed in the Telugu output. |
+
+*The table reflects the literal mapping of each Italian token to the Telugu translation produced in Step 2, together with a brief back‑translation for verification.*
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 31:
+  - Original: మరియు, చూడు, పర్వత‑పథం ప్రారంభంలో సుమారు,
+  - Issue: Missing genitive particle “of” (de) and prepositional “at” (al) equivalents.
+  - Corrected: మరియు, చూడు, **పర్వత‑పథం యొక్క** ప్రారంభంలో సుమారు,
+
+- Line 32:
+  - Original: ఒక స్త్రీ‑చీత, తేలికైనది మరియు చాలా చురుకైనది,
+  - Issue: none
+  - Corrected: no change
+
+- Line 33:
+  - Original: దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+  - Issue: Missing relative pronoun “that” (che) and explicit “with” (di) already covered but pronoun needed.
+  - Corrected: **అది** దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+
+```
+మరియు, చూడు, పర్వత‑పథం యొక్క ప్రారంభంలో సుమారు,
+ఒక స్త్రీ‑చీత, తేలికైనది మరియు చాలా చురుకైనది,
+అది దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+```
+]]></message>
+</messages>

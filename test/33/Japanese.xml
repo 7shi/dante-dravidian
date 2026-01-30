@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+97 そして彼女は極めて悪質で邪悪な性質を持っている、  
+98 それは決して欲深い欲望を満たさない、  
+99 そして食事の後は、食べる前よりもむしろ飢えている。
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| e (97) | clause‑linking conjunction “and” | そして | “and” | OK |
+| ha (97) | main verb “has” (possession) | 持っている | “has / possesses” | OK |
+| natura | noun “nature” (inherent disposition) | 性質 | “nature” | OK |
+| sì | degree adverb “so” (intensifier) | 極めて | “extremely / so” | OK |
+| malvagia | adjective “malign” | 悪質で | “malign (and …)” | OK |
+| e (97‑2) | coordinating conjunction linking adjectives | で | “and / with” (conjunctive particle) | OK |
+| ria | adjective “evil” | 邪悪な | “evil” | OK |
+| che (98) | relative pronoun “that” introducing clause | それは | “that” (topic) | OK |
+| mai | negative adverb “never” | 決して | “never” | OK |
+| non | negative particle (part of double‑negative) | — (negation expressed in the verb) | “not” (implicit in 満たさない) | UNNECESSARY |
+| empie | verb “fills / satisfies” (negated by mai non) | 満たさない | “does not satisfy” | OK |
+| la | definite article (feminine) | — (articles omitted in Japanese) | — | UNNECESSARY |
+| bramosa | adjective “greedy” qualifying desire | 欲深い | “greedy” | OK |
+| voglia | noun “will / desire” | 欲望 | “desire / will” | OK |
+| e (99‑1) | clause‑linking conjunction “and” | そして | “and” | OK |
+| dopo | preposition “after” (temporal) | 後は | “after (topic)” | OK |
+| ’l | elided definite article “the” | — (article omitted) | — | UNNECESSARY |
+| pasto | noun “meal / food” | 食事 | “meal / food” | OK |
+| ha (99‑2) | auxiliary verb “has” (state) | 飢えている | “is hungry” (state) | OK |
+| più | comparative adverb “more” | よりも | “than” (comparative marker) | OK |
+| fame | noun “hunger” (state) | 飢えている | “is hungry” (state) | OK |
+| che (99‑2) | comparative conjunction “than” | よりも | “than” | OK |
+| pria | adverb “before” (temporal) | 食べる前 | “before eating” | OK |
+
+---
+
+### Items Requiring Attention
+- **non** – Japanese does not have a separate particle for this; negation is built into the verb *満たさない*. Marked **UNNECESSARY**.  
+- **la** – Definite article omitted in Japanese. **UNNECESSARY**.  
+- **’l** – Definite article omitted. **UNNECESSARY**.  
+
+All other source words are adequately rendered in the Japanese translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 97:
+  - Original: そして彼女は極めて悪質で邪悪な性質を持っている、  
+  - Issue: none  
+  - Corrected: そして彼女は極めて悪質で邪悪な性質を持っている、  
+
+- Line 98:
+  - Original: それは決して欲深い欲望を満たさない、  
+  - Issue: none  
+  - Corrected: それは決して欲深い欲望を満たさない、  
+
+- Line 99:
+  - Original: そして食事の後は、食べる前よりもむしろ飢えている。  
+  - Issue: added unnecessary nuance 「むしろ」  
+  - Corrected: そして食事の後は、食べる前よりも飢えている。  
+
+```
+そして彼女は極めて悪質で邪悪な性質を持っている、  
+それは決して欲深い欲望を満たさない、  
+そして食事の後は、食べる前よりも飢えている。
+```
+]]></message>
+</messages>

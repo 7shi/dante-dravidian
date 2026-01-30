@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಆದರೆ ನಾನು ಪರ್ವತದ ಪಾದಕ್ಕೆ ಬಂದ ನಂತರ,  
+ಅಲ್ಲಿ ಆ ಕಣಿವೆ ಮುಗಿಯುವ ಸ್ಥಳ  
+ಅದು ನನ್ನ ಹೃದಯವನ್ನು ಭಯದಿಂದ ಕಚ್ಚಿತ್ತು,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|--------------------------------|--------------------------|--------|
+| **Ma** | Coordinating conjunction (contrast) | **ಆದರೆ** | “but” | OK |
+| **poi** | Adverb of time | **ನಂತರ** | “after” | OK |
+| **ch'i'** | “che io” – relative/complementizer + 1st‑person pronoun | **ನಾನು** | “I” | OK |
+| **fui** | Auxiliary verb (passato remoto) forming perfect “had arrived” | **ಬಂದ** | “came / arrived” | OK |
+| **al** | Preposition *a* + definite article *il* (“at the”) – locative | **(part of ಪಾದಕ್ಕೆ)** – prepositional case is encoded in the noun, so no separate word needed | – | **UNNECESSARY** |
+| **piè** | Noun “foot” (of a hill) | **ಪಾದಕ್ಕೆ** | “to the foot” | OK |
+| **d'un** | Preposition *di* + indefinite article *un* (“of a”) | **ಪರ್ವತದ** | “of the hill” | OK |
+| **colle** | Noun “hill” | **ಪರ್ವತ** (appears inside ಪರ್ವತದ) | “hill” | OK |
+| **giunto** | Past participle “arrived / reached” (completes perfect) | **(already expressed by ಬಂದ)** – no extra lexical item needed | – | **UNNECESSARY** |
+| **là** | Demonstrative adverb of place “there / where” | **ಅಲ್ಲಿ** | “there / where” | OK |
+| **dove** | Relative adverb of place “where” (introduces relative clause) | **ಅಲ್ಲಿ** (same word as above) – the relative sense is carried by the clause itself | “where” | **UNNECESSARY** (duplicate of *là*) |
+| **terminava** | Imperfect verb “ended” (progressive past) | **ಮುಗಿಯುವ** | “ending / that ends” (present participle used attributively) | OK |
+| **quella** | Demonstrative adjective “that” | **ಆ** | “that” | OK |
+| **valle** | Noun “valley” | **ಕಣಿವೆ** | “valley” | OK |
+| **che** | Relative pronoun referring to *valle* “which” | **ಅದು** | “it” (refers back to the valley) | OK |
+| **m'avea** | 1st‑person indirect object + pluperfect “had (caused) to me” | **ನನ್ನ … ಕಚ್ಚಿತ್ತು** (the pronoun *ನನ್ನ* “my” + verb *ಕಚ್ಚಿತ್ತು* “pierced”) | “had pierced me” | OK (split across two Kannada words) |
+| **di** | Preposition linking *paura* to *compunto* “with / of” | **ಭಯದಿಂದ** | “with fear” (compound prepositional phrase) | OK |
+| **paura** | Noun “fear” | **ಭಯ** (inside *ಭಯದಿಂದ*) | “fear” | OK |
+| **il** | Definite article (masc. *the*) – not required in Kannada | **(none)** | – | **UNNECESSARY** |
+| **cor** | Noun “heart” (metaphor for emotions) | **ಹೃದಯವನ್ನು** | “heart (object)” | OK |
+| **compunto** | Past participle “pierced / filled” | **ಕಚ್ಚಿತ್ತು** | “pierced” | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Type | Source Word(s) | Reason |
+|------|----------------|--------|
+| **UNNECESSARY** | al, giunto, il, dove, (the article inside *il*) | Kannada does not need a separate preposition “to” (*al*) because the locative case is expressed on *ಪಾದಕ್ಕೆ*; the perfect aspect is already covered by *ಬಂದ*; the article *il* is omitted; *dove* repeats the locative meaning already given by *là*. |
+| **WRONG** | – | None of the mappings are outright incorrect; all meanings are preserved. |
+| **GRAMMAR** | – | No gender/number agreement errors detected in the Kannada output. |
+| **MISSING** | – | All source lexical items have a corresponding Kannada representation (either lexical or encoded morphologically). |
+
+The table therefore shows a complete, semantically faithful alignment between the Italian source and the Kannada translation, with only the expected language‑specific omissions marked as **UNNECESSARY**.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: ಆದರೂ ನಾನು ಪರ್ವತದ ಪಾದಕ್ಕೆ ಬಂದ ನಂತರ,
+  - Issue: none
+  - Corrected: ಆದರೂ ನಾನು ಪರ್ವತದ ಪಾದಕ್ಕೆ ಬಂದ ನಂತರ,
+- Line 14:
+  - Original: ಅಲ್ಲಿ ಆ ಕಣಿವೆ ಮುಗಿಯುವ ಸ್ಥಳ
+  - Issue: none
+  - Corrected: ಅಲ್ಲಿ ಆ ಕಣಿವೆ ಮುಗಿಯುವ ಸ್ಥಳ
+- Line 15:
+  - Original: ಅದು ನನ್ನ ಹೃದಯವನ್ನು ಭಯದಿಂದ ಕಚ್ಚಿತ್ತು,
+  - Issue: none
+  - Corrected: ಅದು ನನ್ನ ಹೃದಯವನ್ನು ಭಯದಿಂದ ಕಚ್ಚಿತ್ತು,
+
+```
+ಆದರೂ ನಾನು ಪರ್ವತದ ಪಾದಕ್ಕೆ ಬಂದ ನಂತರ,
+ಅಲ್ಲಿ ಆ ಕಣಿವೆ ಮುಗಿಯುವ ಸ್ಥಳ
+ಅದು ನನ್ನ ಹೃದಯವನ್ನು ಭಯದಿಂದ ಕಚ್ಚಿತ್ತು,
+```
+]]></message>
+</messages>

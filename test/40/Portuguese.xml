@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+e verás aqueles que são contentes  
+no fogo porque esperam vir  
+quando for ao povo bem‑aventurado.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| e | coordinating conjunction “and then” | e | and | OK |
+| vederai | future 2nd sg. of *vedere* – “you will see” | verás | you will see | OK |
+| color | demonstrative plural – “those (people)” | aqueles | those | OK |
+| che | relative pronoun – “who/that” | que | who/that | OK |
+| son | present 3rd pl. of *essere* – “are” | são | are | OK |
+| contenti | predicative adjective – “contented” | contentes | contented | OK |
+| nel | preposition + definite article “in the” | no | in the | OK |
+| foco | noun – “fire” | fogo | fire | OK |
+| perché | causal conjunction – “because” | porque | because | OK |
+| speran | present 3rd pl. of *sperare* – “they hope” | esperam | they hope | OK |
+| di | preposition introducing infinitive – “to” | – (omitted) | – | **UNNECESSARY** |
+| venire | infinitive of *venire* – “to come” | vir | to come | OK |
+| quando | temporal conjunction – “whenever” | quando | when/whenever | OK |
+| che (idiomatic particle in *quando che*) | reinforces temporal clause, no lexical meaning | – (omitted) | – | **UNNECESSARY** |
+| sia | present subjunctive of *essere* – “may be” | for | may be / be (subjunctive) | OK |
+| a | preposition “to” (combined with article) | ao | to the (a + o) | OK |
+| le | feminine plural definite article “the” | – (replaced by *o* in *ao*) | – | **WRONG** |
+| beate | adjective “blessed” | bem‑aventurado | blessed | OK |
+| genti | noun “folk/people” (feminine plural) | povo | people | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *di* (preposition before infinitive) and *che* (idiomatic particle in *quando che*). Portuguese does not need these elements.
+- **WRONG**: *le* – the source feminine plural article is not rendered; Portuguese uses the masculine singular article *o* as part of *ao*. This is a mismatched article rather than a simple omission.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 118**  
+  - Original: e verás aqueles que são contentes  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 119**  
+  - Original: no fogo porque esperam vir  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 120**  
+  - Original: quando for ao povo bem‑aventurado.  
+  - Issue: WRONG – article and gender do not match the source “le beate genti” (feminine plural).  
+  - Corrected: quando for às gentes bem‑aventuradas.  
+
+```text
+e verás aqueles que são contentes
+no fogo porque esperam vir
+quando for às gentes bem‑aventuradas.
+```
+]]></message>
+</messages>

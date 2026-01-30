@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+64 ഞാൻ അവനെ മഹത്തായ മരുഭൂമിയിൽ കണ്ടപ്പോൾ,  
+65 എന്നെ കരുണിക്കൂ ഞാൻ അവനോട് വിളിച്ചു,  
+66 നീ എന്തായാലും നിഴലോ യഥാർത്ഥ മനുഷ്യനോ!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|----------------------|--------------------------|--------|
+| Quando | temporal conjunction “when” | **കണ്ടപ്പോൾ** | “when (I) saw” | OK |
+| vidi | “saw” (past) | **കണ്ട** (part of കണ്ടപ്പോൾ) | “saw” | OK |
+| costui | demonstrative “him” | **അവനെ** | “him” | OK |
+| nel | preposition “in” | **മരുഭൂമിയിൽ** | “in the desert” | OK |
+| gran | adjective “great” | **മഹത്തായ** | “great” | OK |
+| diserto | noun “desert” | **മരുഭൂമിയിൽ** (locative) | “desert (in)” | OK |
+| Miserere | imperative “have mercy” | **കരുണിക്കൂ** | “have mercy” | OK |
+| di | preposition “on” (part of *di me*) | **—** (merged into **എന്നെ**) | — | UNNECESSARY |
+| me | pronoun “me” | **എന്നെ** | “me” | OK |
+| gridai | “cried / called out” | **വിളിച്ചു** | “called / cried” | OK |
+| a | preposition “to” | **—** (merged into **അവനോട്**) | — | UNNECESSARY |
+| lui | pronoun “him” (dative) | **അവനോട്** | “to him” | OK |
+| qual | relative‑interrogative “whatever” | **എന്തായാലും** | “whatever” | OK |
+| che | relative pronoun “that/which” | **—** (implicit) | — | UNNECESSARY |
+| tu | pronoun “you” (2nd sg) | **നീ** | “you” | OK |
+| sii | subjunctive “be” | **—** (implicit in **എന്തായാലും**) | — | UNNECESSARY |
+| od (1) | disjunction “or” | **—** (suffix ‑ോ in **നിഴലോ**) | — | UNNECESSARY |
+| ombra | noun “shade” | **നിഴലോ** | “shade‑or” | OK |
+| od (2) | disjunction “or” | **—** (suffix ‑ോ in **മനുഷ്യനോ**) | — | UNNECESSARY |
+| omo | noun “man” | **മനുഷ്യനോ** | “man‑or” | OK |
+| certo | adjective “certain / real” | **യഥാർത്ഥ** | “real / genuine” | OK |
+
+---
+
+### Items flagged
+
+**UNNECESSARY (omitted because Malayalam does not use a separate word):**  
+- *di* (preposition “on”)  
+- *a* (preposition “to”)  
+- *che* (relative pronoun)  
+- *sii* (verb “be”)  
+- *od* (first occurrence)  
+- *od* (second occurrence)
+
+No tokens are **MISSING**, **WRONG**, or **GRAMMAR**‑incorrect in the Malayalam rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 64:
+  - Original: ഞാൻ അവനെ മഹത്തായ മരുഭൂമിയിൽ കണ്ടപ്പോൾ,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 65:
+  - Original: എന്നെ കരുണിക്കൂ ഞാൻ അവനോട് വിളിച്ചു,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 66:
+  - Original: നീ എന്തായാലും നിഴലോ യഥാർത്ഥ മനുഷ്യനോ!
+  - Issue: none
+  - Corrected: no change  
+
+```
+ഞാൻ അവനെ മഹത്തായ മരുഭൂമിയിൽ കണ്ടപ്പോൾ,
+എന്നെ കരുണിക്കൂ ഞാൻ അവനോട് വിളിച്ചു,
+നീ എന്തായാലും നിഴലോ യഥാർത്ഥ മനുഷ്യനോ!
+```
+]]></message>
+</messages>

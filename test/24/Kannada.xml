@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ನಾನು ಜೂಲಿಯೊರ ಅಡಿಯಲ್ಲಿ ಆದರೂ ತಡವಾಗಿ ಜನಿಸಿದ್ದೆ,
+ಮತ್ತು ನಾನು ರೋಮದಲ್ಲಿ ಒಳ್ಳೆಯ ಆಗಸ್ಟ್‌ಸ್‌ರ ಅಡಿಯಲ್ಲಿ ವಾಸಿಸಿದ್ದೆ
+ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ ದೇವರುಗಳ ಕಾಲದಲ್ಲಿ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Nacqui | “I was born” (1st sg perfect) | ಜನಿಸಿದ್ದೆ | “was born” | OK |
+| sub | preposition “under” (temporal/political) | ಅಡಿಯಲ್ಲಿ | “under” | OK |
+| Iulio | proper name “Julio” (object of *sub*) | ಜೂಲಿಯೊರ | “Julio’s” | OK |
+| ancor | concessive adverb “though / even though” | ಆದರೂ | “though” | OK |
+| che | subordinator introducing concessive clause | — (absorbed by ಆದರೂ) | — | UNNECESSARY |
+| fosse | subjunctive “was” (state of lateness) | — (absorbed in ತಡವಾಗಿ) | — | UNNECESSARY |
+| tardi | adjective “late” (adverbial) | ತಡವಾಗಿ | “late‑ly” | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| vissi | “I lived” (1st sg perfect) | ವಾಸಿಸಿದ್ದೆ | “lived” | OK |
+| a | preposition “at / in” (location) | — (expressed by suffix ‑ದಲ್ಲಿ) | — | UNNECESSARY |
+| Roma | proper name “Rome” (locative) | ರೋಮ | “Rome” | OK |
+| sotto | preposition “under” (political) | ಅಡಿಯಲ್ಲಿ | “under” | OK |
+| ’l | definite article “the” (elided) | — (not needed in Kannada) | — | UNNECESSARY |
+| buono | adjective “good” (qualifier) | ಒಳ್ಳೆಯ | “good” | OK |
+| Augusto | proper name “Augustus” (object of *sotto*) | ಆಗಸ್ಟ್‌ಸ್‌ರ | “Augustus’s” | OK |
+| nel | preposition + article “in the” (temporal) | — (expressed by suffix ‑ದಲ್ಲಿ) | — | UNNECESSARY |
+| tempo | noun “time” | ಕಾಲ | “time” | OK |
+| de | preposition “of” (genitive) | — (genitive expressed by suffix ‑ಗಳ) | — | UNNECESSARY |
+| li | definite article “the” (plural) | — (not needed) | — | UNNECESSARY |
+| dèi | noun “gods” (plural) | ದೇವರುಗಳ | “gods’” | OK |
+| falsi | adjective “false” (plural) | ಸುಳ್ಳು | “false” | OK |
+| e (line 72) | coordinating conjunction “and” | ಮತ್ತು | “and” | OK |
+| bugiardi | adjective “lying” (plural) | ಹೇಳುವ | “telling (lies)” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `che`, `fosse`, `’l`, `de`, `li`, `a`, `nel` – these function words are naturally omitted in Kannada because case‑marking suffixes convey the same relations.  
+- **No MISSING, WRONG, or GRAMMAR** issues were detected; the Kannada translation respects number, gender and case conventions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 70:
+  - Original: ನಾನು ಜೂಲಿಯೊರ ಅಡಿಯಲ್ಲಿ ಆದರೂ ತಡವಾಗಿ ಜನಿಸಿದ್ದೆ,
+  - Issue: none
+  - Corrected: ನಾನು ಜೂಲಿಯೊರ ಅಡಿಯಲ್ಲಿ ಆದರೂ ತಡವಾಗಿ ಜನಿಸಿದ್ದೆ,
+- Line 71:
+  - Original: ಮತ್ತು ನಾನು ರೋಮದಲ್ಲಿ ಒಳ್ಳೆಯ ಆಗಸ್ಟ್‌ಸ್‌ರ ಅಡಿಯಲ್ಲಿ ವಾಸಿಸಿದ್ದೆ
+  - Issue: none
+  - Corrected: ಮತ್ತು ನಾನು ರೋಮದಲ್ಲಿ ಒಳ್ಳೆಯ ಆಗಸ್ಟ್‌ಸ್‌ರ ಅಡಿಯಲ್ಲಿ ವಾಸಿಸಿದ್ದೆ
+- Line 72:
+  - Original: ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ ದೇವರುಗಳ ಕಾಲದಲ್ಲಿ.
+  - Issue: none
+  - Corrected: ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ ದೇವರುಗಳ ಕಾಲದಲ್ಲಿ.
+
+```
+ನಾನು ಜೂಲಿಯೊರ ಅಡಿಯಲ್ಲಿ ಆದರೂ ತಡವಾಗಿ ಜನಿಸಿದ್ದೆ,
+ಮತ್ತು ನಾನು ರೋಮದಲ್ಲಿ ಒಳ್ಳೆಯ ಆಗಸ್ಟ್‌ಸ್‌ರ ಅಡಿಯಲ್ಲಿ ವಾಸಿಸಿದ್ದೆ
+ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ ದೇವರುಗಳ ಕಾಲದಲ್ಲಿ.
+```
+]]></message>
+</messages>

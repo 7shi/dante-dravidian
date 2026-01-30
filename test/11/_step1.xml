@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+31 Ed ecco, quasi al cominciar de l'erta,
+32 una lonza leggera e presta molto,
+33 che di pel macolato era coverta;
+Reference Translation (provided):
+And lo! almost at the beginning of the steep a she-leopard, light and very nimble, which was covered with a spotted coat.
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – ONE BULLET PER SOURCE LINE**
+
+- **Line 31 – “Ed ecco, quasi al cominciar de l'erta,”**  
+  *Locked Meaning*: A discourse marker **And** followed by the exclamation **lo!** signals the narrator’s sudden pointing‑out of a situation that occurs **almost at the beginning** (quasi al cominciar) of **the steep** (l’erta). Truth‑conditions: there exists a location *L* (the steep path) and a point *P* on *L* such that *P* is “near the start” of *L*; the narrator draws the hearer’s attention to *P*.
+
+- **Line 32 – “una lonza leggera e presta molto,”**  
+  *Locked Meaning*: There exists an entity *X* that is a **she‑leopard** (lonza) and that possesses the properties **light** (leggera) and **very nimble** (presta molto). Truth‑conditions: *X* ∈ *she‑leopard* ∧ Light(*X*) ∧ Nimble(*X*) with the degree modifier **very** indicating a high intensity of nimbleness.
+
+- **Line 33 – “che di pel macolato era coverta;”**  
+  *Locked Meaning*: The previously introduced she‑leopard *X* is **covered with a spotted coat**. Truth‑conditions: there exists a covering *C* such that *C* is a **coat** (pel) having the property **spotted** (macolato), and *X* has *coverta*(*C*) (i.e., *X* is covered by *C*). The preposition **di** functions here as “with”.
+
+---
+
+## Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition | Grammatical Role |
+|-------------|------------|----------------------|-----------------------|------------------|
+| Ed | Conjunction (coordinating) | **And** | Links the current clause to the preceding narrative. | Discourse marker |
+| ecco | Interjection / demonstrative | **lo!** | Exclamatory pointer drawing attention to what follows. | Exclamatory particle |
+| quasi | Adverb | **almost** | Modifies the spatial phrase, indicating near‑but‑not‑exact. | Degree adverb |
+| al | Preposition + definite article (a + il) | **at the** | Introduces the location phrase. | Prepositional determiner |
+| cominciar | Noun‑like infinitive (gerundive) “beginning” | **beginning** | Denotes the start point of the steep path. | Noun (head of PP) |
+| de | Preposition | **of** | Marks genitive relation to “the steep”. | Prepositional head |
+| l'erta | Noun with article (la erta) | **the steep** | The steep path/rocky ascent being described. | Nominal complement of PP |
+| una | Indefinite article (feminine singular) | **a** | Introduces the she‑leopard as a new referent. | Determiner |
+| lonza | Noun (feminine) | **she‑leopard** | The animal that appears on the steep. | Subject noun |
+| leggera | Adjective (feminine singular) | **light** | Describes the she‑leopard’s body weight/appearance. | Predicative adjective |
+| e | Conjunction (coordinating) | **and** | Connects two adjectival predicates. | Coordinating conjunction |
+| presta | Adjective (feminine singular) | **nimble** | Qualifies the she‑leopard’s agility. | Predicative adjective |
+| molto | Adverb (intensifier) | **very** | Increases the degree of “nimble”. | Degree modifier |
+| che | Relative pronoun | **which** | Introduces a relative clause describing the leopard. | Relative clause introducer |
+| di | Preposition | **with** | Marks the instrument/complement of “covered”. | Prepositional head |
+| pel | Noun (short for *pelo* “fur/coat”) | **coat** | The covering material of the leopard. | Object of preposition |
+| macolato | Past participle used adjectivally | **spotted** | Qualifies the coat’s pattern. | Attribute of “coat” |
+| era | Verb (imperf. 3sg of *essere*) | **was** | Copular verb forming the passive construction. | Auxiliary verb |
+| coverta | Past participle (passive) | **covered** | Main verb of the relative clause, indicating state. | Main verb (passive) |
+
+*The table respects the locked meanings above, pairing each Italian token with its English counterpart, the sense it carries in this passage, and its grammatical function.*
+]]></message>
+</messages>

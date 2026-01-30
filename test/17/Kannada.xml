@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ  
+ಅವಳ ಸೊಂಪಿನಲ್ಲಿ ಭಾರವಾದಂತೆ ತೋರುತ್ತಿತ್ತು,  
+ಮತ್ತು ಈಗಾಗಲೇ ಅನೇಕ ಜನರನ್ನು ದುಃಖಭರಿತವಾಗಿ ಬದುಕುವಂತೆ ಮಾಡಿತ್ತು,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Kannada → English) | Status |
+|-------------|----------------------|----------------------|---------------------------------------|--------|
+| Ed | coordinating conjunction “and” | ಮತ್ತು | and | OK |
+| una | indefinite article “a” (introduces a singular noun) | ಒಂದು | one / a | OK |
+| lupa | “she‑wolf”, female wolf, subject | ಹೆಣ್ಣು ನರಿ | female wolf | OK |
+| che | relative pronoun “who” introducing a clause | — (implicit) | — | UNNECESSARY (Kannada omits explicit relative pronoun) |
+| di | preposition “with” (association) | ಆಸೆಗಳಿಂದ | from cravings / with cravings | OK |
+| tutte | universal quantifier “all” | ಎಲ್ಲಾ | all | OK |
+| brame | plural noun “cravings, desires” | ಆಸೆ | craving, desire | OK |
+| sembrava | imperfect copular verb “seemed” | ತೋರುತ್ತಿತ್ತು | seemed | OK |
+| carca | adjective “laden, burdened” | ಭಾರವಾದಂತೆ | as laden | OK |
+| ne | preposition “in” (locative) | ಸೊಂಪಿನಲ್ಲಿ | in thinness | OK |
+| la | definite article (feminine singular) | — (no article) | — | UNNECESSARY (Kannada has no definite article) |
+| sua | possessive adjective “her” | ಅವಳ | her | OK |
+| magrezza | noun “meagreness, thinness” | ಸೊಂಪು | thinness | OK |
+| e | coordinating conjunction “and” | ಮತ್ತು | and | OK |
+| molte | quantitative adjective “many” | ಅನೇಕ | many | OK |
+| genti | plural noun “folk, people” | ಜನರನ್ನು | people (accusative) | OK |
+| fé | past‑remote of *fare* “made, caused” | ಮಾಡಿತ್ತು | made / caused | OK |
+| già | temporal adverb “already” | ಈಗಾಗಲೇ | already | OK |
+| viver | infinitive “to live” | ಬದುಕುವ | to live | OK |
+| grame | noun “grief, forlornness” (state) | ದುಃಖಭರಿತವಾಗಿ | sorrowfully / in grief | OK |
+| (resultative particle) **ಂತೆ** | resultative marker “so … that …” (required for “to live …”) | — (not a source word) | — | UNNECESSARY (added for Kannada syntax) |
+
+---
+
+### Items Flagged
+
+- **UNNECESSARY**: `che`, `la`, the resultative particle `ಂತೆ` (added for Kannada grammar but not present in the source).  
+- **No MISSING or WRONG entries** – every source lexical item is represented in the Kannada translation, either directly or by a grammatical feature that Kannada naturally omits.  
+- **No GRAMMAR errors** – gender, number, and case agreement are appropriate for Kannada.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 49:
+  - Original: ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ
+  - Issue: missing end punctuation (source ends with a comma)
+  - Corrected: ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ,
+- Line 50:
+  - Original: ಅವಳ ಸೊಂಪಿನಲ್ಲಿ ಭಾರವಾದಂತೆ ತೋರುತ್ತಿತ್ತು,
+  - Issue: none
+  - Corrected: no change
+- Line 51:
+  - Original: ಮತ್ತು ಈಗಾಗಲೇ ಅನೇಕ ಜನರನ್ನು ದುಃಖಭರಿತವಾಗಿ ಬದುಕುವಂತೆ ಮಾಡಿತ್ತು,
+  - Issue: none
+  - Corrected: no change
+
+```kannada
+ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ,
+ಅವಳ ಸೊಂಪಿನಲ್ಲಿ ಭಾರವಾದಂತೆ ತೋರುತ್ತಿತ್ತು,
+ಮತ್ತು ಈಗಾಗಲೇ ಅನೇಕ ಜನರನ್ನು ದುಃಖಭರಿತವಾಗಿ ಬದುಕುವಂತೆ ಮಾಡಿತ್ತು,
+```
+]]></message>
+</messages>

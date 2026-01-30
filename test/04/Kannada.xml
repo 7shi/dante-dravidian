@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Kannada, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Kannada line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಿದ್ದೆ
+ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Kannada)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Kannada) | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|-------------------------------|--------------------------|--------|
+| Io | 1st‑person singular pronoun (subject) | ನಾನು | I | OK |
+| non | negation particle (part of “cannot”) | ಸಾಧ್ಯವಿಲ್ಲ | cannot / not possible | OK |
+| so | verb *sapere* “to know” (combined with *non* → “cannot”) | ಸಾಧ್ಯವಿಲ್ಲ | cannot / not possible | OK |
+| ben | manner adverb “well” | ಚೆನ್ನಾಗಿ | well | OK |
+| ridir | infinitive “to recount / say again” | ಹೇಳಲು | to say / to recount | OK |
+| com' | interrogative adverb “how” | ಹೇಗೆ | how | OK |
+| i' | clitic pronoun “I” (subject inside clause) | ನಾನು | I | OK |
+| v'intrai | historic 1sg “I entered (it)” | ಪ್ರವೇಶಿಸಿದೆ | entered | OK |
+| tant' | degree adverb “so, such a great amount” | — (not expressed) | — | **MISSING** |
+| era | imperfect “was” (state copula) | — (included in “ತುಂಬಿದ್ದೆ”) | — | OK |
+| pien | adjective “full” | ತುಂಬಿದ್ದೆ | was full | OK |
+| di | preposition “of” (linking *pien* to *sonno*) | ನಿದ್ರೆಯಿಂದ | from sleep | OK |
+| sonno | noun “slumber, sleepiness” | ನಿದ್ರೆಯಿಂದ | from sleep | OK |
+| a | preposition “at” (temporal) | — (expressed by case in “ಆ ಕ್ಷಣದಲ್ಲಿ”) | — | OK |
+| quel | demonstrative adjective “that” | ಆ | that | OK |
+| punto | noun “point, moment” | ಕ್ಷಣದಲ್ಲಿ | moment | OK |
+| che | relative conjunction “where” | — (omitted) | — | **UNNECESSARY** |
+| la | definite article (feminine) | — (omitted) | — | **UNNECESSARY** |
+| verace | adjective “true, genuine” | ಸತ್ಯವಾದ | true | OK |
+| via | noun “way, path” | ಮಾರ್ಗವನ್ನು | the way (object) | OK |
+| abbandonai | historic 1sg “I abandoned” | ತೊರೆದೆ | abandoned | OK |
+
+---
+
+### Issues Identified
+- **MISSING**: *tant'* – the degree adverb “so” is not explicitly rendered in the Kannada translation (could be added as “ತುಂಬಾ”).  
+- **UNNECESSARY**: *che* – the relative pronoun “where” is naturally omitted in Kannada.  
+- **UNNECESSARY**: *la* – the definite article is not required in Kannada.  
+
+All other source tokens are adequately represented, with correct grammatical agreement and appropriate lexical choices.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Kannada script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Kannada text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 10:
+  - Original: ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+  - Issue: none
+  - Corrected: ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+- Line 11:
+  - Original: ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಿದ್ದೆ
+  - Issue: missing degree adverb “tant'” (so)
+  - Corrected: ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಾ ತುಂಬಿದ್ದೆ
+- Line 12:
+  - Original: ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+  - Issue: none
+  - Corrected: ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+
+```
+ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಾ ತುಂಬಿದ್ದೆ
+ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+```
+]]></message>
+</messages>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+76 Ma tu perché ritorni a tanta noia?
+77 perché non sali il dilettoso monte
+78 ch'è principio e cagion di tutta gioia?».
+Reference Translation (provided):
+But thou, why returnest thou to so great annoy? Why dost thou not ascend the delectable mountain which is the source and cause of every joy?”
+]]></message>
+<message role="assistant"><![CDATA[
+## (a) Interpretation Lock FIRST  
+
+**Line 76 **`Ma tu perché ritorni a tanta noia?`  
+- **Locked Meaning (truth‑conditions):**  
+  There is an addressee *you* (second‑person singular) who is **returning** to a state that is **greatly annoying / boring**. The speaker, addressing you, asks for the **reason** of this return.  
+
+**Line 77 **`perché non sali il dilettoso monte`  
+- **Locked Meaning (truth‑conditions):**  
+  The same addressee *you* **does not ascend** a mountain that is **delightful / delectable**. The speaker asks for the **reason** why you refrain from climbing it.  
+
+**Line 78 **`ch'è principio e cagion di tutta gioia?`  
+- **Locked Meaning (truth‑conditions):**  
+  The mountain just mentioned **is** both the **principle (origin)** and the **cause** of **all** instances of **joy**. The speaker presents this as a defining property of the mountain.  
+
+---
+
+## (b) Alignment Table  
+
+| Source Word | Morphology (POS & Features) | Reference Equivalent | Contextual Definition (lexical‑semantic) | Grammatical Role in Context |
+|-------------|-----------------------------|----------------------|------------------------------------------|-----------------------------|
+| **Ma** | Conjunction, adversative (co‑ordinating) | *But* | Introduces a contrastive clause, signalling a turn in the discourse | Discourse marker, links to previous utterance |
+| **tu** | Personal pronoun, 2nd person singular, nominative | *thou* | Second‑person singular pronoun, the addressee | Subject of *ritorni* (understood) |
+| **perché** | Interrogative adverb | *why* | Seeks a causal explanation | Head of the interrogative clause |
+| **ritorni** | Verb, 2nd person singular, present indicative of *ritornare* “to return” | *returnest* | Action of coming back to a previous state | Predicate verb, agrees with *tu* |
+| **a** | Preposition | *to* | Marks the goal/destination of the return | Introduces the prepositional phrase *a tanta noia* |
+| **tanta** | Adjective, feminine singular, degree: high (intensifier) | *so great* | Intensifies the noun *noia*; denotes large magnitude | Modifier of *noia* |
+| **noia** | Noun, feminine singular | *annoy* (≈ *annoyance / boredom*) | State of being bored or irritated; the undesirable condition | Object of the preposition *a* |
+| **?** | Punctuation (question mark) | *?* | Signals interrogative mood | — |
+| **perché** | Interrogative adverb | *Why* | Seeks a causal explanation (second question) | Head of the interrogative clause |
+| **non** | Negative particle | *not* | Negates the following verb | Negation operator for *sali* |
+| **sali** | Verb, 2nd person singular, present indicative of *salire* “to climb/ascend” | *ascend* | Action of moving upward onto the mountain | Predicate verb, agrees with implied *tu* |
+| **il** | Definite article, masculine singular | *the* | Specifies a particular mountain | Determiner for *monte* |
+| **dilettoso** | Adjective, masculine singular | *delectable* | Qualifies the mountain as pleasant or delightful | Modifier of *monte* |
+| **monte** | Noun, masculine singular | *mountain* | Physical elevation; the object to be ascended | Direct object of *sali* (via the prepositional phrase “the delectable mountain”) |
+| **ch’è** | Contraction of *che* (relative pronoun) + *è* (3rd sg. present of *essere*) | *which is* | Introduces a relative clause describing the mountain | Relative pronoun introducing the clause; *è* copular verb linking *principio* and *cagion* to *monte* |
+| **principio** | Noun, masculine singular | *source* (≈ *principle*) | The origin or starting point of joy | Predicative noun complement of *è* |
+| **e** | Coordinating conjunction | *and* | Connects two equal elements | Links *principio* and *cagion* |
+| **cagion** | Noun, feminine singular, archaic for *causa* | *cause* | The factor that brings about joy | Predicative noun complement of *è* |
+| **di** | Preposition | *of* | Marks the genitive relationship with *tutta gioia* | Introduces the genitive phrase *di tutta gioia* |
+| **tutta** | Adjective, feminine singular, quantifier | *every* | Universal quantifier over instances of joy | Modifier of *gioia* |
+| **gioia** | Noun, feminine singular | *joy* | Positive emotional state; the thing whose source and cause are being described | Object of the preposition *di* |
+| **?** | Punctuation (question mark) | *?* | Ends the interrogative clause | — |
+
+*Notes*  
+
+* The English auxiliary **“dost”** and the pronoun **“thou”** in the translation are not overtly present in the Italian; they correspond to the implicit second‑person subject *tu* of *ritorni* and *sali*.  
+* The degree marker **“so great”** reflects the intensifier **tanta**, which signals a high magnitude without reversing the A > B ordering (the Italian phrase already encodes the comparison).  
+* The relative clause introduced by **ch’è** (≈ *which is*) ties the mountain’s identity to its functional role as *principio* and *cagion* of *gioia*.
+]]></message>
+</messages>

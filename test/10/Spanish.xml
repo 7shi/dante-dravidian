@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Spanish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Spanish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Después de haber descansado un poco mi cuerpo cansado,  
+Retomé el camino por la ladera desierta,  
+de modo que el pie firme siempre era el más bajo.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| Poi | temporal adverb “after” | Después | after | OK |
+| ch’èi | conjunction + auxiliary “that I have” (introduces perfect) | de haber | of having | OK |
+| posato | past participle “rested” | descansado | rested | OK |
+| un | indefinite article/ numeral “a” | un | a | OK |
+| poco | adverb of quantity “little” | poco | little | OK |
+| il | definite article (masc. sing.) | mi | my | OK |
+| corpo | noun “body” | cuerpo | body | OK |
+| lasso | adjective “weary” | cansado | weary | OK |
+| ripresi | verb “resumed / took” | Retomé | I resumed / took | OK |
+| via | noun “way” | camino | way | OK |
+| per | preposition “along” | por | along / by | OK |
+| la | definite article (fem. sing.) | la | the | OK |
+| piaggia | noun “slope” (archaic) | ladera | slope | OK |
+| diserta | adjective “desert” | desierta | desert (empty) | OK |
+| sì | adverb/conjunction “so” (resultative) | de modo | in such a way | OK |
+| che | conjunction “that” | que | that | OK |
+| ’l (1st) | contraction of definite article “the” | el | the | OK |
+| piè | noun “foot” | pie | foot | OK |
+| fermo | adjective “firm” | firme | firm | OK |
+| sempre | adverb “always” | siempre | always | OK |
+| era | imperfect of “to be” “was” | era | was | OK |
+| ’l (2nd) | contraction of definite article “the” | el | the | OK |
+| più | comparative particle “more” | más | more | OK |
+| basso | adjective “lower” (comparative) | bajo | lower | OK |
+
+### Issues Detected
+- **None.** All source words are represented in the Spanish translation, the grammatical agreements are correct, and no unnecessary elements were added.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Spanish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Spanish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 28:
+  - Original: Después de haber descansado un poco mi cuerpo cansado,
+  - Issue: none
+  - Corrected: no change
+- Line 29:
+  - Original: Retomé el camino por la ladera desierta,
+  - Issue: none
+  - Corrected: no change
+- Line 30:
+  - Original: de modo que el pie firme siempre era el más bajo.
+  - Issue: none
+  - Corrected: no change
+
+```
+Después de haber descansado un poco mi cuerpo cansado,
+Retomé el camino por la ladera desierta,
+de modo que el pie firme siempre era el más bajo.
+```
+]]></message>
+</messages>

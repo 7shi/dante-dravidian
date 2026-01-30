@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ஆனால் பின்னர் நான் ஒரு மலைக்குன்றின் அடியில் வந்தபோது,  
+அங்கு அந்த பள்ளத்தாக்கு முடிந்தது  
+அது என் இதயத்தை பயத்தால் புண்படுத்தியிருந்தது,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Italian → Tamil)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| Ma | Coordinating conjunction introducing contrast (“but”) | ஆனால் | “but” | OK |
+| poi | Temporal adverb indicating a later moment (“after”) | பின்னர் | “later / after” | OK |
+| ch'i' | Contraction of **che io** – introduces the clause “that I …” | நான் | “I” (subject of the clause) | OK |
+| fui | 1st sg passato remoto of *essere* used as auxiliary in perfect “had arrived” | வந்த | “came / arrived” | OK |
+| al | Preposition + definite article “at the” (locative) | அடியில் | “at the foot (locative)” | OK |
+| piè | Noun “foot” of a hill | அடி | “foot” | OK |
+| d'un | Preposition + indefinite article “of a” | ஒரு | “a / one” | OK |
+| colle | Noun “hill” (archaic *colle*) | மலைக்குன்றின் | “of the hill” | OK |
+| giunto | Past participle of *giungere* “arrived, reached” (forms perfect with *fui*) | வந்த | “arrived / came” (re‑expressed) | OK |
+| là | Demonstrative adverb of place “there, where” | அங்கு | “there / at that place” | OK |
+| dove | Relative adverb of place “where” (introduces relative clause) | அங்கு | “where” (same locative) | OK |
+| terminava | Imperfect of *terminare* “was ending” (describes ongoing termination) | முடிந்தது | “ended / was ending” | OK |
+| quella | Demonstrative adjective “that” (specifies the valley) | அந்த | “that” | OK |
+| valle | Feminine noun “valley” | பள்ளத்தாக்கு | “valley” | OK |
+| che | Relative pronoun referring to *valle* “which/that” | அது | “that / which” | OK |
+| m'avea | Contraction *mi aveva* – pluperfect “had caused” (causal) | புண்படுத்தியிருந்தது | “had pierced / had caused” | OK |
+| di | Preposition “of/with” linking *paura* to *compunto* | ஆல் | “by / with” (as a case‑marker) | OK |
+| paura | Noun “fear” | பயம் | “fear” | OK |
+| il | Definite article “the” (masc. sing.) – not required in Tamil | — | — | **UNNECESSARY** |
+| cor | Noun “heart” (archaic *cor*) | இதயம் | “heart” | OK |
+| compunto | Past participle “pierced, filled” (describes heart’s state) | புண்படுத்திய | “pierced / filled” | OK |
+
+### Issues Detected
+- **UNNECESSARY**: *il* (definite article) – Tamil does not use articles, so it is omitted in the translation.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** problems were found; all source lexical items are represented appropriately in the Tamil rendering, and agreement/case are handled correctly for Tamil grammar.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: ஆனால் பின்னர் நான் ஒரு மலைக்குன்றின் அடியில் வந்தபோது,
+  - Issue: none
+  - Corrected: no change
+- Line 14:
+  - Original: அங்கு அந்த பள்ளத்தாக்கு முடிந்தது
+  - Issue: none
+  - Corrected: no change
+- Line 15:
+  - Original: அது என் இதயத்தை பயத்தால் புண்படுத்தியிருந்தது,
+  - Issue: none
+  - Corrected: no change
+
+```
+ஆனால் பின்னர் நான் ஒரு மலைக்குன்றின் அடியில் வந்தபோது,
+அங்கு அந்த பள்ளத்தாக்கு முடிந்தது
+அது என் இதயத்தை பயத்தால் புண்படுத்தியிருந்தது,
+```
+]]></message>
+</messages>

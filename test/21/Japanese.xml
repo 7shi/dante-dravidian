@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Japanese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Japanese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+61 低い場所へと下がっていたとき、  
+62 目の前に現れた  
+63 長い沈黙の後にかすれたように聞こえた。
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Japanese Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Japanese) | Back‑Translation (English) | Status |
+|-------------|----------------------|--------------------------------|----------------------------|--------|
+| Mentre | temporal “while” | とき | “when / while” | OK |
+| ch' (che) | subordinating “that/while” | — (implicit in とき) | — | UNNECESSARY |
+| i' (io) | 1st‑sg pronoun “I” | — (subject omitted) | — | UNNECESSARY |
+| rovinava | “was falling / descending” | 下がっていた | “was descending” | OK |
+| in | preposition “to, into” | へ | “to (direction)” | OK |
+| basso | adjective “low” | 低い | “low” | OK |
+| loco | noun “place” | 場所 | “place” | OK |
+| dinanzi | adverb/prep “before, in front of” | 目の前に | “in front of the eyes” | OK |
+| a | preposition linking “dinanzi” with “li occhi” | に | “to/at (locative particle)” | OK |
+| li | definite article “the” (plural) | — (article not expressed) | — | UNNECESSARY |
+| occhi | noun “eyes” | 目 | “eyes” | OK |
+| mi | dative “to me” (experiencer) | — (experiencer implicit) | — | UNNECESSARY |
+| si | reflexive/impersonal marker in passive | — (passive rendered by verb form) | — | UNNECESSARY |
+| fu | auxiliary “was” (past remote) | — (past tense encoded in 現れた) | — | UNNECESSARY |
+| offerto | past participle “offered / presented” | 現れた | “appeared / was presented” | OK |
+| chi | relative pronoun “who, that” | — (subject omitted, understood in verb) | — | UNNECESSARY |
+| per | preposition “through, by means of” | の後に | “after …” (genitive + post‑position) | OK |
+| lungo | adjective “long” | 長い | “long” | OK |
+| silenzio | noun “silence” | 沈黙 | “silence” | OK |
+| parea | verb “seemed” | 聞こえた | “was heard / seemed” | OK |
+| fioco | adjective “hoarse, weak” | かすれた | “hoarse, faint” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: ch', i', li, mi, si, fu, chi – these elements are naturally omitted in Japanese (no articles, subject pronouns, or explicit passive markers).  
+- **No MISSING or WRONG entries** – every source meaning is represented in the Japanese translation, either directly or via implicit grammatical structures.  
+- **No GRAMMAR issues** – Japanese does not require gender/number agreement; the verb forms correctly convey past tense and aspect.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Japanese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Japanese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: 低い場所へと下がっていたとき、  
+  - Issue: punctuation uses Japanese comma 「、」 instead of the source comma 「,」.  
+  - Corrected: 低い場所へと下がっていたとき,
+- Line 62:
+  - Original: 目の前に現れた  
+  - Issue: none  
+  - Corrected: no change
+- Line 63:
+  - Original: 長い沈黙の後にかすれたように聞こえた。  
+  - Issue: punctuation uses Japanese period 「。」 instead of the source period 「.」.  
+  - Corrected: 長い沈黙の後にかすれたように聞こえた.
+
+```
+低い場所へと下がっていたとき,
+目の前に現れた
+長い沈黙の後にかすれたように聞こえた.
+```
+]]></message>
+</messages>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அதனால் நான் உன் நலனுக்காக நினைத்து தீர்மானிக்கிறேன்  
+நீ என் பின்பற்றுவாய் மற்றும் நான் உன் வழிகாட்டியாக இருப்பேன்,  
+நான் உன்னை இங்கிருந்து நிரந்தர இடத்துக்கு அழைத்துச் செல்லுவேன்;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| Ond' | causal conjunction (“wherefore”) | அதனால் | therefore | OK |
+| io | 1st‑person singular pronoun (subject) | நான் | I | OK |
+| per | preposition marking benefactive purpose | நலனுக்காக | for the good | OK |
+| lo | neuter definite article (the) | — | — | UNNECESSARY |
+| tuo | 2nd‑person possessive adjective (thy) | உன் | your | OK |
+| me' | abstract noun “best” (the addressee’s good) | நலன் | good, benefit | OK |
+| penso | verb “think” (cognitive) | நினைத்து | thinking | OK |
+| e | coordinating conjunction “and” | மற்றும் | and | OK |
+| discerno | verb “deem, judge” (evaluative) | தீர்மானிக்கிறேன் | decide/judge | OK |
+| che | subordinating conjunction “that” | — | — | UNNECESSARY |
+| tu | 2nd‑person pronoun (subject) | நீ | you | OK |
+| mi | 1st‑person pronoun (object) | என் | my (as object) | OK |
+| segui | verb “follow” (imperative‑like) | பின்பற்றுவாய் | you follow | OK |
+| e | coordinating conjunction “and” | மற்றும் | and | OK |
+| io | 1st‑person pronoun (subject) | நான் | I | OK |
+| sarò | future copular verb “will be” | இருப்பேன் | will be | OK |
+| tua | 2nd‑person possessive adjective (thy) | உன் | your | OK |
+| guida | noun “guide” (role) | வழிகாட்டியாக | as a guide | OK |
+| e | coordinating conjunction “and” | மற்றும் | and | OK |
+| trarrotti | future transitive verb “will lead you” | அழைத்துச் செல்லுவேன் | will lead (you) | OK |
+| di | preposition “from” (with *qui*) | இங்கிருந்து | from here | OK |
+| qui | adverb of place “here” (with *di*) | — | — | UNNECESSARY |
+| per | preposition “to/through” (with *loco etterno*) | இடத்துக்கு | to (the) place | OK |
+| loco | noun “place” (archaic *luogo*) | இடம் | place | OK |
+| etterno | adjective “eternal” | நிரந்தர | eternal | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `lo`, `che`, `qui` – articles or conjunctions that have no direct equivalent in Tamil and are naturally omitted.  
+- **All other items** are correctly rendered (**OK**). No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: அதனால் நான் உன் நலனுக்காக நினைத்து தீர்மானிக்கிறேன்  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 113**  
+  - Original: நீ என் பின்பற்றுவாய் மற்றும் நான் உன் வழிகாட்டியாக இருப்பேன்,  
+  - Issue: **GRAMMAR** – missing object case marker for “me”.  
+  - Corrected: நீ **என்னை** பின்பற்றுவாய் மற்றும் நான் உன் வழிகாட்டியாக இருப்பேன்,  
+
+- **Line 114**  
+  - Original: நான் உன்னை இங்கிருந்து நிரந்தர இடத்துக்கு அழைத்துச் செல்லுவேன்;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+அதனால் நான் உன் நலனுக்காக நினைத்து தீர்மானிக்கிறேன்
+நீ என்னை பின்பற்றுவாய் மற்றும் நான் உன் வழிகாட்டியாக இருப்பேன்,
+நான் உன்னை இங்கிருந்து நிரந்தர இடத்துக்கு அழைத்துச் செல்லுவேன்;
+```
+]]></message>
+</messages>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 1: Source-Reference Alignment & Semantic Analysis
+Task: Align source tokens to the provided Reference Translation; pick in-context sense + grammatical role.
+Output: (a) Interpretation Lock FIRST (one bullet per source line):
+- Line <ID> <copy exact source line> => Locked Meaning (truth-conditions)
+- If comparative/degree: define entities A,B, relation (>,<,≈), and degree (e.g., "slightly").
+- Note: A>B is equivalent to B<A; do not reverse the ordering.
+(b) THEN ONE Markdown table consistent with the Lock:
+- [Source Word] | [Morphology] | [Reference Equivalent] | [Contextual Definition] | [Grammatical Role]
+Source Text:
+115 ove udirai le disperate strida,
+116 vedrai li antichi spiriti dolenti,
+117 ch'a la seconda morte ciascun grida;
+Reference Translation (provided):
+where thou shalt hear the despairing shrieks, shalt see the ancient spirits woeful who each proclaim the second death.
+]]></message>
+<message role="assistant"><![CDATA[
+**Interpretation Lock – FIRST (one bullet per source line)**  
+
+- **Line 115** *ove udirai le disperate strida,* → **Locked Meaning:** In the place indicated (“where”), you will (future) hear the desperate shrieks.  
+- **Line 116** *vedrai li antichi spiriti dolenti,* → **Locked Meaning:** You will (future) see the ancient spirits that are woeful.  
+- **Line 117** *ch’ a la seconda morte ciascun grida;* → **Locked Meaning:** Who, each one, cries out toward the second death.  
+
+---
+
+### Alignment Table  
+
+| Source Word | Morphology | Reference Equivalent | Contextual Definition (truth‑conditions) | Grammatical Role |
+|-------------|------------|----------------------|------------------------------------------|------------------|
+| **ove** | adv. (relative adverb of place) | *where* | Introduces a locative subordinate clause; the ensuing event occurs at that location. | Subordinator (locative) |
+| **udirai** | verb, future indicative, 2nd sg of *udire* | *shalt hear* | Future action performed by the addressee: the addressee will hear the following noun. | Predicate (finite verb) |
+| **le** | definite article, fem. pl | *the* | Marks the noun *strida* as specific and plural. | Determiner (article) |
+| **disperate** | adjective, fem. pl, attributive | *despairing* | Qualifies *strida* as expressing desperation. | Attributive modifier |
+| **strida** | noun, fem. pl, direct object | *shrieks* | The audible objects that will be heard. | Direct object of *udirai* |
+| **vedrai** | verb, future indicative, 2nd sg of *vedere* | *shalt see* | Future action performed by the addressee: the addressee will see the following noun phrase. | Predicate (finite verb) |
+| **li** | definite article, masc. pl | *the* | Marks the noun *spiriti* as specific and plural. | Determiner (article) |
+| **antichi** | adjective, masc. pl, attributive | *ancient* | Temporal attribute of *spiriti*; they belong to an earlier age. | Attributive modifier |
+| **spiriti** | noun, masc. pl, direct object | *spirits* | The entities that will be seen. | Direct object of *vedrai* |
+| **dolenti** | adjective, masc. pl, predicative (post‑nominal) | *woeful* | Describes the emotional state of the *spiriti*. | Predicative complement |
+| **ch’** (che) | relative pronoun, 3rd sg, introducing relative clause | *who* | Refers back to *spiriti* and introduces a clause describing their action. | Relative clause head |
+| **a** | preposition (to, toward) | *(to)* | Marks the direction of the shouting toward *la morte*. | Prepositional complement |
+| **la** | definite article, fem. sg | *the* | Marks the noun *morte* as specific. | Determiner (article) |
+| **seconda** | adjective, fem. sg, attributive | *second* | Ordinal attribute of *morte*; denotes a particular death distinct from the first. | Attributive modifier |
+| **morte** | noun, fem. sg, object of preposition | *death* | The target toward which each spirit shouts. | Object of preposition *a* |
+| **ciascun** | pronoun/determiner, masc. sg (used distributively) | *each* | Distributes the action of shouting to every individual spirit. | Distributive quantifier |
+| **grida** | verb, present indicative, 3rd sg of *gridare* | *shouts* (or *cries out*) | The action performed by each spirit toward the second death. | Predicate of the relative clause |
+
+*The table respects the locked meanings above: every source token is paired with its English counterpart, a concise contextual definition that captures its truth‑conditions, and its grammatical function within the three lines.*
+]]></message>
+</messages>

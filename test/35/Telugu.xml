@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అతను భూమి లేదా వస్తువులపై ఆహారం తీసుకోడు,  
+కాని జ్ఞానం, ప్రేమ మరియు ధైర్యం,  
+మరియు అతని జన్మస్థలం ఫెల్ట్రో మరియు ఫెల్ట్రో మధ్యలో ఉంటుంది.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Questi | the male individual being described | అతను | “he” | OK |
+| non | negation of the upcoming verb phrase | — (negation encoded in verb) | “not” | UNNECESSARY |
+| ciberà | future “shall feed / shall take as food” | తీసుకోడు | “will take / will eat” (negative form) | OK |
+| terra | physical ground, “land” | భూమి | “land” | OK |
+| né | coordinating “nor” (negative alternative) | లేదా | “or” (used with negative verb) | OK |
+| peltro | material wealth, “goods/metal” | వస్తువులపై | “on goods” | OK |
+| ma | contrastive “but” | కాని | “but” | OK |
+| sapïenza | intellectual virtue, “wisdom” | జ్ఞానం | “wisdom” | OK |
+| amore | affective virtue, “love” | ప్రేమ | “love” | OK |
+| e (line 104) | list‑joining “and” | మరియు | “and” | OK |
+| virtute | courageous moral excellence, “valor” | ధైర్యం | “valor / courage” | OK |
+| e (line 105) | clause‑joining “and” | మరియు | “and” | OK |
+| sua | possessive “his” | అతని | “his” | OK |
+| nazion | place of origin, “birthplace” | జన్మస్థలం | “birthplace” | OK |
+| sarà | future copula “shall be” | ఉంటుంది | “will be” | OK |
+| tra | spatial preposition “between” | మధ్యలో | “between / in the middle of” | OK |
+| feltro (first) | proper name “Feltro” (first endpoint) | ఫెల్ట్రో | “Feltro” | OK |
+| e (second) | list‑joining “and” | మరియు | “and” | OK |
+| feltro (second) | proper name “Feltro” (second endpoint) | ఫెల్ట్రో | “Feltro” | OK |
+
+### Items Requiring Attention
+- **non** – marked **UNNECESSARY** because Telugu expresses negation morphologically within the verb *తీసుకోడు*; no separate negative particle is needed.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 103:  
+  - Original: అతను భూమి లేదా వస్తువులపై ఆహారం తీసుకోడు,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 104:  
+  - Original: కానీ జ్ఞానం, ప్రేమ మరియు ధైర్యం,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 105:  
+  - Original: మరియు అతని జన్మస్థలం Feltro మరియు Feltro మధ్యలో ఉంటుంది.  
+  - Issue: WRONG – proper name written in Latin script  
+  - Corrected: మరియు అతని జన్మస్థలం ఫెల్ట్రో మరియు ఫెల్ట్రో మధ్యలో ఉంటుంది.  
+
+```
+అతను భూమి లేదా వస్తువులపై ఆహారం తీసుకోడు,
+కాని జ్ఞానం, ప్రేమ మరియు ధైర్యం,
+మరియు అతని జన్మస్థలం ఫెల్ట్రో మరియు ఫెల్ట్రో మధ్యలో ఉంటుంది.
+```
+]]></message>
+</messages>

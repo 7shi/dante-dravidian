@@ -1,0 +1,63 @@
+# Italian
+
+94 ché questa bestia, per la qual tu gride,
+95 non lascia altrui passar per la sua via,
+96 ma tanto lo 'mpedisce che l'uccide;
+
+# English
+
+for this beast, because of which thou criest out, lets not any one pass along her way, but so hinders him that she kills him!
+
+# Telugu
+
+94 ఈ మృగం వలన నీవు అరుస్తున్నావు,
+95 ఇది ఇతరులకు దాని మార్గం ద్వారా వెళ్లడానికి అనుమతించదు,
+96 కాని అతనిని అంతగా అడ్డుకుంటుంది, అది అతనిని చంపుతుంది;
+
+# Tamil
+
+94 இந்த மிருகத்தால் நீக் கத்துகிறாய்,
+95 அதன் பாதையில் யாரும் செல்ல விடாது,
+96 ஆனால் அவனை இவ்வளவு தடை செய்து அவனை கொல்கிறது;
+
+# Kannada
+
+94 ಈ ಮೃಗಕ್ಕಾಗಿ, ಇದರಿಂದ ನೀನು ಕೂಗುತ್ತೀಯೆ,
+95 ಇದು ಇತರರಿಗೆ ಅದರ ಮಾರ್ಗದಲ್ಲಿ ಹಾದು ಹೋಗಲು ಅನುಮತಿಸುವುದಿಲ್ಲ,
+96 ಆದರೆ ಅದು ಅವನನ್ನು ಅಷ್ಟು ತಡೆಯುತ್ತದೆ, ಅವನನ್ನು ಕೊಲ್ಲುತ್ತದೆ;
+
+# Malayalam
+
+94 ഈ മൃഗം അതിനാൽ നീ കരഞ്ഞു,
+95 അത് മറ്റുള്ളവരെ അതിന്റെ വഴിയിലൂടെ കടക്കാൻ അനുവദിക്കുന്നില്ല,
+96 പക്ഷേ അത് അവനെ അത്ര തടയുന്നു അതു അവനെ കൊല്ലുന്നു;
+
+# Japanese
+
+94 この獣のせいであなたは叫ぶ、
+95 他人がその道を通ることを許さない、
+96 しかしあまりにも妨げて彼を殺す;
+
+# French
+
+94 car cette bête, à cause de laquelle tu cries,
+95 ne laisse personne passer par son chemin,
+96 mais elle le retient tellement qu’elle le tue;
+
+# Spanish
+
+94 porque esta bestia, por la cual tú gritas,
+95 no permite a nadie pasar por su camino,
+96 pero tanto lo impide que lo mata;
+
+# Portuguese
+
+94 pois esta besta, por causa da qual tu gritas,
+95 não deixa ninguém passar pelo seu caminho,
+96 mas tanto o impede que o mata;
+
+# Esperanto
+
+94 ĉar ĉi tiu bestio, pro kiu vi krias,
+95 ne permesas al iu ajn pasi laŭ ĝia vojo,
+96 sed tiel ĝi malhelpas lin ke ĝi mortigas lin;

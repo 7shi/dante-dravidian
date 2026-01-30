@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+அதற்கு பின் அவர் முன்னேறினார் மற்றும் நான் அவருக்குப் பின்னால் அவற்றை வைத்தேன்.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Tamil) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------------|-----------------------------|--------|
+| Allor | Temporal discourse marker “then” | அதற்கு பின் | “then / after that” | OK |
+| si | Reflexive clitic (part of “mosse”) | — | — | UNNECESSARY |
+| mosse | Verb “moved on” (3rd sg) | முன்னேறினார் | “moved onward” | OK |
+| e | Coordinating conjunction “and” | மற்றும் | “and” | OK |
+| io | First‑person singular subject “I” | நான் | “I” | OK |
+| li | Direct‑object pronoun (masc. pl.) “them” | அவற்றை | “them” | OK |
+| tenni | Verb “kept” (1st sg) | வைத்தேன் | “kept” | OK |
+| dietro | Locative adverb “behind” (relative to him) | பின்னால் | “behind” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: **si** – Tamil does not require an explicit reflexive clitic; the meaning is incorporated in the verb *முன்னேறினார்*. No other source tokens are missing, wrong, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 136:
+  - Original: அதற்கு பின் அவர் முன்னேறினார் மற்றும் நான் அவருக்குப் பின்னால் அவற்றை வைத்தேன்.
+  - Issue: none
+  - Corrected: அதற்கு பின் அவர் முன்னேறினார் மற்றும் நான் அவருக்குப் பின்னால் அவற்றை வைத்தேன்.
+
+```
+அதற்கு பின் அவர் முன்னேறினார் மற்றும் நான் அவருக்குப் பின்னால் அவற்றை வைத்தேன்.
+```
+]]></message>
+</messages>

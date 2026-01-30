@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into French, guided by the Reference Translation and Step 1 analysis.
+Output: ONE French line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ainsi mon âme, qui fuyait encore,
+se tourna en arrière pour revoir le passage
+qui n’a jamais laissé aucune personne vivante.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| così | resultative adverb “so” | ainsi | “so” | OK |
+| l'animo | “the soul” (subject) | âme | “soul” | OK |
+| mio | possessive adjective “my” | mon | “my” | OK |
+| ch'ancor | relative pronoun + adverb “which still” | qui … encore | “which … still” | OK |
+| fuggiva | imperfect “was fleeing” | fuyait | “was fleeing” | OK |
+| si | reflexive clitic | se | “self‑reflexive” | OK |
+| volse | past tense “turned” | tourna | “turned” | OK |
+| a *(1st)* | preposition of direction (to + retro) | en | “in” (as part of *en arrière*) | OK |
+| retro | noun used adverbially “back” | arrière | “back” | OK |
+| a *(2nd)* | preposition introducing purpose (to + rimirar) | pour | “for” (purpose) | OK |
+| rimirar | infinitive “to look again” | revoir | “to look again” | OK |
+| lo | definite article “the” | le | “the” | OK |
+| passo | noun “pass” | passage | “passage” | OK |
+| che *(line 27)* | relative pronoun “which” | qui | “which” | OK |
+| non | negation particle “not” | n’ | “not” (part of *ne*) | OK |
+| lasciò | past tense “left” | laissé | “left” | OK |
+| già | adverb “already” | — | — | **MISSING** |
+| mai | adverb “never” | jamais | “never” | OK |
+| persona | noun “person” | personne | “person” | OK |
+| viva | adjective “living” | vivante | “living” | OK |
+
+### Issues Detected
+- **MISSING**: *già* (“already”) is not rendered in the French version.  
+- **UNNECESSARY**: French adds *aucune* (“no”) and the auxiliary *a* in *n’a* (“has”), which have no direct counterpart in the Italian source.  
+
+No WRONG or GRAMMAR errors were found; all mapped elements agree in gender, number, and syntactic function.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only French script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final French text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 25**  
+  - Original: *ainsi mon âme, qui fuyait encore,*  
+  - Issue: none  
+  - Corrected: *ainsi mon âme, qui fuyait encore,*  
+
+- **Line 26**  
+  - Original: *se tourna en arrière pour revoir le passage*  
+  - Issue: none  
+  - Corrected: *se tourna en arrière pour revoir le passage*  
+
+- **Line 27**  
+  - Original: *qui n’a jamais laissé aucune personne vivante.*  
+  - Issue: missing **già** (“déjà”), unnecessary **aucune** and auxiliary **a** (ne … a).  
+  - Corrected: *qui ne laissa jamais déjà personne vivante.*  
+
+```text
+ainsi mon âme, qui fuyait encore,
+se tourna en arrière pour revoir le passage
+qui ne laissa jamais déjà personne vivante.
+```
+]]></message>
+</messages>

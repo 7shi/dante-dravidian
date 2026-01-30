@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+అలా నా ఆత్మ, ఇంకా ఎగురుతూ,
+వెనక్కి తిరిగి ఆ పాస్‌ను మళ్లీ చూసింది
+అది ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Telugu)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Telugu → English) | Status |
+|-------------|----------------------|----------------------|--------------------------------------|--------|
+| così | “so / thus” (resultative) | **అలా** | “so / thus” | OK |
+| l'animo | “the soul / spirit” | **ఆత్మ** | “soul” | OK |
+| mio | possessive “my” | **నా** | “my” | OK |
+| ch'ancor | relative “which” + adverb “still” | **ఇంకా** | “still” (relative sense understood) | OK |
+| fuggiva | imperfect “was fleeing / flying” | **ఎగురుతూ** | “flying / fleeing” | OK |
+| si | reflexive clitic (the subject acts on itself) | **తిరిగి** | “turned back” (reflexive sense) | OK |
+| volse | past “turned” | **తిరిగి** | “turned back” | OK |
+| a (1) | preposition introducing direction (to) | **వెనక్కి** | “backward” (direction) | OK |
+| retro | noun used adverbially “back” | **వెనక్కి** | “backward” | OK |
+| a (2) | preposition introducing infinitive purpose | **మళ్లీ** (part of “again”) | “again” (purpose marker) | **UNNECESSARY** (Telugu does not need a separate preposition here) |
+| rimirar | infinitive “to look again” | **చూది** | “looked” (with “again” supplied by మళ్లీ) | OK |
+| lo | definite article “the” | **ఆ** | “the” | OK |
+| passo | “the pass” (object) | **పాస్‌ను** | “the pass‑ACC” | OK |
+| che | relative pronoun “which” | **అది** | “which / that” | OK |
+| non | negation “not” | **ఎప్పుడూ** | “never” (covers both non + mai) | OK |
+| lasciò | past “left” | **విడిచిపెట్టలేదు** | “did not leave” | OK |
+| già | adverb “already” | — | — | **MISSING** |
+| mai | adverb “never” | **ఎప్పుడూ** | “never” (already expressed) | OK |
+| persona | noun “person” | **వ్యక్తిని** | “person‑ACC” | OK |
+| viva | adjective “living” | **జీవించి ఉన్న** | “living (present participle)” | OK |
+
+---
+
+### Items Requiring Attention
+- **MISSING:** `già` – the notion “already” is not rendered in the Telugu version.  
+- **UNNECESSARY:** the second `a` (preposition before the infinitive) – Telugu expresses the purpose without a separate preposition; the meaning is already carried by the verb phrase “మళ్లీ చూసింది”.  
+
+No grammar mismatches or wrong translations were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: అలా నా ఆత్మ, ఇంకా ఎగురుతూ,
+  - Issue: none
+  - Corrected: అలా నా ఆత్మ, ఇంకా ఎగురుతూ,
+
+- Line 26:
+  - Original: వెనక్కి తిరిగి ఆ పాస్‌ను మళ్లీ చూసింది
+  - Issue: none
+  - Corrected: వెనక్కి తిరిగి ఆ పాస్‌ను మళ్లీ చూసింది
+
+- Line 27:
+  - Original: అది ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు.
+  - Issue: Missing “already” (già)
+  - Corrected: అది ఇప్పటికే ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు.
+
+```
+అలా నా ఆత్మ, ఇంకా ఎగురుతూ,
+వెనక్కి తిరిగి ఆ పాస్‌ను మళ్లీ చూసింది
+అది ఇప్పటికే ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు.
+```
+]]></message>
+</messages>

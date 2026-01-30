@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Tamil, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Tamil line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+நானும் அவருக்கு கவிஞரே நான் உன்னை வேண்டுகிறேன்  
+நீ அறியாத அந்த கடவுளை கொண்டு,  
+அதனால் நான் இந்த தீமையையும் அதைவிட மோசமானதையும் தப்பிக்க முடியும்,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **E** | coordinating conjunction “and” linking to previous clause | *(none)* | — | UNNECESSARY (omitted in Tamil) |
+| **io** (1st) | speaker, subject of the clause | **நான்** | “I” | OK |
+| **a** | preposition marking the addressee (to) | *(none – merged with “lui”) * | — | UNNECESSARY |
+| **lui:** | male addressee (dative) | **அவருக்கு** | “to him” | OK |
+| **«Poeta,** | vocative title “Poet” | **கவிஞரே** | “Poet!” (vocative) | OK |
+| **io** (2nd) | speaker, subject before the verb | **நான்** | “I” | OK |
+| **ti** | second‑person object “you” | **உன்னை** | “you” (object) | OK |
+| **richeggio** | verb “beseech” (present) | **வேண்டுகிறேன்** | “I beseech” | OK |
+| **per** | instrumental preposition “by/through” | **கொண்டு** | “by, using” | OK |
+| **quello** | demonstrative “that” (specifying the God) | **அந்த** | “that” | OK |
+| **Dio** | noun “God” | **கடவுள்** | “God” | OK |
+| **che** | relative pronoun “who/whom” introducing the clause | *(none)* | — | UNNECESSARY (relative clause expressed without a separate pronoun) |
+| **tu** | second‑person subject of the relative clause | *(none)* | — | UNNECESSARY (subject omitted; clause rendered as a participial adjective) |
+| **non** | negation particle “not” | *(part of “அறியாத”) * | — | UNNECESSARY (negation fused into the adjective) |
+| **conoscesti,** | verb “knew” (past) | *(none – expressed by “அறியாத”) * | — | UNNECESSARY |
+| **acciò** | purpose conjunction “so that / in order that” | **அதனால்** | “therefore / so that” | OK |
+| **ch'io** | subordinator + subject “that I” | **நான்** | “I” | OK |
+| **fuga** | verb “escape” (subjunctive) | **தப்பிக்க** | “to escape” | OK |
+| **questo** | demonstrative “this” | **இந்த** | “this” | OK |
+| **male** | noun “ill, bad condition” | **தீமை** | “ill, evil” | OK |
+| **e** | coordinating conjunction “and” linking two objects | *(none – expressed by the conjunctive suffix “‑யும்”) * | — | UNNECESSARY |
+| **peggio,** | comparative adjective “worse” | **மோசமானது** | “worse” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (omitted because Tamil does not require them or they are fused into other words):  
+  - E, a, che, tu, non, conoscesti, e  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected in the Tamil rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Tamil script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Tamil text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 130:
+  - Original: நானும் அவருக்கு கவிஞரே நான் உன்னை வேண்டுகிறேன்
+  - Issue: none
+  - Corrected: no change
+- Line 131:
+  - Original: நீ அறியாத அந்த கடவுளை கொண்டு,
+  - Issue: none
+  - Corrected: no change
+- Line 132:
+  - Original: அதனால் நான் இந்த தீமையையும் அதைவிட மோசமானதையும் தப்பிக்க முடியும்,
+  - Issue: none
+  - Corrected: no change
+
+```
+நானும் அவருக்கு கவிஞரே நான் உன்னை வேண்டுகிறேன்
+நீ அறியாத அந்த கடவுளை கொண்டு,
+அதனால் நான் இந்த தீமையையும் அதைவிட மோசமானதையும் தப்பிக்க முடியும்,
+```
+]]></message>
+</messages>

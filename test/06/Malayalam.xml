@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ഞാൻ ഉയർന്നിടത്ത് നോക്കി അതിന്റെ തോളുകൾ കണ്ടു  
+അവ ഇതിനകം ഗ്രഹത്തിന്റെ കിരണങ്ങളാൽ മൂടപ്പെട്ടിരിക്കുന്നു  
+അത് ആളുകളെ ഓരോ വഴിയിലും നേരെ നയിക്കുന്നു.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------------------|----------------------------|--------|
+| guardai | “looked” (performed act of looking upward) | നോക്കി | “looked” | OK |
+| in | preposition “on” (spatial direction) | ഉയർന്നിടത്ത് (part) | “on” (as part of “on high”) | OK |
+| alto | “high” (direction of gaze) | ഉയർന്നിടത്ത് (part) | “high” | OK |
+| e | coordinating conjunction “and” linking two actions | — (omitted) | — | **UNNECESSARY** (conjunction not required in Malayalam) |
+| vidi | “saw” (visual perception) | കണ്ടു | “saw” | OK |
+| le | definite article “the” (feminine plural) | — (omitted) | — | **UNNECESSARY** (articles are not expressed in Malayalam) |
+| sue | possessive adjective “its” (referring to shoulders) | അതിന്റെ | “its” | OK |
+| spalle | noun “shoulders” (direct object) | തോളുകൾ | “shoulders” | OK |
+| vestite | past participle “clothed” (state) | മൂടപ്പെട്ടിരിക്കുന്നു | “are clothed” | OK |
+| già | adverb “already” (temporal marker) | ഇതിനകം | “already” | OK |
+| de' | preposition “of” (introducing source of rays) | ഗ്രഹത്തിന്റെ (part) | “of the” (as in “of the planet”) | OK |
+| raggi | noun “rays” (emanations) | കിരണങ്ങളാൽ | “by rays” | OK |
+| del | preposition + article “of the” (linking planet) | ഗ്രഹത്തിന്റെ (part) | “of the” (as in “of the planet”) | OK |
+| pianeta | noun “planet” (celestial body) | ഗ്രഹം | “planet” | OK |
+| che | relative pronoun “that” (introducing clause) | — (omitted) | — | **UNNECESSARY** (relative pronoun can be dropped in Malayalam) |
+| mena | verb “leadeth” (guiding action) | നയിക്കുന്നു | “leads” | OK |
+| dritto | adverb/adjective “aright / straight” (manner) | നേരെ | “straight” | OK |
+| altrui | noun “men / people” (indirect object) | ആളുകളെ | “people” | OK |
+| per | preposition “along” (route) | വഴിയിലും (part) | “along” (as part of “in each path”) | OK |
+| ogne | adjective “every” (quantifier) | ഓരോ | “every” | OK |
+| calle. | noun “path” (object of preposition) | വഴിയിലും / വഴി (part) | “path” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `e`, `le`, `che` – Malayalam does not require an explicit coordinating conjunction, definite article, or relative pronoun in this construction.  
+- **No MISSING, WRONG, or GRAMMAR** issues were detected; all present source meanings are adequately rendered in the Malayalam translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 16:
+  - Original: ഞാൻ ഉയർന്നിടത്ത് നോക്കി അതിന്റ തോളുകൾ കണ്ടു
+  - Issue: none
+  - Corrected: no change  
+
+- Line 17:
+  - Original: അവ ഇതിനകം ഗ്രഹത്തിന്റെ കിരണങ്ങളാൽ മൂടപ്പെട്ടിരിക്കുന്നു
+  - Issue: none
+  - Corrected: no change  
+
+- Line 18:
+  - Original: അത് ആളുകളെ ഓരോ വഴിയിലും നേരെ നയിക്കുന്നു.
+  - Issue: none
+  - Corrected: no change  
+
+```malayalam
+ഞാൻ ഉയർന്നിടത്ത് നോക്കി അതിന്റെ തോളുകൾ കണ്ടു
+അവ ഇതിനകം ഗ്രഹത്തിന്റെ കിരണങ്ങളാൽ മൂടപ്പെട്ടിരിക്കുന്നു
+അത് ആളുകളെ ഓരോ വഴിയിലും നേരെ നയിക്കുന്നു.
+```
+]]></message>
+</messages>

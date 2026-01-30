@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ó honra e luz dos outros poetas,
+concede‑me o longo estudo e o grande amor
+que me fez buscar o teu volume.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Alignment Table (Source → Portuguese)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (to English) | Status |
+|---|-------------|--------------------------------------|----------------------|--------------------------------|--------|
+| 1 | O | Vocative particle addressing abstract entities | Ó | “O” (exclamation) | OK |
+| 2 | de | Preposition marking possession/association | dos | “of the” | OK |
+| 3 | li | Definite article, masc. plural | **(included in “dos”)** | “the” (merged) | **UNNECESSARY** |
+| 4 | altri | Adjective specifying which poets | outros | “other” | OK |
+| 5 | poeti | Noun, masc. plural, object of preposition | poetas | “poets” | OK |
+| 6 | onore | Noun, abstract quality | honra | “honor” | OK |
+| 7 | e | Coordinating conjunction linking qualities | e | “and” | OK |
+| 8 | lume | Noun, abstract quality | luz | “light” | OK |
+| 9 | vagliami | Imperative verb + enclitic pronoun, request | concede‑me | “grant me” | OK |
+|10 | ’l | Definite article (il) | o | “the” | OK |
+|11 | lungo | Adjective describing extent | longo | “long” | OK |
+|12 | studio | Noun, scholarly effort | estudo | “study” | OK |
+|13 | e | Coordinating conjunction | e | “and” | OK |
+|14 | ’l | Definite article | o | “the” | OK |
+|15 | grande | Adjective qualifying intensity | grande | “great” | OK |
+|16 | amore | Noun, passionate feeling | amor | “love” | OK |
+|17 | che | Relative pronoun introducing cause clause | que | “which/that” | OK |
+|18 | m’ha | Enclitic pronoun + auxiliary (“mi ha”) | me fez | “made me” (combined) | OK |
+|19 | fatto | Past participle, causative verb | fez | “made” | OK |
+|20 | cercar | Infinitive “to search” | buscar | “to search” | OK |
+|21 | lo | Definite article, masc. singular | o | “the” | OK |
+|22 | tuo | Possessive adjective | teu | “your/thy” | OK |
+|23 | volume. | Noun, object being sought | volume. | “volume” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *li* – the separate Italian article is absorbed into the Portuguese prepositional contraction “dos”; a distinct word is not required.  
+
+No other tokens are missing, wrong, or grammatically problematic.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 82**  
+  - Original: Ó honra e luz dos outros poetas,  
+  - Issue: none  
+  - Corrected: Ó honra e luz dos outros poetas,
+
+- **Line 83**  
+  - Original: concede‑me o longo estudo e o grande amor  
+  - Issue: none  
+  - Corrected: concede‑me o longo estudo e o grande amor
+
+- **Line 84**  
+  - Original: que me fez buscar o teu volume.  
+  - Issue: none  
+  - Corrected: que me fez buscar o teu volume.
+
+```
+Ó honra e luz dos outros poetas,
+concede‑me o longo estudo e o grande amor
+que me fez buscar o teu volume.
+```
+]]></message>
+</messages>

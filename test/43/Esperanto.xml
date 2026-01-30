@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Esperanto, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Esperanto line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+En ĉiuj partoj li imperas kaj tie li regas;  
+Tie estas lia urbo kaj la alta seĝo:  
+Ho feliĉa tiu, kiun tie li elektas!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word/Phrase | Back‑Translation | Status |
+|-------------|------------------------------------------|--------------------|------------------|--------|
+| In | locative preposition introducing “all parts” | En | In | OK |
+| tutte | universal quantifier “all” (∀x Part(x) → …) | ĉiuj | all | OK |
+| parti | set of spatial divisions of the world | partoj | parts | OK |
+| impera | He governs each part | imperas | governs | OK |
+| e | coordinates two predicates | kaj | and | OK |
+| quivi | locative adverb pointing to the place of reign | tie | there | OK |
+| regge | He reigns at that place | regas | reigns | OK |
+| quivi | locative adverb pointing to the place of city/seat | Tie | there | OK |
+| è | copular verb asserting existence | estas | is | OK |
+| la | definite article (fem.) marking “city” | — *(omitted)* | (the) | **UNNECESSARY** |
+| sua | possessive adjective denoting ownership by the Sovereign | lia | his | OK |
+| città | the Sovereign’s urban domain | urbo | city | OK |
+| e | coordinates two nouns | kaj | and | OK |
+| l'alto | article + adjective “the lofty” | la alta | the lofty | OK |
+| seggio | the Sovereign’s elevated throne | seĝo | seat | OK |
+| oh | vocative interjection addressing the listener | Ho | O | OK |
+| felice | describes the emotional state of the chosen one | feliĉa | happy | OK |
+| colui | pronoun referring to the elected individual | tiu | he/that one | OK |
+| cu' | relative pronoun introducing the clause “whom … elects” | kiun | whom | OK |
+| ivi | locative adverb of the place of election | tie | there/thereto | OK |
+| elegge | He selects the individual at that place | elektas | elects | OK |
+
+---
+
+### Items to Review
+- **UNNECESSARY**: *la* (definite article before “città”) – Esperanto does not require an article here, so the source article is omitted in the translation.  
+
+No missing, wrong, or grammatical‑agreement problems were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Esperanto script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Esperanto text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 127:  
+  - Original: **En ĉiuj partoj li imperas kaj tie li regas;**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 128:  
+  - Original: **Tie estas lia urbo kaj la alta seĝo:**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 129:  
+  - Original: **Ho feliĉa tiu, kiun tie li elektas!».**  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+En ĉiuj partoj li imperas kaj tie li regas;
+Tie estas lia urbo kaj la alta seĝo:
+Ho feliĉa tiu, kiun tie li elektas!».
+```
+]]></message>
+</messages>

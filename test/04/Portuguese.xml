@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Portuguese, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Portuguese line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Não consigo bem relatar como entrei,
+eu estava tão cheio de sono naquele ponto
+onde abandonei o caminho verdadeiro.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| Io | 1st‑person singular pronoun, subject of “so” | *(omitted)* | – | UNNECESSARY |
+| non | Negation adverb | não | not | OK |
+| so | Verb *sapere* “to know / be able” (present 1sg) | consigo | can | OK |
+| ben | Manner adverb “well” | bem | well | OK |
+| ridir | Infinitive “to recount, tell again” | relatar | to recount | OK |
+| com' | Interrogative adverb “how” | como | how | OK |
+| i' | Clitic pronoun “I” (subject inside clause) | *(omitted)* | – | UNNECESSARY |
+| v'intrai | Historic‑past verb “I entered (it)” | entrei | entered | OK |
+| tant' | Degree adverb “so, such” | tão | so | OK |
+| era | Imperfect of *essere* “was” | estava | was | OK |
+| pien | Predicative adjective “full” | cheio | full | OK |
+| di | Preposition “of” | de | of | OK |
+| sonno | Noun “slumber, sleep” | sono | sleep | OK |
+| a | Preposition “at” (temporal) | no* (part of “naquele”) | at | OK |
+| quel | Demonstrative adjective “that” | *aquele* (part of “naquele”) | that | OK |
+| punto | Noun “point, moment” | ponto | point | OK |
+| che | Relative pronoun “where” | onde | where | OK |
+| la | Definite article, fem. singular “the” (modifying *via*) | o | the | **GRAMMAR** (gender mismatch; should be *a*) |
+| verace | Adjective “true, genuine” | verdadeiro | true | OK |
+| via | Noun “way, path” | caminho | way | OK |
+| abbandonai | Historic‑past verb “I abandoned” | abandonei | abandoned | OK |
+
+\*In Portuguese the preposition *a* + demonstrative *aquele* contracts to **naquele**; we split the mapping for clarity.
+
+---
+
+### Issues Detected  
+
+- **UNNECESSARY**: *Io*, *i'* – Portuguese drops the explicit subject pronoun here.  
+- **GRAMMAR**: *la* → **o** – article gender is wrong; the feminine article **a** (or the contracted **a** in *a caminho*) would be correct.  
+
+No **MISSING** or **WRONG** items were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Portuguese script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Portuguese text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 10**:
+  - Original: Não consigo bem relatar como entrei,
+  - Issue: none
+  - Corrected: Não consigo bem relatar como entrei,
+
+- **Line 11**:
+  - Original: eu estava tão cheio de sono naquele ponto
+  - Issue: none
+  - Corrected: eu estava tão cheio de sono naquele ponto
+
+- **Line 12**:
+  - Original: onde abandonei o caminho verdadeiro.
+  - Issue: none
+  - Corrected: onde abandonei o caminho verdadeiro.
+
+```
+Não consigo bem relatar como entrei,
+eu estava tão cheio de sono naquele ponto
+onde abandonei o caminho verdadeiro.
+```
+]]></message>
+</messages>

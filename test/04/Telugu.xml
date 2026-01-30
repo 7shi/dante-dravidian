@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Telugu, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Telugu line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+నేను ఎలా ప్రవేశించానో బాగా చెప్పలేను,
+ఆ సమయంలో నేను నిద్రలో పూర్తిగా నిండిపోయి ఉండేవాడిని
+అప్పుడు నేను నిజమైన మార్గాన్ని వదిలేశాను.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Telugu translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|----------------------|----------------------|--------------------------|--------|
+| Io | 1st‑person singular pronoun (subject) | **నేను** | “I” | OK |
+| non | Negation of knowledge/ability | *(integrated in “చెప్పలేను”) – no separate word* | – | **UNNECESSARY** |
+| so | Verb “sapere” (to know) in present, negated | *(integrated in “చెప్పలేను”) – no separate word* | – | **UNNECESSARY** |
+| ben | Manner adverb “well” | **బాగా** | “well” | OK |
+| ridir | Infinitive “recount, tell again” | **చెప్పలేను** | “cannot tell” (cannot recount) | OK |
+| com' | Interrogative adverb “how” | **ఎలా** | “how” | OK |
+| i' | Clitic pronoun “I” (re‑iteration) | *(already expressed by “నేను”) – omitted* | – | **UNNECESSARY** |
+| v'intrai | Past historic “I entered (it)” | **ప్రవేశించానో** | “entered (it) –‑ (question‑particle)” | OK |
+| tant' | Degree adverb “so, such” | **పూర్తిగా** | “completely / fully” (high degree) | OK |
+| era | Imperfect “was” (copular) | *(encoded in “ఉండేవాడిని”) – no separate word* | – | **UNNECESSARY** |
+| pien | Predicative adjective “full” | **నిండిపోయి** | “filled up, was full” | OK |
+| di | Preposition “of” linking “full” to “slumber” | **లో** (inside “నిద్రలో”) | “in” | OK |
+| sonno | Noun “slumber, sleep” | **నిద్ర** | “sleep” | OK |
+| a | Preposition “at” (temporal) | **ఆ సమయంలో** (covers “at that point”) | “at that time” | OK |
+| quel | Demonstrative “that” (referring to point) | **ఆ** (part of “ఆ సమయంలో”) | “that” | OK |
+| punto | Noun “point, moment” | **సమయంలో** (part of “ఆ సమయంలో”) | “moment, time” | OK |
+| che | Relative conjunction “where/that” | **అప్పుడు** | “then / at that point” | OK |
+| la | Definite article (feminine) | *(articles are not used in Telugu)* | – | **UNNECESSARY** |
+| verace | Adjective “true, genuine” | **నిజమైన** | “true” | OK |
+| via | Noun “way, path” | **మార్గాన్ని** | “the way (accusative)” | OK |
+| abbandonai | Past historic “I abandoned” | **వదిలేశాను** | “abandoned” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *non, so, i', era, la* – these grammatical particles are absorbed into the Telugu verb forms or are not required in Telugu syntax.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are present and agree in gender/number where applicable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Telugu script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Telugu text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 10:
+  - Original: నేను ఎలా ప్రవేశించానో బాగా చెప్పలేను,
+  - Issue: none
+  - Corrected: no change
+- Line 11:
+  - Original: ఆ సమయంలో నేను నిద్రలో పూర్తిగా నిండిపోయి ఉండేవాడిని
+  - Issue: none
+  - Corrected: no change
+- Line 12:
+  - Original: అప్పుడు నేను నిజమైన మార్గాన్ని వదిలేశాను.
+  - Issue: none
+  - Corrected: no change
+
+```
+నేను ఎలా ప్రవేశించానో బాగా చెప్పలేను,
+ఆ సమయంలో నేను నిద్రలో పూర్తిగా నిండిపోయి ఉండేవాడిని
+అప్పుడు నేను నిజమైన మార్గాన్ని వదిలేశాను.
+```
+]]></message>
+</messages>

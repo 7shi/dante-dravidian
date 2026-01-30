@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Malayalam, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Malayalam line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ഞാൻ അത് എങ്ങനെ പ്രവേശിച്ചതെന്ന് നന്നായി പറയാൻ കഴിയില്ല,
+അന്നത്തെ നിമിഷത്തിൽ ഞാൻ ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു
+അവിടെ ഞാൻ സത്യമായ വഴിയെ ഉപേക്ഷിച്ചു.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Malayalam)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Malayalam) | Back‑Translation (English) | Status |
+|-------------|----------------------|----------------------------------|-----------------------------|--------|
+| Io | 1st‑person singular pronoun, subject | ഞാൻ | I | OK |
+| non | Negation particle (‑not) | — (merged in *കഴിയില്ല*) | — | UNNECESSARY |
+| so | Verb *sapere* “to know” (used with *non* → “cannot”) | — (merged in *കഴിയില്ല*) | — | UNNECESSARY |
+| ben | Manner adverb “well” | നന്നായി | well | OK |
+| ridir | Infinitive “recount, tell again” | പറയാൻ | to say / to recount | OK |
+| com' | Interrogative adverb “how” | എങ്ങനെ | how | OK |
+| i' | Clitic pronoun “I” (re‑iteration) | — (subject already expressed by *ഞാൻ*) | — | UNNECESSARY |
+| v'intrai | Past historic “I entered it” | പ്രവേശിച്ചതെന്ന് | (that) I entered | OK |
+| tant' | Degree adverb “so, such a great” | അതിയായ | so great | OK |
+| era | Imperfect “was” (copular) | ഉണ്ടായിരുന്നു | was | OK |
+| pien | Predicative adjective “full” | നിറവുണ്ടായിരുന്നു | was full | OK |
+| di | Preposition “of” (linking *pien* to *sonno*) | — (merged in *ഉറക്കത്തിൽ*) | — | UNNECESSARY |
+| sonno | Noun “slumber, sleepiness” | ഉറക്കത്തിൽ | in sleep | OK |
+| a | Temporal preposition “at” | — (merged in *നിമിഷത്തിൽ*) | — | UNNECESSARY |
+| quel | Demonstrative “that” | അന്നത്തെ | that (moment) | OK |
+| punto | Noun “point, moment” | നിമിഷത്തിൽ | at the moment | OK |
+| che | Relative conjunction “where” | അവിടെ | there / where | OK |
+| la | Definite article “the” (feminine) | — (articles omitted in Malayalam) | — | UNNECESSARY |
+| verace | Adjective “true, genuine” | സത്യമായ | true | OK |
+| via | Noun “way, path” (ACC) | വഴിയെ | the way (accusative) | OK |
+| abbandonai | Past historic “I abandoned” | ഉപേക്ഷിച്ചു | abandoned | OK |
+
+### Items flagged
+
+- **UNNECESSARY** (source words not required as separate tokens in Malayalam): `non`, `so`, `i'`, `di`, `a`, `la`.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Malayalam script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Malayalam text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 10:
+  - Original: ഞാൻ അത് എങ്ങനെ പ്രവേശിച്ചതെന്ന് നന്നായി പറയാൻ കഴിയില്ല,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 11:
+  - Original: അന്നത്തെ നിമിഷത്തിൽ ഞാൻ ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു
+  - Issue: none
+  - Corrected: no change  
+
+- Line 12:
+  - Original: അവിടെ ഞാൻ സത്യമായ വഴിയെ ഉപേക്ഷിച്ചു.
+  - Issue: none
+  - Corrected: no change  
+
+```
+ഞാൻ അത് എങ്ങനെ പ്രവേശിച്ചതെന്ന് നന്നായി പറയാൻ കഴിയില്ല,
+അന്നത്തെ നിമിഷത്തിൽ ഞാൻ ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു
+അവിടെ ഞാൻ സത്യമായ വഴിയെ ഉപേക്ഷിച്ചു.
+```
+]]></message>
+</messages>
