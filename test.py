@@ -124,11 +124,9 @@ for i in range(start, end):
 
 # Save results by language
 if not args.step1:
-    alldir = testdir / "all"
-    alldir.mkdir(parents=True, exist_ok=True)
     for lang, texts in result_all.items():
         if lang in ["Italian", "English"]:
             continue
-        output_file = alldir / f"{lang}.txt"
+        output_file = testdir / f"{lang}.txt"
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write("\n\n".join(texts) + "\n")
