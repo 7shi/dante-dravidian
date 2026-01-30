@@ -38,6 +38,12 @@ to whom if thou wilt thereafter ascend, then shall be a soul more worthy than I 
 122 そのことに関して私よりも価値のある魂があるだろう：
 123 私の出発の際に彼女と共に君を離すだろう；
 
+# Estonian
+
+121 kellele kui sa tahad pärast seda tõusta,
+122 hing on selle pärast rohkem väärt kui mina:
+123 tema kõrval jätan ma sind minu lahkumisel;
+
 # French
 
 121 À ceux, si tu veux ensuite monter,
@@ -61,3 +67,39 @@ to whom if thou wilt thereafter ascend, then shall be a soul more worthy than I 
 121 Al tiuj se vi volos poste leviĝi,
 122 Animo estos pli inda ol mi pri tio:
 123 Kun ŝi mi lasos vin ĉe mia foriro;
+
+# Interlingua
+
+121 a illes, si tu volera ascender postea,
+122 un anima essera plus digne de isto que io:
+123 con illa io lassa te al mi partida;
+
+# Hindi
+
+121 यदि तुम बाद में चढ़ना चाहोगे तो उन लोगों को,
+122 उस कार्य के लिये एक आत्मा मुझसे अधिक योग्य होगी:
+123 मैं तुम्हें उसके साथ मेरे प्रस्थान पर छोड़ दूँगा;
+
+# Bengali
+
+121 যে সকলের কাছে তুমি পরে যদি আরোহন করতে চাও,
+122 তখন একটি আত্মা হবে যা সেই বিষয়ে আমার চেয়ে অধিক যোগ্য হবে:
+123 তার সঙ্গে আমি তোমাকে আমার প্রস্থানকালে ছেড়ে দেব;
+
+# German
+
+121 An die, die du danach aufsteigen willst,
+122 wird eine Seele dafür würdiger sein als ich:
+123 mit ihr werde ich dich bei meinem Aufbruch lassen;
+
+# Dutch
+
+121 Aan hen, als jij daarna wilt opstijgen,
+122 zal een ziel waardiger zijn dan ik voor dat:
+123 met haar zal ik je verlaten bij mijn vertrek;
+
+# Serbian (Latin script)
+
+121 Onima kojima ako želiš potom da se uzdigneš,
+122 duša će biti vrednija od mene za to:
+123 s njom ću te ostaviti pri mom odlasku;

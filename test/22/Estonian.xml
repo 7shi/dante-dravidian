@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Kui ma nägin teda suures kõrbes,  
+Halasta mulle karjus ma talle,  
+Olgu sa mis tahes kas vari või tõeline mees!.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Estonian translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| Quando | temporal conjunction “when” | Kui | when | OK |
+| vidi | verb “saw” (past) | nägin | I saw | OK |
+| costui | demonstrative pronoun “him” | teda | him | OK |
+| nel | preposition “in the” (spatial) | (‑) kõrbes* | in the desert (case) | UNNECESSARY* |
+| gran | adjective “great” | suures | great (large) | OK |
+| diserto | noun “desert” | kõrbes | desert | OK |
+| Miserere | imperative “have pity” | Halasta | have mercy | OK |
+| di | preposition “on / to” (object of mercy) | mulle | to me | OK |
+| me | pronoun “me” (object of *di*) | – | – | UNNECESSARY |
+| gridai | verb “cried / shouted” (past) | karjus | I shouted | WRONG (verb form; should be *karjusin*) |
+| a | preposition “to” (dative) | – | – | UNNECESSARY |
+| lui | pronoun “him” (dative) | talle | to him | OK |
+| qual | relative pronoun “whatever” | mis | whatever | OK |
+| che | relative particle (part of *qual che*) | – | – | UNNECESSARY |
+| tu | pronoun “you” (2nd sg) | sa | you | OK |
+| sii | subjunctive “be” (non‑assertive) | Olgu | be (let it be) | WRONG (written as *Olust*) |
+| od (1) | conjunction “or” | kas | or (introducing alternative) | OK |
+| ombra | noun “shade” | vari | shade | OK |
+| od (2) | conjunction “or” | või | or | OK |
+| omo | noun “man” | mees | man | OK |
+| certo | adjective “certain / real” | tõeline | real / genuine | OK |
+
+\*The preposition *nel* is not expressed as a separate word in Estonian; the locative case on **kõrbes** carries the meaning “in the”. Hence it is marked **UNNECESSARY** for a one‑to‑one mapping.
+
+---
+
+### Items to Review  
+
+- **WRONG**:  
+  - *Olust* (should be **Olgu**) – mis‑translation of *sii*.  
+  - *karjus* (should be **karjusin**) – incorrect verb form and missing personal ending.  
+
+- **GRAMMAR**: (covered by the WRONG entries above; the verb forms are grammatically incorrect).  
+
+- **UNNECESSARY**:  
+  - *nel* (preposition is absorbed by the case ending on **kõrbes**).  
+  - *me* (object already encoded in **mulle**).  
+  - *a* (dative expressed by **talle**).  
+  - *che* (syntactic particle without lexical counterpart in Estonian).  
+
+- **MISSING**: none – every source lexical item has a corresponding target element (even if marked UNNECESSARY).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**  
+  - **Original:** Kui ma nägin teda suures kõrbes,  
+  - **Issue:** none  
+  - **Corrected:** no change  
+
+- **Line 65**  
+  - **Original:** Halasta mulle karjus ma talle,  
+  - **Issue:** verb form incorrect and word order unnatural  
+  - **Corrected:** Halasta mulle, karjusin ma talle,  
+
+- **Line 66**  
+  - **Original:** Olgu sa mis tahes kas vari või tõeline mees! .  
+  - **Issue:** punctuation errors (missing comma, stray exclamation and space before period)  
+  - **Corrected:** Olgu sa mis tahes, kas vari või tõeline mees.  
+
+```
+Kui ma nägin teda suures kõrbes,
+Halasta mulle, karjusin ma talle,
+Olgu sa mis tahes, kas vari või tõeline mees.
+```
+]]></message>
+</messages>

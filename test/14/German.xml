@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+die erste Stunde der Zeit und die süße Jahreszeit;  
+so dass es mir Anlass zu guter Hoffnung war  
+für jenes wilde Tier mit der gesprenkelten Haut
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑German Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| **mosse** | “initial moments / hour” (plural) | **Stunde** | “hour” | **WRONG** (plural → singular) |
+| **di** (line 40) | genitive marker “of” | **der** | “of the” | OK |
+| **prima** | “first, earliest” | **erste** | “first” | OK |
+| **quelle** | demonstrative “those” | **die** | “the / those” | OK |
+| **cose** | “things, beautiful entities (season)” | **Jahreszeit** | “season” | OK |
+| **belle** | “beautiful / sweet” (qualifier) | **süße** | “sweet” | OK |
+| **sì** | resultative “so” | **so** | “so” | OK |
+| **ch'a** | causal conjunction “that” (part of “so that”) | **dass** | “that” | OK |
+| **bene** | “good” (quality of hope) | **guter** | “good” | OK |
+| **sperar** | infinitive “to hope” | **Hoffnung** | “hope” | OK |
+| **m'era** | “to me was” (experiencer + copula) | **mir … war** | “to me was” | OK |
+| **cagione** | “occasion, cause” | **Anlass** | “occasion” | OK |
+| **di** (line 42) | preposition “of / concerning” | **für** | “for / concerning” | OK |
+| **quella** | demonstrative “that” | **jenes** | “that” | OK |
+| **fiera** | “wild beast” | **wilde Tier** | “wild beast” | OK |
+| **a** (line 42) | preposition “with” | **mit** | “with” | OK |
+| **la** | definite article (feminine) | **der** | “the” (dative) | OK |
+| **gaetta** | “dappled, speckled” | **gesprenkelten** | “dappled” | OK |
+| **pelle** | “skin” | **Haut** | “skin” | OK |
+
+---
+
+### Issues Detected
+- **WRONG:** *mosse* → rendered as singular **Stunde** while the source is plural (“moments”).  
+  *(All other mappings are acceptable; no missing, grammar, or unnecessary items were found.)*
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 40:
+  - Original: die erste Stunde der Zeit und die süße Jahreszeit;
+  - Issue: WRONG (singular “Stunde” vs. required plural)
+  - Corrected: die **ersten Stunden** der Zeit und die süße Jahreszeit;
+- Line 41:
+  - Original: so dass es mir Anlass zu guter Hoffnung war
+  - Issue: none
+  - Corrected: no change
+- Line 42:
+  - Original: für jenes wilde Tier mit der gesprenkelten Haut
+  - Issue: none
+  - Corrected: no change
+
+```text
+die ersten Stunden der Zeit und die süße Jahreszeit;
+so dass es mir Anlass zu guter Hoffnung war
+für jenes wilde Tier mit der gesprenkelten Haut
+```
+]]></message>
+</messages>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Sa oled mu meister ja mu autor,
+sa oled ainuke see kellelt ma võtsin
+kaunis stiil mis on mulle au toonud.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+final answer.**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------|----------------------|-----------------------|--------|
+| Tu | 2nd‑person singular pronoun (nominative) – addressee | **Sa** | you | OK |
+| se' | Verb *sei* (present, 2nd sg) – copular “are” | **oled** | are | OK |
+| lo | Definite article, masc. singular (acc.) | — | — | UNNECESSARY |
+| mio | Possessive adjective, masc. singular – “my” | **mu** | my | OK |
+| maestro | Noun, masc. singular – “master” | **meister** | master | OK |
+| e | Coordinating conjunction – “and” | **ja** | and | OK |
+| 'l | Definite article, masc. singular (acc.) | — | — | UNNECESSARY |
+| mio | Possessive adjective – “my” | **mu** | my | OK |
+| autore | Noun, masc. singular – “author” | **autor** | author | OK |
+| tu | 2nd‑person singular pronoun – addressee | **sa** | you | OK |
+| se' | Verb *sei* – “are” | **oled** | are | OK |
+| solo | Adverb / adjective – “alone, only” | **ainuke** | only | OK |
+| colui | Demonstrative pronoun – “the one (he)” | **see** | that one | OK |
+| da | Preposition “from” | **kellelt** (part) | from | OK |
+| cu' | Relative pronoun “whom” | **kellelt** (part) | whom | OK |
+| io | 1st‑person singular pronoun – “I” | **ma** | I | OK |
+| tolsi | Verb *tossi* (preterite, 1st sg) – “took” | **võtsin** | took | OK |
+| lo | Definite article – omitted in Estonian | — | — | UNNECESSARY |
+| bello | Adjective – “fair, beautiful” | **kaunis** | beautiful | OK |
+| stilo | Noun – “style” | **stiil** | style | OK |
+| che | Relative pronoun – “that/which” | **mis** | that | OK |
+| m'ha | Contraction *mi ha* – “has (to) me” | **on mulle** | has to me | OK |
+| fatto | Past participle of *fare* – “done” | **toonud** | done / brought | OK |
+| onore | Noun – “honor” | **au** | honor | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - `lo` (appears twice) – definite article not expressed in Estonian.  
+  - `'l` – definite article omitted in Estonian.  
+
+All other source tokens are represented correctly; no missing, wrong, or grammatical‑agreement issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 85**:
+  - Original: Sa oled mu meister ja mu autor,
+  - Issue: none
+  - Corrected: Sa oled mu meister ja mu autor,
+
+- **Line 86**:
+  - Original: Sa oled ainuke see kellelt ma võtsin
+  - Issue: none
+  - Corrected: Sa oled ainuke see kellelt ma võtsin
+
+- **Line 87**:
+  - Original: Kaunis stiil mis on mulle au toonud.
+  - Issue: none
+  - Corrected: Kaunis stiil mis on mulle au toonud.
+
+```
+Sa oled mu meister ja mu autor,
+Sa oled ainuke see kellelt ma võtsin
+Kaunis stiil mis on mulle au toonud.
+```
+]]></message>
+</messages>

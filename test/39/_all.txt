@@ -38,6 +38,12 @@ where thou shalt hear the despairing shrieks, shalt see the ancient spirits woef
 116 あなたは古代の悲しげな霊を見るだろう,
 117 それぞれが第二の死に向かって叫ぶ;
 
+# Estonian
+
+115 kus sa kuuled meeleheite karjeid,
+116 sa näed vanu kurbade vaime,
+117 kes igaüks karjub teise surma poole;
+
 # French
 
 115 où tu entendras les cris désespérés,
@@ -61,3 +67,39 @@ where thou shalt hear the despairing shrieks, shalt see the ancient spirits woef
 115 kie vi aŭdos la malesperajn kriojn,
 116 vi vidos la antikvajn dolorajn spiritojn,
 117 kiuj ĉiu krias al la dua morto;
+
+# Interlingua
+
+115 ubi tu audira le stridas disperate,
+116 tu videra le spiritus ancian dolente,
+117 qui a le secunda morte cata uno grida;
+
+# Hindi
+
+115 जहाँ तुम निराशाजनक चीत्कार सुनोगे,
+116 तुम प्राचीन दुःखी आत्माओं को देखोगे,
+117 जो प्रत्येक दूसरी मृत्यु के लिये चिल्लाएंगे;
+
+# Bengali
+
+115 যেখানে তুমি শোনবে নিরাশার চিৎকার,
+116 তুমি দেখবে প্রাচীন দুঃখিত আত্মাদের,
+117 যারা প্রত্যেকটি দ্বিতীয় মৃত্যুর দিকে চিৎকার করবে;
+
+# German
+
+115 wo du die verzweifelten Schreie hören wirst,
+116 du wirst die alten klagenden Geister sehen,
+117 die jeder zum zweiten Tod schreien wird;
+
+# Dutch
+
+115 waar je de wanhopige geschreeuwen zult horen,
+116 je zult de oude, verdrietige geesten zien,
+117 die elk naar de tweede dood roepen;
+
+# Serbian (Latin script)
+
+115 gde ćeš čuti očajni vrištaji,
+116 vidićeš stare duhove tugovne,
+117 koji svaki vrišti prema drugoj smrti;

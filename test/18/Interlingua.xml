@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+illa me dedit tant de gravitate,  
+con le timor que veniva de su vista,  
+que io perdeva le sperantia del altitude.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑word mapping table (all three lines combined)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| questa | demonstrative pronoun, female agent “she” | **illa** | she | OK |
+| mi | 1st‑sg. dative pronoun, recipient/experiencer | **me** | me / to me | OK |
+| porse | remote past of *porre* “to cause, give” (here “caused”) | **dedit** | gave / caused | **WRONG** (does not convey causative sense) |
+| tanto | adverb of quantity “so much” | **tant** | so much | OK |
+| di | preposition “of” | **de** | of | OK |
+| gravezza | noun “heaviness” (emotional weight) | **gravitate** | heaviness | OK |
+| con | preposition “with” | **con** | with | OK |
+| la | definite article (feminine) | **le** | the | OK |
+| paura | noun “fear” | **timor** | fear | OK |
+| ch'uscia | relative clause “that came out / that came” | **que veniva** | that came | OK |
+| di | preposition “from” (source of fear) | **de** | from | OK |
+| sua | possessive adjective “her” | **su** | her | OK |
+| vista | noun “sight” | **vista** | sight | OK |
+| ch'io | relative pronoun + subject “that I” | **que io** | that I | OK |
+| perdei | remote past of *perdere* “to lose” | **perdeva** | lost (imperfect) | OK |
+| la | definite article (feminine) | **le** | the | OK |
+| speranza | noun “hope” | **sperantia** | hope | OK |
+| de | preposition “of” (linking hope to its object) | **del** | of the | **UNNECESSARY** (article *le* not required in Interlingua) |
+| l'altezza | noun “the height” (metaphoric goal) | **altitude** | height | OK |
+
+### Items flagged
+
+- **WRONG**: *porse → dedit* – “dedit” means “gave”; the source verb conveys a causative meaning (“caused”), so the translation does not fully capture the intended sense.
+- **UNNECESSARY**: *de → del* – Interlingua normally omits the definite article before abstract nouns; “de altitude” would be more idiomatic than “del altitude”.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: illa me dedit tant de gravitate
+  - Issue: WRONG (verb does not convey causative meaning)
+  - Corrected: **illa me causava tant de gravitate**
+
+- Line 53:
+  - Original: con le timor que veniva de su vista,
+  - Issue: none
+  - Corrected: no change
+
+- Line 54:
+  - Original: que io perdeva le sperantia del altitude.
+  - Issue: UNNECESSARY (definite article before “altitude”)
+  - Corrected: **que io perdeva le sperantia de altitude.**
+
+```interlingua
+illa me causava tant de gravitate
+con le timor que veniva de su vista,
+que io perdeva le sperantia de altitude.
+```
+]]></message>
+</messages>

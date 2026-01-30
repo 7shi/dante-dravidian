@@ -38,6 +38,12 @@ so that the hour of the time and the sweet season were occasion of good hope to 
 41 それは私にとって良い希望の機会となるように
 42 あの斑点のある皮膚を持つ野獣について
 
+# Estonian
+
+40 esimene tund ja magus hooaeg;
+41 nii et hea lootus oli mulle põhjus
+42 selle metsiku looma täpilise nahaga
+
 # French
 
 40 l'heure première du temps la saison douce;
@@ -61,3 +67,39 @@ so that the hour of the time and the sweet season were occasion of good hope to 
 40 la unua horo de la tempo kaj tiu dolĉa sezono;
 41 tiel ke bona espero al mi estis okazo
 42 pri tiu fera kun la makula haŭto
+
+# Interlingua
+
+40 le hora del tempore e le dulci stagione;
+41 sic que bon sperantia me esseva causa
+42 del illa fera con le pelle pinterate
+
+# Hindi
+
+40 समय का वह पहला घंटा और मीठा मौसम;
+41 ताकि वह मेरे लिये अच्छी आशा का कारण था
+42 उस जंगली जानवर के बारे में जिसकी धब्बेदार त्वचा थी।
+
+# Bengali
+
+40 প্রথম মুহূর্তের সময় এবং মধুর ঋতু;
+41 যাতে তা আমার জন্য ভাল আশা করার কারণ হয়
+42 সেই দাগযুক্ত ত্বকের বন্য প্রাণী সম্পর্কে
+
+# German
+
+40 die ersten Stunden der Zeit und die süße Jahreszeit;
+41 so dass es mir Anlass zu guter Hoffnung war
+42 für jenes wilde Tier mit der gesprenkelten Haut
+
+# Dutch
+
+40 het eerste uur van de tijd en dat zoete seizoen;
+41 zodat het een aanleiding was voor goede hoop bij mij
+42 van dat wilde beest met de gevlekte huid.
+
+# Serbian (Latin script)
+
+40 prvi sat vremena i to slatko doba;
+41 tako da je to bio povod za dobru nadu meni
+42 u vezi te divlje životinje sa šarenom kožom

@@ -38,6 +38,12 @@ And she did not move from before my face, nay, rather hindered so my road that t
 35 むしろ彼女は私の道をとても妨げた,
 36 それで私は帰ろうとして何度も振り返った.
 
+# Estonian
+
+34 Ja ta ei liigu minule mu näo ees,
+35 vaidvastu takistas nii mu tee, et,
+36 et tagasi pöörduda ma olen sageli pööranud.
+
 # French
 
 34 et elle ne bougeait pas devant mon visage,
@@ -61,3 +67,39 @@ And she did not move from before my face, nay, rather hindered so my road that t
 34 Kaj ŝi ne moviĝis antaŭ mia vizaĝo,
 35 Anstataŭe ŝi obstinis tiom mian vojon,
 36 ke por reveni mi ofte turniĝis.
+
+# Interlingua
+
+34 e non se partia davanti a mi facie,
+35 anzi impediva tanto mi camino,
+36 que per retornar plure vices voltava.
+
+# Hindi
+
+34 और वह मेरे चेहरे के सामने नहीं हटी,
+35 नहीं बल्कि वह मेरे मार्ग को इतना रोकती थी,
+36 कि लौटने के लिये मैं कई बार मुड़ गया।
+
+# Bengali
+
+34 এবং তিনি আমার মুখের সামনে থেকে না সরলেন,
+35 বরং তিনি আমার পথকে এত বাধা দিলেন যে,
+36 ফিরতে আমি বারবার ঘুরে গিয়েছিলাম।
+
+# German
+
+34 Und sie bewegte sich nicht vor meinem Gesicht,
+35 nein vielmehr hinderte sie meinen Weg so sehr,
+36 dass ich zum Zurückkehren oft gedreht war.
+
+# Dutch
+
+34 En zij bewoog zich niet voor mijn gezicht,
+35 Integendeel hinderde zij zo mijn weg,
+36 dat ik om terug te keren vaak gedraaid was.
+
+# Serbian (Latin script)
+
+34 I ona se nije pomerala ispred mog lica,
+35 naprotiv toliko je ometala moj put,
+36 da sam se vraćao više puta okrenuo.

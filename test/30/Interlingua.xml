@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Vide le bestia per le qual io me volve;  
+Adjuta me contra illa famose sapiente,  
+que illa me face tremular le venas e le pulsos.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| Vedi | imperative “see / behold” | Vide | “see / behold” | OK |
+| la | definite article, fem. sg. | le | “the” (definite article) | OK |
+| bestia | “the beast” (specific creature) | bestia | “beast” | OK |
+| per | preposition introducing cause | per | “because of / for” | OK |
+| cu' (cui) | relative pronoun “which” referring to *bestia* | le qual | “which” | OK |
+| io | 1st sg. pronoun, subject | io | “I” | OK |
+| mi | reflexive pronoun (self‑directed) | me | “myself” | OK |
+| volsi | past historic “turned” (self‑directed) | volve | “turned” | OK |
+| aiutami | 1st sg. imperative “help me” | Adjuta me | “help me” | OK |
+| da | preposition “against” (opposition) | contra | “against” | OK |
+| lei | 3rd sg. fem. pronoun “her” | illa | “her / she” | OK |
+| famoso | adjective “famous” (modifying *saggio*) | famose | “famous” | OK |
+| saggio | noun “sage” (vocative) | sapiente | “sage / wise one” | OK |
+| ch'ella (che ella) | subordinator “that / because” introducing cause | que | “that / because” | OK |
+| mi (again) | pronoun “me” as object of *fa* | me | “me” | OK |
+| fa | causative verb “makes” | face | “makes / causes” | OK |
+| tremar | infinitive “to tremble” | tremular | “to tremble” | OK |
+| le (article before *vene*) | definite article, fem. pl. | le | “the” | OK |
+| vene | plural “veins” | venas | “veins” | OK |
+| e | coordinating conjunction “and” | e | “and” | OK |
+| i (article before *polsi*) | definite article, masc. pl. | le | “the” | OK |
+| polsi | plural “pulses” | pulsos | “pulses” | OK |
+
+### Issues Detected
+- **None**. All source tokens are represented, translations respect the intended meanings, and no grammatical mismatches or unnecessary elements are present.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 88:
+  - Original: Vide le bestia per le qual io me volve;
+  - Issue: none
+  - Corrected: no change  
+
+- Line 89:
+  - Original: Adjuta me contra illa famose sapiente,
+  - Issue: GRAMMAR – adjective “famose” should be invariant “famoso”
+  - Corrected: Adjuta me contra illa **famoso** sapiente,  
+
+- Line 90:
+  - Original: que illa me face tremular le venas e le pulsos.
+  - Issue: none
+  - Corrected: no change  
+
+```
+Vide le bestia per le qual io me volve;
+Adjuta me contra illa famoso sapiente,
+que illa me face tremular le venas e le pulsos.
+```
+]]></message>
+</messages>

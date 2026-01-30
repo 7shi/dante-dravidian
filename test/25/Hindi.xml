@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+मैं कवि था और उस न्यायी के बारे में गाया  
+एंकीस का पुत्र जो ट्रॉय से आया,  
+उसके बाद गर्वीला इलियन जलाया गया था.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 2 → Hindi)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (Hindi → English) | Status |
+|-------------|-------------------------------------------|----------------------|------------------------------------|--------|
+| Poeta | speaker is a poet (identity) | कवि | poet | OK |
+| fui | speaker **was** (past copula) | था | was | OK |
+| , | punctuation separating clauses | — | — | **MISSING** |
+| e | coordination “and” | और | and | OK |
+| cantai | speaker sang (past) about X | गाया | sang | OK |
+| di | “of/about” – introduces object of singing | के बारे में | about/of | OK |
+| quel | demonstrative “that” | उस | that | OK |
+| giusto | property “just” of the referent | न्यायी | just | OK |
+| figliuol | son of Anchises (parent‑child) | पुत्र | son | OK |
+| d'Anchise | genitive “of Anchises” | एंकीस का | of Anchises | OK |
+| che | relative pronoun “who” | जो | who | OK |
+| venne | motion “came” from a place | आया | came | OK |
+| di | source preposition “from” | से | from | OK |
+| Troia | proper name “Troy” | ट्रॉय | Troy | OK |
+| , | clause‑ending comma | , | , | OK |
+| poi | temporal adverb “after” | उसके बाद | after | OK |
+| che (result clause) | subordinator “that” introducing result | — | — | **MISSING** |
+| 'l | definite article (elided “il”) | — | — | **UNNECESSARY** |
+| superbo | attribute “proud” of Ilion | गर्वीला | proud | OK |
+| Ilïón | proper name “Ilion” | इलियन | Ilion | OK |
+| fu | auxiliary “was” (passive) | गया | was (part of passive) | OK |
+| combusto | past participle “burned” (passive) | जलाया | burned | OK |
+| . | sentence‑final period | . | . | OK |
+
+---
+
+### Items to Address
+- **MISSING**:  
+  1. Comma after line 73 (source “,” not rendered in Hindi).  
+  2. Conjunction “che” introducing the result clause in line 75 (omitted in Hindi).
+
+- **UNNECESSARY**:  
+  1. Definite article “'l” – Hindi does not use articles, so its omission is natural.
+
+- **WRONG / GRAMMAR**: none detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 73:
+  - Original: मैं कवि था और उस न्यायी के बारे में गाया
+  - Issue: none
+  - Corrected: no change
+- Line 74:
+  - Original: एंकीस का पुत्र जो ट्रॉय से आया,
+  - Issue: none
+  - Corrected: no change
+- Line 75:
+  - Original: उसके बाद गर्वीला इलियन जलाया गया था.
+  - Issue: none
+  - Corrected: no change
+
+```
+मैं कवि था और उस न्यायी के बारे में गाया
+एंकीस का पुत्र जो ट्रॉय से आया,
+उसके बाद गर्वीला इलियन जलाया गया था.
+```
+]]></message>
+</messages>

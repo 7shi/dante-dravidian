@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+pro ille imperator qui regna supra,  
+perque io era rebel al su lege,  
+non vole que alcuno veni in su citate per me.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation | Status |
+|-------------|------------------------------------------|----------------------|------------------|--------|
+| **ché** | causal “because / for that” | **pro** | *for* | OK |
+| **quello** | demonstrative “that” (emperor) | **ille** | *that* | OK |
+| **imperador** | noun “emperor” | **imperator** | *emperor* | OK |
+| **che** (rel.) | relative “who” introducing clause “regna” | **qui** | *who* | OK |
+| **là** | adverb “there” (location above) | **supra** | *above* | OK |
+| **sù** | adverb “up” (vertical direction) | **supra** | *above* | OK |
+| **regna** | verb “reigns” (present) | **regna** | *reigns* | OK |
+| **perch'** | causal “because” (reason for rebellion) | **perque** | *because* | OK |
+| **i'** | 1st‑person pronoun “I” | **io** | *I* | OK |
+| **fu'** | copular past “was” | **era** | *was* | OK |
+| **ribellante** | adjective “rebellious” (to the law) | **rebel** | *rebellious* | OK |
+| **a** | preposition “to” | **al** | *to the* | OK |
+| **la** | definite article (feminine) – part of “to the” | **al** (combined) | *to the* | UNNECESSARY (article absorbed in “al”) |
+| **sua** | possessive “his” (law of the emperor) | **su** | *his* | OK |
+| **legge** | noun “law” | **lege** | *law* | OK |
+| **non** | negation “does not” | **non** | *not* | OK |
+| **vuol** | volitional “wills / wants” | **vole** | *wants* | OK |
+| **che** (subord.) | complementiser “that” (introducing wish) | **che** | *that* | OK |
+| **'n** | preposition “in” (into the city) | **in** | *into* | OK |
+| **sua** | possessive “his” (city) | **su** | *his* | OK |
+| **città** | noun “city” | **citate** | *city* | OK |
+| **per** | preposition “through / by” | **per** | *through* | OK |
+| **me** | pronoun “me” (instrument) | **me** | *me* | OK |
+| **si** | impersonal reflexive pronoun (used in Italian to form “one should come”) | — | — | **UNNECESSARY** (Interlingua does not use a reflexive pronoun here) |
+| **vegna** | subjunctive “should come” | **veni** | *should come* | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **si** – the reflexive pronoun is omitted in Interlingua; the impersonal sense is conveyed by the indefinite pronoun **alcuno** (“anyone”).  
+- **UNNECESSARY**: **la** – the article is absorbed into the prepositional contraction **al** in Interlingua, so a separate token is not needed.  
+
+All other source words are correctly rendered (status **OK**).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: **pro ille imperator qui regna supra,**
+  - Issue: none
+  - Corrected: **no change**
+
+- Line 2:
+  - Original: **perque io era rebel al su lege,**
+  - Issue: WRONG (adjective form)
+  - Corrected: **perque io era rebelle al su lege,**
+
+- Line 3:
+  - Original: **non vole che alcuno veni in su citate per me.**
+  - Issue: none
+  - Corrected: **no change**
+
+```
+pro ille imperator qui regna supra,
+perque io era rebelle al su lege,
+non vole che alcuno veni in su citate per me.
+```
+]]></message>
+</messages>

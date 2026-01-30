@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E qual es ille qui voluntariamente acquista,  
+e arriva le tempore que lo face perder,  
+qui in tote suas pensatas plora e se attrista;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| **E** | Conj. (coordinating) – connects clause to previous discourse | **E** | “and” | OK |
+| **qual** | Interrogative/relative pronoun (used as “such as”) – introduces a descriptive equivalence | **qual** | “such as” | OK |
+| **è** | Verb, 3sg present indicative of *essere* – copular linking of subject to description | **es** | “is” | OK |
+| **quei** | Demonstrative pronoun (archaic 3sg) – refers to the individual being described | **ille** | “he” | OK |
+| **che** | Relative pronoun – introduces relative clause describing *quei* | **qui** | “who” | OK |
+| **volontieri** | Adverb – manner of the acquisition | **voluntariamente** | “willingly” | OK |
+| **acquista** | Verb, 3sg present indicative of *acquistare* – action of acquiring/gaining | **acquista** | “acquires / gains” | OK |
+| **e** (line 56) | Conj. (coordinating) – links the next clause to the previous | **e** | “and” | OK |
+| **giugne** | Verb, 3sg present indicative of *giungere* – event of the time coming | **arriva** | “arrives” | OK |
+| **'l** | Definite article (elided *il*) – specifies the noun *tempo* | **le** | “the” | OK |
+| **tempo** | Noun, masculine singular – temporal entity that arrives | **tempore** | “time” | OK |
+| **che** (2nd) | Relative pronoun – introduces clause describing *tempo* | **que** | “that” | OK |
+| **perder** | Infinitive of *perdere* – action caused by the time | **perder** | “to lose” | OK |
+| **lo** | Clitic pronoun (accusative, 3sg masc) – direct object referring to *quei*/*he* | **lo** | “him / it” | OK |
+| **face** | Verb, 3sg present indicative of *fare* (archaic *face*) – causative verb linking time to loss | **face** | “makes” | OK |
+| **che** (line 57) | Relative pronoun – refers back to the same individual | **qui** | “who” | OK |
+| **'n** | Preposition (contraction of *in*) – locative preposition for mental space | **in** | “in” | OK |
+| **tutti** | Adjective (plural, masculine) – quantifier for *pensier* | **tote** | “all” | OK |
+| **suoi** | Possessive adjective (masc. plural) – possessor of the thoughts | **suas** | “his” | OK |
+| **pensier** | Noun, masculine singular (archaic *pensiero*) – mental contents of the subject | **pensatas** | “thoughts” | **GRAMMAR** (number mismatch: singular → plural) |
+| **piange** | Verb, 3sg present indicative of *piangere* – emotional reaction of the subject | **plora** | “weeps” | OK |
+| **e** (line 57) | Conj. (coordinating) – connects two predicates of the subject | **e** | “and” | OK |
+| **s'attrista** | Reflexive verb, 3sg present indicative of *attristarsi* – subject’s emotional state | **se attrista** | “is sad” | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR:** *pensier* → **pensatas** – the source noun is singular, while the Interlingua translation uses the plural form. Adjust to **pensata** (singular) if strict number agreement is required.  
+
+No other tokens are missing, wrong, or unnecessary.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 55**  
+  - Original: `E qual es ille qui voluntariamente acquista,`  
+  - Issue: none  
+  - Corrected: `no change`  
+
+- **Line 56**  
+  - Original: `e arriva le tempore que lo face perder,`  
+  - Issue: none  
+  - Corrected: `no change`  
+
+- **Line 57**  
+  - Original: `qui in tote suas pensatas plora e se attrista;`  
+  - Issue: **GRAMMAR** – noun *pensatas* is plural while the source is singular; accompanying adjectives and possessive must agree in gender/number.  
+  - Corrected: `qui in tota sua pensata plora e se attrista;`  
+
+```
+E qual es ille qui voluntariamente acquista,
+e arriva le tempore que lo face perder,
+qui in tota sua pensata plora e se attrista;
+```
+]]></message>
+</messages>

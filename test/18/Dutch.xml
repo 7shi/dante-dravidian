@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+zij gaf mij zoveel zwaarte  
+met de angst die voortkwam uit haar gezicht,  
+dat ik de hoop op de hoogte verloor.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Dutch) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|----------------------------|--------|
+| **questa** | Demonstrative pronoun, fem. sg., subject – “she” (the female agent) | **zij** | she | OK |
+| **mi** | Clitic dative pronoun, 1st sg., indirect object – “me” (experiencer) | **mij** | me | OK |
+| **porse** | Verb, 3rd sg. remote past of *porre* “to give, cause” – “caused” | **gaf** | gave / caused | OK |
+| **tanto** | Adverb of quantity – “so much” (high degree) | **zoveel** | so much | OK |
+| **di** *(line 52)* | Preposition linking quantity to noun – “of” | — | — | **UNNECESSARY** (omitted in Dutch) |
+| **gravezza** | Noun, fem. sg. “heaviness” – affective state imposed on speaker | **zwaarte** | heaviness / weight | OK |
+| **con** | Preposition – “with” (introduces accompanying circumstance) | **met** | with | OK |
+| **la** | Definite article, fem. sg. – “the” (specific) | **de** | the | OK |
+| **paura** | Noun, fem. sg. “fear” – emotion that arises | **angst** | fear | OK |
+| **ch'uscia** | Relative clause verb “that came out” – describes *paura* | **die voortkwam** | that came forth | OK |
+| **di** *(line 53)* | Preposition – “from” (source of fear) | **uit** | from / out of | OK |
+| **sua** | Possessive adjective, fem. sg. – “her” (possessor of *vista*) | **haar** | her | OK |
+| **vista** | Noun, fem. sg. “sight” – visual perception of the female | **gezicht** | sight / face | OK |
+| **ch'io** | Relative pronoun + subject – “that I” (introduces clause) | **dat** | that | OK |
+| **perdei** | Verb, 1st sg. remote past of *perdere* “to lose” – “lost” | **verloor** | lost | OK |
+| **la** | Definite article, fem. sg. – “the” (specific) | **de** | the | OK |
+| **speranza** | Noun, fem. sg. “hope” – mental expectation that is lost | **hoop** | hope | OK |
+| **de** | Preposition “of” – links *speranza* to its content | **op** | on / onto (used in “hoop op de hoogte”) | OK |
+| **l'altezza** | Noun, fem. sg. with article – “the height” (lofty goal) | **hoogte** | height | OK |
+
+### Items flagged
+- **UNNECESSARY**: *di* (line 52) – the Italian preposition “of” is not required in the Dutch rendering “zoveel zwaarte”.  
+
+No other source tokens are missing, incorrectly translated, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 52**:
+  - Original: zij gaf mij zoveel zwaarte
+  - Issue: none
+  - Corrected: zij gaf mij zoveel zwaarte
+- **Line 53**:
+  - Original: met de angst die voortkwam uit haar gezicht,
+  - Issue: none
+  - Corrected: met de angst die voortkwam uit haar gezicht,
+- **Line 54**:
+  - Original: dat ik de hoop op de hoogte verloor.
+  - Issue: none
+  - Corrected: dat ik de hoop op de hoogte verloor.
+
+```
+zij gaf mij zoveel zwaarte
+met de angst die voortkwam uit haar gezicht,
+dat ik de hoop op de hoogte verloor.
+```
+]]></message>
+</messages>

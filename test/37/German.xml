@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Er wird sie durch jede Stadt jagen,  
+bis er sie zurück in die Hölle gesetzt haben wird,  
+dort entsandte Neid sie zuerst.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Questi | male hunter (agent) | Er | He | OK |
+| la | feminine accusative pronoun “her” | sie | her | OK |
+| caccerà | future “will hunt” | jagen | hunt | OK |
+| per | preposition “through” | durch | through | OK |
+| ogne | determiner “every” | jede | every | OK |
+| villa | noun “town” | Stadt | town | OK |
+| fin | conjunction “until” | bis | until | OK |
+| che | complementizer “that” | — (not expressed) | — | UNNECESSARY |
+| l’avrà | auxiliary future‑perfect “will have” | haben wird | will have | OK |
+| rimessa | past participle “set back” | zurückgesetzt | set back | OK |
+| ne | preposition “in” | in | in | OK |
+| lo | definite article (masc.) “the” | die | the | OK |
+| ’nferno | noun “hell” | Hölle | hell | OK |
+| là | adverb of place “there” | dort | there | OK |
+| onde | relative adverb “whence” | — (not expressed) | — | UNNECESSARY |
+| ’nvidia | noun “envy” | Neid | envy | OK |
+| prima | adverb “first” | zuerst | first | OK |
+| dipartilla | future verb “will send forth” | entsandte | sent forth | OK |
+
+### Issues Detected
+- **UNNECESSARY**: *che* (subordinator not overtly rendered in German)  
+- **UNNECESSARY**: *onde* (relative adverb “whence” not overtly rendered)  
+
+No missing, wrong, or grammatical errors were found in the mapping.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: Er wird sie durch jede Stadt jagen,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: bis er sie zurück in die Hölle gesetzt haben wird,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: dort entsandte Neid sie zuerst.
+  - Issue: WRONG (tense; past instead of future)
+  - Corrected: dort wird Neid sie zuerst entsenden.  
+
+```
+Er wird sie durch jede Stadt jagen,
+bis er sie zurück in die Hölle gesetzt haben wird,
+dort wird Neid sie zuerst entsenden.
+```
+]]></message>
+</messages>

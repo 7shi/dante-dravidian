@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+क्या तुम वही वर्जिल और वह स्रोत हो  
+जो इतनी बड़ी वचन की धारा उत्पन्न करता है?  
+मैंने उसे शर्मीले चेहरे के साथ उत्तर दिया।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| **Or** | discourse marker “Now/then” | (omitted) | – | **UNNECESSARY** |
+| **se'** | copular “art” linking subject to predicate | **हो** | “are” | OK |
+| **tu** | 2nd‑person singular pronoun, addressee | **तुम** | “you” | OK |
+| **quel** | demonstrative “that” (modifying *Virgilio*) | **वही** | “that” | OK |
+| **Virgilio** | proper name, the poet Virgil | **वर्जिल** | “Virgil” | OK |
+| **e** | coordinating conjunction “and” | **और** | “and” | OK |
+| **quella** | demonstrative “that” (modifying *fonte*) | **वह** | “that” | OK |
+| **fonte** | metaphorical source of speech | **स्रोत** | “source/fount” | OK |
+| **che** | relative pronoun introducing clause | **जो** | “which/that” | OK |
+| **spandi** | verb “poureth forth, spreads” | **उत्पन्न करता** | “produces/creates” | OK |
+| **di** | preposition “of” (genitive) | **की** | “of” | OK |
+| **parlar** | noun “speech, words” | **वचन** | “speech” | OK |
+| **sì** | degree adverb “so” (intensifier) | **इतनी** | “so, such” | OK |
+| **largo** | adjective “large, big” | **बड़ी** | “large” | OK |
+| **fiume** | metaphorical “river/stream” of speech | **धारा** | “stream” | OK |
+| **rispuos'** | past verb “replied” (speech act) | **उत्तर दिया** | “gave an answer” | OK |
+| **io** | 1st‑person pronoun “I” (subject) | **मैंने** | “I (did)” | OK |
+| **lui** | 3rd‑person indirect object “to him” | **उसे** | “to him/it” | OK |
+| **con** | preposition “with” (instrument) | **के साथ** | “with” | OK |
+| **vergognosa** | adjective “bashful, embarrassed” | **शर्मीले** | “bashful” | OK |
+| **fronte** | noun “front, face” | **चेहरे** | “face” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:** *Or* – the discourse particle is not needed in Hindi; the interrogative particle **क्या** was introduced instead to form the question.  
+- No other tokens are missing, wrong, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79:**  
+  - Original: क्या तुम वही वर्जिल और वह स्रोत हो  
+  - Issue: none  
+  - Corrected: क्या तुम वही वर्जिल और वह स्रोत हो  
+
+- **Line 80:**  
+  - Original: जो इतनी बड़ी वचन की धारा उत्पन्न करता है?  
+  - Issue: none  
+  - Corrected: जो इतनी बड़ी वचन की धारा उत्पन्न करता है?  
+
+- **Line 81:**  
+  - Original: मैंने उसे शर्मीले चेहरे के साथ उत्तर दिया।  
+  - Issue: none  
+  - Corrected: मैंने उसे शर्मीले चेहरे के साथ उत्तर दिया।  
+
+```
+क्या तुम वही वर्जिल और वह स्रोत हो
+जो इतनी बड़ी वचन की धारा उत्पन्न करता है?
+मैंने उसे शर्मीले चेहरे के साथ उत्तर दिया।
+```
+]]></message>
+</messages>

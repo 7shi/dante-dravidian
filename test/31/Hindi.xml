@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+A तुम्हें एक और यात्रा रखनी आवश्यक है,  
+उसने उत्तर दिया जब उसने मुझे रोते हुए देखा,  
+यदि तुम इस जंगली स्थान से बचना चाहते हो;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| **A** | preposition (dative) – marks “to you” | **A** | “A” (kept verbatim) | UNNECESSARY |
+| **te** | 2nd‑person singular pronoun (accusative) – “you” (object) | **तुम्हें** | “you (dative)” | OK |
+| **convien** | impersonal verb – expresses necessity/obligation | **आवश्यक** | “necessary / obligatory” | OK |
+| **tenere** | infinitive – “to hold / keep” | **रखना** | “to hold / keep” | OK |
+| **altro** | adjective – “another / a further” | **एक और** | “one more / another” | OK |
+| **vïaggio** | noun – “journey / course” | **यात्रा** | “journey” | OK |
+| **rispuose** | verb – “he replied” (speech act) | **उसने उत्तर दिया** | “he replied” | OK |
+| **poi** | adverb – temporal “when” (introduces subordinate clause) | **जब** | “when” | OK |
+| **che** | conjunction – links “poi” to the subordinate clause | — (absorbed in **जब**) | — | UNNECESSARY |
+| **lagrimar** | infinitive – “weeping” (action observed) | **रोते** | “weeping” | OK |
+| **mi** | 1st‑person pronoun (accusative) – “me” | **मुझे** | “me” | OK |
+| **vide** | verb – “saw” (perception) | **देखा** | “saw” | OK |
+| **se** | conjunction – conditional “if” | **यदि** | “if” | OK |
+| **vuo'** | verb (volere) – “wish / want” | **चाहते** | “wish / want” | OK |
+| **campar** | infinitive – “to escape / get away” | **बचना** | “to escape” | OK |
+| **d'esto** | preposition + demonstrative – “from this” | **से इस** | “from this” | OK |
+| **loco** | noun – “place” | **स्थान** | “place” | OK |
+| **selvaggio** | adjective – “savage / wild” | **जंगली** | “savage / wild” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:**  
+  - **A** – the Italian dative preposition is not needed in Hindi because case is expressed by the post‑position *‑को*/*‑को* (here rendered by *तुम्हें*).  
+  - **che** – Hindi does not require a separate conjunction after *जब*; the meaning is already captured.  
+
+All other source tokens are correctly rendered (OK).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: **A तुम्हें एक और यात्रा रखना आवश्यक है,**  
+  - Issue: UNNECESSARY Latin character “A” (not part of Hindi script)  
+  - Corrected: **तुम्हें एक और यात्रा रखना आवश्यक है,**  
+
+- **Line 2:**  
+  - Original: **उसने उत्तर दिया जब उसने मुझे रोते हुए देखा,**  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3:**  
+  - Original: **यदि तुम इस जंगली स्थान से बचना चाहते हो;**  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+तुम्हें एक और यात्रा रखना आवश्यक है,
+उसने उत्तर दिया जब उसने मुझे रोते हुए देखा,
+यदि तुम इस जंगली स्थान से बचना चाहते हो;
+```
+]]></message>
+</messages>

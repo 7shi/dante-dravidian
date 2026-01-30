@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+lines.
+
+Palju on loomi kellega ta abiellub,
+ja veel tuleb rohkem kuni hunt
+tuleb mis paneb ta kurbuse tõttu surema.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+final answer.**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition (sense) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------|----------------------|-----------------------|--------|
+| Molti | many (large number) | **Palju** | many | OK |
+| son | are (copular verb) | **on** | is/are | OK |
+| li | the (definite article) | *(none)* | — | **UNNECESSARY** |
+| animali | animals (noun) | **loomi** | animals | OK |
+| a | with (preposition) | **kellega** | with which / with whom | OK |
+| cui | which (relative pronoun) | **kellega** | with which / with whom | OK |
+| s'ammoglia | she wives (verb) | **abiellub** | weds | OK |
+| e | and (coordinating conjunction) | **ja** | and | OK |
+| più | more (comparative) | **veel** | still / yet | **WRONG** |
+| saranno | shall be (future copula) | **tuleb** | will be / will come | OK |
+| ancora | yet / still (adverb) | **rohkem** | more | **WRONG** |
+| infin | till / until (subordinator) | **kuni** | until | OK |
+| che *(first)* | that (relative) | *(none)* | — | **UNNECESSARY** |
+| ’l | the (definite article) | *(none)* | — | **UNNECESSARY** |
+| veltro | hound (noun) | **hunt** | hound | OK |
+| verrà | shall come (future) | **tuleb** | will come | OK |
+| che *(second)* | that (conjunction) | **mis** | that / which | OK |
+| la | her (object pronoun) | **ta** | she / her | OK |
+| farà | will make (causative) | **paneb** | makes / causes | OK |
+| morir | die (infinitive) | **surema** | to die | OK |
+| con | of (preposition) | **tõttu** | because of / of | OK |
+| doglia | grief (noun) | **kurbuse** | grief | OK |
+
+---
+
+### Issues Detected
+- **WRONG**:  
+  - **più** → rendered as *veel* (“still”) instead of “more”.  
+  - **ancora** → rendered as *rohkem* (“more”) instead of “still/yet”.  
+
+- **UNNECESSARY** (elements omitted in Estonian):  
+  - **li** (definite article)  
+  - **che** (first occurrence, relative pronoun introducing the “until” clause)  
+  - **’l** (definite article before *veltro*)  
+
+No source words are completely missing, and no grammatical agreement errors were found in the Estonian output.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+list.
+
+- **Line 100**  
+  - Original: Palju on loomi kellega ta abiellub,  
+  - Issue: none  
+  - Corrected: Palju on loomi kellega ta abiellub,  
+
+- **Line 101**  
+  - Original: ja veel tuleb rohkem kuni hunt  
+  - Issue: WRONG – “più” (more) rendered as “veel”; “ancora” (still) rendered as “rohkem”; missing comma after “tuleb”.  
+  - Corrected: ja veel rohkem tuleb, kuni hunt  
+
+- **Line 102**  
+  - Original: tuleb mis paneb ta kurbuse tõttu surema.  
+  - Issue: none  
+  - Corrected: tuleb, mis paneb ta kurbuse tõttu surema.  
+
+```
+Palju on loomi kellega ta abiellub,
+ja veel rohkem tuleb, kuni hunt
+tuleb, mis paneb ta kurbuse tõttu surema.
+```
+]]></message>
+</messages>

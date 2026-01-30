@@ -38,6 +38,12 @@ and she has a nature so malign and evil that she never sates her greedy will, an
 98 それは決して欲深い欲望を満たさない、  
 99 そして食事の後は、食べる前よりも飢えている。
 
+# Estonian
+
+97 ja tal on loomus nii kurikas ja kuri,
+98 mis kunagi ei rahulda ahne tahet,
+99 ja pärast sööki on tal rohkem nälga kui enne.
+
 # French
 
 97 et elle a une nature si malveillante et cruelle,
@@ -61,3 +67,39 @@ and she has a nature so malign and evil that she never sates her greedy will, an
 97 kaj ŝi havas naturon tiel malican kaj malbonan,
 98 ke ŝi neniam plenumas sian avaran volon,
 99 kaj post la manĝo ŝi estas pli malsata ol antaŭe.
+
+# Interlingua
+
+97 e ha natura tan malign e malvagi,
+98 que jammai non satisface le desiderio avidi,
+99 e post le cena ha plus fame que ante.
+
+# Hindi
+
+97 और वह ऐसी प्रकृति रखती है, जो इतनी दुष्ट और बुरी है,
+98 कि वह कभी अपनी लालची इच्छा को नहीं संतुष्ट करती,
+99 और भोजन के बाद वह पहले से अधिक भूखी हो जाती है।
+
+# Bengali
+
+97 এবং তার স্বভাব এত দুষ্ট ও মন্দ,
+98 যে সে কখনও তার লোভী ইচ্ছা পূরণ করে না,
+99 এবং খাবার পরে সে আগে থেকে বেশি ক্ষুধার্ত হয়।
+
+# German
+
+97 und sie hat eine Natur so bösartig und böse,
+98 die niemals ihren gierigen Willen befriedigt,
+99 und nach dem Essen ist sie hungriger als zuvor.
+
+# Dutch
+
+97 en zij heeft een natuur zo kwaadaardig en boosaardig,
+98 die haar hebzuchtige wil nooit bevredigt,
+99 en na de maaltijd heeft ze meer honger dan daarvoor.
+
+# Serbian (Latin script)
+
+97 i ona ima prirodu tako zlonamernu i zlu,
+98 da nikada ne zadovolji svoju pohlepnu volju,
+99 i posle obroka je gladnija nego pre.

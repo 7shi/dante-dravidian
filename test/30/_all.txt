@@ -38,6 +38,12 @@ Behold the beast because of which I turned; help me against her, famous sage, fo
 89 彼女に対して助けてくれ名高い賢者よ,
 90 彼女は私の血管と脈を震わせる»
 
+# Estonian
+
+88 Vaata koletist mille tõttu pöördusin;
+89 Aita mind tema vastu kuulus tark,
+90 Sest ta paneb veenid ja pulssid värisema»
+
 # French
 
 88 Vois la bête à cause de laquelle je me suis tourné;
@@ -61,3 +67,39 @@ Behold the beast because of which I turned; help me against her, famous sage, fo
 88 Vidu la beston pro kiu mi turniĝis;
 89 Helpu min kontraŭ ŝi fama saĝulo,
 90 ĉar ŝi igas min tremi la vejnojn kaj la pulsojn».
+
+# Interlingua
+
+88 Vide le bestia per le qual io me volve;
+89 Adjuta me contra illa famoso sapiente,
+90 que illa me face tremular le venas e le pulsos.
+
+# Hindi
+
+88 देखो वह दानव जिसके कारण मैं मुड़ गया;
+89 उसके विरुद्ध मेरी मदद करो, प्रसिद्ध ऋषि,
+90 क्योंकि वह मेरे रक्त नलिकाओं और धड़कनों को कंपा देती है".
+
+# Bengali
+
+88 দেখো সেই দানবকে যার জন্য আমি ঘুরে গেলাম;
+89 প্রখ্যাত জ্ঞানী তার বিরুদ্ধে আমাকে সাহায্য কর,
+90 কারণ সে আমার শিরা ও নাড়ি কাঁপিয়ে দেয়»
+
+# German
+
+88 Sieh das Ungeheuer, wegen dem ich mich wandte;
+89 Hilf mir gegen sie, berühmter Weiser,
+90 denn sie lässt meine Venen und Pulse zittern»
+
+# Dutch
+
+88 Zie het beest waardoor ik me wendde;
+89 Help me tegen haar beroemde wijze,
+90 zij mij de aderen en de polsen doet trillen».
+
+# Serbian (Latin script)
+
+88 Vidi bestiju zbog koje sam se okrenuo;
+89 pomozi mi protiv nje poznati mudrače,
+90 jer ona čini da vene i pulsovi drhte».

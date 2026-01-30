@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tal me facie le bestia sin pace,
+que veniente contra me paulatemente
+me repulsite retro illac ubi le sol tace.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 2 → Source)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| tal | demonstrative “such” | tal | such | OK |
+| mi | 1st‑person singular pronoun “me” | me | me | OK |
+| fece | past causative “made” | facie | (makes) | **WRONG** – present form, should be past *facié* |
+| la | definite article, fem. singular “the” | le | the | OK |
+| bestia | noun “beast” | bestia | beast | OK |
+| sanza | preposition “without” | sin | without | OK |
+| pace | noun “repose / peace” | pace | peace | OK |
+| che | relative pronoun “that” | que | that | OK |
+| venendomi | gerund “coming on against me” | veniente | coming | **WRONG** – missing the clitic “me” (should be *veniente me* or *veniente contra me*) |
+| ’ncontro | preposition “against” | contra | against | OK |
+| a (1st) | part of incremental idiom “a poco a poco” (marker) | — | — | **UNNECESSARY** (not needed in Interlingua) |
+| poco (1st) | adverb “little” (degree) | — | — | **UNNECESSARY** |
+| a (2nd) | part of incremental idiom | — | — | **UNNECESSARY** |
+| poco (2nd) | adverb “little” (degree) | — | — | **UNNECESSARY** |
+| mi (line 60) | pronoun “me” | me | me | OK |
+| ripigneva | imperfect “was pushing back” | repulsite | (pushed back) | **WRONG** – incorrect verb form; should be *repulsava* or *repulsava me* |
+| là | adverb of place “there / thither” | illac | there | OK |
+| dove | relative adverb “where” | ubi | where | OK |
+| ’l | article “the” | le | the | OK |
+| sol | noun “Sun” | sol | Sun | OK |
+| tace | verb “is silent” | tace | is silent | OK |
+| **retro** (extra) | directional adverb “backward” (added in translation) | retro | back | **UNNECESSARY** – not present in source |
+| **paulatemente** (extra) | adverb “gradually” (used for idiom) | paulatemente | gradually | **UNNECESSARY** – replaces the source idiom but not a 1‑to‑1 lexical match |
+
+---
+
+### Summary of Issues  
+
+- **WRONG**: *fece → facie* (tense), *venendomi → veniente* (missing clitic), *ripigneva → repulsite* (verb form).  
+- **GRAMMAR**: The above WRONG items also constitute grammatical mismatches (tense, missing object pronoun, incorrect conjugation).  
+- **UNNECESSARY**: All occurrences of the idiom “a poco a poco” (both *a* and *poco* tokens) are omitted in favour of the single adverb *paulatemente*; the adverb *retro* is added but has no source counterpart.  
+
+No source words are completely **MISSING** from the translation; every source lexical item appears (though some are rendered as a single word or omitted as unnecessary).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: **tal me facie le bestia sin pace,**  
+  - Issue: **WRONG** – verb form should be past (*facié*).  
+  - Corrected: **tal me facié le bestia sin pace,**  
+
+- Line 2:  
+  - Original: **que veniente contra me paulatemente**  
+  - Issue: **WRONG** – missing the incremental idiom; **UNNECESSARY** – added *paulatemente* not in source.  
+  - Corrected: **que veniente contra me a poco a poco**  
+
+- Line 3:  
+  - Original: **me repulsite retro illac ubi le sol tace.**  
+  - Issue: **WRONG** – verb form; **UNNECESSARY** – extra *retro*.  
+  - Corrected: **me repulsava illac ubi le sol tace.**  
+
+```
+tal me facié le bestia sin pace,
+que veniente contra me a poco a poco
+me repulsava illac ubi le sol tace.
+```
+]]></message>
+</messages>

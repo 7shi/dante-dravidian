@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Toen was de angst een beetje tot rust gekomen,  
+die in het meer van mijn hart had geduurd  
+de nacht die ik zo pijnlijk doorliep.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (source → Dutch)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|-------------------|--------|
+| Allor | temporal adverb “then” | **Toen** | “then” | OK |
+| fu | copular verb “was” | **was** | “was” | OK |
+| la (19) | definite article “the” | **de** | “the” | OK |
+| paura | noun “fear” | **angst** | “fear” | OK |
+| un | indefinite article “a” | **een** | “a” | OK |
+| poco | adverb of degree “little” | **beetje** | “little” | OK |
+| queta* | adjective “quieted” (resultative) | **tot rust gekomen** | “quieted / settled down” | OK |
+| che | relative pronoun “which” | **die** | “which” | OK |
+| nel | preposition + article “in the” | **in het** | “in the” | OK |
+| lago | noun “lake” | **meer** | “lake” | OK |
+| del | preposition + article “of the” | **van** | “of the” | OK |
+| cor* | noun “heart” | **hart** | “heart” | OK |
+| m'era | pluperfect auxiliary “had been” (experiencer) | **had** | “had” | OK |
+| durata | past participle “lasted” | **geduurd** | “lasted” | OK |
+| la (21) | definite article “the” | **de** | “the” | OK |
+| notte | noun “night” | **nacht** | “night” | OK |
+| ch'i' | relative pronoun “that” (with subject “I”) | **die** | “that” | OK |
+| passai | verb “passed” | **doorliep** | “passed” | OK |
+| con | preposition “with” | — | “with” | **MISSING** |
+| tanta | adjective “so” (intensifier) | **zo** | “so” | OK |
+| pieta* | noun “pity” | **pijnlijk** | “painful” | **WRONG** (should render “pity”, e.g. *medelijden*) |
+
+\* Spelling in the original poem (archaic/poetic).
+
+---
+
+### Issues Detected
+- **MISSING:** *con* – the preposition “with” is absent in the Dutch rendering.  
+- **WRONG:** *pieta* – translated as *pijnlijk* (“painful”), which does not convey the intended sense of “pity”. A correct rendering would be *medelijden* or *liefdevolle mededogen*.  
+- **UNNECESSARY:** The possessive *mijn* in “van **mijn** hart” does not correspond to any source element; Dutch requires it for natural phrasing, but it is an extra lexical item.  
+- **GRAMMAR:** No gender, number, or agreement errors detected in the Dutch sentences.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: `Toen was de angst een beetje tot rust gekomen,`  
+  - Issue: none  
+  - Corrected: `Toen was de angst een beetje tot rust gekomen,`  
+
+- **Line 20**  
+  - Original: `die in het meer van mijn hart had geduurd`  
+  - Issue: UNNECESSARY “mijn”; missing definite article for “hart”  
+  - Corrected: `die in het meer van het hart had geduurd`  
+
+- **Line 21**  
+  - Original: `de nacht die ik zo pijnlijk doorliep.`  
+  - Issue: WRONG translation of “pieta”; MISSING preposition “con” (with)  
+  - Corrected: `de nacht die ik met zoveel medelijden doorliep.`  
+
+```text
+Toen was de angst een beetje tot rust gekomen,
+die in het meer van het hart had geduurd
+de nacht die ik met zoveel medelijden doorliep.
+```
+]]></message>
+</messages>

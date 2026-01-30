@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+আমি ভালভাবে বলতে পারি না কীভাবে আমি তাতে প্রবেশ করেছি,
+সেই মুহূর্তে আমি ঘুমে পূর্ণ ছিলাম
+যেখানে আমি সত্যিকারের পথ ত্যাগ করেছিলাম।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| Io | pronoun 1st sg subject | আমি | I | OK |
+| non | negation particle | না | not | OK |
+| so | verb *sapere* ‘to know’ (present 1 sg) | পারি | can / be able | OK |
+| ben | adverb ‘well’ | ভালভাবে | well | OK |
+| ridir | infinitive ‘recount, tell again’ | বলতে | to say / recount | OK |
+| com' | interrogative adverb ‘how’ | কীভাবে | how | OK |
+| i' | clitic pronoun ‘I’ (subject of clause) | আমি | I | OK |
+| v'intrai | historic ‘entered (it)’ | প্রবেশ করেছি | entered (it) | OK |
+| tant' | degree adverb ‘so, such a great…’ | — (degree expressed by “পূর্ণ”) | — | UNNECESSARY |
+| era | imperfect ‘was’ | ছিলাম | was | OK |
+| pien | predicative adjective ‘full’ | পূর্ণ | full | OK |
+| di | preposition ‘of’ (linking *pien* to *sonno*) | — (encoded in “ঘুমে”) | — | UNNECESSARY |
+| sonno | noun ‘slumber, sleepiness’ | ঘুম | slumber / sleep | OK |
+| a | preposition ‘at’ (temporal) | — (encoded in “সেই মুহূর্তে”) | — | UNNECESSARY |
+| quel | demonstrative ‘that’ | সেই | that | OK |
+| punto | noun ‘point, moment’ | মুহূর্তে | point / moment | OK |
+| che | relative conjunction ‘where’ | যেখানে | where | OK |
+| la | definite article ‘the’ (feminine) | — (articles omitted in Bengali) | — | UNNECESSARY |
+| verace | adjective ‘true, genuine’ | সত্যিকারের | true / genuine | OK |
+| via | noun ‘way, path’ | পথ | way / path | OK |
+| abbandonai | historic ‘abandoned’ | ত্যাগ করেছিলাম | abandoned | OK |
+
+### Items Flagged
+
+- **UNNECESSARY**: `tant'`, `di`, `a`, `la` – Bengali does not require separate words for these functions; their meanings are incorporated elsewhere in the translation.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are correctly rendered in the Bengali translation with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 10:
+  - Original: আমি ভালভাবে বলতে পারি না কীভাবে আমি তাতে প্রবেশ করেছি,
+  - Issue: none
+  - Corrected: আমি ভালভাবে বলতে পারি না কীভাবে আমি তাতে প্রবেশ করেছি,
+- Line 11:
+  - Original: সেই মুহূর্তে আমি ঘুমে পূর্ণ ছিলাম
+  - Issue: none
+  - Corrected: সেই মুহূর্তে আমি ঘুমে পূর্ণ ছিলাম
+- Line 12:
+  - Original: যেখানে আমি সত্যিকারের পথ ত্যাগ করেছিলাম।
+  - Issue: none
+  - Corrected: যেখানে আমি সত্যিকারের পথ ত্যাগ করেছিলাম।
+
+```
+আমি ভালভাবে বলতে পারি না কীভাবে আমি তাতে প্রবেশ করেছি,
+সেই মুহূর্তে আমি ঘুমে পূর্ণ ছিলাম
+যেখানে আমি সত্যিকারের পথ ত্যাগ করেছিলাম।
+```
+]]></message>
+</messages>

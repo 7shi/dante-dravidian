@@ -38,6 +38,12 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 2 暗い森の中で自分を見つけた、 
 3 正しい道が失われていた。
 
+# Estonian
+
+1 Meie elu teekonna keskel
+2 Leidsin end pimedas metsas,
+3 sest õige tee oli kaotatud.
+
 # French
 
 1 Au milieu du chemin de notre vie
@@ -61,3 +67,39 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 1 Meze de la vojo de nia vivo
 2 mi trovis min en malluma arbaro,
 3 ĉar la prava vojo estis perdita.
+
+# Interlingua
+
+1 In medio del cammino de nostre vita
+2 io me trovava in una selva obscure,
+3 pro le via recte esseva perdita.
+
+# Hindi
+
+1 हमारी ज़िन्दगी के मार्ग के मध्य में
+2 मैं खुद को एक अंधेरे जंगल में पाया,
+3 क्योंकि सही रास्ता खो गया था।
+
+# Bengali
+
+1 আমাদের জীবনের পথে মাঝখানে
+2 আমি নিজেকে এক অন্ধকার বনে পেলাম,
+3 কারণ সঠিক পথ হারিয়ে গিয়েছিল।
+
+# German
+
+1 Mitten auf dem Weg unseres Lebens
+2 fand ich mich in einem dunklen Wald,
+3 denn der rechte Weg war verfehlt.
+
+# Dutch
+
+1 Midden op de weg van ons leven
+2 Vond ik mezelf in een donker bos,
+3 want de juiste weg was gemist.
+
+# Serbian (Latin script)
+
+1 U sredini puta našeg života
+2 našao sam se u mračnoj šumi,
+3 jer prava staza je bila izgubljena.

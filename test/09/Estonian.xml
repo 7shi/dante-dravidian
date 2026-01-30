@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+nii mu hing, mis ikka veel põgenes,
+pöördus tagasi et uuesti vaadata läbipääsu
+mis ei ole kunagi elavat inimest jätnud.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| così | resultative adverb (marks “so … that”) | **nii** | “so” | OK |
+| l'animo | noun, subject = speaker’s inner self | **hing** | “soul” | OK |
+| mio | possessive adjective = “my” | **mu** | “my” | OK |
+| ch'ancor | relative pronoun + adverb “still” | **mis ikka veel** | “which still” | OK |
+| fuggiva | imperfect verb = ongoing fleeing | **põgenes** | “fled” | OK |
+| si | reflexive clitic (marks self‑directed action) | — (reflexivity encoded in verb) | — | **UNNECESSARY** |
+| volse | remote‑past verb = “turned” | **pöördus** | “turned” | OK |
+| a (1) | preposition introducing direction “back” (with *retro*) | **tagasi** | “back” | OK |
+| retro | noun used adverbially = “back” | — (covered by *tagasi*) | — | **UNNECESSARY** |
+| a (2) | preposition introducing infinitive purpose “to” | **et** | “to/that” | OK |
+| rimirar | infinitive = “to look again” | **vaadata** | “to look” | OK |
+| lo | definite article “the” (masc.) | — (article omitted in Estonian) | — | **UNNECESSARY** |
+| passo | noun = “the pass” (object) | **läbipääsu** | “the pass” (genitive) | OK |
+| che | relative pronoun “which” | **mis** | “which” | OK |
+| non | negation particle “not / never” | **ei** | “not” | OK |
+| lasciò | past verb = “left” | **jätnud** | “left” (as part of “has not left”) | OK |
+| già | adverb “already / ever” (intensifier) | **kunagi** | “ever” | OK |
+| mai | adverb “never” (intensifier) | — (already expressed by *kunagi*) | — | **UNNECESSARY** |
+| persona | noun = “person” (human) | **inimest** | “person” (partitive) | OK |
+| viva | adjective = “living” | **elavat** | “living” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `si`, `retro`, `lo`, `mai` – these elements are either encoded elsewhere in Estonian or are redundant because Estonian does not use articles or separate reflexive clitics in this construction.  
+- No **WRONG**, **GRAMMAR**, or **MISSING** entries were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: nii mu hing, mis ikka veel põgenes,
+  - Issue: none
+  - Corrected: nii mu hing, mis ikka veel põgenes,
+- Line 26:
+  - Original: pöördus tagasi et uuesti vaadata läbipääsu
+  - Issue: none
+  - Corrected: pöördus tagasi et uuesti vaadata läbipääsu
+- Line 27:
+  - Original: mis ei ole kunagi elavat inimest jätnud.
+  - Issue: none
+  - Corrected: mis ei ole kunagi elavat inimest jätnud.
+
+```
+nii mu hing, mis ikka veel põgenes,
+pöördus tagasi et uuesti vaadata läbipääsu
+mis ei ole kunagi elavat inimest jätnud.
+```
+]]></message>
+</messages>

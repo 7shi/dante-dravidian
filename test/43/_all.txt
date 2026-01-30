@@ -38,6 +38,12 @@ In all parts He governs and them He reigns: there in His city and His lofty seat
 128 そこは彼の都市であり高き座である:
 129 ああそこに選ばれた者は幸せだ！
 
+# Estonian
+
+127 Kõigis osades ta valitseb ja seal ta valitseb;
+128 Seal on tema linn ja kõrge troon:
+129 Oh õnnelik see keda seal ta valib!
+
 # French
 
 127 Dans toutes les parties il gouverne et y règne;
@@ -61,3 +67,39 @@ In all parts He governs and them He reigns: there in His city and His lofty seat
 127 En ĉiuj partoj li imperas kaj tie li regas;
 128 Tie estas lia urbo kaj la alta seĝo:
 129 Ho feliĉa tiu, kiun tie li elektas!».
+
+# Interlingua
+
+127 In tote partes ille governa e illac rege;
+128 Illac es su citate e su alto sede:
+129 O felice ille qui illac elige!».
+
+# Hindi
+
+127 सभी भागों में वह शासन करता है और वहीं वह राज करता है;
+128 वहां उसकी नगरी और उसका ऊँचा सिंहासन है:
+129 हे धन्य वह, जिसे वह वहां चुनता है!";
+
+# Bengali
+
+127 সর্বত্র তিনি শাসন করেন এবং সেখানে তিনি শাসন করেন;
+128 সেখানে তার শহর এবং তার উঁচু সিংহাসন আছে:
+129 হে সুখী যাকে সেখানে তিনি বেছে নেন!».
+
+# German
+
+127 In allen Teilen herrscht er und dort regiert er;
+128 Dort ist seine Stadt und sein hoher Sitz:
+129 O glücklich den er dort erwählt!
+
+# Dutch
+
+127 In alle delen heerst Hij en daar regeert Hij;
+128 Daar is zijn stad en zijn hoge zetel:
+129 O gelukkig hij die daar kiest!».
+
+# Serbian (Latin script)
+
+127 U svim delovima on vlada i tamo on reinira;
+128 tamo je njegov grad i visoko prijestolje:
+129 o srećni onaj koga tamo izabire!».

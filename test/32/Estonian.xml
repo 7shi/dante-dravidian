@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+selle koha eest mille pärast sa hüüad,  
+ei luba kellelgi mööduda tema teel,  
+aga nii takistab ta teda et ta tapab teda;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → Estonian)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (Estonian → English) | Status |
+|-------------|--------------------------------------|------------------------------|----------------------------------------|--------|
+| **ché** | causal “because” | **mille** | “which” (as part of “mille pärast”) | OK |
+| **questa** | demonstrative “this” | **selle** | “this” (genitive) | OK |
+| **bestia** | “beast” (the creature causing trouble) | **koha** | “place” | **WRONG** (semantic mismatch) |
+| **per** | preposition “for/because of” (introducing relative clause) | **eest** | “for” (as in “selle koha eest”) | OK |
+| **la** | definite article (feminine singular) | — (omitted) | — | **UNNECESSARY** |
+| **qual** | relative pronoun “which” | **mille** | “which” | OK |
+| **tu** | 2nd‑person singular pronoun “you” | **sa** | “you” | OK |
+| **gride** | verb “cry out” | **hüüad** | “you cry” | OK |
+| **non** | negation “not” | **ei** | “not” | OK |
+| **lascia** | verb “lets / allows” | **luba** | “allow” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **kellelgi** | “anyone” (dat.) | OK |
+| **pasar** | infinitive “to pass” | **mööduda** | “to pass” | OK |
+| **per** (2nd occurrence) | preposition “through / along” | **teel** | “on the way” | OK |
+| **la** (2nd occurrence) | definite article | — (omitted) | — | **UNNECESSARY** |
+| **sua** | possessive “its” | **tema** | “its / his” | OK |
+| **via** | noun “way / path” | **teel** | “on the way” | OK |
+| **ma** | coordinating conjunction “but” | **aga** | “but” | OK |
+| **tanto** | adverb of degree “so (much)” | **nii** | “so” | OK |
+| **lo** | pronoun “him” (object) | **ta** | “him” | OK |
+| **'mpedisce** | verb “hinders” | **takistab** | “hinders” | OK |
+| **che** | complementizer “that” (introducing result clause) | **et** | “that” | OK |
+| **l’uccide** | verb phrase “kills him” | **ta tapab teda** | “he kills him” | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG:** `bestia` → translated as **koha** (“place”) instead of a term for “beast”.  
+- **UNNECESSARY:** Both occurrences of the article `la` are omitted in Estonian (natural, no equivalent needed).  
+- **GRAMMAR:** The phrase **“selle koha eest mille pärast”** is redundant (both “eest” and “mille pärast” convey “because of”), leading to a stylistic/grammatical awkwardness in Estonian. This could be streamlined, but the current mapping respects the source‑to‑target word alignment.  
+
+No source words are missing from the translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+.- Line 94:
+  - Original: **ché questa bestia, per la qual tu gride,**
+  - Issue: **WRONG** translation of “bestia”; **GRAMMAR** redundancy in “mille pärast”.
+  - Corrected: **selle looma pärast, sa hüüad,**
+
+- Line 95:
+  - Original: **non lascia altrui pasar per la sua via,**
+  - Issue: none
+  - Corrected: **ei luba kellelgi mööduda tema teel,**
+
+- Line 96:
+  - Original: **ma tanto lo 'mpedisce che l'uccide;**
+  - Issue: none
+  - Corrected: **aga nii takistab ta teda, et ta tapab teda;**
+
+```estonian
+selle looma pärast, sa hüüad,
+ei luba kellelgi mööduda tema teel,
+aga nii takistab ta teda, et ta tapab teda;
+```
+]]></message>
+</messages>

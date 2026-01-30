@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Während ich zum niedrigen Ort hinabstieg,  
+vor meinen Augen erschien mir  
+der durch lange Stille heiser wirkte.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → German)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **Mentre** | temporal conjunction introducing a simultaneous clause | **Während** | while / during | OK |
+| **ch'** (che) | subordinating conjunction linking the clause “che io rovinava …” | — (no German equivalent) | — | **UNNECESSARY** |
+| **i'** (io) | 1st‑person singular pronoun, agent of “rovinava” | **ich** | I | OK |
+| **rovinava** | imperfect verb “was falling / going down” | **hinabstieg** | descended / fell down | OK |
+| **in** | preposition indicating direction toward a location | **zum** (zu + dem) | to the (dative) | OK |
+| **basso** | adjective “low” qualifying “loco” | **niedrigen** | low (weak dative ending) | OK |
+| **loco** | noun “place” (destination) | **Ort** | place | OK |
+| **dinanzi** | adverb/preposition “before, in front of” (spatial) | **vor** | before / in front of | OK |
+| **a** | preposition “to” introducing the indirect object “li occhi” | — (absorbed by “vor …”) | — | **UNNECESSARY** |
+| **li** (gli) | definite article “the” (masc. plural) | — (possessive “meinen” already marks the noun) | — | **UNNECESSARY** |
+| **occhi** | noun “eyes” (object of perception) | **Augen** | eyes | OK |
+| **mi** | dative clitic pronoun “to me” (experiencer) | **mir** | to me | OK |
+| **si** | reflexive pronoun used in passive construction | — (German uses active “erschien”) | — | **UNNECESSARY** |
+| **fu** | auxiliary verb (past remote of *essere*) forming passive | — (tense encoded in “erschien”) | — | **UNNECESSARY** |
+| **offerto** | past participle “offered / presented” (passive) | **erschien** | appeared / was presented | OK |
+| **chi** | relative pronoun “one who” introducing description | **der** | who / that (masc. nom.) | OK |
+| **per** | preposition “through” (cause/means) | **durch** | through | OK |
+| **lungo** | adjective “long” qualifying “silenzio” | **lange** | long | OK |
+| **silenzio** | noun “silence” (period preceding appearance) | **Stille** | silence | OK |
+| **parea** | verb “seemed” (imperfect) | **wirkte** | seemed / acted | OK |
+| **fioco** | adjective “hoarse / weak” describing voice | **heiser** | hoarse | OK |
+
+---
+
+### Items flagged in the review  
+
+- **UNNECESSARY**: `ch'`, `a`, `li`, `si`, `fu` – these Italian particles/auxiliaries have no direct counterpart in the German rendering because the German syntax conveys the same meaning without them.  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are represented by appropriate German equivalents, and the German sentences respect agreement, case, and word order.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: Während ich zum niedrigen Ort hinabstieg,
+  - Issue: none
+  - Corrected: no change
+- Line 62:
+  - Original: vor meinen Augen erschien mir
+  - Issue: none
+  - Corrected: no change
+- Line 63:
+  - Original: der durch lange Stille heiser wirkte.
+  - Issue: none
+  - Corrected: no change
+
+```
+Während ich zum niedrigen Ort hinabstieg,
+vor meinen Augen erschien mir
+der durch lange Stille heiser wirkte.
+```
+]]></message>
+</messages>

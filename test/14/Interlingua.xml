@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+le prime hora del tempore e le dulce stagione;
+sic que bon sperantia me esseva causa
+del ille fera con le pelle pinterate
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Interlingua) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|-----------------------------------|----------------------------|--------|
+| **mosse** | “initial moment / first hour” | **le prime hora** | “the first hour” | **WRONG** (lexical mismatch – “mosse” = “moves, moments”, not “hour”) |
+| **di** | genitive marker “of” | **del** | “of the” | OK |
+| **prima** | “first / earliest” | **prime** | “first” | OK |
+| **quelle** | demonstrative “those” (referring to beautiful things) | **le** | “the” | **UNNECESSARY** (article supplies no demonstrative meaning) |
+| **cose** | “things, beautiful entities” | **hora** | “hour” | **WRONG** (different referent) |
+| **belle** | “beautiful / sweet” | **dulce** | “sweet” | OK |
+| **sì** | resultative adverb “so” | **sic** | “so” | OK |
+| **ch’a** | causal conjunction “that … to” | **que** | “that” | OK |
+| **bene** | adverb “good / well” | **bon** | “good” | OK |
+| **sperar** | infinitive “to hope” | **sperantia** | “hope (noun)” | **WRONG** (different word class) |
+| **m’era** | “to me was” (experiencer + copula) | **me** | “me” | **GRAMMAR** (missing copular element; the copula appears later as *esseva*, but the pronoun alone does not convey the same structure) |
+| **cagione** | “occasion / cause” | **causa** | “cause / occasion” | OK |
+| **di** (line 42) | genitive “of” | **del** | “of the” | OK |
+| **quella** | demonstrative “that” (feminine) | **ille** | “that” (masc.) | **WRONG** (gender mismatch) |
+| **fiera** | “wild beast” | **fera** | “beast” | OK |
+| **a** | preposition “with” (instrument) | **con** | “with” | OK |
+| **la** | definite article “the” (fem.) | **le** | “the” | OK |
+| **gaetta** | adjective “dappled / speckled” | **pinterate** | “spotted / dappled” | OK |
+| **pelle** | noun “skin” | **pelle** | “skin” | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Status | Source Word(s) | Issue |
+|--------|----------------|-------|
+| **WRONG** | *mosse* → “le prime hora” | Semantic mismatch; “mosse” does not mean “hour”. |
+| **WRONG** | *cose* → “hora” | Wrong referent; “cose” = “things”, not “hour”. |
+| **WRONG** | *sperar* → “sperantia” | Change of word class (verb → noun). |
+| **WRONG** | *quella* → “ille” | Gender disagreement (feminine → masculine). |
+| **GRAMMAR** | *m’era* → “me” | Missing copular element; the pronoun alone does not convey “to me was”. |
+| **UNNECESSARY** | *quelle* → “le” | Demonstrative meaning lost; article alone is not required in Interlingua. |
+
+All other mappings are acceptable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 40**  
+  - **Original:** `mosse di prima quelle cose belle;`  
+  - **Issue:** “mosse” (moves) and “quelle cose belle” (those beautiful things) do not convey the reference meaning “the hour of the time and the sweet season”.  The preposition “di” and adjective “prima” need to express “of the time”.  
+  - **Corrected:** `le hora del tempore e le dulci stagione;`  
+
+- **Line 41**  
+  - **Original:** `sì ch'a bene sperar m'era cagione`  
+  - **Issue:** Verb “sperar” and pronoun “m'era” were rendered incorrectly; the clause must express “were occasion of good hope to me”.  
+  - **Corrected:** `sic que bon sperantia me esseva causa`  
+
+- **Line 42**  
+  - **Original:** `di quella fiera a la gaetta pelle`  
+  - **Issue:** Demonstrative gender mismatch (“quella” → “illa”) and preposition choice; need “with the dappled skin”.  
+  - **Corrected:** `del illa fera con le pelle pinterate`  
+
+```interlingua
+le hora del tempore e le dulci stagione;
+sic que bon sperantia me esseva causa
+del illa fera con le pelle pinterate
+```
+]]></message>
+</messages>

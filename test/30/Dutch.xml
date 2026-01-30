@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Zie het beest, waardoor ik me wendde;  
+Help me tegen haar, beroemde wijze,  
+Want zij mij de aderen en polsen doet trillen.».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Dutch translation from Step 2)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (NL → EN) | Status |
+|-------------|-----------------------|--------------------|----------------------------|--------|
+| Vedi | imperative “see / behold” | **Zie** | “see / behold” | OK |
+| la | definite article, fem. sg. “the” | **het** | “the” (neuter article used in Dutch) | OK |
+| bestia | noun “beast” | **beest** | “beast” | OK |
+| per | preposition “because of / for which” | **waardoor** | “through which / because of which” | OK |
+| cu' | relative pronoun “which” (dative) | **waardoor** | “through which / because of which” | OK |
+| io | 1st sg. pronoun “I” | **ik** | “I” | OK |
+| mi | reflexive pronoun “myself” | **me** | “myself” | OK |
+| volsi | past historic “turned” | **wendde** | “turned” | OK |
+| aiutami | imperative “help me” | **Help me** | “help me” | OK |
+| da | preposition “against” | **tegen** | “against” | OK |
+| lei | 3rd sg. fem. pronoun “her” | **haar** | “her” | OK |
+| famoso | adjective “famous” | **beroemde** | “famous” | OK |
+| saggio | noun “sage” | **wijze** | “wise one / sage” | OK |
+| ch'ella | conjunction “for / because” introducing a causal clause | **Want** | “because / for” | **WRONG** (the rule required a resultative structure, not a causal “because”) |
+| mi | object pronoun “me” | **mij** | “me” | OK |
+| fa | verb “makes / causes” | **doet** | “does / makes” | OK |
+| tremar | infinitive “to tremble” | **trillen** | “to tremble” | OK |
+| le | definite article, fem. pl. “the” | **de** | “the” | OK |
+| vene | noun “veins” | **aderen** | “veins” | OK |
+| e | coordinating conjunction “and” | **en** | “and” | OK |
+| i | definite article, masc. pl. “the” | *(omitted)* | – | **MISSING** (Dutch can omit the article before “polsen”) |
+| polsi | noun “pulses” | **polsen** | “pulses” | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG:** *ch'ella* rendered as **“Want”** – violates the instruction to keep a resultative structure; a more appropriate rendering would be a clause like “zij … doet …” without a causal conjunction.
+- **MISSING:** Article **i** before *polsi* is not present in the Dutch line. Dutch often drops the article in such plural noun phrases, but the source word is therefore unaccounted for.
+- **GRAMMAR / UNNECESSARY:** No gender/number agreement errors were detected; the only “unnecessary” element is the added period before the closing quotation mark in the Dutch line, which is punctuation rather than a lexical item and thus not listed in the table.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 88**  
+  - Original: *Zie het beest, waardoor ik me wendde;*  
+  - Issue: internal comma after *beest*  
+  - Corrected: *Zie het beest waardoor ik me wendde;*  
+
+- **Line 89**  
+  - Original: *Help me tegen haar, beroemde wijze,*  
+  - Issue: internal comma after *haar* (vocative)  
+  - Corrected: *Help me tegen haar beroemde wijze,*  
+
+- **Line 90**  
+  - Original: *Want zij mij de aderen en polsen doet trillen.».*  
+  - Issue: wrong causal conjunction *Want*; missing article before *polsen*; extra period before closing quote  
+  - Corrected: *zij mij de aderen en de polsen doet trillen».*
+
+```
+Zie het beest waardoor ik me wendde;
+Help me tegen haar beroemde wijze,
+zij mij de aderen en de polsen doet trillen».
+```
+]]></message>
+</messages>

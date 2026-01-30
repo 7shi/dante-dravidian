@@ -38,6 +38,12 @@ I looked on high, and saw its shoulders clothed already with the rays of the pla
 17 すでに惑星の光線に覆われていた
 18 惑星はすべての道で人々をまっすぐ導く。
 
+# Estonian
+
+16 Ma vaatasin kõrgele ja nägin selle õlad
+17 juba riietatud planeedi kiirgusega
+18 mis juhatab inimesi otse igal teel.
+
 # French
 
 16 Je regardai en haut et vis ses épaules
@@ -61,3 +67,39 @@ I looked on high, and saw its shoulders clothed already with the rays of the pla
 16 Mi rigardis supren kaj vidis ĝiajn ŝultrojn
 17 vestitaj jam per la radioj de la planedo
 18 kiu gvidas homojn rekte laŭ ĉiu vojo.
+
+# Interlingua
+
+16 Io guardava in alto e vide su spalle.
+17 Vestite ja de radi del planeta.
+18 Que conduce homines recte per omne via.
+
+# Hindi
+
+16 मैंने ऊपर देखा और उसकी कंधें देखीं
+17 वे पहले ही ग्रह की किरणों से ढके हुए थे
+18 जो हर रास्ते पर लोगों को सीधा ले जाता है।
+
+# Bengali
+
+16 উচ্চে তাকালাম এবং তার কাঁধ দেখলাম
+17 গ্রহের রশ্মি দ্বারা ইতিমধ্যে আবৃত
+18 গ্রহ মানুষকে প্রতিটি পথে সরলভাবে পরিচালনা করে।
+
+# German
+
+16 Ich schaute hoch und sah seine Schultern
+17 bereits mit den Strahlen des Planeten bekleidet
+18 der die Menschen geradewegs entlang jeden Weg führt.
+
+# Dutch
+
+16 Ik keek omhoog en zag zijn schouders
+17 al gekleed met de stralen van de planeet
+18 die de mensen recht leidt langs elk pad.
+
+# Serbian (Latin script)
+
+16 gledao sam visoko i video njegove ramena
+17 već obučene zracima planeta
+18 koji vodi ljude pravo po svakom putu.

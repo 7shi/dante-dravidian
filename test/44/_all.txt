@@ -38,6 +38,12 @@ And I to him, “Poet, I beseech thee by that God whom thou didst not know, in o
 131 あなたが知らなかったあの神によって、
 132 そうすれば私はこの病とより悪いものから逃れようとする、
 
+# Estonian
+
+130 Ja mina talle poet ma palun sind
+131 selle Jumala poolt keda sa ei tundnud,
+132 et ma põgeneksin selle haiguse ja halvemaga,
+
 # French
 
 130 Et moi à lui Poète je te supplie
@@ -61,3 +67,39 @@ And I to him, “Poet, I beseech thee by that God whom thou didst not know, in o
 130 Kaj mi al li: «Poeto, mi vin petas
 131 per tiu Dio, kiun vi ne konis,
 132 por ke mi forkuru ĉi tiun malbonon kaj pli malbonan,
+
+# Interlingua
+
+130 E io a ille: «Poeta, io te implora
+131 per ille Deo que tu non cognosceva,
+132 assi que io pote fugir iste mal e pejor,
+
+# Hindi
+
+130 और मैं उसे: “कवि, मैं तुमसे विनती करता हूँ
+131 उस भगवान के द्वारा जिसे तुम नहीं जानते थे,
+132 ताकि मैं इस बुराई और उससे भी बदतर से बच सकूँ,
+
+# Bengali
+
+130 এবং আমি তাকে কবি আমি তোমার কাছে অনুরোধ করছি
+131 সেই ঈশ্বরের জন্য যে তুমি জাননি,
+132 যাতে আমি এই কষ্ট এবং তার চেয়ে খারাপ থেকে পালাতে পারি,
+
+# German
+
+130 Und ich zu ihm Dichter bitte dich
+131 durch den Gott den du nicht kanntest,
+132 damit ich dieses Übel und Schlimmeres fliehen kann,
+
+# Dutch
+
+130 En ik tot hem ik smeek u dichter
+131 door die God die u niet kende,
+132 opdat ik dit kwaad en erger mag ontvluchten,
+
+# Serbian (Latin script)
+
+130 I ja njemu Poet ja te molim
+131 po tom Bogu kojeg ti nisi znao,
+132 da bih ja pobegao ovu bolest i gore,

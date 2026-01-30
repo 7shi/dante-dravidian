@@ -38,6 +38,12 @@
 83 長い研究と大きな愛を私に役立たせて  
 84 私にあなたの書物を探させた。
 
+# Estonian
+
+82 O teiste luuletajate au ja valgus,
+83 las mu pikk õping ja suur armastus kasu toovad
+84 mis on sundinud mind sinu köite otsima.
+
 # French
 
 82 Ô honneur et lumière des autres poètes,
@@ -61,3 +67,39 @@
 82 Ho honoro kaj lumo de la aliaj poetoj,
 83 donu al mi la longan studon kaj la grandan amon
 84 kio igis min serĉi vian volumon.
+
+# Interlingua
+
+82 O honor e luce del altere poetas,
+83 concede me le longe studio e le grande amor
+84 que me ha facite cercar tu volume.
+
+# Hindi
+
+82 हे अन्य कवियों का सम्मान और प्रकाश,
+83 मेरी लंबी पढ़ाई और महान प्रेम को मेरे लिये उपयोगी बनाओ
+84 जिससे मैंने तुम्हारा ग्रन्थ खोजा है।
+
+# Bengali
+
+82 হে অন্য কবিদের গৌরব ও আলোক,
+83 দীর্ঘ অধ্যয়ন ও মহান প্রেম আমাকে উপকার করুক
+84 যা আমাকে তোমার গ্রন্থ অনুসন্ধান করতে বাধ্য করেছে।
+
+# German
+
+82 O Ehre und Licht der anderen Dichter,
+83 Gewähre mir das lange Studium und die große Liebe
+84 die mich veranlasst haben, dein Werk zu suchen.
+
+# Dutch
+
+82 O eer en licht van de andere dichters,
+83 schenk mij de lange studie en de grote liefde
+84 die mij hebben doen zoeken naar uw volume.
+
+# Serbian (Latin script)
+
+82 O časti i svetlu drugih pesnika,
+83 Neka mi dugi studij i velika ljubav budu od koristi
+84 Što me je nateralo da tražim tvoju knjigu.

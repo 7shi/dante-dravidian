@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+lines.103 Ta ei söö maa ega kaupu,  
+104 aga tarkus, armastus ja vaprus,  
+105 ja tema sünnikoht on Feltro ja Feltro vahel.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|-----------------------|--------|
+| Questi | demonstrative pronoun referring to the male subject | Ta | he / she | OK |
+| non | negation particle | ei | not | OK |
+| ciberà | future verb “shall feed / eat” | söö | eat / will eat (present used for future) | OK |
+| terra | “land”, physical earth | maa | land | OK |
+| né | coordinating conjunction “nor” | ega | nor | OK |
+| peltro | “goods, metal, wealth” | kaupu | goods | OK |
+| ma | adversative conjunction “but” | aga | but | OK |
+| sapïenza | “wisdom” (intellectual virtue) | tarkus | wisdom | OK |
+| amore | “love” (affective virtue) | armastus | love | OK |
+| e (line 104) | coordinating conjunction “and” | ja | and | OK |
+| virtute | “valor / virtue” (courageous excellence) | vaprus | valor | OK |
+| e (line 105) | coordinating conjunction “and” (linking clauses) | ja | and | OK |
+| sua | possessive adjective “his” | tema | his | OK |
+| nazion | “nation / birthplace, place of origin” | sünnikoht | birthplace | OK |
+| sarà | future copular verb “shall be” | on | is / will be (present used for future) | OK |
+| tra | preposition “between” | vahel | between | OK |
+| feltro (first) | proper name “Feltro” (geographic marker) | Feltro | Feltro | OK |
+| e (second in line 105) | coordinating conjunction “and” (linking the two place names) | ja | and | OK |
+| feltro (second) | proper name “Feltro” (second marker) | Feltro | Feltro | OK |
+
+### Issues Detected
+- **None.** All source tokens have been rendered in the Estonian translation with appropriate equivalents. The use of present tense verbs (“söö”, “on”) to express future meaning is acceptable in Estonian and therefore not marked as an error. No unnecessary or missing elements were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+.
+
+- Line 103:
+  - Original: Ta ei söö maa ega kaupu,
+  - Issue: none
+  - Corrected: no change
+
+- Line 104:
+  - Original: aga tarkus, armastus ja vaprus,
+  - Issue: none
+  - Corrected: no change
+
+- Line 105:
+  - Original: ja tema sünnikoht on Feltro ja Feltro vahel.
+  - Issue: none
+  - Corrected: no change
+
+```
+Ta ei söö maa ega kaupu,
+aga tarkus, armastus ja vaprus,
+ja tema sünnikoht on Feltro ja Feltro vahel.
+```
+]]></message>
+</messages>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Terwijl ik terugdaalde naar de lage plaats,  
+voordat mij voor de ogen werd getoond  
+die door lange stilte zwak leek.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Mentre | temporal subordinator “while” | Terwijl | while | OK |
+| ch'i' | 1st sg pronoun “I” (subject) | ik | I | OK |
+| rovinava | imperfect “was falling / descending” | terugdaalde | fell back / descended | OK |
+| in | preposition of direction “to, toward” | naar | to / toward | OK |
+| basso | adjective “low” | lage | low | OK |
+| loco | noun “place, location” | plaats | place | OK |
+| dinanzi | adverb/preposition “before, in front of” (spatial) | voordat | before | OK |
+| a | preposition introducing indirect object “to” | voor | for / before (in this context) | OK |
+| li | definite article, masculine plural “the” | de | the | OK |
+| occhi | noun “eyes” (plural) | ogen | eyes | OK |
+| mi | 1st sg dative pronoun “to me” (experiencer) | mij | me | OK |
+| si | reflexive/impersonal pronoun used in passive construction | – (omitted) | – | UNNECESSARY |
+| fu | auxiliary “was” (past remote of *essere*) | werd | was (aux.) | OK |
+| offerto | past participle “offered / presented” | getoond | shown / presented | OK |
+| chi | relative pronoun “who, that” | die | who / that | OK |
+| per | preposition “through, by means of” | door | through | OK |
+| lungo | adjective “long” | lange | long | OK |
+| silenzio | noun “silence” | stilte | silence | OK |
+| parea | imperfect “seemed” | leek | seemed | OK |
+| fioco | adjective “hoarse, weak, faint” | zwak | weak / hoarse | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *si* – the Italian reflexive pronoun is not needed in Dutch passive construction and is therefore omitted. No other missing, wrong, or grammatical‑agreement issues were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: Terwijl ik terugdaalde naar de lage plaats,
+  - Issue: none
+  - Corrected: no change
+- Line 62:
+  - Original: voordat mij voor de ogen werd getoond
+  - Issue: none
+  - Corrected: no change
+- Line 63:
+  - Original: die door lange stilte zwak leek.
+  - Issue: none
+  - Corrected: no change
+
+```
+Terwijl ik terugdaalde naar de lage plaats,
+voordat mij voor de ogen werd getoond
+die door lange stilte zwak leek.
+```
+]]></message>
+</messages>

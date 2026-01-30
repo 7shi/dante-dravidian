@@ -38,6 +38,12 @@ But not so that the sight which appeared to me of a lion did not give me fear.
 44 しかし私に現れたライオンの姿が私に恐怖を与えなかったほどではない
 45 私に現れたライオンの姿.
 
+# Estonian
+
+43 aja tund ajast ja magus hooaeg;
+44 aga mitte nii et see ei tekitanud mulle hirmu
+45 nägemus mis mulle ilmus lõvi.
+
 # French
 
 43 l'heure du temps et la douce saison;
@@ -61,3 +67,39 @@ But not so that the sight which appeared to me of a lion did not give me fear.
 43 la horo de tempo kaj la dolĉa sezono;
 44 sed ne tiel ke la timo ne donu al mi
 45 la vidaĵo kiu al mi aperis de leono.
+
+# Interlingua
+
+43 le hora del tempore e le dulce stagione;
+44 ma non sic que le timor non me dava
+45 le vista que me apparve de un leone.
+
+# Hindi
+
+43 समय का क्षण और मीठा मौसम;
+44 पर ऐसा नहीं कि भय मुझे न दे
+45 वह दृश्य जो मुझे शेर दिखाया।
+
+# Bengali
+
+43 সময়ের ঘণ্টা এবং মধুর ঋতু;
+44 কিন্তু এমন নয় যে
+45 সেই সিংহের দৃশ্যটি যা আমার সামনে প্রকাশ পেয়েছিল আমাকে ভয় না দেয়।
+
+# German
+
+43 die Stunde der Zeit und die süße Jahreszeit;
+44 aber nicht so, dass mir nicht die Angst gäbe
+45 der Anblick der mir von einem Löwen erschien.
+
+# Dutch
+
+43 het uur van de tijd en het zoete seizoen;
+44 maar niet zo dat de angst mij niet gaf
+45 de aanblik die mij verscheen van een leeuw.
+
+# Serbian (Latin script)
+
+43 sat vremena i slatko doba;
+44 ali ne tako da mi ne bi dao strah
+45 pogled koji mi se pojavio od lava.

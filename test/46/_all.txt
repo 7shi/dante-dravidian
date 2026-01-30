@@ -26,6 +26,10 @@ Then he moved on, and I behind him kept.
 
 136 それから彼は前へ進みそして私は彼の後ろにそれらを保った。
 
+# Estonian
+
+136 Siis ta liikus edasi ja ma hoidsin teda taga.
+
 # French
 
 136 Alors il se mit en marche et je les gardai derrière lui.
@@ -41,3 +45,27 @@ Then he moved on, and I behind him kept.
 # Esperanto
 
 136 Tiam li iris antaŭen kaj mi tenis ilin malantaŭ li.
+
+# Interlingua
+
+136 Allora se moveva, e io los teneva retro.
+
+# Hindi
+
+136 फिर वह आगे बढ़ा, और मैं उसे पीछे रखा।
+
+# Bengali
+
+136 তারপর সে এগিয়ে গেল এবং আমি সেগুলো তার পিছনে রাখলাম।
+
+# German
+
+136 Dann ging er weiter, und ich hielt sie hinter ihm.
+
+# Dutch
+
+136 Toen ging hij verder en hield ik hem achter.
+
+# Serbian (Latin script)
+
+136 Onda se on pomerio i ja ih držao iza njega.

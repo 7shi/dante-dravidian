@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Postea io habeva reposate un poco mi corpore fatigate,  
+Io reprendeva le via per le declive desertic,  
+sic que le pede ferme esseva sempre le plus basse.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Interlingua) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|-----------------------------------|------------------------|--------|
+| Poi | temporal adverb “After” | **Postea** | after | OK |
+| ch'èi | “that I have” (conj. + aux.) | — (omitted) | — | **UNNECESSARY** |
+| posato | verb “rested” (perfect) | **reposate** | rested | OK |
+| un | indefinite article/ numeral “a” | **un** | a | OK |
+| poco | adverb of quantity “little” | **poco** | little | OK |
+| il | definite article “the” (determiner for *corpo*) | **mi** (possessive) | my | **UNNECESSARY** |
+| corpo | noun “body” | **corpore** | body | OK |
+| lasso | adjective “weary” | **fatigate** | weary | OK |
+| ripresi | verb “resumed / took” (past) | **reprendeva** | resumed | OK |
+| via | noun “way” | **via** | way | OK |
+| per | preposition “along” | **per** | along | OK |
+| la | definite article “the” (determiner for *piaggia*) | **le** | the | OK |
+| piaggia | noun “slope” (archaic) | **declive** | slope | OK |
+| diserta | adjective “desert” (empty) | **desertic** | desert | OK |
+| sì | adverb/conjunction “so” (resultative) | **sic** | so | OK |
+| che | conjunction “that” | **que** | that | OK |
+| ’l | definite article “the” (for *piè*) | **le** | the | OK |
+| piè | noun “foot” (the firm foot) | **pede** | foot | OK |
+| fermo | adjective “firm” | **ferme** | firm | OK |
+| sempre | adverb “always” | **sempre** | always | OK |
+| era | verb “was” (imperfect) | **esseva** | was | OK |
+| ’l | definite article “the” (for *più basso*) | **le** | the | OK |
+| più | comparative particle “more/most” | **plus** | more/most | OK |
+| basso | adjective “lower” (comparative) | **basse** | lower | **GRAMMAR** |
+
+---
+
+### Items Requiring Attention  
+
+| Type | Source Word(s) | Issue |
+|------|----------------|-------|
+| **UNNECESSARY** | **ch'èi** | Conjunction + auxiliary omitted in Interlingua (temporal clause introduced by “Postea”). |
+| **UNNECESSARY** | **il** (article before *corpo*) | Possessive “mi” replaces the article; article not needed in Interlingua. |
+| **GRAMMAR** | **basse** (translation of *basso*) | In Interlingua adjectives are invariable; the comparative should be **plus basso** (or **plus basse** only if plural). The form **basse** is a gender/number inflection that does not exist in Interlingua. |
+
+No source words are completely **MISSING** or **WRONG** in meaning; the only problems are the two unnecessary elements (which are permissible omissions) and the adjective agreement error on the final comparative.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 28**  
+  - Original: `Postea io habeva reposate un poco mi corpore fatigate,`  
+  - Issue: none  
+  - Corrected: `Postea io habeva reposate un poco mi corpore fatigate,`
+
+- **Line 29**  
+  - Original: `Io reprendeva le via per le declive desertic,`  
+  - Issue: none  
+  - Corrected: `Io reprendeva le via per le declive desertic,`
+
+- **Line 30**  
+  - Original: `sic que le pede ferme esseva sempre le plus basse.`  
+  - Issue: **GRAMMAR** – comparative adjective should be invariant; use “plus basso”.  
+  - Corrected: `sic que le pede ferme esseva sempre le plus basso.`
+
+```interlingua
+Postea io habeva reposate un poco mi corpore fatigate,
+Io reprendeva le via per le declive desertic,
+sic que le pede ferme esseva sempre le plus basso.
+```
+]]></message>
+</messages>

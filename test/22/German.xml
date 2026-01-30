@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Als ich ihn in der großen Wüste sah,
+„Erbarme dich meiner“ rief ich zu ihm,
+„Was immer du bist sei es Schatten oder echter Mann!“.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (German) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|----------------------------|--------|
+| Quando | “at the time that” (temporal subordinator) | Als | “when” | OK |
+| vidi | past‑tense 1st sg. “saw” | sah | “saw” | OK |
+| costui | demonstrative pronoun “him” | ihn | “him” | OK |
+| nel | preposition “in the” | in der | “in the” | OK |
+| gran | attributive “great” | großen | “great” | OK |
+| diserto | noun “desert” | Wüste | “desert” | OK |
+| Miserere | imperative “have pity” | Erbarme | “have mercy” | OK |
+| di | preposition “on / of” (object of pity) | dich | “you (acc.)” | OK |
+| me | pronoun “me” (object) | meiner | “of me” | OK |
+| gridai | past‑tense 1st sg. “cried / shouted” | rief | “called / shouted” | OK |
+| a | preposition “to” (dative) | zu | “to” | OK |
+| lui | pronoun “him” (dative) | ihm | “him” | OK |
+| qual | free‑relative “whatever” | Was | “what” | OK |
+| che | relative particle linking “qual” to clause | immer | “ever” | OK |
+| tu | 2nd sg. pronoun “you” | du | “you” | OK |
+| sii | subjunctive “be” | bist | “are” | OK |
+| od (1st) | disjunction “or” | oder | “or” | OK |
+| ombra | noun “shade / shadow” | Schatten | “shade” | OK |
+| od (2nd) | disjunction “or” | oder | “or” | OK |
+| omo | noun “man” (male human) | Mann | “man” | OK |
+| certo | adjective “certain / real” | echter | “real / genuine” | OK |
+| **ich** (added for German subject) | implied 1st sg. pronoun in Italian verb | ich | “I” | UNNECESSARY |
+| **ich** (second occurrence) | same as above, required by German word order | ich | “I” | UNNECESSARY |
+| **zu** (preposition) | corresponds to Italian “a” (dative) – already mapped above | zu | “to” | OK |
+| **Erbarme** (imperative verb) | corresponds to “Miserere” – already mapped | Erbarme | “have mercy” | OK |
+| **dich** (object pronoun) | corresponds to “di” + “me” – already mapped | dich | “you (acc.)” | OK |
+| **meiner** (genitive pronoun) | corresponds to “me” – already mapped | meiner | “of me” | OK |
+| **sei es** (idiom “be it”) | renders the disjunctive “od … od” structure | sei es | “be it” | OK |
+| **Schatten** (noun) | corresponds to “ombra” – already mapped | Schatten | “shade” | OK |
+| **echter Mann** (noun phrase) | corresponds to “omo certo” – already mapped | echter Mann | “real man” | OK |
+
+---
+
+### Items Flagged
+
+- **UNNECESSARY**:  
+  - **ich** (appears twice) – German requires an explicit subject pronoun, which is not present in the Italian source.  
+
+All other source words are accounted for and correctly rendered; no missing, wrong, or grammar‑error items were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 64:
+  - Original: **Als ich ihn in der großen Wüste sah,**
+  - Issue: none
+  - Corrected: **Als ich ihn in der großen Wüste sah,**
+
+- Line 65:
+  - Original: **„Erbarme dich meiner“ rief ich zu ihm,**
+  - Issue: none
+  - Corrected: **„Erbarme dich meiner“ rief ich zu ihm,**
+
+- Line 66:
+  - Original: **„Was immer du bist sei es Schatten oder echter Mann!“.**
+  - Issue: wrong end punctuation (period instead of exclamation)
+  - Corrected: **„Was immer du bist sei es Schatten oder echter Mann!“**
+
+```
+Als ich ihn in der großen Wüste sah,
+„Erbarme dich meiner“ rief ich zu ihm,
+„Was immer du bist sei es Schatten oder echter Mann!“
+```
+]]></message>
+</messages>

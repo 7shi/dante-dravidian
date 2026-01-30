@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+7 Zo bitter is het dat de dood iets meer is;  
+8 Maar om het goede dat ik daar vond te behandelen,  
+9 Ik zal over de andere dingen die ik daar heb gezien vertellen.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Dutch translation → Italian source)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Dutch → English) | Status |
+|-------------|--------------------------------------|----------------------|--------------------------------------|--------|
+| Tant' | “to such a degree” – intensifier of the predicate | Zo | “so” | OK |
+| è | copular verb linking subject to predicate | is | “is” | OK |
+| amara | adjective describing the subject (bitter) | bitter | “bitter” | OK |
+| che | subordinator introducing result/comparative clause | dat | “that” | OK |
+| poco | adverb quantifier indicating slight degree | iets | “a little / somewhat” | OK |
+| è | copular verb in comparative clause | is | “is” | OK |
+| più | comparative adverb marking increase | meer | “more” | OK |
+| morte | noun, entity being compared (death) | dood | “death” | OK |
+| ma | coordinating conjunction signalling contrast | Maar | “but” | OK |
+| per | preposition marking purpose | om | “in order to” | OK |
+| trattar | infinitive verb “to discuss / to treat” | behandelen | “to treat / to discuss” | OK |
+| del | preposition + definite article “of the” | het | “the” (object of *behandelen*) | OK |
+| ben | noun “good” (the positive thing) | goede | “good” | OK |
+| ch' | relative pronoun “that” introducing clause | dat | “that” | OK |
+| i' | pronoun “I” (subject of relative clause) | ik | “I” | OK |
+| vi | adverbial locative “there” | daar | “there” | OK |
+| trovai | 1st‑sg past “found” | vond | “found” | OK |
+| dirò | 1st‑sg future “I will say/tell” | Ik zal | “I will” (future auxiliary) | **UNNECESSARY** (future auxiliary *zal* not present in source) |
+| de | preposition “of” (introducing complement) | over | “about / over” | OK |
+| l' | definite article “the” (feminine plural) | de | “the” | OK |
+| altre | adjective “other” (distinguishing) | andere | “other” | OK |
+| cose | noun “things” (plural) | dingen | “things” | OK |
+| ch' | relative pronoun “that” | die | “that / which” | OK |
+| i' | pronoun “I” (subject) | ik | “I” | OK |
+| v' | adverbial locative “there” | daar | “there” | OK |
+| ho | auxiliary verb forming perfect | heb | “have” | OK |
+| scorte | past participle “seen” | gezien | “seen” | OK |
+| (te) | infinitive marker required in Dutch “te behandelen” | te | “to (infinitive marker)” | **UNNECESSARY** (added for Dutch infinitive, not in source) |
+| (vertellen) | verb “to tell” (completes *dirò*) | vertellen | “to tell” | OK |
+| (zal) | future auxiliary “will” (Dutch) | zal | “will” | **UNNECESSARY** (added for Dutch future tense) |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - *zal* (future auxiliary) – Dutch needs a future auxiliary, but the Italian source expresses future simply with the verb *dirò*.  
+  - *te* (infinitive marker) – required by Dutch infinitive construction “te behandelen”.  
+  - *zal* (again) appears as part of the future construction in line 9.  
+
+All other source words are represented correctly (status **OK**). No source words are missing, and no translations are outright wrong or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7:
+  - Original: Zo bitter is het dat de dood iets meer is;
+  - Issue: none
+  - Corrected: no change
+- Line 8:
+  - Original: Maar om het goede dat ik daar vond te behandelen,
+  - Issue: none
+  - Corrected: no change
+- Line 9:
+  - Original: Ik zal over de andere dingen die ik daar heb gezien vertellen.
+  - Issue: none
+  - Corrected: no change
+
+```
+Zo bitter is het dat de dood iets meer is;
+Maar om het goede dat ik daar vond te behandelen,
+Ik zal over de andere dingen die ik daar heb gezien vertellen.
+```
+]]></message>
+</messages>

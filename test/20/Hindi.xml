@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ऐसा बना दिया मुझे वह बिन‑शांति का दैत्य,  
+जो, मेरे विरुद्ध आते हुए, धीरे‑धीरे  
+मुझे पीछे धकेल रहा था उस जगह जहाँ सूरज मौन है।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------|------------------------------|-----------------------------|--------|
+| tal | demonstrative adjective “such” | ऐसा | such | OK |
+| mi (1) | 1st‑person singular clitic pronoun “me” | मुझे | me | OK |
+| fece | verb, causative “made” | बना दिया | made | OK |
+| la | definite article “the” | — (omitted) | — | UNNECESSARY |
+| bestia | noun “beast” | दैत्य | beast | OK |
+| sanza | preposition “without” (part of *sanza pace*) | बिन‑ (in बिन‑शांति) | without | OK |
+| pace | noun “repose / peace” (part of *sanza pace*) | शांति (in बिन‑शांति) | peace / repose | OK |
+| che | relative pronoun “that” | जो | that | OK |
+| venendomi | gerund “coming on against me” | मेरे विरुद्ध आते हुए | coming against me | OK |
+| ’ncontro | preposition “against” | विरुद्ध | against | OK |
+| a (1) | preposition in idiom “a poco a poco” (incremental) | — (merged into “धीरे‑धीरे”) | — | UNNECESSARY |
+| poco (1) | adverb “little” (incremental) | — (merged into “धीरे‑धीरे”) | — | UNNECESSARY |
+| a (2) | preposition in idiom “a poco a poco” (incremental) | — (merged into “धीरे‑धीरे”) | — | UNNECESSARY |
+| poco (2) | adverb “little” (incremental) | — (merged into “धीरे‑धीरे”) | — | UNNECESSARY |
+| mi (2) | 1st‑person singular clitic pronoun “me” | मुझे | me | OK |
+| ripigneva | verb “was pushing back” (imperfect) | धकेल रहा था | was pushing | OK |
+| là | adverb of place “thither” | उस | that | OK |
+| dove | relative adverb “where” | जहाँ | where | OK |
+| ’l | definite article “the” | — (omitted) | — | UNNECESSARY |
+| sol | noun “Sun” | सूरज | Sun | OK |
+| tace | verb “is silent” | मौन है | is silent | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la`, both occurrences of `a`, both occurrences of `poco`, and `’l` – these function as articles or prepositions that Hindi does not require; their meaning is conveyed by other words or by the compound “बिन‑शांति” and “धीरे‑धीरे”.  
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 58**  
+  - Original: ऐसा बना दिया मुझे वह बिन‑शांति का दैत्य,  
+  - Issue: none  
+  - Corrected: ऐसा बना दिया मुझे वह बिन‑शांति का दैत्य,  
+
+- **Line 59**  
+  - Original: जो, मेरे विरुद्ध आते हुए, धीरे‑धीरे  
+  - Issue: none  
+  - Corrected: जो, मेरे विरुद्ध आते हुए, धीरे‑धीरे  
+
+- **Line 60**  
+  - Original: मुझे पीछे धकेल रहा था उस जगह जहाँ सूरज मौन है।  
+  - Issue: none  
+  - Corrected: मुझे पीछे धकेल रहा था उस जगह जहाँ सूरज मौन है।  
+
+```
+ऐसा बना दिया मुझे वह बिन‑शांति का दैत्य,
+जो, मेरे विरुद्ध आते हुए, धीरे‑धीरे
+मुझे पीछे धकेल रहा था उस जगह जहाँ सूरज मौन है।
+```
+]]></message>
+</messages>

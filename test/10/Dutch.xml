@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Toen ik een beetje had gerust mijn vermoeide lichaam,  
+Nam ik weer de weg langs de verlaten helling,  
+zodat de stevige voet altijd de lagere was.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (source → Dutch)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| **Poi** | temporal adverb “after” | **Toen** | “After / When” | OK |
+| **ch'èi** | 1st sg. perfect auxiliary + “that” – “I have” | **ik had** | “I had” | OK |
+| **posato** | verb “rested” (perfect) | **gerust** | “rested” | OK |
+| **un** | indefinite article/quantifier “a” | **een** | “a / one” | OK |
+| **poco** | adverb of quantity “little” | **beetje** | “a little” | OK |
+| **il** | definite article (here rendered as possessive) | **mijn** | “my” | OK |
+| **corpo** | noun “body” (the weary body) | **lichaam** | “body” | OK |
+| **lasso** | adjective “weary” | **vermoeide** | “weary” | OK |
+| **ripresi** | verb “resumed / took again” | **Nam** | “took / resumed” | OK |
+| **via** | noun “way / path” | **weg** | “way” | OK |
+| **per** | preposition “along” | **langs** | “along” | OK |
+| **la** | definite article “the” | **de** | “the” | OK |
+| **piaggia** | noun “slope / hillside” | **helling** | “slope” | OK |
+| **diserta** | adjective “deserted / empty” | **verlaten** | “deserted” | OK |
+| **sì** | resultative adverb “so (that)” | **zodat** | “so that” | OK |
+| **che** | subordinating conjunction “that” (part of “so that”) | **zodat** | “so that” | OK |
+| **'l** | contracted article “the” | **de** | “the” | OK |
+| **piè** | noun “foot” (the firm foot) | **voet** | “foot” | OK |
+| **fermo** | adjective “firm / steady” | **stevige** | “firm” | OK |
+| **sempre** | adverb “always” | **altijd** | “always” | OK |
+| **era** | imperfect of “to be” – “was” | **was** | “was” | OK |
+| **'l** | article “the” (second occurrence) | **de** | “the” | OK |
+| **più** | comparative particle “more / –er” (marks comparative) | *(none – comparative expressed by suffix)* | “‑er” | **UNNECESSARY** |
+| **basso** | adjective “lower” (comparative) | **lagere** | “lower” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **più** – the comparative meaning is already encoded in the Dutch adjective *lagere*; a separate word is not needed.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 28**  
+  - Original: `Toen ik een beetje had gerust mijn vermoeide lichaam,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 29**  
+  - Original: `Nam ik weer de weg langs de verlaten helling,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 30**  
+  - Original: `zodat de stevige voet altijd de lagere was.`  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Toen ik een beetje had gerust mijn vermoeide lichaam,
+Nam ik weer de weg langs de verlaten helling,
+zodat de stevige voet altijd de lagere was.
+```
+]]></message>
+</messages>

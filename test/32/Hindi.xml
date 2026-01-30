@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+94 इस दानव के कारण जिसके लिये तुम चिल्लाते हो,  
+95 वह किसी को भी अपनी राह से गुजरने नहीं देता,  
+96 पर वह उसे इतना रोकता है कि वह उसे मार देता है;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **ché** | causal conjunction “because” | **के कारण** | “because of” | OK |
+| **questa** | demonstrative “this” (modifying *bestia*) | **इस** | “this” | OK |
+| **bestia** | noun “beast” | **दानव** | “beast” | OK |
+| **per** | preposition “for” (introducing relative clause) | **के** | “for” | OK |
+| **la** | definite article (feminine singular) – not needed in Hindi | *(omitted)* | – | **UNNECESSARY** |
+| **qual** | relative pronoun “which” (refers to *bestia*) | **जिसके** | “which” | OK |
+| **tu** | 2nd‑person pronoun “you” | **तुम** | “you” | OK |
+| **gride** | verb “you cry / shout” | **चिल्लाते हो** | “you cry” | OK |
+| **non** | negation “not” | **नहीं** | “not” | OK |
+| **lascia** | verb “allows / lets” (negated) | **देता** | “gives/lets” (with preceding नहीं) | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **किसी** | “anyone” | OK |
+| **pasar** | infinitive “to pass” | **गुज़रने** | “to pass” | OK |
+| **per** (2nd) | preposition “through / along” | **से** | “through” | OK |
+| **la** (2nd) | definite article – not needed in Hindi | *(omitted)* | – | **UNNECESSARY** |
+| **sua** | possessive adjective “its / his” | **अपनी** | “its/own” | OK |
+| **via** | noun “way / path” | **राह** | “way” | OK |
+| **ma** | coordinating conjunction “but” | **पर** | “but” | OK |
+| **tanto** | degree adverb “so much” | **इतना** | “so much” | OK |
+| **lo** | pronoun “him” (object) | **उसे** | “him” | OK |
+| **'mpedisce** | verb “hinders / blocks” | **रोकता** | “hinders” | OK |
+| **che** | complementizer “that” (introducing result clause) | **कि** | “that” | OK |
+| **l'uccide** | verb phrase “kills him” | **मार देता है** | “kills (him)” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: the Italian definite article **la** (appears twice) has no counterpart in Hindi and is therefore omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 94**  
+  - Original: इस दानव के कारण जिसके लिये तुम चिल्लाते हो,  
+  - Issue: none  
+  - Corrected: इस दानव के कारण जिसके लिये तुम चिल्लाते हो,  
+
+- **Line 95**  
+  - Original: वह किसी को भी अपनी राह से गुजरने नहीं देता,  
+  - Issue: none  
+  - Corrected: वह किसी को भी अपनी राह से गुजरने नहीं देता,  
+
+- **Line 96**  
+  - Original: पर वह उसे इतना रोकता है कि वह उसे मार देता है;  
+  - Issue: none  
+  - Corrected: पर वह उसे इतना रोकता है कि वह उसे मार देता है;  
+
+```
+इस दानव के कारण जिसके लिये तुम चिल्लाते हो,
+वह किसी को भी अपनी राह से गुजरने नहीं देता,
+पर वह उसे इतना रोकता है कि वह उसे मार देता है;
+```
+]]></message>
+</messages>

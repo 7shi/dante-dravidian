@@ -38,6 +38,12 @@ Thou art my master and my author; thou alone art he from whom I took the fair st
 86 あなたは私が美しい様式を得た唯一の相手です
 87 それは私に名誉をもたらした.
 
+# Estonian
+
+85 Sa oled mu meister ja mu autor,
+86 Sa oled ainuke see kellelt ma võtsin
+87 Kaunis stiil mis on mulle au toonud.
+
 # French
 
 85 Tu es mon maître et mon auteur,
@@ -61,3 +67,39 @@ Thou art my master and my author; thou alone art he from whom I took the fair st
 85 Vi estas mia majstro kaj mia aŭtoro,
 86 Vi estas sola tiu, de kiu mi prenis
 87 la bela stilo, kiu faris al mi honoron.
+
+# Interlingua
+
+85 Tu es mi maestro e mi autor,
+86 tu es solmente ille de qui io ha tollite
+87 le bel stilo que me ha facite honor.
+
+# Hindi
+
+85 तू मेरा गुरु और मेरा लेखक है,
+86 तू ही वह एकमात्र है जिससे मैंने
+87 वह सुंदर शैली जिसे मैंने ली है जिसने मुझे सम्मान दिलाया।
+
+# Bengali
+
+85 তুই আমার শিক্ষক এবং আমার স্রষ্টা,
+86 তুই একমাত্র সেই ব্যক্তি যাঁর কাছ থেকে আমি সুন্দর শৈলী গ্রহণ করেছি
+87 যে সুন্দর শৈলী আমাকে সম্মান এনে দিয়েছে।
+
+# German
+
+85 Du bist mein Meister und mein Autor,
+86 du bist allein der von dem ich den schönen Stil genommen habe
+87 der mir Ehre gebracht hat.
+
+# Dutch
+
+85 Gij zijt mijn meester en mijn auteur,
+86 gij zijt alleen hij van wie ik de mooie stijl heb genomen
+87 de mooie stijl die mij eer heeft gebracht.
+
+# Serbian (Latin script)
+
+85 Ti si moj učitelj i moj autor,
+86 ti si jedini onaj od koga sam uzeo
+87 lep stil koji mi je doneo čast.

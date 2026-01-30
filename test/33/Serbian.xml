@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+i ona ima prirodu tako zlonamerna i zla,  
+da nikada ne zadovolji svoju pohlepnu volju,  
+i posle obroka je gladnija nego pre.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Serbian translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| e (97) | Coordinating conjunction linking clause | i | “and” | OK |
+| ha | 3rd‑person singular present of *avere* – expresses possession | ima | “has” | OK |
+| natura | Feminine singular noun – the subject’s disposition | prirodu | “nature” (acc.) | OK |
+| sì | Adverb of degree – intensifier “so” | tako | “so” | OK |
+| malvagia | Feminine singular adjective – “malign, harmful” | zlonamerna | “malignant” | **GRAMMAR** (should be *zlonamernu* to agree with *prirodu*) |
+| e (97) | Coordinating conjunction within noun phrase | i | “and” | OK |
+| ria | Feminine singular adjective – “evil” | zla | “evil” | **GRAMMAR** (should be *zlu* to agree with *prirodu*) |
+| che (98) | Relative pronoun introducing clause | da | “that” (subjunctive) | OK |
+| mai | Negative adverb – “never” | nikada | “never” | OK |
+| non | Negative particle – reinforces negation | ne | “not” | OK |
+| empie | Verb – “fills, satisfies” | zadovolji | “satisfies” | OK |
+| la | Definite article (feminine) – marks *voglia* as specific | — | — | **UNNECESSARY** (Serbian has no article) |
+| bramosa | Adjective – “greedy, eager” | pohlepnu | “greedy” | OK |
+| voglia | Feminine noun – “will, desire” | volju | “will” (acc.) | OK |
+| e (99) | Coordinating conjunction linking clause | i | “and” | OK |
+| dopo | Preposition – temporal “after” | posle | “after” | OK |
+| ’l | Elided definite article – “the” | — | — | **UNNECESSARY** (Serbian omits articles) |
+| pasto | Masculine noun – “meal” | obroka | “meal” (gen./acc.) | OK |
+| ha (99) | Verb – state “has” (here expresses condition) | je | “is” (auxiliary) | OK |
+| più | Comparative adverb – “more” | (part of) **gladnija** | “more” (comparative) | OK |
+| fame | Feminine noun – “hunger” | gladnija | “more hungry” (adjective) | OK |
+| che (99) | Comparative conjunction – “than” | nego | “than” | OK |
+| pria | Temporal adverb – “before” | pre | “before” | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR**: *malvagia* → *zlonamerna* (should be *zlonamernu*); *ria* → *zla* (should be *zlu*) to match the accusative feminine singular of *prirodu*.
+- **UNNECESSARY**: Articles *la* and *’l* have no direct equivalents in Serbian and are correctly omitted, but they are flagged here to note their absence.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: `i ona ima prirodu tako zlonamerna i zla,`  
+  - Issue: **GRAMMAR** – adjectives must agree in case, gender, and number with the feminine singular accusative noun *prirodu*.  
+  - Corrected: `i ona ima prirodu tako zlonamernu i zlu,`
+
+- **Line 2**  
+  - Original: `da nikada ne zadovolji svoju pohlepnu volju,`  
+  - Issue: none  
+  - Corrected: `da nikada ne zadovolji svoju pohlepnu volju,`
+
+- **Line 3**  
+  - Original: `i posle obroka je gladnija nego pre.`  
+  - Issue: none  
+  - Corrected: `i posle obroka je gladnija nego pre.`
+
+
+
+```
+i ona ima prirodu tako zlonamernu i zlu,
+da nikada ne zadovolji svoju pohlepnu volju,
+i posle obroka je gladnija nego pre.
+```
+]]></message>
+</messages>

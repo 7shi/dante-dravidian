@@ -38,6 +38,12 @@ But thou, why returnest thou to so great annoy? Why dost thou not ascend the del
 77 なぜあなたは楽しい山に登らないのですか？
 78 それはすべての喜びの根源であり原因ですか？
 
+# Estonian
+
+76 Aga sina miks sa naased nii suure tüdimuse juurde?
+77 Miks sa ei ronita maitsvat mäge?
+78 Kas see mägi on kogu rõõmu algus ja põhjus?
+
 # French
 
 76 Mais toi pourquoi reviens‑tu à tant d'ennui ?
@@ -61,3 +67,39 @@ But thou, why returnest thou to so great annoy? Why dost thou not ascend the del
 76 Sed kial vi revenas al tiel granda enuo?
 77 Kial vi ne grimpas la delikatan monton
 78 Kiu estas la principo kaj kaŭzo de tuta ĝojo?
+
+# Interlingua
+
+76 Ma tu perque retorna a tal grande fastidio?
+77 Perque tu non ascende le monte delicios
+78 que es principio e causa de tote gaudio?
+
+# Hindi
+
+76 पर तुम, इतनी बड़ी नीरसता में क्यों लौटते हो?
+77 तुम वह मनोरम पर्वत क्यों नहीं चढ़ते हो?
+78 जो सभी आनंद का मूल और कारण है?
+
+# Bengali
+
+76 কিন্তু তুমি কেন এত বড় বিরক্তিতে ফিরে আসছ?
+77 কেন তুমি মধুর পাহাড়ে আরোহন করছ না?
+78 যা সব আনন্দের মূল ও কারণ?
+
+# German
+
+76 Aber du, warum kehrst du zu so großer Langeweile zurück?
+77 Warum steigst du nicht auf den köstlichen Berg
+78 der Ursprung und Grund aller Freude?
+
+# Dutch
+
+76 Maar jij waarom keert je terug naar zo grote verveling?
+77 Waarom klim je niet de heerlijke berg?
+78 Die de bron en oorzaak van alle vreugde is?
+
+# Serbian (Latin script)
+
+76 Ali ti zašto se vraćaš u toliku dosadu?
+77 Zašto ne penješ se na divan planinski vrh
+78 Koji je početak i uzrok sve radosti?

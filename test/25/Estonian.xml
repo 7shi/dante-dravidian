@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ma olin poet ja laulsin sellest õiglasest  
+Anchise poeg kes tuli Troost,  
+pärast kui uhke Ilion põles.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (Estonian → English) | Status |
+|-------------|-------------------------------------------|----------------------|----------------------------------------|--------|
+| Poeta | “the speaker is a poet” | poet | poet | **WRONG** (should be *luuletaja*) |
+| fui | “the speaker existed in the past (was)” | olen | am / was | OK |
+| e | “coordinating conjunction linking two clauses” | ja | and | OK |
+| cantai | “the speaker sang (performed singing) about …” | laulsin | sang | OK |
+| di | “preposition introducing the object of singing” | sellest | of that | OK |
+| quel | “demonstrative specifying the following noun” | (part of) õiglasest | (part of) just | OK |
+| giusto | “property ‘just’ holds of the referent” | õiglasest | just (in the phrase “of the just”) | OK |
+| figliuol | “individual is the son of Anchises” | poeg | son | OK |
+| d'Anchise | “genitive indicating parent‑child relation” | Anchise | of Anchises | OK |
+| che (relative) | “introduces a clause describing the son” | kes | who | OK |
+| venne | “the son came (motion from a source) ” | tuli | came | OK |
+| di (origin) | “source‑origin relation (from) ” | Troost | from Troy (Troost = Troy+‑st) | OK |
+| Troia | “proper name of the city Troy” | Troost | Troy (in the ablative case) | OK |
+| poi | “temporal adverb indicating sequence ‘after’ ” | pärast | after | OK |
+| che (subordinator) | “introduces resultative clause” | kui | that/when (temporal) | OK |
+| 'l | “definite article ‘the’ ” | – (omitted) | – | **UNNECESSARY** (Estonian has no article) |
+| superbo | “attribute ‘proud’ of Ilion” | uhke | proud | OK |
+| Ilïón | “proper name of the city Ilion” | Ilion | Ilion | OK |
+| fu | “auxiliary forming passive perfect ‘was …’ ” | – (encoded in verb) | – | OK |
+| combusto | “event of being burned” | põles | burned / was burned | OK |
+
+---
+
+### Issues Detected
+- **WRONG**: **Poeta** → rendered as *poet* (English loanword) instead of the proper Estonian noun *luuletaja*.
+- **UNNECESSARY**: **'l** (definite article) – Estonian does not use articles, so the element is correctly omitted but must be noted as unnecessary.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 73**  
+  - Original: *Ma olin poet ja laulsin sellest õiglasest*  
+  - Issue: **WRONG** – “poet” is an English loan; should be Estonian *luuletaja*.  
+  - Corrected: *Ma olin luuletaja ja laulsin sellest õiglasest*  
+
+- **Line 74**  
+  - Original: *Anchise poeg kes tuli Troost,*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 75**  
+  - Original: *pärast kui uhke Ilion põles.*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+```
+Ma olin luuletaja ja laulsin sellest õiglasest
+Anchise poeg kes tuli Troost,
+pärast kui uhke Ilion põles.
+```
+]]></message>
+</messages>

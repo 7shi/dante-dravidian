@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+waar je de wanhopige geschreeuwen zult horen,
+je zult de oude, verdrietige geesten zien,
+die elk naar de tweede dood roept;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Dutch translation of Step 2)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|--------------------|------------------------|--------|
+| ove | locative adverb introducing the place where the event occurs | **waar** | where | OK |
+| udirai | future 2nd sg of *udire*: “you will hear” | **zult horen** | will hear | OK |
+| le | definite article, fem. pl (“the”) | **de** | the | OK |
+| disperate | adjective qualifying *strida*: “desperate” | **wanhopige** | desperate | OK |
+| strida | plural noun, the audible objects: “shrieks” | **geschreeuwen** | shrieks | OK |
+| vedrai | future 2nd sg of *vedere*: “you will see” | **zult** | will (see) | OK |
+| li | definite article, masc. pl (“the”) | **de** | the | OK |
+| antichi | adjective, “ancient” | **oude** | ancient | OK |
+| spiriti | plural noun, “spirits” | **geesten** | spirits | OK |
+| dolenti | adjective, “woeful” | **verdrietige** | woeful | OK |
+| ch' (che) | relative pronoun introducing clause referring to *spiriti* | **die** | who/that | OK |
+| a | preposition “toward” | **naar** | toward | OK |
+| la | definite article, fem. sg (“the”) | **de** | the | OK |
+| seconda | ordinal adjective, “second” | **tweede** | second | OK |
+| morte | noun, “death” | **dood** | death | OK |
+| ciascun | distributive quantifier, “each” | **elk** | each | OK |
+| grida | verb, present 3rd sg: “each cries out” | **roept** | cries (calls) | **GRAMMAR** (verb should agree with plural antecedent → *roepen*) |
+
+---
+
+### Items to Note  
+
+- **UNNECESSARY** – The Dutch pronoun **“je”** appears in the translation (“waar **je** de …”, “**je** zult …”) but has no counterpart in the Italian source; it is required in Dutch for a grammatical subject.  
+- **GRAMMAR** – The verb **“roept”** does not agree in number with its plural antecedent (*geesten*). The correct form would be **“roepen”**.  
+
+No source words are missing, and all other mappings are correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: **waar je de wanhopige geschreeuwen zult horen,**
+  - Issue: none
+  - Corrected: **waar je de wanhopige geschreeuwen zult horen,**
+
+- Line 2:
+  - Original: **je zult de oude, verdrietige geesten zien,**
+  - Issue: none
+  - Corrected: **je zult de oude, verdrietige geesten zien,**
+
+- Line 3:
+  - Original: **die elk naar de tweede dood roept;**
+  - Issue: GRAMMAR – verb does not agree with plural antecedent
+  - Corrected: **die elk naar de tweede dood roepen;**
+
+```
+waar je de wanhopige geschreeuwen zult horen,
+je zult de oude, verdrietige geesten zien,
+die elk naar de tweede dood roepen;
+```
+]]></message>
+</messages>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+O eer en licht van de andere dichters,
+schenk mij de lange studie en de grote liefde
+die mij hebben doen zoeken naar uw volume.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|-----------------------|--------|
+| O | vocative particle | O | “O” | OK |
+| de | preposition “of / belonging to” | van | “of / from” | OK |
+| li | definite article (masc. pl.) | de | “the” (plural) | OK |
+| altri | adjective “other” | andere | “other” | OK |
+| poeti | noun “poets” | dichters | “poets” | OK |
+| onore | abstract noun “honor” | eer | “honor” | OK |
+| e | coordinating conjunction “and” | en | “and” | OK |
+| lume | abstract noun “light” | licht | “light” | OK |
+| vagliami | imperative “let … avail me / grant me” | schenk | “grant” (as in “grant me”) | OK |
+| ’l | definite article “the” | de | “the” | OK |
+| lungo | adjective “long” | lange | “long” | OK |
+| studio | noun “study” | studie | “study” | OK |
+| e | coordinating conjunction “and” | en | “and” | OK |
+| ’l | definite article “the” | de | “the” | OK |
+| grande | adjective “great” | grote | “great” | OK |
+| amore | noun “love” | liefde | “love” | OK |
+| che | relative pronoun “which / that” | die | “which / that” | OK |
+| m' | clitic pronoun “me” (indirect object) | mij | “me” | OK |
+| ha | auxiliary verb (perfect) | hebben | “have” | OK |
+| fatto | past participle “made / caused” | doen | “make / do” (as part of “hebben gedaan”) | OK |
+| cercar | infinitive “to search” | zoeken | “search” | OK |
+| lo | definite article “the” (object) | *(none)* | – | **UNNECESSARY** (article dropped in Dutch) |
+| tuo | possessive adjective “thy / your” | uw | “your” (formal) | OK |
+| volume | noun “volume / work” | volume | “volume / work” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: **lo** – the Italian definite article is not expressed in Dutch; it is omitted naturally.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:
+  - Original: O eer en licht van de andere dichters,
+  - Issue: none
+  - Corrected: no change
+- Line 83:
+  - Original: schenk mij de lange studie en de grote liefde
+  - Issue: none
+  - Corrected: no change
+- Line 84:
+  - Original: die mij hebben doen zoeken naar uw volume.
+  - Issue: none
+  - Corrected: no change
+
+```
+O eer en licht van de andere dichters,
+schenk mij de lange studie en de grote liefde
+die mij hebben doen zoeken naar uw volume.
+```
+]]></message>
+</messages>

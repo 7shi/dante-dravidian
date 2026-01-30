@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+देखो वह दानव जिसके कारण मैं मुड़ गया;  
+उसके विरुद्ध मेरी मदद करो, प्रसिद्ध ऋषि,  
+क्योंकि वह मेरे रक्त नलिकाओं और धड़कनों को कंपा देती है».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Hindi) | Back‑Translation (Hindi → English) | Status |
+|-------------|----------------------|------------------------------|--------------------------------------|--------|
+| Vedi | imperative “see / behold” | देखो | “see / behold” | OK |
+| la | definite article (feminine) | — | — | UNNECESSARY |
+| bestia | “beast, monster” | दानव | “beast / monster” | OK |
+| per | preposition introducing cause | जिसके कारण | “because of which” | OK |
+| cu' (cui) | relative pronoun “which” | जिसके | “which” | OK |
+| io | first‑person singular pronoun “I” | मैं | “I” | OK |
+| mi (reflexive) | reflexive pronoun of *volsi* | — (reflexive is implicit in “मुड़ गया”) | — | UNNECESSARY |
+| volsi | “turned” (past) | मुड़ गया | “turned” | OK |
+| aiutami | “help me” (imperative) | मेरी मदद करो | “help me” | OK |
+| da | preposition “against” | विरुद्ध | “against” | OK |
+| lei | third‑person feminine pronoun “her” | उसके | “her / of her” | OK |
+| famoso | “famous” (adjective) | प्रसिद्ध | “famous” | OK |
+| saggio | “sage, wise man” | ऋषि | “sage” | OK |
+| ch'ella (che ella) | conjunction “that / because” introducing cause | क्योंकि वह | “because she” | OK |
+| mi (possessive) | first‑person singular possessive “my” (object of trembling) | मेरे | “my” | OK |
+| fa | causative verb “makes” | देती | “makes / gives” | OK |
+| tremar | infinitive “to tremble” | कंपा | “tremble” | OK |
+| le | definite article (feminine plural) | — | — | UNNECESSARY |
+| vene | “veins” | रक्त नलिकाओं | “veins” | OK |
+| e | coordinating conjunction “and” | और | “and” | OK |
+| i | definite article (masculine plural) | — | — | UNNECESSARY |
+| polsi | “pulses” | धड़कनों | “pulses” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la`, `mi` (reflexive in line 88), `le`, `i` – Italian articles and the reflexive pronoun have no direct equivalents in Hindi and are naturally omitted.  
+- **No MISSING, WRONG, or GRAMMAR** entries: all required meanings are present and the Hindi translation respects gender, number, and case conventions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 88:  
+  - Original: देखो वह दानव जिसके कारण मैं मुड़ गया;  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 89:  
+  - Original: उसके विरुद्ध मेरी मदद करो, प्रसिद्ध ऋषि,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 90:  
+  - Original: क्योंकि वह मेरे रक्त नलिकाओं और धड़कनों को कंपा देती है".  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+देखो वह दानव जिसके कारण मैं मुड़ गया;
+उसके विरुद्ध मेरी मदद करो, प्रसिद्ध ऋषि,
+क्योंकि वह मेरे रक्त नलिकाओं और धड़कनों को कंपा देती है".
+```
+]]></message>
+</messages>

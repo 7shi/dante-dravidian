@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+zo mijn ziel, die nog steeds vluchtte,  
+keerde zich terug om de pas opnieuw te aanschouwen  
+die nog nooit een levende persoon heeft verlaten.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Dutch) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------|--------|
+| così | discourse connector, marks result/resultative “so” | zo | so | OK |
+| l'animo | subject, “my soul” | mijn ziel | my soul | OK |
+| mio | possessive determiner, “my” | mijn | my | UNNECESSARY* |
+| ch'ancor | relative pronoun + adverb “which still” | die nog steeds | which still | OK |
+| fuggiva | imperfect verb, “was fleeing / flying” | vluchtte | fled / was fleeing | OK |
+| si | reflexive clitic, marks self‑action | zich | oneself | OK |
+| volse | past‑tense verb, “turned” | keerde | turned | OK |
+| a | preposition introducing direction “to/at” (part of *a retro*) | terug | back | OK |
+| retro | noun used adverbially, “backward” | terug | back | OK |
+| a | preposition introducing infinitive purpose “to” | om | to (for) | OK |
+| rimirar | infinitive verb, “to look again” | opnieuw te aanschouwen | to look again | OK |
+| lo | definite article “the” (masc.) | de | the | UNNECESSARY* |
+| passo | noun, “pass” (mountain pass) | pas | pass | OK |
+| che | relative pronoun, “which/that” | die | which/that | OK |
+| non | negation particle “not/never” | nooit | never | OK |
+| lasciò | past‑tense verb, “left” | heeft verlaten | has left | OK |
+| già | temporal adverb “already” (intensifier) | nog | still / yet | OK |
+| mai | negation adverb “never” (intensifier) | nooit | never | OK |
+| persona | noun, “person” | persoon | person | OK |
+| viva | attributive adjective, “living” | levende | living | OK |
+
+\* **UNNECESSARY** – Italian articles or possessive adjectives that are required for grammaticality in Italian but are not needed in Dutch (e.g., *mio* is absorbed in the noun phrase “mijn ziel”; *lo* is omitted because Dutch uses the article *de* only when the noun is explicitly expressed, and the article is already supplied by *de* in “de pas”).  
+
+### Summary of Issues
+- **UNNECESSARY**: *mio* (possessive adjective) and *lo* (definite article) are not separately rendered in Dutch; their semantic contribution is already covered by the noun phrase “mijn ziel” and “de pas”.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** problems were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: zo mijn ziel, die nog steeds vluchtte,
+  - Issue: **GRAMMAR** – missing auxiliary verb for the resultative construction.
+  - Corrected: zo **deed** mijn ziel, die nog steeds vluchtte,
+- Line 26:
+  - Original: keerde zich terug om de pas opnieuw te aanschouwen
+  - Issue: none
+  - Corrected: no change
+- Line 27:
+  - Original: die nog nooit een levende persoon heeft verlaten.
+  - Issue: none
+  - Corrected: no change
+
+```text
+zo deed mijn ziel, die nog steeds vluchtte,
+keerde zich terug om de pas opnieuw te aanschouwen
+die nog nooit een levende persoon heeft verlaten.
+```
+]]></message>
+</messages>

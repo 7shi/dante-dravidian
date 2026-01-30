@@ -38,6 +38,12 @@ I cannot well recount how I entered it, so full was I of slumber at that point w
 11 その時は眠りでとても満ちていた
 12 そこで私は真実の道を捨てた.
 
+# Estonian
+
+10 Ma ei suuda hästi kirjeldada kuidas ma sisenesin,
+11 nii oli täis minu unisus sel hetkel
+12 kus ma loobusin tõelisest teest.
+
 # French
 
 10 Je ne peux pas bien raconter comment je suis entré,
@@ -61,3 +67,39 @@ I cannot well recount how I entered it, so full was I of slumber at that point w
 10 Mi ne povas bone rakonti kiel mi eniris ĝin,
 11 tiel plena de dormemo mi estis tiutempe
 12 kie mi forlasis la veran vojon.
+
+# Interlingua
+
+10 Io non pote ben describer como io entrava lo,
+11 tanto era plen de sonno a ille puncto
+12 que le verace via abandonava.
+
+# Hindi
+
+10 मैं इसे कैसे प्रवेश किया, ठीक से नहीं बता सकता,
+11 उस बिंदु पर मैं अत्यधिक नींद से भर गया था
+12 जहाँ मैंने सच्चा मार्ग छोड़ दिया।
+
+# Bengali
+
+10 আমি ভালভাবে বলতে পারি না কীভাবে আমি তাতে প্রবেশ করেছি,
+11 সেই মুহূর্তে আমি ঘুমে পূর্ণ ছিলাম
+12 যেখানে আমি সত্যিকারের পথ ত্যাগ করেছিলাম।
+
+# German
+
+10 Ich kann nicht gut wiedergeben, wie ich hineingegangen bin,
+11 so voller Schlaf war ich an jenem Punkt
+12 wo ich den wahren Weg verließ.
+
+# Dutch
+
+10 Ik kan niet goed vertellen hoe ik het betrad,
+11 zo vol slaperigheid was ik op dat punt
+12 waar ik de ware weg verliet.
+
+# Serbian (Latin script)
+
+10 Ne mogu dobro da ispričam kako sam ušao u to,
+11 tako sam bio preplavljen snom u tom trenutku
+12 gde sam napustio pravi put.

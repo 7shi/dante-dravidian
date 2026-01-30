@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Dichter was ik en zong over die rechtvaardige,  
+zoon van Anchises die uit Troje kwam,  
+nadat het trotse Ilion verbrand was.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Italian → Dutch)**  
+
+| Source Word | Contextual Definition (locked meaning) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------------------------|--------------------|------------------------|--------|
+| Poeta | speaker S is a poet (identity) | Dichter | poet | OK |
+| fui | S = speaker existed in past as poet (copula) | was | was | OK |
+| e | coordinates two clauses | en | and | OK |
+| cantai | S performed singing about X (past) | zong | sang | OK |
+| di | introduces object of singing | over | about/over | OK |
+| quel | demonstrative specifying X | die | that | OK |
+| giusto | X has property *just* | rechtvaardige | just / righteous | OK |
+| figliuol | individual Y is son of Anchises (parent‑child) | zoon | son | OK |
+| d'Anchise | genitive relation “of Anchises” | van Anchises | of Anchises | OK |
+| che (line 74) | relative pronoun introducing clause about Y | die | who | OK |
+| venne | Y moved from source (came) | kwam | came | OK |
+| di (line 74) | source‑origin preposition “from” | uit | from | OK |
+| Troia | proper name of origin place | Troje | Troy | OK |
+| poi | temporal adverb “after” (sequencing) | nadat | after | OK |
+| che (line 75) | subordinating conjunction linking to result clause (temporal) – already subsumed in “nadat” | — (no separate word) | — | **UNNECESSARY** |
+| ’l | definite article “the” for Ilïón | het | the | OK |
+| superbo | Ilïón is described as *proud* | trotse | proud | OK |
+| Ilïón | proper name of the city that was burned | Ilion | Ilion | OK |
+| fu | auxiliary forming passive perfect “was” | was | was (aux.) | OK |
+| combusto | passive past participle “burned” | verbrand | burned | OK |
+
+---
+
+### Items flagged after the table  
+
+- **UNNECESSARY:** `che` (line 75) – the Dutch conjunction *nadat* already encodes the temporal subordination, so a separate translation of this Italian conjunction is not required.  
+
+All other source tokens are accounted for with correct lexical choice, agreement, and grammatical function.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 73:**  
+  - Original: Dichter was ik en zong over die rechtvaardige,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 74:**  
+  - Original: zoon van Anchises die uit Troje kwam,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 75:**  
+  - Original: nadat het trotse Ilion verbrand was.  
+  - Issue: GRAMMAR – passive perfect word order is incorrect; Dutch requires “was verbrand”.  
+  - Corrected: nadat het trotse Ilion **was verbrand**.  
+
+```
+Dichter was ik en zong over die rechtvaardige,
+zoon van Anchises die uit Troje kwam,
+nadat het trotse Ilion was verbrand.
+```
+]]></message>
+</messages>

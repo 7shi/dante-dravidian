@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+127 U svim delovima on vlada i tamo on reinira;  
+128 tamo je njegov grad i visoko prijestolje:  
+129 o srećni onaj koga tamo izabire!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| In | locative preposition introducing “all parts” | U | “in” | OK |
+| tutte | universal quantifier “all” | svim | “all” (plural, locative) | OK |
+| parti | noun “parts” (the set of divisions) | delovima | “parts” (locative plural) | OK |
+| impera | verb “governs” (exerts rule) | vlada | “governs” | OK |
+| e | coordinating conjunction | i | “and” | OK |
+| quivi | adverb “there” (place of reign) | tamo | “there” | OK |
+| regge | verb “reigns” (holds sovereign authority) | reinira | “reigns” | OK |
+| quivi | adverb “there” (place of city) | tamo | “there” | OK |
+| è | copular verb “is” (asserts existence) | je | “is” | OK |
+| la | definite article (fem. sing.) | — | — | **UNNECESSARY** |
+| sua | possessive adjective “His” (ownership) | njegov | “his” | OK |
+| città | noun “city” (urban domain) | grad | “city” | OK |
+| e | conjunction “and” | i | “and” | OK |
+| l'alto | adjective “lofty” (with article) | visoko | “lofty” | OK |
+| seggio | noun “seat” (throne) | prijestolje | “seat” | OK |
+| oh | interjection “O” (vocative) | o | “O” | OK |
+| felice | adjective “happy” (state of the chosen) | srećni | “happy” | OK |
+| colui | pronoun “he” (the one) | onaj | “that one” | OK |
+| cu' | relative pronoun “whom” (introduces clause) | koga | “whom” | OK |
+| ivi | adverb “there/thereto” (locative of election) | tamo | “there” | OK |
+| elege | verb “elects” (selects) | izabire | “elects” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *la* – the Italian definite article has no counterpart in Serbian and is naturally omitted.  
+- Implicitly, the article contained in *l'alto* is also omitted (Serbian does not use an article before adjectives), but the adjective itself (*visoko*) is correctly rendered, so no separate status flag is needed.  
+
+All other source tokens are represented accurately, with correct grammatical agreement and meaning.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 127**  
+  - Original: *U svim delovima on vlada i tamo on reinira;*  
+  - Issue: none  
+  - Corrected: *U svim delovima on vlada i tamo on reinira;*  
+
+- **Line 128**  
+  - Original: *tamo je njegov grad i visoko prijestolje:*  
+  - Issue: none  
+  - Corrected: *tamo je njegov grad i visoko prijestolje:*  
+
+- **Line 129**  
+  - Original: *o srećni onaj koga tamo izabire!».*  
+  - Issue: none  
+  - Corrected: *o srećni onaj koga tamo izabire!».*
+```
+U svim delovima on vlada i tamo on reinira;
+tamo je njegov grad i visoko prijestolje:
+o srećni onaj koga tamo izabire!».
+```
+]]></message>
+</messages>

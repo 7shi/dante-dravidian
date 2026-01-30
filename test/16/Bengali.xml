@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Questi parea che contra me venisse  
+con la test' alta e con rabbiosa fame,  
+sì che parea che l'aere ne tremesse.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Bengali translation (Step 2 – corrected)**  
+
+1. সে মনে হচ্ছিল যে আমার বিরুদ্ধে আসছে  
+2. উঁচু মাথা এবং ভয়ানক ক্ষুধা নিয়ে,  
+3. যাতে মনে হচ্ছিল যে বাতাস তার কারণে কাঁপছে।  
+
+---
+
+## Word‑to‑Word Mapping & Coverage Check (Step 3)
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| Questi | the threatening opponent, subject of “seemed” | সে | “he / that one” | OK |
+| parea | “seemed”, speaker’s perception (imperfect) | মনে হচ্ছিল | “seemed” | OK |
+| che (1) | complementizer introducing motion clause | যে | “that” | OK |
+| contra | preposition “against”, direction opposite speaker | বিরুদ্ধে | “against” | OK |
+| me | 1st‑person pronoun, object of *contra* | আমার | “me / my” | OK |
+| venisse | imperfect subjunctive of *venire* – “to be coming” (unreal) | আসছে | “is coming” (presentive, but conveys the same motion) | OK |
+| con (1) | preposition “with” introducing first attribute | নিয়ে | “with / bearing” | OK |
+| la | definite article (feminine) – not lexical in Bengali | — | — | UNNECESSARY |
+| test' (testa) | “head” – physical part, described as high | মাথা | “head” | OK |
+| alta | adjective “high” describing posture of head | উঁচু | “high / tall” | OK |
+| e | coordinating conjunction “and” | এবং | “and” | OK |
+| con (2) | preposition “with” introducing second attribute | নিয়ে | “with / bearing” | OK |
+| rabbiosa | adjective “ravenous, ferocious” qualifying hunger | ভয়ানক | “terrible / ravenous” | OK |
+| fame | noun “hunger” – intense appetite | ক্ষুধা | “hunger” | OK |
+| sì | resultative adverb “so that” | যাতে | “so that” | OK |
+| che (2) | complementizer introducing result clause | যে | “that” | OK |
+| parea (2) | “seemed” in result clause | মনে হচ্ছিল | “seemed” | OK |
+| che (3) | complementizer introducing innermost clause | যে | “that” | OK |
+| l'aere | “the air”, subject of trembling | বাতাস | “the air” | OK |
+| ne | clitic pronoun referring back to opponent, causal “because of it” | তার কারণে | “because of it/him” | OK |
+| tremesse | imperfect subjunctive of *tremare* – “trembled” (unreal) | কাঁপছে | “is trembling” (presentive, conveys the same state) | OK |
+
+### Items Requiring Attention
+- **la** – marked **UNNECESSARY** because Bengali does not use definite articles; the meaning is retained without it.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were found; all other source words have appropriate Bengali equivalents that preserve the intended truth‑conditions and grammatical relations.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: সে মনে হচ্ছিল যে আমার বিরুদ্ধে আসছে
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: উঁচু মাথা এবং ভয়ানক ক্ষুধা নিয়ে,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: যাতে মনে হচ্ছিল যে বাতাস তার কারণে কাঁপছে।
+  - Issue: none
+  - Corrected: no change
+
+```
+সে মনে হচ্ছিল যে আমার বিরুদ্ধে আসছে
+উঁচু মাথা এবং ভয়ানক ক্ষুধা নিয়ে,
+যাতে মনে হচ্ছিল যে বাতাস তার কারণে কাঁপছে।
+```
+]]></message>
+</messages>

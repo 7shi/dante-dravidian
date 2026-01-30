@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E io a ille: «Poeta, io te implora  
+per ille Deo que tu non cognosceva,  
+assi que io pote fugir iste mal e pejor,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Interlingua)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| E | coordinating conjunction linking to previous clause | E | and | OK |
+| io | 1st‑person singular pronoun, subject of the speech act | io | I | OK |
+| a | preposition marking the addressee of the speech | a | to | OK |
+| lui | 3rd‑person masculine dative pronoun, indirect object | ille | him | OK |
+| Poeta | vocative noun, title used to address the addressee | Poeta | Poet | OK |
+| io | (second occurrence) subject of the beseeching verb | io | I | OK |
+| ti | 2nd‑person singular accusative pronoun, object of “beseech” | te | you (object) | OK |
+| richeggio | verb “to beseech” (present/subjunctive) | implora | beseech | OK |
+| per | preposition introducing the instrumental/causal basis | per | by / for | OK |
+| quello | demonstrative pronoun, determiner of “God” | ille | that | OK |
+| Dio | noun, masculine singular, the deity invoked | Deo | God | OK |
+| che | relative pronoun introducing a restrictive clause | que | who / that | OK |
+| tu | 2nd‑person singular pronoun, subject of the relative clause | tu | you | OK |
+| non | negation particle | non | not | OK |
+| conosciesti | past‑indicative verb “did not know” | cognosceva | did not know (imperfect) | OK |
+| acciò | purpose conjunction “in order that” | assi | so that / in order that | OK |
+| ch'io | contracted “che io”, subordinator + pronoun introducing purpose clause | que io | that I | OK |
+| fuga | subjunctive verb “may escape” | fugir | to escape | OK |
+| questo | demonstrative adjective “this” | iste | this | OK |
+| male | noun “ill, negative condition” | mal | ill | OK |
+| e | coordinating conjunction linking two objects | e | and | OK |
+| peggio | comparative adjective “worse” (B > A) | pejor | worse | OK |
+
+### Extra element in the Interlingua output
+- **pote** – auxiliary verb “can/may” added to render the subjunctive mood of *fuga*.  
+  **Status:** **UNNECESSARY** (not present in the source; required by Interlingua syntax but not a direct lexical correspondence).
+
+---
+
+**Summary of issues**
+
+- **UNNECESSARY:** *pote* (added modal verb)  
+- No missing, wrong, or grammatical‑agreement problems detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: **E io a ille: «Poeta, io te implora**  
+  - Issue: none  
+  - Corrected: **no change**  
+
+- Line 2:  
+  - Original: **per ille Deo que tu non cognosceva,**  
+  - Issue: none  
+  - Corrected: **no change**  
+
+- Line 3:  
+  - Original: **assi que io pote fugir iste mal e pejor,**  
+  - Issue: none  
+  - Corrected: **no change**  
+
+```
+E io a ille: «Poeta, io te implora
+per ille Deo que tu non cognosceva,
+assi que io pote fugir iste mal e pejor,
+```
+]]></message>
+</messages>

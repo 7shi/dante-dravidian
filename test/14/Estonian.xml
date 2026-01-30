@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+esimene tund ja magus hooaeg;  
+nii et hea lootus oli mulle põhjus  
+selle metsiku looma täpilise nahaga
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **mosse** | noun, fem. plural – “move, moment”; here the initial hour | **tund** | “hour” | OK |
+| **di** (line 40) | preposition “of” (genitive) | – | – | UNNECESSARY (genitive expressed by word order) |
+| **prima** | adjective “first” | **esimene** | “first” | OK |
+| **quelle** | demonstrative pronoun “those” | – | – | UNNECESSARY (demonstrative omitted in Estonian) |
+| **cose** | noun “things” (beautiful things) | **hooaeg** | “season” | OK |
+| **belle** | adjective “beautiful” (rendered as “sweet”) | **magus** | “sweet” | OK |
+| **sì** | adverb “so, thus” (resultative) | **nii** | “so” | OK |
+| **ch'a** | conjunction “that” (che + a) introducing result clause | **et** | “that” | OK |
+| **bene** | adverb “good, well” | **hea** | “good” | OK |
+| **sperar** | infinitive “to hope” | **lootus** | “hope” (noun) | OK |
+| **m'era** | clitic + verb “to me was” (copular) | **mulle** | “to me” | OK |
+| **cagione** | noun “cause, occasion” | **põhjus** | “cause, occasion” | OK |
+| **di** (line 42) | preposition “of” (genitive) | – | – | UNNECESSARY (genitive expressed by case ending) |
+| **quella** | demonstrative pronoun “that” | **selle** | “that” | OK |
+| **fiera** | noun “wild beast” | **metsiku looma** | “wild animal” | OK |
+| **a** (line 42) | preposition “with” | – | – | UNNECESSARY (expressed by instrumental suffix **‑ga**) |
+| **la** | definite article “the” | – | – | UNNECESSARY (articles not used in Estonian) |
+| **gaetta** | adjective “dappled, speckled” | **täpilise** | “dappled” | OK |
+| **pelle** | noun “skin” | **nahaga** | “with skin” (instrumental) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `di` (both occurrences), `quelle`, `a`, `la` – these function words are not needed in Estonian because the language marks genitive and instrumental relations morphologically.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 40**  
+  - Original: `esimene tund ja magus hooaeg;`  
+  - Issue: none  
+  - Corrected: `esimene tund ja magus hooaeg;`  
+
+- **Line 41**  
+  - Original: `nii et hea lootus oli mulle põhjus`  
+  - Issue: none  
+  - Corrected: `nii et hea lootus oli mulle põhjus`  
+
+- **Line 42**  
+  - Original: `selle metsiku looma täpilise nahaga`  
+  - Issue: none  
+  - Corrected: `selle metsiku looma täpilise nahaga`  
+
+```text
+esimene tund ja magus hooaeg;
+nii et hea lootus oli mulle põhjus
+selle metsiku looma täpilise nahaga
+```
+]]></message>
+</messages>

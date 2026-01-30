@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Iste non cibara terra ne peltro,  
+ma sapientia amor e virtute,  
+e su nation sera inter Feltro e Feltro.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Questi | demonstrative pronoun referring to the male subject | Iste | “this one / he” | OK |
+| non | negation particle | non | “not” | OK |
+| ciberà | future of *cibare* “to feed” | cibara | “will feed” | OK |
+| terra | “land, earth” | terra | “land” | OK |
+| né | coordinating conjunction “nor” | **ne** | “nor” | **GRAMMAR** (Interlingua normally uses *ni* for “nor”) |
+| peltro | “goods, metal” | peltro | “goods / metal” | OK |
+| ma | contrastive conjunction “but” | ma | “but” | OK |
+| sapïenza | noun “wisdom” | sapientia | “wisdom” | OK |
+| amore | noun “love” | amor | “love” | OK |
+| e | coordinating conjunction “and” | e | “and” | OK |
+| virtute | noun “valor / virtue” | virtute | “valor / virtue” | OK |
+| e (line 105) | coordinating conjunction “and” | e | “and” | OK |
+| sua | possessive adjective “his” | su | “his” | OK |
+| nazion | noun “birthplace / nation” | nation | “nation / birthplace” | OK |
+| sarà | future of *esser* “to be” | sera | “will be” | OK |
+| tra | preposition “between” | inter | “between” | OK |
+| feltro (first) | proper name of a place | Feltro | “Feltro” | OK |
+| e (second) | coordinating conjunction “and” | e | “and” | OK |
+| feltro (second) | proper name of a place | Feltro | “Feltro” | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR:** *ne* (used for “nor”) – Interlingua conventionally uses **ni** for the coordinating conjunction “nor”. The rest of the mapping is correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 103:  
+  - Original: Iste non cibara terra **ne** peltro,  
+  - Issue: **GRAMMAR** – Interlingua uses *ni* for “nor”.  
+  - Corrected: Iste non cibara terra **ni** peltro,  
+
+- Line 104:  
+  - Original: ma sapientia amor e virtute,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 105:  
+  - Original: e su nation sera inter Feltro e Feltro.  
+  - Issue: none  
+  - Corrected: no change  
+
+```interlingua
+Iste non cibara terra ni peltro,
+ma sapientia amor e virtute,
+e su nation sera inter Feltro e Feltro.
+```
+]]></message>
+</messages>

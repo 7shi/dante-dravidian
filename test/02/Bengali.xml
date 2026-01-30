@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+আহ! কী কঠিন কাজ এটি বলতে যে তা কী ছিল  
+এই বনে বন্য কঠোর এবং ঘন  
+যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Bengali → English) | Status |
+|-------------|-----------------------|----------------------|--------------------------------------|--------|
+| Ahi | exclamatory “Ah!” | আহ! | “Ah!” | OK |
+| quanto | intensifier “how” (degree of difficulty) | কী | “what” (incorrect for “how”) | **WRONG** |
+| a | infinitive marker (to) | — (infinitive expressed by –তে) | — | **UNNECESSARY** |
+| dir | verb “to tell” | বলতে | “to tell” | OK |
+| qual | interrogative “what” (object of *dir*) | যে | “that” (does not convey interrogative) | **WRONG** |
+| era | imperfect “was” (past state) | ছিল | “was” | OK |
+| è | present “is” (copula) | এটি | “this” (copula omitted) | **UNNECESSARY** |
+| cosa | abstract “thing” | কাজ | “work” (semantic mismatch) | **WRONG** |
+| dura | adjective “hard / difficult” | কঠিন | “hard” | OK |
+| esta | demonstrative “this” | এই | “this” | OK |
+| selva | noun “forest / wood” | বনে | “in the forest” (locative) | **GRAMMAR** (case/role mismatch) |
+| selvaggia | adjective “wild” | বন্য | “wild” | OK |
+| e (1) | coordinating “and” | এবং | “and” | OK |
+| aspra | adjective “rough” | কঠোর | “rough / harsh” | OK |
+| e (2) | coordinating “and” (second occurrence) | — (single “এবং” already covers) | — | **UNNECESSARY** |
+| forte | adjective “strong / dense” | ঘন | “dense” | OK |
+| che | relative pronoun “which / that” | যা | “which / that” | OK |
+| nel | preposition “in the” | চিন্তায় | “in thought” | OK |
+| pensier | noun “thought” | চিন্তা | “thought” | **GRAMMAR** (merged with “চিন্তায়”) |
+| rinova | verb “renews” | পুনরুজ্জীবিত | “renews / revitalises” | OK |
+| la | definite article “the” | — (article omitted) | — | **UNNECESSARY** |
+| paura! | noun “fear” (object) | ভয়কে | “fear (accusative)” | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG**: `quanto`, `qual`, `cosa` – the Bengali equivalents do not convey the intended meaning.
+- **GRAMMAR**: `selva`, `pensier` – the target forms combine case/role information that should be separate; the mapping is not a one‑to‑one grammatical match.
+- **UNNECESSARY**: `a`, `è`, `la`, second `e` – these function words/articles are naturally omitted in Bengali.
+- **UNNECESSARY** (also a minor omission): the second coordinating conjunction `e` was not repeated because Bengali does not require it.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 4**  
+  - Original: আহ! কী কঠিন কাজ এটি বলতে যে তা কী ছিল  
+  - Issue: internal exclamation mark (punctuation not present in source)  
+  - Corrected: আহ কী কঠিন কাজ এটি বলতে যে তা কী ছিল  
+
+- **Line 5**  
+  - Original: এই বনে বন্য কঠোর এবং ঘন  
+  - Issue: none (but “বনে” is locative; changed to nominative “বন” for correct noun phrase)  
+  - Corrected: এই বন বন্য এবং কঠোর এবং ঘন  
+
+- **Line 6**  
+  - Original: যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!  
+  - Issue: none  
+  - Corrected: যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!  
+
+```text
+আহ কী কঠিন কাজ এটি বলতে যে তা কী ছিল
+এই বন বন্য এবং কঠোর এবং ঘন
+যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!
+```
+]]></message>
+</messages>

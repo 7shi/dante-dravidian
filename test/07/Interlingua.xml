@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Allora le paure fu un poco quietate,
+que in le lago del corde me esseva durate
+le nocte que io passava con tanto pietate.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Allor | “then, at that moment” | **Allora** | then | OK |
+| fu | copular past (remote) “was” | **fu** | was | **WRONG** (Interlingua uses *fuit*) |
+| la | definite article (fem. sing.) | **le** | the | OK |
+| paura | “fear” (subject) | **paure** | fear | **GRAMMAR** (plural form; should be *paura*) |
+| un | indefinite article “a” | **un** | a | OK |
+| poco | adverb of degree “a little” | **poco** | little | OK |
+| queta | adjective “quieted” | **quietate** | quieted | OK |
+| che | relative pronoun “which” | **que** | which | OK |
+| nel | preposition + article “in the” | **in le** | in the | OK |
+| lago | noun “lake” | **lago** | lake | OK |
+| del | preposition + article “of the” | **del** | of the | OK |
+| cor | “heart” (metaphorical) | **corde** | heart | OK |
+| m'era | pluperfect auxiliary + clitic “had (to me) been” | **me esseva** | had been (to me) | **WRONG / GRAMMAR** (incorrect construction; should be *me habeva durate* or similar) |
+| durata | past participle “lasted” | **durate** | lasted | **GRAMMAR** (verb form mismatched; should be *durava* or *habia durate*) |
+| la | definite article (fem. sing.) | **le** | the | OK |
+| notte | noun “night” | **nocte** | night | OK |
+| ch'i' | relative pronoun “that” | **que** | that | OK |
+| passai | remote past “passed” | **passava** | passed / endured | OK (tense shift acceptable) |
+| con | preposition “with” | **con** | with | OK |
+| tanta | adjective “so much” (degree) | **tanto** | so much | **GRAMMAR** (should be *tanta* to agree with feminine *pietate*) |
+| pieta | noun “pity” | **pietate** | pity | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG**: *fu* → should be **fuit** (proper Interlingua past of *esser*).  
+- **GRAMMAR**: *paure* (plural) → should be **paura** (singular).  
+- **WRONG / GRAMMAR**: *me esseva* → incorrect pluperfect construction; a correct form would be **me habeva durate** or **me durava**.  
+- **GRAMMAR**: *durate* → verb form does not convey the intended pluperfect; prefer **durava** or **habia durate**.  
+- **GRAMMAR**: *tanto* → degree adjective must agree with feminine noun *pietate*; correct form is **tanta**.  
+
+All other mappings are acceptable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: *Allora le paure fu un poco quietate,*  
+  - Issue: **WRONG/GRAMMAR** – verb “fu” should be “fuit”; noun “paure” is plural, should be singular “paura”.  
+  - Corrected: *Allora le paura fuit un poco quietate,*  
+
+- **Line 20**  
+  - Original: *que in le lago del corde me esseva durate*  
+  - Issue: **WRONG/GRAMMAR** – pluperfect construction is incorrect; should be “habia durate” (no need for “me”).  
+  - Corrected: *que in le lago del corde habia durate*  
+
+- **Line 21**  
+  - Original: *le nocte que io passava con tanto pietate.*  
+  - Issue: **GRAMMAR** – degree adjective must agree with feminine noun “pietate”; use “tanta”.  
+  - Corrected: *le nocte que io passava con tanta pietate.*  
+
+```interlingua
+Allora le paura fuit un poco quietate,
+que in le lago del corde habia durate
+le nocte que io passava con tanta pietate.
+```
+]]></message>
+</messages>

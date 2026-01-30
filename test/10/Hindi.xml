@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+जब मैंने थोड़ा आराम किया मेरा थका हुआ शरीर,  
+मैं फिर से रास्ता लेता हूँ निर्जन ढलान पर,  
+ताकि स्थिर पैर हमेशा सबसे नीचे रहा।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| **Poi** | temporal adverb “after” | **जब** | “when / after” | OK |
+| **ch'èi** | 1st‑person perfect auxiliary “that I have” | **मैंने** | “I have” (auxiliary for past) | OK |
+| **posato** | verb “rested” (perfect) | **आराम किया** | “rested” (literally “did rest”) | OK |
+| **un** | indefinite article “a” | – | – | **UNNECESSARY** (Hindi omits articles) |
+| **poco** | adverb of quantity “little” | **थोड़ा** | “a little” | OK |
+| **il** | definite article “the” (for *corpo*) | – | – | **UNNECESSARY** |
+| **corpo** | noun “body” | **शरीर** | “body” | OK |
+| **lasso** | adjective “weary” | **थका हुआ** | “weary / tired” | OK |
+| **ripresi** | verb “resumed / took again” | **मैं फिर से लेता हूँ** | “I take again / resume” | OK |
+| **via** | noun “way, path” | **रास्ता** | “way / path” | OK |
+| **per** | preposition “along, through” | **पर** | “on / upon” (used with “ढलान”) | OK |
+| **la** | definite article “the” (for *piaggia*) | – | – | **UNNECESSARY** |
+| **piaggia** | noun “slope, hillside” | **ढलान** | “slope” | OK |
+| **diserta** | adjective “deserted, empty” | **निर्जन** | “deserted, barren” | OK |
+| **sì** | resultative adverb/conjunction “so (that)” | **ताकि** | “so that” | OK |
+| **che** | subordinating conjunction “that” (introduces result clause) | – | – | **UNNECESSARY** (covered by “ताकि”) |
+| **'l** | definite article “the” (for *piè*) | – | – | **UNNECESSARY** |
+| **piè** | noun “foot” (the firm foot) | **पैर** | “foot” | OK |
+| **fermo** | adjective “firm, steady” | **स्थिर** | “firm / steady” | OK |
+| **sempre** | adverb “always” | **हमेशा** | “always” | OK |
+| **era** | imperfect of *essere* “was” | **रहा** | “was / remained” | OK |
+| **'l** | definite article “the” (for *più basso*) | – | – | **UNNECESSARY** |
+| **più** | comparative particle “more / most” | **सबसे** | “most” (comparative marker) | OK |
+| **basso** | adjective “low, lower” | **नीचे** | “lower / below” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (articles and a conjunction that have no direct counterpart in Hindi): `un`, `il` (twice), `la`, `'l` (twice), `che`.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all retained lexical items convey the intended meaning and agree with Hindi grammar.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 28:
+  - Original: जब मैंने थोड़ा आराम किया मेरा थका हुआ शरीर,
+  - Issue: Missing comma after “किया” (punctuation).
+  - Corrected: जब मैंने थोड़ा आराम किया, मेरा थका हुआ शरीर,
+
+- Line 29:
+  - Original: मैं फिर से रास्ता लेता हूँ निर्जन ढलान पर,
+  - Issue: Missing comma after “लेता हूँ” (punctuation).
+  - Corrected: मैं फिर से रास्ता लेता हूँ, निर्जन ढलान पर,
+
+- Line 30:
+  - Original: ताकि स्थिर पैर हमेशा सबसे नीचे रहा।
+  - Issue: Verb tense incorrect; “रहा” (present) should be past “था”.
+  - Corrected: ताकि स्थिर पैर हमेशा सबसे नीचे था।
+
+```
+जब मैंने थोड़ा आराम किया, मेरा थका हुआ शरीर,
+मैं फिर से रास्ता लेता हूँ, निर्जन ढलान पर,
+ताकि स्थिर पैर हमेशा सबसे नीचे था।
+```
+]]></message>
+</messages>

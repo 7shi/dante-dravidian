@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Siis oli hirm veidi vaiksem,
+mis mu südame järves oli kestnud
+öö mille ma läbisin nii kahetsusväärselt.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Estonian → English) | Status |
+|-------------|-----------------------|----------------------|----------------------------------------|--------|
+| Allor | temporal adverb “then, at that moment” | **Siis** | “then” | OK |
+| fu | copular verb “was” (passato remoto) | **oli** | “was” | OK |
+| la | definite article (fem. sing.) | – | – | **UNNECESSARY** (Estonian has no articles) |
+| paura | noun “fear” | **hirm** | “fear” | OK |
+| un | indefinite article “a” (used with degree) | – | – | **UNNECESSARY** |
+| poco | adverb of degree “a little” | **veidi** | “a little” | OK |
+| queta* | adjective “quieted, calmer” (comparative) | **vaiksem** | “quieter / calmer” | OK |
+| che | relative pronoun “which / that” | **mis** | “which / that” | OK |
+| nel | preposition + article “in the” | – | – | **UNNECESSARY** (locative expressed by case) |
+| lago | noun “lake” | **järves** | “in the lake” (locative) | OK |
+| del | preposition + article “of the” | – | – | **UNNECESSARY** (genitive expressed by “südame”) |
+| cor* | noun “heart” (poetic) | **südame** | “of the heart” | OK |
+| m'era | clitic + auxiliary “had been (to me)” (pluperfect) | **oli** | “had been” (as part of pluperfect) | OK |
+| durata | past participle “lasted” | **kestnud** | “lasted” | OK |
+| la (2nd) | definite article (fem. sing.) | – | – | **UNNECESSARY** |
+| notte | noun “night” | **öö** | “night” | OK |
+| ch' | elided relative pronoun “that” | **mille** | “that / which” | OK |
+| i' | pronoun “I” (1st sg.) | **ma** | “I” | OK |
+| passai | verb “passed” (passato remoto) | **läbisin** | “passed / went through” | OK |
+| con | preposition “with” | – | – | **UNNECESSARY** (expressed by adverbial “nii …”) |
+| tanta | quantitative adjective “so much” | **nii** | “so” (intensifier) | OK |
+| pieta* | noun “pity” | **kahetsusväärselt** | “regrettably” | **WRONG** (does not convey “pity”) |
+
+---
+
+### Items Needing Attention
+- **UNNECESSARY**: `la` (×2), `un`, `nel`, `del`, `con` – articles and prepositions that Estonian does not require.
+- **WRONG**: `pieta` – rendered as *kahetsusväärselt* (“regrettably”) instead of a term that conveys “pity” (e.g., *haletsusega* or *kaastundega*).  
+- No **MISSING** or **GRAMMAR** errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: Siis oli hirm veidi vaiksem,  
+  - Issue: none  
+  - Corrected: Siis oli hirm veidi vaiksem,  
+
+- **Line 20**  
+  - Original: mis mu südame järves oli kestnud  
+  - Issue: none  
+  - Corrected: mis mu südame järves oli kestnud  
+
+- **Line 21**  
+  - Original: öö mille ma läbisin nii kahetsusväärselt.  
+  - Issue: WRONG – “kahetsusväärselt” does not convey “pity”.  
+  - Corrected: öö mille ma läbisin nii haletsusega.  
+
+```
+Siis oli hirm veidi vaiksem,
+mis mu südame järves oli kestnud
+öö mille ma läbisin nii haletsusega.
+```
+]]></message>
+</messages>

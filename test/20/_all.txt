@@ -38,6 +38,12 @@
 59 それは私に向かって少しずつ近づき  
 60 私を太陽が沈む場所へ押し戻した。
 
+# Estonian
+
+58 selline tegi minust looma, ilma rahuta,
+59 mis tuli mind vastu samm‑sammult,
+60 tõukas mind tagasi sinna kus päike on vaikiv.
+
 # French
 
 58 telle la bête sans repos me fit,
@@ -61,3 +67,39 @@
 58 tiel mi igis min la beston sen ripozo,
 59 ke venante kontraŭ mi iom post iom,
 60 mi puŝis min reen tien kie la suno silentas.
+
+# Interlingua
+
+58 tal me facié le bestia sin pace,
+59 que veniente contra me a poco a poco
+60 me repulsava illac ubi le sol tace.
+
+# Hindi
+
+58 ऐसा बना दिया मुझे वह बिन‑शांति का दैत्य,
+59 जो, मेरे विरुद्ध आते हुए, धीरे‑धीरे
+60 मुझे पीछे धकेल रहा था उस जगह जहाँ सूरज मौन है।
+
+# Bengali
+
+58 এমন করে আমাকে শান্তিবিহীন দানবটি তৈরি করল,
+59 যে আমার দিকে এসে ধীরে ধীরে
+60 আমাকে আবার সেই স্থানে ঠেলে দিল যেখানে সূর্য নীরব।
+
+# German
+
+58 solche machte mich zur Bestie ohne Ruhe,
+59 die mir entgegenkam und mich nach und nach,
+60 mich zurückdrängte dorthin wo die Sonne schweigt.
+
+# Dutch
+
+58 zo maakte mij het beest zonder rust,
+59 dat, tegen mij komend, beetje bij beetje,
+60 duwde mij terug daar waar de zon zwijgt.
+
+# Serbian (Latin script)
+
+58 takav me učinio je zver bez mira,
+59 koja, dolazeći mi nasuprot, malo po malo
+60 me je gurala nazad tamo gde sunce šuti.

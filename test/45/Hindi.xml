@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+कि तू मुझे वहाँ ले चलें, जैसा तू अब कहा है,  
+ताकि मैं संत पीटर का द्वार देख सकूँ  
+और उन लोगों को जिन्हें तू इतना दुखी बनाता है»
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Hindi)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|-------------------|--------|
+| che | subordinating conjunction “that” | कि | that | OK |
+| tu | 2nd person singular pronoun (subject) | तू | you | OK |
+| mi | 1st person singular pronoun (object) | मुझे | me | OK |
+| meni | verb “to lead, guide” | ले चलें | lead (go) | OK |
+| là | adverb of place “there” | वहाँ | there | OK |
+| dov' | relative adverb “where” | जैसा | as/like | **WRONG** (does not convey “where”) |
+| or | adverb of time “now” | अब | now | OK |
+| dicesti | verb “said” (past) | कहा है | said (has said) | **GRAMMAR** (auxiliary *है* added) |
+| sì | adverb “so (that)” | ताकि | so that | OK |
+| ch'io | 1st person singular pronoun (subject) | मैं | I | OK |
+| veggia | verb “see” (subjunctive) | देख | see | **GRAMMAR** (modal *सकूँ* added) |
+| la | definite article (feminine) | — *(omitted)* | — | **UNNECESSARY** (article not required in Hindi) |
+| porta | noun “gate” | द्वार | gate | OK |
+| di | preposition “of” (genitive) | का | of | OK |
+| san | honorific “saint” | संत | saint | OK |
+| Pietro | proper name “Peter” | पीटर | Peter | OK |
+| e | coordinating conjunction “and” | और | and | OK |
+| color | demonstrative pronoun “those” | उन | those | OK |
+| cui | relative pronoun “whom/which” | जिन्हें | whom | OK |
+| tu | 2nd person singular pronoun (subject) | तू | you | OK |
+| fai | verb “make, cause” | बनाता | makes/causes | OK |
+| cotanto | degree adverb “so much” | इतना | so much | OK |
+| mesti | adjective “afflicted, sad” | दुखी | afflicted | OK |
+
+---
+
+### Items to Note  
+
+- **WRONG**: *dov'* was rendered as *जैसा* (“as”), which does not preserve the locative sense “where”.  
+- **GRAMMAR**:  
+  - *dicesti* required the auxiliary *है* to form the perfect in Hindi.  
+  - *veggia* required the modal verb *सकूँ* to express “may see”.  
+- **UNNECESSARY**: *la* (the definite article) is naturally omitted in Hindi.  
+- **No MISSING** source items; every source token appears in the Hindi translation (either directly or via a necessary grammatical addition).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 133**  
+  - Original: कि तू मुझे वहाँ ले चलें, जैसा तू अब कहा है,  
+  - Issue: **WRONG** – “जैसा” does not convey the locative “where”.  
+  - Corrected: **कि तू मुझे वहाँ ले चलें, जहाँ तू अब कहा था,**  
+
+- **Line 134**  
+  - Original: ताकि मैं संत पीटर का द्वार देख सकूँ  
+  - Issue: none  
+  - Corrected: **no change**  
+
+- **Line 135**  
+  - Original: और उन लोगों को जिन्हें तू इतना दुखी बनाता है»  
+  - Issue: none  
+  - Corrected: **no change**  
+
+```text
+कि तू मुझे वहाँ ले चलें, जहाँ तू अब कहा था,
+ताकि मैं संत पीटर का द्वार देख सकूँ
+और उन लोगों को जिन्हें तू इतना दुखी बनाता है»
+```
+]]></message>
+</messages>

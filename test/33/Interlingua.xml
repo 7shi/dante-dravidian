@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+e ha un natura tan malign e malvagi,  
+que jammai non satisface le desiderio avidi,  
+e post le cena ha plus fame que ante.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| e (97) | coordinating conjunction linking clauses | e | “and” | OK |
+| ha | 3sg present of *avere* – to have/possess | ha | “has” | OK |
+| natura | “nature”, the inherent disposition | natura | “nature” | OK |
+| sì | intensifier “so” (high degree) | tan | “so” | OK |
+| malvagia | adjective “malign, harmful” | malign | “malign” | OK |
+| e (97‑2) | conjunction joining adjectives | e | “and” | OK |
+| ria | adjective “evil” | malvagi | “evil” | OK |
+| **un** *(added)* | indefinite article – not present in source | un | “a” | UNNECESSARY |
+| **tan** *(covers sì)* | see above | – | – | – |
+| **malign** *(covers malvagia)* | – | – | – | – |
+| **malvagi** *(covers ria)* | – | – | – | – |
+| che (98) | relative pronoun “that” | que | “that” | OK |
+| mai | adverb “never” | jammai | “never” | OK |
+| non | negation particle | non | “not” | OK |
+| empie | verb “to fill, satisfy” | satisface | “satisfies” | OK |
+| la | definite article (feminine) | le | “the” | OK |
+| bramosa | adjective “greedy, eager” | avidi | “greedy” | OK |
+| voglia | noun “will, desire” | desiderio | “desire” | OK |
+| e (99) | coordinating conjunction | e | “and” | OK |
+| dopo | preposition “after” (temporal) | post | “after” | OK |
+| ’l | contracted definite article “the” | le | “the” | OK |
+| pasto | noun “meal” | cena | “meal/dinner” | OK |
+| ha (99‑2) | verb “has” (state) | ha | “has” | OK |
+| più | comparative adverb “more” | plus | “more” | OK |
+| fame | noun “hunger” | fame | “hunger” | OK |
+| che (99‑2) | comparative conjunction “than” | que | “than” | OK |
+| pria | adverb “before” (earlier) | ante | “before” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *un* – the indefinite article was inserted in Interlingua though the Italian source lacks any article before *natura*.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 97:
+  - Original: **e ha un natura tan malign e malvagi,**
+  - Issue: **UNNECESSARY** – the indefinite article *un* does not exist in the source.
+  - Corrected: **e ha natura tan malign e malvagi,**
+
+- Line 98:
+  - Original: **que jammai non satisface le desiderio avidi,**
+  - Issue: none
+  - Corrected: no change
+
+- Line 99:
+  - Original: **e post le cena ha plus fame que ante.**
+  - Issue: none
+  - Corrected: no change
+
+```interlingua
+e ha natura tan malign e malvagi,
+que jammai non satisface le desiderio avidi,
+e post le cena ha plus fame que ante.
+```
+]]></message>
+</messages>

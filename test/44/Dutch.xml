@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+En ik tot hem dichter ik smeek u door die God die u niet kende  
+door die God die u niet kende,  
+opdat ik dit kwaad en erger mag ontvluchten,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (source → Dutch)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **E** | discourse connector “and” | **En** | “and” | OK |
+| **io** (1st) | speaker, subject of the utterance | **ik** | “I” | OK |
+| **a** | preposition marking the addressee | **tot** | “to” | OK |
+| **lui** | male addressee | **hem** | “him” | OK |
+| **Poeta** | vocative “Poet” | **dichter** | “poet” | **GRAMMAR** (vocative placed incorrectly) |
+| **io** (2nd) | speaker, subject of the beseeching | **ik** | “I” | OK |
+| **ti** | second‑person object “you” | **u** | “you” (object) | OK |
+| **richeggio** | verb “beseech” (present) | **smeek** | “beseech” | OK |
+| **per** | preposition introducing the instrumental basis | **door** | “through / by” | OK |
+| **quello** | demonstrative “that” (specifying the God) | **die** | “that” | OK |
+| **Dio** | noun “God” | **God** | “God” | OK |
+| **che** | relative pronoun “who/that” | **die** | “who/that” | OK |
+| **tu** | second‑person singular subject of the relative clause | **u** | “you” | OK |
+| **non** | negation particle | **niet** | “not” | OK |
+| **conoscesti** | verb “knew” (past) | **kende** | “knew” | OK |
+| **acciò** | purpose conjunction “in order that” | **opdat** | “so that” | OK |
+| **ch'io** | subject “I” of the purpose clause | **ik** | “I” | OK |
+| **fuga** | verb “escape” (subjunctive/volitive) | **mag ontvluchten** | “may escape” | OK |
+| **questo** | demonstrative “this” | **dit** | “this” | OK |
+| **male** | noun “ill, evil” | **kwaad** | “evil / ill” | OK |
+| **e** | coordinating conjunction “and” | **en** | “and” | OK |
+| **peggio** | comparative adjective “worse” | **erger** | “worse” | OK |
+
+---
+
+### Issues Detected  
+
+| Issue Type | Details |
+|------------|---------|
+| **UNNECESSARY** | The phrase **“door die God die u niet kende”** appears **twice** in the Dutch output (once after *smeek u* in line 130 and again as the proper translation of line 131). The first occurrence is not required by the source text. |
+| **GRAMMAR** | *dichter* (the translation of **Poeta**) is placed directly after *hem* (“tot hem dichter”), which is syntactically incorrect in Dutch. It should appear as a vocative after a pause or colon (e.g., “En ik tot hem: ‘Dichter, …’”). |
+| **GRAMMAR** | The overall word order of line 130 (“En ik tot hem dichter ik smeek u …”) is ungrammatical; Dutch would require a clearer clause structure (e.g., “En ik tot hem: ‘Dichter, ik smeek u …’”). |
+| **UNNECESSARY** | The duplication of the relative clause “die u niet kende” (from *per quello Dio che tu non conoscesti*) creates redundancy. |
+
+These items should be corrected in a revised Dutch translation to achieve full coverage, grammaticality, and conciseness.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 130**  
+  - Original: *En ik tot hem dichter ik smeek u door die God die u niet kende*  
+  - Issue: **GRAMMAR** – vocative “dichter” is misplaced; **UNNECESSARY** – the phrase “door die God die u niet kende” belongs to line 131.  
+  - Corrected: *En ik tot hem ik smeek u dichter*  
+
+- **Line 131**  
+  - Original: *door die God die u niet kende,*  
+  - Issue: none  
+  - Corrected: *door die God die u niet kende,*  
+
+- **Line 132**  
+  - Original: *opdat ik dit kwaad en erger mag ontvluchten,*  
+  - Issue: none  
+  - Corrected: *opdat ik dit kwaad en erger mag ontvluchten,*  
+
+```text
+En ik tot hem ik smeek u dichter
+door die God die u niet kende,
+opdat ik dit kwaad en erger mag ontvluchten,
+```
+]]></message>
+</messages>

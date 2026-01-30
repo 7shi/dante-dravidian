@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+समय का क्षण और मीठा मौसम;  
+पर ऐसा नहीं कि भय मुझे न दे  
+वह दृश्य जो मेरे सामने एक शेर के रूप में प्रकट हुआ।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| l'ora | “the hour” (temporal unit) | क्षण | “moment / hour” | OK |
+| del | genitive “of the” | का | “of” | OK |
+| tempo | “time” | समय | “time” | OK |
+| e | coordinating “and” | और | “and” | OK |
+| la (before *dolce*) | definite article (fem.) | — | — | UNNECESSARY |
+| dolce | “sweet, pleasant” | मीठा | “sweet” | OK |
+| stagione | “season” | मौसम | “season” | OK |
+| ma | adversative “but” | पर | “but” | OK |
+| non (1st) | negation of the comparative clause | नहीं | “not” | OK |
+| sì | intensifier “so” (as in “so that”) | ऐसा | “so / such” | OK |
+| che (subordinator) | “that” introducing clause | कि | “that” | OK |
+| paura | “fear” | भय | “fear” | OK |
+| non (2nd) | negation of the verb “give” | न | “not” (before verb) | OK |
+| mi | indirect object “to me” | मुझे | “to me” | OK |
+| desse | subjunctive “give” | दे | “give” | OK |
+| la (before *vista*) | definite article (fem.) | — | — | UNNECESSARY |
+| vista | “sight, view” | दृश्य | “sight / view” | OK |
+| che (relative) | “which” | जो | “which” | OK |
+| m'apparve | “appeared to me” (verb) | प्रकट हुआ | “appeared” | OK |
+| d'un | “of a” (partitive) | एक | “a / one” | OK |
+| leone | “lion” | शेर | “lion” | OK |
+
+### Items to Note
+- **UNNECESSARY**: the Italian definite article **la** appears twice (before *dolce* and before *vista*) but Hindi does not use articles, so they are omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected in the lexical mapping.  
+- Punctuation mismatch (Hindi line 45 ends with “।” instead of “.”) is a punctuation issue, not a word‑level error, and therefore is not listed here.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 43:
+  - Original: समय का क्षण और मीठा मौसम;
+  - Issue: none
+  - Corrected: समय का क्षण और मीठा मौसम;
+
+- Line 44:
+  - Original: पर ऐसा नहीं कि भय मुझे न दे
+  - Issue: none
+  - Corrected: पर ऐसा नहीं कि भय मुझे न दे
+
+- Line 45:
+  - Original: वह दृश्य जो मेरे सामने एक शेर के रूप में प्रकट हुआ।
+  - Issue: contains unnecessary words “मेरे सामने”, “के रूप में”; wording not faithful to source
+  - Corrected: वह दृश्य जो मुझे शेर दिखाया।
+
+```
+समय का क्षण और मीठा मौसम;
+पर ऐसा नहीं कि भय मुझे न दे
+वह दृश्य जो मुझे शेर दिखाया।
+```
+]]></message>
+</messages>

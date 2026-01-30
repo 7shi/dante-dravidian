@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+O časti i svetlu drugih pesnika,  
+Neka mi dugi studij i velika ljubav budu od koristi  
+Što me je nateralo da tražim tvoj tom.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Serbian Latin)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|-----------------------|--------|
+| O | vocative interjection | O | “O” | OK |
+| de | preposition “of” (marks possession) | — (genitive case on *časti, svetlu*) | — | UNNECESSARY |
+| li | definite article “the” (masc. pl.) | — (Serbian has no article) | — | UNNECESSARY |
+| altri | adjective “other” (modifies *poeti*) | drugih | “other” (genitive plural) | OK |
+| poeti | noun “poets” (the group) | pesnika | “poets” (genitive plural) | OK |
+| onore | noun “honor” (abstract quality) | časti | “honor” (genitive singular) | OK |
+| e | coordinating conjunction “and” | i | “and” | OK |
+| lume | noun “light” (abstract quality) | svetlu | “light” (dative singular) | OK |
+| vagliami | imperative “let … avail me” (request) | Neka mi | “let … to me” | OK |
+| ’l | definite article “the” (masc. sg.) | — (article omitted) | — | UNNECESSARY |
+| lungo | adjective “long” (describes *studio*) | dugi | “long” | OK |
+| studio | noun “study” (the scholarly effort) | studij | “study” | OK |
+| e | coordinating conjunction “and” | i | “and” | OK |
+| ’l | definite article “the” (masc. sg.) | — (article omitted) | — | UNNECESSARY |
+| grande | adjective “great” (describes *amore*) | velika | “great” | OK |
+| amore | noun “love” (the passionate feeling) | ljubav | “love” | OK |
+| che | relative pronoun “which/that” (introduces cause clause) | Što | “that/which” | OK |
+| m' | clitic pronoun “me” (object) | me | “me” | OK |
+| ha | auxiliary verb “has” (perfect) | je | “has” | OK |
+| fatto | past participle “made” (causative) | nateralo | “made/caused” | OK |
+| cercar | infinitive “to search” | tražim | “search” (first‑person) | OK |
+| lo | definite article “the” (masc. sg.) | — (article omitted) | — | UNNECESSARY |
+| tuo | possessive adjective “thy/your” | tvoj | “your” | OK |
+| volume | noun “volume” (the work being sought) | tom | “volume / tome” | **GRAMMAR** |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: *de, li, ’l (four occurrences), lo* – Italian articles/prepositions that Serbian does not need because case marking supplies the same information.  
+- **GRAMMAR**: *volume → tom* – the Serbian noun *tom* is not the standard nominative/accusative form for “volume”; a more natural choice would be **tom** (archaic) or **knjigu**. The current form is grammatically awkward.  
+
+No source words are **MISSING** or **WRONG** in the translation. All other mappings are **OK**.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:  
+  - Original: O časti i svetlu drugih pesnika,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 83:  
+  - Original: Neka mi dugi studij i velika ljubav budu od koristi  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 84:  
+  - Original: Što me je nateralo da tražim tvoj tom.  
+  - Issue: GRAMMAR – noun “tom” is unnatural; gender agreement with possessive adjective is off.  
+  - Corrected: Što me je nateralo da tražim tvoju knjigu.  
+
+```
+O časti i svetlu drugih pesnika,
+Neka mi dugi studij i velika ljubav budu od koristi
+Što me je nateralo da tražim tvoju knjigu.
+```
+]]></message>
+</messages>

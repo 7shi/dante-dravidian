@@ -38,6 +38,12 @@ for this beast, because of which thou criest out, lets not any one pass along he
 95 他人がその道を通ることを許さない、
 96 しかしあまりにも妨げて彼を殺す;
 
+# Estonian
+
+94 selle looma pärast, sa hüüad,
+95 ei luba kellelgi mööduda tema teel,
+96 aga nii takistab ta teda, et ta tapab teda;
+
 # French
 
 94 car cette bête, à cause de laquelle tu cries,
@@ -61,3 +67,39 @@ for this beast, because of which thou criest out, lets not any one pass along he
 94 ĉar ĉi tiu bestio, pro kiu vi krias,
 95 ne permesas al iu ajn pasi laŭ ĝia vojo,
 96 sed tiel ĝi malhelpas lin ke ĝi mortigas lin;
+
+# Interlingua
+
+94 pro iste bestia, per le qual tu clama,
+95 non permitte alicuno passar per su via,
+96 ma tanto lo impedisce que lo occide;
+
+# Hindi
+
+94 इस दानव के कारण जिसके लिये तुम चिल्लाते हो,
+95 वह किसी को भी अपनी राह से गुजरने नहीं देता,
+96 पर वह उसे इतना रोकता है कि वह उसे मार देता है;
+
+# Bengali
+
+94 এই দানবের জন্য যার তুমি চিৎকার করছ,
+95 এটি অন্যকে তার পথে পার হতে দেয় না,
+96 কিন্তু এতটাই বাধা দেয় যে তা তাকে হত্যা করে;
+
+# German
+
+94 Denn diese Bestie wegen der du schreist,
+95 lässt niemanden ihren Weg passieren,
+96 aber hindert ihn so sehr, dass sie ihn tötet;
+
+# Dutch
+
+94 omdat dit beest, waardoor jij schreeuwt,
+95 laat niemand anders langs zijn weg passeren,
+96 maar het hindert hem zo dat het hem doodt;
+
+# Serbian (Latin script)
+
+94 zbog ove bestije zbog koje vi vičete,
+95 ne dozvoljava nikome da prolazi njenim putem,
+96 ali toliko ga onemogućava da ga ubije;

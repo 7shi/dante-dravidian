@@ -38,6 +38,12 @@
 80 それは語りという非常に大きな川を流すのか？
 81 私は恥ずかしげな顔で彼に答えた。
 
+# Estonian
+
+79 Kas siis oled sina see Virgil ja see allikas
+80 mis valab välja nii lai kõnejõgi?,
+81 Vastasin talle häbeliku näoga.
+
 # French
 
 79 Alors es‑tu ce Virgile et cette source
@@ -61,3 +67,39 @@
 79 Nun ĉu vi estas tiu Virgil kaj tiu fonto
 80 kiu verŝas tiel larĝan fluon de parolo?
 81 Mi respondis al li kun honta frunto.
+
+# Interlingua
+
+79 Ora es tu ille Virgil e ille fonte
+80 que spande un fluvio tanto large de parole?
+81 io respondeva a ille con fronte vergonose.
+
+# Hindi
+
+79 क्या तुम वही वर्जिल और वह स्रोत हो
+80 जो इतनी बड़ी वचन की धारा उत्पन्न करता है?
+81 मैंने उसे शर्मीले चेहरे के साथ उत्तर दिया।
+
+# Bengali
+
+79 তাহলে কি তুমি সেই ভির্জিল ও সেই উৎস
+80 যা এত বিশাল কথার নদী প্রবাহিত করে?
+81 আমি তাকে লজ্জিত মুখে উত্তর দিলাম।
+
+# German
+
+79 Bist du dann jener Virgil und jene Quelle?
+80 die einen so breiten Strom der Rede ausgießt?
+81 antwortete ich ihm mit verlegener Stirn.
+
+# Dutch
+
+79 Or ben jij die Virgil en die bron,
+80 die zo brede stroom van spraak uitspreidt?
+81 antwoordde ik hem met een beschaamde voorhoofd.
+
+# Serbian (Latin script)
+
+79 Zar si ti onda taj Vergil i taj izvor?
+80 koji izlivа tako široku reku govora?
+81 odgovorio sam mu sa sramotnim čelom.

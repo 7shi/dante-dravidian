@@ -38,6 +38,12 @@ Wherefore I think and deem it for thy best that thou follow me, and I will be th
 113 あなたが私に従い、私はあなたの導き手になる、
 114 そして私はあなたをここから永遠の場所へ導く；
 
+# Estonian
+
+112 Sellepärast ma mõtlen ja otsustan sinu parima jaoks et sa mind järgid
+113 ja ma olen sinu juhendaja,
+114 ja ma viin sind siit igavikulisse kohta;
+
 # French
 
 112 C’est pourquoi je pense et juge que c’est pour ton bien que tu me suis
@@ -61,3 +67,39 @@ Wherefore I think and deem it for thy best that thou follow me, and I will be th
 112 Do mi pensas kaj taksas ke tio estas por via bono
 113 Ke vi sekvas min, kaj mi estos via gvidanto,
 114 Kaj mi kondukos vin de ĉi tie tra la eterna loko;
+
+# Interlingua
+
+112 Proque io pensa e judica pro tu melior
+113 que tu me seque, e io sera tu guida,
+114 e io te trara de hic per loco etern;
+
+# Hindi
+
+112 इसलिए मैं तुम्हारे हित के लिये सोचता और निर्णय लेता हूँ कि तुम मेरा अनुसरण करो
+113 कि तुम मेरा अनुसरण करो और मैं तुम्हारा मार्गदर्शक बनूँगा,
+114 और मैं तुम्हें यहाँ से अनन्त स्थान की ओर ले जाऊँगा;
+
+# Bengali
+
+112 অতএব আমি তোমার মঙ্গলের জন্য ভাবি এবং নির্ধারণ করি যে তুমি আমাকে অনুসরণ করবে
+113 যে তুমি আমাকে অনুসরণ করবে এবং আমি তোমার গাইড হব,
+114 এবং আমি তোমাকে এখান থেকে চিরন্তন স্থানে নিয়ে যাব;
+
+# German
+
+112 Denn ich denke und urteile, dass es zu deinem Wohl ist
+113 dass du mir folgst und ich werde dein Führer sein,
+114 und ich werde dich von hier hinausführen zum ewigen Ort;
+
+# Dutch
+
+112 Daarom denk ik en acht ik voor jouw welzijn
+113 dat jij mij volgt en ik zal jouw gids zijn,
+114 en ik zal je hier vandaan leiden naar de eeuwige plaats;
+
+# Serbian (Latin script)
+
+112 Zato mislim i smatram da je to za tvoju najbolju svrhu
+113 da me pratiš, i ja ću biti tvoj vodič,
+114 i odvešću te odavde kroz večni prostor;

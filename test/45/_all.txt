@@ -38,6 +38,12 @@ that thou lead me thither whom thou now hast said, so that I may see the gate of
 134 私が聖ペテロの門を見ることができるように
 135 そしてあなたがとても苦しめる人々
 
+# Estonian
+
+133 et sa viid mind sinna kus sa nüüd ütlesid,
+134 et ma näeksin pühakõlblase Peetri värava
+135 ja need keda sa teed nii kurbaks”.
+
 # French
 
 133 que tu me conduises là où tu l’as dit maintenant,
@@ -61,3 +67,39 @@ that thou lead me thither whom thou now hast said, so that I may see the gate of
 133 ke vi konduku min tien kiun vi nun diris,
 134 por ke mi vidu la pordon de Sankta Petro
 135 kaj tiuj kiujn vi tiel afliktas».
+
+# Interlingua
+
+133 que tu me conduce illuc ubi tu ora dixite,
+134 sic que io vide le porta de Sancte Pietro
+135 e illes a qui tu face tanto affligite.
+
+# Hindi
+
+133 कि तू मुझे वहाँ ले चलें, जहाँ तू अब कहा था,
+134 ताकि मैं संत पीटर का द्वार देख सकूँ
+135 और उन लोगों को जिन्हें तू इतना दुखी बनाता है»
+
+# Bengali
+
+133 যে তুমি আমাকে সেখানে নিয়ে যাও যেখানে তুমি এখনই বলেছ,
+134 যাতে আমি পবিত্র পিতরের গেটটি দেখতে পারি
+135 এবং যেসব মানুষকে তুমি এত কষ্ট দাও।
+
+# German
+
+133 dass du mich dorthin führst, wo du es jetzt gesagt hast,
+134 damit ich das Tor des heiligen Petrus sehe
+135 und jene, die du so betrübt machst».
+
+# Dutch
+
+133 dat gij mij daarheen leidt waar gij nu gezegd hebt,
+134 zodat ik de poort van Sint‑Pieter zie
+135 en diegenen die gij zo bedroefd maakt.
+
+# Serbian (Latin script)
+
+133 da me vodiš tamo gde si sada rekao,
+134 da bih video vrata Svetog Petra
+135 i one koje ti činiš tako tužnim».

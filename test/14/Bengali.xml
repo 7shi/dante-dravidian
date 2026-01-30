@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+প্রথম মুহূর্তের সময় এবং মধুর ঋতু;  
+যাতে তা আমার জন্য ভাল আশা করার কারণ হয়  
+সেই দাগযুক্ত ত্বকের বন্য প্রাণী সম্পর্কে
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| mosse | “first hour / moment” | মুহূর্তের | “of the moment” | OK |
+| di (1) | genitive marker linking *mosse* to *prima* | – (expressed by the genitive suffix **‑এর**) | “of” | OK |
+| prima | “first / initial” | প্রথম | “first” | OK |
+| quelle | demonstrative “those” (points to *cose*) | মধুর | “sweet” (as attribute of *ঋতু*) | OK |
+| cose | “things / season” | ঋতু | “season” | OK |
+| belle | “beautiful” (quality of *cose*) | মধুর | “sweet” (used as adjective for *ঋতু*) | OK |
+| sì | resultative adverb “so” | যাতে | “so that” | OK |
+| ch'a | subordinating conjunction “that … to” | – (merged into **যাতে**) | “that … to” | OK |
+| bene | “good / well” | ভাল | “good” | OK |
+| sperar | infinitive “to hope” | আশা | “hope” | OK |
+| m'era | clitic + copula “to me was” | আমার জন্য | “for me” | OK |
+| cagione | “occasion / cause” | কারণ | “cause / reason” | OK |
+| di (2) | preposition introducing the referent of the hope | – (expressed by the genitive suffix **‑এর**) | “of / concerning” | OK |
+| quella | demonstrative “that” (specifies the beast) | সেই | “that” | OK |
+| fiera | “wild beast” | বন্য প্রাণী | “wild animal / beast” | OK |
+| a (3) | preposition “with” (instrumental) | – (expressed by the genitive suffix **‑এর**) | “with” | OK |
+| la | definite article “the” (feminine) | – (omitted) | (none) | **UNNECESSARY** |
+| gaetta | “dappled / speckled” | দাগযুক্ত | “dappled” | OK |
+| pelle | “skin” | ত্বকের | “of the skin” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la` – Bengali does not use definite articles; the article was naturally omitted in the translation.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all other source tokens are adequately rendered in the Bengali output.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 40:
+  - Original: প্রথম মুহূর্তের সময় এবং মধুর ঋতু;
+  - Issue: none
+  - Corrected: no change  
+
+- Line 41:
+  - Original: যাতে তা আমার জন্য ভাল আশা করার কারণ হয়
+  - Issue: none
+  - Corrected: no change  
+
+- Line 42:
+  - Original: সেই দাগযুক্ত ত্বকের বন্য প্রাণী সম্পর্কে
+  - Issue: none
+  - Corrected: no change  
+
+```
+প্রথম মুহূর্তের সময় এবং মধুর ঋতু;
+যাতে তা আমার জন্য ভাল আশা করার কারণ হয়
+সেই দাগযুক্ত ত্বকের বন্য প্রাণী সম্পর্কে
+```
+]]></message>
+</messages>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tako moj duh koji još leteo,  
+okrenuo se nazad da ponovo pogleda prolaz  
+koji nikada nije napustila živa osoba.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| così | adverb (temporal/causal) – marks result | **tako** | “so / thus” | OK |
+| l'animo | noun, masc. sing., “the soul” (subject) | **duh** | “soul” | OK |
+| mio | possessive adjective – “my” | **moj** | “my” | OK |
+| ch'ancor | relative pronoun + adverb “which still” | **koji još** | “which still” | OK |
+| fuggiva | imperfect verb “was fleeing / flying” | **leteo** | “was flying” | OK |
+| si | reflexive clitic pronoun | **se** | (reflexive marker) | OK |
+| volse | remote past verb “turned” | **okrenuo** | “turned” | OK |
+| a (1st) | preposition introducing direction “to” (in *a retro*) | **nazad** (part of phrase) | “backward” | **UNNECESSARY** (Serbian does not need this preposition) |
+| retro | noun used adverbially “back” | **nazad** (part of phrase) | “back” | OK |
+| a (2nd) | preposition introducing infinitive purpose | **da** | “to” (infinitive marker) | OK |
+| rimirar | infinitive verb “to look again” | **pogleda** | “looks / to look” | OK |
+| lo | definite article (masc.) – not expressed in Serbian | — | (none) | **UNNECESSARY** |
+| passo | noun “pass” (direct object) | **prolaz** | “pass” | OK |
+| che (line 27) | relative pronoun “which” | **koji** | “which” | OK |
+| non | negation particle “not” (combined with *mai*) | **nikada** (part of negation) | “never” | OK |
+| lasciò | remote past verb “left” | **napustila** | “left / abandoned” | OK |
+| già | adverb “already” (temporal intensifier) | — | (none) | **MISSING** |
+| mai | adverb “never” (intensifier) | — (covered by *nikada*) | (none) | **UNNECESSARY** |
+| persona | noun “person” (feminine) | **osoba** | “person” | OK |
+| viva | adjective “living” (agreeing with *persona*) | **živa** | “living” | OK |
+
+---
+
+### Issues Summary
+- **MISSING**: *già* (the adverb “already” is not rendered in the Serbian translation).  
+- **UNNECESSARY**: *a* (first occurrence) – Serbian does not require a preposition before *nazad*; *lo* – definite article omitted naturally; *mai* – its meaning is already captured by *nikada*.  
+- **GRAMMAR**: none detected.  
+- **WRONG**: none detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: tako moj duh koji još leteo,
+  - Issue: missing comma after “duh”
+  - Corrected: **tako moj duh, koji još leteo,**
+- Line 26:
+  - Original: okrenuo se nazad da pogleda prolaz
+  - Issue: missing adverb “ponovo” (again)
+  - Corrected: **okrenuo se nazad da ponovo pogleda prolaz**
+- Line 27:
+  - Original: koji nikada nije napustila živa osoba.
+  - Issue: missing adverb “već” (already)
+  - Corrected: **koji već nikada nije napustila živa osoba.**
+
+```
+tako moj duh, koji još leteo,
+okrenuo se nazad da ponovo pogleda prolaz
+koji već nikada nije napustila živa osoba.
+```
+]]></message>
+</messages>

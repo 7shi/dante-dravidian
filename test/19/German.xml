@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Und solcher ist er der bereitwillig erwirbt,  
+und die Zeit kommt die ihn verlieren lässt,  
+der in allen seinen Gedanken weint und traurig ist;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (German translation from Step 2)**  
+
+| # | Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|---|-------------|-----------------------|----------------------|------------------------|--------|
+| 1 | **E** | Coordinating conjunction linking to previous discourse | **Und** | “and” | OK |
+| 2 | **qual** | “such as” – introduces a descriptive equivalence | **solcher** | “such” (as in “such a …”) | OK |
+| 3 | **è** | Copular verb linking subject to predicate | **ist** | “is” | OK |
+| 4 | **quei** | Demonstrative pronoun referring to the individual | **er** | “he” | OK |
+| 5 | **che** (line 55) | Relative pronoun introducing the clause “volontieri acquista” | **der** | “who/that” | OK |
+| 6 | **volontieri** | Adverb expressing willingness | **bereitwillig** | “willingly” | OK |
+| 7 | **acquista** | Verb “to acquire / gain” | **erwirbt** | “acquires / gains” | OK |
+| 8 | **e** | Coordinating conjunction linking the next clause | **und** | “and” | OK |
+| 9 | **giugne** | Verb “arrives / comes” (of time) | **kommt** | “comes / arrives” | OK |
+|10| **'l** | Definite article (elided *il*) specifying *tempo* | **die** | “the” (feminine) | OK |
+|11| **tempo** | Temporal entity that arrives | **Zeit** | “time” | OK |
+|12| **che** (line 56) | Relative pronoun introducing the causal clause | **die** | “that” (relative) | OK |
+|13| **perder** | Infinitive “to lose” (object of the causal clause) | **verlieren** | “to lose” | OK |
+|14| **lo** | Accusative clitic pronoun referring to *quei* | **ihn** | “him” | OK |
+|15| **face** | Causative verb “makes / lets” | **lässt** | “makes / lets” | OK |
+|16| **che** (line 57) | Relative pronoun re‑introducing the subject of the last clause | **der** | “who” | OK |
+|17| **'n** | Preposition “in” (locative for mental space) | **in** | “in” | OK |
+|18| **tutti** | Quantifier “all” (plural) | **allen** | “all” (dative plural) | OK |
+|19| **suoi** | Possessive adjective “his” (plural) | **seinen** | “his” (dative plural) | OK |
+|20| **pensier** | Noun “thought(s)” | **Gedanken** | “thoughts” | OK |
+|21| **piange** | Verb “weeps” | **weint** | “weeps” | OK |
+|22| **e** | Coordinating conjunction linking two predicates | **und** | “and” | OK |
+|23| **s'attrista** | Reflexive verb “becomes sad” | **traurig ist** | “is sad” | OK |
+
+### Summary of Issues
+- **MISSING:** – none  
+- **WRONG:** – none  
+- **GRAMMAR:** – none (gender, number, and case agreement are satisfied in the German rendering)  
+- **UNNECESSARY:** – none (all source elements are required in the German translation)  
+
+All source tokens are accounted for, and the German line‑by‑line translation respects the meaning and syntactic constraints of the reference English version.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 55:
+  - Original: Und solcher ist er der bereitwillig erwirbt,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 56:
+  - Original: und die Zeit kommt die ihn verlieren lässt,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 57:
+  - Original: der in allen seinen Gedanken weint und traurig ist;
+  - Issue: none
+  - Corrected: no change  
+
+```
+Und solcher ist er der bereitwillig erwirbt,
+und die Zeit kommt die ihn verlieren lässt,
+der in allen seinen Gedanken weint und traurig ist;
+```
+]]></message>
+</messages>

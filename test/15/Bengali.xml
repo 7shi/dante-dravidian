@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+সময়ের ঘণ্টা এবং মধুর ঋতু;
+কিন্তু এমন নয় যে ভয় আমাকে না দেয়
+সেই সিংহের দৃশ্যটি যা আমার সামনে প্রকাশ পেয়েছিল।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Bengali)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------------------|------------------------|--------|
+| l'ora | “hour” (temporal unit) | ঘণ্টা | hour | OK |
+| del | genitive “of” linking *ora* and *tempo* | সময়ের | of time | OK |
+| tempo | “time” (abstract) | সময় | time | OK |
+| e | coordinating “and” | এবং | and | OK |
+| la (art. before *dolce stagione*) | definite article (feminine) | — | — | **UNNECESSARY** |
+| dolce | “sweet” (qualifier) | মধুর | sweet | OK |
+| stagione | “season” (noun) | ঋতু | season | OK |
+| ma | coordinating “but” | কিন্তু | but | OK |
+| non (1st) | first negation in “non sì che” | এমন নয় | not so | OK |
+| sì | intensifier “so” in “non sì che” | এমন | so | OK |
+| che (1st) | complementiser “that” | যে | that | OK |
+| paura | “fear” (noun) | ভয় | fear | OK |
+| non (2nd) | second negation in “non mi desse” | না | not | OK |
+| mi | indirect object “to me” | আমাকে | to me | OK |
+| desse | subjunctive “give” (potential causation) | দেয় | give | OK |
+| la (2nd) | definite article before *vista* | সেই | that / the | OK |
+| vista | “sight, view” (noun) | দৃশ্যটি | the sight | OK |
+| che (2nd) | relative pronoun “which” | যা | which | OK |
+| m'apparve | “appeared to me” (verb) | প্রকাশ পেয়েছিল | appeared | OK |
+| d'un | preposition “of a” (genitive) | — | — | **UNNECESSARY** |
+| leone | “lion” (noun) | সিংহ | lion | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - *la* (article before *dolce stagione*) – Bengali does not use a separate definite article here.  
+  - *d'un* – the genitive relationship is expressed by the suffix **‑এর** in *সিংহের*, so a standalone preposition is not needed.  
+
+All other source tokens are represented with appropriate Bengali equivalents and retain the intended meaning from the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 43**  
+  - Original: সময়ের ঘণ্টা এবং মধুর ঋতু;  
+  - Issue: none  
+  - Corrected: সময়ের ঘণ্টা এবং মধুর ঋতু;  
+
+- **Line 44**  
+  - Original: কিন্তু এমন নয় যে ভয় আমাকে না দেয়  
+  - Issue: WRONG – the clause should not contain “fear” here; the reference meaning places “fear” as the object of the verb that follows the subject in the next line.  
+  - Corrected: কিন্তু এমন নয় যে  
+
+- **Line 45**  
+  - Original: সেই সিংহের দৃশ্যটি যা আমার সামনে প্রকাশ পেয়েছিল।  
+  - Issue: WRONG – the sentence must express that the sight *did not give* fear, matching the reference translation.  
+  - Corrected: সেই সিংহের দৃশ্যটি যা আমার সামনে প্রকাশ পেয়েছিল আমাকে ভয় না দেয়।  
+
+```text
+সময়ের ঘণ্টা এবং মধুর ঋতু;
+কিন্তু এমন নয় যে
+সেই সিংহের দৃশ্যটি যা আমার সামনে প্রকাশ পেয়েছিল আমাকে ভয় না দেয়।
+```
+]]></message>
+</messages>

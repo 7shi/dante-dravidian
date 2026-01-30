@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+O honor e luce del altere poetas,
+concede me le longe studio e le grande amor
+que me ha facite cercar tu volume.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| O | vocative particle addressing abstract entities | O | O | OK |
+| de | preposition indicating possession/association (“of”) | del | of the | OK |
+| li | definite article, masculine plural (“the”) | del | of the | OK |
+| altri | adjective meaning “other” | altere | other | OK |
+| poeti | noun “poets” | poetas | poets | OK |
+| onore | abstract quality “honor” | honor | honor | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| lume, | abstract quality “light” | luce | light | OK |
+| vagliami | imperative “let … be useful to me” (request) | concede | grant | OK |
+| 'l | definite article, masculine singular (“the”) | le | the | OK |
+| lungo | adjective “long” | longe | long | OK |
+| studio | noun “study” | studio | study | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| 'l | definite article, masculine singular (“the”) | le | the | OK |
+| grande | adjective “great” | grande | great | OK |
+| amore | noun “love” | amor | love | OK |
+| che | relative pronoun “which” | que | which | OK |
+| m'ha | enclitic “mi ha” – “has made me” | me ha | has made me | OK |
+| fatto | past participle “made” | facite | made | OK |
+| cercar | infinitive “to search” | cercar | search | OK |
+| lo | definite article “the” (article not required in Interlingua) | — (omitted) | — | UNNECESSARY |
+| tuo | possessive adjective “your” | tu | your | OK |
+| volume. | noun “volume” (book/poem) | volume. | volume | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY:** *lo* – the Italian definite article is omitted in Interlingua because the language does not require an article before a possessive noun. All other mappings are satisfactory.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: O honor e luce del altere poetas,
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: concede me le longe studio e le grande amor
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: que me ha facite cercar tu volume.
+  - Issue: none
+  - Corrected: no change
+
+```
+O honor e luce del altere poetas,
+concede me le longe studio e le grande amor
+que me ha facite cercar tu volume.
+```
+]]></message>
+</messages>

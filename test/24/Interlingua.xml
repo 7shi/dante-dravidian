@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Io nasci sub Julio, ben que illo esseva tarde,  
+e io habitava Roma sub le bon Augusto  
+in le tempore del dei fals e mentitor.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|-------------------|--------|
+| Nacqui | “was born” (1st sg perfect) | nasci | was born | **GRAMMAR** (tense should be *nasque* for past) |
+| sub | “under” (temporal/political authority) | sub | under | OK |
+| Iulio | proper name of the ruler/era | Julio | Julio | OK |
+| ancor | concessive “although, even if” | ben | though (concessive) | OK |
+| che | subordinator introducing subjunctive clause | que | that (conjunctive) | OK |
+| fosse | imperfect subjunctive “was” | esseva | was | OK |
+| tardi | “late” (degree of lateness) | tarde | late | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| vissi | “lived” (1st sg perfect) | habitaba | lived | OK |
+| a | preposition “at, in” (locative) | — | — | **UNNECESSARY** (Interlingua omits the preposition) |
+| Roma | proper name of the city | Roma | Rome | OK |
+| sotto | “under” (political authority) | sub | under | OK |
+| ’l | definite article “the” (masc. sing.) | le | the | OK |
+| buono | “good” (positive attribute) | bon | good | OK |
+| Augusto | proper name of the ruler | Augusto | Augustus | OK |
+| nel | contraction “in the” (locative) | in le | in the | OK |
+| tempo | “time” (epoch) | tempore | time | OK |
+| de | preposition “of” | del | of the | OK |
+| li | definite article “the” (masc. plural) | — | — | **UNNECESSARY** (Interlingua does not use a separate plural article here) |
+| dèi | “gods” (plural) | dei | gods | OK |
+| falsi | “false” (attribute of the gods) | fals | false | OK |
+| e | coordinating conjunction “and” | e | and | OK |
+| bugiardi | “lying” (attribute of the gods) | mentitor | lying | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR**: *nasci* should be *nasque* to correctly render the past perfect “was born”.
+- **UNNECESSARY**: the source preposition *a* and the plural article *li* are not needed in Interlingua and were omitted.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: `Io nasci sub Julio, ben que illo esseva tarde,`  
+  - Issue: **GRAMMAR** – past tense of “nascer” should be *nasque*; “habitaba” also incorrect in line 2.  
+  - Corrected: `Io nasque sub Julio, ben que illo esseva tarde,`  
+
+- **Line 2**  
+  - Original: `e io habitaba Roma sub le bon Augusto`  
+  - Issue: **GRAMMAR** – past tense of “habitar” should be *habitava*.  
+  - Corrected: `e io habitava Roma sub le bon Augusto`  
+
+- **Line 3**  
+  - Original: `in le tempore del dei fals e mentitor.`  
+  - Issue: none  
+  - Corrected: `in le tempore del dei fals e mentitor.`  
+
+
+
+```
+Io nasque sub Julio, ben que illo esseva tarde,
+e io habitava Roma sub le bon Augusto
+in le tempore del dei fals e mentitor.
+```
+]]></message>
+</messages>

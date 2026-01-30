@@ -38,6 +38,12 @@ so did my soul, which still was flying, turn back to look again upon the pass wh
 26 後ろへ振り返り峠を再び見つめた
 27 峠は生きた者が今まで一度も離れたことはなかった。
 
+# Estonian
+
+25 nii mu hing, mis ikka veel põgenes,
+26 pöördus tagasi et uuesti vaadata läbipääsu
+27 mis ei ole kunagi elavat inimest jätnud.
+
 # French
 
 25 ainsi mon âme, qui fuyait encore,
@@ -61,3 +67,39 @@ so did my soul, which still was flying, turn back to look again upon the pass wh
 25 tiel mia animo, kiu ankoraŭ flugis,
 26 turniĝis reen por rimiri la pason
 27 kiu jam neniam forlasis vivantan personon.
+
+# Interlingua
+
+25 sic mi anima, que ancora fugiva,
+26 se volse a retro a revidar le passo
+27 que ja jamais lassava persona vivente.
+
+# Hindi
+
+25 ऐसे ही मेरी आत्मा, जो अभी भी उड़ रही थी,
+26 वह पीछे मुड़कर उस पास को फिर से देखने के लिये मूड़ी
+27 जिस पास को पहले कभी भी कोई जीवित व्यक्ति नहीं छोड़ा।
+
+# Bengali
+
+25 সুতরাং আমার আত্মা, যা এখনও উড়ছিল,
+26 সে পেছনে ঘুরে আবার পথটি দেখল
+27 যা কখনো কোনো জীবিত মানুষকে ছেড়ে যায়নি।
+
+# German
+
+25 So mein Geist, der noch flog,
+26 wandte sich zurück um den Pass erneut zu betrachten
+27 der noch nie eine lebende Person verließ.
+
+# Dutch
+
+25 zo deed mijn ziel, die nog steeds vluchtte,
+26 keerde zich terug om de pas opnieuw te aanschouwen
+27 die nog nooit een levende persoon heeft verlaten.
+
+# Serbian (Latin script)
+
+25 tako moj duh, koji još leteo,
+26 okrenuo se nazad da ponovo pogleda prolaz
+27 koji već nikada nije napustila živa osoba.

@@ -38,6 +38,12 @@
 53 彼女の姿を見ることから生じた恐怖とともに、 
 54 私は高みへの希望を失った。
 
+# Estonian
+
+52 ta andis mulle nii palju raskust
+53 koos hirmuga mis tekkis tema nägemisest,
+54 et ma kaotasin kõrguse lootuse.
+
 # French
 
 52 elle me donna tant de lourdeur
@@ -61,3 +67,39 @@
 52 ŝi kaŭzis al mi tiom da pezo
 53 kun la timo kiu venis de ŝia vidaĵo,
 54 ke mi perdis la esperon de la alteco.
+
+# Interlingua
+
+52 illa me causava tant de gravitate
+53 con le timor que veniva de su vista,
+54 que io perdeva le sperantia de altitude.
+
+# Hindi
+
+52 उसने मुझ पर इतनी भारीपन डाला
+53 उसकी दृष्टि से उत्पन्न भय के साथ,
+54 जिससे मैं ऊँचाई की आशा खो बैठा।
+
+# Bengali
+
+52 এই সে আমাকে এত ভারীতা দিল
+53 তার দৃষ্টিতে থেকে আসা ভয় সহ,
+54 আমি উচ্চতার আশা হারিয়ে ফেললাম।
+
+# German
+
+52 Sie brachte mir so viel Schwere
+53 mit der Angst aus ihrem Anblick,
+54 dass ich die Hoffnung auf die Höhe verlor.
+
+# Dutch
+
+52 zij gaf mij zoveel zwaarte
+53 met de angst die voortkwam uit haar gezicht,
+54 dat ik de hoop op de hoogte verloor.
+
+# Serbian (Latin script)
+
+52 ona mi je nametnula toliko težine
+53 sa strahom koji je nastao od njenog pogleda,
+54 da sam izgubio nadu u visinu.

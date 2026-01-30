@@ -38,6 +38,12 @@ When I saw him in the great desert, “Have pity on me!” I cried to him, “wh
 65 「私に哀れみて」と私は彼に叫んだ、
 66 「あなたが何であれ影であれ確かな人間であれ！」。
 
+# Estonian
+
+64 Kui ma nägin teda suures kõrbes,
+65 Halasta mulle, karjusin ma talle,
+66 Olgu sa mis tahes, kas vari või tõeline mees.
+
 # French
 
 64 Quand je le vis dans le grand désert,
@@ -61,3 +67,39 @@ When I saw him in the great desert, “Have pity on me!” I cried to him, “wh
 64 Kiam mi vidis lin en la granda dezerto,
 65 "Kompatxu min", kriis al li,
 66 Kio ajn vi estas aŭ ombro aŭ vera viro.
+
+# Interlingua
+
+64 Quando io vidi ille in le grande deserto,
+65 «Miserere me», io clamava a ille,
+66 «qualcunque tu sia, o ombra o homine certo!».
+
+# Hindi
+
+64 जब मैंने उसे महान रेगिस्तान में देखा,
+65 मैंने उससे कहा “मुझ पर दया करो” और चिल्लाया,
+66 तुम चाहे जो भी हो, छाया हो या निश्चित रूप से मनुष्य!
+
+# Bengali
+
+64 আমি যখন তাকে বিশাল মরুভূমিতে দেখলাম,
+65 আমি তাকে চিৎকার করে বললাম, “আমার প্রতি দয়া করো!”,
+66 যাই হোক তুমি ছায়া হোক বা সত্যিকারের মানুষ হোক।
+
+# German
+
+64 Als ich ihn in der großen Wüste sah,
+65 „Erbarme dich meiner“ rief ich zu ihm,
+66 „Was immer du bist sei es Schatten oder echter Mann!“
+
+# Dutch
+
+64 Wanneer ik hem zag in de grote woestijn,
+65 «Heb medelijden met mij» riep ik tegen hem,
+66 «wat je ook zij of schaduw of echte man!».
+
+# Serbian (Latin script)
+
+64 Kad sam ga video u velikoj pustinji,
+65 Smiluj se na mene vrištih njemu,
+66 Šta god da si ili senka ili pravi čovek!

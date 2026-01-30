@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Hij zal haar door elke stad jagen,  
+tot hij haar terug in de hel zal hebben gezet,  
+daar waar jaloezie haar voor het eerst zal weggesturen.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Dutch) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------------|------------------------|--------|
+| Questi | male agent who will hunt | **Hij** | he | OK |
+| la | female patient of the hunt | **haar** | her | OK |
+| caccerà | future action “shall hunt” | **jagen** | hunt | OK |
+| per | preposition “through” | **door** | through | OK |
+| ogne | quantifier “every” | **elke** | every | OK |
+| villa | “town” (location) | **stad** | town/city | OK |
+| fin | temporal subordinator “till” | **tot** | till | OK |
+| che | complementizer “that” (part of *fin che*) | — | — | **UNNECESSARY** (absorbed by “tot”) |
+| l' | clitic pronoun “her” (object of *rimessa*) | **haar** | her | OK |
+| avrà | auxiliary “shall have” (future perfect) | **zal** | shall | OK |
+| rimessa | main verb “set back” | **gezet** | set/placed | OK |
+| ne | preposition “in” | **in** | in | OK |
+| lo | definite article “the” (masc.) | **de** | the | OK |
+| 'nferno | “hell” (destination) | **hel** | hell | OK |
+| là | adverb of place “there” | **daar** | there | OK |
+| onde | relative adverb “whence” | **waar** | where/whence | OK |
+| 'nvidia | personified “envy” | **jaloezie** | envy | OK |
+| prima | temporal qualifier “first” | **voor het eerst** | for the first time | OK |
+| dipartilla | future “shall send forth” (with clitic *‑la*) | **weggesturen** | send away / dispatch | OK |
+
+---
+
+### Items Requiring Attention
+- **che** – marked **UNNECESSARY** because Dutch expresses the “fin che” clause simply with “tot” and does not need a separate complementizer. All other source tokens are accounted for with appropriate Dutch equivalents and no grammatical mismatches were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 109:
+  - Original: Hij zal haar door elke stad jagen,
+  - Issue: none
+  - Corrected: no change
+- Line 110:
+  - Original: tot hij haar terug in de hel zal hebben gezet,
+  - Issue: none
+  - Corrected: no change
+- Line 111:
+  - Original: daar waar jaloezie haar voor het eerst zal weggesturen.
+  - Issue: none
+  - Corrected: no change
+
+```
+Hij zal haar door elke stad jagen,
+tot hij haar terug in de hel zal hebben gezet,
+daar waar jaloezie haar voor het eerst zal weggesturen.
+```
+]]></message>
+</messages>

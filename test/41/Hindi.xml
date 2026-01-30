@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+यदि तुम बाद में चढ़ना चाहोगे तो उन लोगों को,  
+उस कार्य के लिये एक आत्मा मुझसे अधिक योग्य होगी:  
+मैं तुम्हें उसके साथ मेरे प्रस्थान पर छोड़ दूँगा;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| **A** | preposition “to” – marks direction of the relational clause | **को** | to (accusative marker) | OK |
+| **le** | definite article (plural, fem.) – specifies “the” | — | — | **UNNECESSARY** (Hindi has no articles) |
+| **quai** | relative pronoun “whom” – refers to the addressees | **उन लोगों** | those people | OK |
+| **poi** | adverb “thereafter” – indicates temporal succession | **बाद में** | later / thereafter | OK |
+| **se** | subordinating conjunction “if” – introduces the conditional | **यदि** | if | OK |
+| **tu** | personal pronoun 2nd sg. “thou” – the addressee | **तुम** | you (singular) | OK |
+| **vorrai** | verb future 2nd sg. “wilt” – expresses volition | **चाहोगे** | will want | OK |
+| **salire** | infinitive verb “ascend” – the action wished for | **चढ़ना** | to ascend | OK |
+| **anima** | noun “soul” – entity compared in worthiness | **आत्मा** | soul | OK |
+| **fia** | verb future 3rd sg. “shall be” – predicts state | **होगी** | will be (feminine) | OK |
+| **a** | preposition “for” – introduces domain of worthiness | **के लिये** | for | OK |
+| **ciò** | demonstrative pronoun “that” – points to the ascent | **उस** | that | OK |
+| **più** | comparative adverb “more” – marks increase | **अधिक** | more | OK |
+| **di** | preposition “than” – introduces standard of comparison | **से** | than (comparative particle) | OK |
+| **me** | personal pronoun 1st sg. “I” – comparison baseline | **मुझ** | me / from me | OK |
+| **degna** | adjective “worthy” – attributes worthiness | **योग्य** | worthy | OK |
+| **con** | preposition “with” – introduces companion | **साथ** | with | OK |
+| **lei** | personal pronoun 3rd sg. fem. “her” – the companion | **उसके** | her | OK |
+| **ti** | personal pronoun 2nd sg. acc. “thee” – the addressee | **तुम्हें** | you (accusative) | OK |
+| **lascerò** | verb future 1st sg. “will leave” – speaker’s action | **छोड़ दूँगा** | will leave / will abandon | OK |
+| **nel** | contraction “in the” – locates action within departure | **पर** | on / at (locative) | OK |
+| **mio** | possessive adjective “my” – denotes ownership of departure | **मेरे** | my | OK |
+| **partire** | infinitive verb “departure” – nominalised event | **प्रस्थान** | departure | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *le* – Italian definite article has no counterpart in Hindi; it is naturally omitted.  
+
+No other **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 121:
+  - Original: यदि तुम बाद में चढ़ना चाहोगे तो उन लोगों को,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 122:
+  - Original: उस कार्य के लिये एक आत्मा मुझसे अधिक योग्य होगी:
+  - Issue: none
+  - Corrected: no change  
+
+- Line 123:
+  - Original: मैं तुम्हें उसके साथ मेरे प्रस्थान पर छोड़ दूँगा;
+  - Issue: none
+  - Corrected: no change  
+
+```
+यदि तुम बाद में चढ़ना चाहोगे तो उन लोगों को,
+उस कार्य के लिये एक आत्मा मुझसे अधिक योग्य होगी:
+मैं तुम्हें उसके साथ मेरे प्रस्थान पर छोड़ दूँगा;
+```
+]]></message>
+</messages>

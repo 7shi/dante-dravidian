@@ -38,6 +38,12 @@ So bitter is it that death is little more. But in order to treat of the good tha
 8 しかしそこで見つけた善について論じるために、  
 9 私がそこで見た他の事柄について語ります。
 
+# Estonian
+
+7 Nii kibe on see et surm on veidi rohkem;
+8 Aga et käsitleda head mida seal leidsin,
+9 Räägin teistest asjadest mida seal olen näinud.
+
 # French
 
 7 Si amère est‑elle que la mort n’est que légèrement plus;
@@ -61,3 +67,39 @@ So bitter is it that death is little more. But in order to treat of the good tha
 7 Tiom amara estas ĝi ke morto estas iom pli;
 8 Sed por trakti pri la bono kiun mi trovis tie,
 9 Mi diros pri la aliaj aferoj kiujn mi vidis tie.
+
+# Interlingua
+
+7 Tanto es amar que poco es plus morte;
+8 ma pro tractar del bon que io trovava ibi,
+9 io dicera del alter cosas que io ha vidite ibi.
+
+# Hindi
+
+7 यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+8 परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+9 मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+
+# Bengali
+
+7 এতটাই তিক্ত যে মৃত্যু সামান্য বেশি;
+8 কিন্তু আমি সেখানে যে মঙ্গল পেয়েছি তা নিয়ে আলোচনা করতে,
+9 আমি সেখানে যে অন্যান্য জিনিসগুলি দেখেছি সেগুলি বলব।
+
+# German
+
+7 So bitter ist es, dass der Tod nur ein wenig mehr bitter ist;
+8 Aber um das Gute zu behandeln, das ich dort fand,
+9 Ich werde von den anderen Dingen erzählen, die ich dort gesehen habe.
+
+# Dutch
+
+7 Zo bitter is het dat de dood iets meer is;
+8 Maar om het goede dat ik daar vond te behandelen,
+9 Ik zal over de andere dingen die ik daar heb gezien vertellen.
+
+# Serbian (Latin script)
+
+7 Tako je gorka da je smrt malo više;
+8 Ali da bih govorio o dobru koje sam tamo našao,
+9 Reći ću o drugim stvarima koje sam tamo video.

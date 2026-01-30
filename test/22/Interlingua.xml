@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+64 Quando io vide ille in le grande desert,  
+65 «Miserere me», io clama a ille,  
+66 «qualcunque tu sia, o ombra o homine certe!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Interlingua) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------------------|------------------------|--------|
+| Quando | temporal conjunction “when” | **Quando** | when | OK |
+| vidi | past‑tense verb “I saw” | **vide** | I see / I saw (present) | **GRAMMAR** (tense mismatch) |
+| costui | demonstrative pronoun “him” | **ille** | he / him | OK |
+| nel | preposition “in the” (in + definite article) | **in le** | in the | OK |
+| gran | adjective “great” | **grande** | great | OK |
+| diserto | noun “desert” | **desert** | desert (English) | **WRONG** (lexical choice; should be *deserto*) |
+| Miserere | imperative “have pity” | **Miserere** | have pity | OK |
+| di | preposition “on / of” (introducing object of pity) | — (omitted) | — | **UNNECESSARY** (not required in Interlingua) |
+| me | pronoun “me” (object) | **me** | me | OK |
+| gridai | past‑tense verb “I cried (out)” | **clama** | I shout / I cry out | OK |
+| a | preposition “to” | **a** | to | OK |
+| lui | pronoun “him” (dative) | **ille** | him | OK |
+| qual | relative pronoun “whatever” | **qualcunque** | whatever | OK |
+| che | relative particle (linker) | — (omitted) | — | **UNNECESSARY** |
+| tu | pronoun “you” (subject) | **tu** | you | OK |
+| sii | subjunctive verb “you may be” | **sia** | you be | OK |
+| od | coordinating conjunction “or” | **o** | or | OK |
+| ombra | noun “shade” | **ombra** | shade | OK |
+| od (2nd) | coordinating conjunction “or” | **o** | or | OK |
+| omo | noun “man” (archaic) | **homine** | man | OK |
+| certo | adjective “certain / real” (qualifier) | **certe** | certainly / truly | **GRAMMAR** (adverbial form vs. adjective) |
+
+---
+
+### Items Requiring Attention  
+
+- **GRAMMAR**:  
+  - *vidi → vide* (tense should be past, e.g., *videva*).  
+  - *certo → certe* (adverbial form; source adjective “certain” should stay adjectival, e.g., *certo*).  
+
+- **WRONG**:  
+  - *diserto → desert* (English word used; correct Interlingua term is *deserto*).  
+
+- **UNNECESSARY**:  
+  - *di* (preposition not needed in the Interlingua imperative).  
+  - *che* (relative particle omitted in Interlingua).  
+
+All other mappings are **OK**.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**  
+  - Original: `Quando io vide ille in le grande desert,`  
+  - Issue: verb tense incorrect (present → past); noun “desert” not Interlingua (should be *deserto*).  
+  - Corrected: `Quando io vidi ille in le grande deserto,`  
+
+- **Line 65**  
+  - Original: `«Miserere me», io clama a ille,`  
+  - Issue: verb tense incorrect (present → past).  
+  - Corrected: `«Miserere me», io clamava a ille,`  
+
+- **Line 66**  
+  - Original: `«qualcunque tu sia, o ombra o homine certe!».`  
+  - Issue: adjective form “certe” wrong for modifying *homine* (should be *certo*).  
+  - Corrected: `«qualcunque tu sia, o ombra o homine certo!».`  
+
+```
+Quando io vidi ille in le grande deserto,
+«Miserere me», io clamava a ille,
+«qualcunque tu sia, o ombra o homine certo!».
+```
+]]></message>
+</messages>

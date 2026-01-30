@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+पर फिर जब मैं एक पहाड़ी के तल पर पहुँचा,  
+जहाँ वह घाटी समाप्त होती थी  
+जिसने मेरे दिल को डर से भर दिया था,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Hindi Mapping Table**
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|---|-------------|--------------------------------------|------------------------------|----------------------------|--------|
+| 1 | Ma | coordinating conjunction “but” | पर | **but** | OK |
+| 2 | poi | adverb of time “after, then” | फिर | **then** | OK |
+| 3 | ch'i' | “che io” – “that I / when I” (subordinator + subject) | जब मैं | **when I** | OK |
+| 4 | fui | auxiliary “had been” (passato remoto of *essere*) | — *(omitted)* | — | UNNECESSARY (auxiliary not required in Hindi) |
+| 5 | al | preposition + article “to the / at the” | पर | **at** | OK |
+| 6 | piè | noun “foot (of a hill)” | तल | **foot** | OK |
+| 7 | d'un | preposition + indefinite article “of a” | एक | **a** | OK |
+| 8 | colle | noun “hill” | पहाड़ी | **hill** | OK |
+| 9 | giunto | past participle “arrived, reached” | पहुँचा | **arrived** | OK |
+|10| là | demonstrative adverb “there” | जहाँ | **where / there** | OK |
+|11| dove | relative adverb “where” | जहाँ | **where** | OK |
+|12| terminava | imperfect “was ending” | समाप्त होती थी | **was ending** | OK |
+|13| quella | demonstrative adjective “that” | वह | **that** | OK |
+|14| valle | noun “valley” | घाटी | **valley** | OK |
+|15| che | relative pronoun “which” | जिसने | **which (that)** | OK |
+|16| m'avea | pluperfect “had (me) …” – causal verb “had filled” | भर दिया | **had filled** | OK |
+|17| di | preposition “of / with” | से | **with** | OK |
+|18| paura | noun “fear” | डर | **fear** | OK |
+|19| il | definite article “the” (masc.) | — *(omitted)* | — | UNNECESSARY (articles are not expressed in Hindi) |
+|20| cor | noun “heart” (archaic *cuore*) | दिल | **heart** | OK |
+|21| compunto | past participle “pierced, filled” | भर | **filled / pierced** | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `fui` (auxiliary verb) and `il` (definite article) – Hindi does not need these elements, so they were omitted.
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected in the Hindi rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: पर फिर जब मैं एक पहाड़ी के तल पर पहुँचा,
+  - Issue: none
+  - Corrected: पर फिर जब मैं एक पहाड़ी के तल पर पहुँचा,
+- Line 14:
+  - Original: जहाँ वह घाटी समाप्त होती थी
+  - Issue: none
+  - Corrected: जहाँ वह घाटी समाप्त होती थी
+- Line 15:
+  - Original: जिसने मेरे दिल को डर से भर दिया था,
+  - Issue: none
+  - Corrected: जिसने मेरे दिल को डर से भर दिया था,
+
+```
+पर फिर जब मैं एक पहाड़ी के तल पर पहुँचा,
+जहाँ वह घाटी समाप्त होती थी
+जिसने मेरे दिल को डर से भर दिया था,
+```
+]]></message>
+</messages>

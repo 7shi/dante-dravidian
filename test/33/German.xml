@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+e und sie hat eine Natur so bösartig und böse,  
+che die niemals ihren gierigen Willen befriedigt,  
+e und nach dem Essen ist sie hungriger als zuvor.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑German Mapping Table (derived from the Step 2 translation)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|-------------------|--------|
+| e (97) | coordinating conjunction “and” | e | “and” (kept literally) | **WRONG** – should be *und* |
+| ha (97) | verb “has” | hat | “has” | OK |
+| natura | noun “nature” | Natur | “nature” | OK |
+| sì | intensifier “so” | so | “so” | OK |
+| malvagia | adjective “malign” | bösartig | “malign” | OK |
+| e (second) | conjunction “and” | und | “and” | OK |
+| ria | adjective “evil” | böse | “evil” | OK |
+| che (98) | relative pronoun “that” | che | “that” (kept literally) | **WRONG** – should be *die* |
+| mai | adverb “never” | niemals | “never” | OK |
+| non | negative particle “not” (part of double‑negative) | – | – | **MISSING** |
+| empie | verb “sates / fills” | befriedigt | “sates” | OK |
+| la | definite article “the” | – | – | **MISSING** |
+| bramosa | adjective “greedy” | gierigen | “greedy” | OK |
+| voglia | noun “will / desire” | Willen | “will” | OK |
+| e (99) | conjunction “and” | e | “and” (kept literally) | **WRONG** – should be *und* |
+| dopo | preposition “after” | nach | “after” | OK |
+| ’l | definite article “the” (elided) | dem | “the” (dative) | OK |
+| pasto | noun “meal / food” | Essen | “food / meal” | OK |
+| ha (99) | verb “has” | ist | “is” | **WRONG / GRAMMAR** – should be *hat* (verb choice) |
+| più | comparative adverb “more” | hungriger | “more” (comparative) | OK |
+| fame | noun “hunger” | hungriger | “hunger” (comparative) | OK |
+| che (comparative) | conjunction “than” | als | “than” | OK |
+| pria | adverb “before” | zuvor | “before” | OK |
+
+---
+
+### Items that are **UNNECESSARY** (target words/phrases that do not correspond to any source token)
+
+- **sie** – personal pronoun required in German but absent in the Italian source.  
+- **eine** – indefinite article required for *Natur* in German but not present in the source.  
+- **die** – relative pronoun that should replace *che*; the literal *che* was kept, making *die* superfluous.  
+- **ihren** – possessive determiner for *Willen*; the Italian source uses the article *la* instead.  
+
+---
+
+### Summary of Problems
+
+- **WRONG**: literal retention of Italian *e* and *che* instead of German *und* and *die*.  
+- **MISSING**: the negative particle *non* and the article *la* have no German counterparts in the current translation.  
+- **GRAMMAR**: the verb *ha* (line 99) was rendered as *ist* (“is”) rather than the correct *hat* (“has”), breaking the intended predicate‑argument structure.  
+
+These issues should be corrected to obtain a faithful, grammatical German rendering of the original Italian lines.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 97**  
+  - Original: `e und sie hat eine Natur so bösartig und böse,`  
+  - Issue: **WRONG** – the Italian conjunction *e* was kept literally; it should be the German *und*.  
+  - Corrected: `und sie hat eine Natur so bösartig und böse,`
+
+- **Line 98**  
+  - Original: `che die niemals ihren gierigen Willen befriedigt,`  
+  - Issue: **WRONG** – the Italian relative pronoun *che* was kept literally; it should be the German *die*.  
+  - Corrected: `die niemals ihren gierigen Willen befriedigt,`
+
+- **Line 99**  
+  - Original: `e und nach dem Essen ist sie hungriger als zuvor.`  
+  - Issue: **WRONG** – the Italian conjunction *e* was kept literally; it should be the German *und*.  
+  - Corrected: `und nach dem Essen ist sie hungriger als zuvor.`
+
+```text
+und sie hat eine Natur so bösartig und böse,
+die niemals ihren gierigen Willen befriedigt,
+und nach dem Essen ist sie hungriger als zuvor.
+```
+]]></message>
+</messages>

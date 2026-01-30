@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ona mi je nametnula toliko težine  
+sa strahom koji je nastao od njenog pogleda,  
+da sam izgubio nadu u visinu.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|-----------------------|--------|
+| **questa** | The female agent who acts | ona | she | OK |
+| **mi** | Recipient/experiencer of the caused state | mi | me | OK |
+| **porse** | Acts of bringing about a feeling | nametnula | imposed / caused | OK |
+| **tanto** | Indicates a high degree of the following noun | toliko | so much | OK |
+| **di** (preposition) | Links the quantity adverb to the noun | — (encoded in genitive *težine*) | — | UNNECESSARY |
+| **gravezza** | The affective state imposed on the speaker (heaviness) | težine | of heaviness | OK |
+| **con** | Introduces an accompanying circumstance | sa | with | OK |
+| **la** (article) | Marks *paura* as specific | — (Serbian has no article) | — | UNNECESSARY |
+| **paura** | The emotion that arises from seeing her (fear) | strahom | fear (inst.) | OK |
+| **ch'uscia** | Relative clause verb; the fear **emerges** | koji je nastao | that came / that arose | OK |
+| **di** (source of fear) | Introduces the source of the fear (from) | od | from | OK |
+| **sua** | Possessor of the *vista* (her) | njenog | her | OK |
+| **vista** | The visual perception of the female agent (sight) | pogleda | sight / view | OK |
+| **ch'io** | Relative pronoun + subject of *perdei* (that I) | da | that (introducing clause) | OK |
+| **perdei** | The act of no longer possessing *speranza* (lost) | izgubio | lost | OK |
+| **la** (article) | Marks *speranza* as specific | — (Serbian has no article) | — | UNNECESSARY |
+| **speranza** | The mental expectation that is lost (hope) | nadu | hope (acc.) | OK |
+| **de** | Links *speranza* to its content (of) | u | in / into | OK |
+| **l'altezza** | The lofty goal or aspiration referenced (the height) | visinu | height (acc.) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - `di` (line 52) – preposition omitted in Serbian (genitive case conveys the relation).  
+  - `la` (line 53) – definite article not used in Serbian.  
+  - `la` (line 54) – definite article not used in Serbian.  
+
+No source words are **MISSING**, **WRONG**, or exhibit **GRAMMAR** errors in the Serbian translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: ona mi je nametnula toliko težine
+  - Issue: none
+  - Corrected: ona mi je nametnula toliko težine
+- Line 53:
+  - Original: sa strahom koji je nastao od njenog pogleda,
+  - Issue: none
+  - Corrected: sa strahom koji je nastao od njenog pogleda,
+- Line 54:
+  - Original: da sam izgubio nadu u visinu.
+  - Issue: none
+  - Corrected: da sam izgubio nadu u visinu.
+
+```
+ona mi je nametnula toliko težine
+sa strahom koji je nastao od njenog pogleda,
+da sam izgubio nadu u visinu.
+```
+]]></message>
+</messages>

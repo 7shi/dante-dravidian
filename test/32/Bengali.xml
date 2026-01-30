@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+এই দানবের জন্য যার জন্য তুমি চিৎকার করছ,  
+এটি অন্যকে তার পথে পার হতে দেয় না,  
+কিন্তু এতটাই বাধা দেয় যে তা তাকে হত্যা করে;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| **ché** | causal conjunction “because” (introduces cause) | যার জন্য | “because of which” | OK |
+| **questa** | demonstrative adjective “this” (specifies the beast) | এই | “this” | OK |
+| **bestia** | noun “beast” (the animal causing trouble) | দানবের | “beast’s” (genitive) | OK |
+| **per** | preposition “for” (marks the cause/relative clause) | জন্য | “for” | OK |
+| **la** | definite article (feminine singular) – no lexical meaning in Bengali | — | — | **UNNECESSARY** |
+| **qual** | relative pronoun “which” (refers back to *bestia*) | যার | “which/that” | OK |
+| **tu** | 2nd‑person singular pronoun “you” (the addressee) | তুমি | “you” | OK |
+| **gride** | verb “cry out” (expresses distress) | চিৎকার করছ | “cry out” | OK |
+| **non** | negation adverb “not” (denies permission) | না | “not” (part of “দেয় না”) | OK |
+| **lascia** | verb “lets / allows” (permissive action) | দেয় | “gives / allows” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | অন্যকে | “another person” | OK |
+| **pasar** | infinitive “to pass” (movement through a way) | পার হতে | “to be able to pass” | OK |
+| **per** | preposition “through / along” (introduces the path) | পথে | “along the way” | OK |
+| **la** | definite article (feminine singular) – omitted in Bengali | — | — | **UNNECESSARY** |
+| **sua** | possessive adjective “its” (belongs to the beast) | তার | “its” | OK |
+| **via** | noun “way / path” (the beast’s route) | পথে | “way / path” | OK |
+| **ma** | coordinating conjunction “but” (contrast) | কিন্তু | “but” | OK |
+| **tanto** | adverb of degree “so much / to such an extent” | এতটাই | “so much / to that degree” | OK |
+| **lo** | pronoun “him / it” (the person being hindered) | তা | “him / it” | OK |
+| **'mpedisce** | verb “hinders / impedes” (blocks passage) | বাধা দেয় | “hinders” | OK |
+| **che** | complementizer “that” (introduces result clause) | যে | “that” | OK |
+| **l’uccide** | verb “kills him” (lethal consequence) | তাকে হত্যা করে | “kills him” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: the Italian definite article **la** (appears twice) has no direct counterpart in Bengali and is naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the Bengali translation respects gender‑neutral agreement and number conventions of the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: এই দানবের জন্য যার তুমি চিৎকার করছ,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: এটি অন্যকে তার পথে পার হতে দেয় না,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: কিন্তু এতটাই বাধা দেয় যে তা তাকে হত্যা করে;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+এই দানবের জন্য যার তুমি চিৎকার করছ,
+এটি অন্যকে তার পথে পার হতে দেয় না,
+কিন্তু এতটাই বাধা দেয় যে তা তাকে হত্যা করে;
+```
+]]></message>
+</messages>

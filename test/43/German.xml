@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+In allen Teilen herrscht er und dort regiert er;  
+Dort ist seine Stadt und sein hoher Sitz:  
+O glücklicher den er dort erwählt!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-------------------------------------------|----------------------|------------------------|--------|
+| In | locative preposition introducing the domain “all parts” | In | “in” | OK |
+| tutte | universal quantifier “all” modifying *parti* | allen | “all” | OK |
+| parti | set of spatial divisions of the world | Teilen | “parts” | OK |
+| impera | 3sg present “governs” – the Sovereign rules over each part | herrscht | “governs” | OK |
+| e | coordinative “and” linking two predicates | und | “and” | OK |
+| quivi | locative adverb “there” (place of reign) | dort | “there” | OK |
+| regge | 3sg present “reigns” – holds sovereign authority at that place | regiert | “reigns” | OK |
+| quivi | locative adverb “there” (place of existence) | Dort | “there” | OK |
+| è | copular verb “is” – asserts existence | ist | “is” | OK |
+| la | definite article (feminine singular) – marks *città* as specific | – (article omitted) | “the” | **UNNECESSARY** |
+| sua | possessive adjective “his” – ownership by the Sovereign | seine | “his” | OK |
+| città | noun “city” – the Sovereign’s urban domain | Stadt | “city” | OK |
+| e | coordinative “and” linking *città* and *seggio* | und | “and” | OK |
+| l'alto | adjective “lofty” (with article) qualifying *seggio* | hoher | “lofty” | OK |
+| seggio | noun “seat” – the Sovereign’s elevated throne | Sitz | “seat” | OK |
+| oh | interjection expressing vocative exclamation | O | “O” | OK |
+| felice | adjective “happy” describing the chosen one | glücklicher | “happy” | **WRONG** (comparative form used) |
+| colui | demonstrative pronoun “he who / the one who” – antecedent of relative clause | den | “the one (acc.)” | OK |
+| cu' | relative pronoun “who / whom” introducing the clause | er | “he” (subject of the clause) | OK |
+| ivi | locative adverb “there / thereto” – place of election | dort | “there” | OK |
+| elegge | 3sg present “elects” – the Sovereign selects the individual | erwählt | “elects” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *la* – the definite article is not required in German when a possessive adjective (*seine*) is used.  
+- **WRONG**: *felice* rendered as **glücklicher** (comparative “happier”) instead of a positive form (**glücklich** or **glücklicher** as a noun).  
+- No **MISSING**, **GRAMMAR**, or other **UNNECESSARY** elements were detected beyond those listed.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: In allen Teilen herrscht er und dort regiert er;  
+  - Issue: none  
+  - Corrected: In allen Teilen herrscht er und dort regiert er;  
+
+- Line 2:  
+  - Original: Dort ist seine Stadt und sein hoher Sitz:  
+  - Issue: none (the Italian article “la” is naturally omitted in German)  
+  - Corrected: Dort ist seine Stadt und sein hoher Sitz:  
+
+- Line 3:  
+  - Original: O glücklicher den er dort erwählt!  
+  - Issue: WRONG – adjective should be positive “glücklich” instead of comparative “glücklicher”  
+  - Corrected: O glücklich den er dort erwählt!  
+
+```
+In allen Teilen herrscht er und dort regiert er;
+Dort ist seine Stadt und sein hoher Sitz:
+O glücklich den er dort erwählt!
+```
+]]></message>
+</messages>

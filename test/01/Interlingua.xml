@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+In medio del cammino de nostre vita  
+io trovava me in una selva obscur,  
+pro le via recte esseva perdite.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Eng.) | Status |
+|-------------|-----------------------|--------------------|--------------------------|--------|
+| Nel | “in the” (locative) | **In** | in | OK |
+| mezzo | “middle, midpoint” | **medio** | middle | OK |
+| del | “of the” (genitive) | **del** | of the | OK |
+| cammin | “journey, road” (archaic) | **cammino** | road/journey | OK |
+| di | “of” (genitive) | **de** | of | OK |
+| nostra | “our” (possessive) | **nostre** | our | OK |
+| vita | “life” | **vita** | life | OK |
+| mi | reflexive “myself” | **me** | myself | OK |
+| ritrovai | “found (past)” | **trovava** | was finding / found (imperfect) | **WRONG** (tense does not match the simple past) |
+| per | “through, within” | **in** | in/within | OK |
+| una | indefinite article “a” | **una** | a | OK |
+| selva | “forest, wood” | **selva** | forest | OK |
+| oscura | “dark” | **obscur** | dark | OK |
+| ché | “because, for” (causal) | **pro** | for | OK |
+| la | definite article “the” (fem.) | **le** | the | OK |
+| diritta | “right, straight” (adj.) | **recte** | straight/right (adverbial use) | OK |
+| via | “way, path” | **via** | way | OK |
+| era | “was” (imperfect of *essere*) | **esseva** | was (imperfect) | OK |
+| smarrita | “lost, missed” | **perdite** | lost/missed | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG:** *ritrovai → trovava* – the Interlingua verb is in the imperfect (“was finding”) rather than the simple past required for “found”.  
+- No **MISSING**, **GRAMMAR**, or **UNNECESSARY** items were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: **In medio del cammino de nostre vita**
+  - Issue: none
+  - Corrected: **no change**
+
+- Line 2:
+  - Original: **io trovava me in una selva obscur,**
+  - Issue: **WRONG** (reflexive pronoun order) & **GRAMMAR** (adjective form)
+  - Corrected: **io me trovava in una selva obscure,**
+
+- Line 3:
+  - Original: **pro le via recte esseva perdite.**
+  - Issue: **GRAMMAR** (past‑participle gender/number)
+  - Corrected: **pro le via recte esseva perdita.**
+
+```interlingua
+In medio del cammino de nostre vita
+io me trovava in una selva obscure,
+pro le via recte esseva perdita.
+```
+]]></message>
+</messages>

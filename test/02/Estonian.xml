@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ah kui raske on öelda mis see oli  
+see mets on metsik ja karm ja tihe  
+mis mõttes uuendab hirmu!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Ahi | exclamation “Ah!” | Ah | Ah! | OK |
+| quanto | intensifier “how” (degree) | kui | how | OK |
+| a | infinitive marker “to” | – | – | UNNECESSARY |
+| dir | verb “to tell” | öelda | to tell | OK |
+| qual | interrogative “what” | mis | what | OK |
+| era | past copula “was” | oli | was | OK |
+| è | present copula “is” | on | is | OK |
+| cosa | noun “thing” (abstract) | – | – | UNNECESSARY |
+| dura | adjective “hard / difficult” | raske | hard / difficult | OK |
+| esta | demonstrative “this” | see | this | OK |
+| selva | noun “forest / wood” | mets | forest / wood | OK |
+| selvaggia | adjective “wild” | metsik | wild | OK |
+| e (1) | coordinating conjunction “and” | ja | and | OK |
+| aspra | adjective “rough” | karm | rough | OK |
+| e (2) | coordinating conjunction “and” | ja | and | OK |
+| forte | adjective “strong / dense” | tihe | dense | OK |
+| (implicit copula) | – | on | is | UNNECESSARY (added for Estonian clause) |
+| che | relative pronoun “which / that” | mis | which / that | OK |
+| nel | preposition + article “in the” | – | – | UNNECESSARY (encoded in “mõttes”) |
+| pensier | noun “thought” (locative) | mõttes | in thought | OK |
+| rinova | verb “renews” | uuendab | renews | OK |
+| la | definite article “the” | – | – | UNNECESSARY |
+| paura! | noun “fear!” | hirmu! | fear! | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: a, cosa, nel, la, (implicit) **on** in line 5 (copula added for Estonian syntax).  
+- **MISSING / WRONG / GRAMMAR**: none.  
+
+All other source tokens are correctly rendered in the Estonian translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 4:
+  - Original: Ah kui raske on öelda mis see oli
+  - Issue: none
+  - Corrected: no change
+- Line 5:
+  - Original: see mets on metsik ja karm ja tihe
+  - Issue: none
+  - Corrected: no change
+- Line 6:
+  - Original: mis mõttes uuendab hirmu!
+  - Issue: none
+  - Corrected: no change
+
+```
+Ah kui raske on öelda mis see oli
+see mets on metsik ja karm ja tihe
+mis mõttes uuendab hirmu!
+```
+]]></message>
+</messages>

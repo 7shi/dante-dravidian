@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+So bitter ist es dass der Tod nur ein wenig mehr ist;  
+Aber um das Gute zu behandeln das ich dort fand,  
+Ich werde von den anderen Dingen erzählen die ich dort gesehen habe.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Tant' | “so, to such a degree” (intensifier) | **So** | “so” | OK |
+| è | 3 sg present of *essere* – copula | **ist** | “is” | OK |
+| amara | adjective “bitter” | **bitter** | “bitter” | OK |
+| che | resultative/comparative subordinator “that” | **dass** | “that” | OK |
+| poco | adverb of slight degree “little, only a little” | **nur ein wenig** | “only a little” | OK |
+| è (2nd) | copula in comparative clause | **ist** | “is” | OK |
+| più | comparative adverb “more” | **mehr** | “more” | OK |
+| morte | noun “death” | **Tod** | “death” | OK |
+| ma | coordinating conjunction “but” | **Aber** | “but” | OK |
+| per | preposition of purpose “in order to” | **um** | “in order to” | OK |
+| trattar | infinitive “to treat / to discuss” | **zu behandeln** | “to treat” | OK |
+| del | contraction *di + il* “of the” | **das** | “the” (object article) | OK |
+| ben | noun “good” | **Gute** | “good” | OK |
+| ch' | relative pronoun “that/which” | **das** | “that” | OK |
+| i' | pronoun “I” (subject of relative clause) | **ich** | “I” | OK |
+| vi | adverbial locative “there” | **dort** | “there” | OK |
+| trovai | 1 sg past “found” | **fand** | “found” | OK |
+| dirò | 1 sg future “I will say/tell” | **Ich werde** | “I will” | OK |
+| de | preposition “of” (used here with *von* “from”) | **von** | “of/from” | OK |
+| l'altre | adjective + article “the other (fem. pl.)” | **den anderen** | “the other” (dative) | OK |
+| cose | noun “things” (pl.) | **Dingen** | “things” (dative) | OK |
+| ch' | relative pronoun “that/which” | **die** | “that/which” | OK |
+| i' | pronoun “I” (subject of relative clause) | **ich** | “I” | OK |
+| v' | adverbial locative “there” | **dort** | “there” | OK |
+| ho | auxiliary “have” (perfect) | **habe** | “have” | OK |
+| scorte | past participle “seen” | **gesehen** | “seen” | OK |
+| **zu** (German infinitive marker) | – (required by German infinitive construction) | **zu** | “to” (infinitive marker) | **UNNECESSARY** (no source counterpart) |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **zu** – required in German infinitive “zu behandeln” but has no direct lexical counterpart in the Italian source.
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected at the word‑level (the German sentences are grammatically acceptable, aside from optional commas before relative clauses, which are punctuation rather than lexical issues).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7:
+  - Original: So bitter ist es dass der Tod nur ein wenig mehr ist;
+  - Issue: missing comma before “dass”; missing adjective “bitter” after “mehr”.
+  - Corrected: So bitter ist es, dass der Tod nur ein wenig mehr bitter ist;
+
+- Line 8:
+  - Original: Aber um das Gute zu behandeln das ich dort fand,
+  - Issue: missing comma before “das”.
+  - Corrected: Aber um das Gute zu behandeln, das ich dort fand,
+
+- Line 9:
+  - Original: Ich werde von den anderen Dingen erzählen die ich dort gesehen habe.
+  - Issue: missing comma before “die”.
+  - Corrected: Ich werde von den anderen Dingen erzählen, die ich dort gesehen habe.
+
+```
+So bitter ist es, dass der Tod nur ein wenig mehr bitter ist;
+Aber um das Gute zu behandeln, das ich dort fand,
+Ich werde von den anderen Dingen erzählen, die ich dort gesehen habe.
+```
+]]></message>
+</messages>

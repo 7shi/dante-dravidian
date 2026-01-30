@@ -38,6 +38,12 @@ While I was falling back to the low place, before mine eyes appeared one who thr
 62 目の前に現れた
 63 長い沈黙の後にかすれたように聞こえた.
 
+# Estonian
+
+61 Kui ma langesin tagasi madalasse kohta,
+62 enne mu silmi ilmus
+63 kes läbi pika vaikuse näis kähisev.
+
 # French
 
 61 Alors que je retombais vers le lieu bas,
@@ -61,3 +67,39 @@ While I was falling back to the low place, before mine eyes appeared one who thr
 61 Dum mi falis reen al la malalta loko,
 62 antaŭ miaj okuloj al mi aperis iu
 63 kiu per longa silento ŝajnis raŭga.
+
+# Interlingua
+
+61 Durante que io cadeva al basse loco,
+62 davanti a mi oculos me se offereva
+63 qui per longe silentio pareva fioco.
+
+# Hindi
+
+61 61 जब मैं नीचे के स्थान की ओर गिर रहा था,
+62 62 मेरी आँखों के सामने एक ऐसा व्यक्ति प्रकट हुआ
+63 63 जो लंबे मौन के बाद खुरदुरा प्रतीत हुआ।
+
+# Bengali
+
+61 যখন আমি নিচু স্থানে ফিরে যাচ্ছিলাম,
+62 আমার চোখের সামনে এক ব্যক্তি উপস্থিত হল
+63 যিনি দীর্ঘ নীরবতার পর কণ্ঠস্বর হ্রস্ব শোনাতেন।
+
+# German
+
+61 Während ich zum niedrigen Ort hinabstieg,
+62 vor meinen Augen erschien mir
+63 der durch lange Stille heiser wirkte.
+
+# Dutch
+
+61 Terwijl ik terugdaalde naar de lage plaats,
+62 voordat mij voor de ogen werd getoond
+63 die door lange stilte zwak leek.
+
+# Serbian (Latin script)
+
+61 Dok sam se spuštao nazad u nisko mesto,
+62 pred mojim očima se pojavio
+63 koji je kroz dugu tišinu delovao hrapavo.

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+An die, die du danach aufsteigen willst,  
+wird eine Seele dafür würdiger sein als ich:  
+mit ihr werde ich dich bei meinem Aufbruch lassen;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → German)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word/Phrase (German) | Back‑Translation (German → English) | Status |
+|-------------|--------------------------------|-----------------------------|--------------------------------------|--------|
+| **A** | preposition introducing the addressees | **An** | “to / at” | OK |
+| **le** | definite article (plural) specifying “those” | **die** | “the” (plural) | OK |
+| **quai** | relative pronoun referring to the addressees | **die** | “who/that” (relative) | OK |
+| **poi** | adverb indicating temporal succession | **danach** | “afterwards” | OK |
+| **se** | subordinating conjunction “if” (conditional) – not needed in German | — | — | **UNNECESSARY** |
+| **tu** | 2nd‑person singular pronoun, subject of “will” | **du** | “you” | OK |
+| **vorrai** | future volitional “will want” | **willst** | “want / will” (present, expresses future) | OK |
+| **salire** | infinitive “to ascend” | **aufsteigen** | “to ascend” | OK |
+| **anima** | noun “soul” | **Seele** | “soul” | OK |
+| **fia** | future copula “shall be” | **wird … sein** | “will … be” | OK |
+| **a** | preposition introducing the domain of worthiness | **dafür** | “for that” | OK |
+| **ciò** | demonstrative “that” (the ascent) | **dafür** | “for that” | OK |
+| **più** | comparative marker “more” | **würdiger** (comparative adjective) | “more worthy” (as part of “würdiger”) | OK |
+| **di** | preposition introducing the standard of comparison “than” | **als** | “than” | OK |
+| **me** | 1st‑person pronoun, comparison baseline | **ich** | “I” | OK |
+| **degna** | adjective “worthy” (comparative with πiù) | **würdig** (base of “würdiger”) | “worthy” | OK |
+| **con** | preposition “with” | **mit** | “with” | OK |
+| **lei** | 3rd‑person feminine pronoun “her” | **ihr** | “her” | OK |
+| **ti** | 2nd‑person singular accusative “you” | **dich** | “you” (accusative) | OK |
+| **lascerò** | future “will leave” (future auxiliary + infinitive) | **lassen** (with auxiliary *werde*) | “to leave / let” | OK |
+| **nel** | contraction “in + the” → preposition “at”/“in” | **bei** | “at / during” | OK |
+| **mio** | possessive adjective “my” | **meinem** | “my” (dative) | OK |
+| **partire** | infinitive nominalised “departure” | **Aufbruch** | “departure” | OK |
+
+---
+
+### Items Requiring Attention
+- **se** – marked **UNNECESSARY** because German does not require an explicit conditional conjunction in this construction.  
+
+All other source tokens are correctly rendered in the German translation, with appropriate grammatical agreement and no missing or erroneous elements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 121**  
+  - Original: *An die, die du danach aufsteigen willst,*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 122**  
+  - Original: *wird eine Seele dafür würdiger sein als ich:*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 123**  
+  - Original: *mit ihr werde ich dich bei meinem Aufbruch lassen;*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+```
+An die, die du danach aufsteigen willst,
+wird eine Seele dafür würdiger sein als ich:
+mit ihr werde ich dich bei meinem Aufbruch lassen;
+```
+]]></message>
+</messages>

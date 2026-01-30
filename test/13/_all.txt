@@ -38,6 +38,12 @@ The time was at the beginning of the morning, and the Sun was mounting upward wi
 38 そして太陽はあの星々と共に上へ昇っていた  
 39 それらは神の愛が最初にその美しいものを動かしたとき彼と共にいた
 
+# Estonian
+
+37 Aeg oli hommiku alguses,
+38 ja päike tõusis üles koos nende tähtedega
+39 kes olid temaga kui jumalik armastus
+
 # French
 
 37 Le temps était au début du matin,
@@ -61,3 +67,39 @@ The time was at the beginning of the morning, and the Sun was mounting upward wi
 37 La tempo estis je la komenco de la mateno,
 38 kaj la suno estis leviĝanta supren kun tiuj steloj
 39 kiuj estis kun li kiam la Dia Amo
+
+# Interlingua
+
+37 Le tempore esseva al initio del matino,
+38 e le sol ascendiva verso su con illas stellas
+39 que esseva con illo quando le amor divine
+
+# Hindi
+
+37 समय सुबह के प्रारम्भ में था,
+38 और सूर्य उन तारों के साथ ऊपर की ओर उठ रहा था
+39 जो उसके साथ थे जब दिव्य प्रेम
+
+# Bengali
+
+37 সকালবেলার শুরুতে সময় ছিল,
+38 এবং সূর্য সেই নক্ষত্রগুলোর সঙ্গে উপরে উঠছিল
+39 যে তারা তার সঙ্গে ছিল যখন দিভ্য প্রেম
+
+# German
+
+37 Die Zeit war am Anfang des Morgens,
+38 und die Sonne stieg nach oben mit jenen Sternen
+39 denen mit ihm waren als die göttliche Liebe
+
+# Dutch
+
+37 De tijd was aan het begin van de ochtend,
+38 en de zon bewoog zich omhoog met die sterren
+39 die bij hem waren toen de goddelijke liefde
+
+# Serbian (Latin script)
+
+37 Vreme je bilo na početku jutra,
+38 i sunce se uzdizalo prema gore sa tim zvezdama
+39 koje su bile s njim kada je božanska ljubav

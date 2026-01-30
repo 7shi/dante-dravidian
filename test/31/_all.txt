@@ -38,6 +38,12 @@
 92 彼は私が泣いているのを見て答えた、
 93 もしこの野蛮な場所から逃れたいなら；
 
+# Estonian
+
+91 Sulle on vaja võtta teine teekond,
+92 ta vastas kui nägi mind nutmas,
+93 kui soovid põgeneda sellest metsikust kohast;
+
 # French
 
 91 «Il te convient de prendre un autre chemin», 
@@ -61,3 +67,39 @@
 91 «Al vi konvenas teni alian vojaĝon»,  
 92 Li respondis post kiam li vidis min plori,  
 93 «se vi volas eskapi de ĉi tiu sovaĝa loko;»
+
+# Interlingua
+
+91 A te conveni tener alter viage,
+92 Il respondeva quando ille videva me plorante,
+93 si tu vole escapar de iste loco salvaje;
+
+# Hindi
+
+91 तुम्हें एक और यात्रा रखना आवश्यक है,
+92 उसने उत्तर दिया जब उसने मुझे रोते हुए देखा,
+93 यदि तुम इस जंगली स्थान से बचना चाहते हो;
+
+# Bengali
+
+91 তোমার আরেকটি যাত্রা গ্রহণ করা উচিত,
+92 সে উত্তর দিল যখন সে আমাকে কাঁদতে দেখল,
+93 যদি তুমি এই নিষ্ঠুর স্থান থেকে পালাতে চাও;
+
+# German
+
+91 Dir ist es geboten, einen anderen Weg zu halten,
+92 Er antwortete, als er mich weinen sah,
+93 wenn du aus diesem wilden Ort entkommen willst;
+
+# Dutch
+
+91 Het is u verplicht een andere reis te maken,
+92 Hij antwoordde nadat hij mij zag huilen,
+93 als u wilt ontsnappen aan deze wrede plaats;
+
+# Serbian (Latin script)
+
+91 Treba da držiš drugi put,
+92 Odgovorio je kad me je video kako plačem,
+93 ako želiš da pobegneš iz ovog divljeg mesta;

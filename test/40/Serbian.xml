@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+i videćeš one koji su zadovoljni  
+u vatri jer se nadaju da dođu  
+kad god bude do blagoslovenog naroda.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| e | coordinating conjunction (sequence) | i | and/then | OK |
+| vederai | future 2nd sg. “you will see” | videćeš | you will see | OK |
+| color | demonstrative pronoun “those” | one | those | OK |
+| che | relative pronoun “who/that” | koji | who | OK |
+| son | copular verb “are” (3rd pl.) | su | are | OK |
+| contenti | adjective “contented, satisfied” | zadovoljni | contented | OK |
+| nel | preposition “in the” | u | in | OK |
+| foco | noun “fire” (locative) | vatri | fire | OK |
+| perché | causal conjunction “because” | jer | because | OK |
+| speran | verb “they hope” (present) | nadaju | they hope | OK |
+| di | infinitive marker “to” | da | that / to | OK |
+| venire | infinitive “to come” | dođu | they come | OK |
+| quando | temporal adverb “whenever” | kad | when | OK |
+| che | particle reinforcing temporal clause | god | (part of “kad god”) | OK |
+| sia | subjunctive “may be” | bude | may be | OK |
+| a | preposition “to” (direction) | do | to | OK |
+| le | definite article (feminine plural) | — (omitted) | — | **UNNECESSARY** |
+| beate | adjective “blessed” | blagoslovenog | blessed (genitive) | OK |
+| genti | noun “folk, people” (plural) | naroda | people (genitive) | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *le* – Serbian does not use definite articles, so the article is naturally omitted. No other tokens are missing, wrong, or contain grammatical mismatches.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 118**  
+  - Original: i videćeš one koji su zadovoljni  
+  - Issue: none  
+  - Corrected: i videćeš one koji su zadovoljni  
+
+- **Line 119**  
+  - Original: u vatri jer se nadaju da dođu  
+  - Issue: none  
+  - Corrected: u vatri jer se nadaju da dođu  
+
+- **Line 120**  
+  - Original: kad god bude do blagoslovenog naroda.  
+  - Issue: none  
+  - Corrected: kad god bude do blagoslovenog naroda.  
+
+```
+i videćeš one koji su zadovoljni
+u vatri jer se nadaju da dođu
+kad god bude do blagoslovenog naroda.
+```
+]]></message>
+</messages>

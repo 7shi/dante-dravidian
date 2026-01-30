@@ -38,6 +38,12 @@ After I had rested a little my weary body I took my way again along the desert s
 29 再び砂漠の斜面を通って道を進んだ,
 30 それでしっかりした足は常に低い方だった.
 
+# Estonian
+
+28 Pärast veidi puhanud väsinud keha,
+29 Jätkasin teed kõrbe kallast mööda,
+30 nii et kindel jalg oli alati madalam.
+
 # French
 
 28 Après avoir reposé un peu mon corps fatigué,
@@ -61,3 +67,39 @@ After I had rested a little my weary body I took my way again along the desert s
 28 Post kiam mi iomete ripozis, mia laca korpo,
 29 Mi reprenis la vojon laŭ la dezerta deklivo,
 30 tiel ke la firma piedo ĉiam estis la plej malsupra.
+
+# Interlingua
+
+28 Postea io habeva reposate un poco mi corpore fatigate,
+29 Io reprendeva le via per le declive desertic,
+30 sic que le pede ferme esseva sempre le plus basso.
+
+# Hindi
+
+28 जब मैंने थोड़ा आराम किया, मेरा थका हुआ शरीर,
+29 मैं फिर से रास्ता लेता हूँ, निर्जन ढलान पर,
+30 ताकि स्थिर पैर हमेशा सबसे नीचे था।
+
+# Bengali
+
+28 আমি একটু বিশ্রাম নেওয়ার পরে আমার ক্লান্ত দেহ,
+29 আমি আবার মরুভূমির ঢাল বরাবর পথ নিলাম,
+30 যাতে দৃঢ় পা সর্বদা নিচেরটি ছিল।
+
+# German
+
+28 Nachdem ich mich ein wenig ausgeruht hatte, mein müder Körper,
+29 ging ich den Weg entlang der verlassenen Böschung,
+30 so dass der feste Fuß immer der tiefere war.
+
+# Dutch
+
+28 Toen ik een beetje had gerust mijn vermoeide lichaam,
+29 Nam ik weer de weg langs de verlaten helling,
+30 zodat de stevige voet altijd de lagere was.
+
+# Serbian (Latin script)
+
+28 Posle što sam malo odmorio svoje umorno telo,
+29 ponovo sam krenuo putem po pustinjskoj padini,
+30 tako da je čvrsto stopalo uvek bilo niže.

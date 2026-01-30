@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Und wie jener der mit erschöpfter Luft,  
+aus dem Meer an das Ufer gekommen,  
+er wendet sich zum gefährlichen Wasser und blickt,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑German Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|-------------------|--------|
+| **E** | coordinating conjunction linking to previous clause | **Und** | “and” | OK |
+| **come** | comparative particle “as” | **wie** | “as” | OK |
+| **quei** | demonstrative noun, “those / one” | **jener** | “that one” | OK |
+| **che** | relative pronoun “who” | **der** | “who” (relative) | OK |
+| **con** | preposition “with” (instrumental) | **mit** | “with” | OK |
+| **lena** | noun “breath” (exhausted) | **Luft** | “air / breath” | OK |
+| **affannata** | adjective “spent, exhausted” | **erschöpfter** | “exhausted” | **GRAMMAR** (gender mismatch – should be *erschöpfte*) |
+| **uscito** | verb “issued, came out” | **gekommen** | “came” | OK |
+| **fuor** | preposition “out of” | **aus** | “out of” | OK |
+| **del** | preposition + article “of the” | **dem** | “the” (dative) | OK |
+| **pelago** | noun “sea” | **Meer** | “sea” | OK |
+| **a** (line 23) | preposition “to / at” (direction) | **an** | “to” | OK |
+| **la** | definite article feminine singular | **das** | “the” (neuter accusative) | OK |
+| **riva** | noun “shore” | **Ufer** | “shore” | OK |
+| **si** | reflexive pronoun (3rd person) | **sich** | “himself” | OK |
+| **volge** | verb “turns” | **wendet** | “turns” | OK |
+| **a** (line 24) | preposition “to” (with article) | **zum** | “to the” | OK |
+| **l'acqua** | noun “water” | **Wasser** | “water” | OK |
+| **perigliosa** | adjective “perilous” | **gefährlichen** | “dangerous” | OK |
+| **e** | coordinating conjunction “and” | **und** | “and” | OK |
+| **guata** | verb “gazes, looks” | **blickt** | “looks” | OK |
+| **er** *(added in German for subject)* | personal pronoun “he” (not present in source) | **er** | “he” | **UNNECESSARY** (required by German syntax but not in source) |
+
+---
+
+### Issues Detected
+- **GRAMMAR:** *affannata* → **erschöpfter** – adjective gender does not agree with the feminine noun *Luft* (should be *erschöpfte Luft*).  
+- **UNNECESSARY:** **er** – German needs an explicit subject pronoun, but the source Italian clause has no equivalent pronoun.  
+
+All other source tokens are represented correctly in the German translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 22:
+  - Original: Und wie jener der mit erschöpfter Luft,
+  - Issue: none
+  - Corrected: Und wie jener der mit erschöpfter Luft,
+- Line 23:
+  - Original: aus dem Meer an das Ufer gekommen,
+  - Issue: none
+  - Corrected: aus dem Meer an das Ufer gekommen,
+- Line 24:
+  - Original: sich wendet zum gefährlichen Wasser und blickt,
+  - Issue: none
+  - Corrected: sich wendet zum gefährlichen Wasser und blickt,
+
+```
+Und wie jener der mit erschöpfter Luft,
+aus dem Meer an das Ufer gekommen,
+sich wendet zum gefährlichen Wasser und blickt,
+```
+]]></message>
+</messages>

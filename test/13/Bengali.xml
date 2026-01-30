@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+সকালবেলার শুরুতে সময় ছিল,  
+এবং সূর্য সেই নক্ষত্রগুলোর সঙ্গে উপরে উঠছিল  
+যে তারা তার সঙ্গে ছিল যখন দিভ্য প্রেম
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| Temp' | “time” – the temporal interval being spoken about | **সময়** | “time” | OK |
+| era | Copular verb “was” – predicate of existence | **ছিল** | “was” | OK |
+| dal | Preposition “from the” (introduces locative phrase) | — | — | **UNNECESSARY** (Bengali expresses the locative inside “শুরুতে”) |
+| principio | “beginning” – the initial point of the morning | **শুরুতে** | “at the beginning” | OK |
+| del | Preposition “of the” (links “principio” to “mattino”) | — | — | **UNNECESSARY** (no article/genitive marker needed) |
+| mattino | “morning” – the daily period that is beginning | **সকালবেলার** | “of the morning” | OK |
+| e | Coordinating conjunction “and” – joins clauses | **এবং** | “and” | OK |
+| 'l | Definite article “the” (determines “sol”) | — | — | **UNNECESSARY** (articles are omitted in Bengali) |
+| sol | “Sun” – the celestial body that is moving | **সূর্য** | “Sun” | OK |
+| montava | Verb “was mounting” – ongoing upward motion | **উঠছিল** | “was rising / mounting” | OK |
+| 'n | Preposition “in” (part of idiom “'n sù”) | — | — | **UNNECESSARY** (direction expressed by “উপরে”) |
+| sù | Adverb “upward” – completes the directional meaning | **উপরে** | “upward” | OK |
+| con | Preposition “with” – introduces accompanying entities | **সঙ্গে** | “with” | OK |
+| quelle | Demonstrative adjective “those” – specifies which stars | **সেই** | “those” | OK |
+| stelle | Noun “stars” – the luminous bodies accompanying the Sun | **নক্ষত্রগুলোর** | “of the stars” (genitive plural) | OK |
+| ch'eran | Relative clause “that were” – links stars to previous clause | **যে … ছিল** (realised as “যে … ছিল” in the sentence) | “that … were” | OK |
+| con (2nd) | Preposition “with” – marks accompaniment of “lui” | **সঙ্গে** | “with” | OK |
+| lui | Pronoun “him” – the Sun, the entity accompanied | **তার** | “his / its” | OK |
+| quando | Subordinating conjunction “when” – introduces temporal clause | **যখন** | “when” | OK |
+| l'amor | Noun “Love” – the divine principle that acts | **প্রেম** | “love” | OK |
+| divino | Adjective “Divine” – qualifies “Love” as sacred | **দিভ্য** | “divine” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `dal`, `del`, `'l`, `'n` – Bengali does not use separate words for these prepositions/articles; their meanings are incorporated into other lexical items (`শুরুতে`, `উপরে`).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all required meanings are present and correctly rendered in the Bengali translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 37:  
+  - Original: সকালবেলার শুরুতে সময় ছিল,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 38:  
+  - Original: এবং সূর্য সেই নক্ষত্রগুলোর সঙ্গে উপরে উঠছিল  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 39:  
+  - Original: যে তারা তার সঙ্গে ছিল যখন দিভ্য প্রেম  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+সকালবেলার শুরুতে সময় ছিল,
+এবং সূর্য সেই নক্ষত্রগুলোর সঙ্গে উপরে উঠছিল
+যে তারা তার সঙ্গে ছিল যখন দিভ্য প্রেম
+```
+]]></message>
+</messages>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Le tempore esseva al initio del matino,  
+e le sol ascendiva verso su con illas stellas  
+que esseva con illo quando le amor divine
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-------------------------------------------|--------------------|------------------------|--------|
+| Temp' | a period of time | **tempore** | time | OK |
+| era | existed / was | **esseva** | was | OK |
+| dal | “from the” (prepositional link to beginning) | **al** | at/to the | OK |
+| principio | the first point | **initio** | beginning | OK |
+| del | “of the” (genitive) | **del** | of the | OK |
+| mattino | the morning | **matino** | morning | OK |
+| e | connects two clauses | **e** | and | OK |
+| 'l | definite article “the” (masc.) | **le** | the | OK |
+| sol | the Sun | **sol** | Sun | OK |
+| montava | was moving upward | **ascendiva** | was mounting / was ascending | OK |
+| 'n | directional preposition “in/to” (part of “‘n sù”) | **verso** | towards | OK |
+| sù | upward direction | **su** | up | OK |
+| con | accompaniment | **con** | with | OK |
+| quelle | demonstrative “those” (fem. pl.) | **illas** | those | OK |
+| stelle | luminous bodies in the sky | **stellas** | stars | OK |
+| ch'eran | relative clause “that were” | **que** | that | OK |
+| con | accompaniment (again) | **con** | with | OK |
+| lui | pronoun referring to the Sun | **illo** | him/it | OK |
+| quando | temporal “when” | **quando** | when | OK |
+| l'amor | divine love (subject) | **le amor** | Love | OK |
+| divino | attribute “Divine” | **divine** | Divine | OK |
+
+### Items Requiring Attention
+- **None** – every source token has a corresponding target token, all translations convey the intended meaning, and no grammatical mismatches or superfluous elements were introduced.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 37:
+  - Original: Le tempore esseva al initio del matino,
+  - Issue: none
+  - Corrected: no change
+- Line 38:
+  - Original: e le sol ascendiva verso su con illas stellas
+  - Issue: none
+  - Corrected: no change
+- Line 39:
+  - Original: que esseva con illo quando le amor divine
+  - Issue: none
+  - Corrected: no change
+
+```
+Le tempore esseva al initio del matino,
+e le sol ascendiva verso su con illas stellas
+que esseva con illo quando le amor divine
+```
+]]></message>
+</messages>

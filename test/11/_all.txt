@@ -38,6 +38,12 @@ And lo! almost at the beginning of the steep a she-leopard, light and very nimbl
 32 軽くてとてもすばやい雌豹が，
 33 斑点のある毛皮に覆われていた；
 
+# Estonian
+
+31 Ja lo, peaaegu künkra alguses,
+32 üks leopard kerge ja väga vilgas,
+33 mis täpilise karvaga oli kaetud;
+
 # French
 
 31 Et voilà, presque au commencement de la pente,
@@ -61,3 +67,39 @@ And lo! almost at the beginning of the steep a she-leopard, light and very nimbl
 31 Kaj jen preskaŭ ĉe la komenco de la kruta vojo,
 32 leopardo malpeza kaj tre rapida,
 33 kiu estis kovrita per makulita mantelo;
+
+# Interlingua
+
+31 E ecce quasi al initio del via abrupta,
+32 un leopardo leger e multo agile,
+33 que con pelage maculato esseva coperite;
+
+# Hindi
+
+31 और देखो लगभग ढलान की शुरुआत में,
+32 एक हल्का और बहुत चपल तेंदुआ,
+33 जो धब्बेदार फर से ढका हुआ था;
+
+# Bengali
+
+31 এবং দেখো প্রায় উঁচু পথে শুরুতে,
+32 একটি হালকা ও খুব চঞ্চল চিতা,
+33 যা দাগযুক্ত চামড়া দিয়ে ঢাকা ছিল;
+
+# German
+
+31 Und siehe fast am Anfang des steilen Pfades,
+32 eine leichte und sehr flinke Leopardin,
+33 die mit einem gefleckten Fell bedeckt war;
+
+# Dutch
+
+31 En lo, bijna aan het begin van de steile weg,
+32 een luipaard licht en zeer lenig,
+33 die met een gevlekte vacht bedekt was;
+
+# Serbian (Latin script)
+
+31 I evo, gotovo na početku strme staze,
+32 jedna lagana i veoma okretna leopardska ženka,
+33 koja je bila prekrivena dlakom sa tačkama;

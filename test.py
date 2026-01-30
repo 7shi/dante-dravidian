@@ -5,14 +5,23 @@ LANGUAGES = [
     # Dravidian languages
     "Telugu", "Tamil", "Kannada", "Malayalam",
 
-    # Agglutinative non-Dravidian language
-    "Japanese",
+    # Agglutinative non-Dravidian languages
+    "Japanese", "Estonian",
 
     # Romance languages
     "French", "Spanish", "Portuguese",
 
-    # Constructed language
-    "Esperanto",
+    # Constructed languages
+    "Esperanto", "Interlingua",
+
+    # Indo-Iranian languages
+    "Hindi", "Bengali",
+
+    # Germanic languages
+    "German", "Dutch",
+
+    # Slavic language
+    "Serbian (Latin script)",
 ]
 
 # Parse command line arguments
@@ -41,9 +50,18 @@ if args.languages is not None:
     LANGUAGES = [lang.strip() for lang in args.languages.split(',')]
 
 import math
+import re
 from pathlib import Path
 from llm import LLMClient, history_to_xml, xml_to_history
 from translate import step1, translate, get_result
+
+def get_language_name(lang):
+    """Get language name without extra info."""
+    if m := re.match(r"(.+)\(", lang):
+        langname = m.group(1)
+    else:
+        langname = lang
+    return langname.strip().replace(" ", "_")
 
 # Read test data
 with open("tokenize/inferno/01.txt", "r", encoding="utf-8") as f:
@@ -99,7 +117,8 @@ for i in range(start, end):
 
     # Steps 2-5 and final translation for each target language
     for j, lang in enumerate(LANGUAGES):
-        xml_file = outdir / f"{lang}.xml"
+        langname = get_language_name(lang)
+        xml_file = outdir / f"{langname}.xml"
         if xml_file.exists():
             history = xml_to_history(xml_file.read_text(encoding="utf-8"))
             text = get_result(history).rstrip()
@@ -127,6 +146,7 @@ if not args.step1:
     for lang, texts in result_all.items():
         if lang in ["Italian", "English"]:
             continue
-        output_file = testdir / f"{lang}.txt"
+        langname = get_language_name(lang)
+        output_file = testdir / f"{langname}.txt"
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write("\n\n".join(texts) + "\n")

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ich schaute hoch und sah seine Schultern  
+bereits mit den Strahlen des Planeten bekleidet  
+der die Menschen geradewegs entlang jedes Weges führt.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → German)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| guardai | speaker looked upward (1st sg perfect) | **schaute** | “looked” | OK |
+| in | preposition marking direction “in” | — | — | **UNNECESSARY** (German does not need a preposition here) |
+| alto | “high”, destination of the look | **hoch** | “high / up” | OK |
+| e | coordinating conjunction linking two actions | **und** | “and” | OK |
+| vidi | speaker saw (1st sg perfect) | **sah** | “saw” | OK |
+| le | definite article (fem. pl.) for “spalle” | — | — | **UNNECESSARY** (German omits the article) |
+| sue | possessive adjective referring to the antecedent entity | **seine** | “its / his” | OK |
+| spalle | “shoulders”, direct object of *vidi* | **Schultern** | “shoulders” | OK |
+| vestite | state of being clothed/covered (past participle) | **bekleidet** | “clothed / covered” | OK |
+| già | temporal adverb “already” | **bereits** | “already” | OK |
+| de' | preposition + article “of the” (genitive, plural) | **der** | “of the” (genitive plural) | OK |
+| raggi | “rays” emitted by the planet | **Strahlen** | “rays” | OK |
+| del | preposition + article “of the” (genitive, singular) | **des** | “of the” (genitive singular) | OK |
+| pianeta | “planet”, source of the rays | **Planeten** | “planet” | OK |
+| che | relative pronoun introducing clause about the planet | **der** | “that / who” | OK |
+| mena | verb “lead” (3rd sg present) | **führt** | “leads / guides” | OK |
+| dritto | adverb “straight, aright” | **geradewegs** | “straight, directly” | OK |
+| altrui | “people, men” (indirect object) | **Menschen** | “people / men” | OK |
+| per | preposition “along / for” | **entlang** | “along” | OK |
+| ogne | determiner “every” | **jedes** | “every” | OK |
+| calle | “path, way” (object of *per*) | **Weges** | “of the way / path” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `in`, `le` – German does not require a preposition before “hoch” nor a definite article before “Schultern”.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all translated elements agree in gender, number, and case with the German target sentence.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 16:
+  - Original: Ich schaute hoch und sah seine Schultern
+  - Issue: none
+  - Corrected: no change
+- Line 17:
+  - Original: bereits mit den Strahlen des Planeten bekleidet
+  - Issue: none
+  - Corrected: no change
+- Line 18:
+  - Original: der die Menschen geradewegs entlang jedes Weges führt.
+  - Issue: GRAMMAR – incorrect case/ending after “entlang”
+  - Corrected: der die Menschen geradewegs entlang jeden Weg führt.
+
+```text
+Ich schaute hoch und sah seine Schultern
+bereits mit den Strahlen des Planeten bekleidet
+der die Menschen geradewegs entlang jeden Weg führt.
+```
+]]></message>
+</messages>

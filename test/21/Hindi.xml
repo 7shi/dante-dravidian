@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+61 जब मैं नीचे के स्थान की ओर गिर रहा था,  
+62 मेरी आँखों के सामने एक ऐसा व्यक्ति प्रकट हुआ  
+63 जो लंबे मौन के बाद खुरदुरा प्रतीत हुआ।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| **Mentre** | Temporal conjunction “while” | **जब** | “when / while” | OK |
+| **ch'** (che) | Subordinating conjunction linking “io rovinava” | — (not expressed) | — | **UNNECESSARY** |
+| **i'** (io) | First‑person singular pronoun, agent of “rovinava” | **मैं** | “I” | OK |
+| **rovinava** | Imperfect verb “was falling / going down” | **गिर रहा था** | “was falling” | OK |
+| **in** | Preposition of direction “to” | **के** | “of / to” | OK |
+| **basso** | Adjective “low” qualifying “loco” | **नीचे** | “low / down” | OK |
+| **loco** | Noun “place” (destination) | **स्थान** | “place” | OK |
+| **dinanzi** | Adverb/preposition “before / in front of” | **सामने** | “in front of / before” | OK |
+| **a** | Preposition linking “dinanzi” with “occhi” | **के** | “of / to” | OK |
+| **li** (gli) | Definite article “the” (masc. plural) | — (not expressed) | — | **UNNECESSARY** |
+| **occhi** | Noun “eyes” (the organ of perception) | **आँखों** | “eyes” | OK |
+| **mi** | Indirect object “to me”, marks experiencer | **मेरी** | “my” (as in “my eyes”) | OK |
+| **si** | Reflexive pronoun used in passive “si fu offerto” | — (passive expressed without it) | — | **UNNECESSARY** |
+| **fu** | Auxiliary verb “was” (past remote) | **हुआ** | “was” | OK |
+| **offerto** | Past participle “offered / presented” | **प्रकट** | “presented / appeared” | OK |
+| **chi** | Relative pronoun “one who” | **जो** | “who / that which” | OK |
+| **per** | Preposition “through / because of” | **के** | “by / through” | OK |
+| **lungo** | Adjective “long” qualifying “silenzio” | **लंबे** | “long” | OK |
+| **silenzio** | Noun “silence” (period of quiet) | **मौन** | “silence” | OK |
+| **parea** | Imperfect verb “seemed” | **प्रतीत** | “seemed / appeared” | OK |
+| **fioco** | Adjective “hoarse / weak / faint” | **खुरदुरा** | “hoarse / rough” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *ch'*, *li*, *si* – Italian conjunction, article, and reflexive pronoun have no direct counterpart in Hindi; they are naturally omitted.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected in the Hindi rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: 61 जब मैं नीचे के स्थान की ओर गिर रहा था,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 62:
+  - Original: 62 मेरी आँखों के सामने एक ऐसा व्यक्ति प्रकट हुआ
+  - Issue: none
+  - Corrected: no change  
+
+- Line 63:
+  - Original: 63 जो लंबे मौन के बाद खुरदुरा प्रतीत हुआ।
+  - Issue: none
+  - Corrected: no change  
+
+```
+61 जब मैं नीचे के स्थान की ओर गिर रहा था,
+62 मेरी आँखों के सामने एक ऐसा व्यक्ति प्रकट हुआ
+63 जो लंबे मौन के बाद खुरदुरा प्रतीत हुआ।
+```
+]]></message>
+</messages>

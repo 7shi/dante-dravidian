@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+সেই বিনয়ী ইতালির জন্য হবে মুক্তি  
+যার জন্য কুমারী ক্যামিলা মারা গিয়েছিল,  
+ইউরিয়ালো এবং টার্নো এবং নিসো আহত।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| Di | Preposition introducing the genitive relationship linking “salute” to “Italia”. | জন্য | for | OK |
+| quella | Demonstrative specifying the particular Italy. | সেই | that | OK |
+| umile | Attribute describing Italy’s modest character. | বিনয়ী | humble | OK |
+| Italia | The nation that will become the salvation. | ইতালির | Italy’s | OK |
+| fia | Future copular verb asserting a forthcoming state. | হবে | shall be | OK |
+| salute | The state of being saved; the promised outcome for Italy. | মুক্তি | salvation | OK |
+| per | Preposition introducing the causal phrase linking the previous clause to Camilla’s death. | জন্য | for | OK |
+| cui | Relative pronoun referring back to the salvation of Italy; marks the cause of death. | যার | which/that | OK |
+| morì | Simple past indicating Camilla’s death. | মারা গিয়েছিল | died (had died) | OK |
+| la | Definite article specifying “vergine”. | — (omitted) | — | **UNNECESSARY** |
+| vergine | Title/epithet of Camilla, indicating her purity. | কুমারী | virgin | OK |
+| Cammilla | Proper name of the virgin who died. | ক্যামিলা | Camilla | OK |
+| Eurialo | One of the three wounded heroes. | ইউরিয়ালো | Euryalus | OK |
+| e | Coordinating conjunction linking the three names. | এবং | and | OK |
+| Turno | Second wounded hero. | টার্নো | Turnus | OK |
+| e | Second coordinating conjunction. | এবং | and | OK |
+| Niso | Third wounded hero. | নিসো | Nisus | OK |
+| di | Preposition introducing the adjectival participle phrase describing the state of the heroes. | — (omitted) | — | **UNNECESSARY** |
+| ferute | Past participle used adjectivally to denote the condition of the heroes. | আহত | wounded | OK |
+
+### Issues Detected
+- **UNNECESSARY**: `la` (definite article) and `di` (preposition) have no direct counterpart in Bengali and are naturally omitted.  
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 106**  
+  - Original: সেই বিনয়ী ইতালির জন্য হবে মুক্তি  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 107**  
+  - Original: যার জন্য কুমারী ক্যামিলা মারা গিয়েছিল,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 108**  
+  - Original: ইউরিয়ালো এবং টার্নো এবং নিসো আহত।  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+সেই বিনয়ী ইতালির জন্য হবে মুক্তি
+যার জন্য কুমারী ক্যামিলা মারা গিয়েছিল,
+ইউরিয়ালো এবং টার্নো এবং নিসো আহত।
+```
+]]></message>
+</messages>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+এবং দেখো প্রায় উঁচু পথে শুরুতে,  
+একটি হালকা ও খুব চঞ্চল চিতা,  
+যা দাগযুক্ত চামড়া দিয়ে ঢাকা ছিল;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| Ed | Discourse marker linking to previous narrative | এবং | “and” | OK |
+| ecco | Exclamatory pointer “lo!” | দেখো | “see / behold” | OK |
+| quasi | Adverb “almost” (degree) | প্রায় | “almost” | OK |
+| al | Preposition + article “at the” | উঁচু পথে | “on the steep” | OK |
+| cominciar | Noun “beginning” | শুরুতে | “at the beginning” | OK |
+| de | Preposition “of” (genitive) | পথে | “of the path” | OK |
+| l'erta | Noun “the steep (path)” | উঁচু | “steep” | OK |
+| una | Indefinite article introducing a new referent | একটি | “a / one” | OK |
+| lonza | Noun “she‑leopard” | চিতা | “leopard (female)” | OK |
+| leggera | Adjective “light” | হালকা | “light” | OK |
+| e | Coordinating conjunction “and” | ও | “and” | OK |
+| presta | Adjective “nimble” | চঞ্চল | “nimble” | OK |
+| molto | Adverb intensifier “very” | খুব | “very” | OK |
+| che | Relative pronoun “which” | যা | “which” | OK |
+| di | Preposition “with” (instrument) | দিয়ে | “with / by means of” | OK |
+| pel | Noun “coat / fur” | চামড়া | “coat / skin” | OK |
+| macolato | Adjective “spotted” | দাগযুক্ত | “spotted” | OK |
+| era | Copular verb “was” (imperfect) | ছিল | “was” | OK |
+| coverta | Past participle (passive) “covered” | ঢাকা | “covered” | OK |
+
+### Items to Note
+- **No MISSING, WRONG, GRAMMAR or UNNECESSARY entries** were identified.  
+- The article **una** is rendered by the Bengali classifier **একটি**, which is natural in Bengali and therefore marked **OK** rather than **UNNECESSARY**.  
+- The prepositional phrase **al … de l'erta** is expressed in Bengali as the combined locative **উঁচু পথে** plus the noun **উঁচু**, preserving the meaning without grammatical error.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 31:
+  - Original: এবং দেখো প্রায় উঁচু পথে শুরুতে,
+  - Issue: none
+  - Corrected: no change
+- Line 32:
+  - Original: একটি হালকা ও খুব চঞ্চল চিতা,
+  - Issue: none
+  - Corrected: no change
+- Line 33:
+  - Original: যা দাগযুক্ত চামড়া দিয়ে ঢাকা ছিল;
+  - Issue: none
+  - Corrected: no change
+
+```
+এবং দেখো প্রায় উঁচু পথে শুরুতে,
+একটি হালকা ও খুব চঞ্চল চিতা,
+যা দাগযুক্ত চামড়া দিয়ে ঢাকা ছিল;
+```
+]]></message>
+</messages>

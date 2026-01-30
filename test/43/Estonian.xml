@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+lines.
+
+127 Kõigis osades ta valitseb ja seal ta valitseb;  
+128 Seal on tema linn ja kõrge troon:  
+129 Oh õnnelik see keda seal ta valib!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+answer.**Word‑by‑Word Mapping Table (Estonian translation)**  
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|------------|----------------------------------------|----------------------|------------------------|--------|
+| In | locative preposition “in” (introduces domain) | **Kõigis** | “in all” | OK |
+| tutte | universal quantifier “all” (modifies *parti*) | **Kõigis** (as part of “Kõigis osades”) | “all” | OK |
+| parti | set of spatial divisions “parts” | **osades** | “parts” | OK |
+| impera | predicate “governs” (He rules over each part) | **valitseb** | “governs” | OK |
+| e | coordinating conjunction “and” | **ja** | “and” | OK |
+| quivi | locative adverb “there” (pointing to place of reign) | **seal** | “there” | OK |
+| regge | predicate “reigns” (holds sovereign authority) | **valitseb** | “reigns” | OK |
+| quivi | locative adverb “there” (pointing to place of existence) | **Seal** | “there” | OK |
+| è | copular verb “is/exists” | **on** | “is” | OK |
+| la | definite article (feminine singular) | — | — | **UNNECESSARY** |
+| sua | possessive adjective “his” | **tema** | “his” | OK |
+| città | noun “city” (the sovereign’s urban domain) | **linn** | “city” | OK |
+| e | coordinating conjunction “and” | **ja** | “and” | OK |
+| l’ | definite article (masc. singular) before adjective | — | — | **UNNECESSARY** |
+| alto | adjective “lofty” (qualifies the seat) | **kõrge** | “lofty” | OK |
+| seggio | noun “seat” (the sovereign’s throne) | **troon** | “seat” | OK |
+| oh | interjection “O” (vocative) | **Oh** | “O” | OK |
+| felice | adjective “happy” (describes the chosen one) | **õnnelik** | “happy” | OK |
+| colui | pronoun “he” (the elected individual) | **see** | “he/that one” | OK |
+| cu' | relative pronoun “whom” (introduces relative clause) | **keda** | “whom” | OK |
+| ivi | locative adverb “there/thereto” (place of election) | **seal** | “there” | OK |
+| elege | verb “elects” (He selects) | **valib** | “elects” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: `la`, `l’` – Italian definite articles have no direct counterpart in Estonian and are omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+list.
+
+- Line 127:
+  - Original: Kõigis osades ta valitseb ja seal ta valitseb;
+  - Issue: none
+  - Corrected: Kõigis osades ta valitseb ja seal ta valitseb;
+
+- Line 128:
+  - Original: Seal on tema linn ja kõrge troon:
+  - Issue: none
+  - Corrected: Seal on tema linn ja kõrge troon:
+
+- Line 129:
+  - Original: Oh õnnelik see keda seal ta valib!
+  - Issue: none
+  - Corrected: Oh õnnelik see keda seal ta valib!
+
+```
+Kõigis osades ta valitseb ja seal ta valitseb;
+Seal on tema linn ja kõrge troon:
+Oh õnnelik see keda seal ta valib!
+```
+]]></message>
+</messages>

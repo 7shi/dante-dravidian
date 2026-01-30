@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+मैंने ऊपर देखा और उसकी कंधे देखे  
+वे पहले ही ग्रह की किरणों से ढके हुए थे  
+जो हर रास्ते पर लोगों को सीधा ले जाता है।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Hindi translation from Step 2)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| guardai | “I looked” (first perceptual action) | मैंने | “I (have) …” (subject + auxiliary) | OK |
+| in | preposition marking direction “in” | — | — | **UNNECESSARY** (direction expressed by “ऊपर”) |
+| alto | “high / upward” | ऊपर | “up / high” | OK |
+| e | coordinating conjunction “and” | और | “and” | OK |
+| vidi | “I saw” (second perceptual action) | देखे | “saw” (plural past) | OK |
+| le | definite article (feminine plural) | — | — | **UNNECESSARY** (Hindi has no article) |
+| sue | possessive adjective “its” (referring to the shoulders) | उसकी | “its / his” | OK |
+| spalle | “shoulders” (direct object) | कंधे | “shoulders” | OK |
+| vestite | past participle “clothed / covered” | ढके हुए थे | “were clothed / were covered” | OK |
+| già | adverb “already” (temporal marker) | पहले ही | “already / earlier” | OK |
+| de' | preposition + article “of the” (genitive) | की | “of / ’s” (genitive marker) | OK |
+| raggi | “rays” (source of light) | किरणों | “rays” | OK |
+| del | preposition + article “of the” (genitive) | — | — | **UNNECESSARY** (genitive already expressed by “की”) |
+| pianeta | “planet” (emitter of rays) | ग्रह | “planet” | OK |
+| che | relative pronoun “that” (introducing clause) | जो | “that / who” | OK |
+| mena | verb “lead / conduct” (present) | ले जाता है | “leads / conducts” | OK |
+| dritto | adverb “straight / aright” (manner) | सीधा | “straight / directly” | OK |
+| altrui | “men / people” (indirect object) | लोगों को | “people (to)” | OK |
+| per | preposition “along / for” (route) | पर | “on / along” | OK |
+| ogne | archaic “every” (quantifier) | हर | “every” | OK |
+| calle | “path / way” (object of preposition) | रास्ते | “paths / ways” | OK |
+
+---
+
+### Items that need attention  
+
+| Type | Source Word(s) | Reason |
+|------|----------------|--------|
+| **UNNECESSARY** | in, le, del | Hindi does not require these articles/prepositions; the meaning is conveyed by other words (“ऊपर”, “की”). |
+| **GRAMMAR** | vidi → “देखे” (plural past) vs. singular “spalle” | The Hindi verb is in plural form while “spalle” is plural, so agreement is acceptable; however, a more natural Hindi phrasing would be “उसकी कंधें देखीं”. This is a minor stylistic issue, not a hard error. |
+| **GRAMMAR** | “मैंने ऊपर देखा और उसकी कंधे देखे” – the second clause lacks a subject marker and the noun‑verb agreement is informal. A smoother version would be “मैंने ऊपर देखा और उसकी कंधें देखीं”. | Minor grammatical/style mismatch. |
+
+All other source tokens are represented correctly in the Hindi translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 16**  
+  - Original: मैंने ऊपर देखा और उसकी कंधे देखे  
+  - Issue: Grammar – verb agreement and plural form of “कंधे” are incorrect.  
+  - Corrected: मैंने ऊपर देखा और उसकी कंधें देखीं  
+
+- **Line 17**  
+  - Original: वे पहले ही ग्रह की किरणों से ढके हुए थे  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 18**  
+  - Original: जो हर रास्ते पर लोगों को सीधा ले जाता है।  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+मैंने ऊपर देखा और उसकी कंधें देखीं
+वे पहले ही ग्रह की किरणों से ढके हुए थे
+जो हर रास्ते पर लोगों को सीधा ले जाता है।
+```
+]]></message>
+</messages>

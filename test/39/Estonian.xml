@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+.kus sa kuuled meeleheite karjeid,
+sa näed vanu kurbade vaime,
+kes igaüks karjub teise surma poole;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Estonian translation)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|----------------------|--------|
+| ove | locative subordinator “where” | **kus** | where | OK |
+| udirai | future 2nd sg “you will hear” | **kuuled** | you will hear | OK |
+| le | definite article, fem. pl | *(none)* | – | UNNECESSARY |
+| disperate | adjective “despairing” (modifies *strida*) | **meeleheite** | of despairing | OK |
+| strida | plural noun “shrieks” (object of *udirai*) | **karjeid** | shrieks | OK |
+| vedrai | future 2nd sg “you will see” | **näed** | you will see | OK |
+| li | definite article, masc. pl | *(none)* | – | UNNECESSARY |
+| antichi | adjective “ancient/old” (modifies *spiriti*) | **vanu** | ancient | OK |
+| spiriti | plural noun “spirits” (object of *vedrai*) | **vaime** | spirits | OK |
+| dolenti | adjective “woeful” (post‑nominal) | **kurbade** | woeful | OK |
+| ch' | relative pronoun “who” introducing clause | **kes** | who | OK |
+| a | preposition “to/toward” (governs *seconda morte*) | **poole** | toward | OK |
+| la | definite article, fem. sg | *(none)* | – | UNNECESSARY |
+| seconda | ordinal adjective “second” (modifies *morte*) | **teise** | second | OK |
+| morte | noun “death” (object of *a*) | **surma** | death | OK |
+| ciascun | distributive quantifier “each” | **igaüks** | each | OK |
+| grida | verb “shouts/cries out” (3rd sg) | **karjub** | shouts | OK |
+
+### Issues Detected
+- **UNNECESSARY**: Articles **le**, **li**, **la** have no direct equivalents in Estonian and are omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** problems were found; the Estonian rendering respects number, case, and word order required by the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+craft.
+
+- **Line 115**  
+  - Original: `.kus sa kuuled meeleheite karjeid,`  
+  - Issue: Unnecessary leading dot.  
+  - Corrected: `kus sa kuuled meeleheite karjeid,`
+
+- **Line 116**  
+  - Original: `sa näed vanu kurbade vaime,`  
+  - Issue: none  
+  - Corrected: `sa näed vanu kurbade vaime,`
+
+- **Line 117**  
+  - Original: `kes igaüks karjub teise surma poole;`  
+  - Issue: none  
+  - Corrected: `kes igaüks karjub teise surma poole;`
+
+```estonian
+kus sa kuuled meeleheite karjeid,
+sa näed vanu kurbade vaime,
+kes igaüks karjub teise surma poole;
+```
+]]></message>
+</messages>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Or ben jij dan die Virgil en die bron  
+die zo’n brede stroom van spraak uitspreidt?,  
+antwoordde ik hem met een beschaamde voorhoofd.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Dutch translation → Italian source)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| Or | discourse marker “then/now” | Or | then | OK |
+| se' | copular “art” | ben | am | OK |
+| tu | 2nd‑sg pronoun “thou” | jij | you | OK |
+| quel | demonstrative “that” (modifying *Virgil*) | die | that | OK |
+| Virgilio | proper name “Virgil” | Virgil | Virgil | OK |
+| e | coordinating conjunction “and” | en | and | OK |
+| quella | demonstrative “that” (modifying *fonte*) | die | that | OK |
+| fonte | noun “fount, source” | bron | source/fount | OK |
+| che | relative pronoun “which” | die | which | OK |
+| spandi | verb “poureth forth” | uitspreidt | spreads/utters | OK |
+| di | preposition “of” | van | of | OK |
+| parlar | noun “speech” | spraak | speech | OK |
+| sì | degree adverb “so” | **zo’n** | **so a** | **WRONG** (adds unnecessary article) |
+| largo | adjective “large” | brede | wide/broad | OK |
+| fiume | noun “river/stream” | stroom | stream | OK |
+| rispuos' | verb “replied” | antwoordde | replied | OK |
+| io | 1st‑sg pronoun “I” | ik | I | OK |
+| lui | 3rd‑sg pronoun “to him” | hem | him | OK |
+| con | preposition “with” | met | with | OK |
+| vergognosa | adjective “bashful” | beschaamde | ashamed | OK |
+| fronte | noun “front/forehead” | voorhoofd | forehead | OK |
+
+### Additional Target‑Only Elements (UNNECESSARY)
+
+| Target Word/Phrase | Reason |
+|--------------------|--------|
+| dan | Not present in the Italian source; added for Dutch fluency |
+| een (in “een beschaamde”) | Article not required by the source |
+| **zo’n** (the “‑n” part) | The “‑n” (indefinite article) is not in the source; the correct translation of *sì* would be simply **zo** |
+
+### Summary of Issues
+- **WRONG:** *sì* → **zo’n** (adds an unnecessary indefinite article).  
+- **UNNECESSARY:** *dan*, *een* (article before *beschaamde*), and the “‑n” in **zo’n**.  
+- No **MISSING** source words.  
+- No **GRAMMAR** errors detected in the Dutch rendering (verb‑subject agreement, gender/number are appropriate).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79:**  
+  - Original: Or ben jij dan die Virgil en die bron  
+  - Issue: UNNECESSARY “dan”; missing end‑comma.  
+  - Corrected: Or ben jij die Virgil en die bron,
+- **Line 80:**  
+  - Original: die zo’n brede stroom van spraak uitspreidt?,  
+  - Issue: WRONG “zo’n” (adds an article); UNNECESSARY comma after “?”.  
+  - Corrected: die zo brede stroom van spraak uitspreidt?
+- **Line 81:**  
+  - Original: antwoordde ik hem met een beschaamde voorhoofd.  
+  - Issue: none  
+  - Corrected: antwoordde ik hem met een beschaamde voorhoofd.
+
+```
+Or ben jij die Virgil en die bron,
+die zo brede stroom van spraak uitspreidt?
+antwoordde ik hem met een beschaamde voorhoofd.
+```
+]]></message>
+</messages>

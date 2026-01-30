@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+আমি কবি ছিলাম এবং সেই ন্যায়পরায়ণের গান গাই  
+অ্যাঙ্কিসের পুত্র যিনি ট্রয় থেকে এসেছিলেন,  
+গর্বিত ইলিয়ন পুড়ে যাওয়ার পরে।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Bengali)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| Poeta | identity of speaker as poet | কবি | poet | OK |
+| fui | copular past “was” (speaker) | ছিলাম | was / existed | OK |
+| e | coordination “and” | এবং | and | OK |
+| cantai | speaker’s past singing action | গাই | sing (present) | **GRAMMAR** (tense mismatch) |
+| di | preposition “of” (introduces object) | — (genitive suffix on ন্যায়পরায়ণের) | — | **UNNECESSARY** (expressed by suffix) |
+| quel | demonstrative “that” | সেই | that | OK |
+| giusto | property “just” of the referent | ন্যায়পরায়ণ (as part of ন্যায়পরায়ণের) | just / righteous | OK |
+| figliuol | “son” of Anchises | পুত্র | son | OK |
+| d'Anchise | genitive “of Anchises” | অ্যাঙ্কিসের | of Anchises | OK |
+| che (relative) | introduces relative clause “who” | যিনি | who (respectful) | OK |
+| venne | motion “came” from Troy (past) | এসেছিলেন | came (polite past) | OK |
+| di (preposition) | source/origin “from” | থেকে | from | OK |
+| Troia | proper name “Troy” | ট্রয় | Troy | OK |
+| poi | temporal “after” (sequencing) | পরে | after | OK |
+| che (subordinator) | links temporal clause to result | — (implicit in participial phrase) | — | **UNNECESSARY** |
+| 'l | definite article “the” | — (no article in Bengali) | — | **UNNECESSARY** |
+| superbo | attribute “proud” of Ilion | গর্বিত | proud | OK |
+| Ilïón | proper name “Ilion” | ইলিয়ন | Ilion | OK |
+| fu | auxiliary “was” in passive perfect | — (absorbed in participle) | — | **UNNECESSARY** |
+| combusto | passive “burned” (result) | পুড়ে যাওয়ার | being burned / to burn | OK |
+| , (comma after *fui*) | punctuation separator | — (no internal comma) | — | **UNNECESSARY** |
+| , (comma after *Troia*) | punctuation separator | — (no internal comma) | — | **UNNECESSARY** |
+| . (period) | sentence terminator | — (period retained at line end) | — | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR:** *cantai* → “গাই” (present tense) does not reflect the past tense of the source verb.  
+- **UNNECESSARY:** Articles, auxiliary “fu”, the second “che”, the preposition “di” (when rendered as a genitive suffix), and internal commas are naturally omitted in Bengali.  
+
+All other lexical items are correctly rendered with appropriate meaning and grammatical function.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 73:
+  - Original: আমি কবি ছিলাম এবং সেই ন্যায়পরায়ণের গান গাই
+  - Issue: GRAMMAR – verb tense should be past.
+  - Corrected: আমি কবি ছিলাম এবং সেই ন্যায়পরায়ণের গান গাইছিলাম
+- Line 74:
+  - Original: অ্যাঙ্কিসের পুত্র যিনি ট্রয় থেকে এসেছিলেন,
+  - Issue: none
+  - Corrected: no change
+- Line 75:
+  - Original: গর্বিত ইলিয়ন পুড়ে যাওয়ার পরে।
+  - Issue: none
+  - Corrected: no change
+
+```
+আমি কবি ছিলাম এবং সেই ন্যায়পরায়ণের গান গাইছিলাম
+অ্যাঙ্কিসের পুত্র যিনি ট্রয় থেকে এসেছিলেন,
+গর্বিত ইলিয়ন পুড়ে যাওয়ার পরে।
+```
+]]></message>
+</messages>

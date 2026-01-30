@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+112 Zato mislim i smatram da je to za tvoju najbolju svrhu  
+113 da me pratiš, i ja ću biti tvoj vodič,  
+114 i odvešću te odavde kroz večni prostor;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Ond' | causal conjunction introducing reason | Zato | therefore / because | OK |
+| io (line 112) | 1st‑person singular pronoun (subject) | — (subject encoded in *mislim*) | — | **UNNECESSARY** |
+| per (1) | preposition marking purpose/benefit | za | for | OK |
+| lo | neuter definite article/pronoun “the” (refers to *me'*) | — (article omitted) | — | **UNNECESSARY** |
+| tuo | 2nd‑person possessive adjective “your” | tvoju | your (fem. acc.) | OK |
+| me' | abstract noun “best” (addressee’s highest good) | najbolju svrhu | best purpose | OK |
+| penso | verb “think” | mislim | I think | OK |
+| e (1) | coordinating conjunction “and” | i | and | OK |
+| discerno | verb “deem” | smatram | I deem | OK |
+| che | subordinating conjunction “that” | da | that | OK |
+| tu | 2nd‑person pronoun (subject) “thou” | — (subject encoded in *pratiš*) | — | **UNNECESSARY** |
+| mi | 1st‑person pronoun (object) “me” | me | me | OK |
+| segui | verb “follow” | pratiš | you follow | OK |
+| e (2) | coordinating conjunction “and” | i | and | OK |
+| io (line 113) | 1st‑person singular pronoun (subject) | ja | I | OK |
+| sarò | future copular verb “will be” | ću biti | will be | OK |
+| tua | 2nd‑person possessive adjective “thy” | tvoj | your (masc.) | OK |
+| guida | noun “guide” | vodič | guide | OK |
+| e (3) | coordinating conjunction “and” | i | and | OK |
+| trarrotti | verb “will lead” (2nd‑sg future) | odvešću | I will lead | OK |
+| di | preposition “from” | odavde | from here | OK |
+| qui | adverb of place “here” | odavde | from here | OK |
+| per (2) | preposition “through” | kroz | through | OK |
+| loco | noun “place” | prostor | space / place | OK |
+| etterno | adjective “eternal” | večni | eternal | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `io` (line 112), `lo`, `tu` – Serbian does not use explicit subject pronouns or definite articles in these positions; the meaning is carried by verb inflection or omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: *Zato mislim i smatram da je to za tvoju najbolju svrhu*  
+  - Issue: none  
+  - Corrected: *Zato mislim i smatram da je to za tvoju najbolju svrhu*  
+
+- **Line 113**  
+  - Original: *da me pratiš, i ja ću biti tvoj vodič,*  
+  - Issue: none  
+  - Corrected: *da me pratiš, i ja ću biti tvoj vodič,*  
+
+- **Line 114**  
+  - Original: *i odvešću te odavde kroz večni prostor;*  
+  - Issue: none  
+  - Corrected: *i odvešću te odavde kroz večni prostor;*  
+
+```
+Zato mislim i smatram da je to za tvoju najbolju svrhu
+da me pratiš, i ja ću biti tvoj vodič,
+i odvešću te odavde kroz večni prostor;
+```
+]]></message>
+</messages>

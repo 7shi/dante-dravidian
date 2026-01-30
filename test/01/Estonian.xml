@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Meie elu teekonna keskel  
+Leidsin end pimedas metsas,  
+sest õige tee oli kaotatud.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **Nel** | preposition + definite article “in the” (locative) | **keskel** | “in the middle” | OK |
+| **mezzo** | noun “middle, midpoint” | **keskel** | “middle” | OK |
+| **del** | preposition + definite article “of the” (genitive) | **teekonna** (genitive) | “of the road” | UNNECESSARY (expressed by case) |
+| **cammin** | noun “road, journey” | **teekonna** (genitive) | “road’s” | OK |
+| **di** | preposition “of” (genitive) | **teekonna** (genitive) | “of” (implicit) | UNNECESSARY |
+| **nostra** | possessive adjective “our” | **Meie** | “our” | OK |
+| **vita** | noun “life” | **elu** | “life” | OK |
+| **mi** | reflexive pronoun “myself” | **end** | “myself” | OK |
+| **ritrovai** | verb (passato remoto) “found” | **Leidsin** | “found” | OK |
+| **per** | preposition “through, within” (spatial) | *(case ending –as in “pimedas metsas”)* | – | UNNECESSARY (encoded by locative case) |
+| **una** | indefinite article “a” | – | – | UNNECESSARY |
+| **selva** | noun “forest, wood” | **metsas** (locative) | “in the forest” | OK |
+| **oscura** | adjective “dark” | **pimedas** (locative) | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) | **sest** | “because” | OK |
+| **la** | definite article “the” | – | – | UNNECESSARY |
+| **diritta** | adjective “right, straight, correct” | **õige** | “right / correct” | OK |
+| **via** | noun “way, path” | **tee** | “way” | OK |
+| **era** | verb “was” (imperfect) | **oli** | “was” | OK |
+| **smarrita** | past participle “lost, missed” | **kaotatud** | “lost / missed” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (omitted because Estonian does not use separate words for these functions): `del`, `di`, `per`, `una`, `la`.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: Meie elu teekonna keskel
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: Leidsin end pimedas metsas,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: sest õige tee oli kaotatud.
+  - Issue: none
+  - Corrected: no change
+
+```
+Meie elu teekonna keskel
+Leidsin end pimedas metsas,
+sest õige tee oli kaotatud.
+```
+]]></message>
+</messages>

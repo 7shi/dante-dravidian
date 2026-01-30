@@ -38,6 +38,12 @@ He shall hunt her through every town till he shall have set her back in hell, th
 110 彼が彼女を地獄に戻すまでだろう、
 111 そこは嫉妬が最初に彼女を送り出した場所だ。
 
+# Estonian
+
+109 Ta jahib teda läbi iga linna,
+110 kuni ta on ta tagasi heitnud põrgusse,
+111 seal kust kadevus esimesena saatis ta edasi.
+
 # French
 
 109 Il la chassera à travers chaque ville,
@@ -61,3 +67,39 @@ He shall hunt her through every town till he shall have set her back in hell, th
 109 Li ĉasos ŝin tra ĉiu urbo,
 110 Ĝis kiam li revenigos ŝin al la infero,
 111 Tie de kie invido unue sendis ŝin.
+
+# Interlingua
+
+109 Il la cacerà per cata vila,
+110 fin que ille habera lo remittite in le inferno,
+111 ibi ubi le invidia prime lo invia.
+
+# Hindi
+
+109 वह उसे हर गाँव में शिकार करेगा,
+110 जब तक वह उसे नर्क में वापस रख चुका होगा,
+111 वहाँ जहाँ ईर्ष्या ने उसे पहली बार भेजेगा।
+
+# Bengali
+
+109 সেই ব্যক্তি তাকে প্রতিটি শহরে শিকার করবে,
+110 যতক্ষণ না সে তাকে নরকে ফিরে পাঠাবে,
+111 সেখানে যেখানে ঈর্ষা প্রথমে তাকে পাঠিয়েছিল।
+
+# German
+
+109 Er wird sie durch jede Stadt jagen,
+110 bis er sie zurück in die Hölle gesetzt haben wird,
+111 dort wird Neid sie zuerst entsenden.
+
+# Dutch
+
+109 Hij zal haar door elke stad jagen,
+110 tot hij haar terug in de hel zal hebben gezet,
+111 daar waar jaloezie haar voor het eerst zal weggesturen.
+
+# Serbian (Latin script)
+
+109 On će loviti nju kroz svaki grad,
+110 dok ne postavi nju nazad u pakao,
+111 tamo gde je zavist prvi put poslala nju napred.

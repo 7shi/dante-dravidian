@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Kad sam ga video u velikoj pustinji,
+Smiluj se meni vrištih njemu,
+Šta god da si ili senka ili pravi čovek!
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Quando | temporal conjunction “when” | Kad | “when” | OK |
+| vidi | verb, past “saw” | video | “saw” | OK |
+| costui | demonstrative pronoun “him” | ga | “him” | OK |
+| nel | preposition “in” | u | “in” | OK |
+| gran | adjective “great” | velikoj | “great” (locative) | OK |
+| diserto | noun “desert” | pustinji | “desert” (locative) | OK |
+| Miserere | imperative “have pity” | Smiluj se | “have pity” | OK |
+| di | preposition “on” | meni | “to me” (wrong case) | **WRONG** |
+| me | pronoun “me” | — | — | **MISSING** |
+| gridai | verb, past “cried / shouted” | vrištih | “shouted” | OK |
+| a | preposition “to” | — | — | **MISSING** |
+| lui | pronoun “him” | njemu | “to him” | OK |
+| qual | relative pronoun “whatever” | Šta | “what” | OK |
+| che | relative particle (connects *qual* with clause) | — | — | **UNNECESSARY** |
+| tu | pronoun “you” (2nd sg) | — | — | **MISSING** |
+| sii | verb “be” (subjunctive) | si | “are” | OK |
+| od | conjunction “or” (first) | ili | “or” | OK |
+| ombra | noun “shade” | senka | “shade” | OK |
+| od | conjunction “or” (second) | ili | “or” | OK |
+| omo | noun “man” | čovek | “man” | OK |
+| certo | adjective “certain / real” | pravi | “real” | OK |
+
+---
+
+### Items to Address  
+
+- **MISSING**: *me*, *a*, *tu* – these source elements have no counterpart in the Serbian output.  
+- **WRONG**: *di* rendered as **meni** (dative) instead of the required prepositional phrase **na mene** (accusative with “on”).  
+- **UNNECESSARY**: *che* – the relative particle is not needed in Serbian and was omitted, which is acceptable; it is flagged only to note that the source element does not map to any target word.  
+
+No additional **GRAMMAR** errors were detected beyond the case mistake noted for *di*.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**  
+  - Original: Kad sam ga video u velikoj pustinji,  
+  - Issue: none  
+  - Corrected: Kad sam ga video u velikoj pustinji,  
+
+- **Line 65**  
+  - Original: Smiluj se meni vrištih njemu,  
+  - Issue: WRONG – “meni” should be “na mene” to render “on me”; missing preposition “di”.  
+  - Corrected: Smiluj se na mene vrištih njemu,  
+
+- **Line 66**  
+  - Original: Šta god da si ili senka ili pravi čovek!  
+  - Issue: none  
+  - Corrected: Šta god da si ili senka ili pravi čovek!  
+
+```
+Kad sam ga video u velikoj pustinji,
+Smiluj se na mene vrištih njemu,
+Šta god da si ili senka ili pravi čovek!
+```
+]]></message>
+</messages>

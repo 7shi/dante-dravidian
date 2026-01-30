@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+সুতরাং আমার আত্মা, যা এখনও উড়ছিল,  
+সে পেছনে ঘুরে আবার পথটি দেখল  
+যা কখনো কোনো জীবিত মানুষকে ছেড়ে যায়নি।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| così | adverb (resultative) | **সুতরাং** | “so / therefore” | OK |
+| l'animo | noun, “the soul” | **আত্মা** | “soul” | OK |
+| mio | possessive adjective “my” | **আমার** | “my” | OK |
+| ch'ancor | relative + adverb “which still” | **এখনও** | “still” | OK |
+| fuggiva | imperfect verb “was fleeing / flying” | **উড়ছিল** | “was flying” | OK |
+| si | reflexive clitic (the soul turns itself) | – | – | **UNNECESSARY** (reflexivity is implicit in Bengali) |
+| volse | past verb “turned” | **ঘুরে** | “turned” | OK |
+| a (first) | preposition of direction “to” (in *a retro*) | – | – | **UNNECESSARY** (direction expressed by “পেছনে”) |
+| retro | noun used adverbially “backward” | **পেছনে** | “backward / back” | OK |
+| a (second) | preposition introducing infinitive *a rimirar* | – | – | **UNNECESSARY** (infinitive purpose rendered by verb phrase) |
+| rimirar | infinitive “to look again” | **দেখল** | “looked” | OK |
+| lo | definite article “the” (masc.) | – | – | **UNNECESSARY** (articles omitted in Bengali) |
+| passo | noun “the pass” | **পথটি** | “the pass” | OK |
+| che (line 27) | relative pronoun “which” | **যা** | “which / that” | OK |
+| non | negation particle “not” | – | – | **UNNECESSARY** (negation encoded in the verb “যায়নি”) |
+| lasciò | past verb “left” | **ছেড়ে** | “left” | OK |
+| già | adverb “already” (emphasis) | – | – | **UNNECESSARY** (not expressed in Bengali) |
+| mai | adverb “never” | **কখনো** | “never” | OK |
+| persona | noun “person” (object) | **মানুষকে** | “person (to)” | OK |
+| viva | adjective “living” | **জীবিত** | “living” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `si`, both occurrences of `a`, `lo`, `non`, `già` – these elements are either implicit in Bengali or not needed for grammatical correctness.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: così l'animo mio, ch'ancor fuggiva,
+  - Issue: none
+  - Corrected: সুতরাং আমার আত্মা, যা এখনও উড়ছিল,
+- Line 26:
+  - Original: si volse a retro a rimirar lo passo
+  - Issue: none
+  - Corrected: সে পেছনে ঘুরে আবার পথটি দেখল
+- Line 27:
+  - Original: che non lasciò già mai persona viva.
+  - Issue: none
+  - Corrected: যা কখনো কোনো জীবিত মানুষকে ছেড়ে যায়নি।
+
+```
+সুতরাং আমার আত্মা, যা এখনও উড়ছিল,
+সে পেছনে ঘুরে আবার পথটি দেখল
+যা কখনো কোনো জীবিত মানুষকে ছেড়ে যায়নি।
+```
+]]></message>
+</messages>

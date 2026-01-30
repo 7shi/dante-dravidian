@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+আমি যখন তাকে বিশাল মরুভূমিতে দেখলাম,
+আমি তাকে ডাকলাম যে সে আমার প্রতি দয়া করুক,
+যাই হোক তুমি ছায়া হোক বা সত্যিকারের মানুষ হোক।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| Quando      | “when” (temporal subordinator)      | যখন                           | when                   | OK |
+| vidi        | “saw” (past, transitive)            | দেখলাম                         | saw                    | OK |
+| costui      | “him” (demonstrative pronoun)       | তাকে                           | him                    | OK |
+| nel         | “in” (preposition)                  | — *(case suffix ‑তে on “মরুভূমি” covers it)* | — | UNNECESSARY |
+| gran        | “great” (attribute)                 | বিশাল                          | great                  | OK |
+| diserto     | “desert” (noun)                     | মরুভূমি                        | desert                 | OK |
+| Miserere    | “have pity” (imperative)            | দয়া করুক                      | may have pity          | OK |
+| di          | “on / toward” (preposition)        | প্রতি                           | toward                 | OK |
+| me          | “me” (object pronoun)               | আমার                           | my (object)            | OK |
+| gridi       | “I cried / shouted” (past)          | ডাকলাম                         | called / shouted       | OK |
+| a           | “to” (preposition)                  | — *(dative case on “তাকে” already expresses it)* | — | UNNECESSARY |
+| lui         | “him” (object of preposition)       | — *(encoded in “তাকে”)*        | —                     | UNNECESSARY |
+| qual        | “whatever” (free relative)          | যাই                            | whatever               | OK |
+| che         | “that / which” (relative linker)    | — *(no separate word needed in Bengali)* | — | UNNECESSARY |
+| tu          | “you” (2nd sg pronoun)              | তুমি                           | you                    | OK |
+| sii         | “be” (subjunctive, 2nd sg)           | হোক                            | be                     | OK |
+| od (1)      | “or” (first disjunction)            | বা                             | or                     | OK |
+| ombra       | “shade” (noun)                      | ছায়া                           | shade                  | OK |
+| od (2)      | “or” (second disjunction)           | বা                             | or                     | OK |
+| omo         | “man” (noun)                        | মানুষ                           | man                    | OK |
+| certo       | “certain / real” (adjective)       | সত্যিকারের                     | real / certain         | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `nel`, `a`, `lui`, `che` – Bengali does not need separate prepositions or relative particles here; their functions are expressed by case marking or are implicit.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**  
+  - Original: আমি যখন তাকে বিশাল মরুভূমিতে দেখলাম,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 65**  
+  - Original: আমি তাকে ডাকলাম যে সে আমার প্রতি দয়া করুক,  
+  - Issue: WRONG – the imperative “Miserere di me” is not rendered; the verb “ডাকলাম” (called) is inappropriate.  
+  - Corrected: আমি তাকে চিৎকার করে বললাম, “আমার প্রতি দয়া করো!”,  
+
+- **Line 66**  
+  - Original: যাই হোক তুমি ছায়া হোক বা সত্যিকারের মানুষ হোক।  
+  - Issue: none  
+  - Corrected: no change  
+
+```bengali
+আমি যখন তাকে বিশাল মরুভূমিতে দেখলাম,
+আমি তাকে চিৎকার করে বললাম, “আমার প্রতি দয়া করো!”,
+যাই হোক তুমি ছায়া হোক বা সত্যিকারের মানুষ হোক।
+```
+]]></message>
+</messages>

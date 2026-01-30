@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Viele sind die Tiere die sie heiratet,
+Und mehr werden noch bis der Hund
+Kommt das wird sie vor Trauer sterben lassen.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑German Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Molti | many (plural quantifier) | Viele | many | OK |
+| son | copular verb “are” | sind | are | OK |
+| li | definite article (pl.) “the” | die | the | OK |
+| animali | noun “animals” | Tiere | animals | OK |
+| a | preposition “with” (introduces relative clause) | – | – | UNNECESSARY |
+| cui | relative pronoun “which/whom” | die | which | OK |
+| s'ammoglia | verb “wives / marries” | heiratet | marries | OK |
+| e | coordinating conjunction “and” | Und | and | OK |
+| più | comparative adverb “more” | mehr | more | OK |
+| saranno | future copula “shall be” | werden | will be | OK |
+| ancora | temporal adverb “still / yet” | noch | still | OK |
+| infin | subordinating conjunction “until” | bis | until | OK |
+| che (line 101) | relative/conjunctive “that” introducing hound clause | – | – | UNNECESSARY |
+| ’l | definite article “the” (masc. sg.) | der | the | OK |
+| veltto | noun “hound” | Hund | hound | **GRAMMAR** (clause lacks the verb “kommt”) |
+| verrà | future verb “will come” | Kommt | comes | OK |
+| che (line 102) | conjunction “that” introducing result clause | das | that | **GRAMMAR** (needs a comma after “Kommt”) |
+| la | object pronoun “her” | sie | her | OK |
+| farà | causative “will make” | wird | will | OK |
+| morir | infinitive “to die” | sterben | die | OK |
+| con | preposition “of” (in “die of grief”) | vor | of (in sense of “because of”) | OK |
+| doglia | noun “grief” | Trauer | grief | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: *a* (preposition) and *che* (line 101) – German relative clause does not need an explicit preposition or a separate “that”.  
+- **GRAMMAR**:  
+  - *veltto → Hund* – the clause “Und mehr werden noch bis der Hund” is incomplete; the verb **kommt** is missing, making the sentence ungrammatical.  
+  - *che (line 102) → das* – the sequence “Kommt das wird …” lacks the required comma after **Kommt**, violating German punctuation rules.  
+
+All other lexical correspondences are correct (OK).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 100:
+  - Original: Viele sind die Tiere die sie heiratet,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 101:
+  - Original: Und mehr werden noch bis der Hund
+  - Issue: missing verb “kommt” and missing end‑comma
+  - Corrected: Und mehr werden noch bis der Hund kommt,  
+
+- Line 102:
+  - Original: Kommt das wird sie vor Trauer sterben lassen.
+  - Issue: misplaced “Kommt” and missing comma after it
+  - Corrected: das wird sie vor Trauer sterben lassen.  
+
+```
+Viele sind die Tiere die sie heiratet,
+Und mehr werden noch bis der Hund kommt,
+das wird sie vor Trauer sterben lassen.
+```
+]]></message>
+</messages>

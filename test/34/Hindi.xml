@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+बहुत से जानवर हैं जिनसे वह विवाह करती है,
+और अधिक अभी भी होंगे जब तक कुत्ता आएगा
+आएगा जो उसे शोक से मरवा देगा।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| Molti | “many” (quantifier) | **बहुत से** | many (plural) | OK |
+| son | copular verb “are” | **हैं** | are | OK |
+| li | definite article “the” (masc. pl.) | — | — | **UNNECESSARY** |
+| animali | “animals” (noun) | **जानवर** | animals | OK |
+| a | preposition “with” | **से** | with / from | OK |
+| cui | relative pronoun “which / whom” (object of *a*) | **जिनसे** | which (whom) | OK |
+| s'ammoglia | verb “wives” (causative) | **विवाह करती है** | she weds | OK |
+| e | coordinating conjunction “and” | **और** | and | OK |
+| più | comparative adverb “more” | **अधिक** | more | OK |
+| saranno | future copula “shall be” | **होंगे** | shall be | OK |
+| ancora | adverb “still / yet” | **अभी भी** | still / yet | OK |
+| infin | subordinating conjunction “until” | **जब तक** | until | OK |
+| che (in “infin che”) | subordinator “that” (part of “until that”) | — | — | **UNNECESSARY** |
+| ’l | definite article “the” (masc. sg.) | — | — | **UNNECESSARY** |
+| veltro | noun “hound” | **कुत्ता** | hound | OK |
+| verrà | future verb “shall come” | **आएगा** | shall come | OK |
+| che (in “che la farà…”) | relative pronoun “that” | **जो** | that | OK |
+| la | pronoun “her” (acc.) | **उसे** | her | OK |
+| farà | causative verb “will make” | **देगा** | will make | OK |
+| morir | infinitive “to die” (as complement of causative) | **मरवा** | cause to die | OK |
+| con | preposition “of” (in “die of grief”) | **से** | of | OK |
+| doglia | noun “grief” | **शोक** | grief | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *li*, *che* (in “infin che”), *’l* – Italian articles or conjunctions that have no explicit counterpart in Hindi; they are naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: बहुत से जानवर हैं जिनसे वह विवाह करती है,
+  - Issue: none
+  - Corrected: बहुत से जानवर हैं जिनसे वह विवाह करती है,
+
+- Line 2:
+  - Original: और अधिक अभी भी होंगे जब तक कुत्ता आएगा
+  - Issue: none
+  - Corrected: और अधिक अभी भी होंगे जब तक कुत्ता आएगा
+
+- Line 3:
+  - Original: आएगा जो उसे शोक से मरवा देगा।
+  - Issue: none
+  - Corrected: आएगा जो उसे शोक से मरवा देगा।
+
+```
+बहुत से जानवर हैं जिनसे वह विवाह करती है,
+और अधिक अभी भी होंगे जब तक कुत्ता आएगा
+आएगा जो उसे शोक से मरवा देगा।
+```
+]]></message>
+</messages>

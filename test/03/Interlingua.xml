@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tanto es amar que poco es plus morte;
+ma pro tractar del bon que io trovava ibi,
+io dicera del altere cosas que io ha vide ibi.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Interlingua)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word/Phrase (Interlingua) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------|----------------------------------|--------------------------|--------|
+| **Tant'** | “so” – intensifier of the predicate | **Tanto** | so | OK |
+| **è** (1) | copular “is” | **es** | is | OK |
+| **amara** | adjective “bitter” (subject complement) | **amar** | *to love* (incorrect) | **WRONG** |
+| **che** | resultative subordinator “that” | **que** | that | OK |
+| **poco** | adverb “little” (degree) | **poco** | little | OK |
+| **è** (2) | copular “is” (comparative clause) | **es** | is | OK |
+| **più** | comparative “more” | **plus** | more | OK |
+| **morte** | noun “death” (entity compared) | **morte** | death | OK |
+| **ma** | coordinating conjunction “but” | **ma** | but | OK |
+| **per** | preposition of purpose “in order to” | **pro** | for / to (purpose) | OK |
+| **trattare** | infinitive “to treat / discuss” | **tractar** | to treat | OK |
+| **del** | contraction “of the” | **del** | of the | OK |
+| **ben** | noun “good” (object of discussion) | **bon** | good | OK |
+| **ch'** | relative pronoun “that” | **que** | that | OK |
+| **i'** | first‑person pronoun “I” (subject) | **io** | I | OK |
+| **vi** | adverb “there” (locative) | **ibi** | there | OK |
+| **trovai** | past perfect “found” | **trovava** | was finding / found (imperfect) | **WRONG** |
+| **dirò** | future “I will tell” | **dicera** | I will tell | OK |
+| **de** | preposition “of” | **del** | of the | OK |
+| **l'altre** | adjective “other” (plural) | **altere** | other | OK |
+| **cose** | noun “things” (plural) | **cosas** | things | OK |
+| **ch'** | relative pronoun “that” | **que** | that | OK |
+| **i'** | first‑person pronoun “I” | **io** | I | OK |
+| **v'** | adverb “there” (locative) | **ibi** | there | OK |
+| **ho** | auxiliary “have” (perfect) | **ha** | has | OK |
+| **scorte** | past participle “seen” | **vide** | saw (verb form) | **WRONG** |
+
+---
+
+### Items Requiring Attention
+- **WRONG**:  
+  - **amara → amar** (lexical mismatch; should be *amara* “bitter”).  
+  - **trovai → trovava** (tense/aspect mismatch; should convey simple past “found”, e.g., *trovava* or *trovava* is imperfect).  
+  - **scorte → vide** (incorrect participle; should be *vidite* “seen”).  
+
+No items were marked **GRAMMAR** (agreement errors) beyond the lexical mismatches noted, and no unnecessary elements were introduced.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: **Tanto es amar que poco es plus morte;**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 2:  
+  - Original: **ma pro tractar del bon que io trovava ibi,**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 3:  
+  - Original: **io dicera del altere cosas que io ha vide ibi.**  
+  - Issue: wrong adjective form “altere” (should be invariant “alter”) and verb “vide” (should be past participle “vidite”)  
+  - Corrected: **io dicera del alter cosas que io ha vidite ibi.**  
+
+```
+Tanto es amar que poco es plus morte;
+ma pro tractar del bon que io trovava ibi,
+io dicera del alter cosas que io ha vidite ibi.
+```
+]]></message>
+</messages>

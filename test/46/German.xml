@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Dann ging er weiter, und ich hielt sie hinter ihm.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation | Status |
+|-------------|--------------------------------------|----------------------|------------------|--------|
+| Allor | Temporal adverb marking a transition (“then”) | **Dann** | “then” | OK |
+| si | Reflexive clitic that marks the verb as reflexive/medio‑passive | — (omitted) | — | **UNNECESSARY** |
+| mosse | Verb (passato remoto, 3rd sg) – “move‑on”, the subject proceeds forward | **ging weiter** | “went onward” | OK |
+| e | Coordinating conjunction “and” | **und** | “and” | OK |
+| io | 1st‑person singular pronoun – the speaker, agent of the second clause | **ich** | “I” | OK |
+| li | Accusative masculine‑plural clitic pronoun – direct object “them” (the things kept) | **sie** | “them” (plural) | OK |
+| tenni | Verb (passato remoto, 1st sg) – “kept”, retain or hold | **hielt** | “kept” | OK |
+| dietro | Locative adverb – spatial relation “behind” (implicitly behind the moving entity) | **hinter ihm** | “behind him” | OK |
+
+### Issues Detected
+- **UNNECESSARY**: *si* – the reflexive clitic is not required in German; the verb “ging” is non‑reflexive.  
+- No missing, wrong, or grammatical‑agreement problems.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 136:
+  - Original: **Dann ging er weiter, und ich hielt sie hinter ihm.**
+  - Issue: **UNNECESSARY** – the reflexive clitic *si* from the Italian source is not needed in German and was already omitted.
+  - Corrected: **no change**
+
+```
+Dann ging er weiter, und ich hielt sie hinter ihm.
+```
+]]></message>
+</messages>

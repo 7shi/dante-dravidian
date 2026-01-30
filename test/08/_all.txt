@@ -38,6 +38,12 @@ And even as one who with spent breath, issued out of the sea upon the shore, tur
 23 海を抜けて岸に出て、
 24 危険な水に向き直り、見つめる、
 
+# Estonian
+
+22 Ja nagu üks, kellel on kurnatud hingus,
+23 Väljus merest randa,
+24 Pöördub ohtliku vee poole ja vaatab,
+
 # French
 
 22 Et comme celui qui avec le souffle épuisé,
@@ -61,3 +67,39 @@ And even as one who with spent breath, issued out of the sea upon the shore, tur
 22 Kaj kiel iu kiu kun elĉerpita spiro,
 23 eliris el la maro al la bordo,
 24 turnas sin al la danĝera akvo kaj rigardas,
+
+# Interlingua
+
+22 E como uno qui con respiratio fatigate,
+23 exite fora del pelago al riva,
+24 se volta al aqua periculose e guarda,
+
+# Hindi
+
+22 और जैसे वे थकी हुई साँस के साथ,
+23 समुद्र से बाहर निकल कर किनारे पर,
+24 खतरनाक पानी की ओर मुड़ता है और देखता है,
+
+# Bengali
+
+22 এবং এমন একজন যিনি ক্লান্ত শ্বাসে,
+23 সাগর থেকে তীরে বেরিয়ে,
+24 বিপজ্জনক জলে মুখ ফিরিয়ে তাকায়,
+
+# German
+
+22 Und wie jener der mit erschöpfter Luft,
+23 aus dem Meer an das Ufer gekommen,
+24 sich wendet zum gefährlichen Wasser und blickt,
+
+# Dutch
+
+22 En als diegenen met uitgeputte adem,
+23 Is uitgekomen uit de zee op de oever,
+24 Keert zich tot het gevaarlijke water en staart,
+
+# Serbian (Latin script)
+
+22 I kao onaj koji je sa izmoranim dahom,
+23 izašao iz mora na obalu,
+24 okreće se ka opasnoj vodi i gleda,

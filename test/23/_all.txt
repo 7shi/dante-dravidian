@@ -38,6 +38,12 @@ He answered me: “Not man; man once I was, and my parents were Lombards, and Ma
 68 そして親はロンバルド人だった、
 69 マンツァン人は国籍で両方だ。
 
+# Estonian
+
+67 Ta vastas mulle: mitte mees ja ma olin kunagi mees,
+68 ja mu vanemad olid lombardid,
+69 me mõlemad mantuaalased kodumaal.
+
 # French
 
 67 Il me répondit : «Je ne suis pas homme, j'étais déjà homme,
@@ -61,3 +67,39 @@ He answered me: “Not man; man once I was, and my parents were Lombards, and Ma
 67 Li respondis al mi: «Ne homo, homo iam estis,
 68 kaj miaj gepatroj estis lombardoj,
 69 mantuanaj per patrio ambaŭ.
+
+# Interlingua
+
+67 Io respondeva me non homo, homo jam fui,
+68 e mi parentes esseva lombardos,
+69 mantuanos per patria ambes.
+
+# Hindi
+
+67 उसने मुझे उत्तर दिया: “न मैं मनुष्य हूँ, मैं पहले मनुष्य था,
+68 और मेरे माता‑पिता लोंबार्ड थे,
+69 हम दोनों देश के अनुसार मंटुआन हैं।
+
+# Bengali
+
+67 “তিনি আমাকে উত্তর দিলেন: “মানব নই, একসময় আমি মানুষ ছিলাম,”
+68 “এবং আমার পিতামাতা লোম্বার্ড ছিলেন,”
+69 “উভয়ই দেশভিত্তিক মান্টুয়ান ছিলেন।”
+
+# German
+
+67 Er antwortete mir: „Kein Mensch, Mensch war ich einst,
+68 und meine Eltern waren Lombarden,
+69 Mantuaner nach Herkunft beide.
+
+# Dutch
+
+67 Hij antwoordde mij: «Geen man, man was ik ooit,
+68 en mijn ouders waren Lombarden,
+69 beiden Mantuanen van afkomst.
+
+# Serbian (Latin script)
+
+67 Odgovorio mi je: „Nije čovek, čovek jednom sam bio,
+68 i moji roditelji su bili Lombardi,
+69 Mantuanci po zemlji obojica.

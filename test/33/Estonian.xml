@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+97 ja tal on loomus nii kurikas ja kuri,
+98 mis kunagi ei rahulda ahne tahet,
+99 ja pärast sööki on tal rohkem nälga kui enne.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+.**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|------------|----------------------|--------------------|------------------|--------|
+| e (97) | coordinating conjunction “and” | ja | and | OK |
+| ha | verb “has” (possession) | on | is/has | OK |
+| natura | noun “nature” (inherent quality) | loomus | nature | OK |
+| sì | adverb of degree “so” | nii | so | OK |
+| malvagia | adjective “malign” | kurikas | malicious | OK |
+| e (second) | coordinating conjunction “and” | ja | and | OK |
+| ria | adjective “evil” | kuri | evil | OK |
+| che (98) | relative pronoun “that” | mis | that/which | OK |
+| mai | adverb “never” (total negation) | kunagi | ever (used with *ei* → never) | OK |
+| non | negative particle “not” | ei | not | OK |
+| empie | verb “sates / satisfies” | rahulda | satisfy | OK |
+| la | definite article “the” | *(none)* | – | UNNECESSARY |
+| bramosa | adjective “greedy” | ahne | greedy | OK |
+| voglia | noun “will / desire” | tahet | will/desire | OK |
+| e (99) | coordinating conjunction “and” | ja | and | OK |
+| dopo | preposition “after” | pärast | after | OK |
+| ’l | definite article “the” (elided) | *(none)* | – | UNNECESSARY |
+| pasto | noun “food / meal” | sööki | meal | OK |
+| ha (99) | verb “has” (state) | on | is/has | OK |
+| più | comparative adverb “more” | rohkem | more | OK |
+| fame | noun “hunger” | nälga | hunger | OK |
+| che (comparative) | comparative conjunction “than” | kui | than | OK |
+| pria | adverb of time “before” | enne | before | OK |
+
+### Issues Detected
+- **UNNECESSARY**: `la`, `’l` – Italian definite articles have no direct counterpart in Estonian and are naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** problems were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+.- Line 97:
+  - Original: ja tal on loomus nii kurikas ja kuri,
+  - Issue: none
+  - Corrected: no change
+- Line 98:
+  - Original: mis kunagi ei rahulda ahne tahet,
+  - Issue: none
+  - Corrected: no change
+- Line 99:
+  - Original: ja pärast sööki on tal rohkem nälga kui enne.
+  - Issue: none
+  - Corrected: no change
+
+```
+ja tal on loomus nii kurikas ja kuri,
+mis kunagi ei rahulda ahne tahet,
+ja pärast sööki on tal rohkem nälga kui enne.
+```
+]]></message>
+</messages>

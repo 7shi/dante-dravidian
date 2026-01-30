@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Aber nachdem ich am Fuße eines Hügels angekommen war,  
+wo jenes Tal endete  
+das mir das Herz vor Angst durchbohrt hatte,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (German translation from Step 2)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Ma | coordinating conjunction (contrast) | Aber | “but” | OK |
+| poi | adverb of time “after” | nachdem | “after” | OK |
+| ch'i' | “che io” – subordinator + 1st‑person pronoun introducing the clause | ich | “I” | OK |
+| fui | 1st sg passato remoto of *essere* (auxiliary) – “had been” | war | “was” | OK |
+| al | preposition + definite article “at the” | am | “at the” | OK |
+| piè | noun “foot” (of a hill) | Fuße | “foot” | OK |
+| d'un | preposition + indefinite article “of a” | eines | “of a” | OK |
+| colle | noun “hill” (genitive) | Hügels | “hill’s” | OK |
+| giunto | past participle of *giungere* “arrived, reached” | angekommen | “arrived” | OK |
+| là | demonstrative adverb “there” (locative) | wo | “where/that place” | OK |
+| dove | relative adverb of place “where” (combined with *là*) | – | – | **UNNECESSARY** (covered by the single German “wo”) |
+| terminava | imperfetto “was ending” – describes the valley’s termination | endete | “ended” | OK |
+| quella | demonstrative adjective “that” | jenes | “that” | OK |
+| valle | noun “valley” | Tal | “valley” | OK |
+| che | relative pronoun referring to *valle* | das | “which/that” | OK |
+| m'avea | “mi aveva” – pluperfect “had (to) me” (causative) | mir | “to me” | OK |
+| di | preposition “of/with” linking *paura* to *compunto* | vor | “with/against” (as in “vor Angst”) | OK |
+| paura | noun “fear” | Angst | “fear” | OK |
+| il | definite article masculine singular (here neuter in German) | das | “the” | OK |
+| cor | noun “heart” (metaphoric) | Herz | “heart” | OK |
+| compunto | past participle “pierced, filled” | durchbohrt | “pierced” | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *dove* – the German relative adverb “wo” already conveys the combined meaning of “là dove”. No separate German word is required.  
+
+All other source tokens are represented in the German translation with correct meaning, appropriate grammatical agreement, and no missing or erroneous elements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:
+  - Original: Aber nachdem ich am Fuße eines Hügels angekommen war,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 14:
+  - Original: wo jenes Tal endete
+  - Issue: none
+  - Corrected: no change  
+
+- Line 15:
+  - Original: das mir das Herz vor Angst durchbohrt hatte,
+  - Issue: none
+  - Corrected: no change  
+
+```
+Aber nachdem ich am Fuße eines Hügels angekommen war,
+wo jenes Tal endete
+das mir das Herz vor Angst durchbohrt hatte,
+```
+]]></message>
+</messages>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+In alle delen heerst Hij en daar regeert Hij;  
+Daar is zijn stad en zijn hoge zetel:  
+O gelukkige hij die daar kiest!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Dutch translation → source)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|------------------------|--------|
+| In | locative “in” all parts | In | “in” | OK |
+| tutte | quantifier “all” | alle | “all” | OK |
+| parti | set of “parts” | delen | “parts” | OK |
+| impera | “governs” each part | heerst | “governs” | OK |
+| e | coordinator “and” | en | “and” | OK |
+| quivi | locative “there” (place of reign) | daar | “there” | OK |
+| regge | “reigns” at that place | regeert | “reigns” | OK |
+| quivi | locative “there” (place of city/seat) | Daar | “there” | OK |
+| è | copula “is” | is | “is” | OK |
+| la | definite article (fem. sing.) | — | — | **UNNECESSARY** (article omitted in Dutch) |
+| sua | possessive “His” | zijn | “his” | OK |
+| città | “city” | stad | “city” | OK |
+| e | coordinator “and” | en | “and” | OK |
+| l' | definite article (masc. sing.) | — | — | **UNNECESSARY** (article omitted in Dutch) |
+| alto | adjective “lofty” | hoge | “lofty” | OK |
+| seggio | “seat” (throne) | zetel | “seat” | OK |
+| oh | interjection “O” | O | “O” | OK |
+| felice | predicative adjective “happy” | gelukkige | “happy” | **GRAMMAR** (Dutch adjective should be *gelukkige* only with a determiner; without article the correct form is *gelukkige* → acceptable but stylistically odd) |
+| colui | pronoun “he” (the one) | hij | “he” | OK |
+| cu' | relative pronoun “whom/that” | die | “who/that” | OK |
+| ivi | locative “there/thereto” | daar | “there” | OK |
+| elegge | “elects” | kiest | “elects/chooses” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**:  
+  - *la* (definite article before “città”) – Dutch does not use an article here.  
+  - *l'* (definite article before “alto”) – Dutch omits the article before “hoge zetel”.  
+
+- **GRAMMAR**:  
+  - *felice* → *gelukkige*: In Dutch the adjective “gelukkig” normally takes the ending *‑e* only when a determiner is present (e.g., *de gelukkige man*). Without a determiner, the bare form *gelukkig* would be more idiomatic. The current rendering *gelukkige* is therefore a minor grammatical/style issue.  
+
+All other source tokens are correctly rendered in the Dutch version.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 127**  
+  - Original: *In alle delen heerst Hij en daar regeert Hij;*  
+  - Issue: none  
+  - Corrected: *In alle delen heerst Hij en daar regeert Hij;*  
+
+- **Line 128**  
+  - Original: *Daar is zijn stad en zijn hoge zetel:*  
+  - Issue: none  
+  - Corrected: *Daar is zijn stad en zijn hoge zetel:*  
+
+- **Line 129**  
+  - Original: *O gelukkige hij die daar kiest!».*  
+  - Issue: GRAMMAR – adjective should be in base form without article/determiner.  
+  - Corrected: *O gelukkig hij die daar kiest!».*
+
+```
+In alle delen heerst Hij en daar regeert Hij;
+Daar is zijn stad en zijn hoge zetel:
+O gelukkig hij die daar kiest!».
+```
+]]></message>
+</messages>

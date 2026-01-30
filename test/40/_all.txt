@@ -38,6 +38,12 @@ And then thou shalt see those who are contented in the fire, because they hope t
 119 火の中で、彼らは来ることを望んでいるから
 120 それがいつであっても、祝福された人々のもとへ。
 
+# Estonian
+
+118 Ja siis näed need kes on rahulolevad
+119 tules sest nad loodavad tulla
+120 kui see võib olla õnnistatud rahvale.
+
 # French
 
 118 et tu verras ceux qui sont contents
@@ -61,3 +67,39 @@ And then thou shalt see those who are contented in the fire, because they hope t
 118 Kaj vi vidos tiujn kiuj estas kontentaj
 119 en la fajro, ĉar ili esperas veni
 120 kiam ajn ĝi estu al la benitaj homoj.
+
+# Interlingua
+
+118 e tu videra illes qui es content
+119 in le foco proque illes spera venir
+120 quando illo pote esser a le gente benedite.
+
+# Hindi
+
+118 और फिर तुम उन लोगों को देखोगे जो संतुष्ट हैं
+119 आग में क्योंकि वे आने की आशा रखते हैं,
+120 जब भी वह धन्य लोगों के पास हो।
+
+# Bengali
+
+118 এবং তারপর তুমি দেখবে সেই লোকদের যারা সন্তুষ্ট
+119 আগুনে, কারণ তারা আসার আশা করে,
+120 যখনই তা হতে পারে, আশীর্বাদপ্রাপ্ত লোকদের কাছে।
+
+# German
+
+118 und du wirst jene sehen, die zufrieden sind
+119 im Feuer, weil sie hoffen zu kommen
+120 wenn es zu den gesegneten Menschen sei.
+
+# Dutch
+
+118 e je zult diegenen zien die tevreden zijn
+119 in het vuur omdat ze hopen te komen,
+120 wanneer het mag zijn naar de gezegende mensen.
+
+# Serbian (Latin script)
+
+118 i videćeš one koji su zadovoljni
+119 u vatri jer se nadaju da dođu
+120 kad god bude do blagoslovenog naroda.

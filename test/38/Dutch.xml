@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Daarom denk ik en acht ik het voor jouw welzijn  
+dat jij mij volgt en ik zal jouw gids zijn,  
+en ik zal je hier vandaan leiden naar de eeuwige plaats;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (Dutch → English) | Status |
+|-------------|--------------------------------------|--------------------|--------------------------------------|--------|
+| Ond' | causal conjunction introducing a reason | **Daarom** | “therefore / because” | OK |
+| io | 1st‑person singular pronoun (subject) | **ik** | “I” | OK |
+| per (1) | preposition marking benefactive purpose (“for”) | **voor** | “for” | OK |
+| lo | neuter definite article/pronoun referring to “best” | **het** | “the” (neuter) | OK |
+| tuo | 2nd‑person possessive adjective (“your”) | **jouw** | “your” | OK |
+| me' | abstract noun meaning “the best / well‑being” | **welzijn** | “well‑being” | OK |
+| penso | verb “think” (cognitive) | **denk** | “think” | OK |
+| e (1) | coordinating conjunction “and” | **en** | “and” | OK |
+| discerno | verb “deem / judge” (evaluative) | **acht** | “deem” / “consider” | OK |
+| che | subordinating conjunction introducing a complement clause | **dat** | “that” | OK |
+| tu | 2nd‑person singular pronoun (subject) | **jij** | “you” (subject) | OK |
+| mi | 1st‑person pronoun (object) | **mij** | “me” (object) | OK |
+| segui | verb “follow” (imperative‑like) | **volgt** | “follows” | OK |
+| e (2) | coordinating conjunction “and” | **en** | “and” | OK |
+| io (2) | 1st‑person singular pronoun (subject) | **ik** | “I” | OK |
+| sarò | future copular verb “will be” | **zal** | “will” (future auxiliary) | OK |
+| tua | 2nd‑person possessive adjective (“your”) | **jouw** | “your” | OK |
+| guida | noun “guide” (role) | **gids** | “guide” | OK |
+| e (3) | coordinating conjunction “and” | **en** | “and” | OK |
+| trarrotti | future transitive verb “will draw/lead you” | **zal leiden** | “will lead” | OK |
+| di | preposition “from” (departure) | **vanaf** | “from” / “away from” | OK |
+| qui | adverb of place “here” | **hier** | “here” | OK |
+| per (2) | preposition marking direction/goal “to/through” | **naar** | “to” | OK |
+| loco | noun “place” (destination) | **plaats** | “place” | OK |
+| etterno | adjective “eternal” (describing place) | **eeuwige** | “eternal” | OK |
+
+---
+
+### Coverage Check
+
+- **MISSING:** – none  
+- **WRONG:** – none  
+- **GRAMMAR:** – none (all agreements and word orders are grammatical in Dutch)  
+- **UNNECESSARY:** – none (no source element was omitted beyond what Dutch naturally requires)  
+
+All source tokens are accounted for, correctly rendered, and the Dutch sentences respect the meaning and structure of the reference translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: Daarom denk ik en acht ik **het** voor jouw welzijn  
+  - Issue: UNNECESSARY – the article **het** is not required in Dutch for the abstract noun “welzijn”.  
+  - Corrected: Daarom denk ik en acht ik voor jouw welzijn  
+
+- **Line 113**  
+  - Original: dat jij mij volgt en ik zal jouw gids zijn,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 114**  
+  - Original: en ik zal je hier vandaan leiden naar de eeuwige plaats;  
+  - Issue: none (the phrasing is grammatical)  
+  - Corrected: no change  
+
+```text
+Daarom denk ik en acht ik voor jouw welzijn
+dat jij mij volgt en ik zal jouw gids zijn,
+en ik zal je hier vandaan leiden naar de eeuwige plaats;
+```
+]]></message>
+</messages>

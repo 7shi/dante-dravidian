@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Denn diese Bestie, wegen der du schreist,  
+lässt niemanden ihren Weg passieren,  
+aber hindert ihn so sehr, dass sie ihn tötet;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|-------------------|--------|
+| **ché** | causal conjunction introducing reason | **Denn** | “because” | OK |
+| **questa** | demonstrative adjective specifying the beast | **diese** | “this” (fem.) | OK |
+| **bestia,** | noun, the beast causing trouble | **Bestie,** | “beast” | OK |
+| **per** | preposition introducing the relative clause (“for”) | **wegen** | “because of” (genitive) | OK |
+| **la** | definite article inside the relative pronoun | **der** | “the” (genitive fem.) | OK |
+| **qual** | relative pronoun “which” | **der** | “which” (genitive) | OK |
+| **tu** | second‑person pronoun, the addressee | **du** | “you” | OK |
+| **gride,** | verb, to cry out | **schreist,** | “cry” | OK |
+| **non** | negation adverb | — (negation expressed by *niemanden*) | — | **UNNECESSARY** |
+| **lascia** | verb, to allow / let | **lässt** | “lets” | OK |
+| **altrui** | indefinite pronoun, any other person | **niemanden** | “no one” | OK |
+| **pasar** | infinitive verb, to pass | **passieren** | “to pass” | OK |
+| **per** (second) | preposition indicating path (“through”) | — (path expressed by accusative case) | — | **UNNECESSARY** |
+| **la** (second) | definite article before possessive | **ihren** | “her/its” (acc.) | OK |
+| **sua** | possessive adjective, its | **ihren** | “her/its” (acc.) | OK |
+| **via,** | noun, way / path | **Weg** | “way” | OK |
+| **ma** | coordinating conjunction, “but” | **aber** | “but” | OK |
+| **tanto** | adverb of degree, “so much” | **so** | “so” | OK |
+| **lo** | pronoun, him (accusative) | **ihn** | “him” | OK |
+| **'mpedisce** | verb, hinders | **hindert** | “hinders” | OK |
+| **che** | complementizer introducing result clause | **dass** | “that” | OK |
+| **l'uccide;** | verb, kills him | **tötet** | “kills” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - **non** – German expresses the negation through the pronoun *niemanden*; a separate negation word is not needed.  
+  - **per** (second) – The path is conveyed by the accusative case (*ihren Weg*), so the preposition is omitted.  
+
+All other source tokens are correctly rendered in the German translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: Denn diese Bestie, wegen der du schreist,  
+  - Issue: Internal comma after *Bestie* (not present in source).  
+  - Corrected: Denn diese Bestie wegen der du schreist,
+
+- **Line 2**  
+  - Original: lässt niemanden ihren Weg passieren,  
+  - Issue: None.  
+  - Corrected: no change
+
+- **Line 3**  
+  - Original: aber hindert ihn so sehr, dass sie ihn tötet;  
+  - Issue: None.  
+  - Corrected: no change  
+
+```
+Denn diese Bestie wegen der du schreist,
+lässt niemanden ihren Weg passieren,
+aber hindert ihn so sehr, dass sie ihn tötet;
+```
+]]></message>
+</messages>

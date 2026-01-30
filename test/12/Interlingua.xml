@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+34 e illa non se partiva davanti a mi facie,
+35 anzi impediva tanto mi cammino,
+36 que per retornar io plure vices se voltava.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Interlingua) | Back‑Translation (EN) | Status |
+|---|-------------|--------------------------------------|-----------------------------------|------------------------|--------|
+| 1 | e | Coordinating conjunction linking the clause | e | “and” | OK |
+| 2 | non | Negation adverb | non | “not” | OK |
+| 3 | mi | 1st‑person singular clitic pronoun (dative/accusative) – refers to the speaker | mi | “my” (possessive) | OK |
+| 4 | si | Reflexive clitic pronoun | se | “self” (reflexive) | OK |
+| 5 | partia | Imperfect of *partire* “to move, depart” | partiva | “was moving” | OK |
+| 6 | dinanzi | Preposition “before, in front of” | davanti | “in front of” | OK |
+| 7 | al | Contraction *a + il* (preposition + definite article) | a | “to” (preposition) | **UNNECESSARY** (article omitted) |
+| 8 | volto | Masculine noun “face” | facie | “face” | OK |
+| 9 | anzi | Adverb “instead, nay” | anzi | “instead” | OK |
+|10 | ’mpediva | Imperfect of *impedire* “to hinder” | impediva | “hindered” | OK |
+|11 | tanto | Adverb of degree “so, to such an extent” | tanto | “so” | OK |
+|12 | il | Definite article (masc. sing.) | — | — | **UNNECESSARY** (article omitted) |
+|13 | mio | Possessive adjective “my” | mi | “my” | OK |
+|14 | cammino | Masculine noun “road, path” | cammino | “road” | OK |
+|15 | ch’i’ | Subordinating conjunction “that” (che) + pronoun “io” | que | “that” | OK |
+|16 | fui | Past historic of *essere* “to be” (auxiliary) | — | — | **MISSING** |
+|17 | per | Preposition “for, in order to” | per | “for” | OK |
+|18 | ritornar | Infinitive “to return” | retornar | “to return” | OK |
+|19 | più | Comparative adverb “more” | plure | “more” | OK |
+|20 | volte | Feminine plural noun “times” | vices | “times” | OK |
+|21 | vòlto | Past historic of *voltare* “to turn” | voltava | “was turning” | OK |
+
+---
+
+### Extra Elements Introduced in the Interlingua Rendering
+- **illa** (subject pronoun “she”) – not present in the source → **UNNECESSARY**
+- **io** (subject pronoun “I”) – added to satisfy Interlingua syntax → **UNNECESSARY**
+- **se** (reflexive pronoun attached to *voltava*) – not in the source → **UNNECESSARY**
+
+---
+
+#### Summary of Issues
+- **UNNECESSARY**: articles *al* → *a*, *il* (omitted); added pronouns *illa*, *io*, *se*.
+- **MISSING**: auxiliary verb *fui* (source “was”) has no counterpart in the Interlingua line.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 34**  
+  - Original: `e illa non se partia davanti a mi facie,`  
+  - Issue: Unnecessary pronoun **illa**.  
+  - Corrected: `e non se partia davanti a mi facie,`
+
+- **Line 35**  
+  - Original: `anzi impediva tanto mi cammino,`  
+  - Issue: none  
+  - Corrected: `anzi impediva tanto mi cammino,`
+
+- **Line 36**  
+  - Original: `que per retornar io plure vices se voltava.`  
+  - Issue: Unnecessary pronouns **io** and **se**.  
+  - Corrected: `que per retornar plure vices voltava.`
+
+```interlingua
+e non se partia davanti a mi facie,
+anzi impediva tanto mi camino,
+que per retornar plure vices voltava.
+```
+]]></message>
+</messages>

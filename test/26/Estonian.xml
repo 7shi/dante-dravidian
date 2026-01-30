@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Aga sina miks sa naased nii suure tüdimuse juurde?  
+Miks sa ei ronita maitsvat mäge?  
+Kas see mägi on kogu rõõmu algus ja põhjus?
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Estonian) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| Ma | adversative conjunction “but” | Aga | “but” | OK |
+| tu | 2nd person singular pronoun “you” | sina | “you” | OK |
+| perché | interrogative adverb “why” (seeking cause) | miks | “why” | OK |
+| ritorni | verb “return” (2nd sg.) | naased | “you return” | OK |
+| a | preposition “to” (direction) | juurde | “to” | OK |
+| tanta | intensifier “so great / very” | nii suure | “so great” | OK |
+| noia | noun “annoyance / boredom” | tüdimuse | “annoyance” | OK |
+| perché *(2nd occurrence)* | interrogative adverb “why” | miks | “why” | OK |
+| non | negation particle “not” | ei | “not” | OK |
+| sali | verb “ascend / climb” (2nd sg.) | ronita | “climb” | OK |
+| il | definite article (masc. sg.) | — | — | UNNECESSARY |
+| dilettoso | adjective “delightful / delectable” | maitsvat | “delightful” | OK |
+| monte | noun “mountain” | mäge | “mountain” | OK |
+| ch’è | relative pronoun + copula “which is” | on | “is” | OK |
+| principio | noun “source / principle” | algus | “origin” | OK |
+| e | coordinating conjunction “and” | ja | “and” | OK |
+| cagion | noun “cause” | põhjus | “cause” | OK |
+| di | preposition “of” (genitive marker) | — | — | UNNECESSARY |
+| tutta | quantifier “all / every” | kogu | “all / every” | OK |
+| gioia | noun “joy” | rõõmu | “joy” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:** `il` (definite article), `di` (genitive preposition) – naturally omitted in Estonian.  
+- **MISSING / WRONG / GRAMMAR:** none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 76:**  
+  - Original: *Aga sina miks sa naased niin suure tüdimuse juurde?*  
+  - Issue: Spelling error – “niin” should be “nii”.  
+  - Corrected: *Aga sina miks sa naased nii suure tüdimuse juurde?*  
+
+- **Line 77:**  
+  - Original: *Miks sa ei ronita maitsvat mäge?*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 78:**  
+  - Original: *Kas see mägi on kogu rõõmu algus ja põhjus?*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+```
+Aga sina miks sa naased nii suure tüdimuse juurde?
+Miks sa ei ronita maitsvat mäge?
+Kas see mägi on kogu rõõmu algus ja põhjus?
+```
+]]></message>
+</messages>

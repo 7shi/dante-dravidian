@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+যে সকলের কাছে তুমি পরে যদি আরোহন করতে চাও,
+তখন একটি আত্মা হবে যা সেই বিষয়ে আমার চেয়ে অধিক যোগ্য হবে:
+তার সঙ্গে আমি তোমাকে আমার প্রস্থানকালে ছেড়ে দেব;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| A | preposition “to” (introduces the addressees) | কাছে | “to/near” | OK |
+| le | definite article, plural “the” | — | — | UNNECESSARY |
+| quai | relative pronoun “whom / those” | যে | “who/that” | OK |
+| poi | adverb “thereafter / later” | পরে | “later” | OK |
+| se | conditional conjunction “if” | যদি | “if” | OK |
+| tu | 2nd‑person singular pronoun “thou” | তুমি | “you” | OK |
+| vorrai | future volitional “will want / wilt” | চাও | “want” (future sense understood) | OK |
+| salire | infinitive “to ascend” | আরোহন করতে | “to ascend” | OK |
+| anima | noun “soul” | আত্মা | “soul” | OK |
+| fia | future of “to be” – “shall be” | হবে | “will be” | OK |
+| a | preposition “for” (introducing the domain) | যে | “for/which” | OK |
+| ciò | demonstrative “that” (the ascent) | সেই | “that” | OK |
+| più | comparative adverb “more” | অধিক | “more” | OK |
+| di | preposition of comparison “than” | চেয়ে | “than” | OK |
+| me | 1st‑person pronoun “I” (standard of comparison) | আমার | “my” | OK |
+| degna | adjective “worthy” | যোগ্য | “worthy” | OK |
+| con | preposition “with” | সঙ্গে | “with” | OK |
+| lei | pronoun “her” (the female companion) | তার | “her” | OK |
+| ti | pronoun “thee / you (acc.)” | তোমাকে | “you (object)” | OK |
+| lascerò | future “will leave” | ছেড়ে দেব | “will leave” | OK |
+| nel | preposition “at the” (locating the action) | প্রস্থানকালে | “at the time of departure” | OK |
+| mio | possessive adjective “my” | আমার | “my” | OK |
+| partire | infinitive nominalized “departure” | প্রস্থান | “departure” | OK |
+
+---
+
+### Items to Note
+- **UNNECESSARY**: *le* – Italian definite article has no direct counterpart in Bengali and is naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 121**  
+  - Original: যে সকলের কাছে তুমি পরে যদি আরোহন করতে চাও,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 122**  
+  - Original: তখন একটি আত্মা হবে যা সেই বিষয়ে আমার চেয়ে অধিক যোগ্য হবে:  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 123**  
+  - Original: তার সঙ্গে আমি তোমাকে আমার প্রস্থানকালে ছেড়ে দেব;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+যে সকলের কাছে তুমি পরে যদি আরোহন করতে চাও,
+তখন একটি আত্মা হবে যা সেই বিষয়ে আমার চেয়ে অধিক যোগ্য হবে:
+তার সঙ্গে আমি তোমাকে আমার প্রস্থানকালে ছেড়ে দেব;
+```
+]]></message>
+</messages>

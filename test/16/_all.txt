@@ -38,6 +38,12 @@ He seemed to be coming against me, with head high and with ravening hunger, so t
 47 頭を高く上げ、貪欲な飢えを抱えて、 
 48 それで、空気が彼に対して震えているように見えた。
 
+# Estonian
+
+46 Ta näis tulevat minu vastu
+47 kõrge pea ja näljas nälgiga,
+48 nii et näis et õhk värises tema pärast.
+
 # French
 
 46 Celui‑ci semblait que venir contre moi
@@ -61,3 +67,39 @@ He seemed to be coming against me, with head high and with ravening hunger, so t
 46 Li ŝajnis veni kontraŭ mi
 47 kun alta kapo kaj kun rabia malsato,
 48 tiel ke ŝajnis ke la aero tremis pro li.
+
+# Interlingua
+
+46 Iste pareva que contra me veniva
+47 con le capite alta e con fame rabiosa,
+48 sic que pareva que le aere tremiva pro illo.
+
+# Hindi
+
+46 वह मेरे विरुद्ध आ रहा था ऐसा प्रतीत होता था
+47 ऊँचा सिर और भयंकर भूख के साथ,
+48 ऐसा कि हवा उसके कारण कांपती प्रतीत हुई।
+
+# Bengali
+
+46 সে মনে হচ্ছিল যে আমার বিরুদ্ধে আসছে
+47 উঁচু মাথা এবং ভয়ানক ক্ষুধা নিয়ে,
+48 যাতে মনে হচ্ছিল যে বাতাস তার কারণে কাঁপছে।
+
+# German
+
+46 Er schien gegen mich zu kommen
+47 mit erhobenem Haupt und mit rasendem Hunger,
+48 so dass es schien, dass die Luft vor ihm zitterte.
+
+# Dutch
+
+46 Hij leek tegen mij aan te komen
+47 met het hoofd hoog en met een ravenende honger,
+48 zodat het leek dat de lucht door hem trilde.
+
+# Serbian (Latin script)
+
+46 Činio se da dolazi protiv mene
+47 sa podignutom glavom i sa besnom glađu,
+48 tako da se činilo da vazduh trese od njega.

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+takav me učinio je zver bez mira,  
+koja, dolazeći mi na susret, malo po malo  
+me je gurala nazad tamo gde sunce šuti.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Serbian Latin)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|-----------------------|--------|
+| tal | “such” – demonstrative adjective | takav | such | OK |
+| mi | 1st‑person pronoun, object | me | me | OK |
+| fece | causative verb “made” (remote past) | učinio je | made (compound past) | OK |
+| la | definite article (feminine) | — | — | **UNNECESSARY** (article omitted in Serbian) |
+| bestia | “beast” – creature lacking peace | zver | beast | OK |
+| sanza | preposition “without” | bez | without | OK |
+| pace | “repose / peace” (object of *sanza*) | mira | peace / repose (genitive) | OK |
+| che | relative pronoun “that” | koja | that (relative) | OK |
+| venendomi | gerund “coming on against me” | dolazeći mi | coming (to) me | OK |
+| ’ncontro | preposition “against” (direction of approach) | na susret | on encounter / to meet | **WRONG** (does not convey the adversarial “against” sense) |
+| a (1st) | part of idiom “a poco a poco” – incremental marker | — | — | **UNNECESSARY** (absorbed in “malo po malo”) |
+| poco (1st) | adverb “little” – degree marker | malo | little | OK |
+| a (2nd) | part of idiom “a poco a poco” – incremental marker | — | — | **UNNECESSARY** |
+| poco (2nd) | adverb “little” – degree marker | malo | little | OK |
+| mi (line 60) | 1st‑person pronoun, object | me | me | OK |
+| ripigneva | imperfect “was pushing back” | gurla | was pushing back | OK |
+| là | adverb of place “thither” | tamo | there / thither | OK |
+| dove | relative adverb “where” | gde | where | OK |
+| ’l | definite article (elided *il*) | — | — | **UNNECESSARY** |
+| sol | noun “Sun” | sunce | Sun | OK |
+| tace | verb “is silent” | šuti | is silent | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **WRONG**: *’ncontro* → rendered as **na susret** (“to meet”), which loses the adversarial “against” nuance present in the source. A more faithful rendering would be **protiv** or **na suprotnu stranu**.  
+- **UNNECESSARY**: Articles *la* and *’l* have no direct equivalents in Serbian and are therefore omitted.  
+- **UNNECESSARY**: Both occurrences of the preposition *a* in the idiom *a poco a poco* are absorbed into the Serbian idiom **malo po malo** and do not appear separately.  
+
+All other source tokens are accounted for and correctly translated.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 58:
+  - Original: takav me učinio je zver bez mira,
+  - Issue: none
+  - Corrected: takav me učinio je zver bez mira,
+- Line 59:
+  - Original: koja, dolazeći mi nasuprot, malo po malo
+  - Issue: wrong translation of “’ncontro” (adversarial “against”)
+  - Corrected: koja, dolazeći mi nasuprot, malo po malo
+- Line 60:
+  - Original: me je gurala nazad tamo gde sunce šuti.
+  - Issue: none
+  - Corrected: me je gurala nazad tamo gde sunce šuti.
+
+```
+takav me učinio je zver bez mira,
+koja, dolazeći mi nasuprot, malo po malo
+me je gurala nazad tamo gde sunce šuti.
+```
+]]></message>
+</messages>

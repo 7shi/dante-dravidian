@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ik keek omhoog en zag zijn schouders  
+al gekleed met de stralen van de planeet  
+die de mensen recht leiden langs elk pad.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → Dutch)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| guardai | “looked” (performed the act of looking upward) | **keek** | looked | OK |
+| in | preposition marking direction (“on / in”) | **omhoog** | upward | OK |
+| alto | “high” (direction of the look) | **omhoog** | upward | OK |
+| e | coordinating conjunction “and” | **en** | and | OK |
+| vidi | “saw” (performed the act of seeing) | **zag** | saw | OK |
+| le | definite article (the) – not needed in Dutch possessive construction | **‑** | (none) | **UNNECESSARY** |
+| sue | possessive adjective “its” | **zijn** | his/its | OK |
+| spalle | “shoulders” (object of seeing) | **schouders** | shoulders | OK |
+| vestite | “clothed / covered” (state) | **gekleed** | clothed | OK |
+| già | adverb “already” | **al** | already | OK |
+| de' | preposition “of” (part of “of the”) | **van** | of | OK |
+| raggi | “rays” (emitted by the planet) | **stralen** | rays | OK |
+| del | article “the” (in “of the planet”) | **de** | the | OK |
+| pianeta | “planet” (source of the rays) | **planeet** | planet | OK |
+| che | relative pronoun “that” | **die** | that | OK |
+| mena | “leadeth / leads” (action of the planet) | **leiden** | lead | OK |
+| dritto | adverb “straight / aright” (manner) | **recht** | straight | OK |
+| altrui | “men / people” (recipients) | **mensen** | people | OK |
+| per | preposition “along” (indicates route) | **langs** | along | OK |
+| ogne | determiner “every” | **elk** | every | OK |
+| calle | “path” (route) | **pad** | path | OK |
+
+### Items flagged
+
+- **UNNECESSARY**: *le* – the definite article is omitted in Dutch because the possessive *zijn* already marks the noun.  
+
+No other missing, wrong, or grammatical errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 16**  
+  - Original: *Ik keek omhoog en zag zijn schouders*  
+  - Issue: none  
+  - Corrected: *Ik keek omhoog en zag zijn schouders*  
+
+- **Line 17**  
+  - Original: *al geklekt met de stralen van de planeet*  
+  - Issue: **WRONG** – “geklekt” is not a correct Dutch participle.  
+  - Corrected: *al gekleed met de stralen van de planeet*  
+
+- **Line 18**  
+  - Original: *die de mensen recht leiden langs elk pad.*  
+  - Issue: **GRAMMAR** – verb must agree with singular subject “die” (planeet).  
+  - Corrected: *die de mensen recht leidt langs elk pad.*  
+
+```text
+Ik keek omhoog en zag zijn schouders
+al gekleed met de stralen van de planeet
+die de mensen recht leidt langs elk pad.
+```
+]]></message>
+</messages>

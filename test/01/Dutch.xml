@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Midden op de weg van ons leven  
+Vond ik mezelf in een donker bos,  
+want de juiste weg was gemist.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Dutch translation)**  
+
+| Source Word | Contextual Definition (locked meaning) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------------------------|--------------------|------------------------|--------|
+| **Nel** | preposition + definite article “in the” (locative) | **op** | “on / upon” | OK |
+| **mezzo** | noun “midpoint, middle” | **Midden** | “midway / middle” | OK |
+| **del** | genitive “of the” linking “mezzo” to “cammin” | **van** | “of” | OK |
+| **cammin** | noun “road, journey” | **weg** | “road / way” | OK |
+| **di** | preposition “of” linking “cammin” to “nostra vita” | **van** | “of” | OK |
+| **nostra** | possessive adjective “our” | **ons** | “our” | OK |
+| **vita** | noun “life” | **leven** | “life” | OK |
+| **mi** | reflexive pronoun “myself” (object of verb) | **mezelf** | “myself” | OK |
+| **ritrovai** | verb “found” (past) | **Vond** | “found” | OK |
+| **per** | preposition “within, through” | **in** | “in / within” | OK |
+| **una** | indefinite article “a” | **een** | “a / an” | OK |
+| **selva** | noun “wood, forest” | **bos** | “forest / wood” | OK |
+| **oscura** | adjective “dark” | **donker** | “dark” | OK |
+| **ché** | conjunction “for, because” (causal) | **want** | “for / because” | OK |
+| **la** | definite article “the” (feminine) | **de** | “the” | OK |
+| **diritta** | adjective “right, straight, correct” | **juiste** | “right / correct” | OK |
+| **via** | noun “way, path” | **weg** | “way / road” | OK |
+| **era** | imperfect of “to be” – “was / had been” | **was** | “was / had been” | OK |
+| **smarrita** | past participle “lost, missed” | **gemist** | “missed / lost” | OK |
+
+### Items Requiring Attention
+- **None** – every source token is represented in the Dutch rendering with the appropriate meaning and grammatical form. No missing, wrong, grammatical, or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: **Midden op de weg van ons leven**
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: **Vond ik mezelf in een donker bos,**
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: **want de juiste weg was gemist.**
+  - Issue: none
+  - Corrected: no change
+
+```
+Midden op de weg van ons leven
+Vond ik mezelf in een donker bos,
+want de juiste weg was gemist.
+```
+]]></message>
+</messages>

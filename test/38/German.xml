@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Denn ich denke und urteile dass es zu deinem Wohl ist  
+dass du mir folgst und ich dein Führer sein werde,  
+und ich werde dich von hier hinausführen zum ewigen Ort;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑German Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| Ond' | causal conjunction “wherefore / because” | **Denn** | “because” | OK |
+| io | 1st‑person singular pronoun (subject) | **ich** | “I” | OK |
+| per | preposition marking benefactive purpose | **zu** | “to/for” | OK |
+| lo | neuter definite article/pronoun (the) | *(part of “deinem”)* | – | UNNECESSARY |
+| tuo | 2nd‑person possessive adjective (your) | **deinem** | “your” (dative) | OK |
+| me' | abstract noun “best / good” | **Wohl** | “well‑being / good” | OK |
+| penso | verb “think” (cognitive) | **denke** | “think” | OK |
+| e | coordinating conjunction “and” | **und** | “and” | OK |
+| discerno | verb “deem, judge” (evaluative) | **urteile** | “judge” | OK |
+| che | subordinating conjunction “that” | **dass** | “that” | OK |
+| tu | 2nd‑person singular pronoun (subject) | **du** | “you” | OK |
+| mi | 1st‑person pronoun (object, dative) | **mir** | “me” (to me) | OK |
+| segui | verb “follow” (imperative‑like) | **folgst** | “follow” | OK |
+| e | coordinating conjunction “and” | **und** | “and” | OK |
+| io | 1st‑person singular pronoun (subject) | **ich** | “I” | OK |
+| sarò | future copular verb “will be” | **werde** | “will” (auxiliary) | OK |
+| tua | 2nd‑person possessive adjective (your) | **dein** | “your” | OK |
+| guida | noun “guide” (role) | **Führer** | “guide” | OK |
+| e | coordinating conjunction “and” | **und** | “and” | OK |
+| trarrotti | future transitive verb “will lead/bring” (to you) | **werde … hinausführen** | “will lead out” | OK |
+| di | preposition “from” | **von** | “from” | OK |
+| qui | adverb of place “here” | **hier** | “here” | OK |
+| per | preposition introducing destination “through / to” | **zum** | “to the” | OK |
+| loco | noun “place” (archaic) | **Ort** | “place” | OK |
+| etterno | adjective “eternal” | **ewigen** | “eternal” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *lo* – the definite article is absorbed into the German dative form *deinem* and does not appear as a separate word.  
+
+All other source tokens are represented adequately in the German translation, with correct grammatical agreement and appropriate lexical choices.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 112:  
+  - Original: **Denn ich denke und urteile dass es zu deinem Wohl ist**  
+  - Issue: missing comma before subordinate clause (“dass …”)  
+  - Corrected: **Denn ich denke und urteile, dass es zu deinem Wohl ist**  
+
+- Line 113:  
+  - Original: **dass du mir folgst und ich dein Führer sein werde,**  
+  - Issue: verb‑order error in main clause (“ich dein Führer sein werde”)  
+  - Corrected: **dass du mir folgst und ich werde dein Führer sein,**  
+
+- Line 114:  
+  - Original: **und ich werde dich von hier hinausführen zum ewigen Ort;**  
+  - Issue: none  
+  - Corrected: **no change**  
+
+```
+Denn ich denke und urteile, dass es zu deinem Wohl ist
+dass du mir folgst und ich werde dein Führer sein,
+und ich werde dich von hier hinausführen zum ewigen Ort;
+```
+]]></message>
+</messages>

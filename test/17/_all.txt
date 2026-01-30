@@ -38,6 +38,12 @@ And a she-wolf, who with all cravings seemed laden in her meagreness, and alread
 50 彼女のか細さの中で重く見えるほど、  
 51 そしてすでに多くの人々を悲しみの中で生きさせた、
 
+# Estonian
+
+49 Ja üks hunt, kes kõigi ihaluste
+50 tundus koormatud oma kõhnuses,
+51 ja juba paljud inimesed pani elama kurbuses,
+
 # French
 
 49 Et une louve, qui de toutes les convoitises
@@ -61,3 +67,39 @@ And a she-wolf, who with all cravings seemed laden in her meagreness, and alread
 49 Kaj lupino, kiu kun ĉiuj deziroj,
 50 ŝajnis ŝarĝita en sia maldikeco,
 51 kaj jam faris multajn homojn vivi en malĝojo,
+
+# Interlingua
+
+49 E un lupa, qui de tote desiderios
+50 pareva cargate in su magrezia,
+51 e multe gente jam faceva viver tristessa,
+
+# Hindi
+
+49 और एक भेड़िया, जो सभी इच्छाओं के साथ,
+50 लगता था बोझिल अपनी दुबलीपन में,
+51 और कई लोगों को पहले ही दुःखभरा जीवन जीने के लिए बना दिया,
+
+# Bengali
+
+49 এবং এক শেয়ালী নেকড়ে যেটি সব তৃষ্ণা থেকে
+50 তার দুর্বলতায় ভারী মনে হচ্ছিল,
+51 এবং অনেক মানুষকে ইতিমধ্যে দুঃখে বাঁচতে বাধ্য করেছিল,
+
+# German
+
+49 Und eine Wölfin, die mit allen Begierden
+50 schien beladen in ihrer Magerkeit,
+51 und bereits viele Menschen zum Elend leben ließ,
+
+# Dutch
+
+49 En een wolvin die van alle verlangens
+50 leek beladen in haar magere gestalte,
+51 en al vele mensen hadden al een droevig bestaan gemaakt,
+
+# Serbian (Latin script)
+
+49 I jedna vukinja koja sa svim željama,
+50 izgledala je opterećena u svojoj mršavosti,
+51 i već je učinila da mnogi ljudi žive u tugi,

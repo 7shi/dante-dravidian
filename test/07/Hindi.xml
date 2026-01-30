@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+तब डर थोड़ा शांत हुआ,  
+जो मेरे हृदय के सरोवर में मुझसे टिकी थी  
+वह रात जिसे मैंने अत्यंत दया के साथ पार किया।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Hindi → Eng) | Status |
+|-------------|-----------------------|----------------------|--------------------------------|--------|
+| Allor | temporal adverb “then” | तब | “then” | OK |
+| fu | copular verb “was” (past) | हुआ | “became/was” | OK |
+| la (1) | definite article (fem.) | — | — | UNNECESSARY |
+| paura | noun “fear” | डर | “fear” | OK |
+| un | indefinite article (masc.) | — | — | UNNECESSARY |
+| poco | adverb of degree “a little” | थोड़ा | “a little” | OK |
+| queta | adjective “quieted” | शांत | “quiet” | OK |
+| che | relative pronoun “which/that” | जो | “which/that” | OK |
+| nel | preposition + article “in the” | में | “in” | OK |
+| lago | noun “lake” | सरोवर | “lake” | OK |
+| del | preposition + article “of the” | के | “of” | OK |
+| cor | noun “heart” (poetic) | हृदय | “heart” | OK |
+| m'era | clitic + auxiliary “to me was” (pluperfect) | मुझसे | “to me” | OK |
+| durata | past participle “had lasted” | टिकी थी | “had lasted” | **WRONG** (semantic mismatch; “टिकी थी” means “stuck”, not “lasted”) |
+| la (2) | definite article (fem.) | — | — | UNNECESSARY |
+| notte | noun “night” | रात | “night” | OK |
+| ch'i' | relative pronoun “that” (elided) | जिसे | “that (whom)” | OK |
+| passai | verb “I passed” (remote past) | पार किया | “passed (through)” | OK |
+| con | preposition “with” | के साथ | “with” | OK |
+| tanta | adjective “so much” (degree) | अत्यंत | “extremely/so much” | OK |
+| pieta | noun “pity” | दया | “pity/compassion” | OK |
+
+### Items Needing Attention
+- **WRONG:** `durata` → “टिकी थी” does not convey the intended meaning “had lasted”. A more accurate rendering would be “रही थी” or “स्थायी थी”.
+- **UNNECESSARY:** Articles `la` (both occurrences) and `un` are naturally omitted in Hindi; their absence is acceptable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: तब डर थोड़ा शांत हुआ,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 20**  
+  - Original: जो मेरे हृदय के सरोवर में मुझसे टिकी थी  
+  - Issue: **WRONG** – “टिकी थी” does not convey “had lasted”; **GRAMMAR** – gender/tense mismatch.  
+  - Corrected: जो मेरे हृदय के सरोवर में मुझसे रहा था  
+
+- **Line 21**  
+  - Original: वह रात जिसे मैंने अत्यंत दया के साथ पार किया।  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+तब डर थोड़ा शांत हुआ,
+जो मेरे हृदय के सरोवर में मुझसे रहा था
+वह रात जिसे मैंने अत्यंत दया के साथ पार किया।
+```
+]]></message>
+</messages>

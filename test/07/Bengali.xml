@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+তখন ভয়টি কিছুটা শান্ত হয়ে গেল,  
+যা আমার হৃদয়ের হ্রদে টিকিয়ে ছিল  
+যে রাত আমি এত দুঃখের সঙ্গে পার করলাম।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------------------|------------------------|--------|
+| Allor | temporal adverb “then, at that moment” | তখন | then | OK |
+| fu | copular verb “was” (past) | *‑* | – | **MISSING** |
+| la | definite article (feminine) | *‑* | – | **UNNECESSARY** |
+| paura | noun “fear” (subject) | ভয়টি | the fear | OK |
+| un | indefinite article (used with “poco”) | *‑* | – | **UNNECESSARY** |
+| poco | adverb of degree “a little” | কিছুটা | a little | OK |
+| queta* | adjective “quieted, made quiet” | শান্ত হয়ে গেল | quieted / became quiet | OK |
+| che | relative pronoun “which” | যা | which | OK |
+| nel | preposition + article “in the” | হ্রদে | in the lake | OK |
+| lago | noun “lake” | হ্রদ | lake | OK |
+| del | preposition + article “of the” | এর | of | OK |
+| cor* | noun “heart” (poetic) | হৃদয় | heart | OK |
+| m'era | pluperfect auxiliary “had been” (with experiencer) | টিকিয়ে | had (been) lasting | OK |
+| durata | past participle “lasted” | ছিল | lasted | OK |
+| la | definite article (feminine) | *‑* | – | **UNNECESSARY** |
+| notte | noun “night” | রাত | night | OK |
+| ch' | elided relative pronoun “that” | যে | that | OK |
+| i' | pronoun “I” | আমি | I | OK |
+| passai | verb “passed” (remote past) | পার করলাম | passed | OK |
+| con | preposition “with” | সঙ্গে | with | OK |
+| tanta | quantitative adjective “so much” | এত | so | OK |
+| pieta* | noun “pity” (emotional tone) | দুঃখের | of pity / sorrowful | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **MISSING**: **fu** – the copular verb “was” is not explicitly rendered in the Bengali line; its sense is absorbed into the predicate “শান্ত হয়ে গেল”.  
+- **UNNECESSARY**: Articles **la** (twice) and **un** have no direct counterpart in Bengali and are therefore omitted.  
+
+No **WRONG** or **GRAMMAR** issues were detected; the Bengali translation respects gender, number, and case conventions of the target language.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 19:
+  - Original: তখন ভয়টি কিছুটা শান্ত হয়ে গেল,
+  - Issue: Missing copular verb “was” (fu)
+  - Corrected: তখন ভয়টি কিছুটা শান্ত হয়ে গিয়েছিল,
+- Line 20:
+  - Original: যা আমার হৃদয়ের হ্রদে টিকিয়ে ছিল
+  - Issue: none
+  - Corrected: কোন পরিবর্তন নেই
+- Line 21:
+  - Original: যে রাত আমি এত দুঃখের সঙ্গে পার করলাম।
+  - Issue: none
+  - Corrected: কোন পরিবর্তন নেই
+
+```
+তখন ভয়টি কিছুটা শান্ত হয়ে গিয়েছিল,
+যা আমার হৃদয়ের হ্রদে টিকিয়ে ছিল
+যে রাত আমি এত দুঃখের সঙ্গে পার করলাম।
+```
+]]></message>
+</messages>

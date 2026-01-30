@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+zbog ove bestije zbog koje vi vičete,  
+ne dozvoljava nikome da prolazi njenim putem,  
+ali toliko ga onemogućava da ga ubije;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase (Serbian) | Back‑Translation | Status |
+|-------------|--------------------------------------|------------------------------|------------------|--------|
+| **ché** | causal conjunction introducing “because of which” | **zbog** | because/of | OK |
+| **questa** | demonstrative adjective “this” (fem.) | **ove** | this (fem.) | OK |
+| **bestia** | the beast that is the cause of the cry | **bestije** | (genitive) “of the beast” | OK |
+| **per** | preposition introducing the relative clause “for which” | **zbog** | because/of | OK |
+| **la** | definite article (part of *la qual*) – no lexical meaning in Serbian | — | (none) | **UNNECESSARY** |
+| **qual** | relative pronoun “which” referring to *bestia* | **koje** | which (gen.) | OK |
+| **tu** | 2nd‑person singular pronoun “you” | **vi** | you (plural/polite) | OK |
+| **gride** | verb “cry out” (present) | **vičete** | you cry out | OK |
+| **non** | negation adverb “not” | **ne** | not | OK |
+| **lascia** | verb “allows/lets” (present) | **dozvoljava** | allows | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **nikome** | anyone (to no one) | OK |
+| **pasar** | infinitive “to pass” | **prolazi** | passes | OK |
+| **per** | preposition “through/along” introducing the way | **njenim** (as part of *njenim putem*) | her (instrumental) | OK |
+| **la** | definite article – no lexical meaning in Serbian | — | (none) | **UNNECESSARY** |
+| **sua** | possessive adjective “its” (fem.) | **njenim** | her (instrumental) | OK |
+| **via** | noun “way, path” | **putem** | way (instrumental) | OK |
+| **ma** | coordinating conjunction “but” | **ali** | but | OK |
+| **tanto** | adverb of degree “so much” | **toliko** | so much | OK |
+| **lo** | pronoun “him” (acc.) | **ga** | him (acc.) | OK |
+| **'mpedisce** | verb “hinders, impedes” (present) | **onemogućava** | hinders | OK |
+| **che** | complementizer introducing result clause “that” | **da** | that (subjunctive) | OK |
+| **l’uccide** | verb “kills him” (present) | **ubije** | kills | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: the Italian definite article **la** appears twice (in *la qual* and *la sua*). Serbian does not use articles, so they are omitted in the translation.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all lexical choices respect the intended meanings and Serbian grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: zbog ove bestije zbog koje vi vičete,
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: ne dozvoljava nikome da prolazi njenim putem,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: ali toliko ga onemogućava da ga ubije;
+  - Issue: none
+  - Corrected: no change
+
+```
+zbog ove bestije zbog koje vi vičete,
+ne dozvoljava nikome da prolazi njenim putem,
+ali toliko ga onemogućava da ga ubije;
+```
+]]></message>
+</messages>

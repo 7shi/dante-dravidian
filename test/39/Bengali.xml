@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+যেখানে তুমি শোনবে নিরাশার চিৎকার,  
+তুমি দেখবে প্রাচীন দুঃখিত আত্মাদের,  
+যারা প্রত্যেকটি দ্বিতীয় মৃত্যুর দিকে চিৎকার করবে;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Bengali)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|--------------------------------|------------------------|--------|
+| **ove** | locative subordinator “where” introducing a clause of future events | **যেখানে** | “where” | OK |
+| **udirai** | future action performed by addressee: will hear the following noun | **শোনবে** | “will hear” | OK |
+| **le** | definite article, fem. pl (marks *strida* as specific) | — (omitted) | — | UNNECESSARY |
+| **disperate** | adjective qualifying *strida* as expressing desperation | **নিরাশার** | “of despair” (despairing) | OK |
+| **strida** | plural noun: the audible shrieks that will be heard | **চিৎকার** | “shrieks” | OK |
+| **vedrai** | future action performed by addressee: will see the following noun phrase | **দেখবে** | “will see” | OK |
+| **li** | definite article, masc. pl (marks *spiriti* as specific) | — (omitted) | — | UNNECESSARY |
+| **antichi** | adjective attributing an earlier age to *spiriti* | **প্রাচীন** | “ancient” | OK |
+| **spiriti** | plural noun: the entities that will be seen | **আত্মাদের** | “spirits (ACC)” | OK |
+| **dolenti** | adjective describing the emotional state of the spirits | **দুঃখিত** | “woeful” | OK |
+| **ch’** (che) | relative pronoun introducing a clause that describes the spirits | **যারা** | “who” | OK |
+| **a** | preposition indicating direction toward *morte* | **দিকে** | “toward” | OK |
+| **la** | definite article, fem. sg (marks *morte* as specific) | — (omitted) | — | UNNECESSARY |
+| **seconda** | ordinal adjective specifying which death | **দ্বিতীয়** | “second” | OK |
+| **morte** | noun: the target of the shouting, “death” | **মৃত্যুর** | “death (GEN)” | OK |
+| **ciascun** | distributive quantifier: each individual spirit | **প্রত্যেকটি** | “each” | OK |
+| **grida** | verb (present) describing the action of shouting toward the second death | **চিৎকার করবে** | “will shout” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `le`, `li`, `la` – Italian definite articles that have no direct counterpart in Bengali and are naturally omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all other mappings faithfully convey the intended meaning and respect Bengali grammatical requirements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 115**  
+  - **Original:** যেখানে তুমি শোনবে নিরাশার চিৎকার,  
+  - **Issue:** none  
+  - **Corrected:** no change  
+
+- **Line 116**  
+  - **Original:** তুমি দেখবে প্রাচীন দুঃখিত আত্মাদের,  
+  - **Issue:** none  
+  - **Corrected:** no change  
+
+- **Line 117**  
+  - **Original:** যারা প্রত্যেকটি দ্বিতীয় মৃত্যুর দিকে চিৎকার করবে;  
+  - **Issue:** none  
+  - **Corrected:** no change  
+
+```
+যেখানে তুমি শোনবে নিরাশার চিৎকার,
+তুমি দেখবে প্রাচীন দুঃখিত আত্মাদের,
+যারা প্রত্যেকটি দ্বিতীয় মৃত্যুর দিকে চিৎকার করবে;
+```
+]]></message>
+</messages>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Proque io pensa e judica pro tu melior  
+que tu me seque, e io sera tu guida,  
+e io te trara de hic per loco etern;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Ond' | “wherefore”, causal conjunction | **Proque** | “wherefore” | OK |
+| io | 1st‑person singular pronoun (subject) | **io** | “I” | OK |
+| per | preposition “for” (benefactive) | **pro** | “for” | OK |
+| lo | definite article referring to “best” | — (omitted) | — | **UNNECESSARY** |
+| tuo | 2nd‑person possessive adjective “your” | **tu** | “your/thy” | OK |
+| me' | abstract noun “best” (addressee’s highest good) | **melior** | “best” | OK |
+| penso | verb “think” (cognitive) | **pensa** | “think” | OK |
+| e | coordinating conjunction “and” | **e** | “and” | OK |
+| discerno | verb “deem, judge” (evaluative) | **judica** | “judge” | OK |
+| che | subordinating conjunction “that” | **que** | “that” | OK |
+| tu | 2nd‑person pronoun (subject) | **tu** | “you” | OK |
+| mi | 1st‑person pronoun (object) | **me** | “me” | OK |
+| segui, | verb “follow” (imperative‑like) | **seque** | “follow” | OK |
+| e | coordinating conjunction “and” | **e** | “and” | OK |
+| io | 1st‑person pronoun (subject) | **io** | “I” | OK |
+| sarò | future of “to be” – “will be” | **sera** | “will be” | OK |
+| tua | 2nd‑person possessive adjective “your” | **tu** | “your/thy” | OK |
+| guida, | noun “guide” (role) | **guida** | “guide” | OK |
+| e | coordinating conjunction “and” | **e** | “and” | OK |
+| trarrotti | future “will lead you” (verb + object) | **te trara** | “will lead you” | OK |
+| di | preposition “from” | **de** | “from” | OK |
+| qui | adverb “here” | **hic** | “here” | OK |
+| per | preposition “through” | **per** | “through” | OK |
+| loco | noun “place” | **loco** | “place” | OK |
+| etterno; | adjective “eternal” | **etern** | “eternal” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **lo** – the definite article is not required in Interlingua and was therefore omitted.  
+
+No other words are missing, incorrectly translated, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 112**  
+  - Original: `Proque io pensa e judica pro tu melior`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 113**  
+  - Original: `que tu me seque, e io sera tu guida,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 114**  
+  - Original: `e io te trara de hic per loco etern;`  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Proque io pensa e judica pro tu melior
+que tu me seque, e io sera tu guida,
+e io te trara de hic per loco etern;
+```
+]]></message>
+</messages>

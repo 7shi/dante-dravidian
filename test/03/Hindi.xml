@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Hindi)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Hindi) | Back‑Translation (English) | Status |
+|-------------|-----------------------|------------------------------|-----------------------------|--------|
+| **Tant'** | adverb *so* (intensifier) | इतनी | “so, to such a degree” | OK |
+| **è** (1st) | copular verb *is* | है | “is” | OK |
+| **amara** | adjective *bitter* | कड़वी | “bitter” | OK |
+| **che** | conjunction *that* (resultative) | कि | “that” | OK |
+| **poco** | adverb *little* (degree) | थोड़ा | “little, slightly” | OK |
+| **è** (2nd) | copular verb *is* | है | “is” | OK |
+| **più** | comparative *more* | अधिक | “more” | OK |
+| **morte** | noun *death* | मृत्यु | “death” | OK |
+| **ma** | coordinating conjunction *but* | परन्तु | “but” | OK |
+| **per** | preposition *in order to* (purpose) | के लिये | “for, in order to” | OK |
+| **trattar** | infinitive *to treat / discuss* | चर्चा करने | “to discuss” | OK |
+| **del** | contraction *of the* | — | — | **UNNECESSARY** (article not required in Hindi) |
+| **ben** | noun *good* | अच्छा | “good” | OK |
+| **ch'** (1st) | relative pronoun *that* (introducing clause) | जहाँ | “where / that” | OK |
+| **i'** (1st) | pronoun *I* | मैं | “I” | OK |
+| **vi** | adverb *there* (locative) | वहाँ | “there” | OK |
+| **trovai** | verb *found* (past) | पाया | “found” | OK |
+| **dirò** | future verb *I will tell* | बताऊँगा | “will tell” | OK |
+| **de** | preposition *of* | के | “of” | OK |
+| **l'altre** | adjective *other* (with article) | अन्य | “other” | OK (article omitted naturally) |
+| **cose** | noun *things* (plural) | चीज़ों | “things” | OK |
+| **ch'** (2nd) | relative pronoun *that* | — | — | **UNNECESSARY** (implicit in Hindi clause) |
+| **i'** (2nd) | pronoun *I* | मैं | “I” | OK |
+| **v'** | clitic pronoun *there* | वहाँ | “there” | OK |
+| **ho** | auxiliary *have* (perfect) | — | — | **UNNECESSARY** (perfect expressed by participle) |
+| **scorte** | past participle *seen* | देखी गई | “seen” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `del`, `ch'` (second occurrence), `ho` – Hindi does not need these grammatical particles/articles; their meaning is conveyed without them.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected. (The adjective *कड़वी* agrees with the implied feminine noun “बिटterness”; acceptable in Hindi.)
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7:
+  - Original: यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+  - Issue: none
+  - Corrected: यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+
+- Line 8:
+  - Original: परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+  - Issue: none
+  - Corrected: परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+
+- Line 9:
+  - Original: मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+  - Issue: none
+  - Corrected: मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+
+```
+यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+```
+]]></message>
+</messages>

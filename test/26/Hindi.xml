@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Hindi, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Hindi line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+पर तुम, इतनी बड़ी नीरसता में क्यों लौटते हो?  
+तो तुम वह मनोरम पर्वत क्यों नहीं चढ़ते?  
+जो सभी आनंद का मूल और कारण है?
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Ma | Conjunction, adversative | पर | but | OK |
+| tu | Personal pronoun, 2nd sg | तुम | you | OK |
+| perché | Interrogative adverb (seeks cause) | क्यों | why | OK |
+| ritorni | Verb, 2nd sg present “return” | लौटते हो | (you) return | OK |
+| a | Preposition “to / in” | में | in | OK |
+| tanta | Adjective intensifier “so great” | इतनी बड़ी | so great | OK |
+| noia | Noun “annoyance / boredom” | नीरसता | boredom / annoyance | OK |
+| perché | Interrogative adverb (seeks cause) | क्यों | why | OK |
+| non | Negative particle | नहीं | not | OK |
+| sali | Verb “ascend / climb” | चढ़ते | ascend | **GRAMMAR** (missing auxiliary *हो* for 2nd sg) |
+| il | Definite article (masc. sg.) | — | — | **UNNECESSARY** (Hindi omits articles) |
+| dilettoso | Adjective “delightful” | मनोरम | delightful | OK |
+| monte | Noun “mountain” | पर्वत | mountain | OK |
+| ch'è | Relative pronoun + copula “which is” | जो | which | OK |
+| principio | Noun “source / origin” | मूल | source / origin | OK |
+| e | Coordinating conjunction “and” | और | and | OK |
+| cagion | Noun “cause” | कारण | cause | OK |
+| di | Preposition “of” (genitive) | का | of | OK |
+| tutta | Quantifier “all / every” | सभी | all / every | OK |
+| gioia | Noun “joy” | आनंद | joy | OK |
+
+### Items Requiring Attention
+- **sali → चढ़ते** – *GRAMMAR*: the Hindi clause lacks the auxiliary **हो** required for correct 2nd‑person singular agreement (“चढ़ते हो”).  
+- **il** – *UNNECESSARY*: Hindi does not use definite articles; the word is omitted in the translation.  
+
+*(No other source words are missing or incorrectly rendered.)*
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Hindi script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Hindi text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 76:**  
+  - Original: पर तुम, इतनी बड़ी नीरसता में क्यों लौटते हो?  
+  - Issue: none  
+  - Corrected: पर तुम, इतनी बड़ी नीरसता में क्यों लौटते हो?  
+
+- **Line 77:**  
+  - Original: तो तुम वह मनोरम पर्वत क्यों नहीं चढ़ते?  
+  - Issue: **GRAMMAR** – missing auxiliary *हो*; **UNNECESSARY** – discourse particle *तो* not present in source.  
+  - Corrected: तुम वह मनोरम पर्वत क्यों नहीं चढ़ते हो?  
+
+- **Line 78:**  
+  - Original: जो सभी आनंद का मूल और कारण है?  
+  - Issue: none  
+  - Corrected: जो सभी आनंद का मूल और कारण है?  
+
+```
+पर तुम, इतनी बड़ी नीरसता में क्यों लौटते हो?
+तुम वह मनोरम पर्वत क्यों नहीं चढ़ते हो?
+जो सभी आनंद का मूल और कारण है?
+```
+]]></message>
+</messages>

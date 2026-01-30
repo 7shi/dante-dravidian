@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+এমন করে আমাকে শান্তি‑বিহীন দানবটি তৈরি করল,
+যে আমার দিকে এসে ধীরে ধীরে
+আমাকে আবার সেই স্থানে ঠেলে দিল যেখানে সূর্য নীরব।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| tal | such (demonstrative) | এমন | such | OK |
+| mi (line 58) | me (object) | আমাকে | me | OK |
+| fece | made / caused | তৈরি করল | made/created | OK |
+| la | definite article (fem.) | — | — | UNNECESSARY |
+| bestia | beast (noun) | দানবটি | the beast | OK |
+| sanza | without (preposition) | বিহীন | without | OK |
+| pace | repose / peace (noun) | শান্তি | peace | OK |
+| che | that (relative pronoun) | যে | that | OK |
+| venendomi | coming on (gerund) | এসে | coming | OK |
+| 'ncontro | against / toward (preposition) | দিকে | toward / against | OK |
+| a (first) | idiom‑part (preposition) | — | — | UNNECESSARY |
+| poco (first) | little, slowly (adverb) | ধীরে | slowly / little | OK |
+| a (second) | idiom‑part (preposition) | — | — | UNNECESSARY |
+| poco (second) | little, slowly (adverb) | ধীরে | slowly / little | OK |
+| mi (line 60) | me (object) | আমাকে | me | OK |
+| ripigneva | was pushing back (imperfect) | ঠেলে দিল | pushed back | OK |
+| là | thither / that place (adverb) | সেই | that | OK |
+| dove | where (relative adverb) | যেখানে | where | OK |
+| 'l | definite article (masc.) | — | — | UNNECESSARY |
+| sol | Sun (noun) | সূর্য | Sun | OK |
+| tace | is silent (verb) | নীরব | silent | OK |
+
+### Items to Note
+- **UNNECESSARY**: `la`, the two occurrences of `a` (prepositions in the idiom “a poco a poco”), and `'l` (definite article) have no direct lexical counterpart in Bengali and are naturally omitted.  
+- **MISSING / WRONG / GRAMMAR**: none. All source words are represented, and the Bengali rendering respects grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 58**  
+  - Original: এমন করে আমাকে শান্তিবিহীন দানবটি তৈরি করল,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 59**  
+  - Original: যে আমার দিকে এসে ধীরে ধীরে  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 60**  
+  - Original: আমাকে আবার সেই স্থানে ঠেলে দিল যেখানে সূর্য নীরব।  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+এমন করে আমাকে শান্তিবিহীন দানবটি তৈরি করল,
+যে আমার দিকে এসে ধীরে ধীরে
+আমাকে আবার সেই স্থানে ঠেলে দিল যেখানে সূর্য নীরব।
+```
+]]></message>
+</messages>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Serbian (Latin script), guided by the Reference Translation and Step 1 analysis.
+Output: ONE Serbian (Latin script) line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Onima kojima ako želiš potom da se uzdigneš,  
+duša će biti vrednija od mene za to:  
+s njom ću te ostaviti pri mom odlasku;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **A** | preposition “to” (introduces addressees) | **Onima** | “to those” | OK |
+| **le** | definite article (plural, fem.) | *(omitted)* | — | UNNECESSARY |
+| **quai** | relative pronoun “whom” (plural) | **kojima** | “who/whom” | OK |
+| **poi** | adverb “thereafter” | **potom** | “afterwards” | OK |
+| **se** | subordinating conjunction “if” | **ako** | “if” | OK |
+| **tu** | personal pronoun “thou” (2 sg.) | *(omitted)* | — | UNNECESSARY |
+| **vorrai** | verb future “wilt” | **želiš** | “you want” | OK |
+| **salire** | infinitive “ascend” | **uzdigneš** | “you ascend” | OK |
+| **anima** | noun “soul” | **duša** | “soul” | OK |
+| **fia** | verb future “shall be” | **će biti** | “will be” | OK |
+| **a** | preposition “for” (introduces domain) | **za** | “for” | OK |
+| **ciò** | demonstrative pronoun “that” | **to** | “that” | OK |
+| **più** | comparative adverb “more” | **vrednija** | “more worthy” (comparative marker) | OK |
+| **di** | preposition “than” | **od** | “than” | OK |
+| **me** | pronoun “I” (comparison baseline) | **mene** | “me” | OK |
+| **degna** | adjective “worthy” (comparative) | **vrednija** | “worthy” (comparative form) | OK |
+| **con** | preposition “with” | **s** | “with” | OK |
+| **lei** | pronoun “her” | **njom** | “her” | OK |
+| **ti** | pronoun “thee” (acc.) | **te** | “you (acc.)” | OK |
+| **lascerò** | verb future “will leave” | **ću** | “will (future auxiliary)” | OK |
+| **nel** | contraction “in the” (preposition + article) | **pri** | “at” | OK |
+| **mio** | possessive adjective “my” | **mom** | “my” | OK |
+| **partire** | infinitive nominalized “departure” | **odlasku** | “departure” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *le*, *tu* – Italian articles and subject pronoun are naturally omitted in Serbian.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Serbian (Latin script) script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Serbian (Latin script) text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 121:
+  - Original: Onima kojima ako želiš potom da se uzdigneš,
+  - Issue: none
+  - Corrected: no change
+- Line 122:
+  - Original: duša će biti vrednija od mene za to:
+  - Issue: none
+  - Corrected: no change
+- Line 123:
+  - Original: s njom ću te ostaviti pri mom odlasku;
+  - Issue: none
+  - Corrected: no change
+
+```
+Onima kojima ako želiš potom da se uzdigneš,
+duša će biti vrednija od mene za to:
+s njom ću te ostaviti pri mom odlasku;
+```
+]]></message>
+</messages>

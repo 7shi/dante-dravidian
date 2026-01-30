@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+দেখো সেই দানবকে যার জন্য আমি ঘুরে গেলাম;  
+প্রখ্যাত জ্ঞানী তার বিরুদ্ধে আমাকে সাহায্য কর,  
+কারণ সে আমার শিরা ও নাড়ি কাঁপিয়ে দেয়».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------------------|------------------------|--------|
+| Vedi | 2nd sg. imperative “see / behold” | দেখো | “see / behold” | OK |
+| la | Definite article (fem. sg.) | — (omitted) | — | UNNECESSARY |
+| bestia | “the beast” (object of Vedi) | দানবকে | “the beast (to‑object)” | OK |
+| per | Preposition “because of / for which” | যার জন্য | “for which / because of” | OK |
+| cu' | Relative pronoun “which” (dative/abl.) | যার | “which” | OK |
+| io | 1st sg. pronoun “I” | আমি | “I” | OK |
+| mi | Reflexive pronoun (self‑directed) | — (implicit in ঘুরে গেলাম) | — | UNNECESSARY |
+| volsi | “turned” (past historic) | ঘুরে গেলাম | “turned” | OK |
+| aiutami | 1st sg. imperative “help me” | আমাকে সাহায্য কর | “help me” | OK |
+| da | Preposition “against” | বিরুদ্ধে | “against” | OK |
+| lei | 3rd sg. fem. pronoun “her” | তার | “her” | OK |
+| famoso | Adjective “famous” | প্রখ্যাত | “famous” | OK |
+| saggio | Noun “sage” (vocative) | জ্ঞানী | “sage” | OK |
+| ch'ella | Conjunction + pronoun “that she / because she” | সে | “she” (conjoined with কারণ) | OK |
+| mi | 1st sg. pronoun “my” (object of fa) | আমার | “my” | OK |
+| fa | Causative verb “makes” | কাঁপিয়ে দেয় | “makes (cause to tremble)” | OK |
+| tremar | Infinitive “to tremble” | কাঁপিয়ে | “tremble (as part of causative)” | OK |
+| le | Definite article (fem. pl.) | — (omitted) | — | UNNECESSARY |
+| vene | Noun “veins” (pl.) | শিরা | “veins” | OK |
+| e | Coordinating conjunction “and” | ও | “and” | OK |
+| i | Definite article (masc. pl.) | — (omitted) | — | UNNECESSARY |
+| polsi | Noun “pulses” (pl.) | নাড়ি | “pulses” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la`, `mi` (reflexive), `le`, `i` – Bengali does not use articles or a separate reflexive pronoun here, so they are naturally omitted.  
+- **WRONG**: End‑punctuation of line 90 – the source ends with `»` but the translation ends with the Bengali full stop `।`. This deviates from the rule to copy the source’s final punctuation.  
+
+All other lexical items are correctly rendered and grammatically appropriate.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- লাইন 88:
+  - Original: দেখো সেই দানবকে যার জন্য আমি ঘুরে গেলাম;
+  - Issue: none
+  - Corrected: no change
+- লাইন 89:
+  - Original: প্রখ্যাত জ্ঞানী তার বিরুদ্ধে আমাকে সাহায্য কর,
+  - Issue: none
+  - Corrected: no change
+- লাইন 90:
+  - Original: কারণ সে আমার শিরা ও নাড়ি কাঁপিয়ে দেয়।
+  - Issue: WRONG – ending punctuation should be the source’s closing quote “»” instead of the Bengali full stop “।”.
+  - Corrected: কারণ সে আমার শিরা ও নাড়ি কাঁপিয়ে দেয়»
+
+```
+দেখো সেই দানবকে যার জন্য আমি ঘুরে গেলাম;
+প্রখ্যাত জ্ঞানী তার বিরুদ্ধে আমাকে সাহায্য কর,
+কারণ সে আমার শিরা ও নাড়ি কাঁপিয়ে দেয়»
+```
+]]></message>
+</messages>

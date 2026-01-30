@@ -38,6 +38,12 @@ Then was the fear a little quieted which in the lake of my heart had lasted thro
 20 それは私の心の湖の中で続いていた
 21 私がとても哀れみをもって過ごした夜。
 
+# Estonian
+
+19 Siis oli hirm veidi vaiksem,
+20 mis mu südame järves oli kestnud
+21 öö mille ma läbisin nii haletsusega.
+
 # French
 
 19 Alors la peur fut un peu apaisée,
@@ -61,3 +67,39 @@ Then was the fear a little quieted which in the lake of my heart had lasted thro
 19 Tiam la timo estis iom kvietigita,
 20 kiu en la lago de mia koro estis daŭrinta
 21 la nokton kiun mi trapasis kun tiom da kompatemo.
+
+# Interlingua
+
+19 Allora le paura fuit un poco quietate,
+20 que in le lago del corde habia durate
+21 le nocte que io passava con tanta pietate.
+
+# Hindi
+
+19 तब डर थोड़ा शांत हुआ,
+20 जो मेरे हृदय के सरोवर में मुझसे रहा था
+21 वह रात जिसे मैंने अत्यंत दया के साथ पार किया।
+
+# Bengali
+
+19 তখন ভয়টি কিছুটা শান্ত হয়ে গিয়েছিল,
+20 যা আমার হৃদয়ের হ্রদে টিকিয়ে ছিল
+21 যে রাত আমি এত দুঃখের সঙ্গে পার করলাম।
+
+# German
+
+19 Dann war die Angst ein wenig beruhigt,
+20 die im See meines Herzens hatte bestanden
+21 die Nacht die ich so voller Mitleid durchlebte.
+
+# Dutch
+
+19 Toen was de angst een beetje tot rust gekomen,
+20 die in het meer van het hart had geduurd
+21 de nacht die ik met zoveel medelijden doorliep.
+
+# Serbian (Latin script)
+
+19 Tada je strah malo utišan,
+20 koji je u jezeru mog srca trajao
+21 noć koju sam proveo s toliko sažaljenjem.

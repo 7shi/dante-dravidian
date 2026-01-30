@@ -38,6 +38,12 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 5 この野生で荒くて濃い森
 6 それは思考の中で恐怖を新たにする！
 
+# Estonian
+
+4 Ah kui raske on öelda mis see oli
+5 see mets on metsik ja karm ja tihe
+6 mis mõttes uuendab hirmu!
+
 # French
 
 4 Ah comme il est difficile de dire ce qu’il était
@@ -61,3 +67,39 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 4 Aĥi kiom malfacila afero estas diri kio ĝi estis
 5 ĉi tiu sovaĝa kaj aspra kaj densa arbaro
 6 kiu en la penso renovigas la timon!
+
+# Interlingua
+
+4 Ah quanto es difficile dicer qual era iste cosa
+5 iste selva selvage e aspra e forte
+6 que in le pensamento renova le paura!
+
+# Hindi
+
+4 आह यह बताना कि वह क्या था कितना कठिन काम है
+5 यह जंगली और खुरदरा और घना वन
+6 जो विचार में भय को फिर से जगा देता है!
+
+# Bengali
+
+4 আহ কী কঠিন কাজ এটি বলতে যে তা কী ছিল
+5 এই বন বন্য এবং কঠোর এবং ঘন
+6 যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!
+
+# German
+
+4 Ach wie schwer ist es zu sagen was es war
+5 dieser Wald ist wild und rau und dicht
+6 der im Denken die Angst erneuert!
+
+# Dutch
+
+4 Ach hoe moeilijk het is om te vertellen wat het was is een harde zaak
+5 dit woud is wild en ruw en dicht
+6 die in gedachten de angst vernieuwt!
+
+# Serbian (Latin script)
+
+4 Ah koliko je teško reći šta je bila teška stvar
+5 ova šuma divlja i gruba i gusta
+6 koja u mislima obnavlja strah!

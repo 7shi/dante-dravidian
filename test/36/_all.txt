@@ -38,6 +38,12 @@ Of that humble Italy shall he be the salvation, for which the virgin Camilla die
 107 それのために処女カミラが死んだ、
 108 エウリアロス、ターンヌ、ニソスは傷を負っている。
 
+# Estonian
+
+106 Selle alandliku Itaalia jaoks saab ta päästeks
+107 selle eest suri neits Camilla,
+108 Eurialo, Turno ja Niso haavatud.
+
 # French
 
 106 De cette humble Italie sera le salut
@@ -61,3 +67,39 @@ Of that humble Italy shall he be the salvation, for which the virgin Camilla die
 106 De tiu humila Italio estos savo
 107 pro kiu mortis la virgulino Camilla,
 108 Eurialo kaj Turno kaj Niso vunditaj.
+
+# Interlingua
+
+106 De ille humile Italia essera le salvamento
+107 per le qual morì le virgine Cammilla,
+108 Eurialo e Turno e Niso de ferite.
+
+# Hindi
+
+106 उस विनम्र इटली की मुक्ति होगी
+107 जिसके लिये कुंवारी कैमिला मर गई,
+108 यूरियालो टर्नो और निसो घावों से घायल हैं।
+
+# Bengali
+
+106 সেই বিনয়ী ইতালির জন্য হবে মুক্তি
+107 যার জন্য কুমারী ক্যামিলা মারা গিয়েছিল,
+108 ইউরিয়ালো এবং টার্নো এবং নিসো আহত।
+
+# German
+
+106 Von jenem demütigen Italien wird die Rettung sein
+107 für die die Jungfrau Camilla starb,
+108 Eurialo und Turnus und Nisus von ihren Wunden.
+
+# Dutch
+
+106 Van die bescheiden Italië zal de redding zijn
+107 waarvoor de maagd Camilla stierf,
+108 Eurialus en Turnus en Nisus zijn gewond.
+
+# Serbian (Latin script)
+
+106 Za tu skromnu Italiju biće spasenje
+107 Zbog čega je umrla devica Camilla,
+108 Eurialo i Turno i Niso ranjeni.

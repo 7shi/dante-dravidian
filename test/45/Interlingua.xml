@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+que tu me conduce illuc ubi tu ha ora dicate,  
+sic que io vide le porta de Sancte Pietro  
+e illes a qui tu face tanto affligite.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| # | Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Interlingua) | Back‑Translation (English) | Status |
+|---|-------------|--------------------------------------|-----------------------------------|-----------------------------|--------|
+| 1 | che | conjunction introducing the content clause | que | “that” | OK |
+| 2 | tu | 2nd person singular pronoun, subject of *meni* | tu | “you” | OK |
+| 3 | mi | 1st person singular pronoun, object of *meni* | me | “me” | OK |
+| 4 | meni | verb “to lead” (subjunctive) | conduce | “lead” | OK |
+| 5 | là | adverb of place “there” | illuc | “there” | OK |
+| 6 | dov' | relative adverb “where” | ubi | “where” | OK |
+| 7 | or | adverb of time “now” | ora | “now” | OK |
+| 8 | dicesti | past indicative “said” | dicate | “said” | **WRONG** (lexical form; should be *dixite*) |
+| 9 | sì | adverb of manner “so” | sic | “so” | OK |
+|10| ch'io | complementizer “that” (introducing purpose clause) | que | “that” | OK |
+|11| veggia | subjunctive “may see” | vide | “see” | OK |
+|12| la | definite article, fem. singular | le | “the” | OK |
+|13| porta | noun “gate” | porta | “gate” | OK |
+|14| di | preposition “of” | de | “of” | OK |
+|15| san | honorific “Saint” | Sancte | “Saint” | OK |
+|16| Pietro | proper noun “Peter” | Pietro | “Peter” | OK |
+|17| e | coordinating conjunction “and” | e | “and” | OK |
+|18| color | demonstrative plural “those” | illes | “those” | OK |
+|19| cui | relative pronoun “to whom” | a qui | “to whom” | OK |
+|20| tu | 2nd person singular pronoun, subject of *fai* | tu | “you” | OK |
+|21| fai | verb “make / cause” | face | “make / cause” | OK |
+|22| cotanto | degree adverb “so much” | tanto | “so much” | OK |
+|23| mesti | adjective “afflicted, sad” | affligite | “afflicted” | OK |
+
+---
+
+### Items Requiring Attention  
+
+| Category | Item(s) |
+|----------|---------|
+| **WRONG** | *dicesti* → **dicate** (incorrect past‑participle; Interlingua form should be **dixite**) |
+| **UNNECESSARY** | **ha** (auxiliary inserted in “tu **ha** ora dicate”; no counterpart in the source) |
+| **MISSING** | — none — |
+| **GRAMMAR** | — none detected (agreement and word order are acceptable) |
+
+All other source tokens are accounted for with appropriate Interlingua equivalents and correct status markings.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 133:  
+  - Original: **che tu mi meni là dov' or dicesti,**  
+  - Issue: **WRONG** (translation of *dicesti*), **UNNECESSARY** (spurious auxiliary *ha*)  
+  - Corrected: **que tu me conduce illuc ubi tu ora dixite,**  
+
+- Line 134:  
+  - Original: **sì ch'io veggia la porta di san Pietro**  
+  - Issue: none  
+  - Corrected: **sic que io vide le porta de Sancte Pietro**  
+
+- Line 135:  
+  - Original: **e color cui tu fai cotanto mesti».**  
+  - Issue: none  
+  - Corrected: **e illes a qui tu face tanto affligite.**  
+
+```interlingua
+que tu me conduce illuc ubi tu ora dixite,
+sic que io vide le porta de Sancte Pietro
+e illes a qui tu face tanto affligite.
+```
+]]></message>
+</messages>

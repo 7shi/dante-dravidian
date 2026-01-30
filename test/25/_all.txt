@@ -38,6 +38,12 @@ Poet was I, and sang of that just son of Anchises who came from Troy after proud
 74 アンキセスの息子でトロイから来た、 
 75 誇り高いイリオンが燃やされた後に。
 
+# Estonian
+
+73 Ma olin luuletaja ja laulsin sellest õiglasest
+74 Anchise poeg kes tuli Troost,
+75 pärast kui uhke Ilion põles.
+
 # French
 
 73 Poète j'étais et chantai ce juste
@@ -61,3 +67,39 @@ Poet was I, and sang of that just son of Anchises who came from Troy after proud
 73 Poeto estis mi kaj kantis pri tiu justa
 74 filo de Anchiso kiu venis de Trojo,
 75 post la fiera Ilio estis bruligita.
+
+# Interlingua
+
+73 Io esseva poeta e cantava de ille juste
+74 Filio de Anchise qui veniva de Troia,
+75 postea que le superbo Ilion esseva combuste.
+
+# Hindi
+
+73 मैं कवि था और उस न्यायी के बारे में गाया
+74 एंकीस का पुत्र जो ट्रॉय से आया,
+75 उसके बाद गर्वीला इलियन जलाया गया था.
+
+# Bengali
+
+73 আমি কবি ছিলাম এবং সেই ন্যায়পরায়ণের গান গাইছিলাম
+74 অ্যাঙ্কিসের পুত্র যিনি ট্রয় থেকে এসেছিলেন,
+75 গর্বিত ইলিয়ন পুড়ে যাওয়ার পরে।
+
+# German
+
+73 Ich war Dichter und sang von jenem Gerechten
+74 Sohn des Anchises, der aus Troja kam,
+75 nachdem das stolze Ilion verbrannt war.
+
+# Dutch
+
+73 Dichter was ik en zong over die rechtvaardige,
+74 zoon van Anchises die uit Troje kwam,
+75 nadat het trotse Ilion was verbrand.
+
+# Serbian (Latin script)
+
+73 Bio sam pesnik i pevao o tom pravednom.
+74 sin Ankise koji je došao iz Troje,
+75 nakon što je ponosni Ilion bio spaljen.

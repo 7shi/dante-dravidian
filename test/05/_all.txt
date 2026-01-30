@@ -38,6 +38,12 @@ But after I had arrived at the foot of a hill, where that valley ended which had
 14 そこはあの谷が終わる場所で
 15 その谷は私の心を恐怖で貫いていた、
 
+# Estonian
+
+13 Aga pärast seda kui olin jõudnud mäe jalamil,
+14 seal kus lõppes see org
+15 mis oli mu südame hirmuga täitnud,
+
 # French
 
 13 Mais après être arrivé au pied d'une colline,
@@ -61,3 +67,39 @@ But after I had arrived at the foot of a hill, where that valley ended which had
 13 Sed post kiam mi alvenis al piedo de monteto,
 14 tie kie finiĝis tiu valo
 15 kiu enpikis mian koron per timo,
+
+# Interlingua
+
+13 Ma postea que io habia arrivate al pede de un colina,
+14 ubi le valle terminava
+15 que habia perforate mi corde con timor,
+
+# Hindi
+
+13 पर फिर जब मैं एक पहाड़ी के तल पर पहुँचा,
+14 जहाँ वह घाटी समाप्त होती थी
+15 जिसने मेरे दिल को डर से भर दिया था,
+
+# Bengali
+
+13 কিন্তু পরে আমি যখন একটি পাহাড়ের পায়ের তলে পৌঁছেছিলাম,
+14 যেখানে সেই উপত্যকা শেষ হয়েছিল
+15 যা আমার হৃদয়কে ভয়ে ছিদ্র করেছিল,
+
+# German
+
+13 Aber nachdem ich am Fuße eines Hügels angekommen war,
+14 wo jenes Tal endete
+15 das mir das Herz vor Angst durchbohrt hatte,
+
+# Dutch
+
+13 Maar daarna toen ik aan de voet van een heuvel was aangekomen,
+14 daar waar die vallei eindigde
+15 die mijn hart met angst had doorboord,
+
+# Serbian (Latin script)
+
+13 Ali nakon što sam stigao do podnožja brda,
+14 tamo gde se ta dolina završavala
+15 koja mi je srce probila strahom,

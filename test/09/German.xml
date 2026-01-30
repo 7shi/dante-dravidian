@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+so mein Geist, der noch flog,
+wandte sich zurück um den Pass erneut zu betrachten
+der nie eine lebende Person verließ.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| così | resultative adverb linking the previous clause | **so** | “so” | OK |
+| l'animo | noun, the speaker’s soul | **Geist** | “spirit / soul” | OK |
+| mio | possessive adjective | **mein** | “my” | OK |
+| ch'ancor | relative pronoun + adverb “still” | **der noch** | “who/which still” | OK |
+| fuggiva | imperfect verb “was fleeing” | **flog** | “flew” | OK |
+| si | reflexive clitic | **sich** | “himself” | OK |
+| volse | past verb “turned” | **wandte** | “turned” | OK |
+| a *(first)* | preposition indicating direction “to” (part of *a retro*) | **zurück** | “back” | OK |
+| retro | noun used adverbially “back” (already expressed by *zurück*) | — | — | **UNNECESSARY** |
+| a *(second)* | preposition introducing purpose infinitive | **um** | “to / for” | OK |
+| rimirar | infinitive “to look again” | **betrachten** | “to look at / consider” | OK |
+| lo | definite article, masculine accusative | **den** | “the” (acc.) | OK |
+| passo | noun “pass” | **Pass** | “pass” | OK |
+| che | relative pronoun | **der** | “which” | OK |
+| non | negation particle | **nie** | “never” | OK |
+| lasciò | past verb “left” | **verließ** | “left” | OK |
+| già | adverb “already” (temporal intensifier) | — | — | **MISSING** |
+| mai | adverb “never” (intensifier) | — | — | **UNNECESSARY** |
+| persona | noun “person” | **Person** | “person” | OK |
+| viva | adjective “living” | **lebende** | “living” | OK |
+| — | — | **eine** (added article before *lebende Person*) | “a” | **UNNECESSARY** |
+
+### Items to Address
+- **MISSING:** *già* – the temporal intensifier “already” is not rendered in the German version.  
+- **UNNECESSARY:** *retro* (its meaning is covered by *zurück*), *mai* (redundant because *nie* already expresses the negation), and the inserted article **eine** (German requires an article here, but the source Italian does not have one).  
+
+No grammatical mismatches were detected; all agreements (gender, number, case) are correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 25:
+  - Original: so mein Geist, der noch flog,
+  - Issue: none
+  - Corrected: So mein Geist, der noch flog,
+- Line 26:
+  - Original: wandte sich zurück um den Pass erneut zu betrachten
+  - Issue: none
+  - Corrected: wandte sich zurück um den Pass erneut zu betrachten
+- Line 27:
+  - Original: der nie eine lebende Person verließ.
+  - Issue: missing “già” → need “noch” to express “already/never before”
+  - Corrected: der noch nie eine lebende Person verließ.
+
+```text
+So mein Geist, der noch flog,
+wandte sich zurück um den Pass erneut zu betrachten
+der noch nie eine lebende Person verließ.
+```
+]]></message>
+</messages>

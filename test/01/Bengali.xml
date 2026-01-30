@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+আমাদের জীবনের পথে মাঝখানে  
+আমি নিজেকে এক অন্ধকার বনে পেলাম,  
+কারণ সঠিক পথ হারিয়ে গিয়েছিল।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Bengali)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bengali) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|--------------------------------|-----------------------------|--------|
+| **Nel** | preposition + definite article “in the” | **UNNECESSARY** | – | UNNECESSARY |
+| **mezzo** | noun (middle, midpoint) | **মাঝখানে** | “midway / in the middle” | OK |
+| **del** | preposition + definite article “of the” | **UNNECESSARY** | – | UNNECESSARY |
+| **cammin** | noun (road, journey) | **পথে** | “on the road” | OK |
+| **di** | preposition “of” | **UNNECESSARY** | – | UNNECESSARY |
+| **nostra** | possessive adjective “our” | **আমাদের** | “our” | OK |
+| **vita** | noun (life) | **জীবনের** | “of life” | OK |
+| **mi** | reflexive pronoun “myself” | **আমি** | “I” | **WRONG** (reflexive sense omitted) |
+| **ritrovai** | verb (found) | **পেলাম** | “found” | OK |
+| **per** | preposition “within / through” | **UNNECESSARY** | – | UNNECESSARY |
+| **una** | indefinite article “a” | **এক** | “one / a” | OK |
+| **selva** | noun (forest, wood) | **বনে** | “in the forest” | OK |
+| **oscura** | adjective (dark) | **অন্ধকার** | “dark” | OK |
+| **ché** | conjunction “because / for” | **কারণ** | “because / for” | OK |
+| **la** | definite article “the” | **UNNECESSARY** | – | UNNECESSARY |
+| **diritta** | adjective (right, straight) | **সঠিক** | “correct / right” | OK |
+| **via** | noun (way, path) | **পথ** | “way / path” | OK |
+| **era** | verb (was, imperfect) | **গিয়েছিল** | “had gone / was” (auxiliary) | OK |
+| **smarrita** | past participle (lost) | **হারিয়ে** | “lost” | OK |
+
+---
+
+### Issues Detected
+- **WRONG:** *mi* was rendered only as “আমি” (I); the reflexive meaning “myself” (নিজেকে) is missing.  
+- **UNNECESSARY:** Articles and prepositions that have no direct counterpart in Bengali: **Nel, del, di, per, la** (and the article component of **Nel**).  
+
+No missing source words, and no grammatical agreement problems were found in the Bengali output.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: আমাদের জীবনের পথে মাঝখানে
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: আমি নিজেকে এক অন্ধকার বনে পেলাম,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: কারণ সঠিক পথ হারিয়ে গিয়েছিল।
+  - Issue: none
+  - Corrected: no change  
+
+```
+আমাদের জীবনের পথে মাঝখানে
+আমি নিজেকে এক অন্ধকার বনে পেলাম,
+কারণ সঠিক পথ হারিয়ে গিয়েছিল।
+```
+]]></message>
+</messages>

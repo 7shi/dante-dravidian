@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+kellele kui sa tahad pärast seda tõusta,  
+hing on selle pärast rohkem väärt kui mina:  
+tema kõrval jätan ma sind minu lahkumisel;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+answer.**Word‑to‑Word Mapping Table (Estonian translation)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|----------------------|--------------------------|--------|
+| **A** | preposition introducing the addressee (“to”) | **kellele** | “to (whom)” | OK |
+| **le** | definite article (plural) – marks “the” | — | — | **UNNECESSARY** (Estonian has no article) |
+| **quai** | relative pronoun “whom/which” (the addressees) | **kellele** | “to whom” | OK |
+| **poi** | adverb “then/afterwards” | **pärast** | “after” | OK |
+| **se** | conditional conjunction “if” | **kui** | “if” | OK |
+| **tu** | 2nd‑person singular pronoun “you” | **sa** | “you” | OK |
+| **vorrai** | future verb “will want/wilt” | **tahad** | “you want / will want” | OK |
+| **salire** | infinitive “to ascend” | **tõusta** | “to ascend” | OK |
+| **anima** | noun “soul” | **hing** | “soul” | OK |
+| **fia** | future copula “shall be” | **on** | “is / shall be” (present used) | OK |
+| **a** | preposition introducing the domain of worthiness “for” | **selle** | “for that” | OK |
+| **ciò** | demonstrative pronoun “that” (the ascent) | **selle** | “that” | OK |
+| **più** | comparative adverb “more” | **rohkem** | “more” | OK |
+| **di** | preposition introducing the standard of comparison “than” | **kui** | “than” | OK |
+| **me** | 1st‑person pronoun “I” (comparison baseline) | **mina** | “I / me” | OK |
+| **degna** | adjective “worthy” (of the soul) | **väärt** | “worthy / valuable” | OK |
+| **con** | preposition “with” (introducing companion) | **kõrval** | “by / next to” | OK |
+| **lei** | pronoun “her” (the companion) | **tema** | “her / she” | OK |
+| **ti** | 2nd‑person pronoun “you” (object) | **sind** | “you (acc.)” | OK |
+| **lascerò** | future verb “I will leave” | **jätan** | “I leave / will leave” | OK |
+| **nel** | contraction “in the” (locative) | — | — | **UNNECESSARY** (absorbed in “lahkumisel”) |
+| **mio** | possessive adjective “my” | **minu** | “my” | OK |
+| **partire** | infinitive “to depart” (nominalised) | **lahkumisel** | “at the departure” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `le` (definite article), `nel` (locative preposition “in the”) – Estonian does not use articles and the locative meaning is encoded in the case ending of *lahkumisel*.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the Estonian translation respects number, case, and agreement conventions.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 121:
+  - Original: **kellele kui sa tahad pärast seda tõusta,**
+  - Issue: none
+  - Corrected: no change  
+
+- Line 122:
+  - Original: **hing on selle pärast rohkem väärt kui mina:**
+  - Issue: none
+  - Corrected: no change  
+
+- Line 123:
+  - Original: **tema kõrval jätan ma sind minu lahkumisel;**
+  - Issue: none
+  - Corrected: no change  
+
+```
+kellele kui sa tahad pärast seda tõusta,
+hing on selle pärast rohkem väärt kui mina:
+tema kõrval jätan ma sind minu lahkumisel;
+```
+]]></message>
+</messages>

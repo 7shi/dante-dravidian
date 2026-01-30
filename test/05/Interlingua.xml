@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ma postea que io habeva arrivate al pede de un colina,
+ubi le valle terminava
+que habeva perforate mi corde con timor,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Alignment Table (Source → Interlingua)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **Ma** | coordinating conjunction (contrast) | Ma | but | OK |
+| **poi** | adverb of time – “later, after” | postea | after | OK |
+| **ch'i'** | “che io” – relative/complementizer + 1st‑person pronoun | que io | that I | OK |
+| **fui** | auxiliary verb (passato remoto) forming perfect “had arrived” | habeva | had (aux.) | OK |
+| **al** | preposition + definite article “to the/at the” | al | at the | OK |
+| **piè** | noun “foot (of a hill)” | pede | foot | OK |
+| **d'un** | preposition + indefinite article “of a” | de un | of a | OK |
+| **colle** | noun “hill” (archaic) | colina | hill | OK |
+| **giunto** | past participle “arrived, reached” | arrivate | arrived | OK |
+| **là** | demonstrative adverb of place “there, where” | ubi | where/there | OK |
+| **dove** | relative adverb of place “where” (redundant with *là*) | — | — | **UNNECESSARY** |
+| **terminava** | imperfect verb “was ending” | terminava | was ending | OK |
+| **quella** | demonstrative adjective “that” | le | the | OK (definite article used in Interlingua) |
+| **valle** | noun “valley” | valle | valley | OK |
+| **che** | relative pronoun referring to *valle* | que | which | OK |
+| **m'avea** | 1st‑person indirect object + pluperfect “mi aveva” – “had (to) me” | habeva | had | OK |
+| **di** | preposition “of” (in the sense “with”) | con | with | OK |
+| **paura** | noun “fear” | timor | fear | OK |
+| **il** | definite article “the” (masc.) – not required in Interlingua | — | — | **UNNECESSARY** |
+| **cor** | noun “heart” (archaic *cor*) | corde | heart | OK |
+| **compunto** | past participle “pierced, filled” | perforate | pierced | OK |
+
+### Items to Review
+- **UNNECESSARY**: *dove* (redundant with *là* → both rendered by a single *ubi*), *il* (definite article omitted in Interlingua).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are preserved and grammatical agreement is respected in the Interlingua rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 13:  
+  - Original: **Ma postea que io habeva arrivate al pede de un colina,**  
+  - Issue: **GRAMMAR** – the pluperfect auxiliary should be *habia*, not *habeva*.  
+  - Corrected: **Ma postea que io **habia** arrivate al pede de un colina,**  
+
+- Line 14:  
+  - Original: **ubi le valle terminava**  
+  - Issue: none  
+  - Corrected: **no change**  
+
+- Line 15:  
+  - Original: **que habeva perforate mi corde con timor,**  
+  - Issue: **GRAMMAR** – the pluperfect auxiliary should be *habia*, not *habeva*.  
+  - Corrected: **que **habia** perforate mi corde con timor,**  
+
+```interlingua
+Ma postea que io habia arrivate al pede de un colina,
+ubi le valle terminava
+que habia perforate mi corde con timor,
+```
+]]></message>
+</messages>

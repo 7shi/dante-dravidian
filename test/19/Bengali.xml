@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E qual è quei che volontieri acquista,  
+এবং যিনি স্বেচ্ছায় অর্জন করেন, তিনি তেমনই,  
+
+e giugne 'l tempo che perder lo face,  
+এবং সময় আসে যা তাকে হারাতে বাধ্য করে,  
+
+che 'n tutti suoi pensier piange e s'attrista;  
+যে তার সব চিন্তায় কাঁদে এবং দুঃখিত হয়;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| # | Source Word | Contextual Definition | Target Word / Phrase (Bengali) | Back‑Translation (EN) | Status |
+|---|-------------|-----------------------|--------------------------------|------------------------|--------|
+| 1 | **E** | Conj. (coordinating) – “And” | **এবং** | “and” | OK |
+| 2 | **qual** | Interrogative/relative pronoun – “such as” | **তেমনই** | “such as / in that way” | OK |
+| 3 | **è** | Copular verb – “is” | *(omitted)* | – | UNNECESSARY (Bengali does not require a copula) |
+| 4 | **quei** | Demonstrative pronoun – “he” | **তিনি** | “he” | OK |
+| 5 | **che** (line 55) | Relative pronoun – “who” | **যিনি** | “who (he)” | OK |
+| 6 | **volontieri** | Adverb – “willingly” | **স্বেচ্ছায়** | “willingly” | OK |
+| 7 | **acquista** | Verb – “gaineth / acquires” | **অর্জন করেন** | “acquires / gains” | OK |
+| 8 | **e** (line 56) | Conj. – “and” | **এবং** | “and” | OK |
+| 9 | **giugne** | Verb – “arrives” | **আসে** | “arrives” | OK |
+|10| **'l** | Definite article – “the” | *(omitted)* | – | UNNECESSARY (articles are not expressed in Bengali) |
+|11| **tempo** | Noun – “time” | **সময়** | “time” | OK |
+|12| **che** (line 56) | Relative pronoun – “that” | **যা** | “that” | OK |
+|13| **perder** | Infinitive – “lose” | **হারাতে** | “to lose” | OK |
+|14| **lo** | Clitic pronoun – “him” | **তাকে** | “him” | OK |
+|15| **face** | Causative verb – “makes” | **বাধ্য করে** | “makes / forces” | OK |
+|16| **che** (line 57) | Relative pronoun – “who” | **যে** | “who” | OK |
+|17| **'n** | Preposition – “in” | *(encoded in “চিন্তায়”)* | – | UNNECESSARY (prepositional sense expressed by locative suffix) |
+|18| **tutti** | Quantifier – “all” | **সব** | “all” | OK |
+|19| **suoi** | Possessive adjective – “his” | **তার** | “his” | OK |
+|20| **pensier** | Noun – “thoughts” | **চিন্তায়** | “in thoughts” | OK |
+|21| **piange** | Verb – “weeps” | **কাঁদে** | “weeps” | OK |
+|22| **e** (line 57) | Conj. – “and” | **এবং** | “and” | OK |
+|23| **s'attrista** | Reflexive verb – “is sad” | **দুঃখিত হয়** | “becomes sad / is sad” | OK |
+
+---
+
+### Items Requiring Attention
+- **è** – UNNECESSARY (copula omitted in Bengali).  
+- **'l** – UNNECESSARY (definite article not expressed).  
+- **'n** – UNNECESSARY (prepositional meaning absorbed by the locative suffix “‑য়” in *চিন্তায়*).  
+
+All other source tokens are correctly rendered in the Bengali translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 55**  
+  - Original: `E qual è quei che volontieri acquista,`  
+  - Issue: none  
+  - Corrected: `এবং তেমনই তিনি, যিনি স্বেচ্ছায় অর্জন করেন,`  
+
+- **Line 56**  
+  - Original: `e giugne 'l tempo che perder lo face,`  
+  - Issue: none  
+  - Corrected: `এবং সময় আসে যা তাকে হারাতে বাধ্য করে,`  
+
+- **Line 57**  
+  - Original: `che 'n tutti suoi pensier piange e s'attrista;`  
+  - Issue: none  
+  - Corrected: `যে তার সব চিন্তায় কাঁদে এবং দুঃখিত হয়;`  
+
+```
+এবং তেমনই তিনি, যিনি স্বেচ্ছায় অর্জন করেন,
+এবং সময় আসে যা তাকে হারাতে বাধ্য করে,
+যে তার সব চিন্তায় কাঁদে এবং দুঃখিত হয়;
+```
+]]></message>
+</messages>

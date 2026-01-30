@@ -38,6 +38,12 @@ He shall not feed on land or goods, but wisdom and love and valor, and his birth
 104 しかし知恵と愛と勇気を持つ、
 105 そして彼の出生地はフェルトロとフェルトロの間にある。
 
+# Estonian
+
+103 Ta ei söö maa ega kaupu,
+104 aga tarkus, armastus ja vaprus,
+105 ja tema sünnikoht on Feltro ja Feltro vahel.
+
 # French
 
 103 Il ne se nourrira pas de terre ni de peltro,
@@ -61,3 +67,39 @@ He shall not feed on land or goods, but wisdom and love and valor, and his birth
 103 Li ne nutros sur tero nek sur havaĵoj,
 104 sed saĝo, amo kaj kuraĝo,
 105 kaj lia naskiĝloko estos inter Feltro kaj Feltro.
+
+# Interlingua
+
+103 Iste non cibara terra ni peltro,
+104 ma sapientia amor e virtute,
+105 e su nation sera inter Feltro e Feltro.
+
+# Hindi
+
+103 वह भूमि या वस्तु पर नहीं खाएगा,
+104 परन्तु ज्ञान, प्रेम और वीरता,
+105 और उसका जन्मस्थान फेल्ट्रो और फेल्ट्रो के बीच होगा।
+
+# Bengali
+
+103 তিনি ভূমি বা পণ্য খাবেন না,
+104 কিন্তু জ্ঞান, প্রেম এবং বীরত্ব,
+105 এবং তার জন্মস্থান ফেল্ত্রো এবং ফেল্ত্রোর মধ্যে হবে।
+
+# German
+
+103 Er wird nicht von Land oder Waren leben,
+104 Aber Weisheit und Liebe und Tapferkeit,
+105 und seine Heimat wird zwischen Feltro und Feltro liegen.
+
+# Dutch
+
+103 Hij zal niet voeden op land of goederen,
+104 maar wijsheid liefde en moed,
+105 en zijn geboorteplaats zal tussen Feltro en Feltro liggen.
+
+# Serbian (Latin script)
+
+103 Neće se hraniti zemljom niti robom,
+104 Ali mudrost ljubav i hrabrost,
+105 I njegovo mesto rođenja biće između Feltra i Feltra.

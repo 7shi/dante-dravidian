@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+pro iste bestia, per le qual tu clama,  
+non permitte alicuno passar per su via,  
+ma tanto lo impedisce que lo occide;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → Interlingua)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|-------------------|--------|
+| **ché** | causal conjunction “because” | **pro** | “for / because of” | OK |
+| **questa** | demonstrative adjective “this” (modifying *bestia*) | **iste** | “this” | OK |
+| **bestia** | noun “beast” | **bestia** | “beast” | OK |
+| **per** | preposition “for / through” (introducing cause / path) | **per** | “for / through” | OK |
+| **la** (in *la qual*) | definite article “the” (introducing relative clause) | **le** | “the” | OK |
+| **qual** | relative pronoun “which” | **qual** | “which” | OK |
+| **tu** | 2nd‑person pronoun “you” | **tu** | “you” | OK |
+| **gride** | verb “cry out” | **clama** | “cry / shout” | OK |
+| **non** | negation “not” | **non** | “not” | OK |
+| **lascia** | verb “allows / lets” | **permite** | “permits / allows” | OK |
+| **altrui** | indefinite pronoun “any other (person)” | **alicuno** | “anyone” | OK |
+| **pasar** | infinitive “to pass” | **pasar** | “to pass” | OK |
+| **per** | preposition “through / along” | **per** | “through / along” | OK |
+| **la** (in *la sua via*) | definite article “the” (possessive construction) | — (omitted) | — | **UNNECESSARY** |
+| **sua** | possessive adjective “its” | **su** | “its” | OK |
+| **via** | noun “way / path” | **via** | “way / path” | OK |
+| **ma** | coordinating conjunction “but” | **ma** | “but” | OK |
+| **tanto** | adverb of degree “so much / to such an extent” | **tanto** | “so much” | OK |
+| **lo** | pronoun “him” (object) | **lo** | “him” | OK |
+| **'mpedisce** | verb “hinders / impedes” | **impedisce** | “hinders” | OK |
+| **che** | complementizer “that” (introducing result clause) | **que** | “that” | OK |
+| **l'uccide** | verb phrase “kills him” | **occide** | “kills” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: the second occurrence of **la** (in *la sua via*) is omitted in Interlingua because the possessive **su** already conveys the meaning without an article. All other tokens are correctly rendered.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: pro iste bestia, per le qual tu clama,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: non permitte alicuno passar per su via,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: ma tanto lo impedisce que lo occide;
+  - Issue: none
+  - Corrected: no change  
+
+```
+pro iste bestia, per le qual tu clama,
+non permitte alicuno passar per su via,
+ma tanto lo impedisce que lo occide;
+```
+]]></message>
+</messages>

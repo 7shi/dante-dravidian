@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+three lines.
+
+et sa viid mind sinna kus sa nüüd ütlesid,  
+et ma näeksin pühakõlblase Peetri värava  
+ja need keda sa teed nii kurbaks».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+final answer.**Word‑to‑Word Alignment Table (Estonian translation)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Eng.) | Status |
+|------------|----------------------|--------------------|------------------------|--------|
+| che | subordinating conjunction “that” | **et** | “that / so” | OK |
+| tu | 2nd sg. pronoun, subject | **sa** | “you” | OK |
+| mi | 1st sg. pronoun, object | **mind** | “me” | OK |
+| meni | verb “lead” (subjunctive) | **viid** | “lead / take” | OK |
+| là | adverb of place “there” | **sinna** | “there / thither” | OK |
+| dov' | relative adverb “where” | **kus** | “where” | OK |
+| or | adverb of time “now” | **nüüd** | “now” | OK |
+| dicesti | verb “said” (past) | **ütlesid** | “said” | OK |
+| sì | adverb “so / thus” (resultative) | **et** | “so / that” | OK |
+| ch'io | 1st sg. pronoun, subject “I” | **ma** | “I” | OK |
+| veggia | verb “may see” (subjunctive) | **näeksin** | “may see / would see” | OK |
+| la | definite article (fem.) | — | — | **UNNECESSARY** (Estonian omits articles) |
+| porta | noun “gate” | **värava** | “gate (genitive/partitive)” | OK |
+| di | preposition “of” (genitive) | — | — | **UNNECESSARY** (genitive expressed by “Peetri”) |
+| san | abbreviation “saint” | **pühakõlblase** | “holy / saintly” | OK |
+| Pietro | proper name “Peter” | **Peetri** | “Peter (genitive)” | OK |
+| e | coordinating conjunction “and” | **ja** | “and” | OK |
+| color | demonstrative pronoun “those” | **need** | “those” | OK |
+| cui | relative pronoun “whom” | **keda** | “whom” | OK |
+| tu (2nd) | 2nd sg. pronoun, subject | **sa** | “you” | OK |
+| fai | verb “make / cause” | **teed** | “make / cause” | OK |
+| cotanto | degree adverb “so much” | **nii** | “so” (intensifier) | OK |
+| mesti | adjective “afflicted, sad” | **kurbaks** | “sad / afflicted” | OK |
+
+### Items to Note
+- **UNNECESSARY**: *la* (definite article) and *di* (preposition “of”) are naturally omitted in Estonian; their meanings are conveyed by case morphology and the adjective “pühakõlblase”.  
+- No source words are **MISSING**, **WRONG**, or **GRAMMAR**‑incorrect in the current translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+.
+
+- Line 133:
+  - Original: et sa viid mind sinna kus sa nüüd ütlesid,
+  - Issue: none
+  - Corrected: et sa viid mind sinna kus sa nüüd ütlesid,
+
+- Line 134:
+  - Original: et ma näeksin pühakõlblase Peetri värava
+  - Issue: none
+  - Corrected: et ma näeksin pühakõlblase Peetri värava
+
+- Line 135:
+  - Original: ja need keda sa teed nii kurbaks”.
+  - Issue: none
+  - Corrected: ja need keda sa teed nii kurbaks”.
+
+```
+et sa viid mind sinna kus sa nüüd ütlesid,
+et ma näeksin pühakõlblase Peetri värava
+ja need keda sa teed nii kurbaks”.
+```
+]]></message>
+</messages>

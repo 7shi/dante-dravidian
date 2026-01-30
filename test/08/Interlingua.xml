@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+E como uno qui con respiratio fatigate,  
+exite foras del pelago al riva,  
+se volta al aqua periculose e guarda,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Source → Interlingua)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| **E** | Coordinating conjunction linking to previous clause | **E** | “and” | OK |
+| **come** | Comparative particle introducing similitude | **como** | “as” | OK |
+| **quei** | Demonstrative plural noun, “those” (generic person) | **uno** | “one” | OK |
+| **che** | Relative pronoun introducing a clause about the subject | **qui** | “who” | OK |
+| **con** | Preposition marking instrument/state | **con** | “with” | OK |
+| **lena** | Feminine noun “breath” (exhausted) | **respiratio** | “breath” | OK |
+| **affannata** | Past‑participle adjective “exhausted, spent” | **fatigate** | “exhausted” | OK |
+| **uscito** | Past‑participle verb “issued, came out” | **exite** | “exited / issued” | OK |
+| **fuor** | Preposition “out of, outside” (archaic) | **foras** | “out of” | **GRAMMAR** (non‑standard form; expected *fora*) |
+| **del** | Preposition + definite article “of the” | **del** | “of the” | OK |
+| **pelago** | Masculine noun “sea, ocean” | **pelago** | “sea” | OK |
+| **a** | Preposition indicating destination “to, toward” | **al** | “to the” | OK |
+| **la** | Definite article (feminine singular) | *(merged in “al”)* | “the” (implicit) | OK |
+| **riva** | Feminine noun “shore” | **riva** | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | **se** | (reflexive marker) | OK |
+| **volge** | Verb “turns, directs oneself” | **volta** | “turns” | OK |
+| **a** | Preposition “to, toward” | **al** | “to the” | OK |
+| **l'acqua** | Definite article + noun “the water” | **aqua** | “water” (article optional) | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **periculose** | “perilous” | OK |
+| **e** | Coordinating conjunction “and” | **e** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **guarda** | “gazes / looks at” | OK |
+
+---
+
+### Items Requiring Attention
+- **fuor → foras** – marked **GRAMMAR** because *foras* is not the standard Interlingua preposition; the correct form is **fora** (“out of”).  
+
+All other source tokens are adequately rendered in the Interlingua version, with no missing, wrong, or unnecessary elements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: `E como uno qui con respiratio fatigate,`  
+  - Issue: none  
+  - Corrected: `E como uno qui con respiratio fatigate,`
+
+- **Line 23**  
+  - Original: `exite foras del pelago al riva,`  
+  - Issue: **GRAMMAR** – “foras” is not the standard Interlingua preposition; the correct form is **fora**.  
+  - Corrected: `exite fora del pelago al riva,`
+
+- **Line 24**  
+  - Original: `se volta al aqua periculose e guarda,`  
+  - Issue: none  
+  - Corrected: `se volta al aqua periculose e guarda,`
+
+```interlingua
+E como uno qui con respiratio fatigate,
+exite fora del pelago al riva,
+se volta al aqua periculose e guarda,
+```
+]]></message>
+</messages>

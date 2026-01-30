@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+ta andis mulle nii palju raskust  
+koos hirmuga mis tekkis tema nägemisest,  
+et ma kaotasin kõrguse lootuse.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Source → Estonian)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Eng.) | Status |
+|-------------|-----------------------|--------------------|--------------------------|--------|
+| **questa** | demonstrative pronoun, fem. sg.; “she” (agent) | **ta** | she | OK |
+| **mi** | 1st‑sg. dative pronoun; “to me” (experiencer) | **mulle** | to me | OK |
+| **porse** | verb, remote past of *porre* “to give, cause” | **andis** | gave / caused | OK |
+| **tanto** | adverb of quantity; “so much” | **nii** | so | OK |
+| **di** | preposition linking quantity (“tanto di …”) | — | — | **UNNECESSARY** (preposition omitted in Estonian) |
+| **gravezza** | noun “heaviness” (affective state) | **raskust** | heaviness (partitive) | OK |
+| **con** | preposition “with” (introducing accompaniment) | **koos** | with | OK |
+| **la** | definite article “the” (fem.) | — | — | **UNNECESSARY** (Estonian has no articles) |
+| **paura** | noun “fear” | **hirm** (root of *hirmuga*) | fear | OK |
+| **ch'uscia** | relative clause verb “that came out / arose” | **mis tekkis** | that arose | OK |
+| **di** | preposition “of / from” (source of fear) | — | — | **UNNECESSARY** (expressed by elative case *nägemisest*) |
+| **sua** | possessive adjective “her” | **tema** | her | OK |
+| **vista** | noun “sight” (the act of seeing) | **nägemisest** | from seeing | OK |
+| **ch'io** | relative pronoun + subject “that I” | **et ma** | that I | OK |
+| **perdei** | verb “lost” (remote past) | **kaotasin** | lost | OK |
+| **la** | definite article “the” (fem.) | — | — | **UNNECESSARY** |
+| **speranza** | noun “hope” | **lootuse** | (genitive) hope | OK |
+| **de** | preposition “of” (linking hope to height) | — | — | **UNNECESSARY** (genitive case *kõrguse* covers it) |
+| **l'altezza** | noun “the height” (metaphoric goal) | **kõrguse lootuse** | height’s hope | **GRAMMAR** (incorrect case order; should be *kõrguse lootus*) |
+
+---
+
+### Issues Detected
+- **UNNECESSARY**: prepositions/articles that are not required in Estonian – `di` (twice), `la` (twice), `de`.
+- **GRAMMAR**: the phrase **kõrguse lootuse** mis‑orders the genitive; the idiomatic Estonian rendering should be **kõrguse lootus** (“hope of the height”).  
+
+No source tokens are completely **MISSING** or **WRONG** in meaning; the only problem is the grammatical construction for the final noun phrase.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 52**  
+  - Original: ta andas mulle nii palju raskust  
+  - Issue: WRONG – verb form should be **andis** (gave/caused)  
+  - Corrected: ta **andis** mulle nii palju raskust  
+
+- **Line 53**  
+  - Original: koos hirmuga mis tekki tema nägemisest,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 54**  
+  - Original: et ma kaotasin kõrguse lootuse.  
+  - Issue: none  
+  - Corrected: no change  
+
+```text
+ta andis mulle nii palju raskust
+koos hirmuga mis tekkis tema nägemisest,
+et ma kaotasin kõrguse lootuse.
+```
+]]></message>
+</messages>

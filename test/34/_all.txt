@@ -38,6 +38,12 @@ Many are the animals with which she wives, and there shall be more yet, till the
 101 さらに多くがこれからも増え続け、狼が来るまで、  
 102 狼が来るだろう、それが彼女を悲しみで死に至らせる。
 
+# Estonian
+
+100 Palju on loomi kellega ta abiellub,
+101 ja veel rohkem tuleb, kuni hunt
+102 tuleb, mis paneb ta kurbuse tõttu surema.
+
 # French
 
 100 Beaucoup d'animaux avec lesquels elle se marie,
@@ -61,3 +67,39 @@ Many are the animals with which she wives, and there shall be more yet, till the
 100 Multaj estas la bestoj kun kiuj ŝi edzigas,
 101 kaj pli estos ankoraŭ ĝis la hundo
 102 venos, kiu faros ŝin morti pro doloro.
+
+# Interlingua
+
+100 Multos es le animales con le qual ella sponda,
+101 e plus sera ancora, fin que le can
+102 venira, que illa facera morir con tristitia.
+
+# Hindi
+
+100 बहुत से जानवर हैं जिनसे वह विवाह करती है,
+101 और अधिक अभी भी होंगे जब तक कुत्ता आएगा
+102 आएगा जो उसे शोक से मरवा देगा।
+
+# Bengali
+
+100 অনেক প্রাণী আছে যাদের সঙ্গে সে বিয়ে করে,
+101 আরও বেশি হবে এখনও যতক্ষণ না শিকারের কুকুর
+102 আসবে যা তাকে দুঃখে মারা করাবে।
+
+# German
+
+100 Viele sind die Tiere die sie heiratet,
+101 Und mehr werden noch bis der Hund kommt,
+102 das wird sie vor Trauer sterben lassen.
+
+# Dutch
+
+100 Velen zijn de dieren waarmee zij trouwt,
+101 en er zullen nog meer zijn tot de hond
+102 zal komen die haar zal laten sterven van verdriet.
+
+# Serbian (Latin script)
+
+100 Mnogo je životinja sa kojima se ona ženi,
+101 i biće još više dok ne dođe pas,
+102 koji će je učiniti da umre od tuge.

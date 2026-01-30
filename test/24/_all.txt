@@ -38,6 +38,12 @@ I was born sub Julio, though late, and I lived at Rome under the good Augustus, 
 71 ローマで良いアウグストゥスの下に暮らした  
 72 偽りで嘘つきの神々の時代に生きた。
 
+# Estonian
+
+70 Sündisin Julio all, kuigi hilja,
+71 ja elasin Roomas hea Augustuse all
+72 valede ja valelikate jumalate ajal.
+
 # French
 
 70 Je suis né sous Julio, bien que tardif,
@@ -61,3 +67,39 @@ I was born sub Julio, though late, and I lived at Rome under the good Augustus, 
 70 Mi naskiĝis sub Julio kvankam malfrue,
 71 kaj mi vivis en Romo sub la bona Augusto
 72 en la tempo de la falsaj kaj mensogaj dioj.
+
+# Interlingua
+
+70 Io nasque sub Julio, ben que illo esseva tarde,
+71 e io habitava Roma sub le bon Augusto
+72 in le tempore del dei fals e mentitor.
+
+# Hindi
+
+70 मैं जूलियो के अधीन भले ही देर से जन्मा,
+71 और मैं रोम में अच्छे ऑगस्टस के अधीन रहा
+72 झूठे और कपटी देवताओं के समय में।
+
+# Bengali
+
+70 আমি জুলিওর অধীনে দেরি সত্ত্বেও জন্মেছি,
+71 আমি রোমে ভাল অগাস্টাসের অধীনে বাস করেছি
+72 মিথ্যা ও মিথ্যাবাদী দেবতাদের সময়ে।
+
+# German
+
+70 Ich wurde unter Julio geboren, obwohl es spät war,
+71 und ich lebte in Rom unter dem guten Augustus
+72 in der Zeit der falschen und lügenden Götter.
+
+# Dutch
+
+70 Ik werd geboren onder Julio hoewel het laat was,
+71 en ik leefde in Rome onder de goede Augustus
+72 in de tijd van de valse en leugenachtige goden.
+
+# Serbian (Latin script)
+
+70 Rođen sam pod Julijem, iako kasno,
+71 i živeo sam u Rimu pod dobrim Avgustom
+72 u vreme lažnih i obmanjujućih bogova.

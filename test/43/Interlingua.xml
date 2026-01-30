@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+In tote partes ille governa e illac rege;  
+Illac es su citate e su alte sede:  
+O felice ille qui illac elige!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (to English) | Status |
+|-------------|------------------------------------------|----------------------|-------------------------------|--------|
+| In | locative “in” – introduces the domain “all parts” | In | In | OK |
+| tutte | universal quantifier “all” (modifies *parti*) | tote | all | OK |
+| parti | set of spatial divisions of the world | partes | parts | OK |
+| impera | “He governs” – exercise of rule over each part | governa | governs | OK |
+| e | coordinates two predicates | e | and | OK |
+| quivi | locative adverb “there” (place of reign) | illac | there | OK |
+| regge | “He reigns” – holds sovereign authority at that place | rege | reigns | OK |
+| quivi | locative adverb “there” (place of existence) | Illac | there | OK |
+| è | copular verb “is” – asserts existence | es | is | OK |
+| la | definite article marking *città* as specific | — (omitted) | (the) | **UNNECESSARY** |
+| sua | possessive adjective “His” – ownership by the Sovereign | su | his | OK |
+| città | the Sovereign’s urban domain | citate | city | OK |
+| e | coordinates “city” with “seat” | e | and | OK |
+| l’ | elided definite article before *alto* | — (omitted) | (the) | **UNNECESSARY** |
+| alto | adjective “lofty” – qualifies the seat’s stature | alte | lofty | **WRONG** (should be *alto*; Interlingua adjectives are invariable) |
+| seggio | the Sovereign’s elevated throne | sede | seat | OK |
+| oh | vocative interjection addressing the listener | O | O | OK |
+| felice | describes the emotional state of the chosen one | felice | happy | OK |
+| colui | pronoun “he” – the individual being elected | ille | he | OK |
+| cu' | relative pronoun “whom” – introduces the relative clause | qui | who/whom | OK |
+| ivi | locative adverb “there/thereto” – complement of electing | illac | there | OK |
+| elegge | “He elects” – selects the individual at that place | elige | elects | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *la* and *l’* – Italian definite articles are not required in Interlingua and were correctly omitted.
+- **WRONG**: *alte* – Interlingua adjectives do not change for gender; the correct form is **alto** (or simply *alto* without agreement). The current translation uses an incorrect inflected form.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: In tote parti ille governa e illac rege;
+  - Issue: **WRONG** – “parti” should be plural to match “tutte parti”.
+  - Corrected: In tote **partes** ille governa e illac rege;
+
+- Line 2:
+  - Original: Illac es su citate e su alte sede:
+  - Issue: **WRONG** – Interlingua adjectives are invariable; “alte” must be **alto**.
+  - Corrected: Illac es su citate e su **alto** sede:
+
+- Line 3:
+  - Original: O felice ille qui illac elige!».
+  - Issue: none
+  - Corrected: no change
+
+```interlingua
+In tote partes ille governa e illac rege;
+Illac es su citate e su alto sede:
+O felice ille qui illac elige!».
+```
+]]></message>
+</messages>

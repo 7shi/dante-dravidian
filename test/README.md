@@ -4,6 +4,8 @@ Following successful generalization, additional target languages were added to v
 
 The examples below show translations of the first 9 lines of Dante's "Divine Comedy" Inferno (original Italian), referencing the English translation (Norton). Grammatical and vocabulary issues are pointed out as a literal translation of the Italian original.
 
+# Source Texts
+
 ## Italian (Dante)
 
 ```text
@@ -25,6 +27,8 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 > Midway upon the road of our life I found myself within a dark wood, for the right way had been missed.
 > Ah! how hard a thing it is to tell what this wild and rough and dense wood was, which in thought renews the fear!
 > So bitter is it that death is little more. But in order to treat of the good that there I found, I will tell of the other things that I have seen there.
+
+# Dravidian languages
 
 ## Telugu (GPT-OSS 120B)
 
@@ -113,6 +117,8 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 2: 「താനെ」 as 1st-person reflexive is slightly unusual but still recoverable (OK for literal-first).
 - Line 7: Comparison leaves “more (bitter)” implicit but “bitter” is explicit (OK for literal-first).
 
+# Agglutinative non-Dravidian languages
+
 ## Japanese (GPT-OSS 120B)
 
 ```text
@@ -134,6 +140,30 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 3: Missing the causal connector (“for/because”); line 3 reads as a standalone statement.
 - Line 7: Comparative is incomplete/unclear; missing “death is little more (bitter)” / explicit comparison target.
 - Line 9: Polite register (“語ります”) is a style shift (OK for literal-first).
+
+## Estonian (GPT-OSS 120B)
+
+```text
+1 Meie elu teekonna keskel
+2 Leidsin end pimedas metsas,
+3 sest õige tee oli kaotatud.
+
+4 Ah kui raske on öelda mis see oli
+5 see mets on metsik ja karm ja tihe
+6 mis mõttes uuendab hirmu!
+
+7 Nii kibe on see et surm on veidi rohkem;
+8 Aga et käsitleda head mida seal leidsin,
+9 Räägin teistest asjadest mida seal olen näinud.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 5: The descriptor bundle is incomplete (missing the “strong/forte” component).
+- Line 6: “in thought” is rendered awkwardly; 「mis mõttes」 reads like “in meaning” rather than “in thought/mind”.
+- Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “bitter” is explicit (OK for literal-first).
+
+# Romance languages
 
 ## French (GPT-OSS 120B)
 
@@ -201,6 +231,8 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 7: The ellipsis after “pouco mais” is acceptable given “amargo” is explicit (OK for literal-first).
 - Lines 8–9: Mid-paragraph capitalization is stylistically inconsistent (OK for literal-first).
 
+# Constructed languages
+
 ## Esperanto (GPT-OSS 120B)
 
 ```text
@@ -221,6 +253,138 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 
 - Line 7: Missing an explicit comparator (“ol ĝi”); 「morto estas iom pli」 is incomplete/ambiguous.
 
+## Interlingua (GPT-OSS 120B)
+
+```text
+1 In medio del cammino de nostre vita
+2 io me trovava in una selva obscure,
+3 pro le via recte esseva perdita.
+
+4 Ah quanto es difficile dicer qual era iste cosa
+5 iste selva selvage e aspra e forte
+6 que in le pensamento renova le paura!
+
+7 Tanto es amar que poco es plus morte;
+8 ma pro tractar del bon que io trovava ibi,
+9 io dicera del alter cosas que io ha vidite ibi.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 2: Aspect/tense is off; 「io me trovava」 (imperfect) blurs the “I found myself” event.
+- Line 9: Form/grammar is shaky ("alter" vs "altere"); weakens “the other things”.
+
+# Indo-Iranian languages
+
+## Hindi (GPT-OSS 120B)
+
+```text
+1 हमारी ज़िन्दगी के मार्ग के मध्य में
+2 मैं खुद को एक अंधेरे जंगल में पाया,
+3 क्योंकि सही रास्ता खो गया था।
+
+4 आह यह बताना कि वह क्या था कितना कठिन काम है
+5 यह जंगली और खुरदरा और घना वन
+6 जो विचार में भय को फिर से जगा देता है!
+
+7 यह इतनी कड़वी है कि मृत्यु उससे थोड़ा अधिक कड़वी है;
+8 परन्तु मैं जहाँ अच्छा पाया उसके बारे में चर्चा करने के लिये,
+9 मैं वहाँ देखी गई अन्य चीज़ों के बारे में बताऊँगा।
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 7: Makes the comparison explicit as “death is a little more bitter than it”; acceptable under literal-first but slightly shifts emphasis (OK for literal-first).
+- Line 8: 「जहाँ अच्छा पाया」 uses “where” where “there” is intended; slightly distorts “the good that there I found”.
+
+## Bengali (GPT-OSS 120B)
+
+```text
+1 আমাদের জীবনের পথে মাঝখানে
+2 আমি নিজেকে এক অন্ধকার বনে পেলাম,
+3 কারণ সঠিক পথ হারিয়ে গিয়েছিল।
+
+4 আহ কী কঠিন কাজ এটি বলতে যে তা কী ছিল
+5 এই বন বন্য এবং কঠোর এবং ঘন
+6 যা চিন্তায় ভয়কে পুনরুজ্জীবিত করে!
+
+7 এতটাই তিক্ত যে মৃত্যু সামান্য বেশি;
+8 কিন্তু আমি সেখানে যে মঙ্গল পেয়েছি তা নিয়ে আলোচনা করতে,
+9 আমি সেখানে যে অন্যান্য জিনিসগুলি দেখেছি সেগুলি বলব।
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 5: The descriptor bundle is incomplete (missing the “strong/forte” component).
+- Line 7: Comparative ellipsis (“death [is] a little more …”) is acceptable given “bitter” is explicit (OK for literal-first).
+
+# Germanic languages
+
+## German (GPT-OSS 120B)
+
+```text
+1 Mitten auf dem Weg unseres Lebens
+2 fand ich mich in einem dunklen Wald,
+3 denn der rechte Weg war verfehlt.
+
+4 Ach wie schwer ist es zu sagen was es war
+5 dieser Wald ist wild und rau und dicht
+6 der im Denken die Angst erneuert!
+
+7 So bitter ist es, dass der Tod nur ein wenig mehr bitter ist;
+8 Aber um das Gute zu behandeln, das ich dort fand,
+9 Ich werde von den anderen Dingen erzählen, die ich dort gesehen habe.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 7: "ein wenig mehr bitter" is clunky; the comparison is understandable but stylistically strained (OK for literal-first).
+
+## Dutch (GPT-OSS 120B)
+
+```text
+1 Midden op de weg van ons leven
+2 Vond ik mezelf in een donker bos,
+3 want de juiste weg was gemist.
+
+4 Ach hoe moeilijk het is om te vertellen wat het was is een harde zaak
+5 dit woud is wild en ruw en dicht
+6 die in gedachten de angst vernieuwt!
+
+7 Zo bitter is het dat de dood iets meer is;
+8 Maar om het goede dat ik daar vond te behandelen,
+9 Ik zal over de andere dingen die ik daar heb gezien vertellen.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 4: Ungrammatical word order/run-on; the clause is hard to parse.
+- Line 6: Relative pronoun agreement error (“woud” is neuter; should be “dat” not “die”).
+- Line 7: Comparative is incomplete/unclear (“de dood iets meer is” — more what?).
+
+# Slavic language
+
+## Serbian (Latin script) (GPT-OSS 120B)
+
+```text
+1 U sredini puta našeg života
+2 našao sam se u mračnoj šumi,
+3 jer prava staza je bila izgubljena.
+
+4 Ah koliko je teško reći šta je bila teška stvar
+5 ova šuma divlja i gruba i gusta
+6 koja u mislima obnavlja strah!
+
+7 Tako je gorka da je smrt malo više;
+8 Ali da bih govorio o dobru koje sam tamo našao,
+9 Reći ću o drugim stvarima koje sam tamo video.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 4: Ungrammatical/duplicative; “teško reći šta je bila teška stvar” does not cleanly express “how hard it is to say what it was”.
+- Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “gorka” is explicit (OK for literal-first).
+
 ## Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
@@ -228,11 +392,18 @@ Ranking by fewest issues and providing an overall assessment.
 (Ranking below ignores any points marked "OK for literal-first".)
 
 1. Malayalam: Excellent fidelity with no meaning-critical issues.
-2. French: High quality with only minor article nuance affecting one phrase.
-3. Spanish: Strong natural flow with one syntactically awkward exclamatory passage.
-4. Esperanto: Generally faithful with one incomplete comparative structure.
-5. Portuguese: Solid translation with occasional gaps in logical connectors and phrasing.
-6. Tamil: Core meaning conveyed despite some grammatical rough edges and a missing descriptor.
-7. Japanese: Captures the contemplative tone well but has gaps in logical connectors and comparative structure.
-8. Kannada: Narrative is traceable but shows strain in complex clauses, descriptors, and comparatives.
-9. Telugu: Multiple meaning-critical issues in pronouns, causal logic, and comparative structure.
+2. German: Excellent fidelity; only minor stylistic strain noted.
+3. French: High quality with only a small meaning nuance in line 9.
+4. Spanish: Strong flow with one syntactically awkward exclamatory passage.
+5. Hindi: Very faithful overall; one minor deictic choice in line 8.
+6. Interlingua: Very close overall; minor tense/grammar instability.
+7. Esperanto: Generally faithful with one incomplete comparative structure.
+8. Bengali: Readable and faithful, but drops one descriptor in line 5.
+9. Serbian: Traceable overall, but the complex exclamatory clause in line 4 breaks down.
+10. Portuguese: Solid translation with gaps in logical connectors and awkward line 4 phrasing.
+11. Estonian: Mostly faithful, but has one missing descriptor and an awkward “in thought” rendering.
+12. Tamil: Core meaning conveyed despite grammatical rough edges and a missing descriptor.
+13. Japanese: Understandable overall, but drops the causal connector and has an incomplete comparative.
+14. Kannada: Narrative is traceable but shows strain in complex clauses, descriptors, and comparatives.
+15. Dutch: Multiple clear grammar/agreement failures plus an incomplete comparative.
+16. Telugu: Multiple meaning-critical issues in pronouns, causal logic, and comparative structure.

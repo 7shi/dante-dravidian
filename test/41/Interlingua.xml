@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Interlingua, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Interlingua line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+a illes, si tu volera ascender postea,  
+un anima essera plus digne de isto que io:  
+con illa io lassa te al mi partite;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|------------------|--------|
+| A | preposition indicating direction toward the addressees | a | to | OK |
+| le | definite article (plural) | — *(omitted)* | — | UNNECESSARY |
+| quai | relative pronoun referring to the addressees | illes | they | OK |
+| poi | adverb marking temporal succession (“afterwards”) | postea | thereafter | OK |
+| se | conditional conjunction “if” | si | if | OK |
+| tu | 2nd‑person singular pronoun (subject) | tu | you | OK |
+| vorrai | future of *volere* – “will want” | volera | will want | OK |
+| salire | infinitive “to ascend” | ascender | ascend | OK |
+| anima | noun “soul” | anima | soul | OK |
+| fia | future of *essere* – “shall be” | essera | shall be | OK |
+| a | preposition introducing the domain of worthiness (≈ “for”) | de | of/for | OK |
+| ciò | demonstrative pronoun “that” (referring to the ascent) | isto | that | OK |
+| più | comparative adverb “more” | plus | more | OK |
+| di | preposition introducing the standard of comparison (“than”) | que | than | OK |
+| me | pronoun “I” (object of comparison) | io | I | OK |
+| degna | adjective “worthy” | digne | worthy | OK |
+| con | preposition “with” | con | with | OK |
+| lei | pronoun “her” | illa | her | OK |
+| ti | pronoun “you” (accusative) | te | you | OK |
+| lascerò | future of *lasciare* – “will leave” | lassa | will leave | OK |
+| nel | contraction *in + il* – “in the/at the” | al | at the | OK |
+| mio | possessive adjective “my” | mi | my | OK |
+| partire | infinitive “to depart”, nominalised as “departure” | partite | departure | **WRONG** (should be *partita*) |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY:** *le* – the definite article is not required before the pronoun *illes* in Interlingua.  
+- **WRONG:** *partite* – the nominalised form of *partire* should be *partita* (singular feminine) to match the intended meaning “departure”.  
+
+All other mappings are correct and grammatically appropriate for Interlingua.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Interlingua script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Interlingua text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: a illes, si tu volera ascender postea,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: un anima essera plus digne de isto que io:
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: con illa io lassa te al mi partite;
+  - Issue: WRONG (the nominalised form of *partire* should be **partida**)
+  - Corrected: con illa io lassa te al mi partida;  
+
+```
+a illes, si tu volera ascender postea,
+un anima essera plus digne de isto que io:
+con illa io lassa te al mi partida;
+```
+]]></message>
+</messages>

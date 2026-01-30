@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Van dat bescheiden Italië zal de redding zijn  
+waarvoor de maagd Camilla stierf,  
+Eurialus en Turnus en Nisus zijn gewond.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (NL → EN) | Status |
+|-------------|----------------------|----------------------|----------------------------|--------|
+| Di | “of” – introduces the genitive relation with *Italia* | Van | of/from | OK |
+| quella | demonstrative “that” specifying a particular Italy | dat* | that (neuter) | **GRAMMAR** (should be *die* for a common‑gender noun) |
+| umile | “humble” – attribute of Italy | bescheiden | modest/humble | OK |
+| Italia | proper name “Italy” | Italië | Italy | OK |
+| fia | future copula “shall be” | zal … zijn | shall … be | OK |
+| salute | “salvation” – the promised state | redding | salvation | OK |
+| per | preposition introducing cause/for which | waarvoor* | for which / because of | OK |
+| cui | relative pronoun referring to the salvation | waarvoor* | for which | OK |
+| morì | past “died” | stierf | died | OK |
+| la | definite article “the” (feminine) | de | the | OK |
+| vergine | “virgin” – title of Camilla | maagd | virgin | OK |
+| Cammilla | proper name “Camilla” | Camilla | Camilla | OK |
+| Eurialo | proper name “Eurialus” | Eurialus | Eurialus | OK |
+| e | coordinating conjunction “and” (1st) | en | and | OK |
+| Turno | proper name “Turnus” | Turnus | Turnus | OK |
+| e | coordinating conjunction “and” (2nd) | en | and | OK |
+| Niso | proper name “Nisus” | Nisus | Nisus | OK |
+| di | preposition “of” used in the participial phrase “di ferute” | — (omitted) | — | **UNNECESSARY** (the preposition is not required in Dutch) |
+| ferute | past participle “wounded” (state) | gewond | wounded | OK |
+
+\* *“waarvoor”* is used to translate the whole relative clause “per cui”; it covers both *per* and *cui*.
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR:** *dat* (for “quella”) – Dutch treats *Italië* as a common‑gender noun, so the correct demonstrative should be **die** (“die bescheiden Italië”).
+- **UNNECESSARY:** *di* – the Italian preposition is not needed in the Dutch rendering; the state “wounded” is expressed with the verb *zijn* + adjective (*zijn gewond*).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: Van dat bescheiden Italië zal de redding zijn
+  - Issue: GRAMMAR – demonstrative “dat” should agree with the common‑gender noun “Italië”
+  - Corrected: Van die bescheiden Italië zal de redding zijn
+- Line 2:
+  - Original: waarvoor de maagd Camilla stierf,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: Eurialus en Turnus en Nisus zijn gewond.
+  - Issue: none
+  - Corrected: no change
+
+```
+Van die bescheiden Italië zal de redding zijn
+waarvoor de maagd Camilla stierf,
+Eurialus en Turnus en Nisus zijn gewond.
+```
+]]></message>
+</messages>

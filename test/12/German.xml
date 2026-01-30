@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Und sie bewegte sich nicht vor meinem Gesicht,
+nein vielmehr behinderte sie meinen Weg so sehr,
+dass ich zum Zurückkehren oft gedreht war.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (German translation from Step 2)**  
+
+| Source Word | Contextual Definition (locked meaning) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------------------------|----------------------|------------------------|--------|
+| **e** | coordinating conjunction “and” | **Und** | “and” | OK |
+| **non** | negation of the predicate | **nicht** | “not” | OK |
+| **mi** | 1st‑person clitic (dative) – “to me” (absorbed by reflexive) | – | – | **UNNECESSARY** |
+| **si** | reflexive marker of *partire* | **sich** | “himself / herself” (reflexive) | OK |
+| **partia** | imperfect of *partire* “to move / depart” | **bewegte** | “moved” | OK |
+| **dinanzi** | preposition “in front of / before” | **vor** | “before” | OK |
+| **al** | contraction *a + il* “to the” (introduces noun) | **meinem** (possessive dative) | “my” (dative) | **UNNECESSARY** (article not lexical in German) |
+| **volto** | noun “face” | **Gesicht** | “face” | OK |
+| **anzi** | contrastive adverb “nay, rather” | **nein vielmehr** | “no, rather” | OK |
+| **‘mpediva** (impediva) | imperfect “hindered” | **behinderte** | “hindered” | OK |
+| **tanto** | degree adverb “so, to such an extent” | **so** | “so” | OK |
+| **il** | definite article “the” | – | – | **UNNECESSARY** (German article merged in *meinen*) |
+| **mio** | possessive adjective “my” | **meinen** | “my” (accusative) | OK |
+| **cammino** | noun “road, path” | **Weg** | “road” | OK |
+| **ch’** (che) | subordinating conjunction “that” | **dass** | “that” | OK |
+| **i’** (io) | 1st‑person pronoun “I” | **ich** | “I” | OK |
+| **fui** | past‑historic of *essere* “to be / had” (auxiliary) | **war** | “was” | OK |
+| **per** | preposition “for, in order to” | **zum** | “to the / for the” | OK |
+| **ritornar** | infinitive “to return” | **Zurückkehren** | “return” | OK |
+| **più** | comparative “more” (frequency) | **oft** | “often” | OK |
+| **volte** | noun “times” (frequency noun) | – | – | **UNNECESSARY** (frequency expressed by *oft*) |
+| **vòlto** | past‑historic “turned” | **gedreht** | “turned” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: *mi*, *al*, *il*, *volte* – these elements are either absorbed by German reflexive/possessive morphology or replaced by a single adverb (*oft*).  
+- **WRONG / GRAMMAR**: none detected (the German sentences are grammatically acceptable).  
+
+All other source tokens are correctly rendered in the German translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 34**  
+  - Original: `Und sie bewegte sich nicht vor meinem Gesicht,`  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 35**  
+  - Original: `nein vielmehr behinderte sie meinen Weg so sehr,`  
+  - Issue: WRONG – “behinderte” mis‑renders *impediva*; the correct verb is **hinderte**.  
+  - Corrected: `nein vielmehr hinderte sie meinen Weg so sehr,`  
+
+- **Line 36**  
+  - Original: `dass ich zum Zurückkehren oft gedreht war.`  
+  - Issue: none (acceptable word order, but can be improved for natural flow)  
+  - Corrected: no change  
+
+```text
+Und sie bewegte sich nicht vor meinem Gesicht,
+nein vielmehr hinderte sie meinen Weg so sehr,
+dass ich zum Zurückkehren oft gedreht war.
+```
+]]></message>
+</messages>

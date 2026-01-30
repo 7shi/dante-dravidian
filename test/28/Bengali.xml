@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bengali, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bengali line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+হে অন্য কবিদের গৌরব ও আলোক,
+আমার দীর্ঘ অধ্যয়ন ও মহান প্রেম আমাকে উপকার করুক
+যা আমাকে তোমার গ্রন্থ অনুসন্ধান করতে বাধ্য করেছে।
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (Bengali → English) | Status |
+|-------------|-----------------------|----------------------|---------------------------------------|--------|
+| O | vocative interjection “O” | **হে** | “O / Hey” | OK |
+| de | preposition “of” (marks possession) | — | — | UNNECESSARY (Bengali expresses possession with the genitive suffix “‑দের”) |
+| li | definite article, masc. plural “the” | — | — | UNNECESSARY (articles are not used in Bengali) |
+| altri | adjective “other” | **অন্য** | “other” | OK |
+| poeti | noun “poets” (genitive) | **কবিদের** | “of the poets” | OK |
+| onore | noun “honor” | **গৌরব** | “honor” | OK |
+| e | coordinating conjunction “and” | **ও** | “and” | OK |
+| lume | noun “light” | **আলোক** | “light” | OK |
+| vagliami | 2nd sg. imperative “let … avail me” (request) | **উপকার করুক** | “may (it) be of use” | OK |
+| ’l (il) – article before *lungo* | definite article “the” | — | — | UNNECESSARY |
+| lungo | adjective “long” | **দীর্ঘ** | “long” | OK |
+| studio | noun “study” | **অধ্যয়ন** | “study” | OK |
+| e | coordinating conjunction “and” | **ও** | “and” | OK |
+| ’l (il) – article before *grande* | definite article “the” | — | — | UNNECESSARY |
+| grande | adjective “great” | **মহান** | “great” | OK |
+| amore | noun “love” | **প্রেম** | “love” | OK |
+| **আমার** *(added in translation)* | possessive pronoun “my” (not in source) | **আমার** | “my” | UNNECESSARY (extra element) |
+| che | relative pronoun “which” | **যা** | “which/that” | OK |
+| m' (mi) | clitic pronoun “me” (indirect object) | **আমাকে** | “to me / me” | OK |
+| ha | auxiliary “has” (perfect) | **বাধ্য করেছে** (part of the perfect) | “has made” | OK |
+| fatto | past participle “made” (causative) | **বাধ্য করেছে** | “has forced/made” | OK |
+| cercar | infinitive “search” | **অনুসন্ধান করতে** | “to search” | OK |
+| lo | definite article “the” | — | — | UNNECESSARY |
+| tuo | possessive adjective “your” | **তোমার** | “your” | OK |
+| volume | noun “volume” (book/poem) | **গ্রন্থ** | “volume / book” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `de`, `li`, both occurrences of `’l` (the article), `lo`, and the added Bengali word **আমার** (not present in the source).  
+- **MISSING / WRONG / GRAMMAR**: none detected.  
+
+All other source tokens are correctly rendered in the Bengali translation with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bengali script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bengali text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 82:
+  - Original: হে অন্য কবিদের গৌরব ও আলোক,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 83:
+  - Original: আমার দীর্ঘ অধ্যয়ন ও মহান প্রেম আমাকে উপকার করুক
+  - Issue: UNNECESSARY word “আমার” (extra possessive)
+  - Corrected: দীর্ঘ অধ্যয়ন ও মহান প্রেম আমাকে উপকার করুক  
+
+- Line 84:
+  - Original: যা আমাকে তোমার গ্রন্থ অনুসন্ধান করতে বাধ্য করেছে।
+  - Issue: none
+  - Corrected: no change  
+
+```
+হে অন্য কবিদের গৌরব ও আলোক,
+দীর্ঘ অধ্যয়ন ও মহান প্রেম আমাকে উপকার করুক
+যা আমাকে তোমার গ্রন্থ অনুসন্ধান করতে বাধ্য করেছে।
+```
+]]></message>
+</messages>

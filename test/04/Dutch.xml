@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Dutch, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Dutch line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ik kan niet goed vertellen hoe ik het betrad,
+zo vol slaperigheid was ik op dat punt
+waar ik de ware weg verliet.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (source → Dutch)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| Io | 1st‑person singular pronoun (subject) | Ik | I | OK |
+| non | negation particle | niet | not | OK |
+| so | verb *sapere* “to know” (present 1sg) | kan | can | OK |
+| ben | adverb “well” (manner) | goed | well | OK |
+| ridir | infinitive “to recount / tell again” | vertellen | to tell | OK |
+| com' | interrogative adverb “how” | hoe | how | OK |
+| i' | clitic pronoun “I” (subject of embedded clause) | ik | I | OK |
+| v'intrai | historic past “I entered (it)” | betrad | entered | OK |
+| tant' | adverb of degree “so” | zo | so | OK |
+| era | imperfect “was” (3sg) | was | was | OK |
+| pien | predicative adjective “full” | vol | full | OK |
+| di | preposition “of” linking *pien* to *sonno* | — (omitted) | — | **UNNECESSARY** |
+| sonno | noun “slumber / sleepiness” | slaperigheid | sleepiness | OK |
+| a | preposition “at” (temporal) | op | on/at | OK |
+| quel | demonstrative “that” | dat | that | OK |
+| punto | noun “point / moment” | punt | point | OK |
+| che | relative conjunction “where” | waar | where | OK |
+| la | definite article (feminine) | de | the | OK |
+| verace | adjective “true / correct” | ware | true | OK |
+| via | noun “way / path” | weg | way | OK |
+| abbandonai | historic past “I abandoned” | verliet | abandoned | OK |
+
+### Items flagged
+- **UNNECESSARY**: *di* – the Italian preposition “di” is not required in Dutch “vol slaperigheid”.  
+
+No other missing, wrong, or grammatical errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Dutch script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Dutch text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 10**:
+  - Original: `Ik kan niet goed vertellen hoe ik het betrad,`
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 11**:
+  - Original: `zo vol slaperigheid was ik op dat punt`
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 12**:
+  - Original: `waar ik de ware weg verliet.`
+  - Issue: none
+  - Corrected: no change  
+
+```
+Ik kan niet goed vertellen hoe ik het betrad,
+zo vol slaperigheid was ik op dat punt
+waar ik de ware weg verliet.
+```
+]]></message>
+</messages>

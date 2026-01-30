@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+lines.Ja siis näed need, kes on rahulolevad  
+tules, sest nad loodavad tulla  
+kui see võib olla, õnnistatud rahva poole.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+.
+
+**Word‑to‑Word Alignment & Coverage Check**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Step 2) | Back‑Translation (Eng.) | Status |
+|-------------|--------------------------------------|------------------------------|--------------------------|--------|
+| e | coordinating conjunction “And then” | **lines.Ja** | “lines.and then” | **WRONG** (spurious “lines.” and missing simple “Ja”) |
+| vederai | future verb “you will see” | **näed** | “you see” | **OK** |
+| color | demonstrative pronoun “those” | **need,** | “those,” | **OK** (comma is extra punctuation) |
+| che | relative pronoun “who” | **kes** | “who” | **OK** |
+| son | copular verb “are” | **on** | “is/are” | **OK** |
+| contenti | adjective “contented” | **rahulolevad** | “contented” | **OK** |
+| nel | preposition “in the” | **tules,** | “in fire,” | **WRONG** (preposition lost, comma added) |
+| foco | noun “fire” | **—** | — | **MISSING** (the noun is not represented separately) |
+| perché | causal conjunction “because” | **sest** | “because” | **OK** |
+| speran | verb “they hope” | **loodavad** | “they hope” | **OK** |
+| di | infinitive marker “to” | **—** | — | **UNNECESSARY** (Estonian does not need a marker) |
+| venire | infinitive “to come” | **tulla** | “to come” | **OK** |
+| quando | temporal conjunction “whenever” | **kui** | “when/if” | **OK** |
+| che* (idiomatic part of *quando che*) | particle reinforcing the temporal clause | **—** | — | **MISSING** |
+| sia | subjunctive “may be” | **võib** | “may” | **WRONG** (should be “võib olla”) |
+| a | preposition “to” | **poole.** | “towards” | **OK** (covers the directional sense) |
+| le | definite article “the” | **—** | — | **UNNECESSARY** (articles are omitted in Estonian) |
+| beate | adjective “blessed” | **õnnistatud** | “blessed” | **OK** |
+| genti | noun “folk” | **rahva** | “people” | **OK** (extra “poole.” adds direction) |
+
+### Summary of Issues
+- **WRONG:** *e* → “lines.Ja”; *nel* → “tules,” (preposition lost, stray comma); *sia* → “võib” (missing “olla”); internal commas after “need,” “tules,” and “olla,” violate the “no internal punctuation” rule.  
+- **MISSING:** *foco* (the noun “fire” is not represented separately); *di* (no target equivalent, but it is unnecessary in Estonian); *che* in the idiom *quando che*.  
+- **UNNECESSARY:** *di* (preposition to infinitive not needed); *le* (definite article not required in Estonian).  
+- **GRAMMAR:** No gender/number agreement errors were detected beyond the above WRONG items.  
+
+These items should be corrected in a revised translation to achieve full coverage and grammatical fidelity.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+.
+
+- **Line 118**  
+  - Original: `e vederai color che son contenti`  
+  - Issue: internal punctuation (comma) and extraneous token “lines.” in previous draft; missing proper conjunction “Ja”.  
+  - Corrected: `Ja siis näed need kes on rahulolevad`  
+
+- **Line 119**  
+  - Original: `nel foco, perché speran di venire`  
+  - Issue: internal punctuation (comma) after “foco”; previous draft kept the comma.  
+  - Corrected: `tules sest nad loodavad tulla`  
+
+- **Line 120**  
+  - Original: `quando che sia a le beate genti.`  
+  - Issue: internal punctuation (comma) in previous draft; case of “genti” should be dative “rahvale”.  
+  - Corrected: `kui see võib olla õnnistatud rahvale.`  
+
+```
+Ja siis näed need kes on rahulolevad
+tules sest nad loodavad tulla
+kui see võib olla õnnistatud rahvale.
+```
+]]></message>
+</messages>

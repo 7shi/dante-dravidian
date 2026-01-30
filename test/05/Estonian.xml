@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Estonian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Estonian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Aga pärast seda kui olin jõudnud mäe jalamil,  
+seal kus lõppes see org  
+mis oli mu südame hirmuga täitnud,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (Estonian → English) | Status |
+|-------------|--------------------------------------|--------------------|----------------------------------------|--------|
+| **Ma** | Coordinating conjunction (contrast) | **Aga** | but | OK |
+| **poi** | Adverb of time | **pärast seda** | after that | OK |
+| **ch'i'** | Subordinating conjunction + 1st‑person pronoun introducing a clause | **kui** | when/that | OK |
+| **fui** | Auxiliary verb (past perfect) | **olin** | I was / had been | OK |
+| **al** | Preposition + definite article (at the) | — | — | **UNNECESSARY** (expressed by the locative case in *jalamil*) |
+| **piè** | Noun (foot) | **jalamil** | at the foot | OK |
+| **d'un** | Preposition + indefinite article (of a) | — | — | **UNNECESSARY** (genitive is built into *mäe*) |
+| **colle** | Noun (hill) | **mäe** | hill (genitive) | OK |
+| **giunto** | Past participle (arrived) | **jõudnud** | arrived | OK |
+| **là** | Demonstrative adverb of place | **seal** | there | OK |
+| **dove** | Relative adverb of place | **kus** | where | OK |
+| **terminava** | Imperfect verb (ended) | **lõppes** | ended | OK |
+| **quella** | Demonstrative adjective (that) | **see** | that | OK |
+| **valle** | Noun (valley) | **org** | valley | OK |
+| **che** | Relative pronoun (which) | **mis** | which | OK |
+| **m'avea** | Pluperfect verb (had caused) | **oli** | was / had | OK (captures the prior state) |
+| **di** | Preposition (of/with) | — | — | **UNNECESSARY** (expressed by the instrumental suffix *‑ga* in *hirmuga*) |
+| **paura** | Noun (fear) | **hirmuga** | with fear | OK |
+| **il** | Definite article (masc. sing.) | — | — | **UNNECESSARY** (articles are omitted in Estonian) |
+| **cor** | Noun (heart) | **südame** | heart (genitive) | OK |
+| **compunto** | Past participle (pierced/filled) | **täitnud** | filled / pierced | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: *al*, *d'un*, *di*, *il* – these function words are not required in Estonian because case endings and the lack of articles convey the same meaning.  
+- **No MISSING or WRONG entries** – every content word from the source has an appropriate Estonian counterpart.  
+- **No GRAMMAR errors** – the Estonian translation respects agreement (genitive *südame*, locative *jalamil*, etc.).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Estonian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Estonian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 13**  
+  - Original: Aga pärast seda kui olin jõudnud mäe jalamil,  
+  - Issue: none  
+  - Corrected: Aga pärast seda kui olin jõudnud mäe jalamil,
+
+- **Line 14**  
+  - Original: seal kus lõppes see org  
+  - Issue: none  
+  - Corrected: seal kus lõppes see org
+
+- **Line 15**  
+  - Original: mis oli mu südame hirmuga täitnud,  
+  - Issue: none  
+  - Corrected: mis oli mu südame hirmuga täitnud,
+
+```
+Aga pärast seda kui olin jõudnud mäe jalamil,
+seal kus lõppes see org
+mis oli mu südame hirmuga täitnud,
+```
+]]></message>
+</messages>

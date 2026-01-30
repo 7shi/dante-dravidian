@@ -38,6 +38,12 @@ for that Emperor who reigneth them above, because I was rebellious to His law, w
 125 彼の法に反逆していたので、
 126 彼は自分の都市に私を通して誰も来ることを望まない。
 
+# Estonian
+
+124 selle keisri jaoks kes seal üleval valitseb,
+125 sest ma olin tema seaduse vastu mässaja,
+126 ta ei taha et keegi tema linna läbi mind tuleks.
+
 # French
 
 124 pour cet empereur qui règne là‑haut,
@@ -61,3 +67,39 @@ for that Emperor who reigneth them above, because I was rebellious to His law, w
 124 ĉar tiu imperiestro, kiu regas tie supre,
 125 ĉar mi estis ribelanta kontraŭ lia leĝo,
 126 li ne volas, ke iu en lia urbo pere de mi venu.
+
+# Interlingua
+
+124 pro ille imperator qui regna supra,
+125 perque io era rebelle al su lege,
+126 non vole che alcuno veni in su citate per me.
+
+# Hindi
+
+124 उस सम्राट के लिये जो ऊपर शासित है,
+125 क्योंकि मैं उसके कानून के प्रति विद्रोही था,
+126 वह नहीं चाहता कि कोई मेरे द्वारा उसके शहर में प्रवेश करे।
+
+# Bengali
+
+124 সেই সম্রাটের জন্য যিনি উপরে শাসন করেন,
+125 কারণ আমি তাঁর আইনের প্রতি বিদ্রোহী ছিলাম,
+126 তিনি চান না যে কেউ আমার মাধ্যমে তাঁর শহরে প্রবেশ করুক।
+
+# German
+
+124 denn jener Kaiser, der dort oben regiert,
+125 weil ich seinem Gesetz rebellisch war,
+126 er will nicht, dass jemand durch mich in seine Stadt kommt.
+
+# Dutch
+
+124 voor die keizer die daarboven regeert,
+125 omdat ik rebellisch was tegen zijn wet,
+126 wil niet dat iemand via mij in zijn stad komt.
+
+# Serbian (Latin script)
+
+124 za onog cara koji vlada iznad,
+125 jer sam bio buntovan prema njegovom zakonu,
+126 ne želi da neko uđe u njegov grad kroz mene.

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into German, guided by the Reference Translation and Step 1 analysis.
+Output: ONE German line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Von jenem demütigen Italien wird die Rettung sein  
+für die die Jungfrau Camilla starb,  
+Eurialo und Turnus und Nisus von ihren Wunden.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| Di | “of / from” (preposition) | **Von** | of / from | OK |
+| quella | demonstrative “that” | **jenem** | that | OK |
+| umile | adjective “humble” | **demütigen** | humble | OK |
+| Italia | proper name “Italy” | **Italien** | Italy | OK |
+| fia | future copula “shall be” | **wird … sein** | will be | OK |
+| salute | noun “salvation / rescue” | **Rettung** | salvation | OK |
+| per | preposition “for” (causal) | **für** | for | OK |
+| cui | relative pronoun “which” (refers to *salvation*) | **die** | which | OK |
+| morì | verb “died” (simple past) | **starb** | died | OK |
+| la | definite article “the” (feminine) | **die** | the | OK |
+| vergine | noun “virgin” (title) | **Jungfrau** | virgin | OK |
+| Cammilla | proper name “Camilla” | **Camilla** | Camilla | OK |
+| Eurialo | proper name “Eurialo” | **Eurialo** | Eurialo | OK |
+| e | coordinating conjunction “and” | **und** | and | OK |
+| Turno | proper name “Turnus” (German form) | **Turnus** | Turnus | OK |
+| e | coordinating conjunction “and” | **und** | and | OK |
+| Niso | proper name “Nisus” (German form) | **Nisus** | Nisus | OK |
+| di | preposition “of” (introducing state) | **von** | of | OK |
+| ferute | past participle “wounded” (state) | **ihren Wunden** | their wounds | OK |
+
+### Issues Detected
+- **None**. All source tokens have appropriate German equivalents; no missing, wrong, grammatical, or unnecessary items were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only German script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final German text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 106:
+  - Original: Von jenem demütigen Italien wird die Rettung sein
+  - Issue: none
+  - Corrected: no change
+- Line 107:
+  - Original: für die die Jungfrau Camilla starb,
+  - Issue: none
+  - Corrected: no change
+- Line 108:
+  - Original: Eurialo und Turnus und Nisus von ihren Wunden.
+  - Issue: none
+  - Corrected: no change
+
+```
+Von jenem demütigen Italien wird die Rettung sein
+für die die Jungfrau Camilla starb,
+Eurialo und Turnus und Nisus von ihren Wunden.
+```
+]]></message>
+</messages>
