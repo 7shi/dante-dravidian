@@ -163,6 +163,29 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 6: “in thought” is rendered awkwardly; 「mis mõttes」 reads like “in meaning” rather than “in thought/mind”.
 - Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “bitter” is explicit (OK for literal-first).
 
+## Turkish (GPT-OSS 120B)
+
+```text
+1 Hayatımızın yolunun ortasında
+2 kendimi karanlık bir ormanda buldum,
+3 öyle ki doğru yol kaybolmuştu.
+
+4 Ah ne söylemek ki ne olduğu zor bir şey
+5 bu vahşi ve engebeli ve yoğun orman
+6 ki düşüncede korkuyu yeniden canlandırır!
+
+7 Öyle acı ki ölüm biraz daha fazladır;
+8 Ama orada bulduğum iyiyi ele almak için,
+9 Orada gördüğüm diğer şeyleri anlatacağım.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 3: 「öyle ki」 reads like “so that/such that”, not a clean causal “because/for”.
+- Line 4: Ungrammatical/awkward; “how hard it is to say what it was” is not cleanly expressed.
+- Line 5: Descriptor drift; 「engebeli」 (“bumpy/uneven”) does not match the source’s “rough/harsh/strong” bundle.
+- Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “acı” is explicit (OK for literal-first).
+
 # Romance languages
 
 ## French (GPT-OSS 120B)
@@ -362,7 +385,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 6: Relative pronoun agreement error (“woud” is neuter; should be “dat” not “die”).
 - Line 7: Comparative is incomplete/unclear (“de dood iets meer is” — more what?).
 
-# Slavic language
+# Slavic languages
 
 ## Serbian (Latin script) (GPT-OSS 120B)
 
@@ -385,6 +408,49 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 4: Ungrammatical/duplicative; “teško reći šta je bila teška stvar” does not cleanly express “how hard it is to say what it was”.
 - Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “gorka” is explicit (OK for literal-first).
 
+## Bulgarian (GPT-OSS 120B)
+
+```text
+1 В средата на пътя на нашия живот
+2 се намерих в тъмна гора,
+3 защото правият път беше изгубен.
+
+4 Ах колко трудно е да се каже какво беше
+5 това диво и грубо и плътно дърво
+6 което в мисълта възобновява страха!
+
+7 Така е горчиво че смъртта е малко повече;
+8 Но за да разгледам доброто което намерих там,
+9 Ще разкажа за другите неща които видях там.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 5: Uses 「дърво」 (“tree/wood”) where “forest/wood” is intended; meaning drift from “selva/wood”.
+- Line 5: The descriptor bundle is incomplete (missing the “strong/forte” component).
+- Line 7: Comparative ellipsis (“death is a little more …”) is acceptable given “горчиво” is explicit (OK for literal-first).
+
+## Polish (GPT-OSS 120B)
+
+```text
+1 W połowie drogi naszego życia
+2 odnalazłem się w mrocznym lesie,
+3 bo właściwa droga została zgubiona.
+
+4 Ach jak trudne jest powiedzieć czym to było
+5 ten dziki i szorstki i gęsty las
+6 który w myśli odnawia strach!
+
+7 Tak gorzka jest że śmierć jest nieco większa;
+8 ale aby rozmawiać o dobru które znalazłem tam,
+9 powiem o innych rzeczach które widziałem tam.
+```
+
+**Points of criticism (GPT-5.2)**:
+
+- Line 5: The descriptor bundle is incomplete (missing the “strong/forte” component).
+- Line 7: Comparative meaning drifts; 「śmierć jest nieco większa」 (“death is a bit bigger/greater”) does not preserve “death is little more (bitter)”.
+
 ## Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
@@ -394,16 +460,19 @@ Ranking by fewest issues and providing an overall assessment.
 1. Malayalam: Excellent fidelity with no meaning-critical issues.
 2. German: Excellent fidelity; only minor stylistic strain noted.
 3. French: High quality with only a small meaning nuance in line 9.
-4. Spanish: Strong flow with one syntactically awkward exclamatory passage.
-5. Hindi: Very faithful overall; one minor deictic choice in line 8.
-6. Interlingua: Very close overall; minor tense/grammar instability.
+4. Hindi: Very faithful overall; one minor deictic choice in line 8.
+5. Spanish: Strong flow with one syntactically awkward exclamatory passage.
+6. Bengali: Readable and faithful, but drops one descriptor in line 5.
 7. Esperanto: Generally faithful with one incomplete comparative structure.
-8. Bengali: Readable and faithful, but drops one descriptor in line 5.
-9. Serbian: Traceable overall, but the complex exclamatory clause in line 4 breaks down.
+8. Serbian: Traceable overall, but the complex exclamatory clause in line 4 breaks down.
+9. Interlingua: Very close overall; minor tense/grammar instability.
 10. Portuguese: Solid translation with gaps in logical connectors and awkward line 4 phrasing.
 11. Estonian: Mostly faithful, but has one missing descriptor and an awkward “in thought” rendering.
 12. Tamil: Core meaning conveyed despite grammatical rough edges and a missing descriptor.
-13. Japanese: Understandable overall, but drops the causal connector and has an incomplete comparative.
-14. Kannada: Narrative is traceable but shows strain in complex clauses, descriptors, and comparatives.
-15. Dutch: Multiple clear grammar/agreement failures plus an incomplete comparative.
-16. Telugu: Multiple meaning-critical issues in pronouns, causal logic, and comparative structure.
+13. Bulgarian: Mostly faithful, but has a forest/wood meaning drift and a missing descriptor.
+14. Polish: Mostly faithful, but the comparative in line 7 drifts (“bigger/greater” vs “little more (bitter)”).
+15. Japanese: Understandable overall, but drops the causal connector and has an incomplete comparative.
+16. Kannada: Narrative is traceable but shows strain in complex clauses, descriptors, and comparatives.
+17. Turkish: Traceable overall, but has a wrong causal framing (line 3) and breaks down in the exclamatory clause/descriptor bundle.
+18. Dutch: Multiple clear grammar/agreement failures plus an incomplete comparative.
+19. Telugu: Multiple meaning-critical issues in pronouns, causal logic, and comparative structure.
