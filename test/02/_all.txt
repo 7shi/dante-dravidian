@@ -44,6 +44,12 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 5 see mets on metsik ja karm ja tihe
 6 mis mõttes uuendab hirmu!
 
+# Turkish
+
+4 Ah ne söylemek ki ne olduğu zor bir şey
+5 bu vahşi ve engebeli ve yoğun orman
+6 ki düşüncede korkuyu yeniden canlandırır!
+
 # French
 
 4 Ah comme il est difficile de dire ce qu’il était
@@ -103,3 +109,15 @@ Ah! how hard a thing it is to tell what this wild and rough and dense wood was, 
 4 Ah koliko je teško reći šta je bila teška stvar
 5 ova šuma divlja i gruba i gusta
 6 koja u mislima obnavlja strah!
+
+# Bulgarian
+
+4 Ах колко трудно е да се каже какво беше
+5 това диво и грубо и плътно дърво
+6 което в мисълта възобновява страха!
+
+# Polish
+
+4 Ach jak trudne jest powiedzieć czym to było
+5 ten dziki i szorstki i gęsty las
+6 który w myśli odnawia strach!

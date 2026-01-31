@@ -44,6 +44,12 @@ to whom if thou wilt thereafter ascend, then shall be a soul more worthy than I 
 122 hing on selle pärast rohkem väärt kui mina:
 123 tema kõrval jätan ma sind minu lahkumisel;
 
+# Turkish
+
+121 Eğer sonradan yükselmeyi istersen onlara,
+122 O yükseliş için benden daha layık bir ruh olacak:
+123 Onunla seni gidişimde bırakacağım;
+
 # French
 
 121 À ceux, si tu veux ensuite monter,
@@ -103,3 +109,15 @@ to whom if thou wilt thereafter ascend, then shall be a soul more worthy than I 
 121 Onima kojima ako želiš potom da se uzdigneš,
 122 duša će biti vrednija od mene za to:
 123 s njom ću te ostaviti pri mom odlasku;
+
+# Bulgarian
+
+121 към онези, ако след това искаш да се изкараш,
+122 ще бъде душа, по‑достойна от мен за това:
+123 с нея ще те оставя при моето тръгване;
+
+# Polish
+
+121 Do tych, jeśli zechcesz potem wstąpić,
+122 Wtedy będzie dusza bardziej godna niż ja w tej sprawie:
+123 Z nią zostawię cię przy moim odejściu;

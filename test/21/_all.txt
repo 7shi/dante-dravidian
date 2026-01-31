@@ -44,6 +44,12 @@ While I was falling back to the low place, before mine eyes appeared one who thr
 62 enne mu silmi ilmus
 63 kes läbi pika vaikuse näis kähisev.
 
+# Turkish
+
+61 Alçak bir yere doğru düşerken,
+62 gözlerimin önünde birisi ortaya çıktı
+63 uzun sessizlikten sonra boğuk görünüyordu.
+
 # French
 
 61 Alors que je retombais vers le lieu bas,
@@ -103,3 +109,15 @@ While I was falling back to the low place, before mine eyes appeared one who thr
 61 Dok sam se spuštao nazad u nisko mesto,
 62 pred mojim očima se pojavio
 63 koji je kroz dugu tišinu delovao hrapavo.
+
+# Bulgarian
+
+61 Докато се спусках към ниското място,
+62 преди очите ми се появи онзи
+63 който след дълго мълчание изглеждаше охъртял.
+
+# Polish
+
+61 Podczas gdy spadałem w dół do niskiego miejsca,
+62 przed moimi oczami ukazał się ktoś
+63 któż po długiej ciszy wydawał się ochrypły.

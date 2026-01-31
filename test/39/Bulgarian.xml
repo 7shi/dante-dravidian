@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+където ще чуеш отчаяните викове,  
+ще видиш древните скръбни духове,  
+които всеки вика към втората смърт;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Source → Bulgarian)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|----------------------|-----------------------|--------|
+| **ove** | locative subordinator “where” introducing the place of the future event | **където** | “where” | OK |
+| **udirai** | future action of the addressee: will hear the following noun | **ще чуеш** | “will hear” | OK |
+| **le** | definite article, fem. pl. marking *strida* as specific | — (definite article is not expressed in Bulgarian) | — | UNNECESSARY |
+| **disperate** | adjective qualifying *strida* as “despairing, desperate” | **отчаяните** | “the desperate” | OK |
+| **strida** | plural noun, the audible objects that will be heard | **викове** | “shrieks” | OK |
+| **vedrai** | future action of the addressee: will see the following noun phrase | **ще видиш** | “will see” | OK |
+| **li** | definite article, masc. pl. marking *spiriti* as specific | — (definite article is not expressed in Bulgarian) | — | UNNECESSARY |
+| **antichi** | adjective attributing temporal antiquity to *spiriti* | **древните** | “the ancient” | OK |
+| **spiriti** | plural noun, the entities that will be seen | **духове** | “spirits” | OK |
+| **dolenti** | adjective describing the emotional state of the spirits as “woeful” | **скръбни** | “woeful / sorrowful” | OK |
+| **ch’** (che) | relative pronoun introducing a clause that describes the spirits’ action | **които** | “who / which” | OK |
+| **a** | preposition indicating direction “to, toward” | **към** | “toward” | OK |
+| **la** | definite article, fem. sg. marking *morte* as specific | — (definite article is not expressed in Bulgarian) | — | UNNECESSARY |
+| **seconda** | ordinal adjective specifying the *second* death | **втората** | “the second” | OK |
+| **morte** | noun, the target toward which each spirit shouts | **смърт** | “death” | OK |
+| **ciascun** | distributive quantifier “each” applying to the spirits | **всеки** | “each” | OK |
+| **grida** | present‑indicative verb, third‑person singular: “shouts / cries out” | **вика** | “shouts / cries out” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *le, li, la* – Bulgarian does not use separate definite articles; definiteness is expressed by the suffix on the noun or is contextually understood.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected. All adjectives, nouns, and verbs agree in gender, number, and case with their Bulgarian counterparts.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 115**  
+  - Original: където ще чуеш отчаяните викове,  
+  - Issue: none  
+  - Corrected: където ще чуеш отчаяните викове,  
+
+- **Line 116**  
+  - Original: ще видиш древните скръбни духове,  
+  - Issue: none  
+  - Corrected: ще видиш древните скръбни духове,  
+
+- **Line 117**  
+  - Original: които всеки вика към втората смърт;  
+  - Issue: none  
+  - Corrected: които всеки вика към втората смърт;  
+
+```
+където ще чуеш отчаяните викове,
+ще видиш древните скръбни духове,
+които всеки вика към втората смърт;
+```
+]]></message>
+</messages>

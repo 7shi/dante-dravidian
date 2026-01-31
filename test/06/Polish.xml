@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Spojrzałem w górę i zobaczyłem jego ramiona  
+już pokryte promieniami planety  
+który prowadzi ludzi prosto po każdej drodze.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| guardai | performed the act of looking upward | Spojrzałem | I looked | OK |
+| in | preposition marking direction “on” | w | in/into | OK |
+| alto | destination “high” | górę | high (up) | OK |
+| e | coordinating conjunction “and” | i | and | OK |
+| vidi | performed the act of seeing | zobaczyłem | I saw | OK |
+| le | definite article (fem. pl.) | — | — | UNNECESSARY |
+| sue | possessive adjective “its” | jego | his/its | OK |
+| spalle | noun “shoulders” | ramiona | shoulders | OK |
+| vestite | adjective “clothed” | pokryte | clothed | OK |
+| già | adverb “already” | już | already | OK |
+| de' | preposition “of” | — | — | UNNECESSARY |
+| raggi | noun “rays” | promieniami | rays (instr.) | OK |
+| del | preposition “of the” | — | — | UNNECESSARY |
+| pianeta | noun “planet” | planety | (gen.) of the planet | OK |
+| che | relative pronoun “that” | który | which/that | OK |
+| mena | verb “leadeth” | prowadzi | leads | OK |
+| dritto | adverb “straight” | prosto | straight | OK |
+| altrui | noun “men/people” | ludzi | people | OK |
+| per | preposition “along” | po | along/after | OK |
+| ogne | adjective “every” | każdej | every | OK |
+| calle | noun “path” | drodze | path (loc.) | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: *le*, *de'*, *del* – Italian articles/prepositions that have no separate lexical counterpart in Polish (their function is expressed by case morphology).  
+
+- **MISSING**: none  
+- **WRONG**: none  
+- **GRAMMAR**: none  
+
+All other source tokens are correctly rendered in the Polish translation with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 16**  
+  - Original: Spojrzałem w górę i zobaczyłem jego ramiona  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 17**  
+  - Original: już pokryte promieniami planety  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 18**  
+  - Original: który prowadzi ludzi prosto po każdej drodze.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Spojrzałem w górę i zobaczyłem jego ramiona
+już pokryte promieniami planety
+który prowadzi ludzi prosto po każdej drodze.
+```
+]]></message>
+</messages>

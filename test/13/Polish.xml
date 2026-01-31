@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Czas był od początku poranka,
+a słońce wznosiło się w górę z tymi gwiazdami
+które były z nim gdy boska miłość
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (Polish → English) | Status |
+|-------------|-------------------------------------------|----------------------|--------------------------------------|--------|
+| Temp' | the temporal interval being spoken about | **Czas** | “time” | OK |
+| era | copular verb linking subject to locative complement | **był** | “was” | OK |
+| dal | preposition introducing the locative phrase “principio del mattino” | **od** | “from / of” | OK |
+| principio | the initial point of the morning | **początku** | “beginning (gen.)” | OK |
+| del | article + preposition forming the genitive “del mattino” (no lexical meaning) | — | — | **UNNECESSARY** |
+| mattino | the daily period that is beginning | **poranka** | “of the morning” | OK |
+| e | coordinates the two clauses | **a** | “and” | OK |
+| 'l | definite article “the” (not expressed in Polish) | — | — | **UNNECESSARY** |
+| sol | the celestial body that is moving | **słońce** | “the Sun” | OK |
+| montava | ongoing upward motion of the Sun | **wznosiło się** | “was rising / was mounting” | OK |
+| 'n | directional preposition “in” (part of “'n sù”) | **w** | “in / into” | OK |
+| sù | directional adverb “upward” | **górę** | “upward / upwardly” | OK |
+| con | preposition marking accompaniment | **z** | “with” | OK |
+| quelle | demonstrative adjective specifying the stars | **tymi** | “those” | OK |
+| stelle | luminous bodies accompanying the Sun | **gwiazdami** | “stars (inst.)” | OK |
+| ch'eran | relative pronoun + verb “that were” | **które były** | “that were” | OK |
+| con (2nd) | preposition marking accompaniment of “lui” | **z** | “with” | OK |
+| lui | pronoun referring to the Sun (instrumental) | **nim** | “him / it (inst.)” | OK |
+| quando | temporal subordinator “when” | **gdy** | “when” | OK |
+| l'amor | the divine principle that acts | **miłość** | “love” | OK |
+| divino | adjective qualifying “love” as sacred | **boska** | “divine / godly” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `del`, `'l` – Italian articles/prepositions that have no direct counterpart in Polish and are therefore omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all required meanings are present and grammatical agreement is correct in the Polish rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 37**:
+  - Original: Czas był od początku poranka,
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 38**:
+  - Original: a słońce wznosiło się w górę z tymi gwiazdami
+  - Issue: none
+  - Corrected: no change  
+
+- **Line 39**:
+  - Original: które były z nim gdy boska miłość
+  - Issue: none
+  - Corrected: no change  
+
+```
+Czas był od początku poranka,
+a słońce wznosiło się w górę z tymi gwiazdami
+które były z nim gdy boska miłość
+```
+]]></message>
+</messages>

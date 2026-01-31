@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Julio'nun altında doğdum geç olmasına rağmen,  
+ve Romada iyi Augustus'un altında yaşadım  
+yalancı ve yalan söyleyen tanrıların zamanında.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Turkish Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Turkish → English) | Status |
+|-------------|--------------------------------------|----------------------|---------------------------------------|--------|
+| Nacqui | “I was born” (1st sg perfect) | doğdum | “I was born” | OK |
+| sub | preposition “under” (temporal/political authority) | altında | “under” | OK |
+| Iulio | proper name “Julio” (the ruler) | Julio'nun | “Julio’s” (possessive) | OK |
+| ancor | concessive adverb “though / even though” | rağmen | “although / despite” | OK |
+| che | subordinator introducing subjunctive clause | olmasına | “to be” (as part of “geç olmasına”) | OK |
+| fosse | imperfect subjunctive of *essere* “was” (in concessive clause) | olmasına | “to be” (as part of “geç olmasına”) | OK |
+| tardi | adjective “late” (degree) | geç | “late” | OK |
+| e | coordinating conjunction “and” | ve | “and” | OK |
+| vissi | “I lived” (1st sg perfect) | yaşadım | “I lived” | OK |
+| a | preposition “to / at” (locative) | Romada | “in Rome” (locative suffix) | OK |
+| Roma | proper name “Rome” | Roma | “Rome” | OK |
+| sotto | preposition “under” (political authority) | altında | “under” | OK |
+| ’l | definite article “the” (masc. sing.) – not needed in Turkish | *(none)* | – | UNNECESSARY |
+| buono | adjective “good” (positive evaluation) | iyi | “good” | OK |
+| Augusto | proper name “Augustus” (the ruler) | Augustus'un | “Augustus’s” (possessive) | OK |
+| nel | contraction “in the” (preposition + article) – expressed by suffix in Turkish | *(none)* | – | UNNECESSARY |
+| tempo | noun “time” (epoch) | zamanında | “in the time of” | OK |
+| de | preposition “of” – incorporated in Turkish genitive suffix | *(none)* | – | UNNECESSARY |
+| li | definite article “the” (masc. plural) – not needed in Turkish | *(none)* | – | UNNECESSARY |
+| dèi | noun “gods” (plural) | tanrıların | “of the gods” | OK |
+| falsi | adjective “false” (first attribute) | yalancı | “false / liar” | OK |
+| e | coordinating conjunction “and” | ve | “and” | OK |
+| bugiardi | adjective “lying” (second attribute) | yalan söyleyen | “lying” (as a participial phrase) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: ’l, de, li, nel – Turkish does not use separate articles or the preposition “in the”; the meaning is conveyed by suffixes on the nouns.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all required meanings are present and correctly expressed in the Turkish translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 70:  
+  - Original: Julio'nun altında doğdum geç olmasına rağmen,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 71:  
+  - Original: ve Romada iyi Augustus'un altında yaşadım  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 72:  
+  - Original: yalancı ve yalan söyleyen tanrıların zamanında.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Julio'nun altında doğdum geç olmasına rağmen,
+ve Romada iyi Augustus'un altında yaşadım
+yalancı ve yalan söyleyen tanrıların zamanında.
+```
+]]></message>
+</messages>

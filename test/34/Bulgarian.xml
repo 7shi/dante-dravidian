@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Много са животните с които тя се жени,  
+и ще има още повече докато дойде вълкът  
+който ще я накара да умре от скръб.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition (sense) | Target Word / Phrase (Bulgarian) | Back‑Translation (English) | Status |
+|-------------|------------------------------|----------------------------------|-----------------------------|--------|
+| Molti | many (quantifier) | **Много** | many | OK |
+| son | are (copular verb) | **са** | are | OK |
+| li | the (definite article, plural) | — | — | **UNNECESSARY** (article omitted in Bulgarian) |
+| animali | animals (noun, predicate) | **животните** | the animals | OK |
+| a | with (preposition) | **с** | with | OK |
+| cui | which / whom (relative pronoun, object of *a*) | **които** (part of “с които”) | which | OK |
+| s'ammoglia | she wives / marries (reflexive verb) | **се жени** | she marries | OK |
+| e | and (coordinating conjunction) | **и** | and | OK |
+| più | more (comparative degree) | **повече** | more | OK |
+| saranno | will be (future copula) | **ще има** | will have / will be | OK |
+| ancora | yet / still (temporal adverb) | **още** | still | OK |
+| infin | until (subordinating conjunction) | **докато** | until | OK |
+| che* (in *infin che*) | that / that‑clause marker | — (integrated in “докато”) | — | **UNNECESSARY** |
+| ’l | the (definite article, singular) | — | — | **UNNECESSARY** |
+| veltro | hound (animal that will arrive) | **вълкът** | the wolf | **WRONG** (lexical mismatch: “hound” ≠ “wolf”) |
+| verrà | will come (future verb) | **дойде** | will come | OK |
+| che* (in *che la farà*) | that (relative pronoun) | **който** | that (who) | OK |
+| la | her (direct object pronoun) | **я** | her | OK |
+| farà | will make / cause (causative verb) | **ще накара** | will make / will cause | OK |
+| morir | to die (infinitive) | **да умре** | to die | OK |
+| con | of / from (preposition) | **от** | from / of | OK |
+| doglia | grief (noun, cause of death) | **скръб** | grief | OK |
+
+\*The word **che** appears twice in the source; the first occurrence (after *infin*) is absorbed by the Bulgarian conjunction “докато”, the second (introducing the result clause) is rendered by the relative pronoun **който**.
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `li`, `che` (after *infin*), `’l` – Bulgarian does not use definite articles or a separate subordinator in these positions.  
+- **WRONG**: `veltro` → rendered as **вълкът** (“wolf”). The source specifies a *hound*; a more accurate Bulgarian term would be **гончар** or **кучe**.  
+- **MISSING**: none (every source token is accounted for).  
+- **GRAMMAR**: none detected (agreement, gender, number are correct in the Bulgarian rendering).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: **Много са животните с които тя се жени,**
+  - Issue: none
+  - Corrected: **Много са животните с които тя се жени,**
+
+- Line 2:
+  - Original: **и ще има още повече докато дойде вълкът**
+  - Issue: WRONG – “вълкът” (wolf) should be “гончарът” (hound)
+  - Corrected: **и ще има още повече докато дойде гончарът**
+
+- Line 3:
+  - Original: **който ще я накара да умре от скръб.**
+  - Issue: none
+  - Corrected: **който ще я накара да умре от скръб.**
+
+```
+Много са животните с които тя се жени,
+и ще има още повече докато дойде гончарът
+който ще я накара да умре от скръб.
+```
+]]></message>
+</messages>

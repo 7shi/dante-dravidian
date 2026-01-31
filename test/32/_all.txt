@@ -44,6 +44,12 @@ for this beast, because of which thou criest out, lets not any one pass along he
 95 ei luba kellelgi mööduda tema teel,
 96 aga nii takistab ta teda, et ta tapab teda;
 
+# Turkish
+
+94 bu canavar yüzünden bağırıyorsun,
+95 başkasının onun yolundan geçmesine izin vermez,
+96 ama o kadar engeller ki onu öldürür;
+
 # French
 
 94 car cette bête, à cause de laquelle tu cries,
@@ -103,3 +109,15 @@ for this beast, because of which thou criest out, lets not any one pass along he
 94 zbog ove bestije zbog koje vi vičete,
 95 ne dozvoljava nikome da prolazi njenim putem,
 96 ali toliko ga onemogućava da ga ubije;
+
+# Bulgarian
+
+94 за този звяр, заради който викаш,
+95 не позволява на никой да преминава по нейния път,
+96 но толкова го спира, че го убива;
+
+# Polish
+
+94 bo ta bestia, przez którą wołasz,
+95 nie pozwala nikomu przejść jej drogą,
+96 ale tak go powstrzymuje, że go zabija;

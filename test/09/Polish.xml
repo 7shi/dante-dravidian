@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+tak więc moja dusza która wciąż uciekała,
+odwróciła się wstecz i ponownie spojrzała na przełęcz
+przełęcz której nigdy nie opuściła żywa osoba.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Polish translation from Step 2)**  
+
+| Source Word | Contextual Definition (Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------|--------------------|------------------------|--------|
+| così | adverb marking result/resultative | **tak więc** | “so, therefore” | OK |
+| l'animo | noun, the soul | **dusza** | “soul” | OK |
+| mio, | possessive adjective, *my* | **moja** | “my” | OK |
+| ch'ancor | relative pronoun + adverb *still* | **która wciąż** | “which still” | OK |
+| fuggiva, | imperfect verb *was fleeing* | **uciekała** | “was fleeing” | OK |
+| si | reflexive clitic | **się** | “self” (reflexive) | OK |
+| volse | past verb *turned* | **odwróciła** | “turned” | OK |
+| a (before *retro*) | directional preposition | *(omitted)* | – | UNNECESSARY |
+| retro | noun used adverbially *back* | **wstecz** | “backward” | OK |
+| a (before *rimirar*) | conjunction/purpose marker | **i** | “and” | OK |
+| rimirar | infinitive *to look again* | **ponownie spojrzała** | “looked again” | OK |
+| lo | definite article | *(omitted)* | – | UNNECESSARY |
+| passo | noun *pass* | **przełęcz** | “mountain pass” | OK |
+| che | relative pronoun | **której** | “which (gen.)” | OK |
+| non | negation particle | **nie** | “not” | OK |
+| lasciò | past verb *left* | **opuściła** | “left” | OK |
+| già | adverb *already* | *(omitted)* | – | **MISSING** |
+| mai | adverb *never* | **nigdy** | “never” | OK |
+| persona | noun *person* | **osoba** | “person” | OK |
+| viva. | adjective *living* (agreeing) | **żywa** | “living” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - *a* (preposition before *retro*) – Polish does not need a preposition here.  
+  - *lo* (definite article) – Polish lacks articles, so it is naturally omitted.  
+
+- **MISSING**:  
+  - *già* (“already”) – The nuance of “already” is not expressed in the Polish rendering.  
+
+All other source words are correctly represented (OK).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 25**  
+  - Original: *tak więc moja dusza która wciąż uciekała,*  
+  - Issue: brak przecinka po „dusza” (wymagany w zdaniu podrzędnym).  
+  - Corrected: **tak więc moja dusza, która wciąż uciekała,**  
+
+- **Line 26**  
+  - Original: *odwróciła się wstecz i ponownie spojrzała na przełęcz*  
+  - Issue: brak przecinka końcowego (zgodnie z oryginałem).  
+  - Corrected: **odwróciła się wstecz i ponownie spojrzała na przełęcz,**  
+
+- **Line 27**  
+  - Original: *przełęcz której nigdy nie opuściła żywa osoba.*  
+  - Issue: brak elementu „już” (odpowiednik włoskiego *già*).  
+  - Corrected: **przełęcz której już nigdy nie opuściła żywa osoba.**  
+
+```
+tak więc moja dusza, która wciąż uciekała,
+odwróciła się wstecz i ponownie spojrzała na przełęcz,
+przełęcz której już nigdy nie opuściła żywa osoba.
+```
+]]></message>
+</messages>

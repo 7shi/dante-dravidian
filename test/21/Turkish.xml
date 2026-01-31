@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+61 Alçak bir yere doğru düşerken,  
+62 gözlerimin önünde birisi ortaya çıktı  
+63 uzun sessizlikten sonra boğuk gibi görünüyordu.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **Mentre** | temporal conjunction “while” | *(none)* | — | UNNECESSARY |
+| **ch'** (che) | subordinating conjunction introducing the clause “that I …” | *(none)* | — | UNNECESSARY |
+| **i'** (io) | 1st sg pronoun “I” | *(none)* | — | UNNECESSARY |
+| **rovinava** | verb imperfect “was falling / going down” | **düşerken** | “while falling” | OK |
+| **in** | preposition of direction “to / into” | *(none)* (case expressed in “yere”) | — | UNNECESSARY |
+| **basso** | adjective “low” | **Alçak** | “low” | OK |
+| **loco** | noun “place” | **yere** | “to the place” | OK |
+| **dinanzi** | adverb/preposition “before, in front of” | **önünde** | “in front of” | OK |
+| **a** | preposition “to” (part of *dinanzi a*) | *(none)* | — | UNNECESSARY |
+| **li** | definite article plural “the” | *(none)* | — | UNNECESSARY |
+| **occhi** | noun “eyes” | **gözler** | “eyes” | OK |
+| **mi** | clitic dative “to me” | *(none)* (possessive rendered in “gözlerimin”) | — | UNNECESSARY |
+| **si** | reflexive pronoun (passive) | *(none)* | — | UNNECESSARY |
+| **fu** | auxiliary verb past “was” | *(none)* (tense encoded in “çıktı”) | — | UNNECESSARY |
+| **offerto** | past participle “offered / presented” | **ortaya çıktı** | “appeared” | OK |
+| **chi** | relative pronoun “who / that” | **birisi** | “one who” | OK |
+| **per** | preposition “through / after” (introducing cause) | **sonra** | “after” | OK |
+| **lungo** | adjective “long” | **uzun** | “long” | OK |
+| **silenzio** | noun “silence” | **sessizlik** | “silence” | OK |
+| **parea** | verb imperfect “seemed” | **görünüyordu** | “seemed” | OK |
+| **fioco** | adjective “hoarse / weak” | **boğuk** | “hoarse” | OK |
+| **gibi** (added in Turkish) | comparative particle “like, as” (not in source) | **gibi** | “like” | UNNECESSARY |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: Mentre, ch', i', in, a, li, mi, si, fu, per‑*a* (the “a” after *dinanzi*), *gibi* (added for naturalness in Turkish).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all required meanings are present in the Turkish rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 61:
+  - Original: Alçak bir yere doğru düşerken,
+  - Issue: none
+  - Corrected: no change
+- Line 62:
+  - Original: gözlerimin önünde birisi ortaya çıktı
+  - Issue: none
+  - Corrected: no change
+- Line 63:
+  - Original: uzun sessizlikten sonra boğuk gibi görünüyordu.
+  - Issue: UNNECESSARY word “gibi”
+  - Corrected: uzun sessizlikten sonra boğuk görünüyordu.
+
+```
+Alçak bir yere doğru düşerken,
+gözlerimin önünde birisi ortaya çıktı
+uzun sessizlikten sonra boğuk görünüyordu.
+```
+]]></message>
+</messages>

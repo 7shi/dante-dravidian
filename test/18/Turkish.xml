@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+52 O bana o kadar ağırlık verdi  
+53 görüşünden çıkan korkuyla,  
+54 yüksekliğe dair umudumu kaybettim.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|-------------------|--------|
+| questa | the female agent who acts | O | she | OK |
+| mi | recipient/experiencer of the caused state | bana | to me | OK |
+| porse | acts of bringing about a feeling | verdi | gave | OK |
+| tanto | indicates a high degree of the following noun | o kadar | so much | OK |
+| di (line 52) | links quantity adverb to noun (of) | — | — | UNNECESSARY |
+| gravezza | the affective state imposed on the speaker | ağırlık | heaviness | OK |
+| con | introduces an accompanying circumstance | — | — | UNNECESSARY |
+| la (line 53) | marks the noun as specific (definite article) | — | — | UNNECESSARY |
+| paura | the emotion that arises from seeing her | korku | fear | OK |
+| ch'uscia | relative clause verb describing fear emerging | çıkan | that came | OK |
+| di (line 53) | introduces source of fear (from) | — | — | UNNECESSARY |
+| sua | possessor of the vista | — | — | UNNECESSARY |
+| vista | the visual perception of the female agent | görüş | sight | OK |
+| ch'io | relative pronoun + subject introducing clause | — | — | UNNECESSARY |
+| perdei | act of no longer possessing hope | kaybettim | lost | OK |
+| la (line 54) | definite article | — | — | UNNECESSARY |
+| speranza | the mental expectation that is lost | umudumu | my hope | OK |
+| de | links hope to its content (of) | dair | regarding/about | OK |
+| l'altezza | the lofty goal or aspiration referenced | yüksekliğe | to the height | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `di` (line 52), `con`, `la` (line 53), `di` (line 53), `sua`, `ch'io`, `la` (line 54) – these Italian function words are not expressed as separate words in Turkish; their meanings are encoded by case or possessive suffixes or are omitted because Turkish does not use articles.  
+
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 52:
+  - Original: O bana o kadar ağırlık verdi
+  - Issue: none
+  - Corrected: O bana o kadar ağırlık verdi
+- Line 53:
+  - Original: görüşünden çıkan korkuyla,
+  - Issue: none
+  - Corrected: görüşünden çıkan korkuyla,
+- Line 54:
+  - Original: yüksekliğe dair umudumu kaybettim.
+  - Issue: none
+  - Corrected: yüksekliğe dair umudumu kaybettim.
+
+```
+O bana o kadar ağırlık verdi
+görüşünden çıkan korkuyla,
+yüksekliğe dair umudumu kaybettim.
+```
+]]></message>
+</messages>

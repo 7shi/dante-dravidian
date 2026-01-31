@@ -44,6 +44,12 @@ But thou, why returnest thou to so great annoy? Why dost thou not ascend the del
 77 Miks sa ei ronita maitsvat mäge?
 78 Kas see mägi on kogu rõõmu algus ja põhjus?
 
+# Turkish
+
+76 Ama sen neden bu kadar büyük sıkıntıya geri dönüyorsun?
+77 Neden bu keyifli dağı çıkmıyorsun
+78 Bu bütün sevincin kaynağı ve nedenidir?
+
 # French
 
 76 Mais toi pourquoi reviens‑tu à tant d'ennui ?
@@ -103,3 +109,15 @@ But thou, why returnest thou to so great annoy? Why dost thou not ascend the del
 76 Ali ti zašto se vraćaš u toliku dosadu?
 77 Zašto ne penješ se na divan planinski vrh
 78 Koji je početak i uzrok sve radosti?
+
+# Bulgarian
+
+76 Но ти, защо се връщаш към толкова голямо безпокойство?
+77 Защо не се изкачваш на приятната планина?
+78 Коя е началото и причината за цялата радост?
+
+# Polish
+
+76 Ale ty dlaczego wracasz do tak wielkiej nudy?
+77 Dlaczego nie wchodzisz na rozkoszną górę
+78 która jest początkiem i przyczyną całej radości?

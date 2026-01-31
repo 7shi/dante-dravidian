@@ -44,6 +44,12 @@ Then was the fear a little quieted which in the lake of my heart had lasted thro
 20 mis mu südame järves oli kestnud
 21 öö mille ma läbisin nii haletsusega.
 
+# Turkish
+
+19 O zaman korku biraz sakinleşti,
+20 ki kalbimin gölünde sürmüştü
+21 o geceyi o kadar acıma içinde geçirdim.
+
 # French
 
 19 Alors la peur fut un peu apaisée,
@@ -103,3 +109,15 @@ Then was the fear a little quieted which in the lake of my heart had lasted thro
 19 Tada je strah malo utišan,
 20 koji je u jezeru mog srca trajao
 21 noć koju sam proveo s toliko sažaljenjem.
+
+# Bulgarian
+
+19 Тогава страхът беше малко успокоен,
+20 който в езерото на сърцето ми продължи
+21 нощта която преминах с толкова жалост.
+
+# Polish
+
+19 Wtedy strach był nieco uspokojony,
+20 który w jeziorze mego serca trwał
+21 noc którą przeszedłem tak żałośnie.

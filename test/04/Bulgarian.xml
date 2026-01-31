@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Не мога добре да разкажа как влязох в него,  
+бях толкова пълен със сън в онзи момент  
+че изоставих истинския път.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bulgarian) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|----------------------------------|-----------------------------|--------|
+| Io | speaker, 1st sg pronoun | – (omitted) | I | UNNECESSARY |
+| non | negation particle | не | not | OK |
+| so | “know” (ability) – negated → “cannot” | мога | can (in negative) | OK |
+| ben | manner adverb “well” | добре | well | OK |
+| ridir | infinitive “recount” | да разкажа | to recount | OK |
+| com' | interrogative adverb “how” | как | how | OK |
+| i' | clitic pronoun “I” (subject inside clause) | – (omitted) | I | UNNECESSARY |
+| v'intrai | past‑historic “entered (it)” | влязох | entered | OK |
+| tant' | degree adverb “so” | толкова | so | OK |
+| era | imperfect “was” | бях | was | OK |
+| pien | predicative adjective “full” | пълен | full | OK |
+| di | preposition linking “full” to “sleep” | със | with | OK |
+| sonno | noun “slumber, sleep” | сън | sleep | OK |
+| a | temporal preposition “at” | в | at | OK |
+| quel | demonstrative “that” | онзи | that | OK |
+| punto | noun “point, moment” | момент | moment | OK |
+| che | relative conjunction “where/that” | че | that | OK |
+| la | definite article (feminine) – not a separate word in Bulgarian | – (suffix on *път*) | the | UNNECESSARY |
+| verace | adjective “true, correct” | истински | true | OK |
+| via | noun “way, path” | път | way | OK |
+| abbandonai | past‑historic “abandoned” | изоставих | abandoned | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *Io*, *i'*, *la* – Bulgarian does not use separate pronouns or articles for these functions; the meaning is conveyed by verb inflection and the definite‑article suffix on *път*.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 10**  
+  - Original: Не мога добре да разкажа как влязох в него,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 11**  
+  - Original: бях толкова пълен със сън в онзи момент  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 12**  
+  - Original: че изоставих истинския път.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Не мога добре да разкажа как влязох в него,
+бях толкова пълен със сън в онзи момент
+че изоставих истинския път.
+```
+]]></message>
+</messages>

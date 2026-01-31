@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Tak gorzka jest że śmierć jest nieco większa;  
+ale aby rozmawiać o dobru które znalazłem tam,  
+powiem o innych rzeczach które widziałem tam.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| **Tant'** | “so, to such a degree” | Tak | “so” | OK |
+| **è** | copular “is” (1st occurrence) | jest | “is” | OK |
+| **amara** | adjective “bitter” (fem.) | gorzka | “bitter” | OK |
+| **che** | resultative conjunction “that” | że | “that” | OK |
+| **poco** | adverb “little, slightly” | nieco | “slightly” | OK |
+| **è** | copular “is” (2nd occurrence) | jest | “is” | OK |
+| **più** | comparative “more” | większa | “greater / more” | OK |
+| **morte** | noun “death” | śmierć | “death” | OK |
+| **ma** | coordinating conjunction “but” | ale | “but” | OK |
+| **per** | preposition of purpose “in order to” | aby | “so that / in order to” | OK |
+| **trattar** | infinitive “to treat / discuss” | rozmawiać | “to talk / discuss” | OK |
+| **del** | preposition + definite article “of the” | o | “about / of” | **UNNECESSARY** (article omitted) |
+| **ben** | noun “good” (object of discussion) | dobru | “good” (dative after *o*) | OK |
+| **ch'** | relative pronoun “that / which” | które | “which” | OK |
+| **i'** | 1st‑person pronoun “I” | — (encoded in verb) | “I” | **UNNECESSARY** (subject pronoun dropped) |
+| **vi** | adverb “there” (place of finding) | tam | “there” | OK |
+| **trovai** | past verb “found” | znalazłem | “I found” | OK |
+| **dirò** | future verb “I will tell” | powiem | “I will tell” | OK |
+| **de** | preposition “of” (introducing complement) | o | “about / of” | OK |
+| **l'altre** | adjective + article “the other” (plural) | innych | “other” (plural, genitive) | OK |
+| **cose** | noun “things” (plural) | rzeczach | “things” (locative plural) | OK |
+| **ch'** | relative pronoun “that / which” | które | “which” | OK |
+| **i'** | 1st‑person pronoun “I” | — (encoded in verb) | “I” | **UNNECESSARY** |
+| **v'** | clitic “vi” = “there” (locative) | — (already expressed by *tam*) | “there” | **UNNECESSARY** |
+| **ho** | auxiliary “have” (perfect) | — (tense expressed by past) | “have” | **UNNECESSARY** |
+| **scorte** | past participle “seen” | widziałem | “I saw” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `del`, `i'` (twice), `v'`, `ho` – Polish does not need articles, subject pronouns, or auxiliary “have” in these contexts; the meaning is conveyed by verb forms and adverbs.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all retained words correctly reflect the source meaning and agree in gender, number, and case where applicable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: Tak gorzka jest że śmierć jest nieco większa;  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2:**  
+  - Original: ale aby rozmawiać o dobru które znalazłem tam,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3:**  
+  - Original: powiem o innych rzeczach które widziałem tam.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Tak gorzka jest że śmierć jest nieco większa;
+ale aby rozmawiać o dobru które znalazłem tam,
+powiem o innych rzeczach które widziałem tam.
+```
+]]></message>
+</messages>

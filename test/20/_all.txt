@@ -44,6 +44,12 @@
 59 mis tuli mind vastu samm‑sammult,
 60 tõukas mind tagasi sinna kus päike on vaikiv.
 
+# Turkish
+
+58 böyle beni dinlenmesiz bir canavara yaptı,
+59 ki, bana doğru gelerek, yavaş yavaş
+60 beni geri itiyordu oraya ki güneşin sessiz olduğu yerde.
+
 # French
 
 58 telle la bête sans repos me fit,
@@ -103,3 +109,15 @@
 58 takav me učinio je zver bez mira,
 59 koja, dolazeći mi nasuprot, malo po malo
 60 me je gurala nazad tamo gde sunce šuti.
+
+# Bulgarian
+
+58 така ме направи зверът без покой,
+59 който, идвайки ми навръх, малко‑по‑малко,
+60 ме буташе назад там, където слънцето мълчи.
+
+# Polish
+
+58 tak uczyniła mnie bestia bez spokoju,
+59 że zbliżając się przeciw mnie krok po kroku
+60 odpychała mnie tam gdzie słońce milczy.

@@ -44,6 +44,12 @@ In all parts He governs and them He reigns: there in His city and His lofty seat
 128 Seal on tema linn ja kõrge troon:
 129 Oh õnnelik see keda seal ta valib!
 
+# Turkish
+
+127 Tüm parçalarda hüküm sürer ve orada yönetir;
+128 Orada onun şehri ve yüksek makamı vardır:
+129 Ah mutlu o, orada seçilen!
+
 # French
 
 127 Dans toutes les parties il gouverne et y règne;
@@ -103,3 +109,15 @@ In all parts He governs and them He reigns: there in His city and His lofty seat
 127 U svim delovima on vlada i tamo on reinira;
 128 tamo je njegov grad i visoko prijestolje:
 129 o srećni onaj koga tamo izabire!».
+
+# Bulgarian
+
+127 Той владее във всички части и там царува;
+128 там е неговият град и високият трон:
+129 о щастлив е онзи когото там избира!
+
+# Polish
+
+127 We wszystkich częściach On rządzi i tam panuje;
+128 Tam jest Jego miasto i Jego wyniosłe siedzenie:
+129 O szczęśliwy ten którego tam wybiera!».

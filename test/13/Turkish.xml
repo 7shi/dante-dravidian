@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+37 Zaman sabahın başındaydı,  
+38 ve güneş o yıldızlarla birlikte yukarı doğru yükseliyordu  
+39 onunla birlikte olan o yıldızlar Tanrısal Aşk her şeyi harekete geçirdiği zaman
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase (Turkish) | Back‑Translation (EN) | Status |
+|-------------|----------------------|-------------------------------|------------------------|--------|
+| Temp' | The temporal interval being spoken about | **Zaman** | time | OK |
+| era | Predicate of existence for the time | **başındaydı** | was at the beginning | OK |
+| dal | Introduces the locative phrase “principio del mattino” | **sabahın** | of the morning | OK |
+| principio | The initial point of the morning | **başında** | at the beginning | OK |
+| del | Links “principio” to “mattino” | — | — | **UNNECESSARY** (genitive expressed by the suffix *‑ın* on *sabahın*) |
+| mattino | The daily period that is beginning | **sabah** | morning | OK |
+| e | Clause connector | **ve** | and | OK |
+| 'l | Definite article (the) | — | — | **UNNECESSARY** (Turkish has no articles) |
+| sol | The celestial body that is moving | **güneş** | Sun | OK |
+| montava | Ongoing upward motion of the Sun | **yükseliyordu** | was mounting/rising | OK |
+| 'n | Directional preposition (in) – part of “upward” | — | — | **UNNECESSARY** (direction expressed by *yukarı*) |
+| sù | Directional adverb (upward) | **yukarı** | upward | OK |
+| con (1) | Introduces the accompanying entities | **birlikte** | together/with | OK |
+| quelle | Specifies which stars are meant | **o** | those | OK |
+| stelle | The luminous bodies accompanying the Sun | **yıldızlarla** | with stars | OK |
+| ch'eran | Relates the stars to the preceding clause and asserts their state (that were) | **olan** | that were | OK |
+| con (2) | Introduces the accompanying entities (second occurrence) | **birlikte** | together/with | OK |
+| lui | The entity (the Sun) with which the stars were together | **onunla** | with him | OK |
+| quando | Introduces a temporal subordinate clause (when) | **zaman** | when | OK |
+| l'amor | The divine principle that acts (Love) | **Aşk** | Love | OK |
+| divino | Qualifies “Love” as sacred | **Tanrısal** | Divine | OK |
+
+---
+
+### Items to Note
+- **UNNECESSARY**: `del`, `'l`, `'n` – Turkish does not use separate words for the Italian definite article or the genitive preposition; the grammatical relations are expressed by suffixes or by the adverb *yukarı*.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all other source words are correctly rendered in the Turkish translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 37:
+  - Original: Zaman sabahın başındaydı,
+  - Issue: none
+  - Corrected: no change
+- Line 38:
+  - Original: ve güneş o yıldızlarla birlikte yukarı doğru yükseliyordu
+  - Issue: none
+  - Corrected: no change
+- Line 39:
+  - Original: onunla birlikte olan o yıldızlar Tanrısal Aşk her şeyi harekete geçirdiği zaman
+  - Issue: none
+  - Corrected: no change
+
+```
+Zaman sabahın başındaydı,
+ve güneş o yıldızlarla birlikte yukarı doğru yükseliyordu
+onunla birlikte olan o yıldızlar Tanrısal Aşk her şeyi harekete geçirdiği zaman
+```
+]]></message>
+</messages>

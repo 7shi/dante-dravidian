@@ -44,6 +44,12 @@ He answered me: “Not man; man once I was, and my parents were Lombards, and Ma
 68 ja mu vanemad olid lombardid,
 69 me mõlemad mantuaalased kodumaal.
 
+# Turkish
+
+67 Cevap verdim: «Ben insan değilim bir zamanlar insan idim,
+68 ve ebeveynlerim Lombardlardı,
+69 ikimiz de ülke olarak Mantualıyız.
+
 # French
 
 67 Il me répondit : «Je ne suis pas homme, j'étais déjà homme,
@@ -103,3 +109,15 @@ He answered me: “Not man; man once I was, and my parents were Lombards, and Ma
 67 Odgovorio mi je: „Nije čovek, čovek jednom sam bio,
 68 i moji roditelji su bili Lombardi,
 69 Mantuanci po zemlji obojica.
+
+# Bulgarian
+
+67 Той ми отговори: «Не човек, човек бях преди,
+68 а родителите ми бяха ломбардци,
+69 и мантуаци по родина и двамата.
+
+# Polish
+
+67 Odpowiedział mi Nie człowiek człowiekiem już byłem,
+68 a moi rodzice byli Lombardami,
+69 Mantuani z ojczyzny obaj.

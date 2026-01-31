@@ -44,6 +44,12 @@ And lo! almost at the beginning of the steep a she-leopard, light and very nimbl
 32 üks leopard kerge ja väga vilgas,
 33 mis täpilise karvaga oli kaetud;
 
+# Turkish
+
+31 Ve işte, neredeyse dik yamaçın başında,
+32 hafif ve çok çevik bir dişi leopar,
+33 ki benekli bir kürkle kaplıydı;
+
 # French
 
 31 Et voilà, presque au commencement de la pente,
@@ -103,3 +109,15 @@ And lo! almost at the beginning of the steep a she-leopard, light and very nimbl
 31 I evo, gotovo na početku strme staze,
 32 jedna lagana i veoma okretna leopardska ženka,
 33 koja je bila prekrivena dlakom sa tačkama;
+
+# Bulgarian
+
+31 И ето почти в началото на стръмния път,
+32 една лека и много проворна гепардка,
+33 която беше покрита със петниста козина;
+
+# Polish
+
+31 I oto, prawie na początku stromego szlaku,
+32 leopardka lekka i bardzo zwinna,
+33 która była pokryta plamistą sierścią;

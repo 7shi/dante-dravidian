@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Sen benim ustam ve yazarım,
+sen tek o kişisin ki ondan güzel üslubu aldım
+güzel üslup bana şeref kazandırdı.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|-----------------------|--------|
+| **Tu** (line 85) | 2nd‑person singular pronoun, subject | **Sen** | “you” (subject) | OK |
+| **se'** | Copular verb “are” (present) | — (omitted) | — | UNNECESSARY (copula not expressed in Turkish) |
+| **lo** | Definite article, masculine singular | — (omitted) | — | UNNECESSARY (articles omitted) |
+| **mio** | Possessive adjective “my” (masc.) | **benim** (in *ustam*) | “my” | OK |
+| **maestro** | Noun “master”, role of teacher/guide | **ustam** | “my master” | OK |
+| **e** | Coordinating conjunction “and” | **ve** | “and” | OK |
+| **'l** | Definite article “the” (masc.) | — (omitted) | — | UNNECESSARY |
+| **mio** (2nd) | Possessive adjective “my” (masc.) | **‑ım** suffix inside *yazarım* | “my” (possessive) | OK |
+| **autore** | Noun “author”, creator of the speaker | **yazarım** | “my author” | OK |
+| **tu** (line 86) | 2nd‑person singular pronoun, subject | **sen** | “you” (subject) | OK |
+| **se'** | Copular verb “are” (present) | — (omitted) | — | UNNECESSARY |
+| **solo** | Adverb/adjective “alone, only” | **tek** | “only” | OK |
+| **colui** | Demonstrative pronoun “the one (who)” | **o** | “that one” | OK |
+| **da** | Preposition “from” (source) | **ondan** | “from him” | OK |
+| **cu'** | Relative pronoun “whom/that” | **ki** | “that” (linking) | OK |
+| **io** | 1st‑person singular pronoun, subject | — (encoded in verb) | — | UNNECESSARY |
+| **tolsI** | Verb “took” (preterite, 1st sg) | **aldım** | “I took” | OK |
+| **lo** (line 87) | Definite article “the” | — (omitted) | — | UNNECESSARY |
+| **bello** | Adjective “fair, beautiful” | **güzel** | “beautiful” | OK |
+| **stilo** | Noun “style”, artistic manner | **üslup** | “style” | OK |
+| **che** | Relative pronoun “that” introducing clause | — (omitted) | — | UNNECESSARY |
+| **m'ha** | Clitic “me has” (auxiliary + object) | **bana** | “to me” | OK |
+| **fatto** | Past participle “done, made” | **kazandırdı** (as part of resultative) | “made/caused” | OK |
+| **onore** | Noun “honor”, state of being honored | **şeref** | “honor” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY** (omitted because Turkish does not require them): `se'` (both occurrences), `lo` (both occurrences), `'l`, `io`, `che`, the first `lo` in line 87, and the article `da`‑related preposition is expressed as part of `ondan` (handled, not listed as unnecessary).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all meanings are preserved, and Turkish agreement (possessive suffixes, verb conjugation) is correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 85:
+  - Original: **Sen benim ustam ve yazarım,**
+  - Issue: none
+  - Corrected: **no change**
+
+- Line 86:
+  - Original: **sen tek o kişisin ki ondan güzel üslubu aldım**
+  - Issue: GRAMMAR – redundant “ki” and incorrect case on “ondan”; the relative clause should be expressed with the ablative “kişiden”.
+  - Corrected: **sen tek o kişiden güzel üslubu aldım**
+
+- Line 87:
+  - Original: **güzel üslup bana şeref kazandırdı.**
+  - Issue: none
+  - Corrected: **no change**
+
+```
+Sen benim ustam ve yazarım,
+sen tek o kişiden güzel üslubu aldım
+güzel üslup bana şeref kazandırdı.
+```
+]]></message>
+</messages>

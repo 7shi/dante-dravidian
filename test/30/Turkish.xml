@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Canavarı gör beni döndüren sebeple;
+Bana ona karşı yardım et ünlü bilge,
+çünkü o benim damarlarımı ve nabızlarımı titretiyor».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| Vedi | imperative “see” | **gör** | “see” | OK |
+| la | definite article (fem. sg.) | — | — | UNNECESSARY |
+| bestia | noun “beast” | **Canavarı** | “the beast (ACC)” | OK |
+| per | preposition “because of / by reason of” | **sebeple** | “by reason of” | OK |
+| cu' | relative pronoun “which” | — (integrated in *sebeple*) | — | UNNECESSARY |
+| io | 1st‑person pronoun “I” | — (subject dropped) | — | UNNECESSARY |
+| mi | reflexive pronoun “myself / me” | **beni** | “me” | OK |
+| volsi | verb “turned” (past) | **döndüren** | “turning / that turned” | OK |
+| aiutami | imperative “help me” | **yardım et** | “help (imperative)” | OK |
+| da | preposition “against” | **karşı** | “against” | OK |
+| lei | pronoun “her” | **ona** | “to her” | OK |
+| famoso | adjective “famous” | **ünlü** | “famous” | OK |
+| saggio | noun “sage” | **bilge** | “sage” | OK |
+| ch'ella | conjunction + pronoun “for she” | **çünkü o** | “because she” | OK |
+| mi (possessive) | possessive “my” | **benim** | “my” | OK |
+| fa | verb “makes” | **titretiyor** | “makes (causes)” | OK |
+| tremar | infinitive “to tremble” | **titretiyor** | “makes tremble” | OK |
+| le | definite article (fem. pl.) | — | — | UNNECESSARY |
+| vene | noun “veins” | **damarlarımı** | “my veins” | OK |
+| e | coordinating conjunction “and” | **ve** | “and” | OK |
+| i | definite article (masc. pl.) | — | — | UNNECESSARY |
+| polsi | noun “pulses” | **nabızlarımı** | “my pulses” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**: `la`, `cu'`, `io`, `le`, `i` (articles and subject pronoun that Turkish naturally omits).  
+- **MISSING / WRONG / GRAMMAR**: none.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 88:
+  - Original: Canavarı gör beni döndüren sebeple;
+  - Issue: none
+  - Corrected: no change
+- Line 89‑90:
+  - Original: Bana ona karşı yardım et ünlü bilge, çünkü o benim damarlarımı ve nabızlarımı titretiyor»
+  - Issue: none
+  - Corrected: no change
+
+```
+Canavarı gör beni döndüren sebeple;
+Bana ona karşı yardım et ünlü bilge, çünkü o benim damarlarımı ve nabızlarımı titretiyor»
+```
+]]></message>
+</messages>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ale po tym, jak dotarłem do podnóża wzgórza,  
+gdzie kończyła się ta dolina  
+która przebiła moje serce strachem,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → Polish)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Polish) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| **Ma** | coordinating conjunction (contrast) | **Ale** | “but” | OK |
+| **poi** | adverb of time “after” | **po** | “after” | OK |
+| **ch'i'** | “che io” – “that I / when I” (introduces subordinate clause) | **tym, jak** | “that … I …” | OK |
+| **fui** | auxiliary verb forming perfect “had arrived” | **dotarłem** | “I arrived” | OK |
+| **al** | preposition + article “to the” (locative) | **do** | “to” | OK |
+| **piè** | noun “foot” (of a hill) | **podnóża** | “foot (gen.)” | OK |
+| **d'un** | preposition + indefinite article “of a” | **wzgórza** | “of a hill (gen.)” | OK |
+| **colle** | noun “hill” | **wzgórza** | “hill (gen.)” | OK |
+| **giunto** | past participle “arrived / reached” (completes *fui*) | — | — | **UNNECESSARY** (meaning already in *dotarłem*) |
+| **là** | demonstrative adverb of place “there” | — | — | **UNNECESSARY** (Polish omits it) |
+| **dove** | relative adverb of place “where” | **gdzie** | “where” | OK |
+| **terminava** | imperfect “ended” (ongoing termination) | **kończyła** | “ended” | OK |
+| **quella** | demonstrative adjective “that” | **ta** | “that” | OK |
+| **valle** | noun “valley” | **dolina** | “valley” | OK |
+| **che** | relative pronoun referring to *valle* | **która** | “which” | OK |
+| **m'avea** | pluperfect “had pierced / had filled (with fear)” | **przebiła** | “pierced” | OK |
+| **di** | preposition “with / of” (introduces cause) | — | — | **UNNECESSARY** (instrumental case *strachem* replaces it) |
+| **paura** | noun “fear” | **strachem** | “with fear” | OK |
+| **il** | definite article “the” | — | — | **UNNECESSARY** (Polish has no articles) |
+| **cor** | noun “heart” (metaphor for emotions) | **serce** | “heart” | OK |
+| **compunto** | past participle “pierced / filled” (already in verb) | — | — | **UNNECESSARY** (redundant with *przebiła*) |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *giunto, là, di, il, compunto* – these Italian elements have no direct counterpart in the Polish rendering because the meaning is conveyed elsewhere (verb forms, case endings, or are simply omitted in Polish).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all retained elements agree in gender, number, and case with the Polish translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**:  
+  - Original: *Ale po tym, jak dotarłem do podnóża wzgórza,*  
+  - Issue: none  
+  - Corrected: *Ale po tym, jak dotarłem do podnóża wzgórza,*  
+
+- **Line 2**:  
+  - Original: *gdzie kończyła się ta dolina*  
+  - Issue: none  
+  - Corrected: *gdzie kończyła się ta dolina*  
+
+- **Line 3**:  
+  - Original: *która przebiła moje serce strachem,*  
+  - Issue: none  
+  - Corrected: *która przebiła moje serce strachem,*  
+
+```
+Ale po tym, jak dotarłem do podnóża wzgórza,
+gdzie kończyła się ta dolina
+która przebiła moje serce strachem,
+```
+]]></message>
+</messages>

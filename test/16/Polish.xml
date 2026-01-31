@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Wydawało się, że ten nadchodzi przeciwko mnie  
+z podniesioną głową i z żarłoczną głodą,  
+tak że wydawało się, że powietrze drży od niego.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| Questi | demonstrative referring to the threatening opponent | ten | “that one / he” | OK |
+| parea | “seemed” (imperfect of *parere*) | wydawało się | “it seemed” | OK |
+| che (1) | complementizer introducing the motion clause | że | “that” | OK |
+| contra | preposition “against” | przeciwko | “against” | OK |
+| me | 1st‑person pronoun, object of *contra* | mnie | “me” | OK |
+| venisse | imperfect subjunctive of *venire* “to come” | nadchodzi | “comes / is coming” | OK |
+| con (1) | preposition “with” (first attribute) | z | “with” | OK |
+| la | definite article (feminine singular) – not lexical in Polish | – | – | UNNECESSARY |
+| test' | “head” (poetic elision of *testa*) | głową | “head (inst.)” | OK |
+| alta | adjective “high” describing the head | podniesioną | “raised / high” | OK |
+| e | coordinating conjunction “and” | i | “and” | OK |
+| con (2) | preposition “with” (second attribute) | z | “with” | OK |
+| rabbiosa | adjective “ravenous, ferocious” qualifying hunger | żarłoczną | “ravenous” | OK |
+| fame | noun “hunger” | głodą | “hunger (inst.)” | OK |
+| sì | resultative adverb “so (that)” | tak | “so” | OK |
+| che (2) | complementizer introducing result clause | że | “that” | OK |
+| parea (2) | “seemed” (in the result clause) | wydawało się | “it seemed” | OK |
+| che (3) | complementizer introducing the innermost clause | że | “that” | OK |
+| l'aere | noun “air” (with elided article) | powietrze | “air” | OK |
+| ne | clitic pronoun referring back to the opponent, causal “because of him/it” | od niego | “by him / because of him” | OK |
+| tremesse | imperfect subjunctive of *tremare* “to tremble” | drży | “trembles” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: **la** – the Italian definite article has no direct counterpart in Polish and is naturally omitted.  
+
+No missing, wrong, or grammatical‑agreement errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 46:
+  - Original: Wydawało się, że ten nadchodzi przeciwko mnie
+  - Issue: none
+  - Corrected: no change
+- Line 47:
+  - Original: z podniesioną głową i z żarłoczną głodą,
+  - Issue: none
+  - Corrected: no change
+- Line 48:
+  - Original: tak że wydawało się, że powietrze drży od niego.
+  - Issue: none
+  - Corrected: no change
+
+```
+Wydawało się, że ten nadchodzi przeciwko mnie
+z podniesioną głową i z żarłoczną głodą,
+tak że wydawało się, że powietrze drży od niego.
+```
+]]></message>
+</messages>

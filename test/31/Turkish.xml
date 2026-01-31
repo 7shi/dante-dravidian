@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Senin başka bir yol tutman gerekir,  
+Gözlerimden ağladığımı gördüğünde yanıt verdi,  
+Bu vahşi yerden kaçmak istersen;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (Step 1) | Target Word/Phrase (Turkish) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------|------------------------------|------------------------|--------|
+| **A** | preposition (dative) “to you” | **Senin** | “your” (possessive) | OK |
+| **te** | 2nd‑person pronoun (acc.) “you” | **Senin** (part of the possessive) | “your” | OK |
+| **convien** | impersonal modal “it behoves, it is necessary” | **gerekiyor** (as part of “Senin … gerekir”) | “is required / it is necessary” | OK |
+| **tenere** | infinitive “to hold / undertake” | **tutman** | “your holding / to hold” | OK |
+| **altro** | adjective “another, different” | **başka** | “another” | OK |
+| **vïaggio** | noun “journey, course” | **yol** | “road / course” | OK |
+| **rispuose** | verb “replied” | **yanıt verdi** | “replied” | OK |
+| **poi** | adverb “after, then” (temporal) | **gördüğünde** (part of the temporal clause) | “when (you) saw” | OK |
+| **che** | conjunction “when” (subordinator) | **gördüğünde** (part of the clause) | “when (you) saw” | OK |
+| **lagrimar** | infinitive “to weep” | **ağlamadığımı** | “that I wept” | OK |
+| **mi** | 1st‑person pronoun “me, my” | **ağlamadığımı** / **gözlerimden** (possessive) | “my” (in “I wept”) / “from my eyes” | OK |
+| **vide** | verb “saw” | **gördüğünde** | “when (you) saw” | OK |
+| **se** | conditional conjunction “if” | **‑sen** (conditional suffix in “istersen”) | “if” | OK |
+| **vuo'** | verb “wish, want” | **istersen** (part of “kaçmak istersen”) | “you wish” | OK |
+| **campar** | infinitive “to escape” | **kaçmak** | “to escape” | OK |
+| **d'** | preposition “from” | **yerden** (part of “yerden”) | “from (the) place” | OK |
+| **esto** | demonstrative “this” | **Bu** | “this” | OK |
+| **loco** | noun “place, locale” | **yer** | “place” | OK |
+| **selvaggio** | adjective “savage, wild” | **vahşi** | “savage” | OK |
+
+### Items Needing Attention
+- **None** – every source token is represented in the Turkish translation, and all grammatical agreements are correct. No missing, wrong, or unnecessary elements were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 91**  
+  - Original: *Senin başka bir yol tutman gerekir,*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+- **Line 92**  
+  - Original: *Gözlerimden ağlamadığımı gördüğünde yanıt verdi,*  
+  - Issue: **WRONG** – the verb form conveys “was not weeping” instead of “was weeping”.  
+  - Corrected: *Gözlerimden ağladığımı gördüğünde yanıt verdi,*  
+
+- **Line 93**  
+  - Original: *Bu vahşi yerden kaçmak istersen;*  
+  - Issue: none  
+  - Corrected: *no change*  
+
+```
+Senin başka bir yol tutman gerekir,
+Gözlerimden ağladığımı gördüğünde yanıt verdi,
+Bu vahşi yerden kaçmak istersen;
+```
+]]></message>
+</messages>

@@ -44,6 +44,12 @@ And such as he is who gaineth willingly, and the time arrives that makes him los
 56 ja saabub aeg mis paneb ta kaotama,
 57 kes kõigis oma mõtetes nuteb ja kurbub;
 
+# Turkish
+
+55 Ve o isteyerek kazanan kimse,
+56 ve zaman gelir ki onu kaybettirir,
+57 ki bütün düşüncelerinde ağlar ve üzülür;
+
 # French
 
 55 Et tel qu’il est, qui acquiert volontiers,
@@ -103,3 +109,15 @@ And such as he is who gaineth willingly, and the time arrives that makes him los
 55 I takav je on koji dobrovoljno stiče,
 56 i dolazi vreme koje ga čini da izgubi,
 57 koji u svim svojim mislima plače i tuguje;
+
+# Bulgarian
+
+55 И такъв е той който охотно придобива,
+56 И времето настъпва което го кара да губи,
+57 Който във всичките му мисли плаче и е тъжен;
+
+# Polish
+
+55 I taki jest ten, który chętnie zdobywa,
+56 i przychodzi czas, który sprawia, że traci,
+57 który we wszystkich swoich myślach płacze i smuci się;

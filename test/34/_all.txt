@@ -44,6 +44,12 @@ Many are the animals with which she wives, and there shall be more yet, till the
 101 ja veel rohkem tuleb, kuni hunt
 102 tuleb, mis paneb ta kurbuse tõttu surema.
 
+# Turkish
+
+100 Çok sayıda hayvan, onun evlendiği hayvanlardır,
+101 ve daha fazlası hâlâ olacak, ta ki köpek gelene kadar
+102 gelecek, o da onun acı içinde ölmesini sağlayacak.
+
 # French
 
 100 Beaucoup d'animaux avec lesquels elle se marie,
@@ -103,3 +109,15 @@ Many are the animals with which she wives, and there shall be more yet, till the
 100 Mnogo je životinja sa kojima se ona ženi,
 101 i biće još više dok ne dođe pas,
 102 koji će je učiniti da umre od tuge.
+
+# Bulgarian
+
+100 Много са животните с които тя се жени,
+101 и ще има още повече докато дойде гончарът
+102 който ще я накара да умре от скръб.
+
+# Polish
+
+100 Wiele jest zwierząt, z którymi ona wychodzi za mąż,
+101 i będzie ich jeszcze więcej aż do przyjścia psa
+102 przyjdzie, co sprawi, że ona umrze z żalu.

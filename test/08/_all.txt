@@ -44,6 +44,12 @@ And even as one who with spent breath, issued out of the sea upon the shore, tur
 23 Väljus merest randa,
 24 Pöördub ohtliku vee poole ja vaatab,
 
+# Turkish
+
+22 Ve hatta nefesi tükenmiş gibi olan,
+23 denizden çıkıp kıyıya,
+24 tehlikeli suya döner ve bakar,
+
 # French
 
 22 Et comme celui qui avec le souffle épuisé,
@@ -103,3 +109,15 @@ And even as one who with spent breath, issued out of the sea upon the shore, tur
 22 I kao onaj koji je sa izmoranim dahom,
 23 izašao iz mora na obalu,
 24 okreće se ka opasnoj vodi i gleda,
+
+# Bulgarian
+
+22 И както онзи с изтощено дихание,
+23 излязъл от морето към брега,
+24 се обръща към опасната вода и гледа,
+
+# Polish
+
+22 I jak ci z zadysanym oddechem,
+23 wyszedł z morza na brzeg,
+24 obraca się ku niebezpiecznej wodzie i patrzy,

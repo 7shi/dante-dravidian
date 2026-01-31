@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Urodziłem się pod Julio, choć było późno,  
+i żyłem w Rzymie pod dobrym Augustem  
+w czasie fałszywych i kłamliwych bogów.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Polish → English) | Status |
+|-------------|-----------------------|--------------------|--------------------------------------|--------|
+| Nacqui | “was born” (1 sg perf.) | **Urodziłem** | “I was born” | OK |
+| sub | preposition “under” (temporal/political) | **pod** | “under” | OK |
+| Iulio | proper name “Julio” | **Julio** | “Julio” | OK |
+| ancor | concessive adverb “though” | **choć** | “though” | OK |
+| che | subordinating conjunction “that” (introduces subjunctive) | — | — | **UNNECESSARY** (conjunction is absorbed in “choć było”) |
+| fosse | subjunctive “was” | **było** | “was” | OK |
+| tardi | adjective “late” (degree) | **późno** | “late” (adverbial) | OK |
+| e (1) | coordinating conjunction “and” | **i** | “and” | OK |
+| vissi | “lived” (1 sg perf.) | **żyłem** | “I lived” | OK |
+| a | preposition “at / in” | **w** | “in” | OK |
+| Roma | proper name “Rome” (locative) | **Rzymie** | “in Rome” | OK |
+| sotto | preposition “under” | **pod** | “under” | OK |
+| ’l | definite article “the” (masc. sing.) | — | — | **UNNECESSARY** (Polish has no article) |
+| buono | adjective “good” | **dobrym** | “good” (instrumental) | OK |
+| Augusto | proper name “Augustus” (instrumental) | **Augustem** | “Augustus” (inst.) | OK |
+| nel | contraction “in the” | **w** | “in” | OK |
+| tempo | noun “time” (locative) | **czasie** | “time” (loc.) | OK |
+| de | preposition “of” (genitive) | — | — | **UNNECESSARY** (genitive expressed by case) |
+| li | definite article “the” (masc. pl.) | — | — | **UNNECESSARY** |
+| dèi | noun “gods” (genitive plural) | **bogów** | “gods” (gen.) | OK |
+| falsi | adjective “false” (genitive plural) | **fałszywych** | “false” (gen.) | OK |
+| e (2) | coordinating conjunction “and” | **i** | “and” | OK |
+| bugiardi | adjective “lying” (genitive plural) | **kłamliwych** | “lying” (gen.) | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `che`, `’l`, `de`, `li` – Polish does not use a separate conjunction “that” nor articles or the preposition “of” when the genitive case already marks possession.  
+- **No WRONG or GRAMMAR** entries were identified; the translation respects gender, number, and case agreement (e.g., *dobrym Augustem*, *fałszywych … bogów*).  
+
+All other source tokens are correctly rendered in the Polish translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 70**  
+  - Original: Urodziłem się pod Julio, choć było późno,  
+  - Issue: none  
+  - Corrected: Urodziłem się pod Julio, choć było późno,  
+
+- **Line 71**  
+  - Original: i żyłem w Rzymie pod dobrym Augustem  
+  - Issue: none  
+  - Corrected: i żyłem w Rzymie pod dobrym Augustem  
+
+- **Line 72**  
+  - Original: w czasie fałszywych i kłamliwych bogów.  
+  - Issue: none  
+  - Corrected: w czasie fałszywych i kłamliwych bogów.  
+
+```
+Urodziłem się pod Julio, choć było późno,
+i żyłem w Rzymie pod dobrym Augustem
+w czasie fałszywych i kłamliwych bogów.
+```
+]]></message>
+</messages>

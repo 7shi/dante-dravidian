@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Kiedy zobaczyłem go w wielkiej pustyni,  
+„Miseruj mnie”, krzyknąłem do niego,  
+„cokolwiek jesteś, czy cień czy na pewno człowiek!” .
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Polish → English) | Status |
+|-------------|--------------------------------------|----------------------|--------------------------------------|--------|
+| Quando | temporal conjunction “when” | Kiedy | “when” | OK |
+| vidi | past‑tense “I saw” | zobaczyłem | “I saw” | OK |
+| costui | demonstrative pronoun “him” | go | “him” | OK |
+| nel | preposition “in” + article “the” | w | “in” | OK |
+| gran | adjective “great, large” (modifying *diserto*) | wielkiej | “great” (feminine, agreeing with *pustyni*) | OK |
+| diserto | noun “desert” | pustyni | “desert” (locative) | OK |
+| Miserere | imperative “have pity” | Miseruj | “have pity” | OK |
+| di | preposition “on / of” (introducing object of pity) | — (omitted) | — | **UNNECESSARY** (Polish does not use a preposition here) |
+| me | pronoun “me” (object) | mnie | “me” | OK |
+| gridi | past‑tense “I cried / shouted” | krzyknąłem | “I shouted” | OK |
+| a | preposition “to” (dative) | do | “to” | OK |
+| lui | pronoun “him” (dative) | niego | “him” | OK |
+| qual | free‑relative “whatever” | cokolwiek | “whatever” | OK |
+| che | relative particle linking *qual* to clause | — (omitted) | — | **UNNECESSARY** |
+| tu | pronoun “you” (subject) | — (subject omitted) | — | **UNNECESSARY** (Polish drops the pronoun) |
+| sii | subjunctive “you may be” | jesteś | “you are” (indicative) | OK |
+| od (1) | disjunction “or” | czy | “or / whether” | OK |
+| ombra | noun “shade / shadow” | cień | “shade” | OK |
+| od (2) | disjunction “or” | czy | “or / whether” | OK |
+| omo | noun “man” (human) | człowiek | “man / human” | OK |
+| certo | adverbial “certainly / for sure” | na pewno | “certainly” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `di`, `che`, `tu` – these elements are natural in Italian but are omitted in Polish because the target language does not require a preposition before the object of pity, a relative particle, or an explicit subject pronoun.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: Kiedy zobaczyłem go w wielkiej pustyni,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: „Miseruj mnie”, krzyknąłem do niego,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: „cokolwiek jesteś, czy cień czy na pewno człowiek!” .  
+  - Issue: extra space before the final period  
+  - Corrected: „cokolwiek jesteś, czy cień czy na pewno człowiek!”.  
+
+```
+Kiedy zobaczyłem go w wielkiej pustyni,
+„Miseruj mnie”, krzyknąłem do niego,
+„cokolwiek jesteś, czy cień czy na pewno człowiek!”.
+```
+]]></message>
+</messages>

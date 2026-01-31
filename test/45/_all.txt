@@ -44,6 +44,12 @@ that thou lead me thither whom thou now hast said, so that I may see the gate of
 134 et ma näeksin pühakõlblase Peetri värava
 135 ja need keda sa teed nii kurbaks”.
 
+# Turkish
+
+133 böyle ki sen beni şimdi söylediğin yere götür,
+134 böyle ki ben Aziz Petrus'un kapısını görebileyim
+135 ve senin bu kadar üzgün kıldığın onlar»
+
 # French
 
 133 que tu me conduises là où tu l’as dit maintenant,
@@ -103,3 +109,15 @@ that thou lead me thither whom thou now hast said, so that I may see the gate of
 133 da me vodiš tamo gde si sada rekao,
 134 da bih video vrata Svetog Petra
 135 i one koje ti činiš tako tužnim».
+
+# Bulgarian
+
+133 че ти ме водиш там, където сега каза,
+134 за да видя вратата на Свети Петър
+135 и онези, които ти правиш толкова мъчени.
+
+# Polish
+
+133 abyś mnie poprowadził tam, gdzie teraz powiedziałeś,
+134 abym zobaczył bramę św. Piotra
+135 i tych, których tak bardzo zasmuciłeś».

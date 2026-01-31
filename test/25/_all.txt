@@ -44,6 +44,12 @@ Poet was I, and sang of that just son of Anchises who came from Troy after proud
 74 Anchise poeg kes tuli Troost,
 75 pärast kui uhke Ilion põles.
 
+# Turkish
+
+73 Şairdim ve o adil hakkında şarkı söyledim
+74 Anchises'in oğlu Truva'dan gelen,
+75 sonra gururlu Ilion yanmıştı.
+
 # French
 
 73 Poète j'étais et chantai ce juste
@@ -103,3 +109,15 @@ Poet was I, and sang of that just son of Anchises who came from Troy after proud
 73 Bio sam pesnik i pevao o tom pravednom.
 74 sin Ankise koji je došao iz Troje,
 75 nakon što je ponosni Ilion bio spaljen.
+
+# Bulgarian
+
+73 Бях поет и пях за онзи справедлив
+74 син на Анхис който дойде от Троя,
+75 след като гордият Илион беше изгорен.
+
+# Polish
+
+73 Byłem poetą i śpiewałem o tym sprawiedliwym
+74 syn Anchisesa który przybył z Troi,
+75 po tym jak dumny Ilion został spalony.

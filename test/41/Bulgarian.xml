@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+към онези, ако след това искаш да се изкараш,  
+ще бъде душа, по‑достойна от мен за това:  
+с нея ще те оставя при моето тръгване;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → Bulgarian)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------|------------------------|--------|
+| **A** | preposition “to” introducing the addressee | **към** | to/towards | OK |
+| **le** | definite article (plural, fem.) – “the” | — (omitted) | — | **UNNECESSARY** |
+| **quai** | relative pronoun “whom/those” | **онези** | those (people) | OK |
+| **poi** | adverb “thereafter” (temporal succession) | **след това** | after that / thereafter | OK |
+| **se** | subordinating conjunction “if” | **ако** | if | OK |
+| **tu** | 2nd sg. personal pronoun – the addressee | — (implicit in verb) | — | **UNNECESSARY** |
+| **vorrai** | future verb “will want” (volition) | **искаш** | you want / will want (present used for future) | OK |
+| **salire** | infinitive “to ascend” | **да се изкараш** | to ascend (reflexive) | OK |
+| **anima** | noun “soul” | **душа** | soul | OK |
+| **fia** | future copula “shall be” | **ще бъде** | will be | OK |
+| **a** | preposition “for” introducing the domain of worthiness | **за** | for | OK |
+| **ciò** | demonstrative pronoun “that” (refers to ascent) | **това** | that | OK |
+| **più** | comparative adverb “more” | **по‑** (prefix) | more‑ (comparative) | OK |
+| **di** | preposition “than” introducing the standard of comparison | **от** | than / from | OK |
+| **me** | 1st sg. pronoun “I / me” (comparison baseline) | **мен** | me | OK |
+| **degna** | adjective “worthy” (predicative) | **достойна** | worthy | OK |
+| **con** | preposition “with” | **с** | with | OK |
+| **lei** | 3rd sg. fem. pronoun “her” | **нея** | her | OK |
+| **ti** | 2nd sg. pronoun “you” (direct object) | **те** | you (obj.) | OK |
+| **lascerò** | future verb “will leave” | **ще оставя** | will leave | OK |
+| **nel** | contraction “in the” (preposition + article) | **при** | at / during | OK |
+| **mio** | possessive adjective “my” | **моето** | my | OK |
+| **partire** | infinitive “to depart” (nominalised) | **тръгване** | departure | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *le*, *tu* – Bulgarian naturally omits the definite article and the explicit 2nd‑person pronoun in this context.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: към онези, ако след това искаш да се изкараш,
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: ще бъде душа, по‑достойна от мен за това:
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: с нея ще те оставя при моето тръгване;
+  - Issue: none
+  - Corrected: no change
+
+```
+към онези, ако след това искаш да се изкараш,
+ще бъде душа, по‑достойна от мен за това:
+с нея ще те оставя при моето тръгване;
+```
+]]></message>
+</messages>

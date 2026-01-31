@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+И както онзи с изтощено дихание,  
+излязъл от морето към брега,  
+се обръща към опасната вода и гледа,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → Bulgarian)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| **E** | coordinating conjunction linking to previous discourse | **И** | “and” | OK |
+| **come** | comparative particle introducing similarity | **както** | “as” | OK |
+| **quei** | demonstrative pronoun, masculine plural, generic “those” | **онзи** | “that one” (singular) | OK |
+| **che** | relative pronoun introducing a restrictive clause | — (omitted) | — | **UNNECESSARY** |
+| **con** | preposition “with” (instrumental) | **с** | “with” | OK |
+| **lena** | noun “breath” (archaic) | **дихание** | “breath” | OK |
+| **affannata** | adjective “exhausted, spent” | **изтощено** | “exhausted” | OK |
+| **uscito** | past participle verb “issued, came out” | **излязъл** | “issued, came out” | OK |
+| **fuor** | preposition “out of” | **от** | “from” | OK |
+| **del** | preposition + definite article “of the” | — (article omitted) | — | **UNNECESSARY** |
+| **pelago** | noun “sea” | **морето** | “the sea” | OK |
+| **a** (1st) | preposition “to, toward” (before *la riva*) | **към** | “to, toward” | OK |
+| **la** (before *riva*) | definite article (feminine) | — (omitted) | — | **UNNECESSARY** |
+| **riva** | noun “shore” | **брега** | “the shore” | OK |
+| **si** | reflexive pronoun (3rd person) | **се** | “himself / herself” | OK |
+| **volge** | verb “turns” | **обръща** | “turns” | OK |
+| **a** (2nd) | preposition “to, toward” (before *l’acqua*) | **към** | “to, toward” | OK |
+| **l'acqua** | noun “the water” | **вода** | “water” | OK |
+| **perigliosa** | adjective “perilous” | **опасната** | “dangerous” | OK |
+| **e** | coordinating conjunction “and” | **и** | “and” | OK |
+| **guata** | verb “gazes” | **гледа** | “gazes” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: *che, del, la* – Bulgarian does not use a separate relative pronoun or definite articles in these positions; their meaning is conveyed by word order and suffixes.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: И както онзи с изтощено дихание,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 23**  
+  - Original: излязъл от морето към брега,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 24**  
+  - Original: се обръща към опасната вода и гледа,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+И както онзи с изтощено дихание,
+излязъл от морето към брега,
+се обръща към опасната вода и гледа,
+```
+]]></message>
+</messages>

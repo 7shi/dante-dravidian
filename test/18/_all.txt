@@ -44,6 +44,12 @@
 53 koos hirmuga mis tekkis tema nägemisest,
 54 et ma kaotasin kõrguse lootuse.
 
+# Turkish
+
+52 O bana o kadar ağırlık verdi
+53 görüşünden çıkan korkuyla,
+54 yüksekliğe dair umudumu kaybettim.
+
 # French
 
 52 elle me donna tant de lourdeur
@@ -103,3 +109,15 @@
 52 ona mi je nametnula toliko težine
 53 sa strahom koji je nastao od njenog pogleda,
 54 da sam izgubio nadu u visinu.
+
+# Bulgarian
+
+52 Тя ми наложи толкова тежест
+53 със страха който излезе от нейния поглед,
+54 че аз изгубих надеждата от височината.
+
+# Polish
+
+52 ona dała mi tak wielką ciężkość
+53 z lękiem który powstał z jej widoku,
+54 że straciłem nadzieję na wysokość.

@@ -44,6 +44,12 @@
 92 ta vastas kui nägi mind nutmas,
 93 kui soovid põgeneda sellest metsikust kohast;
 
+# Turkish
+
+91 Senin başka bir yol tutman gerekir,
+92 Gözlerimden ağladığımı gördüğünde yanıt verdi,
+93 Bu vahşi yerden kaçmak istersen;
+
 # French
 
 91 «Il te convient de prendre un autre chemin», 
@@ -103,3 +109,15 @@
 91 Treba da držiš drugi put,
 92 Odgovorio je kad me je video kako plačem,
 93 ako želiš da pobegneš iz ovog divljeg mesta;
+
+# Bulgarian
+
+91 Ти трябва да следваш друг път,
+92 Той отговори когато ме видя плачещ,
+93 ако искаш да избягаш от това диво място;
+
+# Polish
+
+91 Należy ci podjąć inną drogę,
+92 Odpowiedział gdy zobaczył mnie płaczącego,
+93 Jeśli chcesz uciec z tego dzikiego miejsca;

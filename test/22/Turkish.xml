@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Büyük çöldeki onu gördüğümde,  
+«Bana merhamet et» ona bağırdım,  
+«Ne olursan ol gölge ya da kesin insan!» .
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| Quando      | “when” (temporal subordinator) | **gördüğümde** | “when I saw” | OK |
+| vidi        | “saw” (past, 1st sg) | **gördüğümde** | “I saw” (embedded in the suffix) | OK |
+| costui      | demonstrative “this one (male)” | **onu** | “him/it” | OK |
+| nel         | “in the” (prep + article) | — (expressed by the locative suffix **‑de** in *çöldeki*) | “in the” | **UNNECESSARY** |
+| gran        | “great, large” | **Büyük** | “great” | OK |
+| diserto     | “desert” (large arid region) | **çöl** (appears as **çöldeki**) | “desert” | OK |
+| «Miserere»  | imperative “have mercy” | **merhamet et** | “have mercy” | OK |
+| di          | preposition “on / to” (part of *di me*) | **bana** | “to me” | OK |
+| me          | pronoun “me” (object) | **bana** | “to me” | OK |
+| gridai      | “I shouted / cried out” | **bağırdım** | “I shouted” | OK |
+| a           | preposition “to” (dative) | **ona** | “to him” | OK |
+| lui         | pronoun “him” (dative) | **ona** | “to him” | OK |
+| qual        | “whatever / what” (free relative) | **Ne** | “what/whatever” | OK |
+| che         | relative connector (introduces clause) | — (absorbed in the clause) | (none) | **UNNECESSARY** |
+| tu          | 2nd person pronoun “you” | **olursan** (contains “sen”) | “if you are” | OK |
+| sii         | subjunctive of *essere* “be” | **olursan** (verb stem *ol*) | “be” | OK |
+| od (1)      | disjunction “or” | **ya** | “or” | OK |
+| ombra       | “shade / shadow” | **gölge** | “shade” | OK |
+| od (2)      | disjunction “or” | **ya** | “or” | OK |
+| omo         | “man / human” (archaic) | **insan** | “human” | OK |
+| certo       | “certain, genuine” | **kesin** | “certain/real” | OK |
+| **(punctuation)** | source ends with **!** | **!** (kept) | — | **WRONG** (extra period “.” added after the exclamation) |
+
+---
+
+### Items to Review  
+
+- **UNNECESSARY**: *nel* (preposition + article), *che* (relative connector) – Turkish naturally omits these elements.  
+- **WRONG**: An additional period “.” was placed after the final exclamation mark, which does not appear in the source text.  
+- **MISSING / GRAMMAR**: None detected.  
+
+Correcting the punctuation error (removing the stray period) will bring the Turkish rendering fully in line with the source structure.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1**  
+  - Original: Büyük çöldeki onu gördüğümde,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2**  
+  - Original: «Bana merhamet et» ona bağırdım,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3**  
+  - Original: «Ne olursan ol gölge ya da kesin insan!» .  
+  - Issue: WRONG – extra space before the final period  
+  - Corrected: «Ne olursan ol gölge ya da kesin insan!».
+
+```
+Büyük çöldeki onu gördüğümde,
+«Bana merhamet et» ona bağırdım,
+«Ne olursan ol gölge ya da kesin insan!».
+```
+]]></message>
+</messages>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Wtedy strach był nieco uspokojony,
+który w jeziorze mego serca trwał
+noc którą przeszedłem tak żałośnie.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Polish) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| Allor | temporal adverb “then, at that moment” | **Wtedy** | “then” | OK |
+| fu | copular verb “was” (passato remoto) | **był** | “was” | OK |
+| la | definite article (fem. sing.) | — | — | **UNNECESSARY** (Polish has no articles) |
+| paura | noun “fear” (subject) | **strach** | “fear” | OK |
+| un | indefinite article (masc. sing.) | — | — | **UNNECESSARY** |
+| poco | adverb of degree “a little” | **nieco** | “a little” | OK |
+| queta* | adjective “quieted” (predicative) | **uspokojony** | “quieted, calmed” | OK |
+| che | relative pronoun “which” (introducing clause) | **który** | “which” | OK |
+| nel | preposition “in the” (in + def. article) | **w** | “in” | OK |
+| lago | noun “lake” (metaphorical container) | **jeziorze** | “lake” (locative) | OK |
+| del | genitive preposition “of the” | — | — | **UNNECESSARY** (genitive expressed by word order) |
+| cor* | noun “heart” (possessor) | **serca** | “heart” (genitive) | OK |
+| m'era | clitic + auxiliary “had been (to me)” (pluperfect) | **mego** | “my” (genitive) | OK (possessor rendered; auxiliary omitted as Polish does not need it) |
+| durata | past participle “lasted” (main verb of relative clause) | **trwał** | “lasted” | OK |
+| la (line 21) | definite article (fem. sing.) | — | — | **UNNECESSARY** |
+| notte | noun “night” (object of relative clause) | **noc** | “night” | OK |
+| ch'i' | contracted relative + personal pronoun “that I” | **którą** | “which (acc.)” (covers both relative and object) | OK |
+| passai | verb “passed” (simple past, 1st sg.) | **przeszedłem** | “I passed” | OK |
+| con | preposition “with” (introducing manner) | **tak** | “so” (as in “so pitifully”) | OK |
+| tanta | quantitative adjective “so much” | — | — | **UNNECESSARY** (degree merged into adverb) |
+| pieta* | noun “pity” (manner) | **żałośnie** | “pitifully” (adverb) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la` (twice), `un`, `del`, `tanta` – articles and the genitive preposition are naturally omitted in Polish; the degree expressed by *tanta* is incorporated into the adverb *żałośnie*.
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 19**  
+  - Original: *Wtedy strach był nieco uspokojony,*  
+  - Issue: none  
+  - Corrected: *Wtedy strach był nieco uspokojony,*  
+
+- **Line 20**  
+  - Original: *który w jeziorze mego serca trwał*  
+  - Issue: none  
+  - Corrected: *który w jeziorze mego serca trwał*  
+
+- **Line 21**  
+  - Original: *noc którą przeszedłem tak żałośnie.*  
+  - Issue: none  
+  - Corrected: *noc którą przeszedłem tak żałośnie.*  
+
+```
+Wtedy strach był nieco uspokojony,
+który w jeziorze mego serca trwał
+noc którą przeszedłem tak żałośnie.
+```
+]]></message>
+</messages>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+We wszystkich częściach On rządzi i tam panuje;
+Tam jest Jego miasto i Jego wyniosłe siedzenie:
+O szczęśliwy ten którego tam wybiera!».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (Polish → English) | Status |
+|-------------|------------------------------------------|----------------------|--------------------------------------|--------|
+| In | locative preposition introducing the domain “all parts” | **We** | *in* → “in” | OK |
+| tutte | universal quantifier adjective “all” | **wszystkich** | *wszystkich* → “all (genitive plural)” | OK |
+| parti | set of spatial divisions (parts) | **częściach** | *częściach* → “parts (locative plural)” | OK |
+| impera | He governs each part | **rządzi** | *rządzi* → “governs” | OK |
+| e | coordinator linking two predicates | **i** | *i* → “and” | OK |
+| quivi | locative adverb pointing to the place of the second predicate | **tam** | *tam* → “there” | OK |
+| regge | He reigns at that place | **panuje** | *panuje* → “reigns” | OK |
+| quivi (line 128) | locative adverb indicating the place of existence | **Tam** | *Tam* → “There” | OK |
+| è | copular verb asserting existence | **jest** | *jest* → “is” | OK |
+| la | definite article marking a specific noun | *(omitted)* | — | **UNNECESSARY** |
+| sua | possessive adjective denoting ownership by He | **Jego** | *Jego* → “His” | OK |
+| città | the Sovereign’s urban domain | **miasto** | *miasto* → “city” | OK |
+| e (line 128) | coordinator linking two nouns | **i** | *i* → “and” | OK |
+| l'alto | article + adjective “lofty” (the article is not needed in Polish) | **wyniosłe** | *wyniosłe* → “lofty” | **UNNECESSARY** (article part) |
+| seggio | elevated throne/seat | **siedzenie** | *siedzenie* → “seat” | OK |
+| oh | vocative interjection | **O** | *O* → “O” | OK |
+| felice | describes the emotional state of the chosen one | **szczęśliwy** | *szczęśliwy* → “happy” | OK |
+| colui | pronoun referring to the elected individual | **ten** | *ten* → “that one” | OK |
+| cu' | relative pronoun introducing the clause | **którego** | *którego* → “whom” | OK |
+| ivi | locative adverb indicating the place of election | **tam** | *tam* → “there / thereto” | OK |
+| elege | He selects/elects | **wybiera** | *wybiera* → “elects / chooses” | OK |
+
+---
+
+### Items Requiring Attention
+- **la** – the Italian definite article has no counterpart in Polish; its omission is natural → **UNNECESSARY**.  
+- **l'alto** – the article component of this token is unnecessary in Polish; only the adjective **wyniosłe** is retained → **UNNECESSARY** (article part).  
+
+All other source words are correctly rendered in the Polish translation with appropriate grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 127:  
+  - Original: **We wszystkich częściach On rządzi i tam panuje;**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 128:  
+  - Original: **Tam jest Jego miasto i Jego wyniosłe siedzenie:**  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 129:  
+  - Original: **O szczęśliwy ten którego tam wybiera!».**  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+We wszystkich częściach On rządzi i tam panuje;
+Tam jest Jego miasto i Jego wyniosłe siedzenie:
+O szczęśliwy ten którego tam wybiera!».
+```
+]]></message>
+</messages>

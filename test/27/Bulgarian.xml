@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ти ли тогава си онзи Вирджил и онзи извор  
+който излива толкова широк поток от реч?  
+отговорих аз към него със срамежливо чело.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|------------------------|--------|
+| Or | temporal marker “now/then” | тогава | then | OK |
+| se' | copular “are” (2nd sg.) | си | are | OK |
+| tu | 2nd sg. pronoun “you” | Ти | you | OK |
+| quel | demonstrative “that” (masc.) | онзи | that | OK |
+| Virgilio | proper name “Virgil” | Вирджил | Virgil | OK |
+| e | coordinating “and” | и | and | OK |
+| quella | demonstrative “that” (fem.) | онзи | that | OK |
+| fonte | noun “fount, source” | извор | fount | OK |
+| che | relative pronoun “which/that” | който | which | OK |
+| spandi | verb “spreads/pours forth” | излива | pours forth | OK |
+| di | preposition “of” | от | of | OK |
+| parlar | noun “speech” | реч | speech | OK |
+| sì | degree adverb “so” | толкова | so | OK |
+| largo | adjective “large, wide” | широк | large | OK |
+| fiume | noun “river/stream” | поток | stream | OK |
+| rispuos' | verb “replied” (1st sg.) | отговорих | replied | OK |
+| io | 1st sg. pronoun “I” | аз | I | OK |
+| lui | 3rd sg. indirect object “to him” | него | to him | OK |
+| con | preposition “with” | с | with | OK |
+| vergognosa | adjective “bashful, embarrassed” | срамежливо | bashful | OK |
+| fronte | noun “front, forehead” | чело | forehead | OK |
+
+### Issues Detected
+- **None** – every source token has an appropriate Bulgarian counterpart; no missing, wrong, grammatical, or unnecessary elements were found.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79**  
+  - Original: Ти ли тогава си онзи Вирджил и онзи извор  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 80**  
+  - Original: който излива толкова широк поток от реч?  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 81**  
+  - Original: отговорих аз към него със срамежливо чело.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Ти ли тогава си онзи Вирджил и онзи извор
+който излива толкова широк поток от реч?
+отговорих аз към него със срамежливо чело.
+```
+]]></message>
+</messages>

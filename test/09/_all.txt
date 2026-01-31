@@ -44,6 +44,12 @@ so did my soul, which still was flying, turn back to look again upon the pass wh
 26 pöördus tagasi et uuesti vaadata läbipääsu
 27 mis ei ole kunagi elavat inimest jätnud.
 
+# Turkish
+
+25 böylece ruhum, hâlâ kaçıyordu,
+26 geri dönerek geçidi yeniden bakmaya çevirdi
+27 ki hiçbir yaşayan kişi daha önce oradan ayrılmamıştı.
+
 # French
 
 25 ainsi mon âme, qui fuyait encore,
@@ -103,3 +109,15 @@ so did my soul, which still was flying, turn back to look again upon the pass wh
 25 tako moj duh, koji još leteo,
 26 okrenuo se nazad da ponovo pogleda prolaz
 27 koji već nikada nije napustila živa osoba.
+
+# Bulgarian
+
+25 така душата ми, която все още летеше,
+26 се обърна назад за да погледне отново прохода
+27 който никога досега не е оставил жив човек.
+
+# Polish
+
+25 tak więc moja dusza, która wciąż uciekała,
+26 odwróciła się wstecz i ponownie spojrzała na przełęcz,
+27 przełęcz której już nigdy nie opuściła żywa osoba.

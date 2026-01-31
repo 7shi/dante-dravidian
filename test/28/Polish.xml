@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+O honorze i świetle innych poetów,
+Niech długie studium i wielka miłość mi służą
+co sprawiło że szukam twojego tomu.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| O | Vocative particle | O | “O” | OK |
+| de | “of”, genitive marker | *(omitted)* | — | UNNECESSARY |
+| li | Definite article, masc. plural | *(omitted)* | — | UNNECESSARY |
+| altri | “other” (plural) | innych | “other” | OK |
+| poeti | “poets” (genitive) | poetów | “poets” | OK |
+| onore | “honor” (locative after O) | honorze | “honor” | OK |
+| e | Coordinating “and” | i | “and” | OK |
+| lume | “light” (locative) | świetle | “light” | OK |
+| vagliami | Imperative “let … avail me” | Niech … służą | “let … serve” | OK |
+| ’l (1) | Definite article “the” (masc. sing.) | *(omitted)* | — | UNNECESSARY |
+| lungo | “long” (adj.) | długie | “long” | OK |
+| studio | “study” (noun) | studium | “study” | OK |
+| e (2) | Coordinating “and” | i | “and” | OK |
+| ’l (2) | Definite article “the” | *(omitted)* | — | UNNECESSARY |
+| grande | “great” (adj.) | wielka | “great” | OK |
+| amore | “love” (noun) | miłość | “love” | OK |
+| che | Relative pronoun “which/that” | co | “that/which” | OK |
+| m’ha | “has (to) me” (causative) | sprawiło | “caused” | OK |
+| fatto | Past participle “made” | sprawiło | “made” | OK |
+| cercar | Infinitive “to search” | szukam | “I search” | OK |
+| lo | Definite article “the” | *(omitted)* | — | UNNECESSARY |
+| tuo | Possessive “your” | twojego | “your” | OK |
+| volume | “volume / tome” (object) | tomu | “tome” | OK |
+
+---
+
+### Items flagged
+
+**UNNECESSARY (articles omitted in Polish)**  
+- de  
+- li  
+- ’l (first occurrence)  
+- ’l (second occurrence)  
+- lo  
+
+No missing, wrong, or grammatical‑agreement errors were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 82**  
+  - Original: O honorze i świetle innych poetów,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 83**  
+  - Original: Niech długie studium i wielka miłość mi służą  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 84**  
+  - Original: co sprawiło że szukam twojego tomu.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+O honorze i świetle innych poetów,
+Niech długie studium i wielka miłość mi służą
+co sprawiło że szukam twojego tomu.
+```
+]]></message>
+</messages>

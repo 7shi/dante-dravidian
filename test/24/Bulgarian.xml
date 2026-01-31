@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Родих се под Юлий въпреки че беше късно,  
+И живях в Рим под добрия Август  
+във времето на лъжливите и лъжесвидните богове.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|--------------------|-----------------------|--------|
+| Nacqui | “was born” (1st sg perfect) | Родих | “I was born” | OK |
+| sub | preposition “under” (temporal/political) | под | “under” | OK |
+| Iulio | proper name “Julio” (ruler/era) | Юлий | “Julio” | OK |
+| ancor | concessive adverb “although” | въпреки | “although” | OK |
+| che | subordinating conjunction | че | “that” | OK |
+| fosse | 3sg imperfect subjunctive of *essere* “was” (state) | беше | “was” | OK |
+| tardi | adjective “late” (degree) | късно | “late” | OK |
+| e | coordinating conjunction “and” | И | “and” | OK |
+| vissi | “lived” (1st sg perfect) | живях | “I lived” | OK |
+| a | preposition “at, in” (location) | в | “in” | OK |
+| Roma | proper name “Rome” (city) | Рим | “Rome” | OK |
+| sotto | preposition “under” (political authority) | под | “under” | OK |
+| ’l | definite article “the” (masc. sing.) | — | — | UNNECESSARY |
+| buono | adjective “good” (positive attribute) | добрия | “good” | OK |
+| Augusto | proper name “Augustus” (ruler) | Август | “Augustus” | OK |
+| nel | contraction “in the” (preposition + article) | във | “in” | OK |
+| tempo | noun “time” (epoch) | времето | “the time” | OK |
+| de | preposition “of” | на | “of” | OK |
+| li | definite article “the” (masc. plural) | — | — | UNNECESSARY |
+| dèi | noun “gods” (plural) | богове | “gods” | OK |
+| falsi | adjective “false” (first attribute) | лъжливите | “false” | OK |
+| e | coordinating conjunction “and” | и | “and” | OK |
+| bugiardi | adjective “lying” (second attribute) | лъжесвидните | “lying” | OK |
+
+---
+
+### Items flagged
+
+- **UNNECESSARY**:  
+  - **’l** (definite article) – Bulgarian does not use a separate article here; definiteness is expressed by the suffix *‑ия* in *добрия*.  
+  - **li** (definite article) – Bulgarian likewise marks definiteness on *богове* with the suffix *‑те*; no separate word is needed.  
+
+All other source words are correctly rendered (OK) with no missing, wrong, or grammatical errors.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: Родих се под Юлий въпреки че беше късно,
+  - Issue: none
+  - Corrected: Родих се под Юлий въпреки че беше късно,
+- Line 2:
+  - Original: И живях в Рим под добрия Август
+  - Issue: none
+  - Corrected: И живях в Рим под добрия Август
+- Line 3:
+  - Original: във времето на лъжливите и лъжесвидните богове.
+  - Issue: none
+  - Corrected: във времето на лъжливите и лъжесвидните богове.
+
+```
+Родих се под Юлий въпреки че беше късно,
+И живях в Рим под добрия Август
+във времето на лъжливите и лъжесвидните богове.
+```
+]]></message>
+</messages>

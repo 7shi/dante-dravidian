@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Czy więc jesteś tym Wirgiliuszem i tym źródłem  
+który wylewa tak szeroką rzekę mowy,  
+odpowiedziałem mu z zawstydzoną twarzą.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Italian → Polish)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Polish) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|------------------------------|------------------------|--------|
+| Or | temporal/discourse marker “Now/then” | Czy | “whether / if” (question particle) | OK |
+| se' | copular verb “art” (2nd sg.) | jesteś | “are” | OK |
+| tu | 2nd sg. pronoun “thou” | — (omitted) | “you” (understood) | UNNECESSARY |
+| quel | demonstrative adjective “that” (modifying *Virgilio*) | tym | “that” (instrumental) | OK |
+| Virgilio | proper noun “Virgil” | Wirgiliuszem | “Virgil” (instrumental) | OK |
+| e | coordinating conjunction “and” | i | “and” | OK |
+| quella | demonstrative adjective “that” (modifying *fonte*) | tym | “that” (instrumental) | OK |
+| fonte | noun “fount, source” | źródłem | “source/fount” (instrumental) | OK |
+| che | relative pronoun “which” | który | “which” | OK |
+| spandi | verb “poureth forth” | wylewa | “spills / pours out” | OK |
+| di | preposition “of” (genitive marker) | — (genitive expressed by case) | “of” (implicit) | UNNECESSARY |
+| parlar | substantivised infinitive “speech” | mowy | “speech” (genitive) | OK |
+| sì | degree adverb “so” | tak | “so” | OK |
+| largo | adjective “large” (size) | szeroką | “wide / large” (accusative) | OK |
+| fiume | noun “river / stream” | rzekę | “river / stream” (accusative) | OK |
+| rispuos' | verb “replied” (1st sg.) | odpowiedziałem | “I replied” | OK |
+| io | 1st sg. pronoun “I” | — (omitted) | “I” (understood) | UNNECESSARY |
+| lui | 3rd sg. indirect object “to him” | mu | “to him” | OK |
+| con | preposition “with” | z | “with” | OK |
+| vergognosa | adjective “bashful” | zawstydzoną | “embarrassed / bashful” | OK |
+| fronte | noun “front (of the face)” | twarzą | “face / front” (instrumental) | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *tu*, *di*, *io* – Polish does not require an explicit pronoun for “you” or “I”, nor a separate preposition for the genitive “of”.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** errors were detected; all retained words agree in gender, number, and case with their Polish counterparts.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 79**  
+  - Original: `Czy więc jesteś tym Wirgiliuszem i tym źródłem`  
+  - Issue: none  
+  - Corrected: `Czy więc jesteś tym Wirgiliuszem i tym źródłem`  
+
+- **Line 80**  
+  - Original: `który wylewa tak szeroką rzekę mowy,`  
+  - Issue: punctuation – should end with a question mark, not a comma  
+  - Corrected: `który wylewa tak szeroką rzekę mowy?`  
+
+- **Line 81**  
+  - Original: `odpowiedziałem mu z zawstydzoną twarzą.`  
+  - Issue: none  
+  - Corrected: `odpowiedziałem mu z zawstydzoną twarzą.`  
+
+```
+Czy więc jesteś tym Wirgiliuszem i tym źródłem
+który wylewa tak szeroką rzekę mowy?
+odpowiedziałem mu z zawstydzoną twarzą.
+```
+]]></message>
+</messages>

@@ -44,6 +44,12 @@ And a she-wolf, who with all cravings seemed laden in her meagreness, and alread
 50 tundus koormatud oma kõhnuses,
 51 ja juba paljud inimesed pani elama kurbuses,
 
+# Turkish
+
+49 Ve bütün arzularıyla bir dişi kurt
+50 kendi zayıflığında yüklü gibi görünüyordu,
+51 ve zaten birçok insanları sefalete sürüklemişti,
+
 # French
 
 49 Et une louve, qui de toutes les convoitises
@@ -103,3 +109,15 @@ And a she-wolf, who with all cravings seemed laden in her meagreness, and alread
 49 I jedna vukinja koja sa svim željama,
 50 izgledala je opterećena u svojoj mršavosti,
 51 i već je učinila da mnogi ljudi žive u tugi,
+
+# Bulgarian
+
+49 И вълчица, която с всички желания
+50 изглеждаше натоварена в своята слабост,
+51 и вече беше направила много хора да живеят в мъка,
+
+# Polish
+
+49 I wilczyca, która ze wszystkich żądz
+50 wydawała się obciążona w swojej chudości,
+51 i wiele ludzi już zmusiła do życia w rozpaczy,

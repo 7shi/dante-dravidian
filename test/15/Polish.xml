@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+l'ora del tempo e la dolce stagione;  
+ale nie tak by strach mnie nie dał  
+widok który ukazał się mi z lwa.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping (Step 3)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Polish) | Back‑Translation (English) | Status |
+|-------------|--------------------------------------|------------------------------|-----------------------------|--------|
+| l'ora | “the hour” (temporal reference) | l'ora | “the hour” | **WRONG** (not Polish) |
+| del | genitive linker “of the” | del | “of the” | **WRONG** |
+| tempo | “time” | tempo | “time” | **WRONG** |
+| e | coordinating conjunction “and” | e | “and” | **WRONG** |
+| la | definite article (fem.) “the” | la | “the” | **WRONG** |
+| dolce | adjective “sweet” | dolce | “sweet” | **WRONG** |
+| stagione | noun “season” | stagione | “season” | **WRONG** |
+| ma | coordinating conjunction “but” | ale | “but” | **OK** |
+| non (1st) | negation particle | nie | “not” | **OK** |
+| sì | resultative adverb “so” | tak | “so” | **OK** |
+| che (1st) | subordinator “that” (resultative) | by | “that” | **OK** |
+| paura | noun “fear” | strach | “fear” | **OK** |
+| non (2nd) | negation particle | nie | “not” | **OK** |
+| mi | indirect object pronoun “me” | mnie | “me” | **OK** |
+| desse | verb “give” (subjunctive) | dał | “gave” | **OK** |
+| la (article before *vista*) | definite article “the” (fem.) | — *(omitted)* | — | **UNNECESSARY** |
+| vista | noun “sight” | widok | “view / sight” | **OK** |
+| che (2nd) | relative pronoun “which” | który | “which” | **OK** |
+| m'apparve | verb phrase “appeared to me” | ukazał się | “appeared” | **OK** |
+| d'un | prepositional phrase “of a” | z | “of / from” | **OK** |
+| leone | noun “lion” (genitive) | lwa | “lion (gen.)” | **OK** |
+
+---
+
+### Items Requiring Attention  
+
+- **WRONG**: The first seven tokens (*l'ora, del, tempo, e, la, dolce, stagione*) remain in Italian; they should be rendered in Polish (e.g., *godzina, czasu, i, słodka, pora*).  
+- **GRAMMAR**: The clause *„nie tak by strach mnie nie dał”* is ungrammatical in Polish (double negation and word order). A more natural rendering would be *„ale nie tak, by strach mnie nie dał”* or *„ale nie tak, żeby strach mnie nie ogarnął”*.  
+- **UNNECESSARY**: The article *la* before *vista* is correctly omitted in Polish, so it is marked **UNNECESSARY**.  
+
+No source words are **MISSING** from the translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 43**  
+  - Original: l'ora del tempo e la dolce stagione;  
+  - Issue: WRONG (Italian words, not Polish)  
+  - Corrected: **godzina czasu i słodka pora;**  
+
+- **Line 44**  
+  - Original: ma non sì che paura non mi desse  
+  - Issue: GRAMMAR (missing comma, awkward word order)  
+  - Corrected: **ale nie tak, by strach mnie nie dał**  
+
+- **Line 45**  
+  - Original: la vista che m'apparve d'un leone.  
+  - Issue: GRAMMAR (missing comma before relative clause)  
+  - Corrected: **widok, który ukazał się mi z lwa.**  
+
+```
+godzina czasu i słodka pora;
+ale nie tak, by strach mnie nie dał
+widok, który ukazał się mi z lwa.
+```
+]]></message>
+</messages>

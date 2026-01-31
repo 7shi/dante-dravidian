@@ -44,6 +44,12 @@ And she did not move from before my face, nay, rather hindered so my road that t
 35 vaidvastu takistas nii mu tee, et,
 36 et tagasi pöörduda ma olen sageli pööranud.
 
+# Turkish
+
+34 Ve o yüzümün önünden hareket etmedi,
+35 aksine yolumu o kadar engelledi ki,
+36 geri dönmek için sık sık döndüm.
+
 # French
 
 34 et elle ne bougeait pas devant mon visage,
@@ -103,3 +109,15 @@ And she did not move from before my face, nay, rather hindered so my road that t
 34 I ona se nije pomerala ispred mog lica,
 35 naprotiv toliko je ometala moj put,
 36 da sam se vraćao više puta okrenuo.
+
+# Bulgarian
+
+34 и тя не се отдалечаваше пред лицето ми,
+35 по‑скоро толкова пречеше на пътя ми,
+36 че за да се върна многократно се обръщах.
+
+# Polish
+
+34 I nie ruszała się przed moją twarzą,
+35 a raczej tak bardzo utrudniała moją drogę,
+36 że by wrócić wielokrotnie się odwracałem.

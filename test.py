@@ -6,7 +6,7 @@ LANGUAGES = [
     "Telugu", "Tamil", "Kannada", "Malayalam",
 
     # Agglutinative non-Dravidian languages
-    "Japanese", "Estonian",
+    "Japanese", "Estonian", "Turkish",
 
     # Romance languages
     "French", "Spanish", "Portuguese",
@@ -20,8 +20,8 @@ LANGUAGES = [
     # Germanic languages
     "German", "Dutch",
 
-    # Slavic language
-    "Serbian (Latin script)",
+    # Slavic languages
+    "Serbian (Latin script)", "Bulgarian", "Polish",
 ]
 
 # Parse command line arguments

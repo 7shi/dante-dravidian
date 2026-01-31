@@ -44,6 +44,12 @@ The time was at the beginning of the morning, and the Sun was mounting upward wi
 38 ja päike tõusis üles koos nende tähtedega
 39 kes olid temaga kui jumalik armastus
 
+# Turkish
+
+37 Zaman sabahın başındaydı,
+38 ve güneş o yıldızlarla birlikte yukarı doğru yükseliyordu
+39 onunla birlikte olan o yıldızlar Tanrısal Aşk her şeyi harekete geçirdiği zaman
+
 # French
 
 37 Le temps était au début du matin,
@@ -103,3 +109,15 @@ The time was at the beginning of the morning, and the Sun was mounting upward wi
 37 Vreme je bilo na početku jutra,
 38 i sunce se uzdizalo prema gore sa tim zvezdama
 39 koje su bile s njim kada je božanska ljubav
+
+# Bulgarian
+
+37 Времето беше в началото на сутринта,
+38 и слънцето се издигаше нагоре с онези звезди
+39 които бяха с него когато божествената любов
+
+# Polish
+
+37 Czas był od początku poranka,
+38 a słońce wznosiło się w górę z tymi gwiazdami
+39 które były z nim gdy boska miłość

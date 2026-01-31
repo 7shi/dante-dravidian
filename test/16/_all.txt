@@ -44,6 +44,12 @@ He seemed to be coming against me, with head high and with ravening hunger, so t
 47 kõrge pea ja näljas nälgiga,
 48 nii et näis et õhk värises tema pärast.
 
+# Turkish
+
+46 Karşıma geliyormuş gibi görünüyordu
+47 başı yüksek ve açgözlü bir iştahla,
+48 öyle ki hava onun yüzünden titriyormuş gibi görünüyordu.
+
 # French
 
 46 Celui‑ci semblait que venir contre moi
@@ -103,3 +109,15 @@ He seemed to be coming against me, with head high and with ravening hunger, so t
 46 Činio se da dolazi protiv mene
 47 sa podignutom glavom i sa besnom glađu,
 48 tako da se činilo da vazduh trese od njega.
+
+# Bulgarian
+
+46 Той изглеждаше че идва срещу мен
+47 с висока глава и с яростен глад,
+48 така че изглеждаше че въздухът трепери от него.
+
+# Polish
+
+46 Wydawało się, że ten nadchodzi przeciwko mnie
+47 z podniesioną głową i z żarłoczną głodą,
+48 tak że wydawało się, że powietrze drży od niego.

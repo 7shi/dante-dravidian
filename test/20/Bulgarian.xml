@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+така ме направи зверът без покой,  
+който, идвайки ми навръх, малко‑по‑малко,  
+ми ме буташе назад там, където слънцето мълчи.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| # | Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (ENG) | Status |
+|---|-------------|-----------------------|--------------------|------------------------|--------|
+| 1 | tal | demonstrative adjective “such” | така | “so / thus” | OK |
+| 2 | mi | 1st sg. clitic pronoun (acc.) | ме | “me” | OK |
+| 3 | fece | verb “made” (causative) | направи | “made” | OK |
+| 4 | la | definite article (fem.) | — | — | **UNNECESSARY** |
+| 5 | bestia | noun “beast” | зверът | “the beast” | OK |
+| 6 | sanza | preposition “without” | без | “without” | OK |
+| 7 | pace | noun “repose / peace” | покой | “peace / repose” | OK |
+| 8 | che | relative pronoun “that” | който | “who / that” | OK |
+| 9 | venendomi | gerund “coming on against me” | идвайки ми | “coming (while) me” | OK |
+|10 | ’ncontro | preposition “against” | навръх | “against / onto” | OK |
+|11 | a (1st) | part of idiom *a poco a poco* | — | — | **UNNECESSARY** |
+|12 | poco (1st) | adverb “little” (degree) | малко‑по‑малко | “little‑by‑little” | OK |
+|13 | a (2nd) | part of idiom *a poco a poco* | — | — | **UNNECESSARY** |
+|14 | poco (2nd) | adverb “little” (degree) | — | — | **UNNECESSARY** |
+|15 | mi | 1st sg. clitic (dative) | ми | “to me” | OK |
+|16 | ripigneva | verb “was pushing back” | буташе | “was pushing” | OK |
+|17 | là | adverb “there” | там | “there” | OK |
+|18 | dove | relative adverb “where” | където | “where” | OK |
+|19 | ’l | definite article (masc.) | — | — | **UNNECESSARY** |
+|20 | sol | noun “Sun” | слънцето | “the Sun” | OK |
+|21 | tace | verb “is silent” | мълчи | “is silent” | OK |
+
+---
+
+### Items Not Marked **OK**
+
+- **UNNECESSARY**: `la`, first `a`, second `a`, second `poco`, `'l`  
+  (Italian articles and the filler prepositions/adverbs of the idiom have no direct counterpart in Bulgarian and are naturally omitted.)  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: така ме направи зверът без покой,
+  - Issue: none
+  - Corrected: no change
+- Line 2:
+  - Original: който, идвайки ми навръх, малко‑по‑малко,
+  - Issue: none
+  - Corrected: no change
+- Line 3:
+  - Original: ми ме буташе назад там, където слънцето мълчи.
+  - Issue: GRAMMAR – double object pronoun “ми ме”; Bulgarian uses a single direct‑object pronoun.
+  - Corrected: ме буташе назад там, където слънцето мълчи.
+
+``` Bulgarian
+така ме направи зверът без покой,
+който, идвайки ми навръх, малко‑по‑малко,
+ме буташе назад там, където слънцето мълчи.
+```
+]]></message>
+</messages>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Тази смирена Италия ще бъде спасението  
+за което умря девицата Камила,  
+Евриал и Туно и Нисо са ранени.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition (Step 1) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|--------------------------------|----------------------|------------------------|--------|
+| Di | Preposition introducing the genitive “of that” | — | — | UNNECESSARY |
+| quella | Demonstrative “that” specifying Italy | Тази | “this/that” | OK |
+| umile | Attribute “humble” describing Italy | смирена | “humble” | OK |
+| Italia | Proper noun “Italy” | Италия | “Italy” | OK |
+| fia | Future copular verb “shall be” | ще бъде | “will be” | OK |
+| salute | Noun “salvation” (subject complement) | спасението | “the salvation” | OK |
+| per | Preposition introducing causal clause “for which” | за | “for” | OK |
+| cui | Relative pronoun referring to the salvation | което | “which” | OK |
+| morì | Simple past “died” | умря | “died” | OK |
+| la | Definite article (feminine singular) | — | — | UNNECESSARY |
+| vergine | Noun “virgin” (title/epithet) | девицата | “the virgin” | OK |
+| Cammilla | Proper name “Camilla” | Камила | “Camilla” | OK |
+| Eurialo | Proper name “Euryalus” | Евриал | “Euryalus” | OK |
+| e | Coordinating conjunction “and” (first) | и | “and” | OK |
+| Turno | Proper name “Turnus” | Туно | “Turnus” | OK |
+| e | Coordinating conjunction “and” (second) | и | “and” | OK |
+| Niso | Proper name “Nisus” | Нисо | “Nisus” | OK |
+| di | Preposition “of” introducing the participial phrase | — | — | UNNECESSARY |
+| ferute | Past participle used adjectivally “wounded” | ранени | “wounded” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *Di*, *la*, *di* – Bulgarian does not need a separate preposition or article in these positions; their semantic contribution is absorbed elsewhere in the sentence.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 106:
+  - Original: Тази смирена Италия ще бъде спасението
+  - Issue: none
+  - Corrected: no change
+- Line 107:
+  - Original: за което умря девицата Камила,
+  - Issue: none
+  - Corrected: no change
+- Line 108:
+  - Original: Евриал и Туно и Нисо са ранени.
+  - Issue: none
+  - Corrected: no change
+
+```
+Тази смирена Италия ще бъде спасението
+за което умря девицата Камила,
+Евриал и Туно и Нисо са ранени.
+```
+]]></message>
+</messages>

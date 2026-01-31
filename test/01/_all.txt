@@ -44,6 +44,12 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 2 Leidsin end pimedas metsas,
 3 sest õige tee oli kaotatud.
 
+# Turkish
+
+1 Hayatımızın yolunun ortasında
+2 kendimi karanlık bir ormanda buldum,
+3 öyle ki doğru yol kaybolmuştu.
+
 # French
 
 1 Au milieu du chemin de notre vie
@@ -103,3 +109,15 @@ Midway upon the road of our life I found myself within a dark wood, for the righ
 1 U sredini puta našeg života
 2 našao sam se u mračnoj šumi,
 3 jer prava staza je bila izgubljena.
+
+# Bulgarian
+
+1 В средата на пътя на нашия живот
+2 се намерих в тъмна гора,
+3 защото правият път беше изгубен.
+
+# Polish
+
+1 W połowie drogi naszego życia
+2 odnalazłem się w mrocznym lesie,
+3 bo właściwa droga została zgubiona.

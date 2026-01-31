@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+за онзи император, който владее там горе,  
+защото бях бунтовен към неговия закон,  
+не иска, че в неговия град през мен да се влезе.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Source → Bulgarian)**  
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|----------------------|------------------------|--------|
+| **ché** | causal conjunction introducing the cause of the clause | **за** | “for” (introducing cause) | OK |
+| **quello** | demonstrative pronoun pointing to a specific emperor | **онзи** | “that” | OK |
+| **imperador** | the sovereign ruler who reigns above | **император** | “emperor” | OK |
+| **che** (rel.) | relative pronoun linking *imperador* to its action | **който** | “who” | OK |
+| **là** | adverb of place “there” (remote location) | **там** | “there” | OK |
+| **sù** | adverb of direction/height “above” | **горе** | “up/above” | OK |
+| **regna** | verb asserting the emperor’s sovereign power | **владее** | “reigns / rules” | OK |
+| **perch'** | causal conjunction “because” | **защото** | “because” | OK |
+| **i'** | 1st‑person pronoun “I” (subject of past state) | *(omitted)* | – | **UNNECESSARY** (pronoun dropped in Bulgarian) |
+| **fu'** | past copula “was” linking subject to *ribellante* | **бях** | “was” | OK |
+| **ribellante** | adjective “rebellious” describing the speaker’s attitude | **бунтовен** | “rebellious” | OK |
+| **a** | preposition marking the target of rebellion | **към** | “to / toward” | OK |
+| **la** | definite article (feminine) preceding *legge* | *(omitted)* | – | **UNNECESSARY** (Bulgarian has no article here) |
+| **sua** | possessive adjective “his” (belonging to the emperor) | **неговия** | “his” | OK |
+| **legge** | noun “law” belonging to the emperor | **закон** | “law” | OK |
+| **non** | negation particle | **не** | “not” | OK |
+| **vuol** | volitional verb “wills / wants” | **иска** | “wants / does not want” | OK |
+| **che** (conj.) | complementiser introducing the content of the will | **че** | “that” | OK |
+| **'n** | preposition “in / into” | **в** | “in / into” | OK |
+| **sua** (again) | possessive adjective “his” (city) | **неговия** | “his” | OK |
+| **città** | noun “city” ruled by the emperor | **град** | “city” | OK |
+| **per** | preposition “through” (medium) | **през** | “through” | OK |
+| **me** | 1st‑person object pronoun “me” (medium) | **мен** | “me” | OK |
+| **si** | impersonal reflexive pronoun (subject of subjunctive) | **се** | “(oneself) / oneself” (part of passive) | OK |
+| **vegna** | subjunctive verb “should come” (enter) | **влезе** | “should come / enter” | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**:  
+  - **i'** – the explicit subject pronoun “I” is omitted in Bulgarian because the verb *бях* already encodes the subject.  
+  - **la** – the definite article before *legge* has no counterpart in Bulgarian and is naturally omitted.  
+
+All other mappings are **OK**; no **WRONG**, **GRAMMAR**, or missing lexical items were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Ред 124:  
+  - Оригинал: за онзи император, който владее там горе,  
+  - Проблем: няма  
+  - Коригиран: за онзи император, който владее там горе,  
+
+- Ред 125:  
+  - Оригинал: защото бях бунтовен към неговия закон,  
+  - Проблем: няма  
+  - Коригиран: защото бях бунтовен към неговия закон,  
+
+- Ред 126:  
+  - Оригинал: не иска, че в неговия град през мен да се влезе.  
+  - Проблем: няма  
+  - Коригиран: не иска, че в неговия град през мен да се влезе.  
+
+```
+за онзи император, който владее там горе,
+защото бях бунтовен към неговия закон,
+не иска, че в неговия град през мен да се влезе.
+```
+]]></message>
+</messages>

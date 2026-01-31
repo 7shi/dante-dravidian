@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ve hatta nefesi tükenmiş gibi olan,  
+denizden çıkıp kıyıya,  
+tehlikeli suya döner ve bakar,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (Turkish → English) | Status |
+|-------------|-----------------------|--------------------|----------------------------------------|--------|
+| **E** | Coordinating conjunction linking to previous clause | **Ve** | “And” | OK |
+| **come** | Comparative particle “as / like” | **hatta** (part of “ve hatta”) | “even” (used to render “as … even”) | OK |
+| **quei** | Demonstrative pronoun “those / those people” | — | — | UNNECESSARY (demonstrative not required in Turkish) |
+| **che** | Relative pronoun introducing clause “who” | — | — | UNNECESSARY |
+| **con** | Preposition “with” (instrumental) | — | — | UNNECESSARY |
+| **lena** | Noun “breath” (here “spent breath”) | **nefesi** | “breath (genitive)” | OK |
+| **affannata** | Past participle adjective “exhausted, spent” | **tükenmiş** | “exhausted / spent” | OK |
+| **uscito** | Verb “issued, came out” (motion) | **çıkıp** | “coming out / exiting (gerund)” | OK |
+| **fuor** | Preposition “out of” | **denizden** (part of “denizden”) | “from the sea” | OK |
+| **del** | Partitive preposition + article “of the” | — | — | UNNECESSARY |
+| **pelago** | Noun “sea, ocean” | **deniz** | “sea” | OK |
+| **a** (line 23) | Preposition “to, upon” (direction) | **kıyıya** (part of “kıyıya”) | “to the shore” | OK |
+| **la** | Definite article (feminine) | — | — | UNNECESSARY |
+| **riva** | Noun “shore, bank” | **kıyı** | “shore” | OK |
+| **si** | Reflexive pronoun (3rd person) | — | — | UNNECESSARY (reflexivity expressed by verb form) |
+| **volge** | Verb “turns, directs oneself” | **döner** | “turns” | OK |
+| **a** (line 24) | Preposition “to” (introducing object) | **suya** (part of “suya”) | “to the water” | OK |
+| **l'acqua** | Noun “the water” | **su** | “water” | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **tehlikeli** | “dangerous, perilous” | OK |
+| **e** | Coordinating conjunction “and” | **ve** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **bakar** | “looks, gazes” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *quei, che, con, del, la, si* – Turkish does not require these demonstratives, relative pronouns, prepositions, or reflexive clitics in the given context.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all translated elements convey the intended meaning and agree in number/gender where applicable.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 22:
+  - Original: Ve hatta nefesi tükenmiş gibi olan,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 23:
+  - Original: denizden çıkıp kıyıya,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 24:
+  - Original: tehlikeli suya döner ve bakar,
+  - Issue: none
+  - Corrected: no change  
+
+```
+Ve hatta nefesi tükenmiş gibi olan,
+denizden çıkıp kıyıya,
+tehlikeli suya döner ve bakar,
+```
+]]></message>
+</messages>

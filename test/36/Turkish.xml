@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+106 O alçakgönüllü İtalya’nın kurtuluşu olacak  
+107 bu yüzden bakire Camilla öldü,  
+108 Eurialo, Turno ve Niso yaralıdır.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Di | “of” – genitive marker linking *salute* to *Italia* | **İtalya’nın** (genitive suffix) | “of Italy” | OK |
+| quella | demonstrative “that” specifying the Italy | **O** | “that” | OK |
+| umile | adjective “humble” describing Italy | **alçakgönüllü** | “humble” | OK |
+| Italia | proper name “Italy” | **İtalya** | “Italy” | OK |
+| fia | future copula “shall be” | **olacak** | “will be” | OK |
+| salute | noun “salvation” (state of being saved) | **kurtuluşu** | “salvation” | OK |
+| per | preposition “for” introducing cause | **bu yüzden** | “because of this” | OK |
+| cui | relative pronoun “which” (refers to the salvation) | **bu yüzden** (causal phrase) | “because of this” | OK |
+| morì | past verb “died” | **öldü** | “died” | OK |
+| la | definite article (feminine singular) – not required in Turkish | — | — | **UNNECESSARY** |
+| vergine | noun “virgin” (title of Camilla) | **bakire** | “virgin” | OK |
+| Cammilla | proper name “Camilla” (spelling with double *m*) | **Camilla** | “Camilla” | OK |
+| Eurialo | proper name “Euryalus” | **Eurialo** | “Eurialo” | OK |
+| e (1st) | coordinating conjunction “and” (first link) | — (comma used instead) | — | **MISSING** |
+| Turno | proper name “Turnus” | **Turno** | “Turno” | OK |
+| e (2nd) | coordinating conjunction “and” (second link) | **ve** | “and” | OK |
+| Niso | proper name “Nisus” | **Niso** | “Niso” | OK |
+| di | preposition “of” introducing the participial phrase | — (expressed by adjective) | — | **UNNECESSARY** |
+| ferute | past participle used adjectivally “wounded” | **yaralı** | “wounded” | OK |
+
+---
+
+### Items Requiring Attention
+- **MISSING**: the first coordinating conjunction **e** (line 108) is not rendered; Turkish lists the first two names with a comma instead of “ve”.
+- **UNNECESSARY**: the article **la** (line 107) and the preposition **di** (line 108) have no separate lexical counterpart in Turkish; their meanings are conveyed by case endings or adjectives.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 106:  
+  - Original: O alçakgönüllü İtalya’nın kurtuluşu olacak  
+  - Issue: none  
+  - Corrected: O alçakgönüllü İtalya’nın kurtuluşu olacak  
+
+- Line 107:  
+  - Original: bu yüzden bakire Camilla öldü,  
+  - Issue: none  
+  - Corrected: bu yüzden bakire Camilla öldü,  
+
+- Line 108:  
+  - Original: Eurialo, Turno ve Niso yaralıdır.  
+  - Issue: MISSING – first coordinating conjunction “e” (and) not rendered  
+  - Corrected: Eurialo **ve** Turno **ve** Niso yaralıdır.  
+
+```
+O alçakgönüllü İtalya’nın kurtuluşu olacak
+bu yüzden bakire Camilla öldü,
+Eurialo ve Turno ve Niso yaralıdır.
+```
+]]></message>
+</messages>

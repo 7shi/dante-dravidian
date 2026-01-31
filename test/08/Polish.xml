@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+22 I jak ci z zadysanym oddechem,  
+23 wyszedł z morza na brzeg,  
+24 obraca się ku niebezpiecznej wodzie i patrzy,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|----------------------|----------------------|------------------|--------|
+| **E** | Coordinating conjunction linking to previous clause | **I** | “and” | OK |
+| **come** | Comparative particle “as, like” | **jak** | “as” | OK |
+| **quei** | Demonstrative pronoun, plural “those” (generic person) | **ci** | “those” | OK |
+| **che** | Relative pronoun “who” (introduces clause) | — | — | **UNNECESSARY** (not expressed in Polish) |
+| **con** | Preposition “with” (instrumental) | **z** | “with” | OK |
+| **lena** | Feminine noun “breath” | **oddechem** | “breath” (instrumental) | OK |
+| **affannata** | Past participle adjective “spent, exhausted” | **zadysanym** | “spent” | OK |
+| **uscito** | Verb “issued, went out” (past participle used as verb) | **wyszedł** | “went out” | OK |
+| **fuor** | Preposition “out of” | **z** | “out of” | OK |
+| **del** | Preposition + article “of the” (genitive) | — | — | **UNNECESSARY** (article omitted in Polish) |
+| **pelago** | Masculine noun “sea” | **morza** | “sea” (genitive) | OK |
+| **a** | Preposition “to, onto” (line 23) | **na** | “onto” | OK |
+| **la** | Definite article (feminine) | — | — | **UNNECESSARY** (articles do not exist in Polish) |
+| **riva** | Feminine noun “shore” | **brzeg** | “shore” (accusative) | OK |
+| **si** | Reflexive pronoun (3rd person) | **się** | “himself/itself” | OK |
+| **volge** | Verb “turns, turns toward” | **obraca** | “turns” | OK |
+| **a** | Preposition “to, toward” (line 24) | **ku** | “toward” | OK |
+| **l'acqua** | Feminine noun “water” with article | **wodzie** | “water” (dative) | OK |
+| **perigliosa** | Adjective “perilous, dangerous” | **niebezpiecznej** | “dangerous” (dative) | OK |
+| **e** | Coordinating conjunction “and” | **i** | “and” | OK |
+| **guata** | Verb “gazes, looks at” | **patrzy** | “looks, gazes” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *che*, *del*, *la* – Italian articles or relative pronouns that have no direct counterpart in Polish and are therefore omitted.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; all retained words agree in gender, number, and case with the Polish translation.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 22**  
+  - Original: I jak ci z zadysanym oddechem,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 23**  
+  - Original: wyszedł z morza na brzeg,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 24**  
+  - Original: obraca się ku niebezpiecznej wodzie i patrzy,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+I jak ci z zadysanym oddechem,
+wyszedł z morza na brzeg,
+obraca się ku niebezpiecznej wodzie i patrzy,
+```
+]]></message>
+</messages>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+и тя не се отдалечаваше пред лицето ми,  
+по‑скоро толкова пречеше пътя ми,  
+че за да се върна многократно се обръщах.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|----------------------|-----------------------|--------|
+| **e** | Coordinating conjunction linking clause to previous discourse | **и** | “and” | OK |
+| **non** | Negation of the predicate “move” | **не** | “not” | OK |
+| **mi** | 1st‑person dative clitic (indirect object) – not semantically needed in Bulgarian | — | — | **UNNECESSARY** |
+| **si** | Reflexive clitic marking the verb “move” as reflexive | **се** | “self‑reflexive marker” | OK |
+| **partia** | Imperfect of *partire* – “was moving away / not moving away” | **отдалечаваше** | “was moving away” | OK |
+| **dinanzi** | Preposition “in front of / before” | **пред** | “in front of” | OK |
+| **al** | Definite article + preposition “to the” (introduces “volto”) – redundant in Bulgarian | — | — | **UNNECESSARY** |
+| **volto** | Noun “face” (the speaker’s face) | **лицето** | “the face” | OK |
+| **anzi** | Contrastive adverb “instead, nay” | **по‑скоро** | “rather” (contrastive) | OK |
+| **‘mpediva** | Imperfect of *impedire* – “was hindering / obstructing” | **пречеше** | “was hindering” | OK |
+| **tanto** | Degree adverb “so, to such an extent” | **толкова** | “so” (intensifier) | OK |
+| **il** | Definite article (masc. sing.) – not needed in Bulgarian | — | — | **UNNECESSARY** |
+| **mio** | Possessive adjective “my” (possessor of “cammino”) | **ми** (as part of *пътя ми*) | “my” | OK |
+| **cammino** | Noun “road, path” (the speaker’s road) | **пътя** | “the road” | OK |
+| **ch’** | Subordinating conjunction “that” introducing result clause | **че** | “that” | OK |
+| **i’** | 1st‑person pronoun “I” (subject of the clause) – implicit in Bulgarian verb | — | — | **UNNECESSARY** |
+| **fui** | Past‑historic of *essere* used as auxiliary “had” | — | — | **UNNECESSARY** |
+| **per** | Preposition “for / in order to” | **за** (part of *за да*) | “for / to” | OK |
+| **ritornar** | Infinitive “to return” (purpose) | **върна** (in *да се върна*) | “to return” | OK |
+| **più** | Comparative adverb “more” (used with “volte” to indicate frequency) | **многократно** (covers “more times”) | “many times” | OK |
+| **volte** | Noun “times” (frequency) – merged with “più” in Bulgarian | — | — | **UNNECESSARY** |
+| **vòlto** | Imperfect of *voltare* – “was turning” (repeated action) | **обръщах** | “was turning” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: *mi, al, il, i’, fui, volte* – Bulgarian does not require these elements; their meanings are either expressed elsewhere (e.g., possessive “ми”) or are intrinsically encoded in the verb forms.
+- No **WRONG**, **GRAMMAR**, or missing lexical items were identified.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 34:
+  - Original: и тя не се отдалечаваше пред лицето ми,
+  - Issue: none
+  - Corrected: и тя не се отдалечаваше пред лицето ми,
+- Line 35:
+  - Original: по‑скоро толкова пречеше пътя ми,
+  - Issue: GRAMMAR – missing preposition “на” before “пътя ми”
+  - Corrected: по‑скоро толкова пречеше **на** пътя ми,
+- Line 36:
+  - Original: че за да се върна многократно се обръщах.
+  - Issue: none
+  - Corrected: че за да се върна многократно се обръщах.
+
+```
+и тя не се отдалечаваше пред лицето ми,
+по‑скоро толкова пречеше на пътя ми,
+че за да се върна многократно се обръщах.
+```
+]]></message>
+</messages>

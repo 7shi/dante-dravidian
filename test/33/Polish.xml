@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+i ma naturę tak złośliwą i złowrogą,  
+że nigdy nie zaspokaja chciwej woli,  
+i po posiłku ma więcej głodu niż przedtem.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|------------------|--------|
+| e | coordinating conjunction “and” | i | “and” | OK |
+| ha | verb “has” | ma | “has” | OK |
+| natura | noun “nature” | naturę | “nature” (acc.) | OK |
+| sì | adverb of degree “so” | tak | “so” | OK |
+| malvagia | adjective “malign” | złośliwą | “malign” (fem. acc.) | OK |
+| e | conjunction “and” | i | “and” | OK |
+| ria | adjective “evil” | złowrogą | “evil” (fem. acc.) | OK |
+| che | relative pronoun “that” | że | “that” | OK |
+| mai | adverb “never” | nigdy | “never” | OK |
+| non | negative particle “not” | nie | “not” | OK |
+| empie | verb “sates” | zaspokaja | “sates” | OK |
+| la | definite article “the” | — | — | UNNECESSARY |
+| bramosa | adjective “greedy” | chciwej | “greedy” (fem. gen.) | OK |
+| voglia | noun “will” (desire) | woli | “will” (gen.) | OK |
+| e | conjunction “and” | i | “and” | OK |
+| dopo | preposition “after” | po | “after” | OK |
+| ’l | definite article “the” | — | — | UNNECESSARY |
+| pasto | noun “meal” | posiłku | “meal” (loc.) | OK |
+| ha | verb “has” | ma | “has” | OK |
+| più | comparative adverb “more” | więcej | “more” | OK |
+| fame | noun “hunger” | głodu | “hunger” (gen.) | OK |
+| che | comparative conjunction “than” | niż | “than” | OK |
+| pria | adverb “before” | przedtem | “before” | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `la`, `’l` – Italian definite articles that have no direct counterpart in Polish and are naturally omitted.  
+
+No missing, wrong, or grammatical‑agreement issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 97**  
+  - Original: *i ma naturę tak złośliwą i złowrogą,*  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 98**  
+  - Original: *że nigdy nie zaspokaja chciwej woli,*  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 99**  
+  - Original: *i po posiłku ma więcej głodu niż przedtem.*  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+i ma naturę tak złośliwą i złowrogą,
+że nigdy nie zaspokaja chciwej woli,
+i po posiłku ma więcej głodu niż przedtem.
+```
+]]></message>
+</messages>

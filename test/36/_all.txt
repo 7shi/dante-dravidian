@@ -44,6 +44,12 @@ Of that humble Italy shall he be the salvation, for which the virgin Camilla die
 107 selle eest suri neits Camilla,
 108 Eurialo, Turno ja Niso haavatud.
 
+# Turkish
+
+106 O alçakgönüllü İtalya’nın kurtuluşu olacak
+107 bu yüzden bakire Camilla öldü,
+108 Eurialo ve Turno ve Niso yaralıdır.
+
 # French
 
 106 De cette humble Italie sera le salut
@@ -103,3 +109,15 @@ Of that humble Italy shall he be the salvation, for which the virgin Camilla die
 106 Za tu skromnu Italiju biće spasenje
 107 Zbog čega je umrla devica Camilla,
 108 Eurialo i Turno i Niso ranjeni.
+
+# Bulgarian
+
+106 Тази смирена Италия ще бъде спасението
+107 за което умря девицата Камила,
+108 Евриал и Туно и Нисо са ранени.
+
+# Polish
+
+106 Z tej pokornej Italii będzie zbawienie
+107 dla którego zmarła dziewica Camilla,
+108 Eurialo i Turnus i Nisus z ran.

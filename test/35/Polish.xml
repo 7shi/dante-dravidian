@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+On nie będzie się żywił ziemią ani dobrami,  
+ale mądrością, miłością i odwagą,  
+a jego ojczyzna będzie między Feltro i Feltro.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Questi | the male individual being described (subject) | **On** | “he” | OK |
+| non | negation | **nie** | “not” | OK |
+| ciberà | will feed (future) | **będzie się żywił** | “will feed / will subsist” | OK |
+| terra | land | **ziemią** | “land (inst.)” | OK |
+| né | nor (negative coordination) | **ani** | “nor” | OK |
+| peltro | goods / metal (material wealth) | **dobrami** | “goods (inst.)” | OK |
+| ma | but (contrast) | **ale** | “but” | OK |
+| sapïenza | wisdom | **mądrością** | “wisdom (inst.)” | OK |
+| amore | love | **miłością** | “love (inst.)” | OK |
+| e (first) | and (list connector) | **i** | “and” | OK |
+| virtute | valor / virtue | **odwagą** | “valor (inst.)” | OK |
+| e (second) | and (connects clauses) | **a** | “and / but (conj.)” | OK |
+| sua | his (possessive) | **jego** | “his” | OK |
+| nazion | birthplace / nation | **ojczyzna** | “homeland / birthplace” | OK |
+| sarà | shall be (future) | **będzie** | “will be” | OK |
+| tra | between | **między** | “between” | OK |
+| feltro (first) | Feltro (proper noun) | **Feltro** | “Feltro” | OK |
+| e (third) | and (connects the two place names) | **i** | “and” | **GRAMMAR** *(Polish normally uses “a” after “między” – “między Feltro a Feltro”. Using “i” is colloquial and deviates from standard grammar.)* |
+| feltro (second) | Feltro (proper noun) | **Feltro** | “Feltro” | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR:** The conjunction **“i”** used after **“między”** (“między Feltro i Feltro”) is non‑standard Polish; the normative form is **“między Feltro a Feltro.”** This is flagged on the third occurrence of **e**. All other mappings are correct.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 103**  
+  - Original: On nie będzie się żywił ziemią ani dobrami,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 104**  
+  - Original: ale mądrością, miłością i odwagą,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 105**  
+  - Original: a jego ojczyzna będzie między Feltro i Feltro.  
+  - Issue: **GRAMMAR** – non‑standard conjunction after “między”  
+  - Corrected: a jego ojczyzna będzie między Feltro a Feltro.  
+
+```text
+On nie będzie się żywił ziemią ani dobrami,
+ale mądrością, miłością i odwagą,
+a jego ojczyzna będzie między Feltro a Feltro.
+```
+]]></message>
+</messages>

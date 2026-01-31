@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+dla tego cesarza który rządzi tam w górze,
+ponieważ byłem buntownikiem wobec jego prawa,
+nie chce aby w jego mieście ktoś przyszedł przeze mnie.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Polish translation – Step 2)**  
+
+| Source Word | Contextual Definition (truth‑condition) | Target Word / Phrase | Back‑Translation (ENG) | Status |
+|-------------|------------------------------------------|----------------------|------------------------|--------|
+| ché | causal conjunction “for / because” | **dla** | for | OK |
+| quello | demonstrative “that” (masc.) | **tego** | that (gen.) | OK |
+| imperador | noun “Emperor” | **cesarza** | emperor (gen.) | OK |
+| che (rel.) | relative pronoun “who” | **który** | who | OK |
+| là | adverb “there” | **tam** | there | OK |
+| sù | adverb of height “above” | **w górze** | in the height / above | OK |
+| regna | verb “reigns” (3sg) | **rządzi** | reigns | OK |
+| perch' | causal conjunction “because” | **ponieważ** | because | OK |
+| i' | 1st‑person pronoun “I” (subject) | **byłem** | I was | OK |
+| fu' | copular past “was” | **byłem** | was | OK |
+| ribellante | adjective “rebellious” | **buntunkiem** | rebellious (inst.) | **WRONG** (misspelling; should be *buntunkiem*) |
+| a | preposition “to / toward” | **wobec** | toward | OK |
+| la | definite article (fem.) – not lexical in Polish | — | — | **UNNECESSARY** |
+| sua | possessive adjective “his” (fem.) | **jego** | his | OK |
+| legge | noun “law” (fem.) | **prawa** | law (gen.) | OK |
+| non | negation particle “not” | **nie** | not | OK |
+| vuol | verb “wills / wants” (3sg) | **chce** | wants | OK |
+| che (comp.) | complementiser “that” | **aby** | that (subjunctive) | OK |
+| 'n | preposition “in / into” | **w** | in | OK |
+| sua (poss.) | possessive “his” (fem.) | **jego** | his | OK |
+| città | noun “city” (fem.) | **mieście** | city (loc.) | OK |
+| per | preposition “through” | **przez** | through | OK |
+| me | pronoun “me” (obj.) | **mnie** | me | OK |
+| si | impersonal pronoun “one” | **ktoś** | someone / one | OK |
+| vegna | verb “should come” (subjunctive) | **przyszedł** | should come | OK |
+
+---
+
+### Items Requiring Attention  
+
+- **WRONG**: *ribellante* → **buntunkiem** (spelling error; correct form is *buntunkiem*).  
+- **UNNECESSARY**: *la* – the definite article has no counterpart in Polish and is naturally omitted.  
+
+No other source words are missing, and the remaining mappings are grammatically appropriate.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 124**  
+  - Original: dla tego cesarza który rządzi tam w górze,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 125**  
+  - Original: ponieważ byłem buntownikiem wobec jego prawa,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 126**  
+  - Original: nie chce aby w jego mieście ktoś przyszedł przeze mnie.  
+  - Issue: wrong preposition “przeze” → should be “przez”  
+  - Corrected: nie chce aby w jego mieście ktoś przyszedł **przez** mnie.  
+
+```
+dla tego cesarza który rządzi tam w górze,
+ponieważ byłem buntownikiem wobec jego prawa,
+nie chce aby w jego mieście ktoś przyszedł przez mnie.
+```
+]]></message>
+</messages>

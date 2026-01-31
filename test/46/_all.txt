@@ -30,6 +30,10 @@ Then he moved on, and I behind him kept.
 
 136 Siis ta liikus edasi ja ma hoidsin teda taga.
 
+# Turkish
+
+136 Sonra o ilerledi ve ben onu arkasında tuttum.
+
 # French
 
 136 Alors il se mit en marche et je les gardai derrière lui.
@@ -69,3 +73,11 @@ Then he moved on, and I behind him kept.
 # Serbian (Latin script)
 
 136 Onda se on pomerio i ja ih držao iza njega.
+
+# Bulgarian
+
+136 Тогава той продължи и аз задържах зад тях.
+
+# Polish
+
+136 Wtedy on ruszył dalej i ja trzymałem go za nim.

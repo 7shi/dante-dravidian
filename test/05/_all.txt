@@ -44,6 +44,12 @@ But after I had arrived at the foot of a hill, where that valley ended which had
 14 seal kus lõppes see org
 15 mis oli mu südame hirmuga täitnud,
 
+# Turkish
+
+13 Ama sonra ben bir tepenin eteğine varmıştım,
+14 orası vadinin bittiği yer
+15 ki kalbim korkuyla delinmişti,
+
 # French
 
 13 Mais après être arrivé au pied d'une colline,
@@ -103,3 +109,15 @@ But after I had arrived at the foot of a hill, where that valley ended which had
 13 Ali nakon što sam stigao do podnožja brda,
 14 tamo gde se ta dolina završavala
 15 koja mi je srce probila strahom,
+
+# Bulgarian
+
+13 Но след това, щом бях стигнал до подножието на хълм,
+14 там, където завършваше тази долина
+15 която ми беше пробила сърцето от страх,
+
+# Polish
+
+13 Ale po tym, jak dotarłem do podnóża wzgórza,
+14 gdzie kończyła się ta dolina
+15 która przebiła moje serce strachem,

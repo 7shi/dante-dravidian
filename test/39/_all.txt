@@ -44,6 +44,12 @@ where thou shalt hear the despairing shrieks, shalt see the ancient spirits woef
 116 sa näed vanu kurbade vaime,
 117 kes igaüks karjub teise surma poole;
 
+# Turkish
+
+115 orada umutsuz çığlıkları duyacaksın,
+116 eski acı çeken ruhları göreceksin,
+117 her biri ikinci ölümü haykırıyor;
+
 # French
 
 115 où tu entendras les cris désespérés,
@@ -103,3 +109,15 @@ where thou shalt hear the despairing shrieks, shalt see the ancient spirits woef
 115 gde ćeš čuti očajni vrištaji,
 116 vidićeš stare duhove tugovne,
 117 koji svaki vrišti prema drugoj smrti;
+
+# Bulgarian
+
+115 където ще чуеш отчаяните викове,
+116 ще видиш древните скръбни духове,
+117 които всеки вика към втората смърт;
+
+# Polish
+
+115 gdzie usłyszysz rozpaczne krzyki,
+116 zobaczysz starożytnych duchów pełnych żalu,
+117 którzy wołają ku drugiej śmierci;

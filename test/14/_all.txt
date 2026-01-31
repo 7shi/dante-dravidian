@@ -44,6 +44,12 @@ so that the hour of the time and the sweet season were occasion of good hope to 
 41 nii et hea lootus oli mulle põhjus
 42 selle metsiku looma täpilise nahaga
 
+# Turkish
+
+40 zamanın ilk saatinde ve tatlı mevsimde;
+41 böyle ki bana iyi umut beslemek bir neden oldu
+42 bu benekli derili vahşi hayvan hakkında
+
 # French
 
 40 l'heure première du temps la saison douce;
@@ -103,3 +109,15 @@ so that the hour of the time and the sweet season were occasion of good hope to 
 40 prvi sat vremena i to slatko doba;
 41 tako da je to bio povod za dobru nadu meni
 42 u vezi te divlje životinje sa šarenom kožom
+
+# Bulgarian
+
+40 часът на времето и сладкият сезон;
+41 така че това беше причина за добра надежда за мен
+42 относно онова диво животно с петната кожа.
+
+# Polish
+
+40 pierwsza chwila, te piękne rzeczy;
+41 tak aby dobra nadzieja była dla mnie przyczyną
+42 tej dzikiej bestii o plamistej skórze.

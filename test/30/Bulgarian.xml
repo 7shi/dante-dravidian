@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+**88** Виж зверото заради което се обърнах;  
+**89** помогни ми срещу нея, известен мъдрец,  
+**90** защото тя кара вените и пулсите ми да треперят».
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|--------------------|------------------------|--------|
+| Vedi | imperative “see / behold” | **Виж** | “see / behold” | OK |
+| la | definite article (fem. sg.) | — (integrated in *зверото*) | — | **UNNECESSARY** |
+| bestia | “the beast” (causal antecedent) | **зверото** | “the beast” | OK |
+| per | preposition “because of / for” | **заради** | “because of” | OK |
+| cu' | relative pronoun “which” (refers to *bestia*) | **което** | “which” | OK |
+| io | 1st‑person pronoun “I” (subject of *volsi*) | — (subject encoded in verb) | — | **UNNECESSARY** |
+| mi | reflexive pronoun “myself” | **се** | “myself” (reflexive) | OK |
+| volsi | “turned” (past action of speaker) | **обърнах** | “I turned” | OK |
+| ; | end‑sentence punctuation | **;** | — | OK |
+| aiutami | imperative “help me” | **помогни ми** | “help me” | OK |
+| da | preposition “against” (opposition to *lei*) | **срещу** | “against” | OK |
+| lei | pronoun “her” (female entity) | **нея** | “her” | OK |
+| famoso | adjective “famous” | **известен** | “famous” | OK |
+| saggio | noun “sage” (addressed person) | **мъдрец** | “sage” | OK |
+| , | internal punctuation (kept in source) | **,** | — | OK |
+| ch'ella | causal clause introducer “for she …” (resultative) | **защото тя** | “because she” | **WRONG** (should preserve resultative “so … that …”, not causal “because”) |
+| mi | pronoun “my” (experiencer) | **ми** | “my” | OK |
+| fa | causative verb “makes” | **кара** | “makes” | OK |
+| tremar | infinitive “to tremble” | **да треперят** (split: *да* + *треперят*) | “to tremble” | OK |
+| le | definite article (fem. pl.) | — (integrated in *вените*) | — | **UNNECESSARY** |
+| vene | noun “veins” | **вените** | “the veins” | OK |
+| e | coordinating conjunction “and” | **и** | “and” | OK |
+| i | definite article (masc. pl.) | — (integrated in *пулсите*) | — | **UNNECESSARY** |
+| polsi | noun “pulses” | **пулсите** | “the pulses” | OK |
+| » | closing quotation mark (end punctuation) | **»** | — | OK |
+| . (extra period after the quote) | – | **.** (added erroneously) | – | **WRONG** (punctuation not present in source) |
+
+---
+
+### Issues Detected
+- **WRONG:** *ch'ella* rendered as “защото тя” (causal) instead of a resultative construction (e.g., “Така че тя…” or “Така, че тя…”).  
+- **WRONG:** An extra period after the closing quotation mark on line 90, which does not appear in the source.  
+- **UNNECESSARY:** Articles *la*, *io*, *le*, *i* are omitted in Bulgarian because definiteness is expressed by suffixes or is not required.  
+- No **MISSING** or **GRAMMAR** agreement errors beyond the above points.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 88**  
+  - Original: Виж зверото заради което се обърнах;  
+  - Issue: none  
+  - Corrected: Виж зверото заради което се обърнах;  
+
+- **Line 89**  
+  - Original: помогни ми срещу нея, известен мъдрец,  
+  - Issue: none  
+  - Corrected: помогни ми срещу нея, известен мъдрец,  
+
+- **Line 90**  
+  - Original: защото тя кара вените и пулсите ми да треперят».  
+  - Issue: Wrong connective (causal “защото” instead of resultative) and extra period after the closing quotation mark.  
+  - Corrected: Така че тя кара вените и пулсите ми да треперят»
+
+```
+Виж зверото заради което се обърнах;
+помогни ми срещу нея, известен мъдрец,
+Така че тя кара вените и пулсите ми да треперят»
+```
+]]></message>
+</messages>

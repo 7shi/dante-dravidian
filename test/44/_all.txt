@@ -44,6 +44,12 @@ And I to him, “Poet, I beseech thee by that God whom thou didst not know, in o
 131 selle Jumala poolt keda sa ei tundnud,
 132 et ma põgeneksin selle haiguse ja halvemaga,
 
+# Turkish
+
+130 Ve ona Şair sana yalvarıyorum
+131 bilmediğin o Tanrı ile,
+132 böyle ki bu kötülükten ve daha kötüsünden kaçabileyim,
+
 # French
 
 130 Et moi à lui Poète je te supplie
@@ -103,3 +109,15 @@ And I to him, “Poet, I beseech thee by that God whom thou didst not know, in o
 130 I ja njemu Poet ja te molim
 131 po tom Bogu kojeg ti nisi znao,
 132 da bih ja pobegao ovu bolest i gore,
+
+# Bulgarian
+
+130 И аз към него Поете аз ти се моля
+131 по онзи Бог когото ти не познаваше,
+132 за да избягна това зло и по‑лошото,
+
+# Polish
+
+130 Ja do niego poeto błagam cię
+131 przez tego boga którego ty nie znałeś,
+132 abym ja mógł uciec od tego zła i gorszego,

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Когато видях този човек в голямата пустиня,  
+Помилуй ме виках към него,  
+Какъвто и да си, дали си сянка или истински мъж.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-----------------------|--------------------|-------------------|--------|
+| Quando | temporal conjunction “when” | Когато | “when” | OK |
+| vidi | verb, past “saw” | видях | “saw” | OK |
+| costui | demonstrative pronoun “him” | този човек | “this man / him” | OK |
+| nel | preposition “in” | в | “in” | OK |
+| gran | adjective “great” | голямата | “the great” | OK |
+| diserto | noun “desert” | пустиня | “desert” | OK |
+| Miserere | imperative “have pity” | Помилуй | “have pity” | OK |
+| di | preposition “on” | — | — | UNNECESSARY |
+| me | pronoun “me” | ме | “me” | OK |
+| gridi | verb, past “cried” | виках | “cried” | OK |
+| a | preposition “to” | към | “to” | OK |
+| lui | pronoun “him” | него | “him” | OK |
+| qual | relative pronoun “whatever” | Какъвто | “whatever” | OK |
+| che | relative particle (connects) | — | — | UNNECESSARY |
+| tu | pronoun “you” | — | — | UNNECESSARY |
+| sii | subjunctive “are” | си | “are” | OK |
+| od *(first)* | conjunction “or” | дали | “whether” | **WRONG** |
+| ombra | noun “shade” | сянка | “shade” | OK |
+| od *(second)* | conjunction “or” | или | “or” | OK |
+| omo | noun “man” | мъж | “man” | OK |
+| certo | adjective “real / certain” | истински | “real / certain” | OK |
+
+---
+
+### Items Requiring Attention
+- **WRONG**: *od* (first occurrence) – rendered as **дали** (“whether”), which does not match the source conjunction “or”. The appropriate Bulgarian equivalent would be **или**.
+- **UNNECESSARY**: *di*, *che*, *tu* – these elements have no separate lexical counterpart in Bulgarian and are naturally omitted.  
+
+No **MISSING**, **GRAMMAR**, or other **UNNECESSARY** items were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 64**:  
+  - Original: *Quando vidi costui nel gran diserto,*  
+  - Issue: none  
+  - Corrected: *Когато видях този човек в голямата пустиня,*  
+
+- **Line 65**:  
+  - Original: *«Miserere di me», gridai a lui,*  
+  - Issue: none  
+  - Corrected: *Помилуй ме виках към него,*  
+
+- **Line 66**:  
+  - Original: *«qual che tu sii, od ombra od omo certo!».*
+  - Issue: **WRONG** – first “od” rendered as “дали” instead of the conjunction “или”.  
+  - Corrected: *Какъвто и да си, или сянка или истински мъж.*  
+
+```
+Когато видях този човек в голямата пустиня,
+Помилуй ме виках към него,
+Какъвто и да си, или сянка или истински мъж.
+```
+]]></message>
+</messages>

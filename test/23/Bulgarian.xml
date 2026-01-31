@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Той ми отговори: «Не човек, човек бях преди,  
+а родителите ми бяха ломбардци,  
+и мантуаци по родина и двамата.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word/Phrase | Back‑Translation | Status |
+|-------------|-------------------------------------------|--------------------|-------------------|--------|
+| Rispuosemi | “He answered me” (speech act) | **Той ми отговори** | “He answered me” | OK |
+| Non | Negation “not” | **Не** | “Not” | OK |
+| omo (1st) | Predicate nominal, negated: “not a man (now)” | **човек** | “man” | OK |
+| omo (2nd) | Predicate nominal, affirmed in past: “man (was)” | **човек** | “man” | OK |
+| già | Temporal adverb “once, before” | **преди** | “before / once” | OK |
+| fui | Copular verb, 1st sg. past “I was” | **бях** | “was” | OK |
+| e | Coordinating conjunction “and” | **а** | “and” | OK |
+| li | Definite article “the” (masc. pl.) | — | — | **UNNECESSARY** (Bulgarian lacks articles) |
+| parenti | Noun “parents” (plural) | **родителите** | “the parents” | OK |
+| miei | Possessive adjective “my” | **ми** | “my” | OK |
+| furon | Copular verb, 3rd pl. past “were” | **бяха** | “were” | OK |
+| lombardi | Noun/adjective “Lombards” (ethnic group) | **ломбардци** | “Lombards” | OK |
+| mantoani | Noun “Mantuans” (by country) | **мантуаци** | “Mantuans” | OK |
+| per | Preposition “by, according to” | **по** | “by / according to” | OK |
+| patrïa | Noun “country, homeland” | **родина** | “homeland” | OK |
+| ambedui | Quantifier “both” (applies to two parties) | **и двамата** | “both (the two)” | OK |
+
+---
+
+### Items Flagged
+
+- **UNNECESSARY**: **li** – Bulgarian does not use a definite article; the meaning is conveyed by the definite form of *родителите* without an explicit article.  
+
+No other source tokens are missing, incorrectly translated, or grammatically mismatched.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 67**  
+  - Original: Той ми отговори: «Не човек, човек бях преди,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 68**  
+  - Original: а родителите ми бяха ломбардци,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 69**  
+  - Original: и мантуаци по родина и двамата.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Той ми отговори: «Не човек, човек бях преди,
+а родителите ми бяха ломбардци,
+и мантуаци по родина и двамата.
+```
+]]></message>
+</messages>

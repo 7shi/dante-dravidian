@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Ty jesteś moim mistrzem i moim autorem,  
+ty jesteś jedynym tym od którego wziąłem piękny styl  
+piękny styl który przyniósł mi honor.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table (Italian → Polish)**  
+
+| # | Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|---|-------------|-----------------------|----------------------|------------------------|--------|
+| 1 | **Tu** | addressee of the discourse | **Ty** | “you (singular)” | OK |
+| 2 | **se'** | copular predicate linking subject to complement | **jesteś** | “are” | OK |
+| 3 | **lo** | definite article marking *maestro* as definite | — *(omitted)* | — | UNNECESSARY |
+| 4 | **mio** | possessive adjective denoting speaker’s possession | **moim** | “my” (inst.) | OK |
+| 5 | **maestro** | role of teacher/guide for speaker | **mistrzem** | “master” (inst.) | OK |
+| 6 | **e** | coordinating conjunction linking two predicates | **i** | “and” | OK |
+| 7 | **'l** | definite article marking *autore* as definite | — *(omitted)* | — | UNNECESSARY |
+| 8 | **mio** | possessive adjective denoting speaker’s possession | **moim** | “my” (inst.) | OK |
+| 9 | **autore** | role of creator of the speaker’s work | **autorem** | “author” (inst.) | OK |
+|10| **tu** | addressee of the discourse | **ty** | “you” | OK |
+|11| **se'** | copular predicate | **jesteś** | “are” | OK |
+|12| **solo** | adverbial modifier emphasizing exclusivity | **jedynym** | “the only” (inst.) | OK |
+|13| **colui** | demonstrative pronoun identifying the unique source | **tym** | “that (one)” (inst.) | OK |
+|14| **da** | preposition introducing source relation | **od** | “from” | OK |
+|15| **cu'** | relative pronoun referring back to *colui* | **którego** | “whom/which” (gen.) | OK |
+|16| **io** | speaker as agent of taking | — *(omitted)* | — | UNNECESSARY |
+|17| **tolsI** | action of acquiring the style | **wziąłem** | “I took” | OK |
+|18| **lo** | definite article marking *stilo* as definite | — *(omitted)* | — | UNNECESSARY |
+|19| **bello** | quality of the style (beautiful) | **piękny** | “beautiful” | OK |
+|20| **stilo** | the artistic manner taken | **styl** | “style” | OK |
+|21| **che** | relative pronoun linking *style* to its effect | **który** | “that/which” | OK |
+|22| **m'ha** | object pronoun “me” + auxiliary “has” | **mi** | “to me” | OK |
+|23| **fatto** | main verb of relative clause (done) | **przyniósł** | “brought” | OK |
+|24| **onore** | state of being honored | **honor** | “honor” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**:  
+  - Articles **lo**, **'l**, **lo** (Italian definite articles have no direct Polish equivalent).  
+  - Subject pronoun **io** (Polish verb *wziąłem* already encodes the first‑person subject).  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: Ty jesteś moim mistrzem i moim autorem,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 2:**  
+  - Original: ty jesteś jedynym tym od którego wziąłem piękny styl  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 3:**  
+  - Original: piękny styl który przyniósł mi honor.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Ty jesteś moim mistrzem i moim autorem,
+ty jesteś jedynym tym od którego wziąłem piękny styl
+piękny styl który przyniósł mi honor.
+```
+]]></message>
+</messages>

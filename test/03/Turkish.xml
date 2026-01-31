@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Öyle acı ki ölüm biraz daha fazladır;  
+Ama orada bulduğum iyiyi ele almak için,  
+Orada gördüğüm diğer şeyleri anlatacağım.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|--------------------|------------------------|--------|
+| Tant' | adverb “so” (intensifier) | Öyle | “so” | OK |
+| è (1) | copular verb “is” | — *(implicit in “fazladır”)* | “is” | UNNECESSARY |
+| amara | adjective “bitter” | acı | “bitter” | OK |
+| che | conjunction “that” | ki | “that” | OK |
+| poco | adverb “little” | biraz | “a little” | OK |
+| è (2) | copular verb “is” | — *(implicit in “fazladır”)* | “is” | UNNECESSARY |
+| più | comparative adverb “more” | daha | “more” | OK |
+| morte | noun “death” | ölüm | “death” | OK |
+| ma | coordinating conjunction “but” | Ama | “but” | OK |
+| per | preposition “in order to” | için | “for” (purpose) | OK |
+| trattar | infinitive “to treat / discuss” | ele almak | “to take up / discuss” | OK |
+| del | preposition + article “of the” | — | — | UNNECESSARY |
+| ben | noun “good” | iyiyi | “the good” (accusative) | OK |
+| ch'i' (1) | relative pronoun + pronoun “that I” | — *(expressed in “bulduğum”)* | — | UNNECESSARY |
+| vi | adverb “there” | orada | “there” | OK |
+| trovai | verb “found” (1st sg past) | bulduğum | “that I found” | OK |
+| dirò | future verb “I will tell” | anlatacağım | “I will tell” | OK |
+| de | preposition “of” | — | — | UNNECESSARY |
+| l'altre | adjective + article “the other” | diğer | “other” (article omitted) | OK |
+| cose | noun “things” | şeyleri | “things” (accusative) | OK |
+| ch'i' (2) | relative pronoun + pronoun “that I” | — *(expressed in “gördüğüm”)* | — | UNNECESSARY |
+| v'ho | clitic + auxiliary “there have” | — *(location expressed by “Orada”)* | — | UNNECESSARY |
+| scorte | past participle “seen” | gördüğüm | “that I have seen” | OK |
+
+---
+
+### Items flagged
+
+**UNNECESSARY** (elements that have no separate lexical counterpart in Turkish):  
+
+- è (both occurrences) – copula expressed by the suffix “‑dır” in “fazladır”.  
+- del – Turkish does not use a separate “of the”.  
+- ch'i' (both occurrences) – incorporated into participial adjectives “bulduğum”, “gördüğüm”.  
+- v'ho – location already covered by “Orada”.  
+- de – preposition “of” omitted; case marking suffices.  
+
+No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 7:
+  - Original: Öyle acı ki ölüm biraz daha fazladır;
+  - Issue: none
+  - Corrected: Öyle acı ki ölüm biraz daha fazladır;
+- Line 8:
+  - Original: Ama orada bulduğum iyiyi ele almak için,
+  - Issue: none
+  - Corrected: Ama orada bulduğum iyiyi ele almak için,
+- Line 9:
+  - Original: Orada gördüğüm diğer şeyleri anlatacağım.
+  - Issue: none
+  - Corrected: Orada gördüğüm diğer şeyleri anlatacağım.
+
+```
+Öyle acı ki ölüm biraz daha fazladır;
+Ama orada bulduğum iyiyi ele almak için,
+Orada gördüğüm diğer şeyleri anlatacağım.
+```
+]]></message>
+</messages>

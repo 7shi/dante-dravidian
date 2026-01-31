@@ -44,6 +44,12 @@ When I saw him in the great desert, “Have pity on me!” I cried to him, “wh
 65 Halasta mulle, karjusin ma talle,
 66 Olgu sa mis tahes, kas vari või tõeline mees.
 
+# Turkish
+
+64 Büyük çöldeki onu gördüğümde,
+65 «Bana merhamet et» ona bağırdım,
+66 «Ne olursan ol gölge ya da kesin insan!».
+
 # French
 
 64 Quand je le vis dans le grand désert,
@@ -103,3 +109,15 @@ When I saw him in the great desert, “Have pity on me!” I cried to him, “wh
 64 Kad sam ga video u velikoj pustinji,
 65 Smiluj se na mene vrištih njemu,
 66 Šta god da si ili senka ili pravi čovek!
+
+# Bulgarian
+
+64 Когато видях този човек в голямата пустиня,
+65 Помилуй ме виках към него,
+66 Какъвто и да си, или сянка или истински мъж.
+
+# Polish
+
+64 Kiedy zobaczyłem go w wielkiej pustyni,
+65 „Miseruj mnie”, krzyknąłem do niego,
+66 „cokolwiek jesteś, czy cień czy na pewno człowiek!”.

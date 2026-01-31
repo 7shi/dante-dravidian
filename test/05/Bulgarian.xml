@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Но след това, щом бях стигнал до подножието на хълм,  
+там, където завършваше онова долина  
+която ми беше пробила сърцето от страх,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|----------------------|----------------------|------------------------|--------|
+| Ma | coordinating conjunction (contrast) – “but” | **Но** | but | OK |
+| poi | adverb of time – “after” | **след това** | after that | OK |
+| ch'i' | contraction of *che io* – introduces subordinate clause “that I/when I” | **щом** | when/that (introducing a clause) | OK |
+| fui | auxiliary verb (past perfect) – “had been” | **бях** | had been | OK |
+| al | preposition + definite article – “at the” | **до** | to/at | OK |
+| piè | noun – “foot” (of a hill) | **подножието** | the foot | OK |
+| d'un | preposition + indefinite article – “of a” | **на** | of | OK |
+| colle | noun – “hill” | **хълм** | hill | OK |
+| giunto | past participle – “arrived / reached” | **стил** | arrived (misspelled) | **WRONG / GRAMMAR** |
+| là | demonstrative adverb of place – “there / where” | **там** | there | OK |
+| dove | relative adverb of place – “where” | **където** | where | OK |
+| terminava | verb imperfect – “ended” | **завършваше** | was ending | OK |
+| quella | demonstrative adjective – “that” | **онова** | that (far) | OK |
+| valle | noun – “valley” | **долина** | valley | OK |
+| che | relative pronoun – “which / that” | **която** | which (feminine) | OK |
+| m'avea | pluperfect verb – “had pierced / had filled” | **ми беше** | had (to me) was | OK |
+| di | preposition – “with / of” | **от** | from / of | OK |
+| paura | noun – “fear” | **страх** | fear | OK |
+| il | definite article – “the” (masc.) | — (omitted) | the | **UNNECESSARY** |
+| cor | noun – “heart” | **сърцето** | the heart | OK |
+| compunto | past participle – “pierced / filled” | **пробила** | pierced | OK |
+
+---
+
+### Issues Detected
+- **WRONG / GRAMMAR:** *giunto* → **стил** (spelling/verb form error; should be **стигнал**).  
+- **UNNECESSARY:** *il* – the definite article is naturally omitted in Bulgarian.  
+
+All other source tokens have appropriate Bulgarian equivalents with correct meaning and grammatical agreement.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 1:**  
+  - Original: Но след това, щом бях стигнал до подножието на хълм,  
+  - Issue: none  
+  - Corrected: Но след това, щом бях стигнал до подножието на хълм,  
+
+- **Line 2:**  
+  - Original: там, където завършваше онова долина  
+  - Issue: wrong demonstrative form “оновa” (ungrammatical with feminine noun “долина”)  
+  - Corrected: там, където завършваше тази долина  
+
+- **Line 3:**  
+  - Original: която ми беше пробила сърцето от страх,  
+  - Issue: none  
+  - Corrected: която ми беше пробила сърцето от страх,  
+
+```
+Но след това, щом бях стигнал до подножието на хълм,
+там, където завършваше тази долина
+която ми беше пробила сърцето от страх,
+```
+]]></message>
+</messages>

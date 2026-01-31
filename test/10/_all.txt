@@ -44,6 +44,12 @@ After I had rested a little my weary body I took my way again along the desert s
 29 Jätkasin teed kõrbe kallast mööda,
 30 nii et kindel jalg oli alati madalam.
 
+# Turkish
+
+28 Biraz dinlendikten sonra yorgun bedenim,
+29 Yeniden ıssız yamaçta yoluma çıktım,
+30 öyle ki sağlam ayak her zaman daha alçaktı.
+
 # French
 
 28 Après avoir reposé un peu mon corps fatigué,
@@ -103,3 +109,15 @@ After I had rested a little my weary body I took my way again along the desert s
 28 Posle što sam malo odmorio svoje umorno telo,
 29 ponovo sam krenuo putem po pustinjskoj padini,
 30 tako da je čvrsto stopalo uvek bilo niže.
+
+# Bulgarian
+
+28 След като се починах малко умореното ми тяло,
+29 Отново тръгнах по пустинния склон,
+30 Така че твърдият крак винаги е най-ниският.
+
+# Polish
+
+28 Po tym jak odpocząłem trochę moje zmęczone ciało,
+29 Wznowiłem drogę wzdłuż pustynnego zbocza,
+30 tak aby stabilna stopa zawsze była niższa.

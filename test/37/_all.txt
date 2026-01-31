@@ -44,6 +44,12 @@ He shall hunt her through every town till he shall have set her back in hell, th
 110 kuni ta on ta tagasi heitnud põrgusse,
 111 seal kust kadevus esimesena saatis ta edasi.
 
+# Turkish
+
+109 O onu her kasabada avlayacak,
+110 onu cehenneme geri koyana kadar,
+111 oraya kıskançlık onu ilk gönderdiği yerdir.
+
 # French
 
 109 Il la chassera à travers chaque ville,
@@ -103,3 +109,15 @@ He shall hunt her through every town till he shall have set her back in hell, th
 109 On će loviti nju kroz svaki grad,
 110 dok ne postavi nju nazad u pakao,
 111 tamo gde je zavist prvi put poslala nju napred.
+
+# Bulgarian
+
+109 Той ще я преследва през всеки град,
+110 докато я не върне обратно в ада,
+111 там откъдето завистта я изпрати първа.
+
+# Polish
+
+109 On będzie ją ścigał przez każde miasto,
+110 aż przywróci ją z powrotem do piekła,
+111 tam skąd zazdrość najpierw ją wyprawiła.

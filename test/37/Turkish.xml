@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+O onu her kasabada avlayacak,
+onu cehenneme geri koyana kadar,
+oraya kıskançlık onu ilk gönderdiği yerdir.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table (Step 3)**  
+
+| Source Word | Contextual Definition | Target Word / Phrase (Turkish) | Back‑Translation (EN) | Status |
+|-------------|----------------------|-------------------------------|------------------------|--------|
+| Questi | demonstrative pronoun, male agent (“he”) | **O** | “he” | OK |
+| la | clitic accusative pronoun, female patient (“her”) | **onu** | “her” | OK |
+| caccerà | future of *cacciare* – “will hunt” | **avlayacak** | “will hunt” | OK |
+| per | preposition “through, across” (introduces traversal) | **kasabada** (locative suffix ‑da) | “in/through the town” | OK |
+| ogne | determiner “every” | **her** | “every” | OK |
+| villa | noun “town, settlement” | **kasaba** | “town” | OK |
+| fin | subordinating conjunction “until” | **kadar** | “until” | OK |
+| che | complementizer “that” (introduces clause) | — (not expressed in Turkish) | “that” | **UNNECESSARY** |
+| l' | clitic pronoun “her” (object of *avrà*) | **onu** | “her” | OK |
+| avrà | auxiliary future “will have” (forms future‑perfect) | **koyana** (verb stem + –na) | “will have …” (implicit in “koyana”) | OK |
+| rimessa | past participle “set back, returned” | **koya** (within *koyana*) | “set back” | OK |
+| ne | preposition “in, into” (locative) | **cehenneme** (locative case) | “into hell” | OK |
+| lo | definite article “the” (masc.) | — (articles absent in Turkish) | “the” | **UNNECESSARY** |
+| ’nferno | noun “hell” | **cehennem** | “hell” | OK |
+| là | adverb of place “there” | **oraya** | “there” | OK |
+| onde | relative adverb “whence, from which place” | **yerdir** (part of “… yerdir”) | “is the place (where…)” | OK |
+| ’nvidia | noun “envy” (personified) | **kıskançlık** | “envy” | OK |
+| prima | adverb “first, initially” | **ilk** | “first” | OK |
+| dipartilla | future “will send forth” (verb + clitic) | **gönderdiği** (relative participle) | “sent …” | OK |
+
+---
+
+### Items Requiring Attention
+- **UNNECESSARY**: `che`, `lo` – Turkish does not require a complementizer or definite article in these positions.  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected; the Turkish rendering respects agreement, case, and verb‑aspect requirements.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 109:
+  - Original: O onu her kasabada avlayacak,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 110:
+  - Original: onu cehenneme geri koyana kadar,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 111:
+  - Original: oraya kıskançlık onu ilk gönderdiği yerdir.
+  - Issue: none
+  - Corrected: no change  
+
+```
+O onu her kasabada avlayacak,
+onu cehenneme geri koyana kadar,
+oraya kıskançlık onu ilk gönderdiği yerdir.
+```
+]]></message>
+</messages>

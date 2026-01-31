@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Докато се спусках към ниското място,  
+преди очите ми се появи онзи  
+който след дълго мълчание изглеждаше охъртял.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation | Status |
+|-------------|-----------------------|----------------------|------------------|--------|
+| Mentre | temporal conjunction “while” | Докато | while | OK |
+| ch'i' (che + io) | subordinating “that/while” + 1st sg pronoun “I” | — (encoded in verb) | — | UNNECESSARY |
+| rovinava | imperfect “was falling / going down” | спусках | was going down | OK |
+| in | preposition “to, toward” | към | toward | OK |
+| basso | adjective “low” | ниското | the low | OK |
+| loco | noun “place” | място | place | OK |
+| dinanzi | adverb/preposition “before” (spatial) | преди | before | OK |
+| a | preposition introducing “li occhi” | — (absorbed by “преди”) | — | UNNECESSARY |
+| li | definite article (masc. pl.) | — (definite article is suffix ‑те) | — | UNNECESSARY |
+| occhi | noun “eyes” (definite) | очите | the eyes | OK |
+| mi | 1st sg dative “to me” | ми | to me | OK |
+| si | reflexive pronoun (impersonal passive) | се | (reflexive) | OK |
+| fu | auxiliary “was” (past remote) | — (tense expressed by “появи”) | — | UNNECESSARY |
+| offerto | past participle “offered / presented” | появи | appeared / presented | OK |
+| chi | relative pronoun “who / one who” | който | who | OK |
+| per | preposition “through / because of” | след | after / because of | OK |
+| lungo | adjective “long” | дълго | long | OK |
+| silenzio | noun “silence” | мълчание | silence | OK |
+| parea | imperfect “seemed” | изглеждаше | seemed | OK |
+| fioco | adjective “hoarse / weak” | охъртял | hoarse | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY**: `ch'i'`, `a`, `li`, `fu` – Bulgarian does not need these explicit elements (subject pronoun, preposition “to”, article, auxiliary “was”).  
+- No **MISSING**, **WRONG**, or **GRAMMAR** issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 61**  
+  - Original: Докато се спусках към ниското място,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 62**  
+  - Original: преди очите ми се появи онзи  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 63**  
+  - Original: който след дълго мълчание изглеждаше охъртял.  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Докато се спусках към ниското място,
+преди очите ми се появи онзи
+който след дълго мълчание изглеждаше охъртял.
+```
+]]></message>
+</messages>

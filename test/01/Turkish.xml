@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Turkish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Turkish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Hayatımızın yolunun ortasında  
+kendimi karanlık bir ormanda buldum,  
+çünkü doğru yol kaybolmuştu.
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|-----------------------|----------------------|-----------------------|--------|
+| Nel | preposition + definite article “in the” (locative) | – | – | UNNECESSARY |
+| mezzo | noun “midpoint, middle” | ortasında | “in the middle” | OK |
+| del | genitive article “of the” | – | – | UNNECESSARY |
+| cammin | noun “road, journey” | yolunun | “of the road” | OK |
+| di | preposition “of” (genitive) | – | – | UNNECESSARY |
+| nostra | possessive adjective “our” (part of *nostra vita*) | – (encoded in **Hayatımızın**) | – | UNNECESSARY |
+| vita | noun “life” | Hayatımızın | “our life’s” | OK |
+| mi | reflexive pronoun “myself” (1st sg.) | kendini | “myself” (should be *kendimi*) | **GRAMMAR** |
+| ritrovai | verb “found” (passato remoto) | buldum | “found” | OK |
+| per | preposition “within, through” | – | – | UNNECESSARY |
+| una | indefinite article “a” | bir | “a” | OK |
+| selva | noun “forest, wood” | orman | “forest” | OK |
+| oscura | adjective “dark” | karanlık | “dark” | OK |
+| ché | conjunction “for, because” (causal) | çünkü | “because” | **WRONG** (should keep resultative “so … that”) |
+| la | definite article “the” | – | – | UNNECESSARY |
+| diritta | adjective “right, straight” | doğru | “right” | OK |
+| via | noun “way, path” | yol | “way” | OK |
+| era | copular verb “was” (imperfect) | – | – | UNNECESSARY |
+| smarrita | past participle “missed, lost” | kaybolmuş | “lost” | OK |
+
+---
+
+### Items Requiring Attention
+- **GRAMMAR**: *mi* → **kendini** (should be *kendimi* for first‑person reflexive).  
+- **WRONG**: *ché* → **çünkü** (the translation used a causal “because” instead of preserving the resultative “so … that” structure).  
+- **UNNECESSARY** (omitted because Turkish does not use them explicitly): *Nel, del, di, per, la, era, nostra* (the possessive meaning is encoded in the suffix **‑ımız‑** of **Hayatımızın**).  
+
+No source words are completely missing from the Turkish rendering.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Turkish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Turkish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:
+  - Original: Hayatımızın yolunun ortasında
+  - Issue: none
+  - Corrected: no change  
+
+- Line 2:
+  - Original: kendimi karanlık bir ormanda buldum,
+  - Issue: none
+  - Corrected: no change  
+
+- Line 3:
+  - Original: çünkü doğru yol kaybolmuştu.
+  - Issue: WRONG – causal “çünkü” used instead of resultative structure
+  - Corrected: öyle ki doğru yol kaybolmuştu.  
+
+```
+Hayatımızın yolunun ortasında
+kendimi karanlık bir ormanda buldum,
+öyle ki doğru yol kaybolmuştu.
+```
+]]></message>
+</messages>

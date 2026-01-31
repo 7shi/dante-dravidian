@@ -44,6 +44,12 @@ But not so that the sight which appeared to me of a lion did not give me fear.
 44 aga mitte nii et see ei tekitanud mulle hirmu
 45 nägemus mis mulle ilmus lõvi.
 
+# Turkish
+
+43 zamanın saati ve tatlı mevsim;
+44 ama öyle ki korku bana vermesin
+45 bana göründüğü aslanın görüntüsü.
+
 # French
 
 43 l'heure du temps et la douce saison;
@@ -103,3 +109,15 @@ But not so that the sight which appeared to me of a lion did not give me fear.
 43 sat vremena i slatko doba;
 44 ali ne tako da mi ne bi dao strah
 45 pogled koji mi se pojavio od lava.
+
+# Bulgarian
+
+43 часът на времето и сладкият сезон;
+44 но не така, че да не ми даде страх
+45 виждането, което ми се появи от лъв.
+
+# Polish
+
+43 godzina czasu i słodka pora;
+44 ale nie tak, by strach mnie nie dał
+45 widok, który ukazał się mi z lwa.

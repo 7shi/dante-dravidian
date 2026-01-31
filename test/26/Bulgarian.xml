@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Но ти, защо се връщаш към толкова голямо безпокойство?  
+Защо не се изкачваш на приятната планина?  
+Коя е началото и причината за цялата радост?
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑to‑Word Mapping Table**
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase (Bulgarian) | Back‑Translation (EN) | Status |
+|-------------|--------------------------------------|----------------------------------|------------------------|--------|
+| Ma | adversative conjunction “but” | **Но** | but | OK |
+| tu | 2nd person singular pronoun “you” | **ти** | you | OK |
+| perché | interrogative adverb “why” | **защо** | why | OK |
+| ritorni | verb “return (you)” | **се връщаш** | you return | OK |
+| a | preposition “to / towards” | **към** | to/towards | OK |
+| tanta | intensifier “so great / so much” | **толкова** | so | OK |
+| noia | noun “annoyance / boredom” | **безпокойство** | annoyance/boredom | OK |
+| perché (line 77) | interrogative adverb “why” | **Защо** | why | OK |
+| non | negative particle “not” | **не** | not | OK |
+| sali | verb “ascend / climb (you)” | **изкачваш** | you ascend | OK |
+| il | definite article “the” (masc. sg.) | — (article encoded in suffix *‑та* of *планина*) | — | **UNNECESSARY** |
+| dilettoso | adjective “delectable / pleasant” | **приятната** | pleasant | OK |
+| monte | noun “mountain” | **планина** | mountain | OK |
+| ch'è | relative pronoun + copula “which is” | **Коя е** | which is | OK |
+| principio | noun “source / principle” | **началото** | the source | OK |
+| e | coordinating conjunction “and” | **и** | and | OK |
+| cagion | noun “cause” | **причината** | the cause | OK |
+| di | preposition “of / for” | **за** | for/of | OK |
+| tutta | quantifier “every / all” | **цялата** | the whole / every | OK |
+| gioia | noun “joy” | **радост** | joy | OK |
+
+### Items Requiring Attention
+- **UNNECESSARY:** `il` – Bulgarian does not use a separate definite article; definiteness is expressed by the suffix *‑та* on *планина*. No other missing, wrong, or grammatical issues were detected.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 76:
+  - Original: **Но ти, защо се връщаш към толкова голямо безпокойство?**
+  - Issue: none
+  - Corrected: **Но ти, защо се връщаш към толкова голямо безпокойство?**
+
+- Line 77:
+  - Original: **Защо не се изкачваш на приятната планина?**
+  - Issue: none
+  - Corrected: **Защо не се изкачваш на приятната планина?**
+
+- Line 78:
+  - Original: **Коя е началото и причината за цялата радост?**
+  - Issue: none
+  - Corrected: **Коя е началото и причината за цялата радост?**
+
+```
+Но ти, защо се връщаш към толкова голямо безпокойство?
+Защо не се изкачваш на приятната планина?
+Коя е началото и причината за цялата радост?
+```
+]]></message>
+</messages>

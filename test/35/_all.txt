@@ -44,6 +44,12 @@ He shall not feed on land or goods, but wisdom and love and valor, and his birth
 104 aga tarkus, armastus ja vaprus,
 105 ja tema sünnikoht on Feltro ja Feltro vahel.
 
+# Turkish
+
+103 Yer ya da mala beslenmeyecek,
+104 ama bilgelik ve sevgi ve kahramanlık,
+105 ve doğum yeri Feltro ile Feltro arasında olacak.
+
 # French
 
 103 Il ne se nourrira pas de terre ni de peltro,
@@ -103,3 +109,15 @@ He shall not feed on land or goods, but wisdom and love and valor, and his birth
 103 Neće se hraniti zemljom niti robom,
 104 Ali mudrost ljubav i hrabrost,
 105 I njegovo mesto rođenja biće između Feltra i Feltra.
+
+# Bulgarian
+
+103 Той няма да се храни с земя нито с пелтро,
+104 а мъдрост, любов и доблест,
+105 и родното му място ще бъде между Фелтро и Фелтро.
+
+# Polish
+
+103 On nie będzie się żywił ziemią ani dobrami,
+104 ale mądrością, miłością i odwagą,
+105 a jego ojczyzna będzie między Feltro a Feltro.

@@ -44,6 +44,12 @@
 83 las mu pikk õping ja suur armastus kasu toovad
 84 mis on sundinud mind sinu köite otsima.
 
+# Turkish
+
+82 Ey diğer şairlerin onuru ve ışığı,
+83 Uzun çalışmamı ve büyük sevgimi bana yararlı kıl
+84 bunun beni senin eserini aramaya itti.
+
 # French
 
 82 Ô honneur et lumière des autres poètes,
@@ -103,3 +109,15 @@
 82 O časti i svetlu drugih pesnika,
 83 Neka mi dugi studij i velika ljubav budu od koristi
 84 Što me je nateralo da tražim tvoju knjigu.
+
+# Bulgarian
+
+82 О, чест и светлина на другите поети,
+83 нека дългото учение и великата любов ми бъдат полезни
+84 което ме е направило да търся твоя том.
+
+# Polish
+
+82 O honorze i świetle innych poetów,
+83 Niech długie studium i wielka miłość mi służą
+84 co sprawiło że szukam twojego tomu.

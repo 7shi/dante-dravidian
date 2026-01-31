@@ -44,6 +44,12 @@ And then thou shalt see those who are contented in the fire, because they hope t
 119 tules sest nad loodavad tulla
 120 kui see võib olla õnnistatud rahvale.
 
+# Turkish
+
+118 Sonra ateşte memnun olanları göreceksin
+119 ateşte çünkü gelmeyi umuyorlar,
+120 ne zaman olursa olsun kutsal halka.
+
 # French
 
 118 et tu verras ceux qui sont contents
@@ -103,3 +109,15 @@ And then thou shalt see those who are contented in the fire, because they hope t
 118 i videćeš one koji su zadovoljni
 119 u vatri jer se nadaju da dođu
 120 kad god bude do blagoslovenog naroda.
+
+# Bulgarian
+
+118 и тогава ще видиш онези които са доволни
+119 в огъня защото се надяват да дойдат
+120 всеки път когато е към благословеният народ
+
+# Polish
+
+118 i zobaczysz tych, którzy są zadowoleni
+119 w ogniu, ponieważ mają nadzieję przyjść,
+120 kiedykolwiek będzie to do błogosławionych ludzi.

@@ -44,6 +44,12 @@ and she has a nature so malign and evil that she never sates her greedy will, an
 98 mis kunagi ei rahulda ahne tahet,
 99 ja pärast sööki on tal rohkem nälga kui enne.
 
+# Turkish
+
+97 ve doğası öyle kötü ve şeytani ki,
+98 ki asla açgözlü arzusunu tatmaz,
+99 ve yemekten sonra öncekinden daha çok açtır.
+
 # French
 
 97 et elle a une nature si malveillante et cruelle,
@@ -103,3 +109,15 @@ and she has a nature so malign and evil that she never sates her greedy will, an
 97 i ona ima prirodu tako zlonamernu i zlu,
 98 da nikada ne zadovolji svoju pohlepnu volju,
 99 i posle obroka je gladnija nego pre.
+
+# Bulgarian
+
+97 и има природа толкова злокобна и зла,
+98 че никога не задоволява жадната воля,
+99 и след храната има по‑голям глад от преди,
+
+# Polish
+
+97 i ma naturę tak złośliwą i złowrogą,
+98 że nigdy nie zaspokaja chciwej woli,
+99 i po posiłku ma więcej głodu niż przedtem.

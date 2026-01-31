@@ -44,6 +44,12 @@ Thou art my master and my author; thou alone art he from whom I took the fair st
 86 Sa oled ainuke see kellelt ma võtsin
 87 Kaunis stiil mis on mulle au toonud.
 
+# Turkish
+
+85 Sen benim ustam ve yazarım,
+86 sen tek o kişiden güzel üslubu aldım
+87 güzel üslup bana şeref kazandırdı.
+
 # French
 
 85 Tu es mon maître et mon auteur,
@@ -103,3 +109,15 @@ Thou art my master and my author; thou alone art he from whom I took the fair st
 85 Ti si moj učitelj i moj autor,
 86 ti si jedini onaj od koga sam uzeo
 87 lep stil koji mi je doneo čast.
+
+# Bulgarian
+
+85 Ти си мой учител и мой автор,
+86 Ти си единственият от когото взех
+87 красивият стил който ми донесе чест.
+
+# Polish
+
+85 Ty jesteś moim mistrzem i moim autorem,
+86 ty jesteś jedynym tym od którego wziąłem piękny styl
+87 piękny styl który przyniósł mi honor.

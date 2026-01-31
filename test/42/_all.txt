@@ -44,6 +44,12 @@ for that Emperor who reigneth them above, because I was rebellious to His law, w
 125 sest ma olin tema seaduse vastu mässaja,
 126 ta ei taha et keegi tema linna läbi mind tuleks.
 
+# Turkish
+
+124 Yukarıda hüküm süren o imparator için,
+125 Çünkü yasasına karşı isyankardım,
+126 Kimsenin benim aracılığımla şehrine gelmesini istemez.
+
 # French
 
 124 pour cet empereur qui règne là‑haut,
@@ -103,3 +109,15 @@ for that Emperor who reigneth them above, because I was rebellious to His law, w
 124 za onog cara koji vlada iznad,
 125 jer sam bio buntovan prema njegovom zakonu,
 126 ne želi da neko uđe u njegov grad kroz mene.
+
+# Bulgarian
+
+124 за онзи император, който владее там горе,
+125 защото бях бунтовен към неговия закон,
+126 не иска, че в неговия град през мен да се влезе.
+
+# Polish
+
+124 dla tego cesarza który rządzi tam w górze,
+125 ponieważ byłem buntownikiem wobec jego prawa,
+126 nie chce aby w jego mieście ktoś przyszedł przez mnie.

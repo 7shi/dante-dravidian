@@ -44,6 +44,11 @@ Behold the beast because of which I turned; help me against her, famous sage, fo
 89 Aita mind tema vastu kuulus tark,
 90 Sest ta paneb veenid ja pulssid värisema»
 
+# Turkish
+
+88 Canavarı gör beni döndüren sebeple;
+89 Bana ona karşı yardım et ünlü bilge, çünkü o benim damarlarımı ve nabızlarımı titretiyor»
+
 # French
 
 88 Vois la bête à cause de laquelle je me suis tourné;
@@ -103,3 +108,15 @@ Behold the beast because of which I turned; help me against her, famous sage, fo
 88 Vidi bestiju zbog koje sam se okrenuo;
 89 pomozi mi protiv nje poznati mudrače,
 90 jer ona čini da vene i pulsovi drhte».
+
+# Bulgarian
+
+88 Виж зверото заради което се обърнах;
+89 помогни ми срещу нея, известен мъдрец,
+90 Така че тя кара вените и пулсите ми да треперят»
+
+# Polish
+
+88 Zobacz bestię przez którą się odwróciłem;
+89 pomóż mi przeciw niej sławny mędrcze,
+90 bo ona sprawia że drżą mi wszystkie żyły i pulsacje»

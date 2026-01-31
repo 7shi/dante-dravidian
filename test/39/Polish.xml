@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+gdzie usłyszysz rozpaczliwe krzyki,  
+zobaczysz starożytne duchy pełne żalu,  
+którzy każdy woła ku drugiej śmierci;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Polish translation)**  
+
+| Source Word | Contextual Definition (truth‑conditions) | Target Word / Phrase | Back‑Translation (EN) | Status |
+|-------------|------------------------------------------|----------------------|------------------------|--------|
+| ove | locative subordinator “where” introducing the clause of hearing | **gdzie** | where | OK |
+| udirai | future 2nd sg “you will hear” | **usłyszysz** | you will hear | OK |
+| le | definite article, plural feminine “the” | — (article omitted) | the | **UNNECESSARY** |
+| disperate | adjective “despairing” qualifying the shrieks | **rozpaczliwe** | despairing | **GRAMMAR** (adjective form does not agree with masculine plural *krzyki*) |
+| strida | plural noun “shrieks” that are heard | **krzyki** | shrieks | OK |
+| vedrai | future 2nd sg “you will see” | **zobaczysz** | you will see | OK |
+| li | definite article, plural masculine “the” | — (article omitted) | the | **UNNECESSARY** |
+| antichi | adjective “ancient” qualifying the spirits | **starożytne** | ancient | **GRAMMAR** (adjective gender‑number mismatch with masculine *duchy*) |
+| spiriti | plural noun “spirits” that are seen | **duchy** | spirits | OK |
+| dolenti | adjective “woeful, sorrowful” describing the spirits | **pełne żalu** | full of sorrow | **GRAMMAR** (adjective phrase gender‑number mismatch with *duchy*) |
+| ch’ (che) | relative pronoun “who” referring to the spirits | **którzy** | who | **GRAMMAR** (relative pronoun plural masculine does not match singular verb that follows) |
+| a | preposition “to, toward” introducing the target of the shout | **ku** | toward | OK |
+| la | definite article, feminine singular “the” | — (article omitted) | the | **UNNECESSARY** |
+| seconda | ordinal adjective “second” modifying *morte* | **drugiej** | second | OK |
+| morte | noun “death” (object of the preposition) | **śmierci** | death | OK |
+| ciascun | distributive quantifier “each” | **każdy** | each | **GRAMMAR** (singular masculine does not agree with plural relative pronoun) |
+| grida | verb “shouts, cries out” (3rd sg) | **woła** | shouts | **GRAMMAR** (verb singular does not agree with plural antecedent *którzy*) |
+
+---
+
+### Items Requiring Attention  
+
+- **UNNECESSARY**: `le`, `li`, `la` – Italian articles that have no direct counterpart in Polish.  
+- **GRAMMAR**:  
+  - `rozpaczliwe` – adjective form mismatched with masculine plural *krzyki* (should be *rozpaczne*).  
+  - `starożytne` – adjective form mismatched with masculine plural *duchy* (should be *starożytni*).  
+  - `pełne żalu` – adjective phrase mismatched with masculine plural *duchy* (should be *pełni żalu*).  
+  - `którzy` – plural relative pronoun does not agree with the singular verb *woła* that follows.  
+  - `każdy` – singular quantifier does not agree with the plural antecedent *którzy*.  
+  - `woła` – singular verb does not agree with the plural antecedent *którzy* (should be *wołają*).  
+
+These mismatches indicate where the Polish rendering would need grammatical adjustment to faithfully preserve the source meaning while respecting Polish agreement rules.
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 115**  
+  - Original: *gdzie usłyszysz rozpaczliwe krzyki,*  
+  - Issue: adjective **rozpaczliwe** does not agree with masculine‑plural noun *krzyki*.  
+  - Corrected: **gdzie usłyszysz rozpaczne krzyki,**  
+
+- **Line 116**  
+  - Original: *zobaczysz starożytne duchy pełne żalu,*  
+  - Issue: adjectives **starożytne** and **pełne** do not agree with the animate masculine‑plural accusative *duchy*.  
+  - Corrected: **zobaczysz starożytnych duchów pełnych żalu,**  
+
+- **Line 117**  
+  - Original: *którzy każdy woła ku drugiej śmierci;*  
+  - Issue: the quantifier **każdy** is redundant in Polish and creates a number mismatch; the verb should agree with the plural relative pronoun.  
+  - Corrected: **którzy wołają ku drugiej śmierci;**  
+
+```text
+gdzie usłyszysz rozpaczne krzyki,
+zobaczysz starożytnych duchów pełnych żalu,
+którzy wołają ku drugiej śmierci;
+```
+]]></message>
+</messages>

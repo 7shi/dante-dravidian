@@ -44,6 +44,12 @@ I cannot well recount how I entered it, so full was I of slumber at that point w
 11 nii oli täis minu unisus sel hetkel
 12 kus ma loobusin tõelisest teest.
 
+# Turkish
+
+10 Nasıl girdiğimi iyi anlatamıyorum,
+11 O noktada öyle çok uykudaydım ki
+12 gerçek yolu terk ettiğim noktada.
+
 # French
 
 10 Je ne peux pas bien raconter comment je suis entré,
@@ -103,3 +109,15 @@ I cannot well recount how I entered it, so full was I of slumber at that point w
 10 Ne mogu dobro da ispričam kako sam ušao u to,
 11 tako sam bio preplavljen snom u tom trenutku
 12 gde sam napustio pravi put.
+
+# Bulgarian
+
+10 Не мога добре да разкажа как влязох в него,
+11 бях толкова пълен със сън в онзи момент
+12 че изоставих истинския път.
+
+# Polish
+
+10 Nie potrafię dobrze opisać jak wszedłem,
+11 byłem tak pełen snu w tym momencie
+12 że porzuciłem prawdziwą drogę.

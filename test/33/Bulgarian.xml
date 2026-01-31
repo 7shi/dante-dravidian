@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Bulgarian, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Bulgarian line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+и има природа толкова злокобна и зла,  
+че никога не задоволява жадната си воля,  
+и след храната има по‑голям глад от преди,
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Alignment Table**
+
+| Source Word | Contextual Definition | Target Word/Phrase | Back‑Translation | Status |
+|-------------|----------------------|--------------------|-------------------|--------|
+| e (97) | coordinating conjunction “and” | и | **and** | OK |
+| ha (97) | verb “has” (possession) | има | **has** | OK |
+| natura | noun “nature” (inherent disposition) | природа | **nature** | OK |
+| sì | degree adverb “so” (high intensity) | толкова | **so** | OK |
+| malvagia | adjective “malign / sinister” | злокобна | **malign / sinister** | OK |
+| e (second) | coordinating conjunction “and” | и | **and** | OK |
+| ria | adjective “evil” | зла | **evil** | OK |
+| che (98) | relative pronoun “that” | че | **that** | OK |
+| mai | adverb “never” | никога | **never** | OK |
+| non | negative particle “not” (double‑negative) | не | **not** | OK |
+| empie | verb “sates / fulfills” | задоволява | **sates** | OK |
+| la | definite article “the” (feminine) | – | – | **UNNECESSARY** (article omitted in Bulgarian) |
+| bramosa | adjective “greedy / eager” | жадната | **greedy** | OK |
+| voglia | noun “will / desire” | воля | **will** | OK |
+| e (99) | coordinating conjunction “and” | и | **and** | OK |
+| dopo | preposition “after” (temporal) | след | **after** | OK |
+| ’l | definite article “the” (elided) | – | – | **UNNECESSARY** (article omitted) |
+| pasto | noun “food / meal” | храната | **the food** | OK |
+| ha (99) | verb “has” (state) | има | **has** | OK |
+| più | comparative adverb “more” | по‑голям | **more** | OK |
+| fame | noun “hunger” | глад | **hunger** | OK |
+| che (comparative) | comparative conjunction “than” | от | **than** | OK |
+| pria | adverb “before” (temporal) | преди | **before** | OK |
+
+---
+
+### Items to Note  
+
+- **UNNECESSARY (source → target):**  
+  - *la* (definite article) – Bulgarian does not use an article here.  
+  - *’l* (definite article) – likewise omitted.  
+
+- **UNNECESSARY (target extra):**  
+  - The reflexive possessive pronoun **“си”** in “жадната си воля” is required in Bulgarian but has no direct counterpart in the Italian source; it is an obligatory grammatical element in the target language.  
+
+- **MISSING:** none.  
+- **WRONG:** none.  
+- **GRAMMAR:** none (all agreement and case relations are correct).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Bulgarian script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Bulgarian text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- Line 1:  
+  - Original: и има природа толкова злокобна и зла,  
+  - Issue: none  
+  - Corrected: no change  
+
+- Line 2:  
+  - Original: че никога не задоволява жадната си воля,  
+  - Issue: added unnecessary possessive pronoun “си”  
+  - Corrected: че никога не задоволява жадната воля,  
+
+- Line 3:  
+  - Original: и след храната има по‑голям глад от преди,  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+и има природа толкова злокобна и зла,
+че никога не задоволява жадната воля,
+и след храната има по‑голям глад от преди,
+```
+]]></message>
+</messages>

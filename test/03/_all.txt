@@ -44,6 +44,12 @@ So bitter is it that death is little more. But in order to treat of the good tha
 8 Aga et käsitleda head mida seal leidsin,
 9 Räägin teistest asjadest mida seal olen näinud.
 
+# Turkish
+
+7 Öyle acı ki ölüm biraz daha fazladır;
+8 Ama orada bulduğum iyiyi ele almak için,
+9 Orada gördüğüm diğer şeyleri anlatacağım.
+
 # French
 
 7 Si amère est‑elle que la mort n’est que légèrement plus;
@@ -103,3 +109,15 @@ So bitter is it that death is little more. But in order to treat of the good tha
 7 Tako je gorka da je smrt malo više;
 8 Ali da bih govorio o dobru koje sam tamo našao,
 9 Reći ću o drugim stvarima koje sam tamo video.
+
+# Bulgarian
+
+7 Така е горчиво че смъртта е малко повече;
+8 Но за да разгледам доброто което намерих там,
+9 Ще разкажа за другите неща които видях там.
+
+# Polish
+
+7 Tak gorzka jest że śmierć jest nieco większa;
+8 ale aby rozmawiać o dobru które znalazłem tam,
+9 powiem o innych rzeczach które widziałem tam.

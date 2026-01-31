@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<messages>
+<message role="user"><![CDATA[
+### Step 2: Direct Translation
+Translate each source line into Polish, guided by the Reference Translation and Step 1 analysis.
+Output: ONE Polish line per source line (preserve line count and end punctuation).
+Rules:
+- Follow the meaning from Reference Translation.
+- For "so X that Y": keep resultative structure, do NOT convert to "because".
+- No internal punctuation; copy only end punctuation from source.
+]]></message>
+<message role="assistant"><![CDATA[
+Do tych, jeśli zechcesz potem wstąpić,  
+Wtedy będzie dusza bardziej godna niż ja w tej sprawie:  
+Z nią zostawię cię przy moim odejściu;
+]]></message>
+<message role="user"><![CDATA[
+### Step 3: Word Table & Coverage Check
+Build a word table from Step 2 translation, mapping each source word to its target equivalent.
+Output: ONE Markdown table (all lines combined).
+Columns: [Source Word] | [Contextual Definition] | [Target Word/Phrase] | [Back-Translation] | [Status: OK/MISSING/WRONG/GRAMMAR/UNNECESSARY]
+Mark GRAMMAR for agreement errors (gender, number, case) or other grammatical mistakes.
+Mark UNNECESSARY for elements present in source but not needed in target language (e.g., articles that target language omits naturally).
+After the table, list any MISSING, WRONG, GRAMMAR, or UNNECESSARY items.
+]]></message>
+<message role="assistant"><![CDATA[
+**Word‑by‑Word Mapping Table (Italian → Polish)**  
+
+| Source Word | Contextual Definition (from Step 1) | Target Word / Phrase | Back‑Translation (Polish → English) | Status |
+|-------------|--------------------------------------|----------------------|--------------------------------------|--------|
+| **A** | preposition introducing the addressees (“to”) | **Do** | “to” | OK |
+| **le** | definite article, plural feminine (“the”) – not semantically required in Polish | *(omitted)* | – | **UNNECESSARY** |
+| **quai** | relative pronoun, plural (“whom/which”) | **tych** | “those” | OK |
+| **poi** | adverb indicating later time (“then/afterwards”) | **potem** | “later” | OK |
+| **se** | conditional conjunction (“if”) | **jeśli** | “if” | OK |
+| **tu** | 2nd‑person singular pronoun (“you”) – subject is encoded in the verb | *(omitted)* | – | **UNNECESSARY** |
+| **vorrai** | future 2nd sg. of *volere* (“will want”) | **zechcesz** | “you will want” | OK |
+| **salire** | infinitive “to ascend” | **wstąpić** | “to ascend” | OK |
+| **anima** | noun, feminine singular (“soul”) | **dusza** | “soul” | OK |
+| **fia** | future 3rd sg. of *essere* (“shall be”) | **będzie** | “shall be” | OK |
+| **a** | preposition introducing the domain of worthiness (“for”) | **w** | “in” (as part of “w tej sprawie”) | OK |
+| **ciò** | demonstrative neuter pronoun (“that”) | **tej** | “that” (genitive fem. in “tej sprawie”) | OK |
+| **più** | comparative adverb (“more”) | **bardziej** | “more” | OK |
+| **di** | preposition introducing the standard of comparison (“than”) | **niż** | “than” | OK |
+| **me** | 1st‑person singular pronoun (“I”) | **ja** | “I” | OK |
+| **degna** | adjective, feminine singular (“worthy”) | **godna** | “worthy” | OK |
+| **con** | preposition (“with”) | **z** | “with” | OK |
+| **lei** | 3rd‑person singular feminine pronoun (“her”) | **nią** | “her” | OK |
+| **ti** | 2nd‑person singular accusative pronoun (“you”) | **cię** | “you” (acc.) | OK |
+| **lascerò** | future 1st sg. of *lasciare* (“will leave”) | **zostawię** | “I will leave” | OK |
+| **nel** | contraction *in* + *il* (“in the”) | **przy** | “by/at” (locative) | OK |
+| **mio** | possessive adjective, 1st sg. (“my”) | **moim** | “my” (locative) | OK |
+| **partire** | infinitive “to depart”, nominalised as “departure” | **odejściu** | “departure” (locative) | OK |
+
+### Items Requiring Attention
+- **le** – article unnecessary in Polish (UNNECESSARY).  
+- **tu** – subject pronoun omitted because Polish verb encodes the person (UNNECESSARY).  
+
+All other source words are correctly rendered (OK).
+]]></message>
+<message role="user"><![CDATA[
+### Step 4: Correction & Final Output
+Fix any MISSING, WRONG, or GRAMMAR items from Step 3. Reorder within line if needed; do not add new content words.
+Verify that the output contains only Polish script; no other language scripts should be mixed in.
+Output format (use nested bullet list, not table):
+- Line N:
+  - Original: ...
+  - Issue: ... (or "none")
+  - Corrected: ... (or "no change")
+Output final Polish text in ONE code block, line by line (no extra prose).
+]]></message>
+<message role="assistant"><![CDATA[
+- **Line 121**  
+  - Original: Do tych, jeśli zechcesz potem wstąpić,  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 122**  
+  - Original: Wtedy będzie dusza bardziej godna niż ja w tej sprawie:  
+  - Issue: none  
+  - Corrected: no change  
+
+- **Line 123**  
+  - Original: Z nią zostawię cię przy moim odejściu;  
+  - Issue: none  
+  - Corrected: no change  
+
+```
+Do tych, jeśli zechcesz potem wstąpić,
+Wtedy będzie dusza bardziej godna niż ja w tej sprawie:
+Z nią zostawię cię przy moim odejściu;
+```
+]]></message>
+</messages>

@@ -44,6 +44,12 @@ Wherefore I think and deem it for thy best that thou follow me, and I will be th
 113 ja ma olen sinu juhendaja,
 114 ja ma viin sind siit igavikulisse kohta;
 
+# Turkish
+
+112 Bu yüzden senin iyiliğin için düşünüyorum ve hükmediyorum
+113 ki sen beni takip et ve ben senin rehberin olacağım,
+114 ve seni buradan ebedi yere götüreceğim;
+
 # French
 
 112 C’est pourquoi je pense et juge que c’est pour ton bien que tu me suis
@@ -103,3 +109,15 @@ Wherefore I think and deem it for thy best that thou follow me, and I will be th
 112 Zato mislim i smatram da je to za tvoju najbolju svrhu
 113 da me pratiš, i ja ću biti tvoj vodič,
 114 i odvešću te odavde kroz večni prostor;
+
+# Bulgarian
+
+112 Затова мисля и преценявам за твоето най‑добро
+113 че ти ме следваш и аз ще бъда твой водач,
+114 и ще те отведа оттук към вечното място;
+
+# Polish
+
+112 Dlatego myślę i uznaję to za twoje dobro
+113 że podążysz za mną i będę twoim przewodnikiem,
+114 i poprowadzę cię stąd do miejsca wiecznego;

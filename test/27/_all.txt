@@ -44,6 +44,12 @@
 80 mis valab välja nii lai kõnejõgi?,
 81 Vastasin talle häbeliku näoga.
 
+# Turkish
+
+79 Şimdi sen o Virgil ve o kaynak mısın
+80 ki konuşmanın bu kadar geniş bir nehrini yayar mı?,
+81 Ben ona utangaç bir alınla cevap verdim.
+
 # French
 
 79 Alors es‑tu ce Virgile et cette source
@@ -103,3 +109,15 @@
 79 Zar si ti onda taj Vergil i taj izvor?
 80 koji izlivа tako široku reku govora?
 81 odgovorio sam mu sa sramotnim čelom.
+
+# Bulgarian
+
+79 Ти ли тогава си онзи Вирджил и онзи извор
+80 който излива толкова широк поток от реч?
+81 отговорих аз към него със срамежливо чело.
+
+# Polish
+
+79 Czy więc jesteś tym Wirgiliuszem i tym źródłem
+80 który wylewa tak szeroką rzekę mowy?
+81 odpowiedziałem mu z zawstydzoną twarzą.
