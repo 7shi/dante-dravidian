@@ -451,7 +451,7 @@ The examples below show translations of the first 9 lines of Dante's "Divine Com
 - Line 5: The descriptor bundle is incomplete (missing the “strong/forte” component).
 - Line 7: Comparative meaning drifts; 「śmierć jest nieco większa」 (“death is a bit bigger/greater”) does not preserve “death is little more (bitter)”.
 
-## Ranking (GPT-5.2)
+# Ranking (GPT-5.2)
 
 Ranking by fewest issues and providing an overall assessment.
 
