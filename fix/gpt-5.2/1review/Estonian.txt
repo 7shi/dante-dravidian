@@ -1,0 +1,227 @@
+1 Meie elu teekonna keskel
+2 Leidsin end pimedas metsas,
+3 sest õige tee oli kaotatud.
+- Note: Üldmõte on tabatud, kuid toon ja registri valik on veidi proosaline võrreldes Dante piduliku “Nel mezzo del cammin di nostra vita”. “Meie elu teekonna keskel” on sisuliselt õige, kuid “cammin” on pigem “teekond/retk” kui formaalne “teekond”; võiks kaaluda “elutee” / “elurännaku” kõla. 2. reas “Leidsin end” lisab moodsa idiomi; algupärane “mi ritrovai” on küll sama idee, ent võiks olla “ma sattusin/ma leidsin end”. 3. reas “õige tee oli kaotatud” nihutab agenti: itaalia “era smarrita” tähendab “oli eksitud/ära eksinud” (tee oli “kadunud” minu jaoks, mitte et “kaotati”); paranduse suund: “sest õige tee oli eksitud / mul oli õige tee käest”.
+
+4 Ah kui raske on öelda mis see oli
+5 see mets on metsik ja karm ja tihe
+6 mis mõttes uuendab hirmu!
+- Note: 4. reas puudub koma (“öelda, mis…”); lisaks “qual era” = “milline see oli”, mitte “mis see oli” (väike, aga stiilne vahe). 5. reas “tihe” on vale vaste “forte”-le: Dante “selvaggia e aspra e forte” = “metsik, kare/okkaline ja jõuline/halastamatu/tugev”, mitte “tihe”. Soovitus: “tugev/halastamatu” vms. 6. reas “mis mõttes uuendab hirmu” on liiga sõnasõnaline ja eesti keeles kohmakas; “nel pensier rinova la paura” = “mis pelga mõtetki uuendab mu hirmu / mis mõttes toob hirmu tagasi”.
+
+7 Nii kibe on see et surm on veidi rohkem;
+8 Aga et käsitleda head mida seal leidsin,
+9 Räägin teistest asjadest mida seal olen näinud.
+- Note: 7. reas loogika on viltu: “Tant’ è amara che poco è più morte” = “nii kibe, et vaevalt on surm veel kibedam” (surm on “pisut enam”), mitte “surm on veidi rohkem” (ebamäärane ja semantiliselt viga). 8–9: “ben ch’i’ vi trovai” on “see hüve, mille ma sealt leidsin”; “teistest asjadest” ok, kuid “scorte” on “nähtud/kogetud” teel, mitte tingimata “seal olen näinud” (ajavorm ja deiksis: Dante räägib mineviku kogemusest). “Aga et” võiks olla “kuid selleks et”.
+
+10 Ma ei suuda hästi kirjeldada kuidas ma sisenesin,
+11 nii täis und olin ma sel hetkel
+12 kus ma jätsin maha tõelise tee.
+- Note: 10. reas “sisenesin” on liiga konkreetne “intrai” kohta: mõte on “kuidas ma sinna sattusin”. 12. reas “kus” peaks olema põhjuslik “mil/sel ajal kui” (“a quel punto che…”); “verace via” = “tõeline/õige tee” ok, kuid “jätsin maha” võib kõlada tahtlikuna, samas Dante rõhutab uimasust/teadvusetust. Soovitus: “mil ma” / “nii et ma”.
+
+13 Aga pärast seda kui olin jõudnud mäe jalamile,
+14 seal kus lõppes see org
+15 mis oli mu südame hirmuga täitnud,
+- Note: 13. reas sõnajärg on kohmakas; “al piè d’un colle giunto” = “jõudsin künka/mäe jalamil(e)”. 15. reas “compunto” on “läbi torgatud/valusalt haavatud” hirmust, mitte lihtsalt “täitnud”; Dante pilt on tugevam: “mis oli hirmuga mu südant torganud”. Soovitus: “mis oli mu südant hirmuga läbistanud”.
+
+16 Ma vaatasin kõrgele ja nägin selle õlad
+17 juba riietatud planeedi kiirgusega
+18 mis juhatab inimesi otse igal teel.
+- Note: 16. reas “selle õlad” viitab mäele; ok, kuid eesti keeles vajaks “ta õlad / selle künka küljed”. 17. reas “planeet” on küll sõna-sõnalt “pianeta”, ent Dante mõtleb Päikest; “planeedi kiirgusega” kõlab astronoomiliselt külmalt. 18. reas “juhatab inimesi otse igal teel” = “mena dritto altrui per ogne calle” on pigem “juhib teisi õigele teele igal rajal”; “otse igal teel” on toor-literalism.
+
+19 Siis oli hirm veidi vaiksem,
+20 mis mu südame järves oli kestnud
+21 öö mille ma läbisin nii ahastusega.
+- Note: 19. reas “quieta” on “vaibus/rahunes”, mitte “vaiksem” (võrdlusaste). 20. reas “lago del cor” on kujund: “südame järv”; ok. 21. reas “pieta” on siin “haledus/äng/kaastunne (enda seisundi vastu)”, mitte päris “ahastus”; võimalik, kuid toon on nihkes. “läbisin” ok.
+
+22 Ja nagu üks, kellel on kurnatud hingus,
+23 Väljunud merest randa,
+24 Pöördub ohtliku vee poole ja vaatab,
+- Note: 22. reas “lena affannata” = “õhupuudus/hingeldus”, mitte lihtsalt “kurnatud hingus”; parem “hingeldades”. 23. reas “pelago” on “avar meri”, mitte suvaline “meri”; “randa” ok. 24. reas “guata” = “piilub/vaatleb” — ok.
+
+25 nii mu hing, mis ikka veel põgenes,
+26 pöördus tagasi et uuesti vaadata läbipääsu
+27 mis ei ole kunagi elavat inimest jätnud ellu.
+- Note: 26. reas “lo passo” on “see kuristik/üleminek/paik” (ohtlik läbipääs), ok. 27. reas on sisuline eksimus: “che non lasciò già mai persona viva” tähendab “mis pole iial ühtki inimest elusalt (sealt läbi) jätnud” ehk “kus keegi pole eluga pääsenud” — aga tõlge “ei ole kunagi elavat inimest jätnud ellu” kõlab tautoloogiliselt ja loogiliselt segaselt. Soovitus: “kust pole iial ükski elus inimene eluga läbi saanud”.
+
+28 Olles veidi puhanud väsinud keha,
+29 Jätkasin teed tühja nõlva mööda,
+30 nii et kindel jalg oli alati madalam.
+- Note: 28. reas puudu on “kui olin…”; praegune konstruktsioon lonkab. 29. reas “piaggia diserta” on “lageda/kõrbe nõlv” — “tühi” ok, kuid “deserta” kannab kõledust. 30. reas “il piè fermo sempre era ’l più basso” on tehniline ronimiskujund: “see jalalaba, millele toetusin, oli alati madalam” (st tõus raskelt). “kindel jalg” natuke ebaselge; võiks “toetav jalg”.
+
+31 Ja ennäe, peaaegu künka alguses,
+32 üks leopard kerge ja väga vilgas,
+33 mis täpilise karvaga oli kaetud;
+- Note: “lonza” on tõlgetraditsioonis pigem “ilves/panter/leopard”; “leopard” on aktsepteeritav, kuigi vaieldav. 31. reas “al cominciar de l’erta” on “tõusu alguses”, mitte “künka alguses” (mäe tõus, mitte “küngas” kui objekt). 33. reas ok.
+
+34 Ja ta ei lahkunud mu näo eest,
+35 vaid hoopis takistas nii mu tee, et,
+36 et tagasi pöörduda ma olin pöördumas.
+- Note: 34. reas “dinanzi al volto” = “mu näo eest / mu ees” — ok, aga “ei lahkunud” võiks olla “ei lahkunud mu eest / ei läinud eest”. 35–36 on grammatikaliselt katki ja kordav: “et, et… pöörduda ma olin pöördumas.” Dante: “ch’i’ fui per ritornar più volte vòlto” = “nii et olin mitu korda peaaegu tagasi pöördunud”. Soovitus: “nii et olin juba mitu korda tagasi pöördumas”.
+
+37 Aeg oli hommiku alguses,
+38 ja päike tõusis üles koos nende tähtedega
+39 kes olid temaga kui jumalik armastus
+- Note: 37. reas ok. 38–39: mõte on õige, kuid “koos nende tähtedega” vajab sidumist 39–40-ga (astroloogiline kujund loomise hetkest). “kes olid temaga” ok, kuid sujuvam “mis olid temaga”.
+
+40 liigutas alguses neid kauneid asju;
+41 nii et hea lootus oli mulle põhjus
+42 selle metsiku looma täpilise naha puhul
+- Note: 40. reas “mosse di prima” = “alguses/esimesena liigutaski” (loomisel), ok. 41. reas “m’era cagione” = “oli mulle põhjuseks (loota)” — kuid “hea lootus oli mulle põhjus” on loogikalt tagurpidi; parem “see andis mulle põhjust hästi loota”. 42. reas “di quella fiera a la gaetta pelle” = “selle looma kireva naha tõttu” — “metsiku” lisab tähendust (fiera = metsaline), ok.
+
+43 päeva tund ja kaunis aastaaeg;
+44 aga mitte nii et see ei tekitanud mulle hirmu
+45 nägemus lõvist, mis mulle ilmus.
+- Note: 43. reas “l’ora del tempo” on “päeva hetk/tund” ja “dolce stagione” on “mahe aastaeg”; ok. 44. reas topel eitusega konstruktsioon on kohmakas; Dante: “ma non sì che paura non mi desse” = “kuid mitte nii, et see poleks mulle hirmu teinud” — parem eesti keeles: “ent siiski tegi mulle hirmu…”. 45. reas ok.
+
+46 Ta näis tulevat minu vastu
+47 kõrge pea ja raevuka näljaga,
+48 nii et näis et õhk värises tema pärast.
+- Note: Üldiselt hea. 48. reas “ne tremesse” = “väriseks temast” (tema tõttu), ok.
+
+49 Ja üks emahunt, kes kõigi ihaluste
+50 tundus koormatud oma kõhnuses,
+51 ja juba paljud inimesed pani elama kurbuses,
+- Note: 49–50: “di tutte brame sembiava carca ne la sua magrezza” = paradoks: “näis kõhnuses ihasid täis/ihadega koormatud”. “kõigi ihaluste” on poolik fraas (vajab jätku: “kõigi ihaluste koormast…”). 51. reas “fé già viver grame” = “on pannud paljusid viletsalt elama”; “kurbuses” kitsendab “grame” (viletsus, häda).
+
+52 ta andis mulle nii palju raskust
+53 koos hirmuga mis tekkis tema nägemisest,
+54 et ma kaotasin kõrguse lootuse.
+- Note: 52. reas “porse… gravezza” = “tekitas/andis” ok. 54. reas “l’altezza” on mäetipp/ülestõus (pääs), ok, kuid “kõrguse lootus” kõlab füüsikaliselt; parem “lootuse üles jõuda / kõrgusse tõusta”.
+
+55 Ja selline on see kes tahtlikult omandab,
+56 ja saabub aeg mis paneb ta kaotama,
+57 kes kõigis oma mõtetes nuteb ja kurbub;
+- Note: 55. reas “volontieri acquista” = “meelsasti hangib/kogub”, ok. 56. reas “giugne ’l tempo che perder lo face” = “tuleb aeg, mis sunnib teda kaotama” — “paneb ta kaotama” ok. 57. reas ok.
+
+58 selliseks tegi mind metsaline ilma rahuta,
+59 mis tuli mulle vastu samm‑sammult,
+60 tõukas mind tagasi sinna kus päike on vaikiv.
+- Note: 58. reas “bestia sanza pace” on konkreetsemalt hunt; “metsaline ilma rahuta” ok. 60. reas “là dove ’l sol tace” on kujund pimedusele (“kus päike ei paista/vaikib”); “vaikiv” on sõna-sõnalt, kuid eesti keeles vajab ehk “kus päike ei paista”.
+
+61 Kui ma langesin tagasi madalasse kohta,
+62 mu silmade ette ilmus
+63 kes läbi pika vaikuse näis tuhm.
+- Note: 62–63 on grammatiliselt vigased: puudub alus (“chi…” = “keegi, kes…”). Peaks: “mu silme ette ilmus keegi, kes…” Praegu “ilmus / kes” ei seo. “fioco” = “kähe/nõrk/udune”; “tuhm” sobib.
+
+64 Kui ma nägin teda suures kõrbes,
+65 Halasta mulle, karjusin ma talle,
+66 Olgu sa mis tahes, kas vari või tõeline mees.
+- Note: 65. reas “Miserere di me” on piibellik “Halasta minu peale” — ok, kuid võiks “halasta mu peale”. 66. reas “omo certo” = “päris inimene” — “tõeline mees” ok.
+
+67 Ta vastas mulle: mitte mees, vaid olin kunagi mees,
+68 ja mu vanemad olid lombardid,
+69 nad mõlemad mantuaalased kodumaal.
+- Note: 67. reas “Non omo, omo già fui” = “mitte inimene (enam), inimene olin kord” — tõlge annab mõtte edasi, kuid “mitte mees” kitsendab “omo” (inimene). 69. reas “mantoani” = “mantovalased”; “mantuaalased” on eesti keeles ebatavaline, parem “mantovalased”.
+
+70 Sündisin Juliuse all, kuigi hilja,
+71 ja elasin Roomas hea Augustuse all
+72 valede ja valelikate jumalate ajal.
+- Note: 70. reas “sub Iulio” on “Juliuse (Caesari) ajal/valitsusajal”; “all” on ok, kuid kohmakas. 72. reas “falsi e bugiardi” = “valed ja petlikud” — “valelikate” on eesti keeles küsitav; parem “petlike”.
+
+73 Ma olin luuletaja ja laulsin sellest õiglasest
+74 Anchise poeg kes tuli Troojast,
+75 pärast kui uhke Ilion oli põlenud.
+- Note: 73. reas “di quel giusto figliuol d’Anchise” = “sellest õiglasest Anchise pojast” (Aeneas). 74. reas eksimus: ta ei “tulnud Troojast” (venne di Troia) tähendab “pärines Troojast / tuli Troojast (lahkudes pärast langust)”, ok, kuid parem rõhk on pagulasteekonnal. 75. reas “combusto” = “põletatud/maha põletatud” (linna hävitus), ok.
+
+76 Aga sina miks sa naased nii suure piina juurde?
+77 Miks sa ei roni lummavat mäge?
+78 Kas see mägi on kogu rõõmu algus ja põhjus?
+- Note: 76. reas “tanta noia” = “nii suur vaev/äng”, “piin” on tugevam. 78. reas vorm on vale: Dante ei küsi “Kas see mägi…?” vaid väidab: “mis on kogu rõõmu algus ja põhjus.” Siin tuleks jätta küsimusmärk ära ja teha väitlause.
+
+79 Kas siis oled sina see Vergilius ja see allikas
+80 mis valab välja nii laia kõnejõe?,
+81 Vastasin talle häbeliku näoga.
+- Note: 79. reas jälle küsimus “Or se’ tu…” on jah küsimus, ok. 80. reas kirjavahemärgid vigased: koma ja küsimärk koos (“jõe?,”). “parlar sì largo fiume” = “nii laia kõnejõe” ok, ehk “kõnevoo”. 81. reas “rispuos’ io lui” = “vastasin ma talle” — ok.
+
+82 O teiste luuletajate au ja valgus,
+83 las mu pikk õping ja suur armastus kasu toovad
+84 mis on sundinud mind sinu teose otsima.
+- Note: 83. reas “vagliami” = “olgu mulle abiks/kasuks” — tõlge tabab, kuid konstruktsioon on jäik. 84. reas “cercar lo tuo volume” = “otsida su raamatut/teost” — ok.
+
+85 Sa oled mu meister ja mu autor,
+86 Sa oled ainuke see kellelt ma võtsin
+87 Kauni stiili mis on mulle au toonud.
+- Note: 86. reas “solo colui” = “ainus see” ok. 87. reas “bello stilo” = “kaunis stiil” ok, kuid “mis on mulle au toonud” on sisuliselt õige.
+
+88 Vaata koletist mille tõttu pöördusin;
+89 Aita mind tema vastu kuulus tark,
+90 Sest ta paneb veenid ja randmed värisema»
+- Note: 89. reas puudub koma: “Aita mind tema vastu, kuulus tark”. 90. reas “vene e i polsi” = “sooned/veenid ja pulsid/randmed”; “randmed” on “polsi” üks tähendus, kuid sagedamini “pulsid” või “randmed” kontekstis “värisevad mu sooned ja pulsid”. Lõpumärk on vale: algab « kuid lõpeb ”/».
+
+91 Sulle on vaja võtta teine teekond,
+92 ta vastas kui nägi mind nutmas,
+93 kui soovid põgeneda sellest metsikust kohast;
+- Note: 91. reas “A te convien” = “sul tuleb / on tarvis” — “on vaja” ok, kuid “võtta” on anglitseeriv; parem “pidada/ette võtta”. 92. reas “lagrimar” = “nutmas/pisaraid valamas” ok.
+
+94 selle looma pärast, kelle pärast sa hüüad,
+95 ei luba kellelgi mööduda tema teel,
+96 aga nii takistab ta teda, et ta tapab teda;
+- Note: 94. reas mõte ok. 95. reas “non lascia altrui passar” = “ei lase teistel mööduda” — ok. 96. reas korduv “ta teda” teeb lause kohmakaks; võiks ümber: “vaid takistab nii, et tapab”.
+
+97 ja tal on loomus nii õel ja kuri,
+98 mis kunagi ei rahulda ahnet tahet,
+99 ja pärast sööki on tal rohkem nälga kui enne.
+- Note: 98. reas “mai non empie” = “ei täida iial” — “rahulda” sobib. Üldiselt ok.
+
+100 Palju on loomi kellega ta abiellub,
+101 ja veel rohkem tuleb, kuni hagijas
+102 tuleb, kes paneb ta valuga surema.
+- Note: 100. reas “s’ammoglia” on metafoor “paaritub/ühineb” (liitub paljudega), “abiellub” kõlab eesti keeles koomiliselt ja nihutab registrit; parem “paaritub / heidab ühte”. 101. reas “veltro” on “hurt/hagijas”; “hagijas” ok. 102. reas ok.
+
+103 Ta ei söö maad ega kaupu,
+104 aga tarkust, armastust ja vaprust,
+105 ja tema sünnikoht on Feltro ja Feltro vahel.
+- Note: 103. reas “terra né peltro” = “maad ega tina/pewterit (raha/vara sümbol)” — “kaupu” on liiga üldine ja kaotab materjalide vastanduse; parem “maad ega tina/varandust”. 104. reas “virtute” = “voorust/vägevust”; “vaprust” on üks võimalik, kuid kitsendab moraalset “virtus”. 105. reas “tra feltro e feltro” on tõlgenduslikult keeruline (geograafia või sümbol); “Feltro ja Feltro vahel” jätab lugeja hätta, kuid on sõnasõnaline.
+
+106 Selle alandliku Itaalia jaoks saab ta päästeks
+107 selle eest suri neitsi Camilla,
+108 Eurialo, Turno ja Niso haavadesse.
+- Note: 106. reas “umile Italia” = “alandlik Itaalia” ok. 107. reas “per cui morì” viitab Itaaliale (mille eest), ok. 108. reas “di ferute” = “haavadesse/haavade läbi” — “haavadesse” kõlab nagu liikumine; parem “haavadesse (suri) / haavade läbi”.
+
+109 Ta jahib teda läbi iga linna,
+110 kuni ta on ta tagasi heitnud põrgusse,
+111 seal kust kadevus esimesena valla päästis.
+- Note: 109. reas “per ogne villa” = “iga asula/küla” — “linna” muudab mõõtkava. 111. reas “’nvidia” on allegooria; “valla päästis” lisab kõnekeelsust; “dipartilla” = “ajaski ta sealt välja / saatis teele” (põrgust/algallikast). Soovitus: “sealt, kust kadedus ta esmalt lahti päästis/ära ajas”.
+
+112 Sellepärast ma mõtlen ja otsustan sinu parima jaoks et sa mind järgid
+113 ja ma olen sinu juhendaja,
+114 ja ma viin sind siit igavikulisse kohta;
+- Note: 112. reas süntaks on katki ja mõte nihkes: itaalia “Ond’ io per lo tuo me’ penso e discerno / che tu mi segui” = “Seepärast, sinu heaks, arvan ja otsustan, et sa järgned mulle” — tõlkes “et sa mind järgid” on ok, kuid lause vajab kirjavahemärke (“… sinu parima jaoks, et sa…”). 113. reas “guida” = “teejuht” — ok. 114. reas “loco etterno” = “igavene paik” — ok.
+
+115 kus sa kuuled meeleheite karjeid,
+116 sa näed vanu kurbi vaime,
+117 kes igaüks anub teist surma;
+- Note: 116. reas “antichi spiriti dolenti” = “iidsed/vanad vaevatud vaimud” — “kurbi” on nõrk. 117. reas “a la seconda morte ciascun grida” = “igaüks hüüab teist surma” — “anub” on interpretatsioon, “hüüab” oleks lähem.
+
+118 Ja siis näed neid kes on rahulolevad
+119 tules sest nad loodavad tulla
+120 millalgi õnnistatud rahva juurde.
+- Note: 118. reas “son contenti” on “on rahul” (purgatooriumi hinged), ok. 119. reas puudu koma: “tules, sest…”. 120. reas “beate genti” = “õndsate hulka” (taevas), mitte “rahva juurde” (liiga maiselt).
+
+121 kelle juurde kui sa tahad pärast seda tõusta,
+122 hing on selleks väärilisem kui mina:
+123 tema hoolde jätan ma sind minu lahkumisel;
+- Note: 121. reas algab suhteline “A le quai poi…” viitega “beate genti”le; “kelle juurde” ok, aga lause on kohmakas. 122. reas “anima fia” = “hing olgu/saab olema” (st teine hing, Beatrice); tõlkes puudub “üks”/“teine” eristus. 123. reas “nel mio partire” = “kui ma lahkun” — ok.
+
+124 sest see keiser kes seal üleval valitseb,
+125 sest ma olin tema seaduse vastu mässaja,
+126 ta ei taha et keegi minu kaudu tema linna tuleks.
+- Note: 124. reas “imperador” = Jumal; “keiser” ok metafoorina. 125. reas põhjus on õige (Virgil pagan). 126. reas “per me si vegna” = “minu kaudu ei minda” — “keegi minu kaudu” ok, kuid “linna tuleks” võiks olla “tema linna siseneks”.
+
+127 Kõikjal ta valitseb ja seal ta valitseb;
+128 Seal on tema linn ja kõrge troon:
+129 Oh õnnelik see keda seal ta valib!
+- Note: 127. reas tarbetu kordus (“valitseb… valitseb”); Dante “In tutte parti impera e quivi regge” eristab “impera” ja “regge” (valitseb kõikjal ja seal troonib/hoiab võimu). 129. reas “cu’ ivi elegge” = “kelle ta sinna valib” — ok.
+
+130 Ja mina talle luuletaja ma palun sind
+131 selle Jumala nimel keda sa ei tundnud,
+132 et ma põgeneksin selle kurjuse ja hullema eest,
+- Note: 130. reas puudu on pöördumise eristus: “E io a lui: ‘Poeta, io ti richeggio’” — peaks olema “Ja mina talle: ‘Luuletaja, ma palun sind…’” Praegu jookseb kokku. 132. reas “male e peggio” = “kurjast ja hullemast” — “kurjuse” on abstraktsem; “selle kurja ja hullemagi eest” oleks lähem.
+
+133 et sa viid mind sinna kus sa nüüd ütlesid,
+134 et ma näeksin Püha Peetri värava
+135 ja neid keda sa kirjeldasid nii kurbaks”.
+- Note: 134. reas “porta di san Pietro” = “Püha Peetruse värav” (genitiiv), “Peetri värava” ok, kuid “porta” on pigem “väravad/värav” taevasse (siin teekonna siht). 135. reas “color cui tu fai cotanto mesti” = “need, keda sa teed nii kurvaks” (st kelle saatust sa kujutad); tõlkes “keda sa kirjeldasid” on mõistlik, kuid “nii kurbaks” nihutab: Dante rõhutab, et nende seisund on kurb, mitte et Virgil “teeb” neid kurvaks. Lõpumärk: avatud « varem ja siin suletakse ” (ebajärjekindel).
+
+136 Siis ta liikus edasi ja ma järgnesin talle.
+- Note: Sisu õige (“Allor si mosse, e io li tenni dietro”), kuid “tenni dietro” on “hoidsin tal kannul / käisin järel”; “järgnesin” ok, võiks “käisin tal järel”.

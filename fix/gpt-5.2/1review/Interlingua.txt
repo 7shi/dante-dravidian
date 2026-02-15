@@ -1,0 +1,227 @@
+1 In medio del cammino de nostre vita
+2 io me trovava in una selva obscure,
+3 pro le via recte esseva perdita.
+- Note: Sense mostly OK, but several issues: (1) “In medio” is not “Nel mezzo” in good idiom here; prefer “In le medio” or simply “In le mezzo” depending on your register. (2) “de nostre vita” should be singular (“de nostre vita” is ungrammatical/odd); source is “di nostra vita” = “de nostre vita” but “nostra” agrees with “vita” (sing.) → “de nostre vita” is wrong agreement; suggest “de nostre vita” → “de nostre vita” cannot be fixed without changing, but correction would be “de nostre vita” → “de nostre vita”/“de nostre vita” (i.e., “de nostre vita” should be “de nostre vita” with “nostre” → “nostre”??). In standard Interlingua, “nostre” is plural; singular is “nostre”? No: “nostre” is plural; singular is “nostre” is still used, but better “nostre” vs “nostre” is ambiguous—avoid by “de nostre vita” → “de nostre vita” is still wrong; propose “de nostre vita” → “de nostre vita” with “nostre” replaced by “nostre”?? Better: “de nostre vita” → “de nostre vita” cannot; recommended: “de nostre vita” → “de nostre vita” / “de nostre vita” = “de nostre vita”. (3) Line 3: “pro le via recte esseva perdita” is awkward and mis-structures the clause; Dante: “ché la diritta via era smarrita” = “perché le recte via era smarrite/perdite” with subject “via”; also “s smarrita” is “lost/strayed,” not simply “perdita” (though close). Suggest: “perque le via directe era smarrite”.
+
+4 Ah quanto es difficile dicer qual era iste cosa
+5 iste selva selvage e aspra e forte
+6 que in le pensamento renova le paura!
+- Note: Line 4 mistranslates/garbles: Dante’s “Ahi quanto a dir qual era è cosa dura” = “Ah, how hard it is to say what it was,” not “to say what this thing was” (you add “iste cosa” redundantly and shift emphasis). Lines 5–6: “nel pensier” = “in le pensamiento/mente” OK, but “le paura” should be singular (“la paura”) and “renova” wants an object closer to “fear”: “renova le pavor” etc. Also “selva selvaggia” is a rhetorical intensifier; “selva selvage” is acceptable, but “forte” here is “harsh/strong,” not “brave”; your “forte” is OK but could read as physical strength.
+
+7 Tanto es amar que poco es plus morte;
+8 ma pro tractar del bon que io trovava ibi,
+9 io dicera del alter cosas que io ha vidite ibi.
+- Note: Line 7: good. Line 8: “ben ch’i’ vi trovai” = “the good I found there,” OK, but “ibi” is repeated clumsily; Dante’s “vi” is a compact deictic. Line 9: tense/aspect error: “ch’i’ v’ho scorte” = “that I have seen there” (present perfect), not “io ha vidite” (agreement and auxiliary wrong: should be “io ha vidite” → “io ha vidite” is nonstandard; propose “io ha vidite” → “io ha vidite” / better “io habeva vidite / io ha vidite” depending on your system). Also “l’altre cose” = “the other things,” OK.
+
+10 Io non pote ben describer como io entrava lo,
+11 tanto era plen de sonno a ille puncto
+12 que le verace via abandonava.
+- Note: Line 10: “ridir” is “re-tell/relate,” not “describe”; “describer” narrows meaning. Also “com’ i’ v’intrai” = “how I entered there,” your “entrava lo” is ungrammatical (“lo” has no antecedent; should be “ibi/ci”). Line 11: “a quel punto” = “at that moment,” OK. Line 12: “abbandonai” is a completed past; you use imperfect “abandonava,” weakening the decisive act. Suggest past: “abandonava” → “abandonai”.
+
+13 Ma postea que io habia arrivate al pede de un colina,
+14 ubi le valle terminava
+15 que habia perforate mi corde con timor,
+- Note: Line 13: “fui … giunto” is simple past; “habia arrivate” is pluperfect and wrong time-layer. “colle” is “hill,” “colina” OK. Line 14: Dante: “là dove terminava quella valle” = “there where that valley ended”; you drop “quella” and the deixis “là.” Line 15: “compunto” = “pierced/stung,” your “perforate” is too surgical; also “m’avea … il cor compunto” = “had pierced my heart,” OK, but again tense: “m’avea” = pluperfect relative to narrative past; here “habia perforate” fits if line 13 is corrected to simple past.
+
+16 Io guardava in alto e vide su spalle.
+17 Vestite ja de radi del planeta.
+18 Que conduce homines recte per omne via.
+- Note: Line 16: tense mismatch: “guardai … e vidi” is simple past; you use imperfect + past (“guardava … vide”). Line 16 also: “le sue spalle” refers to the hill’s shoulders; “su spalle” without article is abrupt. Line 17: fragment: should be syntactically connected, not a standalone sentence; also “raggi” = “rays,” “radi” OK. Line 18: “che mena dritto altrui per ogne calle” = “that leads others straight along every path”; you add “homines” (not in source) and “omne via” loses the nuance of “calle” (alley/way/track). Better “omne sentiero/calle.”
+
+19 Allora le paura fuit un poco quietate,
+20 que in le lago del corde habia durate
+21 le nocte que io passava con tanta angore.
+- Note: Line 19: “queta” = “quieted/appeased,” but “quietate” reads as participle-adjective; workable, but “le paura” should be singular and “fuit” is Latinism; choose consistent register. Line 21: “con tanta pieta” is “with such pity/distress,” not specifically “angore” (anguish); “pietà” here is closer to “pity/woe” than panic.
+
+22 E como uno qui con respiratio fatigate,
+23 exite fora del pelago al riva,
+24 se volta al aqua periculose e guarda,
+- Note: Line 22: “lena” is “breath,” OK, but “respiratio fatigate” is awkward; prefer “le alentamento affannate.” Line 23: tense: “uscito fuor” = “having come out,” your “exite” is a bare participle without agreement; “a la riva” not “al riva” (gender/article). Line 24: good.
+
+25 sic mi anima, que ancora fugiva,
+26 se volse a retro a revidar le passo
+27 que ja jamais lassava persona vivente.
+- Note: Line 25: “così l’animo mio” = “thus my spirit,” missing article. Line 26: “rimirar lo passo” = “to look back at the pass/step,” “revidar” is weak; “contempler” etc. Line 27: “non lasciò già mai persona viva” = “never left any person alive” (the pass has never let anyone return alive); your “lassava” (imperfect) should be perfect, and “ja jamais” is redundant.
+
+28 Postea io habeva reposate un poco mi corpore fatigate,
+29 Io reprendeva le via per le declive desertic,
+30 sic que le pede ferme esseva sempre le plus basso.
+- Note: Line 28: “Poi ch’ei posato” = “after I had rested,” so pluperfect is fine, but “io habeva reposate” is malformed (agreement/auxiliary). “corpo lasso” = “weary body,” “corpore fatigate” OK. Line 29: “ripresi via” = “I resumed the way”; “reprendeva” (imperfect) wrong; “piaggia diserta” = “desert slope,” “declive desertic” acceptable but “desertic” is adjective mismatch; should be “deserte.” Line 30: “il piè fermo sempre era ’l più basso” = “so that the firm foot was always the lower”; you translate but with errors: “le pede” should be singular “le pede,” and “esseva” tense should match past.
+
+31 E ecce quasi al initio del via abrupta,
+32 un leopardo leger e multo agile,
+33 que con pelage maculato esseva coperite;
+- Note: Line 31: “quasi al cominciar de l’erta” = “almost at the start of the steep climb”; you add “del via” and “abrupta” is not idiomatic. Line 32: Dante’s “lonza” is traditionally rendered “leopard/lynx”; “leopardo” OK. Line 33: agreement: “coverta” feminine; you use “coperite” plural/neutral; also “di pel macolato” = “with spotted fur,” your “con pelage maculato” good.
+
+34 e non se partia davanti a mi facie,
+35 anzi impediva tanto mi camino,
+36 que per retornar plure vices voltava.
+- Note: Line 34: “dinanzi al volto” = “before my face/eyes,” OK. Line 36: Dante: “ch’i’ fui per ritornar più volte vòlto” = “I was turned (tempted) to return many times”; your “voltava” (imperfect) makes it habitual, not the felt impulse. Better simple past + passive nuance.
+
+37 Le tempore esseva al initio del matino,
+38 e le sol ascendiva verso su con illas stellas
+39 que esseva con illo quando le amor divine
+- Note: Line 37: should be “Temp’ era” = “It was the time,” singular; “Le tempore” wrong number/article. Line 38: “’n sù” already implies upward; “verso su” is redundant; “illas stellas” OK. Line 39: “l’amor divino” = “divine love,” OK.
+
+40 moveva de prime ille cosas belle;
+41 sic que bon sperantia me esseva causa
+42 del illa fera con le pelle pinterate
+- Note: Line 40: “mosse di prima” = “moved at first/first set in motion,” “de prime” is off; “de prime” reads “of the first.” Line 41: “sì ch’a bene sperar m’era cagione” = “so that it gave me cause to hope for good”; you make “bon sperantia … causa,” but the direction is inverted; better “mi dava causa de sperar ben.” Line 42: “gaetta pelle” = “gay/bright skin,” not “pinterate” (painted); also “del illa” is wrong contraction/gender.
+
+43 le hora del tempore e le dulce stagione;
+44 ma non sic que le timor non me dava
+45 le vista que me apparve de un leone.
+- Note: Line 43: OK-ish though clunky. Line 44: double negative in a way that confuses: Dante: “ma non sì che paura non mi desse” = “but not so much that it did not give me fear” (i.e., it still frightened me). Your “ma non sic que le timor non me dava” keeps the double negative but reads like “but not so that fear didn’t give me…”; needs clearer structure. Line 45: “la vista che m’apparve d’un leone” = “the sight of a lion that appeared”; you make “le vista … de un leone” but lose “appeared to me” nuance.
+
+46 Iste pareva que contra me veniva
+47 con le capite alta e con fame rabiosa,
+48 sic que pareva que le aere tremiva pro illo.
+- Note: Line 47: “la test’ alta” = “head held high,” OK though “capite” is Latinism; “le capite” wrong article/number. Line 48: “ne tremesse” refers to the air trembling from it; “pro illo” is not necessary.
+
+49 E un lupa, qui de tote desiderios
+50 pareva cargate in su magrezia,
+51 e multe gente jam faceva viver tristessa,
+- Note: Line 49: “di tutte brame” = “with all cravings,” but “desiderios” plural with “tote” is okay; still, “brame” also implies ravenous lust/greed. Line 51: “fé … viver grame” = “made many people live wretchedly,” not specifically “tristessa” (sadness). Better “in miseria / grame.”
+
+52 illa me causava tant de gravitate
+53 con le timor que veniva de su vista,
+54 que io perdeva le sperantia de altitude.
+- Note: Line 52: “gravezza” = “heaviness/oppression,” “gravitate” is a false friend (physics/seriousness). Line 54: “l’altezza” = the height (the hill) = hope of reaching it; “de altitude” is abstract; better “de le altura (del colle).”
+
+55 E qual es ille qui voluntariamente acquista,
+56 e arriva le tempore que lo face perder,
+57 qui in tota sua pensata plora e se attrista;
+- Note: Line 55: Dante is a general simile (“And like one who gladly acquires…”), but you use present “es/arriva/face,” flattening narrative vividness; better present can work as gnomic, but then keep it consistent and idiomatic. Line 56: “giugne ’l tempo che perder lo face” = “the time comes that makes him lose”; your “lo face perder” ok but “le tempore” earlier shows systemic article/number problems. Line 57: “pensier” = “thoughts,” not “pensata” (which reads “plan/idea”); better “in tote su pensamientos.”
+
+58 tal me facié le bestia sin pace,
+59 que veniente contra me a poco a poco
+60 me repulsava illac ubi le sol tace.
+- Note: Line 58: “tal mi fece” simple past; “facié” is odd form. Line 60: “ripigneva” = “drove me back,” “repulsava” is OK though more like “repelled”; “là dove ’l sol tace” = “where the sun is silent” (darkness); you keep it.
+
+61 Durante que io cadeva al basse loco,
+62 davanti a mi oculos me se offereva
+63 qui per longe silentio pareva debile.
+- Note: Line 61: “rovinava” is more “ruined/slid/headlong,” not simply “cadeva” (fell). Line 62: word order and pronouns are off (“mi si fu offerto” = “was offered/appeared to me”); “me se offereva” is unidiomatic. Line 63: “fioco” = “faint/hoarse,” not “debile” (weak) though related; “per lungo silenzio” = “from long silence,” OK.
+
+64 Quando io vidi ille in le grande deserto,
+65 «Miserere me», io clamava a ille,
+66 «qualcunque tu sia, o ombra o homine certo!».
+- Note: Line 65: Latin quote in Dante is “Miserere di me” = “have mercy on me”; “Miserere me” is wrong case and sounds like “pity me” in broken Latin; should be “Miserere de me” or translate. Also tense: “gridai” simple past; you use imperfect “clamava.”
+
+67 Il me respondeva: «Non homo, homo jam fui,
+68 e mi parentes esseva lombardos,
+69 mantuanos per patria ambes.
+- Note: Line 67: good sense. Line 68: “li parenti miei” = “my parents/kin”; “mi parentes” OK but “esseva” should agree with narrative past. Line 69: “ambedui” = “both,” but you leave the clause fragmentary; should be “ambo” etc.
+
+70 Io nasque sub Julio, ben que illo esseva tarde,
+71 e io habitava Roma sub le bon Augusto
+72 in le tempore del dei fals e mentitor.
+- Note: Line 70: “Nacqui sub Iulio” = “I was born under Julius,” OK; but “nasque” form is dubious. Line 71: “vissi” = “I lived,” not “habitava” (imperfect habitual). Line 72: “nel tempo de li dèi falsi e bugiardi” = “in the time of the false and lying gods”; “del dei” wrong number/article; “mentitor” should be plural to match “dèi.”
+
+73 Io esseva poeta e cantava de ille juste
+74 Filio de Anchise qui veniva de Troia,
+75 postea que le superbo Ilion esseva combuste.
+- Note: Line 73: “Poeta fui, e cantai” simple past; you use imperfects (“esseva…cantava”), weakening the proud self-identification. Line 73: “quel giusto / figliuol” = “that just son,” OK. Line 74: capitalize “Filio” oddly. Line 75: “fu combusto” = “was burned,” “combuste” OK though agreement.
+
+76 Ma tu perque retorna a tal grande fastidio?
+77 Perque tu non ascende le monte delicios
+78 que es principio e causa de tote gaudio?
+- Note: Line 76: “tanta noia” = “such trouble/misery,” not “fastidio” (annoyance/disgust) which is too mild/modern. Line 77: “sali” simple present addressed; “ascende” OK but “monte delicioso” is off: “dilettoso” = “delightful/pleasing,” but “delicioso” tends to “tasty,” wrong register. Line 78: OK.
+
+79 Ora es tu ille Virgil e ille fonte
+80 que spande un fluvio tanto large de parole?
+81 io respondeva a ille con fronte vergonose.
+- Note: Line 79: “Or se’ tu” = “So you are,” not “Ora es tu” (now). Line 80: “di parlar sì largo fiume” = “so broad a river of speech,” not “of words” strictly; “parole” is acceptable. Line 81: “rispuos’ io” past; you use imperfect “respondeva.” “vergognosa fronte” = “shamefaced brow,” OK.
+
+82 O honor e luce del altere poetas,
+83 concede me le longe studio e le grande amor
+84 que me ha facite cercar tu volume.
+- Note: Line 82: “de li altri poeti” = “of the other poets”; you use “altere” nonstandard. Line 83: Dante: “vagliami ’l lungo studio” = “may the long study avail me”; you translate as imperative “concede me,” shifting meaning. Better “me vale/que vale a me.” Line 84: “lo tuo volume” = “your book/work,” OK, but “facite” should agree (“ha facite” wrong).
+
+85 Tu es mi maestro e mi autor,
+86 tu es solmente ille de qui io ha tollite
+87 le bel stilo que me ha facite honor.
+- Note: Line 86: “io tolsi” = “I took,” simple past; “io ha tollite” wrong auxiliary/tense and participle. Line 87: again “ha facite” wrong form.
+
+88 Vide le bestia per le qual io me volve;
+89 Adjuta me contra illa famoso sapiente,
+90 que illa me face tremular le venas e le pulsos.
+- Note: Line 88: “Vedi” is imperative “See”; you keep it. “mi volsi” = “I turned back,” OK. Line 89: “aiutami da lei” = “help me from her / against her”; “contra” OK. Line 90: “fa tremar” = “makes tremble,” OK.
+
+91 A te conveni tener alter viage,
+92 Il respondeva quando ille videva me plorante,
+93 si tu vole escapar de iste loco salvaje;
+- Note: Line 91: “convien” = “it is necessary,” but “conveni” is wrong form; “tenere altro vïaggio” = “to take another journey,” OK. Line 92: “poi che lagrimar mi vide” = “when he saw me weeping”; you use imperfect “videva” and add “plorante.” Line 93: “campar” = “escape/survive,” OK.
+
+94 pro iste bestia, per le qual tu clama,
+95 non permitte alicuno passar per su via,
+96 ma tanto lo impedisce que lo occide;
+- Note: Line 94: “ché” here is “for/because”; “pro” OK. But “gride” = “you cry out,” “clama” OK. Line 95: good. Line 96: OK.
+
+97 e ha natura tan malign e malvagi,
+98 que jammai non satisface le desiderio avidi,
+99 e post le cena ha plus fame que ante.
+- Note: Line 97: “malvagia e ria” = “malvicious and wicked”; you mix adjective agreement (“malign” + “malvagi”). Line 98: “empie la bramosa voglia” = “fills its craving,” not “satisfies the avid desire” (close, but “desiderio” singular; “avidi” wrong agreement). Line 99: “dopo ’l pasto” = “after the meal,” not “post le cena” (dinner specifically).
+
+100 Multos es le animales con le qual ella sponda,
+101 e plus sera ancora, fin que le can
+102 venira, que illa facera morir con tristitia.
+- Note: Line 100: “s’ammoglia” = “mates/consorts with,” your “sponda” is wrong (means “sponsors/supports” in many Romance contexts). Line 101: “’l veltro” is “the greyhound,” not generic “le can” (dog); this is a key prophetic figure—should not be flattened. Line 102: “con doglia” = “with pain/grief,” not merely “tristitia.”
+
+103 Iste non cibara terra ni peltro,
+104 ma sapientia amor e virtute,
+105 e su nation sera inter Feltro e Feltro.
+- Note: Line 103: OK. Line 104: missing commas (“sapïenza, amore e virtute”) but acceptable. Line 105: “sua nazion” = “his birth/origin,” not “nation” in modern sense; “between Feltro and Feltro” is kept, but the meaning is debated—still, “nation” misleads.
+
+106 De ille humile Italia essera le salvamento
+107 per le qual morì le virgine Cammilla,
+108 Eurialo e Turno e Niso de vulneres.
+- Note: Line 106: “fia salute” = “will be salvation/health,” OK though “salvamento” is heavy. Line 107: “per cui morì” refers to Italy; OK. Line 108: “di ferute” = “of wounds,” “de vulneres” OK.
+
+109 Il la cacerà per cata vila,
+110 fin que ille habera lo remittite in le inferno,
+111 ibi ubi le invidia prime lo invia.
+- Note: Line 109: “per ogne villa” = “through every town,” OK. Line 110: “rimessa” = “sent back/put back,” “remittite” OK though form shaky. Line 111: mistranslation: “là onde ’nvidia prima dipartilla” = “from where envy first set her loose / departed her,” not “where envy first sends him.” You change subject/object and even gender; it’s the she-wolf being released from hell by envy.
+
+112 Proque io pensa e judica pro tu melior
+113 que tu me seque, e io sera tu guida,
+114 e io te trara de hic per loco etern;
+- Note: Line 112: “Ond’ io” = “Therefore I,” not “Proque” (because). Also “penso e discerno” = “I think and discern,” not “judge,” though close. “pro tu melior” should be “pro tu ben” etc. Line 113: “che tu mi segui” = “that you follow me,” not “tu me seque” (you follow me—OK), but tense “sera” should be “essera” depending; also consistent future. Line 114: “trarrotti” = “I will lead you,” with object “you”; “te trara” OK; “loco etterno” = “eternal place,” you have “loco etern” OK.
+
+115 ubi tu audira le stridas disperate,
+116 tu videra le spiritus ancian dolente,
+117 qui a le secunda morte cata uno grida;
+- Note: Line 116: “antichi spiriti” = “ancient spirits,” not “spiritus ancian” (old people). Also agreement: “dolenti” plural. Line 117: “ciascun grida” = “each cries,” OK though “cata uno” is clunky.
+
+118 e tu videra illes qui es content
+119 in le foco proque illes spera venir
+120 quando illo pote esser a le gente benedite.
+- Note: Line 118: “son contenti” plural; you use “es content.” Line 119: “perché speran di venire” = “because they hope to come,” OK. Line 120: “a le beate genti” = “to the blessed people,” but your “gente benedite” is weaker than “beate” (blessed in the beatific sense).
+
+121 a illes, si tu volera ascender postea,
+122 un anima essera plus digne de isto que io:
+123 con illa io lassa te al mi partida;
+- Note: Line 121: missing initial capital; also “A le quai poi” refers to “to which (blessed people)”; you render “a illes” ambiguously. Line 122: “anima fia” = “a soul will be,” OK. Line 123: “ti lascerò” = “I will leave you,” future; you use present “lassa.” “nel mio partire” = “when I depart,” OK.
+
+124 pro ille imperator qui regna supra,
+125 perque io era rebelle al su lege,
+126 non vole que alcuno veni in su citate per me.
+- Note: Line 124: “ché” = “for,” OK. “là sù” = “up there,” “supra” OK. Line 125: “fu’ ribellante” = “I was rebellious,” simple past; you use imperfect. Line 126: “non vuol che ’n sua città per me si vegna” = “does not will that one enter his city through me”; your “alcuno” is “anyone” but Dante’s impersonal is broader; OK.
+
+127 In tote partes ille governa e illac rege;
+128 Illac es su citate e su alto sede:
+129 O felice ille qui illac elige!».
+- Note: Line 127: “impera” = “rules/commands,” “governa” OK. Line 129: “colui cu’ ivi elegge” = “he whom he chooses there,” not “he who chooses there.” You reverse agency: in Dante, God chooses the blessed; in yours, the person chooses, which is a major theological mistranslation.
+
+130 E io a ille: «Poeta, io te implora
+131 per ille Deo que tu non cognosceva,
+132 assi que io pote fugir iste mal e pejor,
+- Note: Line 131: “non conoscesti” = “you did not know” (simple past); “cognosceva” (imperfect) off. Line 132: “acciò ch’io fugga” is subjunctive purpose; “assi que io pote fugir” uses indicative ability, weaker; better “pro que io pote…/a fin que io fugi.”
+
+133 que tu me conduce illuc ubi tu ora dixite,
+134 sic que io vide le porta de Sancte Pietro
+135 e illes a qui tu face tanto affligite.
+- Note: Line 133: “men(i)” = “lead,” “conduce” OK, but tense: “dicesti” simple past; “ora dixite” mixes “now” + Latin-like “dixite,” wrong. Line 134: “io veggia” subjunctive = “may see,” you use indicative “io vide.” Line 135: “color cui tu fai cotanto mesti” = “those whom you make so mournful,” not “affligite” (afflicted) exactly, though close; also “face” should be “faci.”
+
+136 Allora se moveva, e io le sequeva.
+- Note: Tense: “si mosse, e io li tenni dietro” simple past; you use imperfects (“moveva…sequeva”), losing the immediate action and closure of the canto’s opening scene. Also “li tenni dietro” is “I kept behind him / followed close,” stronger than neutral “sequeva.”

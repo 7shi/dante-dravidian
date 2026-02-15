@@ -1,0 +1,227 @@
+1 ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ
+2 ನಾನು ಕತ್ತಲೆಯ ಕಾಡಿನಲ್ಲಿ ನನ್ನನ್ನು ಕಂಡೆ,
+3 ಏಕೆಂದರೆ ಸರಿಯಾದ ಮಾರ್ಗ ಕಳೆದುಹೋಗಿತ್ತು.
+- Note: “Nel mezzo del cammin di nostra vita” is “In the middle of the journey of our life,” i.e., the life-journey metaphor. “ಮಾರ್ಗದ ಮಧ್ಯದಲ್ಲಿ” is OK, but “ನಮ್ಮ ಜೀವನದ ಮಾರ್ಗದ” is a bit clunky; “ನಮ್ಮ ಜೀವನಯಾತ್ರೆಯ ಮಧ್ಯದಲ್ಲಿ” (or similar) would better carry Dante’s metaphor. Line 2 is acceptable, though Dante’s “mi ritrovai” has the nuance of “I found myself” (suddenly/unknowingly), which could be made more reflexive/accidental. Line 3 correctly gives the cause (“ché”), though “smarrita” is “lost/strayed,” not “destroyed”; “ಕಳೆದುಹೋಗಿತ್ತು” is fine.
+
+4 ಆಹ್ ಎಷ್ಟು ಹೇಳುವುದು ಕಷ್ಟದ ವಿಷಯ ಅದು ಏನು ಆಗಿತ್ತು
+5 ಈ ಕಾಡು ಕಾಡು ಕಠಿಣ ಮತ್ತು ದಟ್ಟ
+6 ಇದು ಮನಸ್ಸಿನಲ್ಲಿ ಭಯವನ್ನು ಪುನಃ ಉಂಟುಮಾಡುತ್ತದೆ!
+- Note: Syntax is off and meaning blurs. “Ahi quanto a dir qual era è cosa dura” = “Ah, how hard it is to say what it was.” Your line 4 (“ಅದು ಏನು ಆಗಿತ್ತು”) is awkward and doesn’t clearly map to “qual era.” Consider “ಅದು ಹೇಗಿತ್ತೆಂದು ಹೇಳುವುದು ಎಷ್ಟು ಕಷ್ಟ!” Line 5 misses key adjectives: “selvaggia e aspra e forte” = “savage/untamed, harsh, and formidable”; “ದಟ್ಟ” = “dense” isn’t in the Italian, while “forte” is not “thick.” Line 6 is close, but “rinova” is “renews/revives” (fear returns), so “ಮತ್ತೆ ಜೀವಂತಗೊಳಿಸುತ್ತದೆ” would be closer than generic “ಉಂಟುಮಾಡುತ್ತದೆ.”
+
+7 ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು;
+8 ಆದರೆ ನಾನು ಅಲ್ಲಿ ಕಂಡ ಉತ್ತಮವನ್ನು ಚರ್ಚಿಸಲು,
+9 ನಾನು ಅಲ್ಲಿ ನೋಡಿದ ಇತರ ವಿಷಯಗಳನ್ನು ಹೇಳುವೆ.
+- Note: Line 7 is mistranslated/grammatically broken. “Tant’ è amara che poco è più morte” = “So bitter it is that death is little more.” You have “ಇದು ಅಷ್ಟು ಕಹಿ ಮರಣವು ಸ್ವಲ್ಪ ಹೆಚ್ಚು” which reverses/garbles the comparison. It should express: “ಇದು ಅಷ್ಟು ಕಹಿ—ಸಾವು ಅದಕ್ಕಿಂತ ಸ್ವಲ್ಪವೇ ಹೆಚ್ಚಾಗಿದೆ.” Line 8–9: “per trattar del ben ch’i’ vi trovai, dirò de l’altre cose” = “to speak of the good I found there, I will tell of the other things I saw.” “ಚರ್ಚಿಸಲು” is too academic; “ವಿವರಿಸಲು/ಹೇಳಲು” fits. “ಇತರ ವಿಷಯಗಳು” is okay, but “cose” here is weighty—events/sights.
+
+10 ನಾನು ಅದರಲ್ಲಿ ಹೇಗೆ ಪ್ರವೇಶಿಸಿದೆ ಎಂದು ಚೆನ್ನಾಗಿ ಹೇಳಲು ಸಾಧ್ಯವಿಲ್ಲ,
+11 ಆ ಕ್ಷಣದಲ್ಲಿ ನಾನು ನಿದ್ರೆಯಿಂದ ತುಂಬಾ ತುಂಬಿದ್ದೆ
+12 ನಾನು ಸತ್ಯವಾದ ಮಾರ್ಗವನ್ನು ತೊರೆದೆ.
+- Note: Generally faithful. However “Io non so ben ridir com’i’ v’intrai” is “I cannot rightly recount how I entered it,” not merely “say well”; your “ಚೆನ್ನಾಗಿ” is ok but could be “ಸರಿಯಾಗಿ.” Line 11: “pien di sonno” is “full of sleep/drowsiness” (spiritual torpor); “ನಿದ್ರೆಯಿಂದ ತುಂಬಾ ತುಂಬಿದ್ದೆ” is clumsy repetition. Line 12 ok: “verace via” = “true way.”
+
+13 ಆದರೂ ನಾನು ಪರ್ವತದ ಪಾದಕ್ಕೆ ಬಂದ ನಂತರ,
+14 ಅಲ್ಲಿ ಆ ಕಣಿವೆ ಮುಗಿಯುವ ಸ್ಥಳ
+15 ಅದು ನನ್ನ ಹೃದಯವನ್ನು ಭಯದಿಂದ ಕಚ್ಚಿತ್ತು,
+- Note: “Ma poi ch’i’ fui al piè d’un colle giunto” = “But when I had reached the foot of a hill.” “ಆದರೂ” (although) is wrong connective; should be “ಆದರೆ/ಆಮೇಲೆ.” Line 14 incomplete Kannada sentence; it should link to line 15: “there where that valley ended.” Line 15: “compunto” is “pierced/stung/stricken,” metaphorical; “ಕಚ್ಚಿತ್ತು” is a bit literal/animalistic. Better “ವಿದ್ರಿಸಿದ/ಕಾಡಿದ.”
+
+16 ನಾನು ಮೇಲಕ್ಕೆ ನೋಡಿದೆ ಮತ್ತು ಅದರ ಭುಜಗಳನ್ನು ಕಂಡೆ
+17 ಅವು ಈಗಾಗಲೇ ಗ್ರಹದ ಕಿರಣಗಳಿಂದ ಆವೃತವಾಗಿವೆ
+18 ಅದು ಜನರನ್ನು ಪ್ರತಿ ಮಾರ್ಗದಲ್ಲೂ ಸರಿಯಾಗಿ ನಡೆಸುತ್ತದೆ.
+- Note: Mostly good. “le sue spalle” = the hill’s shoulders/slopes; “ಭುಜಗಳು” works metaphorically. “pianeta” here is the Sun; translating as generic “ಗ್ರಹ” loses the medieval astral specificity—better “ಸೂರ್ಯ” (since line 38 confirms). Line 18: “che mena dritto altrui per ogne calle” is “that leads others straight on every path”; your “ಪ್ರತಿ ಮಾರ್ಗದಲ್ಲೂ” ok, but “ಸರಿಯಾಗಿ ನಡೆಸುತ್ತದೆ” could be “ನೆಟ್ಟಗೆ ನಡೆಸುತ್ತದೆ.”
+
+19 ಆ ಸಮಯದಲ್ಲಿ ಭಯ ಸ್ವಲ್ಪ ಶಾಂತವಾಗಿತ್ತು,
+20 ಅದು ನನ್ನ ಹೃದಯದ ಸರೋವರದಲ್ಲಿ ಉಳಿದಿತ್ತು
+21 ನಾನು ಬಹಳ ಸಂಕಟದಿಂದ ಕಳೆದ ರಾತ್ರಿಯು.
+- Note: Line 19: “Allor fu la paura un poco queta” = “Then the fear was somewhat quieted”; good. Line 20: “lago del cor” is “lake of the heart”; ok. Line 21 grammar: should be “ನಾನು ಬಹಳ ಪೀತಾ/ಕರುಣೆಯಿಂದ (pietà) ಕಳೆದ ರಾತ್ರಿಯಲ್ಲಿಡೀ.” “pieta” in Dante is complex (pity/distress); “ಸಂಕಟ” is partial but misses “pity/compassion.”
+
+22 ಮತ್ತು ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದವನಂತೆ, ಯಾರು,
+23 ಸಮುದ್ರದಿಂದ ಹೊರಬಂದು ತೀರದ ಮೇಲೆ,
+24 ಅಪಾಯಕರ ನೀರಿಗೆ ತಿರುಗಿ ನೋಡುವನು,
+- Note: Meaning is mostly right, but phrasing is awkward. “come quei che con lena affannata” = “like one who with labored breath”; “ಶ್ವಾಸದ ಶಕ್ತಿ ಮುಗಿದ” is not exactly “affannata” (panting/strained). Better “ಉಸಿರು ಹತ್ತಿಹೋಗಿರುವ.” Lines 23–24 ok: “pelago” is open sea; “ಸಮುದ್ರ” fine, but “ತೀರದ ಮೇಲೆ” could be “ತೀರಕ್ಕೆ.”
+
+25 ಹೀಗಾಗಿ ನನ್ನ ಆತ್ಮ ಇನ್ನೂ ಓಡಿಹೋಗುತ್ತಿತ್ತು,
+26 ಹಿಂದಕ್ಕೆ ತಿರುಗಿ ದಾರಿಯನ್ನು ಮತ್ತೆ ನೋಡುವುದಕ್ಕೆ
+27 ದಾರಿಯನ್ನು ಎಂದಿಗೂ ಜೀವಂತ ವ್ಯಕ್ತಿ ಬಿಡಲಿಲ್ಲ.
+- Note: “così l’animo mio, ch’ancor fuggiva” = “so my spirit, still fleeing”; good. Line 26 ok though could be tighter. Line 27 mistranslation: “lo passo” is “the passage/defile/step,” not “the path” twice; and “non lasciò già mai persona viva” = “that never yet left any person alive” (i.e., none returned). Your Kannada sounds like “no living person ever left the path,” which is unclear. Better: “ಅಂಥ ದಾರಿಯಿಂದ ಯಾರೂ ಜೀವಂತವಾಗಿ ಮರಳಲಿಲ್ಲ.”
+
+28 ನಾನು ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ಪಡೆದ ನಂತರ ನನ್ನ ದಣಿದ ದೇಹ,
+29 ನಾನು ಮರುಮಾರ್ಗವನ್ನು ನಿರ್ಜನ ತೊಗಟೆಯ ಮೂಲಕ ತೆಗೆದುಕೊಂಡೆ,
+30 ಅದರಿಂದ ದೃಢವಾದ ಪಾದ ಯಾವಾಗಲೂ ಕೆಳಗಿರುವುದು.
+- Note: Line 28 grammar broken: should be “ನನ್ನ ದಣಿದ ದೇಹವನ್ನು ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ಮಾಡಿಸಿ.” Line 29: “piaggia diserta” = “deserted slope” (not “tೊಗಟೆ” = bark/shell). Use “ನಿರ್ಜನ ಇಳಿಜಾರು/ಏರುಬಾಗಿಲು.” Line 30: “sì che ’l piè fermo sempre era ’l più basso” = the firm foot was always the lower one (climbing cautiously). Your line is vague; should explicitly convey “ನನ್ನ ಸ್ಥಿರ ಕಾಲು ಯಾವಾಗಲೂ ಕೆಳಗಿನದ್ದಾಗಿತ್ತು.”
+
+31 ಮತ್ತು ಇಲ್ಲಿದೆ, ಸುಮಾರು ಏರಿಕೆಯ ಪ್ರಾರಂಭದಲ್ಲಿ,
+32 ಒಂದು ಚಿರತೆ ಹಗುರ ಮತ್ತು ಬಹಳ ಚುರುಕಾದ,
+33 ಮಚ್ಚುಮಚ್ಚು ಚುಕ್ಕೆಗಳಿರುವ ಕೂದಲಿನಿಂದ ಮುಚ್ಚಲ್ಪಟ್ಟಿತ್ತು;
+- Note: “Ed ecco” = “And behold”; fine. “lonza” is traditionally rendered as leopard/panther; “ಚಿರತೆ” is plausible. Line 33 is okay though “pel macolato” is “spotted pelt,” not “kūdalu” (hair) specifically; “ಚರ್ಮ/ಮೆಟ್ಟೆ” may be better.
+
+34 ಮತ್ತು ಅವಳು ನನ್ನಿಗೆ ಮುಖದ ಮುಂದೆ ಚಲಿಸಲಿಲ್ಲ,
+35 ಬದಲಿಗೆ ಅವಳು ನನ್ನ ಮಾರ್ಗವನ್ನು ಬಹಳವಾಗಿ ಅಡ್ಡಿಪಡಿಸಿತು,
+36 ಹಿಂತಿರುಗಲು ನಾನು ಅನೇಕ ಬಾರಿ ತಿರುಗಿದ್ದೆ.
+- Note: Line 34 mistranslation: “non mi si partia dinanzi al volto” = “did not move away from before my face” (it wouldn’t leave). Your “ಚಲಿಸಲಿಲ್ಲ” reads like “didn’t move,” rather than “didn’t depart.” Line 35 ok. Line 36 captures sense.
+
+37 ಸಮಯ ಬೆಳಗಿನ ಪ್ರಾರಂಭದಲ್ಲಿ ಇತ್ತು,
+38 ಮತ್ತು ಸೂರ್ಯವು ಆ ನಕ್ಷತ್ರಗಳೊಂದಿಗೆ ಮೇಲಕ್ಕೆ ಏರುತ್ತಿತ್ತು
+39 ಅವು ಅವನೊಂದಿಗೆ ಇದ್ದವು ದಿವ್ಯ ಪ್ರೇಮವು ಆಗಿದ್ದಾಗ
+- Note: Line 37 ok though “Temp’ era” is more elevated (“It was the time…”). Lines 38–39 are muddled: “’l sol montava ’n sù con quelle stelle / ch’eran con lui quando l’amor divino…” = the sun was rising with the same stars that were with it when Divine Love first set in motion those beautiful things (Creation; often Aries). Your line 39 is ungrammatical and loses “when.” Suggest: “ದಿವ್ಯ ಪ್ರೇಮವು ಮೊದಲ ಬಾರಿ…”
+
+40 ಮೊದಲು ಆ ಸುಂದರ ವಸ್ತುಗಳನ್ನು ಚಲಿಸಿತು;
+41 ಅಷ್ಟು ಆಗಿ ನನಗೆ ಉತ್ತಮ ಆಶೆಯ ಕಾರಣವಾಗಿತ್ತು
+42 ಆ ಕಾಡು ಪ್ರಾಣಿಯ ಮಡಚು ಚರ್ಮದ ಬಗ್ಗೆ
+- Note: Line 40 mostly ok though “mosse di prima” = “moved/put in motion at first” (creation). Line 41: “sì ch’a bene sperar m’era cagione” = “so that it gave me cause to hope for good”; your “ಅಷ್ಟು ಆಗಿ” is awkward; use “ಆದುದರಿಂದ.” Line 42 mistranslation: “di quella fiera a la gaetta pelle” = “because of that beast with the gay/bright pelt.” You wrote “ಮಡಚು ಚರ್ಮ” (folded?) and “ಬಗ್ಗೆ” which is off; should be “ಆ ಹರ್ಷಭರಿತ ಚರ್ಮದ ಮೃಗದ ಕಾರಣದಿಂದ.”
+
+43 ಸಮಯದ ಗಂಟೆ ಮತ್ತು ಮಧುರ ಋತು;
+44 ಆದರೆ ಇಷ್ಟು ಆಗಿರದಂತೆ ಭಯ ನನಗೆ ನೀಡದಂತೆ
+45 ಸಿಂಹದ ದೃಶ್ಯವು ನನಗೆ ಕಾಣಿಸಿತು.
+- Note: Line 43 ok (hour + sweet season). Line 44 is grammatically broken; Dante: “ma non sì che paura non mi desse” = “but not so much that it did not give me fear” (i.e., still I feared). Should be “ಆದರೂ ಅದು ನನಗೆ ಭಯ ಕೊಡದೇ ಇರಲಿಲ್ಲ.” Line 45 ok.
+
+46 ಅವನು ನನ್ನ ವಿರುದ್ಧ ಬರುತ್ತಿದ್ದ ಎಂದು ತೋರುತ್ತಿತ್ತು
+47 ತಲೆಯು ಎತ್ತರವಾಗಿದ್ದು, ಹಸಿವು ಕಾಡುವಂತೆ,
+48 ಆದ್ದರಿಂದ ಗಾಳಿ ಅವನಿಂದ ಕಂಪಿಸುತ್ತಿತ್ತು ಎಂದು ತೋರುತ್ತಿತ್ತು.
+- Note: Good overall. “rabbiosa fame” = “rabid/angry hunger,” not just “ಹಸಿವು ಕಾಡುವಂತೆ”; better “ಕ್ರುದ್ಧ ಹಸಿವಿನಿಂದ.” Line 48 ok.
+
+49 ಮತ್ತು ಒಂದು ಹೆಣ್ಣು ನರಿ, ಎಲ್ಲಾ ಆಸೆಗಳಿಂದ,
+50 ಅವಳ ಸೊಂಪಿನಲ್ಲಿ ಭಾರವಾದಂತೆ ತೋರುತ್ತಿತ್ತು,
+51 ಮತ್ತು ಈಗಾಗಲೇ ಅನೇಕ ಜನರನ್ನು ದುಃಖಭರಿತವಾಗಿ ಬದುಕುವಂತೆ ಮಾಡಿತ್ತು,
+- Note: Major mistranslation: “lupa” is a she-wolf, not “ಹೆಣ್ಣು ನರಿ” (vixen). This is central symbolism (avarice). Line 49: “di tutte brame sembiava carca” = “seemed laden with every craving”; ok. Line 50 wrong: “ne la sua magrezza” = “in her leanness,” not “ಸೊಂಪು” (plumpness). Should stress gauntness. Line 51 ok.
+
+52 ಅವಳು ನನಗೆ ಇಷ್ಟು ಭಾರವನ್ನು ತಂದಳು
+53 ಅವಳ ದೃಷ್ಟಿಯಿಂದ ಉಂಟಾದ ಭಯದೊಂದಿಗೆ,
+54 ನಾನು ಎತ್ತರದ ನಿರೀಕ್ಷೆಯನ್ನು ಕಳೆದುಕೊಂಡೆ.
+- Note: Generally ok though “gravezza” is heaviness/oppression. “speranza de l’altezza” is “hope of the height” (the hill); “ಎತ್ತರದ ನಿರೀಕ್ಷೆ” is literal but acceptable; could be “ಆ ಬೆಟ್ಟವನ್ನು ಏರುವ ನಿರೀಕ್ಷೆ.”
+
+55 ಮತ್ತು ಅವನು ಸ್ವಯಂ ಇಷ್ಟಪಟ್ಟು ಪಡೆಯುವವನು,
+56 ಮತ್ತು ಸಮಯ ಬರುತ್ತದೆ ಅದು ಅವನನ್ನು ಕಳೆದುಕೊಳ್ಳುವಂತೆ ಮಾಡುತ್ತದೆ,
+57 ಅವನ ಎಲ್ಲಾ ಚಿಂತನೆಗಳಲ್ಲಿ ಅವನು ಅಳುತ್ತಾನೆ ಮತ್ತು ದುಃಖಿಸುತ್ತಾನೆ;
+- Note: Sense is there, but Kannada is awkward. “E qual è quei che volontieri acquista” = “And like one who gladly gains,” not “ಅವನು…ಪಡೆಯುವವನು” (missing simile setup). Line 56 should be “ಮತ್ತು ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳುವ ಸಮಯ ಬಂದಾಗ.” Line 57 ok.
+
+58 ಅಂತಹವು ನನಗೆ ವಿಶ್ರಾಂತಿ ಇಲ್ಲದ ಮೃಗವನ್ನು ಮಾಡಿತು,
+59 ಅದು ನನ್ನತ್ತ ಎದುರಾಗಿ ಬಂದು ನಿಧಾನವಾಗಿ
+60 ಅದು ನನ್ನನ್ನು ಹಿಂತಿರುಗಿಸುತ್ತಿತ್ತು ಸೂರ್ಯ ಮೌನವಾಗಿರುವ ಸ್ಥಳಕ್ಕೆ.
+- Note: Line 58 is wrong: “tal mi fece la bestia sanza pace” = “so did the restless beast make me” (i.e., made me like that man—sad, weeping), not “made the beast for me.” Should be “ಅವಳೇ ನನ್ನನ್ನೂ ಹಾಗೆ ಮಾಡಿತು.” Line 60: “là dove ’l sol tace” = “where the sun is silent” (darkness/hell). Your rendering is ok though word order clunky.
+
+61 ನಾನು ಕೆಳಗಿನ ಸ್ಥಳಕ್ಕೆ ಇಳಿಯುತ್ತಿದ್ದಾಗ,
+62 ನನ್ನ ಕಣ್ಣುಗಳ ಮುಂದೆ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಪ್ರತ್ಯಕ್ಷವಾಯಿತು
+63 ದೀರ್ಘ ನಿಶ್ಯಬ್ದದ ಮೂಲಕ ಅವನು ಕ್ಷೀಣವಾಗಿ ತೋರುತ್ತಿದ್ದ.
+- Note: Mostly fine. “rovinava” is “was falling/ruining downward,” more like “ಜಾರುತ್ತಾ/ಕುಸಿಯುತ್ತಾ ಇಳಿಯುತ್ತಿದ್ದಾಗ” than a controlled descent. Line 63 ok: “parea fioco” = faint/hoarse.
+
+64 ನಾನು ಅವನನ್ನು ಮಹಾ ಮರುಭೂಮಿಯಲ್ಲಿ ನೋಡಿದಾಗ,
+65 ನಾನು ಅವನಿಗೆ ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು ಎಂದು ಕೂಗಿದೆ,
+66 ನೀನು ಯಾವರೂ ಆಗಿದ್ದರೂ ನೆರಳು ಆಗಿರಲಿ ಅಥವಾ ನಿಜವಾದ ಮಾನವ!
+- Note: Line 65 should preserve “Miserere di me” (have mercy on me) as direct plea; your “ನನ್ನ ಮೇಲೆ ಕರುಣೆ ಮಾಡು” is ok. Line 66: “qual che tu sii” = “whoever you are”; fine.
+
+67 ಅವನು ನನಗೆ ಉತ್ತರಿಸಿದ ನಾನು ಮಾನವನಲ್ಲ, ನಾನು ಹಿಂದೆ ಮಾನವನಾಗಿದ್ದೆ,
+68 ಮತ್ತು ನನ್ನ ಪೋಷಕರು ಲೊಂಬಾರ್ಡುಗಳಾಗಿದ್ದರು,
+69 ಮಾಂಟುವಾ ಜನರು ದೇಶದ ಮೂಲಕ ಇಬ್ಬರೂ.
+- Note: Punctuation needed: Dante: “Non omo, omo già fui” = “Not a man, though once I was.” Your line 67 runs together and loses the contrast (now shade vs once man). Line 69 is unidiomatic: “mantoani per patrïa ambedui” = “both Mantuan by homeland.” Suggest “ನಾವುಿಬ್ಬರೂ ಜನ್ಮದಿಂದ ಮಂತುವಾದವರು.”
+
+70 ನಾನು ಜೂಲಿಯೊರ ಅಡಿಯಲ್ಲಿ ಆದರೂ ತಡವಾಗಿ ಜನಿಸಿದ್ದೆ,
+71 ಮತ್ತು ನಾನು ರೋಮದಲ್ಲಿ ಒಳ್ಳೆಯ ಆಗಸ್ಟ್‌ಸ್‌ರ ಅಡಿಯಲ್ಲಿ ವಾಸಿಸಿದ್ದೆ
+72 ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ ದೇವರುಗಳ ಕಾಲದಲ್ಲಿ.
+- Note: Line 70: “sub Iulio” = under Julius (Caesar), not generic “ಜೂಲಿಯೊ”; use “ಜೂಲಿಯಸ್ ಸೀಸರ್ ಕಾಲದಲ್ಲಿ.” “ancor che fosse tardi” = though it was late; ok. Line 72: “dèi falsi e bugiardi” = “false and lying gods”; your “ಸುಳ್ಳು ಮತ್ತು ಸುಳ್ಳು ಹೇಳುವ” is redundant but acceptable.
+
+73 ನಾನು ಕವಿ, ಮತ್ತು ಆ ನ್ಯಾಯಯುತನ ಬಗ್ಗೆ ಹಾಡಿದೆ
+74 ಅಂಚಿಸಸ್‌ರ ಮಗ, ಟ್ರಾಯಿಂದ ಬಂದ,
+75 ಆದ ನಂತರ ಗರ್ವಿ ಇಲಿಯಾನ್ ಸುಟ್ಟುಹೋಯಿತು.
+- Note: Line 73: “Poeta fui” = “I was a poet”; ok. “di quel giusto figliuol d’Anchise” refers to Aeneas; “ಆ ನ್ಯಾಯಯುತನ” is ok but could be “ನ್ಯಾಯವಂತ.” Line 75 ok though “Ilïón” is Troy; fine.
+
+76 ಆದರೆ ನೀನು ಏಕೆ ಇಷ್ಟು ದೊಡ್ಡ ಕಿರಿಕಿರಿಗೆ ಮರುಬರುತ್ತೀಯ?
+77 ನೀನು ಏಕೆ ಆ ಆನಂದಕರ ಪರ್ವತವನ್ನು ಏರುವುದಿಲ್ಲ?
+78 ಅದು ಎಲ್ಲಾ ಸಂತೋಷದ ಮೂಲ ಮತ್ತು ಕಾರಣವೇ?
+- Note: Good overall. “tanta noia” is “such distress/misery,” not mere “ಕಿರಿಕಿರಿ” (annoyance). Better “ದುಃಖ/ಸಂಕಟ.” Line 78 ok.
+
+79 ಆಗ ನೀನು ಆ ವರ್ಜಿಲ್ ಮತ್ತು ಆ ಮೂಲವೇ,
+80 ಅದು ಮಾತಿನ ಅಷ್ಟು ವಿಶಾಲ ನದಿಯನ್ನು ಹರಿಸುವುದೇ?
+81 ನಾನು ಅವನಿಗೆ ಲಜ್ಜೆಯ ಮುಖದೊಂದಿಗೆ ಉತ್ತರಿಸಿದೆ.
+- Note: Meaning ok, but register/poetry suffers. “quella fonte / che spandi di parlar sì largo fiume” = “that fountain that pours so broad a river of speech.” Kannada “ಮಾತಿನ…ನದಿ” is serviceable, but the extra spacing and odd typography (invisible characters) suggests formatting artifacts. Line 81 good.
+
+82 ಓ, ಇತರ ಕವಿಗಳ ಗೌರವ ಮತ್ತು ಬೆಳಕು,
+83 ನನ್ನ ದೀರ್ಘ ಅಧ್ಯಯನವನ್ನು ಮತ್ತು ಮಹಾ ಪ್ರೀತಿಯನ್ನು ನನಗೆ ಉಪಯೋಗಿಸು
+84 ಇವುಗಳು ನನ್ನನ್ನು ನಿನ್ನ ಗ್ರಂಥವನ್ನು ಹುಡುಕುವಂತೆ ಮಾಡಿವೆ.
+- Note: Line 83: “vagliami” = “may it avail me/help me,” directed as a plea; your “ನನಗೆ ಉಪಯೋಗಿಸು” is unidiomatic (sounds like “use my study”). Better “ನನಗೆ ಫಲಿಸಲಿ/ಸಹಾಯವಾಗಲಿ.” Line 84 ok.
+
+85 ನೀನು ನನ್ನ ಗುರು ಮತ್ತು ನನ್ನ ಲೇಖಕ,
+86 ನೀನು ಮಾತ್ರ ಅವನಿಂದ ನಾನು ತೆಗೆದುಕೊಂಡೆ
+87 ಆ ಸುಂದರ ಶೈಲಿ ಅದು ನನಗೆ ಗೌರವವನ್ನು ನೀಡಿದೆ.
+- Note: Line 86 broken: “tu se’ solo colui da cu’ io tolsi” = “you are the only one from whom I took” (learned). Should be “ನಿನ್ನಿಂದಲೇ ನಾನು ತೆಗೆದುಕೊಂಡೆ.” “ಅವನಿಂದ” misrefers. Line 87 ok.
+
+88 ಆ ಪ್ರಾಣಿಯನ್ನು ನೋಡು, ಅದರಿಂದ ನಾನು ತಿರುಗಿದ್ದೆ;
+89 ಅವಳ ವಿರುದ್ಧ ನನಗೆ ಸಹಾಯ ಮಾಡು, ಪ್ರಸಿದ್ಧ ಜ್ಞಾನಿ,
+90 ಅವಳು ನನ್ನ ರಕ್ತನಾಳಗಳು ಮತ್ತು ನಾಡಿಗಳನ್ನು ಕಂಪಿಸುವಂತೆ ಮಾಡುತ್ತಾಳೆ»
+- Note: “bestia” here is the wolf specifically in context; “ಆ ಪ್ರಾಣಿ” is ok but could be “ಆ ಮೃಗ.” Line 90: “tremar le vene e i polsi” = “make my veins and pulses tremble”; your “ರಕ್ತನಾಳಗಳು ಮತ್ತು ನಾಡಿಗಳು” is fine though a bit medical.
+
+91 ನಿನಗೆ ಇನ್ನೊಂದು ಪ್ರಯಾಣವನ್ನು ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಗತ್ಯ,
+92 ಅವನು ನನ್ನ ಕಣ್ಣೀರು ಹರಿಯುವುದನ್ನು ಕಂಡು ಉತ್ತರಿಸಿದನು,
+93 ನೀನು ಈ ಕಾಡು ಸ್ಥಳದಿಂದ ಪಾರಾಗಲು ಬಯಸಿದರೆ;
+- Note: Good. “A te convien tenere altro vïaggio” = “you must take another road/journey”; your line 91 ok though “ತೆಗೆದುಕೊಳ್ಳುವುದು” could be “ಹಿಡಿಯಬೇಕು/ಪಾಲಿಸಬೇಕು.”
+
+94 ಈ ಮೃಗಕ್ಕಾಗಿ, ಇದರಿಂದ ನೀನು ಕೂಗುತ್ತೀಯೆ,
+95 ಇದು ಇತರರಿಗೆ ಅದರ ಮಾರ್ಗದಲ್ಲಿ ಹಾದು ಹೋಗಲು ಅನುಮತಿಸುವುದಿಲ್ಲ,
+96 ಆದರೆ ಅದು ಅವನನ್ನು ಅಷ್ಟು ತಡೆಯುತ್ತದೆ, ಅವನನ್ನು ಕೊಲ್ಲುತ್ತದೆ;
+- Note: Line 94: “per la qual tu gride” = “because of which you cry out,” ok. Line 96 pronouns wrong: should be “ಅವನನ್ನು” → “ಅವರನ್ನು”/“ಮನುಷ್ಯನನ್ನು” (it kills the passerby). Also Dante: “tanto lo ’mpedisce” = “so blocks him” (the one who tries); your “ಅವನನ್ನು” lacks antecedent.
+
+97 ಮತ್ತು ಅವಳಿಗೆ ಇಷ್ಟು ದುಷ್ಟ ಮತ್ತು ಕೆಟ್ಟ ಸ್ವಭಾವವಿದೆ,
+98 ಅದು ಎಂದಿಗೂ ತನ್ನ ಲೋಭಿ ಇಚ್ಛೆಯನ್ನು ತೃಪ್ತಿಪಡಿಸುವುದಿಲ್ಲ,
+99 ಮತ್ತು ಊಟದ ನಂತರ ಅವಳಿಗೆ ಮೊದಲುಗಿಂತ ಹೆಚ್ಚು ಹಸಿವು ಇದೆ.
+- Note: Good. Slight nuance: “bramosa voglia” is craving appetite; “ಲೋಭಿ ಇಚ್ಛೆ” fits.
+
+100 ಅನೇಕ ಪ್ರಾಣಿಗಳು ಅವಳಿಗೆ ಮದುವೆಯಾಗುವವು,
+101 ಮತ್ತು ಇನ್ನೂ ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳು ಸೇರಿಕೊಳ್ಳುತ್ತವೆ, ಹೊಂಡು ಬರುವವರೆಗೆ
+102 ಹೊಂಡು ಬರುತ್ತದೆ, ಅದು ಅವಳನ್ನು ದುಃಖದಿಂದ ಮರಣಕ್ಕೆ ತರುವದು.
+- Note: Line 100 literalism: “s’ammoglia” is “mates with” (takes spouses), i.e., she consorts with many beasts—metaphor for alliances with vices. “ಮದುವೆಯಾಗುವವು” is too concrete/social; better “ಸೇರಿಕೊಳ್ಳುತ್ತವೆ/ಸಂಭೋಗಿಸುತ್ತವೆ.” Lines 101–102: “’l veltro” is the Greyhound (hound), not “ಹೊಂಡು” (hole/pond depending on spelling). This is a serious lexical error. Also repetition “ಹೊಂಡು” twice. Should be “ವೆಲ್ಟ್ರೋ/ನಾಯಿ/ಗ್ರೇಹೌಂಡ್.” “morir con doglia” = “die in pain,” not merely “ದುಃಖದಿಂದ.”
+
+103 ಅವನು ಭೂಮಿಯಲ್ಲಿಯೂ ವಸ್ತುಗಳಲ್ಲಿಯೂ ಆಹಾರ ತೆಗೆದುಕೊಳ್ಳುವುದಿಲ್ಲ,
+104 ಆದರೆ ಜ್ಞಾನ ಪ್ರೀತಿ ಮತ್ತು ಧೈರ್ಯ,
+105 ಮತ್ತು ಅವನ ಜನ್ಮಸ್ಥಳ ಫೆಲ್ಟ್ರೋ ಮತ್ತು ಫೆಲ್ಟ್ರೋ  ನಡುವೆ ಇರುತ್ತದೆ.
+- Note: Line 103 mistranslates “terra né peltro” = “land nor peltro (pewter/metal; often ‘money/wealth’)” meaning he won’t be fed by worldly goods; “ವಸ್ತುಗಳು” is vague and loses the “peltro” specificity (and traditional interpretive crux). Line 104: “virtute” is “virtue,” not “ಧೈರ್ಯ” (courage) specifically. Line 105 ok though “tra feltro e feltro” is ambiguous; keep as is but note interpretive challenge.
+
+106 ಆ ವಿನಮ್ರ ಇಟಲಿಗೆ ಅವನು ರಕ್ಷಣೆಯಾಗುವನು
+107 ಆದಕ್ಕಾಗಿ ಅದಕ್ಕೆ ಕಮಿಲ್ಲಾ ಕನ್ಯೆ ಮರಣವಾಯಿತು,
+108 ಯೂರಿಯಾಲಸ್, ಟರ್ನಸ್ ಮತ್ತು ನಿಸಸ್ ಗಾಯಗಳಿಂದ ಮರಣಹೊಂದಿದರು.
+- Note: Good overall. Line 107: “per cui morì” = “for which (Italy) died…”; your “ಆದಕ್ಕಾಗಿ ಅದಕ್ಕೆ” is clunky. Line 108 ok.
+
+109 ಅವನು ಅವಳನ್ನು ಪ್ರತಿ ಪಟ್ಟಣದ ಮೂಲಕ ಹಿಂಬಾಲಿಸುವನು,
+110 ಅವನು ಅವಳನ್ನು ನರಕಕ್ಕೆ ಹಿಂತಿರುಗಿಸುವವರೆಗೆ,
+111 ಅಲ್ಲಿ ಅಸೂಯೆ ಮೊದಲಿಗೆ ಅವಳನ್ನು ಕಳುಹಿಸಿದ ಸ್ಥಳ.
+- Note: Line 111 slightly off: “là onde ’nvidia prima dipartilla” = “from where Envy first set her loose/sent her forth.” Your “ಕಳುಹಿಸಿದ ಸ್ಥಳ” is close but should indicate origin (“ಅಲ್ಲಿಂದ”).
+
+112 ಆದ್ದರಿಂದ ನಾನು ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ ಯೋಚಿಸಿ ನಿರ್ಣಯಿಸುತ್ತೇನೆ
+113 ನೀವು ನನ್ನನ್ನು ಅನುಸರಿಸಿ ನಾನು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಕನಾಗುವೆ,
+114 ಮತ್ತು ನಾನು ನಿಮಗೆ ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳದಿಂದ ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ ಕರೆದೊಯ್ಯುವೆ;
+- Note: Pronouns/register: Dante uses informal singular “tu”; Kannada uses “ನಿಮ್ಮ/ನೀವು” (plural/formal). Consistency matters in epic address—choose one. Line 112: “Ond’ io per lo tuo me’ penso e discerno” = “Therefore, for your best, I think and judge”; “ನಿಮ್ಮ ಹಿತಕ್ಕಾಗಿ” ok but “ನಿರ್ಣಯಿಸುತ್ತೇನೆ” a bit bureaucratic. Line 114: “trarrotti di qui per loco etterno” = “I will draw you from here through an eternal place”; your “ಶಾಶ್ವತ ಸ್ಥಳದ ಮೂಲಕ” ok though “ಇಲ್ಲಿ ನಿಂತಿರುವ ಸ್ಥಳ” adds “standing” not in original.
+
+115 ಅಲ್ಲಿ ನೀನು ನಿರಾಶಾಜನಕ ಕೂಗನ್ನು ಕೇಳುವೆ,
+116 ನೀನು ಪ್ರಾಚೀನ ದುಃಖಭರಿತ ಆತ್ಮಗಳನ್ನು ನೋಡುವೆ,
+117 ಅವರು ಪ್ರತಿೊಬ್ಬರು ಎರಡನೇ ಮರಣವನ್ನು ಘೋಷಿಸುತ್ತಾರೆ;
+- Note: Line 115: “disperate strida” = “desperate shrieks/cries”; “ಕೂಗು” ok but singular; “ಕೂಗುಗಳನ್ನು.” Line 117: “grida” = “cries out for” the second death; not “ಘೋಷಿಸುತ್ತಾರೆ” (announce). Better “ಎರಡನೇ ಮರಣಕ್ಕಾಗಿ ಕಿರುಚುತ್ತಾರೆ.”
+
+118 ಮತ್ತು ನಂತರ ನೀನು ಆ ಸಂತೃಪ್ತ ಜನರನ್ನು ನೋಡುವೆ
+119 ಅಗ್ನಿಯಲ್ಲಿ ಅವರು ಬರಲು ಆಶಿಸುತ್ತಾರೆ,
+120 ಅದು ಯಾವಾಗಲಾದರೂ ಆಶೀರ್ವದಿತ ಜನರಿಗೆ.
+- Note: Meaning muddled. Dante: “color che son contenti / nel foco, perché speran di venire / quando che sia a le beate genti” = souls in Purgatory content in fire because they hope to come, whenever it may be, to the blessed. Your line 119 lacks object (“ಆಶಿಸುತ್ತಾರೆ” to come *to* blessed people). Line 120 is ungrammatical; should be “ಯಾವಾಗಲಾದರೂ ಧನ್ಯಜನರ ಬಳಿಗೆ ತಲುಪುವೆವೆಂದು.”
+
+121 ನೀನು ನಂತರ ಏರಲು ಬಯಸಿದರೆ ಅವುಗಳಿಗೆ,
+122 ಆ ಆತ್ಮವು ಅದಕ್ಕಾಗಿ ನನ್ನಿಗಿಂತ ಹೆಚ್ಚು ಯೋಗ್ಯವಾಗಿರುತ್ತದೆ:
+123 ಅವಳೊಂದಿಗೆ ನಾನು ನನ್ನ ಪ್ರಸ್ಥಾನದ ಸಮಯದಲ್ಲಿ ನಿನ್ನನ್ನು ಬಿಡುವೆನು;
+- Note: Line 121: “A le quai poi” refers to the blessed people/realm; “ಅವುಗಳಿಗೆ” unclear. Better “ಅವರ ಬಳಿಗೆ/ಅಲ್ಲಿ.” Line 123 ok though “ನಿನ್ನನ್ನು” returns to singular informal; again inconsistency with “ನೀವು.”
+
+124 ಆ ಮೇಲಿನಲ್ಲಿರುವ ಸಾಮ್ರಾಟ್‌ಗಾಗಿ,
+125 ಅವನ ಕಾನೂನಿಗೆ ನಾನು ಬಂಡಾಯ ಮಾಡಿದ್ದರಿಂದ,
+126 ಅವನು ತನ್ನ ನಗರಕ್ಕೆ ನನ್ನ ಮೂಲಕ ಯಾರೂ ಬರಬಾರದು ಎಂದು ಇಷ್ಟಪಡುತ್ತಿಲ್ಲ.
+- Note: Line 124: “ché quello imperador che là sù regna” = “for that Emperor who reigns above” (God). Your “ಆ ಮೇಲಿನಲ್ಲಿರುವ” ok. Line 126: awkward double negative; Dante: “non vuol che ’n sua città per me si vegna” = “does not will that one come to his city through me.” Better “ನನ್ನ ಮೂಲಕ ಆತನ ನಗರಕ್ಕೆ ಯಾರೂ ಬಾರದೆಂದು ಅವನು ಬಯಸುತ್ತಾನೆ.”
+
+127 ಎಲ್ಲಾ ಭಾಗಗಳಲ್ಲಿ ಅವನು ಆಡಳಿತ ಮಾಡುತ್ತಾನೆ ಮತ್ತು ಅಲ್ಲಿ ಆಡಳಿತ ನಡೆಸುತ್ತಾನೆ;
+128 ಅಲ್ಲಿ ಅವನ ನಗರ ಮತ್ತು ಉನ್ನತ ಆಸನ ಇದೆ:
+129 ಓ ಸಂತೋಷವಂತನು, ಅವನನ್ನು ಅಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ!».
+- Note: Line 127 repetitive (“ಆಡಳಿತ…ಆಡಳಿತ”); Dante contrasts “impera” (rules everywhere) and “quivi regge” (there he governs). Line 129 mistranslation: “oh felice colui cu’ ivi elegge!” = “happy is he whom he chooses there.” Your “ಅವನನ್ನು” wrong object (it’s God choosing a person, not someone choosing Him). Should be “ಅವನಿಂದ ಅಲ್ಲಿ ಆಯ್ಕೆಯಾಗುವವನು.”
+
+130 ಮತ್ತು ನಾನು ಅವನಿಗೆ: “ಕವಿ, ನಾನು ನಿನ್ನನ್ನು ವಿನಂತಿಸುತ್ತೇನೆ
+131 ನೀನು ತಿಳಿಯದ ಆ ದೇವರ ಮೂಲಕ,
+132 ಅದರಿಂದ ನಾನು ಈ ದುಃಖ ಮತ್ತು ಇನ್ನಷ್ಟು ಕೆಟ್ಟದನ್ನು ತಪ್ಪಿಸಿಕೊಳ್ಳುವಂತೆ,
+- Note: Line 130 ok though “ನಿನ್ನನ್ನು ವಿನಂತಿಸುತ್ತೇನೆ” could be “ನಿನ್ನನ್ನು ಬೇಡಿಕೊಳ್ಳುತ್ತೇನೆ.” Line 131: “per quello Dio che tu non conoscesti” = “by that God whom you did not know” (Virgil as pagan); good. Line 132 ok.
+
+133 ನೀನು ಈಗ ಹೇಳಿದಂತೆ, ನನ್ನನ್ನು ಅಲ್ಲಿ ಕರೆದೊಯ್ಯು,
+134 ಅದರಿಂದ ನಾನು ಸಂತ ಪೀಟರ್‌ರ ದ್ವಾರವನ್ನು ನೋಡಲು ಸಾಧ್ಯವಾಗಲಿ
+135 ಮತ್ತು ನೀನು ಇಷ್ಟು ದುಃಖಿತರನ್ನಾಗಿಸುವವರು».
+- Note: Line 135 mistranslation: “e color cui tu fai cotanto mesti” = “and those whom you make so sorrowful” (the damned he will show). Your “ನೀನು…ಮಾಡಿಸುವವರು” is ungrammatical; should be “ನೀನು ಇಷ್ಟು ದುಃಖದಿಂದಿರುವವರೆಂದು ತೋರಿಸುವವರನ್ನು” or similar. Also line 134 “porta di san Pietro” is metonym for the gate of Heaven; fine.
+
+136 ಆಮೇಲೆ ಅವನು ಮುಂದೆ ಸಾಗಿದ ಮತ್ತು ನಾನು ಅವನ ಹಿಂದೆ ಇಟ್ಟಿದ್ದೆ.
+- Note: “io li tenni dietro” = “I followed close behind him.” Your “ನಾನು ಅವನ ಹಿಂದೆ ಇಟ್ಟಿದ್ದೆ” reads like “I placed [something] behind him.” Should be “ನಾನು ಅವನ ಹಿಂದೆ ಹೋದೆ/ಅನುಸರಿಸಿದೆ.”

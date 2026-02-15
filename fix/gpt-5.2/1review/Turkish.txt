@@ -1,0 +1,227 @@
+1 Hayatımızın yolunun ortasında
+2 kendimi karanlık bir ormanda buldum,
+3 çünkü doğru yol yitirilmişti.
+- Note: Anlam genel olarak doğru. Ancak “cammin” hem “yolculuk” hem “hayat yolu” çağrışımı taşır; “Hayatımızın yolculuğunun ortasında” gibi bir çözüm Türkçede daha doğal ve Dante’nin mecazını daha açık verir. “diritta via” için “doğru yol” uygun; “yitirilmişti” biraz edilgen ve soyut kalıyor, “kaybolmuştu/sapmıştım” (öznenin sorumluluğunu vurgulayarak) daha Dante’cedir.
+
+4 Ah, oranın nasıl olduğunu söylemek ne güç şey,
+5 bu vahşi, sarp ve zorlu orman
+6 ki düşüncesi bile korkuyu tazeler!
+- Note: “Ahi quanto a dir qual era è cosa dura”daki vurgu “nasıl bir şeydi” (ormanı betimlemenin güçlüğü). “oranın nasıl olduğunu” mekânsal bir “yer” hissi veriyor; “nasıl bir ormandı” daha isabetli. “selva selvaggia e aspra e forte”: “sarp” ve “zorlu” uygun; “forte” sadece “zorluk” değil “sert, kuvvetli/haşin” tonunu da taşır; “haşin” önerilebilir. 6. dizede “nel pensier rinova la paura”: “düşününce korku yeniden canlanır” daha yakın; mevcut “düşüncesi bile” anlamı biraz kaydırıyor (orman değil, hatırlamanın kendisi korkuyu tazeler).
+
+7 Öyle acı ki, ölüm ondan pek az fazladır;
+8 Ama orada bulduğum iyiden söz etmek için,
+9 Orada gördüğüm diğer şeyleri anlatacağım.
+- Note: 7 iyi. 8-9’da “ma per trattar del ben ch’i’ vi trovai, dirò de l’altre cose ch’i’ v’ho scorte” mantığı: “orada bulduğum iyiyi anlatabilmek için, orada gördüğüm öteki şeylerden de söz edeceğim.” Çeviri anlamı veriyor; ancak iki kez “Orada” tekrarı şiirselliği ağırlaştırıyor. “iyiden” yerine “iyi(lik)ten”/“hayırdan” daha doğal.
+
+10 Nasıl girdiğimi iyi anlatamıyorum,
+11 O an içim öyle uykuyla doluydu ki,
+12 gerçek yolu terk ettiğim sırada.
+- Note: 10 doğru. 11’de “tant’ era pien di sonno” = “öyle uykuluydum/uykuya öyle gömülmüştüm”; “içim uykuyla doluydu” Türkçede yapay. 12’de “a quel punto che” bağlaç işlevi görüyor: “öyle ki gerçek yolu bırakmıştım”; mevcut “... terk ettiğim sırada” zaman zarfı gibi duruyor, nedensellik/sonuç ilişkisini zayıflatıyor.
+
+13 Ama sonra bir tepenin eteğine vardım,
+14 orası o vadinin bittiği yerdi
+15 ki yüreğim korkuyla sıkışmıştı,
+- Note: 14’te “là dove terminava quella valle” iyi. 15’te “che m’avea di paura il cor compunto” = “korkudan yüreğimi dağlamış/yaralamıştı”; “sıkışmıştı” (daralma) var ama “compunto”nun “iğnelenmiş/yaralanmış” keskinliği kayboluyor.
+
+16 Yukarı baktım ve omuzlarını gördüm,
+17 gezegenin ışınlarıyla kaplıydı çoktan,
+18 ki her yolda insanları doğruya iletir.
+- Note: 16’da “colle”nin “spalle”si (yamaçları) kastedilir; “omuzlarını gördüm” fazla literal ve Türkçede yabancı duruyor; “yamaçlarını/sırtını” daha iyi. 17-18’de “il pianeta che mena dritto altrui” Güneş’tir; “gezegen” Türkçede yanlış çağrışım (planet) yapar, “güneş” denmeli. 18’de “per ogne calle” = “her patikada”; “her yolda” kabul edilebilir ama “caddeler” değil “patikalar” tonunu taşır.
+
+19 O zaman korku biraz sakinleşti,
+20 ki kalbimin derinliklerinde sürmüştü
+21 o geceyi o kadar ıstırap içinde geçirdim.
+- Note: 20-21’de sentaks bozulmuş: “che... la notte ch’i’ passai con tanta pieta” = “o gece, yüreğimin gölünde (lago del cor) öyle acıyla sürdüğü (korku)…”; çeviri “o geceyi... geçirdim” diyerek özneyi kaydırıyor ve “pietà”yı “ıstırap”a indiriyor. “pietà” burada “merhamet/acınma/keder” karışımı, “acıma/keder” daha uygun. “lago del cor” imgesi (“kalp gölü”) tamamen kaybolmuş; en azından “kalbimin gölünde/kalbimin göl gibi derinliğinde” korunmalı.
+
+22 Ve tıpkı nefesi tükenmiş gibi,
+23 denizden çıkıp kıyıya varan,
+24 tehlikeli suya döner ve bakar,
+- Note: 22 “con lena affannata” = “soluğu soluğuna” gibi; “nefesi tükenmiş gibi” yakın ama “gibi” gereksiz, doğrudan “soluğu soluğuna” denebilir. 23’te “pelago” = açık deniz; “denizden çıkıp” yeterli. 24 iyi.
+
+25 böylece ruhum, hâlâ kaçıyordu,
+26 o geçide bakmak için geriye döndü
+27 ki hiçbir canlıyı sağ bırakmamıştı.
+- Note: 25’te “l’animo mio, ch’ancor fuggiva” = “ruhum hâlâ kaçmaktayken”; çeviride “kaçıyordu” ama 26’da “döndü” ile birleşince ritim biraz aksıyor. 27’de “persona viva” = “canlı insan”; “hiçbir canlıyı” genelleştiriyor (hayvan vb.), “hiçbir canlı insanı/hiç kimseyi” daha doğru.
+
+28 Yorgun bedenim biraz dinlendikten sonra,
+29 Yeniden ıssız yamaçta yoluma çıktım,
+30 öyle ki altta kalan ayak hep sabitti.
+- Note: 29’da “piaggia diserta” = “ıssız yamaç” iyi. 30’da “sì che ’l piè fermo sempre era ’l più basso” teknik tırmanış betimi: “sağlam basan ayak hep aşağıdaki (alt basamakta) olandı” (yani temkinli tırmanış). “altta kalan ayak hep sabitti” anlamı kısmen veriyor ama belirsiz; “hep aşağıdaki ayağım daha sağlam basıyordu” gibi netleştirilmeli.
+
+31 Ve işte, neredeyse dik yamacın başında,
+32 hafif ve çok çevik bir dişi leopar,
+33 ki benekli bir kürkle kaplıydı;
+- Note: “lonza” tartışmalı (vaşak/pars/leopar); “leopar” kabul edilebilir ama “dişi leopar” fazladan yorum: İtalyanca cinsiyet (una lonza) gramatikal; biyolojik dişilik şart değil. 31’de “al cominciar de l’erta” = “yokuşun başında”; “dik yamacın başında” doğru.
+
+34 Ve o yüzümün önünden hiç ayrılmadı,
+35 aksine yolumu o kadar engelledi ki,
+36 geri dönmek için sık sık döndüm.
+- Note: 36’daki “ch’i’ fui per ritornar più volte vòlto” = “defalarca geri dönmeye yeltendim/yüzüm geri dönmeye döndü”; çeviri “geri dönmek için sık sık döndüm” diyerek eylemi gerçekleşmiş gibi söylüyor; Dante’de niyet/tereddüt vurgusu var.
+
+37 Zaman sabahın başıydı,
+38 ve güneş o yıldızlarla birlikte yükseliyordu
+39 İlahi Sevgi o güzel şeyleri
+- Note: 37’de “Temp’ era dal principio del mattino” = “sabahın başlangıcıydı” iyi. 38-39’da enjambman korunmalı; ancak 39 tek başına eksik kalıyor, Türkçede “İlahi Sevgi” öznesi 40’ta bağlanacak şekilde daha akıcı kurulmalı.
+
+40 ilk harekete geçirdiğinde onunla birlikte olan;
+41 öyle ki, iyi umut beslememe bir nedendi
+42 bu benekli postlu canavar hakkında
+- Note: 40’ta “mosse di prima” = “ilk kez harekete geçirdi/yarattı” (Yaratılış’a telmih). “ilk harekete geçirdiğinde” doğru. 41 “sì ch’a bene sperar m’era cagione” iyi. 42’de “di quella fiera” = “o hayvan yüzünden”; “hakkında” yanlış yönelim: mesele hayvanla ilgili düşünce değil, ondan dolayı umutlanma.
+
+43 günün o saati ve tatlı mevsim;
+44 ama bu umut, bana korku vermeyecek kadar değildi
+45 karşıma çıkan bir aslanın görüntüsü.
+- Note: 44 İtalyanca “ma non sì che paura non mi desse” çift olumsuz: “ama yine de korku vermeden değildi” / “ama korku da verdi.” Çeviri bunu yakalamış; fakat Türkçesi ağır. 45’te “la vista che m’apparve d’un leone” = “bir aslanın görüntüsü bana göründü”; tamam.
+
+46 Üzerime geliyormuş gibi görünüyordu
+47 başı dik ve kudurmuş bir açlıkla,
+48 öyle ki hava bile korkudan titriyormuş gibiydi.
+- Note: 48’de “parea che l’aere ne tremesse” = “sanki hava ondan titriyordu”; “korkudan” eklemesi yorum (metinde “korku” yok, aslanın dehşetinden titreme iması var). Küçük ama gereksiz açıklama.
+
+49 Ve bütün arzularıyla bir dişi kurt
+50 bir deri bir kemik kalmış gibi görünüyordu,
+51 ve şimdiden birçok insanı keder içinde yaşatmıştı,
+- Note: 49’daki “di tutte brame sembiava carca” = “tüm ihtiraslarla yüklü görünüyordu”; “bütün arzularıyla” anlaşılır ama “yüklenmiş/dolu” tonu eksik. 50’de “ne la sua magrezza” paradoksu: zayıflığında bile iştahla yüklü; “bir deri bir kemik” iyi ama 49-50 bağlantısı güçlenebilir. 51’de “fé già viver grame” = “çoklarını sefil yaşattı”; “keder içinde” daraltıyor, “sefil/perişan” daha yakın.
+
+52 O üzerime öyle bir ağırlık çöktürdü ki
+53 görünüşünden yayılan dehşetle,
+54 doruğa ulaşma umudumu kaybettim.
+- Note: 52’de “mi porse tanto di gravezza” = “bana öyle bir ağırlık/eziklik verdi ki” iyi. 53’te “con la paura ch’uscia di sua vista” = “onun görüntüsünden çıkan korkuyla”; “dehşet” olabilir. 54 doğru.
+
+55 Ve tıpkı hevesle kazanan kimse gibi,
+56 zaman gelip de ona kaybettirdiğinde,
+57 bütün düşüncelerinde ağlar ve üzülür;
+- Note: 55’te “volontieri acquista” = “seve seve kazanır/isteyerek biriktirir”; “hevesle” yakın. 56’daki “e giugne ’l tempo che perder lo face” daha açık: “sonra onu kaybettiren zaman geldiğinde.” Çeviri anlaşılır.
+
+58 o huzursuz canavar beni o hale getirdi,
+59 ki, bana doğru gelerek, yavaş yavaş
+60 beni güneşin sustuğu yere itiyordu.
+- Note: 60’daki “là dove ’l sol tace” mecazı (ışığın sustuğu yer = karanlık) iyi yakalanmış.
+
+61 Alçak bir yere doğru düşerken,
+62 gözlerimin önünde birisi belirdi
+63 uzun sessizlikten sonra silik görünüyordu.
+- Note: 63’te “chi per lungo silenzio parea fioco” = “uzun suskunluktan kısık/soluk (sesli) görünüyordu”; “fioco” daha çok ses/ton; çeviri “silik görünüyordu” diyerek görselliğe kaydırmış. “sesi kısılmış gibiydi” daha doğru.
+
+64 O büyük ıssızlıkta onu gördüğümde,
+65 «Bana merhamet et» diye ona bağırdım,
+66 «Ne olursan ol, ister gölge, ister gerçek insan!»
+- Note: 66’da “od omo certo” = “ister kesin (gerçek) bir insan”; “gerçek insan” iyi.
+
+67 Cevap verdi: «İnsan değilim, bir zamanlar insandım,
+68 ve ebeveynlerim Lombardlardı,
+69 ikisi de vatan olarak Mantualıydı.
+- Note: 69’da “mantoani per patrïa ambedui” = “ikisi de Mantualıydı”; “vatan olarak” biraz ağır ama doğru.
+
+70 Julius'un döneminde doğdum, geç olmasına rağmen,
+71 ve Roma'da iyi Augustus'un idaresinde yaşadım
+72 yalancı ve sahte tanrıların zamanında.
+- Note: 70’te “sub Iulio” = Julius Caesar devri; “Julius’un döneminde” doğru. “ancor che fosse tardi” = “gerçi geç olsa da” (Caesar’ın son yılları). 71’de “sotto ’l buono Augusto” = “iyi Augustus’un zamanında”; “idaresinde” aşırı bürokratik. 72 iyi.
+
+73 Şairdim ve o adil evladın destanını söyledim
+74 Anchises'in oğlu, Truva'dan gelen,
+75 gururlu İlion yandıktan sonra.
+- Note: 73’te “cantai” = “söyledim” doğru; “destan” eklemesi yorum ama makul. 74-75’te söz dizimi Türkçede eksik: “...o adil evladı (kim?) Anchises’in oğlu...” daha açık bağlanmalı. “superbo Ilïón” = “kibirli/gururlu İlion”; doğru.
+
+76 Ama sen neden bu kadar büyük sıkıntıya geri dönüyorsun?
+77 Neden bu keyifli dağa çıkmıyorsun,
+78 ki bütün sevincin kaynağı ve nedenidir?»
+- Note: 76’daki “tanta noia” = “bunca sıkıntı/ıstırap”; iyi. 78 doğru.
+
+79 «Şimdi sen o Virgil ve o gür söz ırmağını
+80 yayan kaynak mısın?»
+81 Ben ona utangaç bir alınla cevap verdim.
+- Note: 79-80’da anlam doğru; ancak “fonte” = “pınar/kaynak” güzel. “gür söz ırmağı” şiirsel ama “di parlar sì largo fiume” = “sözle/belagatle böylesine geniş bir ırmak” (bolluk/genişlik). “gür” biraz “coşkun”a kayıyor. 81 “vergognosa fronte” = “utangaç/mahcup alın”; iyi.
+
+82 «Ey diğer şairlerin onuru ve ışığı,
+83 Uzun çalışmam ve büyük sevgim bana yararlı olsun,
+84 senin eserini aramaya iten o büyük sevgim.
+- Note: 83’te “vagliami” = “yardım etsin/yarasın”; doğru. 84’te özgün metin “che m’ha fatto cercar lo tuo volume” (beni senin kitabını aramaya sevk etti). Çeviri 83-84’te “büyük sevgi”yi iki kez tekrarlayıp anlamı bulanıklaştırıyor; 84’ün “senin eserini aramama sebep olan” şeklinde net kurulması gerekir.
+
+85 Sen benim ustam ve yazarımsın,
+86 bana şeref kazandıran o güzel üslubu
+87 kendisinden aldığım tek kişi sensin.
+- Note: 85’te “autore” Dante’de “otorite/yaratıcı kaynak” tonunu da taşır; “yazar” dar. 86-87 doğru; fakat 87’de “tu se’ solo colui” vurgusu (“tek sensin”) iyi verilmiş.
+
+88 Bak şu canavara, beni geri döndüren odur;
+89 bana ona karşı yardım et ünlü bilge,
+90 çünkü o benim damarlarımı ve nabzımı titretiyor»
+- Note: 90’da “le vene e i polsi” = “damarlarımı ve nabzımı/bileklerimi”; “nabız” yerine “bileklerim” daha yakın (polsi = bilekler). “titretiyor” doğru.
+
+91 «Senin başka bir yol tutman gerekir,»
+92 Ağladığımı gördüğünde yanıt verdi,
+93 «Bu vahşi yerden kaçmak istersen;
+- Note: 91’de “A te convien” = “Sana gerekir”; iyi. 92 “poi che lagrimar mi vide” = “ağladığımı görünce”; doğru.
+
+94 çünkü senin feryat etmene neden olan bu canavar,
+95 başkasının onun yolundan geçmesine izin vermez,
+96 ama o kadar engeller ki sonunda onu öldürür;
+- Note: 95’te “non lascia altrui passar per la sua via” = “kimseyi kendi yolundan geçirmez”; “başkasının onun yolundan” biraz tuhaf (zamir karmaşası). “kendi yolundan kimseyi geçirmez” daha doğal. 96 doğru.
+
+97 ve doğası öyle kötü ve vahşidir ki,
+98 asla açgözlü arzusunu doyurmaz,
+99 ve yemekten sonra öncekinden daha çok açtır.
+- Note: 97’de “malvagia e ria” = “kötü ve alçak/şer”; “vahşi” burada “selvaggio” değil, ahlaki kötülük. “şer/azgın” daha uygun. 98-99 iyi.
+
+100 Çiftleştiği hayvanların sayısı çoktur,
+101 ve daha da artacak, ta ki o Tazı gelene dek
+102 ki o, onun acı içinde ölmesini sağlayacak.
+- Note: 100 “a cui s’ammoglia” = “kendini eşlediği/çiftleştiği” doğru, ama “hayvanların sayısı” yerine “birçok hayvanla çiftleşir” daha doğal. 101 “veltro” genelde “tazı” diye çevrilir; uygun. 102’de “la farà morir” = “onu öldürecek”; “ölmesini sağlayacak” dolaylı ve zayıf.
+
+103 Toprakla ya da servetle beslenmeyecek,
+104 ama bilgelik, sevgi ve erdemle,
+105 ve doğum yeri Feltro ile Feltro arasında olacak.
+- Note: 103’te “terra né peltro” kelimesi kelimesine “toprak ve kalay/pewter”; mecaz olarak “dünyevi mallar/para”ya karşılık gelir. “servet” yorumu anlaşılır ama “toprak” burada “arazi/mülk” olabilir; daha dengeli: “toprakla da madenle de değil.” 105’te “tra feltro e feltro” toponimik bilmece; aynen bırakmak doğru, ancak “doğum yeri” yerine “soyu/ülkesi” (nazione) daha yakın.
+
+106 O, alçakgönüllü İtalya’nın kurtuluşu olacak
+107 uğruna bakire Camilla'nın öldüğü,
+108 Euryalus, Turnus ve Nisus'un yaralarından can verdiği.
+- Note: 106’da “umile Italia” = “alçakgönüllü/mazlum İtalya”; “alçakgönüllü” tek başına fazlaca olumlu kişilik niteliği gibi duruyor; “mazlum/yoksul” da düşünülebilir. 108’de “di ferute” = “yaralardan”; doğru.
+
+109 O onu her kasabada avlayacak,
+110 onu Cehennem'e geri tıkana kadar,
+111 Haset'in onu ilk salıverdiği yere.
+- Note: 111’de “là onde ’nvidia prima dipartilla” = “Haset’in onu ilk saldığı yer” doğru. 110’da “rimessa ne lo ’nferno” = “yeniden cehenneme koyana kadar”; “tıkmak” kaba bir ton, Dante’nin yüksek üslubuna uymuyor; “geri gönderecek/sokacak” daha uygun.
+
+112 Bu yüzden senin iyiliğin için düşünüyor ve karar veriyorum
+113 ki sen beni takip et ve ben senin rehberin olacağım,
+114 ve seni buradan ebedi yere götüreceğim;
+- Note: 112’de “Ond’ io per lo tuo me’ penso e discerno” = “Bu yüzden senin iyiliğin için düşünüp ayırt ediyorum”; “karar veriyorum” fena değil ama “discerno” daha çok “uygun olanı seçiyorum/ayırt ediyorum.” 113’te “che tu mi segui” = “sen beni takip et”; çeviri doğru. 114’te “loco etterno” = “ebedî yer”; “ebedi yer” tamam.
+
+115 orada umutsuz çığlıkları duyacaksın,
+116 eski acı çeken ruhları göreceksin,
+117 her biri ikinci ölüm için yakarıyor;
+- Note: 117’de “a la seconda morte ciascun grida” = “her biri ikinci ölümü haykırır” (yani ebedî yok oluşu ister gibi); “yakarıyor” (dua) anlamı kaydırıyor. “ikinci ölümü ister diye haykıran” daha yakın.
+
+118 Sonra ateşte memnun olanları göreceksin,
+119 çünkü ateşte mutludurlar, kavuşmayı umarlar,
+120 ne zaman olursa olsun o kutlu halka.
+- Note: 118-120 Purgatorio ruhları: “nel foco... perché speran di venire... a le beate genti.” 119’da “ateşte mutludurlar” tekrar ve açıklamacı; metin “ateşte memnunlar, çünkü (arındıktan sonra) kutlulara varmayı umarlar.” “kavuşmayı umarlar” iyi. “o kutlu halka” (beate genti) uygun.
+
+121 Eğer sonra onların yanına yükselmek istersen,
+122 O yükseliş için benden daha layık bir ruh olacak:
+123 Ayrılırken seni ona bırakacağım;
+- Note: 121 “salire” = “yükselmek” doğru; “onların yanına” belirsiz, “oraya/daha yukarı” daha iyi. 122’de “anima fia a ciò più di me degna” = “buna benden daha layık bir ruh olacak”; doğru.
+
+124 Çünkü yukarıda hüküm süren o İmparator,
+125 yasasına karşı isyankardım diye,
+126 kimsenin benim aracılığımla şehrine gelmesini istemez.
+- Note: 125’te “perch’ i’ fu’ ribellante” = “ben başkaldırmış olduğum için”; “isyankardım diye” konuşma dili. 126’da “per me si vegna” = “benim aracılığımla gelinmesini” doğru.
+
+127 Her yerde hüküm sürer ve orada yönetir;
+128 Orada onun şehri ve yüksek makamı vardır:
+129 Ah ne mutlu o, oraya seçilene!»
+- Note: 128’de “l’alto seggio” = “yüce taht/makam”; doğru. 129 iyi.
+
+130 Ve ben ona: «Şair, sana yalvarıyorum,
+131 bilmediğin o Tanrı adına,
+132 bu kötülükten ve daha kötüsünden kaçabileyim diye,
+- Note: 131 “che tu non conoscesti” Hristiyan Tanrısı vurgusu; doğru. 132’de “male e peggio” = “bu kötü durumdan ve daha kötüsünden”; “kötülük” soyut ahlakî kötülük gibi, “bu beladan/dertten” daha yerinde.
+
+133 beni şimdi söylediğin yere götür,
+134 öyle ki Aziz Petrus'un kapısını görebileyim
+135 ve senin o kadar kederli tasvir ettiklerini.»
+- Note: 135’te “color cui tu fai cotanto mesti” = “senin böylesine kederli kıldıkların/anlattıkların” (ruhlar). “tasvir ettiklerini” biraz nötr; “kederli kıldığın ruhları” daha yakın. 134 “porta di san Pietro” doğru (Cennet kapısı imgesi).
+
+136 Sonra o ilerledi, ben de ardından gittim.
+- Note: Genel olarak anlam örgüsü korunmuş; ancak birçok yerde (özellikle 16-21 ve 36, 42, 63, 117) ya mecazlar (“lago del cor”, “fioco”, “seconda morte”) ya da kip/niyet nüansları kayıyor. Dante’nin yüksek üslubuna uygunluk için konuşma diline kayan ifadeler (“isyankardım diye”, “tıkana kadar”) daha nötr/şiirsel alternatiflerle düşünülmeli.

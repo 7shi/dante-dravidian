@@ -1,0 +1,231 @@
+1 നമ്മുടെ ജീവിതത്തിന്റെ വഴിയുടെ മധ്യത്തിൽ
+2 ഞാൻ ഒരു ഇരുണ്ട കാട്ടിൽ താനെ കണ്ടെത്തി,
+3 കാരണം ശരിയായ വഴി നഷ്ടപ്പെട്ടിരുന്നു.
+- Note: Line 2: "താനെ കണ്ടെത്തി" (found myself) is a bit awkward in Malayalam phrasing. "ഞാൻ അകപ്പെട്ടു" (I got trapped/found myself inside) would be more natural.
+- Note: Line 3: "കാരണം" implies "Because", which matches "ché", though "ശരിയായ വഴി" is a good translation for "diritta via".
+
+4 അഹ് എന്താണെന്ന് പറയാൻ എത്ര കഠിനമായ കാര്യം
+5 ഈ വന്യവും കഠിനവും സാന്ദ്രവുമായ കാട്
+6 ചിന്തയിൽ ഭയത്തെ പുതുക്കുന്നു!
+- Note: Line 4: "അഹ്" is a direct transliteration of "Ahi". In Malayalam poetry, "അയ്യോ" or "ഹാ" conveys the emotion better.
+
+7 ഇത് അത്ര കയ്പ്പുള്ളതാണു മരണം അതിനേക്കാൾ അല്പം മാത്രമേ കൂടുതലുള്ളു;
+8 എന്നാൽ ഞാൻ അവിടെ കണ്ടെത്തിയ നല്ലതിനെക്കുറിച്ച് സംസാരിക്കാൻ,
+9 ഞാൻ അവിടെ കണ്ട മറ്റുള്ള കാര്യങ്ങളെക്കുറിച്ച് പറയും.
+- Note: Line 7: The phrasing "മരണം അതിനേക്കാൾ അല്പം മാത്രമേ കൂടുതലുള്ളു" is clunky. It literally means "Death is only a little more than it". A smoother flow is needed.
+- Note: Line 8: "സംസാരിക്കാൻ" creates a dangling infinitive structure. "പറയുവാനായി" (in order to say) might fit better to connect with the next line.
+
+10 ഞാൻ അത് എങ്ങനെ പ്രവേശിച്ചതെന്ന് നന്നായി പറയാൻ കഴിയില്ല,
+11 അന്നത്തെ നിമിഷത്തിൽ ഞാൻ ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു
+12 അവിടെ ഞാൻ സത്യമായ വഴിയെ ഉപേക്ഷിച്ചു.
+- Note: Line 10: "അത്" (it) refers to the wood, but "അവിടെ" (there) would be more natural than "how I entered *it*".
+- Note: Line 11: "ഉറക്കത്തിൽ അതിയായ നിറവുണ്ടായിരുന്നു" (was extremely full of sleep) is a very literal, unnatural translation of "pien di sonno". It should be "ഗാഢനിദ്രയിലായിരുന്നു" (was in deep sleep) or "ഉറക്കം തൂങ്ങുകയായിരുന്നു".
+
+13 പക്ഷേ ഞാൻ ഒരു മലയുടെ അടിയിൽ എത്തി,
+14 അവിടെ ആ താഴ്വര അവസാനിച്ചിടം
+15 അത് എന്റെ ഹൃദയത്തെ ഭയത്തോടെ കുത്തിയിരുന്നു,
+- Note: Line 15: "കുത്തിയിരുന്നു" (had stabbed) for "compunto" (pierced/afflicted). While literal, "നിറച്ചിരുന്നു" (filled) or "നോവിച്ചിരുന്നു" (hurt) fits the emotional context of "compunto" better in Malayalam.
+
+16 ഞാൻ ഉയർന്നിടത്ത് നോക്കി അതിന്റെ തോളുകൾ കണ്ടു
+17 അവ ഇതിനകം ഗ്രഹത്തിന്റെ കിരണങ്ങളാൽ മൂടപ്പെട്ടിരിക്കുന്നു
+18 അത് ആളുകളെ ഓരോ വഴിയിലും നേരെ നയിക്കുന്നു.
+- Note: Line 16: "ഉയർന്നിടത്ത് നോക്കി" (looked at a high place) is awkward. "മുകളിലേക്ക് നോക്കി" (looked upwards) is better.
+
+19 അപ്പോൾ ഭയം അൽപം ശാന്തമായി,
+20 എന്റെ ഹൃദയത്തിന്റെ തടാകത്തിൽ അത് നിലനിന്നിരുന്നു
+21 ഞാൻ അത്യന്തം ദയയോടെ കടന്ന രാത്രി.
+- Note: Line 21: **Mistranslation**. "con tanta pieta" here means "with so much pity/anguish/suffering". The Malayalam word "ദയ" (Daya) usually implies kindness or mercy received from someone else. It should be "പരിതാപത്തോടെ" or "വിഷമത്തോടെ" (with sadness/difficulty).
+
+22 മറ്റും അതുപോലെ ശ്വാസം തീർന്നവൻ പോലെ,
+23 കടലിൽ നിന്ന് പുറത്ത് തീരത്തിലേക്ക്,
+24 അപകടകരമായ ജലത്തിലേക്ക് തിരിഞ്ഞു നോക്കുന്നു,
+- Note: Line 22: "ശ്വാസം തീർന്നവൻ" (one who ran out of breath/dead) is too strong for "lena affannata" (panting breath). "കിതച്ചുകൊണ്ട്" (panting) is the correct term.
+
+25 അങ്ങനെ എന്റെ ആത്മാവ് ഇപ്പോഴും പറക്കുകയായിരുന്നു,
+26 അത് പിന്നിലേക്ക് തിരിഞ്ഞു പാസിനെ വീണ്ടും നോക്കാൻ
+27 പാസ് ഇതുവരെ ഒരിക്കലും ജീവിച്ച വ്യക്തിയെ വിട്ടിട്ടില്ല.
+- Note: Line 25: **Mistranslation**. "fuggiva" means fleeing/running away. "പറക്കുകയായിരുന്നു" means "was flying". It should be "ഓടുകയായിരുന്നു" or "പലായനം ചെയ്യുകയായിരുന്നു".
+- Note: Line 26 & 27: "പാസ്" (Pass) is transliterated English. It should be "വഴി" (way) or "കടമ്പ". Also, line 27 ("Pass has never left a living person") is confusingly phrased. It means "the pass that never let anyone leave alive".
+
+28 ഞാൻ അൽപം വിശ്രമിച്ച ശേഷം എന്റെ ക്ഷീണിതമായ ശരീരം,
+29 ഞാൻ വീണ്ടും മരുഭൂമിയിലെ ചരിവിലൂടെ വഴിയെടുത്തു,
+30 അങ്ങനെ ഉറച്ച കാൽ എല്ലായ്പ്പോഴും ഏറ്റവും താഴെയായിരുന്നു.
+- Note: Line 28: Grammatically disjointed. "ശരീരം" (body) has no verb connecting to "rested".
+- Note: Line 29: "മരുഭൂമി" means desert (sandy). "Piaggia diserta" means a deserted/lonely slope. "വിജനമായ സ്ഥലം" is more accurate.
+
+31 കയറ്റത്തിന്റെ ആരംഭം അടുത്തു,
+32 ഒരു ലഘുവായ വളരെ ചപലമായ ചിതലു,
+33 അത് ചുവട്ടുള്ള മുടിയാൽ മൂടപ്പെട്ടിരുന്നു;
+- Note: Line 32: **Major Mistranslation**. "Lonza" is a leopard or panther. "ചിതലു" (Chithalu) means **Termite** in Malayalam. This completely destroys the imagery. It seems like a confusion with "Chithappuli" (Leopard).
+- Note: Line 33: "ചുവട്ടുള്ള മുടി" means red hair. "pel macolato" implies spotted fur. "പുള്ളിയുള്ള തോൽ" fits better.
+
+34 അവൾ എന്റെ മുഖത്തിന്റെ മുൻപിൽ നിന്നു ചലിച്ചില്ല,
+35 മറിച്ച് അവൾ എന്റെ വഴിയെ അത്രയും തടസ്സപ്പെടുത്തി,
+36 മടങ്ങാൻ ഞാൻ പലതവണ തിരിഞ്ഞിരുന്നു.
+
+37 കാലം പ്രഭാതത്തിന്റെ തുടക്കത്തിൽ ആയിരുന്നു,
+38 സൂര്യൻ ആ നക്ഷത്രങ്ങളോടൊപ്പം മുകളിലേക്ക് ഉയരുകയായിരുന്നു
+39 അവൻ കൂടെ ഉണ്ടായിരുന്ന നക്ഷത്രങ്ങൾ ദൈവിക പ്രേമം ഉണ്ടായപ്പോൾ
+- Note: Line 39: "ഉണ്ടായപ്പോൾ" (when happened) is weak for "mosse" (moved/set in motion). "ചലിപ്പിച്ചപ്പോൾ" is better.
+
+40 കാലത്തിന്റെ ആദ്യമണിയും മധുരകാലവും;
+41 അങ്ങനെ, നല്ല പ്രതീക്ഷ എനിക്ക് കാരണമായി
+42 അത് കാട്ടുമൃഗം ചിതറിച്ചർമ്മമുള്ള തൊലിയുള്ളതിനെക്കുറിച്ച്.
+- Note: Line 42: "ചിതറിച്ചർമ്മമുള്ള തൊലി" (scattered-skin skin) is repetitive and awkward. "gaetta pelle" means speckled/gay skin. The phrasing "പ്രതീക്ഷ... അതിനെക്കുറിച്ച്" (hope... about it) is clunky.
+
+43 സമയത്തിന്റെ മണിക്കൂറും മധുരകാലവും;
+44 പക്ഷേ അത്രയല്ല സിംഹത്തിന്റെ ദൃശ്യം എന്നെ ഭയം കൊടുക്കാത്തത്
+45 സിംഹത്തിന്റെ ദൃശ്യം എനിക്ക് പ്രത്യക്ഷപ്പെട്ടു.
+- Note: Line 43: This line repeats the translation of "l’ora del tempo e la dolce stagione" which was already attempted in Line 40.
+- Note: Line 44: The translation negates the meaning. "ഭയം കൊടുക്കാത്തത്" implies the lion did *not* give fear. The source "ma non sì che paura non mi desse" means "but not so much that the lion did NOT give me fear" (i.e., I was still afraid).
+
+46 അവൻ എനിക്ക് വിരുദ്ധമായി വരുന്നതായി തോന്നി
+47 ഉയർന്ന തലയും ക്രൂരമായ വിശപ്പും കൂടെ,
+48 അങ്ങനെ വായു അവനെക്കുറിച്ച് കുലുങ്ങുന്നതായി തോന്നി.
+- Note: Line 48: "വായു അവനെക്കുറിച്ച് കുലുങ്ങുന്നതായി" (Air seemed to shake *about* him). It should be "അവനെ കണ്ട്" (seeing him) or "അതുകാരണം" (because of that).
+
+49 മറ്റൊരു സ്ത്രീ നരി, എല്ലാ ആഗ്രഹങ്ങളോടും,
+50 അവളുടെ ക്ഷീണതയിൽ ഭാരമുള്ളതുപോലെ തോന്നി,
+51 മറ്റും പല ജനങ്ങളെയും ഇതിനകം ദുഃഖിതരായി ജീവിക്കാൻ നിർബന്ധിച്ചു,
+- Note: Line 49: "മറ്റൊരു" (Another) is added; source implies "And a". "സ്ത്രീ നരി" (Female fox/wolf) is odd; "പിട" is the term for female animals. "നരി" is ambiguous (can be tiger), "ചെന്നായ" is Wolf.
+
+52 അവൾ എന്നെ അത്രയധികം ഭാരമുണ്ടാക്കി
+53 അവളുടെ ദർശനത്തിൽ നിന്നു ഉദിച്ച ഭയത്തോടുകൂടി,
+54 ഞാൻ ഉയരത്തിന്റെ പ്രതീക്ഷ നഷ്ടപ്പെട്ടു.
+
+55 മറ്റും അവൻ പോലെ സ്വമേധയാ സ്വന്തമാക്കുന്നവൻ,
+56 മറ്റും സമയം വരുന്നു അവനെ നഷ്ടപ്പെടുത്തുന്ന,
+57 അവന്റെ എല്ലാ ചിന്തകളിലും അവൻ കരഞ്ഞു ദുഃഖിതനാണ്;
+- Note: Line 55: "മറ്റും" (And/Other) is used frequently and unnaturally as a conjunction here.
+- Note: Line 56: Sentence structure is very English-like ("Time comes that makes him lose"). Malayalam puts the verb at the end.
+
+58 അങ്ങനെ എന്നെ ശാന്തിയില്ലാത്ത മൃഗമാക്കി,
+59 അത്, എനിക്ക് എതിരായി വരികയും, ക്രമേണ
+60 എന്നെ പിന്നോട്ട് തള്ളിയിരുന്നു അവിടെ സൂര്യൻ മൌനമായിടത്ത്.
+- Note: Line 58: "എന്നെ ശാന്തിയില്ലാത്ത മൃഗമാക്കി" (Made *me* a beast without peace). **Mistranslation**. It should be "The beast without peace made me [feel like that]".
+
+61 ഞാൻ താഴ്ന്ന സ്ഥലത്തേക്ക് വീഴുമ്പോൾ,
+62 എന്റെ കണ്ണുകൾക്ക് മുമ്പിൽ ഒരാൾ പ്രത്യക്ഷപ്പെട്ടു
+63 ദീർഘകാല നിശ്ശബ്ദതയിലൂടെ അവൻ ചൊറിച്ചിലായി തോന്നി.
+- Note: Line 63: **Critical Error**. "ചൊറിച്ചിലായി" means "**itchy**". "Fioco" means faint, weak, or hoarse. The translator likely confused the word completely. It should be "ശബ്ദം കുറഞ്ഞവനായി" or "ക്ഷീണിച്ചവനായി".
+
+64 ഞാൻ അവനെ മഹത്തായ മരുഭൂമിയിൽ കണ്ടപ്പോൾ,
+65 എന്നെ കരുണിക്കൂ ഞാൻ അവനോട് വിളിച്ചു,
+66 നീ എന്തായാലും നിഴലോ യഥാർത്ഥ മനുഷ്യനോ!
+- Note: Line 65: "എന്നെ കരുണിക്കൂ" (Mercy me). Should be "എന്നോട് കരുണ കാണിക്കൂ" (Show mercy to me).
+
+67 അവൻ എന്നോട് മറുപടി പറഞ്ഞു: മനുഷ്യൻ അല്ല, മനുഷ്യൻ ഞാൻ ഒരിക്കൽ ആയിരുന്നു,
+68 മറ്റും എന്റെ മാതാപിതാക്കൾ ലൊംബാർഡുകൾ ആയിരുന്നു,
+69 മാൻറ്റുവാനുകൾ രാജ്യത്തെ അടിസ്ഥാനത്തിൽ ഇരുവരും.
+- Note: Line 69: "രാജ്യത്തെ അടിസ്ഥാനത്തിൽ" (based on country) is too technical for "per patrïa" (by homeland/city). "ദേശത്താൽ" is better.
+
+70 ഞാൻ ജൂലിയോയുടെ കീഴിൽ ജനിച്ചു വൈകിയിരുന്നിട്ടും,
+71 ഞാൻ റോമിൽ നല്ല ഓഗസ്റ്റസിന്റെ കീഴിൽ ജീവിച്ചു
+72 കള്ളവും കപടവുമായ ദേവന്മാരുടെ കാലത്ത്.
+
+73 കവി ഞാൻ ആയിരുന്നു ആ നീതിയുള്ളവനെക്കുറിച്ച് ഞാൻ പാടി
+74 അങ്കിസിന്റെ മകൻ ട്രോയി നിന്നു വന്നവൻ,
+75 അഭിമാനിയായ ഇലിയോൺ കത്തിക്കപ്പെട്ടതിന് ശേഷം.
+
+76 പക്ഷേ നീ എന്തുകൊണ്ട് ഇത്ര വലിയ അസ്വസ്ഥതയിലേക്ക് മടങ്ങുന്നു?
+77 നീ എന്തുകൊണ്ട് ആ ആനന്ദകരമായ മല കയറുന്നില്ല
+78 അത് എല്ലാ സന്തോഷത്തിന്റെ മൂലവും കാരണവുമാണ്?
+
+79 അപ്പോൾ നീ ആ വിർജിലിയോ ആ സ്രോതസ്സോ ആണോ
+80 അത് സംസാരത്തിന്റെ അത്രവലിയ നദി ഒഴുക്കുന്നുണ്ടോ?
+81 ഞാൻ അവനോട് ലജ്ജാശീലമായ മുഖം കൊണ്ട് മറുപടി നൽകി.
+- Note: Line 80: Grammar is incorrect ("Is flowing a river?"). Should be "ഒഴുക്കുന്ന ആ സ്രോതസ്സോ?".
+
+82 ഓ മറ്റുള്ള കവികളുടോ മാനവും പ്രകാശവും,
+83 എന്റെ ദീർഘമായ പഠനവും മഹത്തായ സ്നേഹവും എന്നെ സഹായിക്കട്ടെ
+84 ഇത് എന്നെ നിങ്ങളുടെ ഗ്രന്ഥം തിരയാൻ പ്രേരിപ്പിച്ചു.
+- Note: Line 82: "കവികളുടോ" - Typo in suffix ("ഓ" instead of "യ").
+
+85 നീ എന്റെ അധ്യാപകനും എന്റെ രചയിതാവുമാണ്,
+86 നീ മാത്രം ആ വ്യക്തിയാണ് നിന്നിൽ നിന്ന് ഞാൻ എടുത്തു
+87 എനിക്ക് ആദരവ് നൽകിയ സുന്ദരമായ ശൈലി.
+- Note: Line 85: "രചയിതാവ്" (Author) for "autore" (authority/author). While literal, "ഗുരു" (Master/Mentor) fits the context of "autore" better here.
+
+88 ആ മൃഗത്തെ കാണുക അതിനാൽ ഞാൻ തിരിഞ്ഞു;
+89 അവളെതിരെ എന്നെ സഹായിക്കുക പ്രശസ്ത സന്യാസി,
+90 അവൾ എന്റെ ശിരകളും നാഡികളും കുലുക്കുന്നു»
+- Note: Line 88: "അതിനാൽ" (Therefore). "per cu’" implies "because of which".
+- Note: Line 89: "സന്യാസി" (Monk/Ascetic). Virgil is a "saggio" (Sage/Wise man). "ജ്ഞാനി" is the correct word. "സന്യാസി" has religious connotations not fitting here.
+- Note: Line 90: "ശിരകളും" (Veins) is an archaic/Sanskritized usage here, but acceptable.
+
+91 നിനക്കു മറ്റൊരു യാത്ര കൈവശം വെയ്ക്കേണ്ടതുണ്ട്,
+92 അവൻ മറുപടി നൽകി അവൻ എന്നെ കരയുന്നത് കണ്ടപ്പോൾ,
+93 നീ ഈ കാട്ടുപോലുള്ള സ്ഥലത്തിൽ നിന്ന് രക്ഷപ്പെടാൻ ആഗ്രഹിച്ചാൽ;
+- Note: Line 91: "കൈവശം വെയ്ക്കേണ്ടതുണ്ട്" (need to keep in possession) is wrong for "tenere" (to hold/take a path). "മറ്റൊരു വഴിയിലൂടെ പോകേണ്ടതുണ്ട്" (need to go by another way) is correct.
+
+94 ഈ മൃഗം അതിനാൽ നീ കരഞ്ഞു,
+95 അത് മറ്റുള്ളവരെ അതിന്റെ വഴിയിലൂടെ കടക്കാൻ അനുവദിക്കുന്നില്ല,
+96 പക്ഷേ അത് അവനെ അത്ര തടയുന്നു അതു അവനെ കൊല്ലുന്നു;
+- Note: Line 94: "അതിനാൽ നീ കരഞ്ഞു" (therefore you cried). Source "per la qual" means "on account of which".
+
+97 അവൾക്ക് അത്ര ദുഷ്ടവും ദുഷ്ടവുമായ സ്വഭാവം ഉണ്ട്,
+98 അവൾക്ക് ആ ലോഭമുള്ള ആഗ്രഹം ഒരിക്കലും നിറവേറ്റാൻ കഴിയില്ല,
+99 ഭക്ഷണത്തിന് ശേഷം അവൾക്ക് മുമ്പിലേതിനേക്കാൾ കൂടുതൽ വിശപ്പ് ഉണ്ട്.
+- Note: Line 97: "ദുഷ്ടവും ദുഷ്ടവുമായ" (wicked and wicked). Repetitive. Source is "malvagia e ria" (wicked and cruel/guilty).
+
+100 അവൾ വിവാഹം കഴിക്കുന്ന നിരവധി മൃഗങ്ങളുണ്ട്,
+101 കൂടുതൽ മൃഗങ്ങൾ കൂടി വരും ഹണ്ടു വരുന്നതുവരെ
+102 ഹണ്ടു വരും അത് അവളെ ദുഃഖത്തിൽ മരിക്കാൻ കാരണമാകും.
+- Note: Line 101/102: "**ഹണ്ടു**" (Hund?). "Veltro" (Greyhound) is left as a transliteration of "Hound" or a typo. It should be "വേട്ടപ്പട്ടി" (hunting dog).
+
+103 103 അവൻ ഭൂമിയിലും വസ്തുക്കളിലും ഭക്ഷിക്കില്ല,
+104 104 പക്ഷേ ജ്ഞാനം സ്നേഹം ധൈര്യം,
+105 105 മറ്റും അവന്റെ ജന്മസ്ഥലം ഫെൽട്രോയും ഫെൽട്രോയും ഇടയിൽ ആയിരിക്കും.
+- Note: Line numbers included in text.
+- Note: Line 103: "വസ്തുക്കളിലും" (objects). "Peltro" refers specifically to pewter/money.
+
+106 അവന്‍ ആ വിനയമുള്ള ഇറ്റലിയെ രക്ഷാധികാരിയായി ആകും
+107 അതിനായി കാമില്ലാ എന്ന കന്യകി മരണമടഞ്ഞു,
+108 യൂറിയാലോ, ടേർണസ്, നിസസ് പരിക്കേറ്റവരാണ്.
+- Note: Line 108: "പരിക്കേറ്റവരാണ്" (are injured). **Significant Error**. The source says "morì... di ferute" (died of wounds). The translation implies they are still alive/injured. It should be "മുറിവേറ്റു മരിച്ചവരാണ്".
+
+109 അവൻ അവളെ ഓരോ പട്ടണത്തിലൂടെയും വേട്ടയാടും,
+110 അവൻ അവളെ നരകത്തിലേക്ക് തിരികെ വെച്ചതുവരെ,
+111 അവിടെ ഇർഷം ആദ്യം അവളെ പുറപ്പെടുവിച്ചു.
+- Note: Line 111: "**ഇർഷം**" seems to be a typo for "ഈർഷ്യം" (envy/jealousy).
+
+112 അതിനാൽ ഞാൻ നിന്റെ ഉത്തമത്തിനായി ചിന്തിക്കുകയും വിധിക്കുകയും ചെയ്യുന്നു
+113 നീ എന്നെ പിന്തുടരുകയും ഞാൻ നിന്റെ മാർഗ്ഗദർശകനാകും,
+114 ഞാൻ നിന്നെ ഇവിടെ നിന്ന് ശാശ്വത സ്ഥലത്തിലേക്ക് നയിക്കും;
+
+115 നീ അവിടെയുണ്ടാകുന്ന നിരാശാജനകമായ കരച്ചിലുകൾ കേൾക്കും,
+116 നീ പുരാതന ദുഃഖിത ആത്മാക്കളെ കാണും,
+117 ഓരോന്നും രണ്ടാം മരണത്തെ വിളിച്ചോതുന്നു;
+
+118 അപ്പോൾ നീ സന്തുഷ്ടരായവരെ കാണും
+119 അഗ്നിയിൽ അവർ വരാൻ പ്രതീക്ഷിക്കുന്നതിനാൽ
+120 എപ്പോഴുമെങ്കിലും അത് ഭാഗ്യവാന്മാരായ ജനങ്ങളിലേക്കാണ്.
+- Note: Line 120: "ഭാഗ്യവാന്മാരായ ജനങ്ങളിലേക്ക്" (to the lucky people). "Beate" implies "Blessed/Holy", not just lucky. "അനുഗ്രഹീതരായ" is better.
+
+121 നീ പിന്നീട് കയറിയേണമെങ്കിൽ അവർക്കു,
+122 അവിടെക്കായി എന്റെക്കാൾ കൂടുതൽ യോഗ്യമായ ആത്മാവ് ഉണ്ടാകും:
+123 അവളോടൊപ്പം ഞാൻ നിന്നെ എന്റെ പുറപ്പാടിൽ വിടും;
+- Note: Line 121: "അവർക്കു" (for them). Should be "അവരിലേക്ക്" (to them/up to them).
+
+124 അവിടെ മേലുള്ള രാജാവ് ആളുന്നു,
+125 ഞാൻ അവന്റെ നിയമത്തിന് വിരുദ്ധമായി,
+126 അവന്‍ തന്റെ നഗരത്തിലേക്ക് ആരും എന്റെ വഴി കടക്കാന്‍ ആഗ്രഹിക്കുന്നില്ല.
+- Note: Line 125: "വിരുദ്ധമായി" (against) needs a verb. "വിരുദ്ധനായിരുന്നു" (was against/rebellious).
+- Note: Line 126: **Mistranslation**. The translation says "No one desires to pass my way into his city". The source says "He [God] does not will that anyone come into his city through me". The subject is God, not the people.
+
+127 എല്ലാ ഭാഗങ്ങളിലും അവൻ ഭരണം നടത്തുന്നു, മറ്റും അവിടെ അവൻ രാജ്യം ചെയ്യുന്നു;
+128 അവിടെ അവന്റെ നഗരം കൂടാതെ അവന്റെ ഉയർന്ന സിംഹാസനം ഉണ്ട്:
+129 ഓ സന്തോഷവാനായവൻ അവിടെ അവൻ തിരഞ്ഞെടുക്കുന്നവൻ!
+
+130 എന്നും അവനോട്: «കവിയേ, ഞാൻ നിന്നെ അപേക്ഷിക്കുന്നു
+131 നീ അറിയാത്ത ആ ദൈവം വഴി,
+132 അങ്ങനെ ഞാൻ ഈ ദുർഭാഗ്യവും അതിനേക്കാൾ മോശവുമായതും നിന്ന് രക്ഷപ്പെടാൻ,
+- Note: Line 130: "എന്നും" (Always) is a typo for "എന്ന്" (Thus) or "ഞാൻ പറഞ്ഞു" (I said).
+
+133 നീ എന്നെ അവിടെ നയിക്കട്ടെ, നീ ഇപ്പോൾ പറഞ്ഞതുപോലെ,
+134 അങ്ങനെ ഞാൻ സെയ്ന്റ് പീറ്ററിന്റെ വാതിൽ കാണാൻ കഴിയും
+135 മറ്റും നീ അത്രയും ദുഃഖിതരാക്കുന്നവരും».
+- Note: Line 135: "നീ അത്രയും ദുഃഖിതരാക്കുന്നവരും" implies "those whom *you* make so sad". It should be "those whom you describe as so sad".
+
+136 പിന്നെ അവൻ മുന്നോട്ട് നീങ്ങി ഞാൻ അവന്റെ പിന്നിൽ വെച്ചു.
+- Note: Line 136: "പിന്നിൽ വെച്ചു" (placed behind) is idiomatically wrong. It means physically placing an object behind something. To follow, use "പിന്തുടർന്നു" or "പുറകെ പോയി".

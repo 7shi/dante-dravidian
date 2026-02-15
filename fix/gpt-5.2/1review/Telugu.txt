@@ -1,0 +1,227 @@
+1 మన జీవితం యొక్క ప్రయాణం మధ్యలో
+2 నేను చీకటి అడవిలో నన్ను నేను కనుగొన్నాను,
+3 ఎందుకంటే సరైన మార్గం తప్పింది.
+- Note: “Nel mezzo del cammin di nostra vita” is not just “ప్రయాణం” in the abstract; it is “మన జీవిత యాత్ర/నడక మధ్యలో” with a moral-existential sense. Line 2 should convey “mi ritrovai” as “నేను నన్ను నేను కనుగొన్నాను/తన్నితాను చూసుకున్నాను” is acceptable, but it should also imply sudden realization (“నేను నన్ను…పట్టుకున్నాను”). Line 3 “ché la diritta via era smarrita” means “ఎందుకంటే నేరుగా/ధర్మమార్గం తప్పిపోయింది/నేను తప్పిపోయాను,” not merely “మార్గం తప్పింది” (missing the sense of being lost/strayed).
+
+4 అహ్ అది ఏమిటో చెప్పడం ఎంత కష్టం
+5 ఈ వన్య మరియు కఠిన మరియు బలమైన అడవి
+6 అది ఆలోచనలో భయాన్ని పునరుద్ధరిస్తుంది!
+- Note: Line 4 “Ahi quanto a dir qual era è cosa dura” = “ఆ అడవి ఎలా ఉందో చెప్పడం ఎంత కష్టం”—your “అది ఏమిటో” is vague; should be “ఎలా ఉందో/ఏ రకమో.” Line 5 keeps the triple adjective but “forte” here is “భయంకరమైన/కఠోరమైన,” not “బలమైన” in a physical-strong sense. Consider “కఠోరమైన/ఉగ్రమైన.” Line 6 “rinova la paura” is fine, but Dante’s “nel pensier” is “తలచినప్పుడల్లా/ఆలోచనకే” rather than “ఆలోచనలో” (which sounds static).
+
+7 ఇంతగా చేదుగా ఉంది, మరణం కొంచెం ఎక్కువ చేదుగా ఉంటుంది;
+8 కాని నేను అక్కడ కనుగొన్న మంచిని గురించి చర్చించడానికి,
+9 నేను అక్కడ చూసిన ఇతర విషయాలను చెప్పుతాను.
+- Note: Line 7 mistranslates: “Tant’ è amara che poco è più morte” means “ఇంత చేదుగా ఉంది గనుక మరణం కేవలం కొంచెం మాత్రమే ఎక్కువ చేదు/ఇంకాస్తే మరణమే” (i.e., little worse than death), not “మరణం కొంచెం ఎక్కువ చేదుగా ఉంటుంది” which reverses emphasis and sounds like death is only slightly more bitter as a comparison without the idiom’s punch. Line 8 “per trattar del ben ch’i’ vi trovai” = “అక్కడ నేను కనుగొన్న మేలును చెప్పడానికి/ఆ మేలు గురించి చెప్పాలంటే,” not “చర్చించడానికి” (too modern/analytic). Line 9 “l’altre cose ch’i’ v’ho scorte” is “అక్కడ నేను గమనించిన/చూసిన ఇతర విషయాలు”—okay, but “అక్కడ” repeated could be varied; also “scorte” implies “discerned/observed,” not just “seen.”
+
+10 నేను ఎలా ప్రవేశించానో బాగా చెప్పలేను,
+11 ఆ సమయంలో నేను నిద్రలో పూర్తిగా నిండిపోయి ఉండేవాడిని
+12 అప్పుడు నేను నిజమైన మార్గాన్ని వదిలేశాను.
+- Note: Line 11 “tant’ era pien di sonno” is “నిద్రమత్తులో/నిద్రతో నిండిపోయి” but “పూర్తిగా నిండిపోయి ఉండేవాడిని” is clunky; better “అప్పటికి నిద్రమత్తులో మునిగిపోయాను.” Line 12 “verace via” is “సత్యమార్గం/నిజమైన మార్గం”—fine, but Dante implies moral truth; “వదిలేశాను” okay though “abbandonai” is stronger (“త్యజించాను/విడిచిపెట్టాను”).
+
+13 కాని నేను కొండ పాదానికి చేరుకున్న తర్వాత,
+14 అక్కడ ఆ లోయ ముగిసింది
+15 అది నా హృదయాన్ని భయంతో నింపింది,
+- Note: Line 14 “là dove terminava quella valle” = “అక్కడ ఆ లోయ ముగుస్తున్న చోట” — you lose the locative nuance by splitting awkwardly. Line 15 “che m’avea di paura il cor compunto” is “భయంతో నా హృదయాన్ని గాయపరచింది/చూషింది,” not merely “నింపింది.” “compunto” has the sense of “pierced/stricken.”
+
+16 నేను ఎత్తులో చూసి దాని భుజాలను చూశాను
+17 భుజాలు ఇప్పటికే గ్రహం యొక్క కిరణాలతో అలంకరించబడ్డాయి
+18 గ్రహం ప్రతి మార్గంలో మనుషులను సరిగా నడిపిస్తుంది.
+- Note: Line 16 should be “పైకి చూశాను, ఆ కొండ భుజాలను చూశాను”—your “దాని భుజాలను” lacks explicit reference to the hill. Line 17 “vestite” = “వస్త్రముల్లా కప్పబడ్డాయి/ఆవరించబడ్డాయి,” “అలంకరించబడ్డాయి” is acceptable but a bit ornamental. Line 18 “il pianeta” is the sun; translating as “గ్రహం” is misleading in Telugu—better “సూర్యుడు.” “mena dritto altrui” = “ఇతరులను నేరుగా నడిపించే/దారి చూపే,” fine, but “ప్రతి మార్గంలో” for “per ogne calle” is okay though “calle” is “దారిదారి/వీధివీధి.”
+
+19 అప్పుడు భయం కొంచెం నిశ్శబ్దమైంది,
+20 అది నా హృదయపు సరస్సులో కొనసాగింది
+21 నేను ఎంతో వేదనతో గడిపిన రాత్రి.
+- Note: Line 20 “nel lago del cor” is metaphorical; “హృదయపు సరస్సు” is literal but acceptable—however “m’era durata” means “నన్ను వెంటాడుతూ నిలిచింది,” not just “కొనసాగింది.” Line 21 “con tanta pieta” is “అంత దయనీయమైన/వేదనభరితమైన స్థితిలో,” not “వేదనతో” only; “pietà” here is closer to “కరుణ/దయ/దైన్యం.” Also the spacing with narrow no-break spaces looks like formatting artifacts.
+
+22 మరియు కూడా శ్వాస అయిపోయినవాడిలా,
+23 సముద్రం నుండి తీరానికి వచ్చి,
+24 ప్రమాదకరమైన నీటికి తిరుగుతుంది మరియు గమనిస్తాడు,
+- Note: Line 22 “E come quei che con lena affannata” = “శ్వాస తేలికగా/ఆతుర శ్వాసతో” (panting), not “శ్వాస అయిపోయినవాడిలా” (out of breath entirely). Line 24 subject agreement: “si volge… e guata” refers to “he” (that man), but Telugu line uses “తిరుగుతుంది” (it turns—feminine/impersonal). Should be “తిరిగి… చూస్తాడు/తిరిగి తడుముకుంటాడు.” Also “pelago” is “సముద్రం/అలల సముద్రం,” okay.
+
+25 అలా నా ఆత్మ, ఇంకా పారిపోతూ,
+26 వెనక్కి తిరిగి ఆ పాస్‌ను మళ్లీ చూసింది
+27 అది ఇప్పటికే ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు.
+- Note: Line 26 “lo passo” is “ఆ దారి/ఆ పాస్” but in context “ఆ గాడి/ఆ అడవి దారి” leading through danger. Line 27 mistranslates tense/meaning: “che non lasciò già mai persona viva” = “అది ఎప్పుడూ ఏ జీవన్మానవుడినీ బతికివిడిచలేదు” (never left anyone alive). Your “ఇప్పటికే ఎప్పుడూ జీవించి ఉన్న వ్యక్తిని విడిచిపెట్టలేదు” is ungrammatical and muddles the sense (sounds like it didn’t leave a living person behind, not “no one survived”). Should be “ఎప్పుడూ ఒక్క జీవన్మానవుడినీ బతికివిడిచిన దారి కాదు.”
+
+28 కొంచెం విశ్రాంతి తీసుకున్న తర్వాత నా అలసటతో ఉన్న శరీరం,
+29 నేను మళ్లీ మార్గాన్ని తీసుకుని నిర్జన వాలులో నడిచాను,
+30 అలా స్థిరమైన పాదం ఎప్పుడూ దిగువన ఉండేది.
+- Note: Line 28 syntax is broken: it should be “శరీరాన్ని కొంచెం ఆపి/విశ్రాంతి ఇచ్చి” (After I had rested my weary body). Line 29 “piaggia diserta” is “నిర్జన కొండతీరం/వాలుపై” not “వాలులో” (valley). Line 30 “sì che ’l piè fermo sempre era ’l più basso” refers to climbing a slope where the lower foot is the firm one; your Telugu is opaque. Better: “ఎక్కుతుంటే నిశ్చలంగా నిలిచే కాలు ఎప్పుడూ దిగువదే.”
+
+31 మరియు, చూడు, పర్వత‑పథం యొక్క ప్రారంభంలో సుమారు,
+32 ఒక ఆడ చిరుత, తేలికైనది మరియు చాలా చురుకైనది,
+33 అది దాని కోటు మచ్చలతో కప్పబడి ఉంది;
+- Note: Line 31 “quasi al cominciar de l’erta” = “ఎక్కు మొదట్లోనే, దాదాపు” okay, though “పర్వత‑పథం” adds “path” not in original (it’s the steep ascent). Line 32 “lonza” is often translated as “leopard” or “lynx/panther” (debated); “ఆడ చిరుత” may be too specific; just “చిరుత” or “చిత్తిరాజు” depending register. Line 33 is fine.
+
+34 మరియు ఆమె నా ముఖం ముందు కదలలేదు,
+35 అయితే ఆమె నా మార్గాన్ని ఎంతో అడ్డుకుంది,
+36 అది నేను తిరిగి రావడానికి తరచుగా తిరిగాను.
+- Note: Line 34 “non mi si partia dinanzi al volto” means “నా ముఖం ముందు నుంచి తొలగిపోలేదు” not “కదలలేదు” (it was moving but not leaving). Line 36 “ch’i’ fui per ritornar più volte vòlto” = “నేను తిరిగిపోవాలనుకుని పలుమార్లు వెనక్కి తిప్పబడ్డాను” — your “తిరిగి రావడానికి తరచుగా తిరిగాను” loses the hesitancy/near-return sense and is awkward.
+
+37 సమయం ఉదయపు ప్రారంభంలో ఉంది,
+38 సూర్యుడు ఆ నక్షత్రాలతో కలిసి పైకి ఎక్కుతున్నాడు
+39 దివ్య ప్రేమ ఉన్నప్పుడు అతనితో కలిసి ఉన్న నక్షత్రాలు
+- Note: Line 38 “’n sù” is “ఎగసిపోతూ/పైకి ఎక్కుతూ,” good. Line 39 grammar: “ch’eran con lui quando…” refers to the stars that were with the sun at Creation; Telugu should mark relative clause clearly (“దివ్య ప్రేమ… కదిలించినప్పుడు సూర్యుడితో ఉన్న నక్షత్రాలు”). As written it reads like “when there was divine love” (odd).
+
+40 మొదటి క్షణాల్లో ఆ అందమైన విషయాలు;
+41 అలా, నాకు మంచి ఆశించడానికి కారణమైంది
+42 ఆ మచ్చల చర్మం కలిగిన వన్య జంతువు గురించి
+- Note: Line 40 “mosse di prima quelle cose belle” = “మొదటిసారి ఆ అందమైన సృష్టిని కదిలించినప్పుడు/సృష్టించినప్పుడు” — your line is fragmentary and missing the verb “moved/created.” Line 41 “sì ch’a bene sperar m’era cagione” should be “అందువల్ల నేను మేలును ఆశించేందుకు కారణమైంది” — okay though word order is stiff. Line 42 should attach to line 41: the time/season was a cause for hope *despite* the beast. Your “గురించి” misconnects.
+
+43 సమయపు గంట మరియు మధురమైన ఋతువు;
+44 కాని అంతగా కాదు సింహం యొక్క దర్శనం నాకు భయాన్ని ఇవ్వలేదు
+45 సింహం యొక్క దర్శనం నాకు కనిపించింది.
+- Note: Line 43 “l’ora del tempo” is “ఆ సమయగడియ/ఆ గంట,” okay but tautological. Lines 44–45 are wrong: “ma non sì che paura non mi desse / la vista che m’apparve d’un leone” means “కానీ (అంతే) అయినా, సింహం దర్శనమొకటి నాకు భయాన్ని కలిగించకుండా కాదు” (i.e., it DID give fear). Your Telugu says it did not give fear (“భయాన్ని ఇవ్వలేదు”) and then repeats. Should be “కానీ సింహం కనిపించగానే భయం తప్పలేదు.”
+
+46 అతను నా మీద వస్తున్నాడని కనిపించింది
+47 తల ఎత్తుగా, ఆకలితో,
+48 అలా గాలి అతనితో కంపిస్తున్నట్లు కనిపించింది.
+- Note: Line 47 “con rabbiosa fame” is “కోపంతో కూడిన ఆకలి/ఉగ్ర ఆకలి,” not just “ఆకలితో.” Line 48 “parea che l’aere ne tremesse” = “గాలే వణికినట్లు” (because of him), your “అతనితో” is okay but could emphasize causality.
+
+49 మరియు అన్ని కోరికలలో ఉన్న ఒక ఆడ తోడేలు
+50 ఆమె సన్నితనంలో భారంగా కనిపించింది,
+51 మరియు ఇప్పటికే అనేక ప్రజలను దుఃఖంగా జీవించడానికి చేసింది,
+- Note: Line 49 “che di tutte brame / sembiava carca ne la sua magrezza” means “అన్ని కోరికల భారంతో సన్నగా ఉన్నప్పటికీ నిండినట్లుగా” — your “అన్ని కోరికలలో ఉన్న” is unclear; should be “అన్ని దురాశలతో నిండిన.” Line 50 captures paradox but could be tighter. Line 51 “fé già viver grame” = “ఇప్పటికే అనేక మందిని దుస్థితిలో బతకించేసింది,” good.
+
+52 ఆమె నాకు అంత భారాన్ని ఇచ్చింది
+53 ఆమె చూపు నుండి వచ్చిన భయంతో,
+54 నేను ఎత్తు పట్ల ఆశను కోల్పోయాను.
+- Note: Line 52 “gravezza” is “భారం/నిరుత్సాహం/దుర్భారం,” okay though “ఇచ్చింది” sounds like she handed over; better “నాపై మోపింది/నన్ను అణిచింది.” Line 54 “speranza de l’altezza” is hope of reaching the height (the hill), not a general “ఎత్తు పట్ల.” Consider “ఆ కొండశిఖరానికి చేరుతానన్న ఆశ.”
+
+55 మరియు అతను స్వచ్ఛందంగా సంపాదించే వాడు,
+56 మరియు అతనిని కోల్పోయేలా చేసే సమయం వస్తుంది,
+57 అతని అన్ని ఆలోచనల్లో అతను ఏడుస్తూ దుఃఖిస్తాడు;
+- Note: Line 55 “E qual è quei che volontieri acquista” = “ఎవరైతే ఆనందంగా సంపాదిస్తాడో” — okay. Line 56 “e giugne ’l tempo che perder lo face” is “కానీ దాన్ని కోల్పోయే కాలం వచ్చేసరికి” — your “అతనిని” (him) should be “అదాన్ని” (it). Line 57 “’n tutti suoi pensier” = “తన ప్రతి ఆలోచనలో,” fine.
+
+58 అలా నన్ను విశ్రాంతి లేని మృగంగా చేసింది,
+59 అది నన్ను ఎదుర్కొంటూ క్రమంగా
+60 నన్ను సూర్యుడు నిశ్శబ్దంగా ఉన్న చోటకు నెట్టింది.
+- Note: Line 58 “tal mi fece la bestia sanza pace” means “అలా ఆ శాంతిలేని మృగం నన్ను చేసింది/నన్ను అలా (శోకంగా) మార్చింది” — but “నన్ను విశ్రాంతి లేని మృగంగా చేసింది” incorrectly says Dante became the beast. It should mean “ఆ మృగం నన్ను (ఆ మనిషిలా) రోదింపజేసింది/విషాదపరిచింది.” Line 60 “là dove ’l sol tace” is “సూర్యుడు మౌనమయ్యే చోట” = darkness/underworld; your phrase is literal but okay; could clarify as “సూర్యకాంతి చేరని చోట.”
+
+61 నేను దిగువ స్థలానికి తిరిగి పడుతున్నప్పుడు,
+62 నా కళ్ల ముందు ఒకరు కనిపించాడు
+63 దీర్ఘ నిశ్శబ్దం ద్వారా అతను బలహీనంగా అనిపించాడు.
+- Note: Line 61 “rovinava” is “జారిపడుతూ/పడిపోతూ,” okay. Line 63 “chi per lungo silenzio parea fioco” = “దీర్ఘ మౌనంతో (మాటలేని) స్వరం మసకబారినట్టు కనిపించినవాడు”—your “నిశ్శబ్దం ద్వారా” is unnatural; better “ఎన్నాళ్ల మౌనం వలన.”
+
+64 నేను అతనిని మహా ఎడారిలో చూసినప్పుడు,
+65 అతనికి నేను నన్ను కరుణించు అని అరిచాను,
+66 నీవు ఏవైనా నీడ లేదా నిజమైన మనిషి అయినా!
+- Note: Line 65 “Miserere di me” is “నాపై కరుణించు/దయ చూపు,” not “నన్ను కరుణించు” (sounds like “have mercy me”). Line 66 “qual che tu sii, od ombra od omo certo” = “నీవెవరో, నీడవా నిజమనిషివా” — okay.
+
+67 అతను నాకు సమాధానం ఇచ్చాడు: «మనిషి కాదు, ఒకప్పుడు నేను మనిషి ఉన్నాను,
+68 మరియు నా తల్లిదండ్రులు లొంబార్డులు ఉన్నారు,
+69 దేశం పరంగా మాంటువా వారు ఇద్దరూ.
+- Note: Line 67 should keep the rhythm: “ఇప్పుడు మనిషి కాదు; ఒకప్పుడు మనిషినే.” Your Telugu is workable but slightly unidiomatic. Line 68 “parenti” is “పూర్వీకులు/తల్లిదండ్రులు,” fine; but “ఉన్నారు” repeated is awkward. Line 69 “mantoani per patrïa ambedui” = “ఇద్దరూ మాంతువా వాసులు” — good.
+
+70 నేను జూలియో కాలంలో జన్మించాను, ఆలస్యంగా అయినప్పటికీ,
+71 నేను రోమాలో మంచి ఆగస్టస్ పాలనలో జీవించాను
+72 అసత్యమైన మరియు అబద్ధపు దేవతల కాలంలో.
+- Note: Line 70 “sub Iulio” is “జూలియస్ (సీజర్) కాలంలో,” not “జూలియో” as if a person named Giulio in Telugu. Line 70 also implies “though late” = late in his reign. Line 72 “nel tempo de li dèi falsi e bugiardi” is “తప్పుడు/అబద్ధ దేవతల కాలంలో” — fine.
+
+73 నేను కవి, ఆ న్యాయమైనవాడి గురించి పాడాను
+74 అంకిసెస్ కుమారుడు, ట్రోయ్ నుండి వచ్చిన,
+75 అప్పుడు గర్వమయిన ఇలియన్ కాల్చబడిన తర్వాత.
+- Note: Line 73 “Poeta fui” = “నేను కవినయ్యాను/కవిని,” good. “di quel giusto / figliuol d’Anchise” refers to Aeneas as “the just son of Anchises” — okay. Line 75 “Ilïón” is Troy; “కాల్చబడిన” okay, but “superbo” is “గర్విష్ఠ/అహంభావి” — fine.
+
+76 కాని నీవు ఎందుకు అంత పెద్ద దుఃఖానికి తిరిగి వస్తున్నావు?
+77 ఎందుకు నీవు ఆ ఆనందకరమైన పర్వతాన్ని ఎక్కడం లేదు?
+78 అది మొత్తం ఆనందానికి మూలం మరియు కారణమా?
+- Note: Line 78 is a statement, not a question: “చేలిమి/ఆనందానికి మొదలు, కారణం.” Your added question particle “మా?” misreads tone. Also “tanta noia” is “ఇంత కష్టానికి/యాతనకు/విషాదానికి,” not just “దుఃఖం.”
+
+79 ఇప్పుడు నీవే ఆ వర్జిలి ఆ మూలం
+80 అది మాట్లాడటానికి అంత పెద్ద నది వలె ప్రవహిస్తుందా?
+81 నేను అతనికి లజ్జతో కూడిన ముఖంతో సమాధానమిచ్చాను.
+- Note: Line 79 “Or se’ tu quel Virgilio e quella fonte” = “అయితే నీవే ఆ విర్జిలియో, ఆ మూలం” — good though “ఆ” repetition could be smoother. Line 80 “che spandi di parlar sì largo fiume?” means “నీ మాటలతో ఇంత విశాల నదిని ప్రవహింపజేస్తావా?” — your “మాట్లాడటానికి” is slightly off; it’s “మాటల ప్రవాహం.” Also it should be an astonished recognition, not a neutral query.
+
+82 ఓ ఇతర కవుల గౌరవం మరియు వెలుగు,
+83 నాకు దీర్ఘ అధ్యయనాన్ని మరియు మహా ప్రేమను అందించు
+84 ఇవి నన్ను నీ గ్రంథాన్ని అన్వేషించడానికి ప్రేరేపించాయి.
+- Note: Line 83 “vagliami” = “నాకు ఉపకరించనీ/నన్ను కాపాడనీ (నీ దయ)” not “అందించు” as an imperative asking for long study and love. He’s saying: “May the long study and great love avail me.” Line 84 “cercar lo tuo volume” = “నీ గ్రంథాన్ని వెతకడానికి/అధ్యయనం చేయడానికి,” okay.
+
+85 నీవు నా గురువు మరియు నా రచయిత,
+86 నీవే నేను శైలి తీసుకున్న ఏకైక వ్యక్తి
+87 అది అందమైన శైలి అది నాకు గౌరవాన్ని ఇచ్చింది.
+- Note: Line 85 “autore” is more “మూలకర్త/ప్రేరణ” than literal “రచయిత,” though “రచయిత” can work. Line 86 should be “నిన్నొక్కడినుంచి” — your “ఏకైక వ్యక్తి” is okay but stiff. Lines 86–87 are grammatically clumsy: “lo bello stilo” is “అందమైన శైలి,” but your repetition “అది…అది” needs tightening; also “m’ha fatto onore” = “నాకు గౌరవం తెచ్చింది.”
+
+88 జంతువును చూడు, నేను తిరిగిన కారణంగా;
+89 ఆమెకు వ్యతిరేకంగా నాకు సహాయం చేయు, ప్రసిద్ధ జ్ఞాని,
+90 ఆమె నాకు రక్తనాళాలు మరియు నాడులను కంపించిస్తుంది.
+- Note: Line 88 “Vedi la bestia per cu’ io mi volsi” = “నేను వెనక్కి తిరిగేలా చేసిన మృగాన్ని చూడు” — your Telugu reads as if “I turned because (of) [something]” but not clearly “it made me turn back.” Line 89 should be “దానివల్ల నన్ను రక్షించు” not “ఆమెకు వ్యతిరేకంగా” (odd). Line 90 “vene e i polsi” = “నరాలు, మణికట్టులు/నాడులు” — “రక్తనాళాలు మరియు నాడులు” is redundant; better “నరాలు, మణికట్టులు వణికిస్తుంది.”
+
+91 నీకు మరో ప్రయాణం తీసుకోవాలి,
+92 అతను నన్ను కన్నీరు పోస్తున్నాను చూసి ప్రతిస్పందించాడు,
+93 నీవు ఈ క్రూరమైన స్థలాన్ని విడిచిపోవాలనుకుంటే;
+- Note: Line 91 “A te convien tenere altro vïaggio” = “నీకు మరో ప్రయాణం పట్టించుకోవాల్సి వస్తుంది/ఇంకో దారిని ఎంచుకోవాలి” — okay. Line 92 should be “అతను ప్రత్యుత్తరం ఇచ్చాడు” — fine. Line 93 “campar” = “తప్పించుకోవాలంటే/బతకాలంటే,” not simply “విడిచిపోవాలనుకుంటే.”
+
+94 ఈ మృగం వలన నీవు అరుస్తున్నావు,
+95 ఇది ఇతరులకు దాని మార్గం ద్వారా వెళ్లడానికి అనుమతించదు,
+96 కాని అతనిని అంతగా అడ్డుకుంటుంది, అది అతనిని చంపుతుంది;
+- Note: Line 94 needs causal clarity: “ఈ మృగం కారణంగా నీవు మొరపెడుతున్నావు.” Line 96 pronouns wrong: it kills “altrui” (anyone), not “అతనిని.” Should be “ఎవ్వరినైనా అంతగా అడ్డుకుంటుంది గనుక చంపేస్తుంది.” Also gender inconsistency: you alternate “ఇది/అతను/ఆమె.”
+
+97 ఆమెకు అంత చెడైన దుష్ట స్వభావం ఉంది,
+98 ఆమె ఎప్పుడూ తన లొభించే కోరికను తీరించదు,
+99 ఆమె భోజనానికి తర్వాత ముందు కన్నా ఎక్కువ ఆకలిగా ఉంటుంది.
+- Note: “bramosa voglia” is “దురాశ/అతృప్తి,” good. Line 99 correct.
+
+100 అనేక జంతువులు ఆమె జతకట్టేవి,
+101 మరియు ఇంకా ఎక్కువ జంతువులు ఉంటాయి, వేట కుక్క వచ్చే వరకు
+102 వేట కుక్క వస్తుంది, అది ఆమెను దుఃఖంతో మరణింపజేస్తుంది.
+- Note: Line 100 “a cui s’ammoglia” is metaphorical “తనను కలుపుకుంటుంది/జతపడుతుంది” (mates/associates), but “జతకట్టేవి” is slightly crude; could be “తోడై ఉంటుంది/కలిసిపోతుంది.” Line 101 “il veltro” is “గ్రేహౌండ్/వేటకుక్క” but also allegorical; okay. Line 102 “morir con doglia” = “వేదనతో చావేటట్లు చేస్తాడు.”
+
+103 అతను భూమి లేదా వస్తువులపై ఆహారం తీసుకోడు,
+104 కాని జ్ఞానం, ప్రేమ మరియు ధైర్యం,
+105 మరియు అతని జన్మస్థలం ఫెల్ట్రో మరియు ఫెల్ట్రో మధ్యలో ఉంటుంది.
+- Note: Line 103 “terra né peltro” is “భూమి (లోకసుఖాలు) గానీ పిత్తళం/పెల్ట్రో (ధనం) గానీ కాదు” — your “వస్తువులు” is too generic; should keep “లోకసుఖాలు-ధనం” contrast. Line 104 “virtute” is “సద్గుణం/ధర్మం,” not “ధైర్యం” specifically. Line 105 “tra feltro e feltro” is debated (Feltre/Montefeltro or felt cloth); transliterating “ఫెల్ట్రో” is okay but should note ambiguity; also you repeat “ఫెల్ట్రో” without explanation.
+
+106 ఆ వినయపూర్ణ ఇటలీకి రక్షణ ఉంటుంది
+107 ఆ రక్షణ కోసం కన్యా కామిల్లా మరణించింది,
+108 యూరియాలో, టర్నో, నిసో గాయపడినవారు.
+- Note: Line 106 “Di quella umile Italia fia salute” = “ఆ వినయమైన ఇటలీకి రక్షణ/క్షేమం కలుగుతుంది” — good. Line 108 is wrong: “Eurialo e Turno e Niso di ferute” means “యూర్యాలో, టర్నో, నిసో—గాయాలవల్ల (మరణించారు)” not “యూరియాలో” (locative) nor “గాయపడినవారు” only. Also spelling: “Eurialo” = “యూర్యాలో/యూరియాలో” but should be treated as a name, not a place.
+
+109 అతడు ఆమెను ప్రతి పట్టణంలో వేటాడుతాడు,
+110 అతను ఆమెను నరకంలోకి తిరిగి పెట్టేవరకు,
+111 అక్కడ ఇర్ష్య మొదట ఆమెను పంపింది.
+- Note: Line 110 “rimessa” = “తిరిగి నెట్టేవరకు/మళ్లీ తోసివేయేవరకు,” good. Line 111 “invidia” personified; “dipartilla” = “అక్కడినుంచి తొలగించింది/బయటకు పంపింది”—your “పంపింది” is okay though “మొదట” placement is fine.
+
+112 అందుకే నేను నీ మంచి కోసం ఆలోచించి నిర్ణయిస్తాను
+113 నీవు నన్ను అనుసరిస్తావు మరియు నేను నీ మార్గదర్శి అవుతాను,
+114 మరియు నేను నిన్ను ఇక్కడి నుండి శాశ్వత స్థలానికి తీసుకెళ్తాను;
+- Note: Line 112 “Ond’ io per lo tuo me’ penso e discerno” = “కాబట్టి నీ మేలుకోసం నేను ఇలా ఆలోచించి నిర్ణయిస్తున్నాను,” good. Line 113 should be “నీవు నన్ను అనుసరించాలి” (you must follow), not future “అనుసరిస్తావు.” Line 114 “loco etterno” is “శాశ్వత లోకం/స్థలం,” okay.
+
+115 అక్కడ నీవు నిరాశా కేకలను వింటావు,
+116 నీవు పురాతన దుఃఖభరిత ఆత్మలను చూస్తావు,
+117 ప్రతి ఒక్కరు రెండవ మరణాన్ని అరుస్తారు;
+- Note: Line 117 “ch’a la seconda morte ciascun grida” = “రెండో మరణాన్ని (శాశ్వత శిక్షను) కోరుకుంటూ/అరుస్తూ” — “అరుస్తారు” okay, but could hint they beg for annihilation.
+
+118 అప్పుడు నీవు సంతృప్తిగా ఉన్న వారిని చూస్తావు
+119 అగ్నిలో వారు రావాలని ఆశిస్తున్నారు
+120 అది ఎప్పుడైనా ఆశీర్వదిత ప్రజలకు చేరుతుంది
+- Note: Line 118 “color che son contenti / nel foco” refers to souls in Purgatory content in fire because they hope for blessedness—your “సంతృప్తిగా ఉన్న” fine. Line 120 is ungrammatical: it should mean “ఎప్పుడో ఒకప్పుడు ధన్యుల వద్దకు చేరుతామని ఆశిస్తూ.” Your Telugu makes “it (that) reaches” unclear.
+
+121 నీవు తరువాత ఎక్కాలని కోరుకుంటే వారికి,
+122 అప్పుడు ఆ విషయానికి నేను కన్నా ఎక్కువ గౌరవం కలిగిన ఆత్మ ఉంటుంది:
+123 నా ప్రయాణంలో ఆమెతో కలిసి నేను నిన్ను విడిచిపెడతాను;
+- Note: Line 121 “A le quai poi se tu vorrai salire” = “తర్వాత నీవు వారి (ధన్యుల) వద్దకు ఎక్కాలనుకుంటే” — your “వారికి” is misplaced. Line 122 “più di me degna” = “నాకన్నా ఎక్కువ యోగ్యమైన,” not “గౌరవం కలిగిన.” Line 123 “nel mio partire” = “నేను వెళ్లే వేళ/విడిచిపోతున్నప్పుడు,” okay.
+
+124 అందుకే ఆ సామ్రాట్ ఆకాశంలో పాలిస్తాడు,
+125 ఎందుకంటే నేను అతని చట్టానికి తిరుగుబాటు చేశాను,
+126 అతను తన నగరంలో నన్ను ద్వారా ఎవ్వరూ రాకూడదని కోరుకుంటాడు.
+- Note: Line 124 “quello imperador che là sù regna” = “పైన రాజ్యమేలే ఆ చక్రవర్తి (దేవుడు)” — “ఆకాశంలో” fine. Line 126 “per me si vegna” = “నా ద్వారా అక్కడికి ఎవరూ రాకూడదు” good, but Telugu “నన్ను ద్వారా” should be “నా ద్వారా.” Also causal link: because Virgil was “ribellante” (pagan) he cannot enter.
+
+127 అన్ని భాగాలలో ఆయన పాలిస్తాడు, అక్కడ ఆయన రాజ్యాన్ని నిర్వహిస్తాడు;
+128 అక్కడ ఆయన నగరం మరియు ఆయన ఉన్నత సింహాసనం ఉంది:
+129 ఓ సంతోషవంతుడా, ఆయన అక్కడ ఎన్నుకున్నవాడు!».
+- Note: Line 127 “In tutte parti impera e quivi regge” = “అన్ని చోట్ల ఆయన పరిపాలిస్తాడు, అక్కడే ఆయన సింహాసనం” — your “అక్కడ” ambiguous (should be “అక్కడే”). Line 129 “oh felice colui cu’ ivi elegge” = “అక్కడ ఆయన ఎన్నుకున్నవాడు ధన్యుడు” — okay though vocative “ఓ సంతోషవంతుడా” sounds like addressing someone; it’s an exclamation about a third person.
+
+130 మరియు నేను అతనికి: “కవి, నేను నిన్ను అభ్యర్థిస్తున్నాను
+131 నీకు తెలియని ఆ దేవుని ద్వారా,
+132 అలా నేను ఈ దుర్భాగ్యాన్ని మరియు మరింత చెడును తప్పించుకోవడానికి,
+- Note: Line 131 captures “quel Dio che tu non conoscesti.” Line 132 “questo male e peggio” = “ఈ చెడు, ఇంకా చెడ్డదీ” — your “దుర్భాగ్యం” shifts from moral evil to misfortune; better “ఈ అపాయం/ఈ కీడు.”
+
+133 నీవు నన్ను అక్కడికి నడిపించు, నీవు ఇప్పుడే చెప్పిన చోట,
+134 అలా నేను సెయింట్ పీటర్ గేటు చూడగలను
+135 మరియు నీవు ఎంతో బాధపడే వారిని.
+- Note: Line 133 okay. Line 134 “la porta di san Pietro” is a Christian anachronistic phrase in Dante for Heaven; “సెయింట్ పీటర్ గేటు” fine. Line 135 “color cui tu fai cotanto mesti” = “నీవు ఇంత దుఃఖితుల్ని చేసే ఆ జనులను” i.e., the damned; your Telugu “నీవు ఎంతో బాధపడే వారిని” means “those for whom you suffer,” changing agency and sense. It should be “నీవు ఇంత దుఃఖంలో ముంచే/ఇంత బాధపడేలా చేసే ఆవారిని (నేను చూడగలను).”
+
+136 అప్పుడు అతను ముందుకు వెళ్లాడు నేను అతనిని అనుసరించాను.
+- Note: “Allor si mosse, e io li tenni dietro” = “అప్పుడు అతను కదిలాడు; నేను అతని వెనకే కొనసాగాను.” Add a pause/comma; as written it’s a run-on sentence.

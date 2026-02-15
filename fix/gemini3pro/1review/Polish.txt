@@ -1,0 +1,211 @@
+1 W połowie drogi naszego życia
+2 odnalazłem się w mrocznym lesie,
+3 bo właściwa droga została zgubiona.
+- Note: 3行目の "właściwa droga została zgubiona" (正しい道が失われた) は受動態ですが、原文の *smarrita* のニュアンスを伝えており許容範囲です。しかし、全体的に "odnalazłem się" (自分を見つけた) など、やや現代的で散文的な表現です。
+
+4 Ach jak trudne jest powiedzieć czym to było
+5 ten dziki i szorstki i gęsty las
+6 który w myśli odnawia strach!
+- Note: 4行目の "czym to było" (それが何であったか) と5行目の "ten... las" (その...森) の文法的なつながりが悪いです。ポーランド語として "czym był ten... las" とつなげるべきです。また、*aspra*（荒々しい）を "szorstki"（手触りが粗い）と訳すのは少し違和感があります。"surowy" などが適当でしょう。
+
+7 Tak gorzka jest że śmierć jest nieco większa;
+8 ale aby rozmawiać o dobru które znalazłem tam,
+9 powiem o innych rzeczach które widziałem tam.
+- Note: 7行目の "śmierć jest nieco większa" (死はもう少し大きい) は *poco è più morte* (死もこれより苦しいことはほとんどない) の誤訳です。"Wiéksza" (より大きい) ではなく "bardziej gorzka" (より苦い) の文脈であるべきです。
+
+10 Nie potrafię dobrze opisać jak wszedłem,
+11 byłem tak pełen snu w tym momencie
+12 że porzuciłem prawdziwą drogę.
+- Note: 11行目の "pełen snu" (眠りに満ちた) は直訳過ぎて不自然です。"Zmorzony snem" (眠気に圧倒された) などが適しています。
+
+13 Ale po tym, jak dotarłem do podnóża wzgórza,
+14 gdzie kończyła się ta dolina
+15 która przebiła moje serce strachem,
+- Note: 15行目の "przebiła" (突き刺した) は *compunto* の強い訳語として機能しています。
+
+16 Spojrzałem w górę i zobaczyłem jego ramiona
+17 już pokryte promieniami planety
+18 który prowadzi ludzi prosto po każdej drodze.
+- Note: 16行目の "ramiona" は通常人間の腕や肩を指すため、山の "barki" や "zbocza" が適切です。18行目の "który" (男性形) は文法ミスです。先行詞 *planety* は女性名詞なので "która" であるべきです。
+
+19 Wtedy strach był nieco uspokojony,
+20 który w jeziorze mego serca trwał
+21 noc którą przeszedłem tak żałośnie.
+- Note: 21行目の *pieta* はここでは「慈悲」ではなく「苦悩」の意味です。"żałośnie" (惨めに/哀れに) よりは "z taką trwogą" (あれほどの恐怖と共に) の方が文脈に合います。
+
+22 I jak ci z zadysanym oddechem,
+23 wyszedł z morza na brzeg,
+24 obraca się ku niebezpiecznej wodzie i patrzy,
+- Note: 22行目の "ci" (彼ら/複数形) と23行目の "wyszedł" (彼が出た/単数形) で数が一致していません。原文の *quei* は単数の代表者（～する人）を指します。
+
+25 tak więc moja dusza, która wciąż uciekała,
+26 odwróciła się wstecz i ponownie spojrzała na przełęcz,
+27 przełęcz której już nigdy nie opuściła żywa osoba.
+- Note: 26行目の "przełęcz" (峠) は *passo* の訳として具体的すぎますが、許容範囲です。27行目の意味（生きた人がそこを出たことはない）は正しく捉えられています。
+
+28 Po tym jak odpocząłem trochę moje zmęczone ciało,
+29 Wznowiłem drogę wzdłuż pustynnego zbocza,
+30 tak aby stabilna stopa zawsze była niższa.
+- Note: 30行目の "stabilna stopa" (安定した足) は *piè fermo* (軸足) の解釈として少し弱いです。登る動作において、体重を支える下の足が常に固定されている様子を描写しています。
+
+31 I oto, prawie na początku stromego szlaku,
+32 leopardka lekka i bardzo zwinna,
+33 która była pokryta plamistą sierścią;
+- Note: 32行目の "leopardka" (雌のヒョウ) は、*lonza* の女性名詞性を反映していますが、ポーランド語では少し可愛らしい響き（指小辞的）があります。
+
+34 I nie ruszała się przed moją twarzą,
+35 a raczej tak bardzo utrudniała moją drogę,
+36 że by wrócić wielokrotnie się odwracałem.
+- Note: 34行目の "nie ruszała się" (動かなかった) は *non mi si partia* (立ち去らなかった) と少しニュアンスが異なります。36行目の "wielokrotnie się odwracałem" (何度も振り向いた) は、*fui per ritornar* (何度も引き返そうとした) の意図を完全には捉えていません。
+
+37 Czas był od początku poranka,
+38 a słońce wznosiło się w górę z tymi gwiazdami
+39 które były z nim gdy boska miłość
+- Note: 37行目の "Czas był od początku poranka" (時間は朝の初めからだった) はポーランド語として非常に不自然です。"Był wczesny ranek" (早朝だった) などとするべきです。
+
+40 pierwsza chwila, te piękne rzeczy;
+41 tak aby dobra nadzieja była dla mnie przyczyną
+42 tej dzikiej bestii o plamistej skórze.
+- Note: 40行目は動詞 *mosse* (動かした) が欠落しており、文になっていません。41-42行目も構文が崩壊しています。「良い希望が原因だった」のではなく、「その季節と時間が、獣に対して希望を持つ原因となった」というのが正しい意味です。
+
+43 godzina czasu i słodka pora;
+44 ale nie tak, by strach mnie nie dał
+45 widok, który ukazał się mi z lwa.
+- Note: 43行目の "godzina czasu" (時間の時間) は冗語です。44行目の "strach mnie nie dał" (恐怖が私を与えなかった) は文法的に誤りです（*dać* は対格を取る）。45行目の "widok... z lwa" (ライオンからの眺め) も前置詞がおかしいです。"widok lwa" (ライオンの姿) とすべきです。
+
+46 Wydawało się, że ten nadchodzi przeciwko mnie
+47 z podniesioną głową i z żarłoczną głodą,
+48 tak że wydawało się, że powietrze drży od niego.
+- Note: 47行目の "głodą" は誤りです。*głód* (飢え) は男性名詞なので、造格は *głodem* です。
+
+49 I wilczyca, która ze wszystkich żądz
+50 wydawała się obciążona w swojej chudości,
+51 i wiele ludzi już zmusiła do życia w rozpaczy,
+
+52 ona dała mi tak wielką ciężkość
+53 z lękiem który powstał z jej widoku,
+54 że straciłem nadzieję na wysokość.
+- Note: 54行目の "nadzieję na wysokość" (高みへの希望) は、頂上に登ることへの希望を失ったことを正しく伝えています。
+
+55 I taki jest ten, który chętnie zdobywa,
+56 i przychodzi czas, który sprawia, że traci,
+57 który we wszystkich swoich myślach płacze i smuci się;
+
+58 tak uczyniła mnie bestia bez spokoju,
+59 że zbliżając się przeciw mnie krok po kroku
+60 odpychała mnie tam gdzie słońce milczy.
+- Note: 60行目の "słońce milczy" (太陽が黙る) は原文の共感覚的な比喩をうまく保存しています。
+
+61 Podczas gdy spadałem w dół do niskiego miejsca,
+62 przed moimi oczami ukazał się ktoś
+63 któż po długiej ciszy wydawał się ochrypły.
+- Note: 63行目の "ochrypły" (声が枯れた) は *fioco* の訳として具体的ですが、ウェルギリウスが長い沈黙の後に現れたことを示す表現として適切です。
+
+64 Kiedy zobaczyłem go w wielkiej pustyni,
+65 „Miseruj mnie”, krzyknąłem do niego,
+66 „cokolwiek jesteś, czy cień czy na pewno człowiek!”.
+- Note: 65行目の "Miseruj mnie" は存在しない言葉です。ラテン語の *Miserere* を無理やりポーランド語動詞化したようですが、正しくは "Zmiłuj się nade mną" です。
+
+67 Odpowiedział mi Nie człowiek człowiekiem już byłem,
+68 a moi rodzice byli Lombardami,
+69 Mantuani z ojczyzny obaj.
+- Note: 67行目の句読点が欠落しており読みづらいです。69行目の "Mantuani" は翻訳されていません。ポーランド語では "Mantuańczykami" です。
+
+70 Urodziłem się pod Julio, choć było późno,
+71 i żyłem w Rzymie pod dobrym Augustem
+72 w czasie fałszywych i kłamliwych bogów.
+- Note: 70行目の "pod Julio" は格変化していません。ポーランド語では "pod Juliuszem" とすべきです。
+
+73 Byłem poetą i śpiewałem o tym sprawiedliwym
+74 syn Anchisesa który przybył z Troi,
+75 po tym jak dumny Ilion został spalony.
+
+76 Ale ty dlaczego wracasz do tak wielkiej nudy?
+77 Dlaczego nie wchodzisz na rozkoszną górę
+78 która jest początkiem i przyczyną całej radości?
+- Note: 76行目の "nudy" (退屈) は *noia* の誤訳です。ここでは「苦悩」や「惨めさ」を意味します。地獄の苦しみを「退屈」と訳すのは大きな間違いです。
+
+79 Czy więc jesteś tym Wirgiliuszem i tym źródłem
+80 który wylewa tak szeroką rzekę mowy?
+81 odpowiedziałem mu z zawstydzoną twarzą.
+
+82 O honorze i świetle innych poetów,
+83 Niech długie studium i wielka miłość mi służą
+84 co sprawiło że szukam twojego tomu.
+- Note: 84行目の "szukam" (探している) は現在進行形ですが、原文の *cercar* は（愛を持って）「研究した」「探求した」という意味です。「あなたの書を探求させた」と訳すべきです。
+
+85 Ty jesteś moim mistrzem i moim autorem,
+86 ty jesteś jedynym tym od którego wziąłem piękny styl
+87 piękny styl który przyniósł mi honor.
+
+88 Zobacz bestię przez którą się odwróciłem;
+89 pomóż mi przeciw niej sławny mędrcze,
+90 bo ona sprawia że drżą mi wszystkie żyły i pulsacje»
+- Note: 90行目の "pulsacje" (拍動) は医学用語的で詩的ではありません。"tętna" (脈拍) の方が自然です。
+
+91 Należy ci podjąć inną drogę,
+92 Odpowiedział gdy zobaczył mnie płaczącego,
+93 Jeśli chcesz uciec z tego dzikiego miejsca;
+
+94 bo ta bestia, przez którą wołasz,
+95 nie pozwala nikomu przejść jej drogą,
+96 ale tak go powstrzymuje, że go zabija;
+
+97 i ma naturę tak złośliwą i złowrogą,
+98 że nigdy nie zaspokaja chciwej woli,
+99 i po posiłku ma więcej głodu niż przedtem.
+
+100 Wiele jest zwierząt, z którymi ona wychodzi za mąż,
+101 i będzie ich jeszcze więcej aż do przyjścia psa
+102 przyjdzie, co sprawi, że ona umrze z żalu.
+- Note: 100行目の "wychodzi za mąż" (結婚する/嫁ぐ) は人間（特に女性）に使われる表現で、動物の交尾には不適切です。"łączy się" などが適切です。101行目の "psa" (犬) は *Veltro* (猟犬/ハウンド) の訳としては一般的すぎます。通常は "Chart" と訳されます。
+
+103 On nie będzie się żywił ziemią ani dobrami,
+104 ale mądrością, miłością i odwagą,
+105 a jego ojczyzna będzie między Feltro a Feltro.
+- Note: 103行目の "dobrami" (財産/品物) は *peltro* (ピューター/富の象徴) の意訳として機能しています。
+
+106 Z tej pokornej Italii będzie zbawienie
+107 dla którego zmarła dziewica Camilla,
+108 Eurialo i Turnus i Nisus z ran.
+
+109 On będzie ją ścigał przez każde miasto,
+110 aż przywróci ją z powrotem do piekła,
+111 tam skąd zazdrość najpierw ją wyprawiła.
+
+112 Dlatego myślę i uznaję to za twoje dobro
+113 że podążysz za mną i będę twoim przewodnikiem,
+114 i poprowadzę cię stąd do miejsca wiecznego;
+
+115 gdzie usłyszysz rozpaczne krzyki,
+116 zobaczysz starożytnych duchów pełnych żalu,
+117 którzy wołają ku drugiej śmierci;
+
+118 i zobaczysz tych, którzy są zadowoleni
+119 w ogniu, ponieważ mają nadzieję przyjść,
+120 kiedykolwiek będzie to do błogosławionych ludzi.
+
+121 Do tych, jeśli zechcesz potem wstąpić,
+122 Wtedy będzie dusza bardziej godna niż ja w tej sprawie:
+123 Z nią zostawię cię przy moim odejściu;
+- Note: 122行目の "w tej sprawie" (この件に関して) は原文にない蛇足です。
+
+124 dla tego cesarza który rządzi tam w górze,
+125 ponieważ byłem buntownikiem wobec jego prawa,
+126 nie chce aby w jego mieście ktoś przyszedł przez mnie.
+
+127 We wszystkich częściach On rządzi i tam panuje;
+128 Tam jest Jego miasto i Jego wyniosłe siedzenie:
+129 O szczęśliwy ten którego tam wybiera!».
+
+130 Ja do niego poeto błagam cię
+131 przez tego boga którego ty nie znałeś,
+132 abym ja mógł uciec od tego zła i gorszego,
+
+133 abyś mnie poprowadził tam, gdzie teraz powiedziałeś,
+134 abym zobaczył bramę św. Piotra
+135 i tych, których tak bardzo zasmuciłeś».
+- Note: 135行目の "których tak bardzo zasmuciłeś" (あなたがとても悲しませた人々) は誤訳です。*cui tu fai cotanto mesti* は「あなたがとても悲しいものとして描写する人々」という意味です。ウェルギリウスが彼らを悲しませたわけではありません。
+
+136 Wtedy on ruszył dalej i ja trzymałem go za nim.
+- Note: 136行目の "trzymałem go za nim" (彼の後ろで彼をつかんだ) は意味不明です。原文 *tenni dietro* は「後についていった」という意味です。"szedłem za nim" が正しい翻訳です。
