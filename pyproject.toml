@@ -5,9 +5,11 @@ description = "Translate Dante's Divine Comedy into Dravidian languages using LL
 readme = "README.md"
 license = { text = "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication" }
 repository = "https://github.com/7shi/dante-dravidian"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 dependencies = [
+    "audioop-lts>=0.2.2",
     "llm7shi",
+    "pydub>=0.25.1",
 ]
 
 [tool.uv.sources]
