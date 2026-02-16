@@ -1,5 +1,5 @@
 ---
-name: review
+name: dante-review
 description: Review a Dante translation against the original Italian text
 disable-model-invocation: true
 argument-hint: <input_file> <output_file>

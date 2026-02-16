@@ -1,5 +1,5 @@
 ---
-name: fix
+name: dante-fix
 description: Fix a Dante translation based on embedded review notes
 disable-model-invocation: true
 argument-hint: <input_file> <output_file>

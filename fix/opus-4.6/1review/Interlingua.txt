@@ -1,0 +1,227 @@
+1 Nel mezzo del cammino de nostra vita
+2 io me trovava in un selva oscura,
+3 perque le via directe era smarrite.
+- Note: "Nel mezzo" is Italian, not Interlingua—"nel" is the Italian contracted form of "in + il"; correct Interlingua is "In le medio" ("medio" from Latin *medius*). "nostra" is likewise Italian: Interlingua possessive adjectives do not decline by gender, so "nostra" should be "nostre" regardless of the following noun. "oscura" is the Italian feminine adjective; Interlingua adjectives are invariable, so "obscure" (or "obscur") is correct. "selva" is Italian; the Interlingua word for forest is "silva" (from Latin *silva*)—should be "un silva obscure." "io me trovava" renders "mi ritrovai" as imperfect indicative, losing the sudden, decisive self-discovery of the passato remoto—suggest "io me trovai." "smarrite" is the Italian verb "smarrire" (to go astray), which has no Interlingua equivalent; the correct rendering is "perdite" (past participle of "perder"). "perque" for "ché" is functional but less elegant.
+
+4 Ah quanto es difficile dicer qual era!
+5 iste selva selvage e aspra e forte,
+6 que in le pensamento renova le paura!
+- Note: "Ahi" → "Ah" weakens the lament; Italian "Ahi" carries deeper grief. "quanto es difficile dicer qual era!" misrepresents "quanto a dir qual era è cosa dura"—Dante says it is a "hard thing to tell," a noun phrase with gravitas, not simply "how difficult it is." The exclamation mark replaces Dante's comma, disrupting the enjambment into line 5. "iste selva selvage" has two errors: "selva" is Italian, the Interlingua word is "silva"; and "selva" is feminine in Italian, so the correct Interlingua demonstrative is "ista silva." Furthermore, since "silva" is the base, the derived adjective should be "silvage" (not "selvage" which derives from the Italian "selva"). "aspra" is the Italian feminine adjective; Interlingua invariable form is "aspere" or "asper." "paura" (line 6) is specifically Italian; Interlingua uses "timor" (as the translator correctly uses in line 15) or "pavore"—this Italian form recurs at lines 19, 44, and 53. "le pensamento" should be "lo pensamento" or the more Romance "le pensiero."
+
+7 Tanto es amar que poco es plus morte;
+8 ma pro tractar del bon que io trovava ibi,
+9 io dicera del alter cosas que io ha scorgite ibi.
+- Note: "Tanto es amar" is ambiguous but not necessarily wrong: in Interlingua "amar" is the invariable adjective for "bitter" (from Latin *amarus*), as well as the infinitive for "to love"—"Tanto es amar" can be read as "So bitter it is," which matches Dante's "Tant' è amara." However, the homonymy with the verb creates an unfortunate ambiguity; a less ambiguous form such as "amaro" or "amarg" would be preferable. "poco es plus morte" clumsily renders "poco è più morte" (it is little more than death). "pro tractar" vs. "per trattar"—"pro" vs. "per" is inconsistent with Italian usage. "trovava" (imperfect) for "trovai" (passato remoto) loses the completed-action aspect; this tense inconsistency recurs throughout the translation. "ibi" (Latinate "there") for "vi" is overly Latinate. "io dicera" renders "dirò" (future) with the conditional, which changes the mood. "alter cosas" should be "le altere cosas" or "le altre cosas." Duplicate "ibi" at line ends is awkward.
+
+10 Io non pote ben recontar como io entrava ibi,
+11 tanto io era plen de somno a ille puncto
+12 que le verace via io abandonai.
+- Note: "non pote ben recontar" for "non so ben ridir" misses the nuance: "so" (from "sapere") conveys "I cannot well recount" with the sense of not knowing how, whereas "pote" is purely physical ability. "entrava" (imperfect) for "v'intrai" (passato remoto)—consistent tense error. "ille puncto" uses a Latinate demonstrative; more Romance "quel puncto" would better echo Dante.
+
+13 Ma postea que io fui arrivate al pede de un colina,
+14 la, ubi terminava ille valle
+15 que habeva pungite mi corde con timor,
+- Note: "fui arrivate al pede de un colina" for "fui al piè d'un colle giunto" loses the crucial detail "al piè" (at the foot)—the specific location at the hill's base carries symbolic weight. "ubi" for "dove" is Latinate. "ille valle" uses a masculine demonstrative for the feminine "valley"—should be "illa valle." "habeva pungite mi corde con timor" for "m'avea di paura il cor compunto" drops the heart ("il cor") as the explicit object: "compunto" (pierced/stung, from "compungere") has a more precise metaphorical force than "pungite."
+
+16 io guardai in alto e vidi le sue spallas
+17 ja vestite de radi del planeta,
+18 que guida alteres rectemente per omne calle.
+- Note: "sue" in "le sue spallas" is the Italian feminine plural possessive; Interlingua possessives are invariable, so "su" is the correct form: "le su spallas." "radi" for "raggi" (rays/beams) is acceptable Interlingua. "que guida alteres rectemente" for "che mena dritto altrui per ogne calle" weakens the line: "mena dritto" (leads straight) is more vigorous than "guida rectemente" (guides rightly), and "altrui" (others/one) is more elegantly impersonal than "alteres." The planet (the sun) as moral guide is conveyed, but the vigor is diminished.
+
+19 Allora le paura fuit un poco quietate,
+20 que in le lago del corde habeva durate
+21 le nocte que io passava con tanta pietate.
+- Note: "fuit" is a Latinate past form; Interlingua would use "fue" or "esseva." "tanta" is the Italian feminine adjective; Interlingua adjectives are invariable—"tanto pietate" is the correct form. "in le lago" could be "in lo lago" depending on Interlingua register, but "le" as invariable article is acceptable. "habeva durate" for "m'era durata"—intransitive verbs of motion/state in Romance typically use "essere" as auxiliary; suggest "esseva durate." "passava" (imperfect) for "passai" (passato remoto)—tense error. "pietate" (piety) mistranslates "pieta" here, which means anguish/distress, not religious piety.
+
+22 E como uno qui con le alentamento affannate,
+23 exite foras del pelago al riva,
+24 se volta al aqua periculose e guarda,
+- Note: "uno" is Italian masculine "one"; Interlingua uses invariable "un." "le alentamento affannate" poorly renders "lena affannata" (labored breath): "lena" is breath/breathing, not "alentamento" (slowing). "exite foras" for "uscito fuor" is more Latinate. "volta" is present tense where imperfect is expected (describing the simile). "guarda" for "guata" weakens the image: "guata" means to gaze intently/stare, conveying a lingering, fearful look, while "guarda" is merely "looks."
+
+25 assi mi animo, que ancora fugiva,
+26 se volse a retro a contemplar le passo
+27 que ja jamais lassava persona vivente.
+- Note: "contemplar" for "rimirar" loses the "re-" prefix: "rimirar" = to gaze back upon again, emphasizing the backward look; "contemplar" is too neutral. "le passo" should be "lo passo" (the pass/passage, depending on Interlingua article convention). "lassava" (imperfect) for "lasciò" (passato remoto)—tense error; "jamais" partially compensates for the lost double negative "non... già mai."
+
+28 Postea que io habeva reposate un poco mi corpore fatigate,
+29 io reprendeva le via per le declive deserte,
+30 assi que le pede ferme esseva sempre le plus basso.
+- Note: "habeva reposate" for "ch'èi posato" uses perfect with "habere" where Italian uses "essere" for reflexive; tense also shifts. "reprendeva" (imperfect) for "ripresi" (passato remoto)—tense error. "le declive deserte" for "la piaggia diserta": "piaggia" is a slope/bank (specific terrain), "declive" is more generic; "deserte" (plural) does not agree with the singular noun.
+
+31 E ecce quasi al initio del ascenso erto,
+32 un leopardo legier e multo agile,
+33 que con pelage maculate esseva coperite;
+- Note: "ecce" for "ecco" is Latinate. "al initio" for "al cominciar" is acceptable but more Latinate. "un leopardo" for "una lonza": "lonza" is not a straightforward leopard—it is a disputed term (lynx, cheetah, or leopard), and translating it definitively as "leopardo" forecloses interpretive ambiguity. "legier" should be "legiere" (the Interlingua invariable form of "light/swift") to fit the Interlingua pattern.
+
+34 e non se partia davanti a mi facie,
+35 anzi impediva tanto mi camino,
+36 que io fui per retornar plure vices voltate.
+- Note: "davanti" (line 34) is Italian for "in front of/before"; Interlingua uses "ante" or "deante"—should be "e non se partia ante mi facie." "facie" is Latinate for face; "volto" (Italian) is more poetic. "anzi" (line 35) is Italian for "on the contrary/indeed/rather"; it has no direct Interlingua equivalent and should be rendered "al contrario" or "immo." "plure vices voltate" for "più volte vòlto": "vòlto" is the past participle of "volgere" (to turn), meaning Dante was turned back.
+
+37 Le tempore esseva al initio del matino,
+38 e le sol ascendiva con illas stellas
+39 que esseva con illo quando le amor divin
+- Note: "Le tempore esseva al initio" for "Temp' era dal principio"—"dal principio" means "from the beginning" (temporal duration), not "at the start"; "al initio" loses this sense of a specific time of day that was already under way. "illas" is a Latin/Italian feminine plural demonstrative form; Interlingua uses "ille" as the plural demonstrative (or "illes")—"illas stellas" should be "ille stellas." The enjambment (lines 39–40) is preserved, which is good.
+
+40 moveva de prime ille cosas belle;
+41 assi que illo me dava causa de sperar ben
+42 del illa fera con le pelle gaie,
+- Note: "moveva" (imperfect) for "mosse" (passato remoto)—tense error; the creation of beautiful things is a completed act. "illo me dava causa" for "m'era cagione": Dante uses the impersonal "m'era cagione" (was the cause for me), whereas "illo me dava causa" introduces an unnecessary subject "illo." "del illa fera" is incorrect; should be "de illa fera." "le pelle gaie" for "la gaetta pelle": "gaetta" (beautiful, elegant—from Provençal) is rendered as "gaie" (joyful/gay), shifting the meaning from elegant beauty to cheerful gaiety.
+
+43 le hora del tempore e le dulce stagione;
+44 ma non assi que le paura non me desse
+45 le vista de un leone que me apparve.
+- Note: "le vista de un leone que me apparve" restructures "la vista che m'apparve d'un leone": the Italian has the noun phrase "la vista d'un leone" (the sight of a lion) appearing to him, with the relative clause "che m'apparve"; the translation's word order dilutes this effect.
+
+46 Iste pareva que contra me veniva
+47 con le capite alte e con fame rabiosa,
+48 assi que pareva que le aere tremiva.
+- Note: "rabiosa" is the Italian feminine adjective; Interlingua adjectives are invariable—the correct form is "rabiose." "veniva" (imperfect indicative) for "venisse" (imperfect subjunctive) loses the grammatical mood: "parea che... venisse" is a construction with subjunctive expressing appearance, not fact—"it seemed as if it were coming." Similarly "tremiva" for "tremesse" flattens the imperfect subjunctive. "con le capite alte" for "con la test' alta"—"capite" is Latinate.
+
+49 E un lupa, que de tote bramas
+50 pareva cargate in su magrezia,
+51 e multe gente ja faceva viver grame,
+- Note: "un lupa" has a critical gender error for Interlingua demonstratives/articles: "lupa" (she-wolf) requires the feminine indefinite "una lupa"—though Interlingua's "un" is officially invariable, using "un" before a clearly feminine noun referring to a female animal is inconsistent. "pareva cargate" for "sembiava carca"—"sembiava" (seemed) replaced by "pareva" (appeared), a minor difference; "cargate" (loaded) for "carca" (laden/burdened) is acceptable. "grame" is Italian literary vocabulary (from "gramo" = wretched/miserable); it has no entry in standard Interlingua—"misere" or "infelice" should be used. "faceva viver grame" (imperfect) for "fé già viver grame" (passato remoto)—tense error.
+
+52 illa me causava tanto oppression
+53 con le timor que veniva de su vista,
+54 que io perdeva le sperantia de le altura.
+- Note: "causava tanto oppression" for "mi porse tanto di gravezza" is a significant mistranslation: "porse" (from "porgere") means "offered/gave/brought upon me," and "gravezza" is heaviness/burden—the she-wolf gave Dante such a weight of burden. Rendering this as "caused oppression" loses the specific tactile, almost physical weight the Italian conveys. "le sperantia de le altura" for "la speranza de l'altezza": "l'altezza" (the height) refers to the hill of salvation; "le altura" is vaguer.
+
+55 E qual es ille qui voluntariamente acquista,
+56 e arriva le tempore que lo face perder,
+57 qui in tote su pensamentos plora e se attrista;
+- Note: "voluntariamente" for "volontieri" alters the nuance: "volontieri" = gladly/with pleasure (adverb of manner), while "voluntariamente" = voluntarily (of one's own will)—a subtle but meaningful shift. Otherwise the simile is adequately rendered.
+
+58 tal me faceva le bestia sin pace,
+59 que, veniente contra me a poco a poco,
+60 me repulsava illac ubi le sol tace.
+- Note: "faceva" (imperfect) for "fece" (passato remoto)—tense error. "veniente contra me" for "venendomi 'ncontro" loses the directional "toward me" nuance of "mi" in "venendomi." "repulsava" for "ripigneva" (pushed back) is acceptable but loses the specific violence of "spingere" (to push). "illac ubi" for "là dove" is needlessly Latinate; "la ubi" or simply "la que" would be more idiomatic.
+
+61 Durante que io rovinava al basse loco,
+62 davanti a mi oculos me se offereva
+63 uno qui per longe silentio pareva fioch.
+- Note: "Durante que" for "Mentre ch'" is acceptable. "al basse loco" for "in basso loco"—the preposition "in" better conveys immersion/descent than "al" (toward). "me se offereva" (imperfect) for "mi si fu offerto" (passato remoto)—tense error; the passive construction "fu offerto" (was presented) is rendered active/reflexive. "fioch" at line end is missing the final vowel for Interlingua convention; "fioco" would be better.
+
+64 Quando io vidi ille in le grande deserto,
+65 «Miserere de me», io clamai a ille,
+66 «qualcunque tu sia, o ombra o homine certo!».
+- Note: "ille" for "costui" loses the demonstrative force: "costui" (that person/that man there) is more disdainful and proximal than "ille" (he/that one). "clamai" for "gridai"—"gridai" (I cried out/shouted) expresses greater urgency and desperation than "clamai" (I called). "qualcunque tu sia" for "qual che tu sii"—"qualcunque" = whatever you may be, while "qual che tu sii" = whoever you may be; the distinction between "qualcunque" (nature/type) and "qual che" (identity) is significant here.
+
+67 Il me respondeva: «Non homo, homo jam fui,
+68 e mi parentes esseva lombardos,
+69 mantuanos per patria ambes».
+- Note: "Il me respondeva" uses the Italian definite article "Il" as a subject pronoun "he"; Interlingua uses "Ille"—should be "Ille me respondeva." "respondeva" (imperfect) for "Rispuosemi" (passato remoto)—tense error. "mi parentes esseva lombardos" for "e li parenti miei furon lombardi": "furon" (passato remoto, plural) is translated as imperfect "esseva," losing the historical definiteness. "ambes" for "ambedui" is acceptable; "ambedui" is a more archaic and emphatic "both."
+
+70 Io nasque sub Julio, ben que illo esseva tarde,
+71 e io viveva Roma sub le bon Augusto
+72 in le tempore del deos fals e mentitor.
+- Note: "viveva Roma" for "vissi a Roma"—the preposition "a" (in Rome) is dropped, making the phrase grammatically incomplete; should be "viveva in Roma." "viveva" (imperfect) for "vissi" (passato remoto)—tense error. "mentitor" (liar, singular) should be "mentitores" to agree with the plural "deos"; "fals" should be "false" (plural).
+
+73 Io esseva poeta e cantava de ille juste
+74 filio de Anchise qui veniva de Troia,
+75 postea que le superbo Ilion esseva combuste.
+- Note: "esseva poeta" (imperfect) for "Poeta fui" (passato remoto)—the use of "fui" here is Virgil's proud declaration of his identity and life's work; translating it as imperfect "esseva" (was being a poet) diminishes the force. Same issue with "cantava" for "cantai." "veniva" (imperfect) for "venne" (passato remoto)—tense error. "esseva combuste" for "fu combusto"—consistent tense problem; the fall of Troy is a completed historical event requiring passato remoto.
+
+76 Ma tu perque retorna a tal grande noia?
+77 Perque tu non ascende le monte delectabile
+78 que es principio e causa de tote gaudio?
+- Note: "tal grande noia" for "tanta noia"—"tanta" = so much/such great; "tal grande" is more explicit but changes the register. The closing quotation mark is missing from line 78, losing Virgil's speech boundary.
+
+79 «Ora es tu ille Virgilio e ille fonte
+80 que spande un fluvio tanto large de parole?
+81 io respondeva a ille con fronte vergonose.
+- Note: "ille fonte" for "quella fonte"—"fonte" (source/spring) is feminine in Italian; "ille" is a masculine demonstrative; should be "illa fonte." "spande un fluvio tanto large de parole" for "spandi di parlar sì largo fiume": the Italian "di parlar sì largo fiume" (such a wide river of speech) is elegant and compressed; the translation expands it verbosely and adds "de parole" where the original trusts the reader. "respondeva" (imperfect) for "rispuos'" (passato remoto)—tense error. "vergonose" is actually the correct Interlingua invariable adjective form (adjectives do not decline for gender in Interlingua); the Italian feminine "vergognosa" would be incorrect here.
+
+82 O honor e luce del altere poetas,
+83 me vale le longe studio e le grande amor
+84 que me ha facite cercar tu volume.
+- Note: "me vale le longe studio" for "vagliami 'l lungo studio"—"vagliami" is an optative/subjunctive (may it avail me!), a plea, while "me vale" (it is worth to me) is simply declarative, losing the emotional supplication.
+
+85 Tu es mi maestro e mi autor,
+86 tu es solmente ille de qui io ha tollite
+87 le bel stilo que me ha facite honor.
+- Note: "ha tollite" (present perfect) for "tolsi" (passato remoto)—tense difference, though present perfect is more acceptable here since it describes a past action with present relevance.
+
+88 Vide le bestia per le qual io me volve;
+89 Adjuta me contra illa famoso sapiente,
+90 que illa me face tremular le venas e le pulsos».
+- Note: "me volve" (present) for "mi volsi" (passato remoto)—tense error; Dante turned back because of the beast, a completed past action. "contra" for "da" changes the meaning: "aiutami da lei" = help me away from her/save me from her, whereas "contra" = against her, implying offensive action. "tremular" for "tremar" is an overly Latinate infinitive.
+
+91 «A te conveni tener alter viage,
+92 Il respondeva quando ille videva me plorante,
+93 si tu vole escapar de iste loco salvaje;
+- Note: "Il respondeva" uses the Italian article "Il" as a subject pronoun "he"—should be "Ille respondeva." "respondeva... quando ille videva" (both imperfect) for "rispuose, poi che lagrimar mi vide" (both passato remoto)—tense errors. More importantly, "poi che" (after) is temporal sequence (he responded after seeing), while "quando" (when) is simultaneous—a structural difference. "salvaje" for "selvaggio" is acceptable.
+
+94 pro iste bestia, per le qual tu clama,
+95 non permitte alicuno passar per su via,
+96 ma tanto lo impedisce que lo occide;
+- Note: "iste bestia" has gender error: "bestia" is feminine, requiring the feminine demonstrative "ista bestia." "per le qual" has the same gender issue—should be "per la qual." "tu clama" for "tu gride"—"gridi" (gridare = to cry out, shout) is more urgent than "clama" (clamare = to call). "alicuno" for "altrui": "altrui" = others (collective/general), while "alicuno" = someone (singular), weakening the universality of the she-wolf's obstruction.
+
+97 e ha natura tan maligne e malvagie,
+98 que jammai non satisface le desiderio avid,
+99 e post le pasto ha plus fame que ante.
+- Note: "tan maligne e malvagie" for "sì malvagia e ria"—"ria" (wicked, evil) is a strong, archaic word; "maligne e malvagie" uses two near-synonyms where Dante used one, losing his economy. "le desiderio avid" for "la bramosa voglia": "bramosa" (from "brama" = longing/craving) has a more animalistic, consuming quality than "avid" (avid/eager).
+
+100 Multos es le animales con le qual ella sponda,
+101 e plus sera ancora, fin que le veltro
+102 venira, que illa facera morir con doglia.
+- Note: "con le qual ella sponda" is a critical mistranslation of "a cui s'ammoglia": "s'ammoglia" means mates with/takes as spouse (from "ammogliarsi"), conveying the wolf's promiscuous breeding with evil. "sponda" means shores/banks (noun) or perhaps "responds"—neither captures the meaning. Suggest "con le qual ella se accopla." "ella" is the Italian feminine subject pronoun; Interlingua standard is "illa"—should be "illa se accopla." "le veltro" should be "lo veltro" or "ille veltro" (masculine); "veltro" (greyhound) is the prophesied savior figure. "doglia" (line 102) is Italian for pain/grief; Interlingua uses "dolor"—should be "morir con dolor."
+
+103 Iste non cibara terra ni peltro,
+104 ma sapientia amor e virtute,
+105 e su origine sera inter Feltro e Feltro.
+- Note: "su origine" for "sua nazion": "nazion" (nation/birth/lineage) carries different connotations from "origine" (origin)—the prophecy concerns the savior's national identity or birth between two Feltros, not merely his origin. "inter Feltro e Feltro" for "tra feltro e feltro": capitalizing "Feltro" as a proper noun is one interpretive tradition (referring to two Italian towns), but Dante's lowercase suggests humble origins (born between felt-cloth, i.e., poor circumstances); the choice should be acknowledged.
+
+106 De ille humile Italia essera le salvamento
+107 per le qual morì le virgine Cammilla,
+108 Eurialo e Turno e Niso de vulneres.
+- Note: "ille humile Italia" has a critical gender error: "Italia" is feminine, requiring the feminine demonstrative "illa humile Italia." "per le qual" for "per cui": in Italian, "per cui" refers to Italy (for which they died), not to multiple persons; "le qual" (plural) incorrectly implies reference to the heroes listed. "morì" is the Italian passato remoto form (3rd person singular with accent mark); Interlingua does not use this inflected form—the correct form would be "moriva" (imperfect) or "mori" (uninflected past), but not "morì" with the Italian accent. "de vulneres" for "di ferute" (of wounds): "vulneres" is Latinate for wounds, acceptable, but loses the specifically Italian resonance.
+
+109 Il la cacerà per cata vila,
+110 fin que ille habera lo remittite in le inferno,
+111 illac unde invidia prime la lassava partir.
+- Note: "Il la cacerà" has two Italian intrusions: "Il" is the Italian masculine definite article used as subject pronoun "he"—Interlingua uses "Ille"; and "cacerà" uses the Italian future with an accent mark—Interlingua future form would be "carera" (without accent). "cata vila" for "ogne villa"—"cata" is not standard Interlingua for "every" (standard would be "omne villa"). "ille habera lo remittite" for "l'avrà rimessa"—gender error: the wolf (lupa) is feminine, so the clitic should be "la" not "lo." "illac unde" for "là onde"—needlessly Latinate. "prime la lassava partir" for "'nvidia prima dipartilla": "dipartilla" = "separated her/drove her out," a stronger and more specific action than "lassava partir" (let her leave).
+
+112 Proque io pensa e discerno pro tu melior
+113 que tu me seque, e io sera tu guida,
+114 e io te trara de hic per loco etern;
+- Note: "Proque" for "Ond'" (wherefore/therefore)—"Ond'" marks logical conclusion; "Proque" is causal (because), which changes the logical relationship. "pro tu melior" for "per lo tuo me'"—"me'" is the contracted form of "meglio" (better/good), meaning "for your benefit"; "tu melior" is a Latinate phrasing. "sera tu guida" should be "sera tua guida" (possessive feminine). "de hic" for "di qui"—Latinate; "de hic" would confuse Romance and Latin.
+
+115 ubi tu audira le stridas disperate,
+116 tu videra le spiritus antique dolente,
+117 qui a le secunda morte cata uno grida;
+- Note: "ubi" for "ove"—consistent Latinate substitution. "le spiritus antique dolente" for "li antichi spiriti dolenti"—"spiritus" is Latinate plural; Interlingua would use "spiritos" or "spirites." "secunda" is the Italian feminine adjective ("seconda"); Interlingua adjectives are invariable—the correct form is "secunde" or "second." "uno" is Italian masculine "one"; Interlingua uses invariable "un": "cata un grida."
+
+118 e tu videra illes qui es contente
+119 in le foco proque illes spera venir
+120 quando illo pote esser a le gente beate.
+- Note: "quando illo pote esser" for "quando che sia"—"quando che sia" uses the subjunctive to express indefinite futurity (whenever it may be), which has eschatological resonance; "quando illo pote esser" (when it can be) is flat indicative, losing the theological uncertainty.
+
+121 A le quales, si tu volera ascender postea,
+122 un anima essera plus digne de isto que io:
+123 con illa io lassa te al mi partida;
+- Note: "digne de isto" for "a ciò più di me degna": the Italian "a ciò più di me degna" = more worthy than I for this [task]; "digne de isto" = worthy of this, which alters the comparative structure. The key idea that Beatrice surpasses Virgil in worthiness is partially lost. "io lassa te" (present) for "ti lascerò" (future)—tense error.
+
+124 pro ille imperator qui regna supra,
+125 perque io era rebelle al su lege,
+126 non vole que alcuno veni in su citate per me.
+- Note: "era rebelle" (imperfect) for "fu' ribellante" (passato remoto)—tense error; Virgil's rebellion (being pagan) is a fixed historical fact. "non vole que alcuno veni" for "non vuol che... si vegna"—"si vegna" is the subjunctive (doesn't want that one should come); "veni" is indicative, losing the subjunctive mood required after verbs of wanting.
+
+127 In tote partes ille governa e illac rege;
+128 Illac es su citate e su alto sede:
+129 O felice ille qui ille elige illac!».
+- Note: "ille governa" for "impera"—"impera" (from "imperare" = to command, rule as emperor) has a stronger, more imperial connotation than "governa" (governs, administers). "illac" (thither) for "quivi" (here/there)—the repeated "illac" is Latinate and creates awkward anaphora. "O felice ille qui ille elige illac" for "oh felice colui cu' ivi elegge": the Italian "cu' ivi elegge" = "whom He elects there" (God elects that person); translating this as "ille qui ille elige illac" adds an explicit "ille" subject but then uses "qui" (who, relative pronoun) ambiguously, and the final "illac" is redundant.
+
+130 E io a ille: «Poeta, io te implora
+131 per ille Deo que tu non cognosceva,
+132 assi que io pote fugir iste mal e pejor,
+- Note: "te implora" for "ti richeggio"—"richeggio" (from "richiedere") is a formal entreaty with legal/petitionary overtones; "implora" is more emotionally charged and less formal. "cognosceva" (imperfect) for "conoscesti" (passato remoto)—tense error; Dante uses the passato remoto to indicate that Virgil's non-knowing of the Christian God is a completed historical fact. "assi que io pote fugir" for "acciò ch'io fugga"—"acciò ch'" introduces a purpose clause with subjunctive; "pote fugir" (can flee) is indicative and loses the purposive-subjunctive construction.
+
+133 que tu me conduce illuc ubi tu ora dixite,
+134 assi que io vide le porta de Sancte Pietro
+135 e illes a qui tu face tanto affligite.
+- Note: "illuc ubi" for "là dov'"—Latinate again; "illuc" (thither) is not standard Interlingua. "tu ora dixite"—"dixite" is not standard Interlingua past tense (should be "dixe" or "diceva"); it sounds like a Latinate construction. "io vide le porta" for "ch'io veggia la porta"—"veggia" is present subjunctive (purpose clause); "vide" is indicative, losing the subjunctive. "face tanto affligite" for "fai cotanto mesti": "mesti" = sad/sorrowful; "affligite" = afflicted—both convey suffering, but "mesti" is sadder and more inward than "affligite" (which is more external/tormented).
+
+136 Allora se moveva, e io le sequeva.
+- Note: "se moveva" (imperfect) for "si mosse" (passato remoto)—the final line's tense error is particularly striking: this moment of Virgil setting forth is the decisive, completed action that launches the entire journey; it demands passato remoto. "le sequeva" for "li tenni dietro": "li tenni dietro" (I kept behind him/I followed close at his heels) is more vivid and specific than "le sequeva" (I followed him), conveying the image of Dante staying literally in Virgil's footsteps.
