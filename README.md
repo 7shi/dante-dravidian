@@ -29,7 +29,7 @@ This leverages the model's natural translation ability while using structured ch
 3.  **Word Table & Coverage Check**: Builds a word table *after* translation to verify completeness, mapping each source word to its target equivalent with back-translation and status (OK/MISSING/WRONG). Lists any items requiring correction.
 4.  **Correction & Final Output**: Fixes MISSING or WRONG items from Step 3. Outputs the corrected translation in a single code block.
 
-**Note**: See [PROMPT.md](PROMPT.md) for the full prompts and [test/README.md](test/README.md) for translation results and analysis.
+**Note**: See [PROMPT.md](PROMPT.md) for the full prompts, [test/README.md](test/README.md) for translation results and analysis, and [Japanese article](https://note.com/7shi/n/n7c266a99758d) for a detailed explanation.
 
 ## Project Structure
 
