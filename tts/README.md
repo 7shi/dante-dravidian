@@ -2,6 +2,12 @@
 
 This directory contains a TTS pipeline that generates audio readings of Dante's *Inferno* Canto 1 translations using Google's Gemini TTS model.
 
+## Samples
+
+Generated audio samples are available on SoundCloud:
+
+https://soundcloud.com/7shi-115292604/sets/dantes-divine-comedy-inferno
+
 ## Overview
 
 The pipeline converts translation text files into WAV audio files:
