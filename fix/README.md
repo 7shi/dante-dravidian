@@ -27,6 +27,7 @@ Takes the Gemini-corrected translations from `gemini3pro/2fix/` and applies four
 - **`dante.py`** — Main script with subcommands: `review`, `fix`, `quote`, `split`. Uses `llm7shi.compat` for LLM calls.
 - **`titles.json`** — Maps line numbers to English section titles for Canto 1 (used by the `split` subcommand to insert translated headers).
 - **`Makefile`** — Top-level Makefile that runs both passes sequentially.
+- **[`ANALYSIS.md`](ANALYSIS.md)** — Case study analyzing GPT-OSS 120B limitations for Spanish and Kannada, with recommendations for prompt improvements.
 
 ## Languages
 
