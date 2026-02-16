@@ -135,6 +135,10 @@ That said, some improvements to the initial translation prompts could still redu
 
 The following could improve GPT-OSS 120B output quality *before* the fix pipeline runs, reducing the burden on downstream models. However, given the model limitations discussed above, these should be understood as **incremental improvements** rather than solutions — the fix pipeline remains essential:
 
+### Existing safeguards in the prompt pipeline
+
+The 4-stage pipeline (`PROMPT.md`) already incorporates several safeguards: tercet-by-tercet chunking with line numbering (Step 1–2), parallel English reference context (Step 1), word-level coverage checks with MISSING/WRONG/GRAMMAR/UNNECESSARY categories (Step 3), correction passes (Step 4), and target-language purity constraints (Step 4). Despite all of these, the 120B model still produced line duplication (line 40), loanwords and cross-script contamination, semantic inversions, and broken syntax — particularly for Kannada. This confirms that the failures are model-level, not prompt-level: the model either ignores instructions it cannot reliably execute or lacks the vocabulary to comply.
+
 ### 1. Provide a Glossary of Dante-Specific Terms
 
 Include a pre-translation glossary in the prompt:
@@ -148,27 +152,38 @@ Key terms:
 - peltro → pewter/metal (NOT peltre)
 ```
 
-This directly addresses the vocabulary gap for culturally loaded terms.
+This directly addresses the vocabulary gap for culturally loaded terms and is the most likely prompt-level change to reduce high-severity errors.
 
-### 2. Add Tercet-by-Tercet Alignment Anchors *(already implemented)*
-
-The pipeline already chunks input into 3-line tercets with explicit line numbering (`test.py`, lines 82–98), but structural tracking errors (e.g., line 40 duplication) still occurred. Additional anchoring — repeating line numbers in the translation instruction or adding explicit "do not skip or duplicate lines" constraints — could further reduce these errors.
-
-### 3. Enforce Target-Language Purity Check *(already implemented)*
-
-Step 4 already includes a target-language purity constraint, but the 120B model still produced loanwords and cross-script contamination. Moving this instruction earlier (e.g., into Step 2 as a translation constraint) could help, since the model may not retain Step 4 instructions when generating Step 2 output.
-
-### 4. Provide Parallel English as Bridge Context *(already implemented)*
-
-Step 1 already provides the English reference alongside the Italian source, but for low-resource languages the English context may not carry through to later steps. Making key English phrases more prominent in the Step 2 translation instruction could help avoid semantic inversions.
-
-### 5. Add a Self-Check Instruction for Key Semantic Relations *(partially implemented)*
-
-Steps 3–4 already implement word-level coverage checks (MISSING/WRONG/GRAMMAR/UNNECESSARY) and correction passes. However, this misses semantic-relation errors. Adding passage-specific verification prompts (e.g., "Is the animal a she-WOLF?" or "Is this a resultative 'so X that Y' structure?") could catch antonym substitutions and structural inversions that word-level checks miss.
-
-### 6. Use Few-Shot Examples from the Same Language Family
+### 2. Use Few-Shot Examples from the Same Language Family
 
 For Kannada, include a translated sample from another Dravidian language (e.g., Telugu or Tamil) as a structural reference. For Spanish, an existing high-quality Italian→Spanish literary translation of the same passage could serve as a register anchor.
+
+## Pass 1 (Gemini 3.0 Pro) vs Pass 2 (GPT-5.2): Review Capability Comparison
+
+A detailed comparison of the review files (`gemini3pro/1review/` and `gpt-5.2/1review/`) for Spanish and Kannada reveals a stark asymmetry between the two passes:
+
+### Coverage
+
+| | Gemini 3.0 Pro (Pass 1) | GPT-5.2 (Pass 2) |
+|---|---|---|
+| **Spanish** | 8 spot notes on specific lines | Detailed notes on all 46 tercets |
+| **Kannada** | 6 spot notes on specific lines | Detailed notes on all 46 tercets |
+
+### Qualitative difference
+
+**Gemini 3.0 Pro** flagged only obvious surface errors:
+- Spanish: `leona→pantera` (line 32), `magreza→magrura` (line 50), line 40 duplication, `valor→virtud` (line 104), missing direct speech (line 65), pronoun error (line 136), etc.
+- Kannada: `ಹಾರುತ್ತಿತ್ತು` (flying→fleeing, line 25), `ಪಾಸ್` (English loanword, line 26), `ಹುಸಿಯಂತೆ` (false→faint, line 63), `ಗಾಯಗೊಂಡರು` (wounded→died of wounds, line 108).
+
+**Gemini missed all three critical Kannada errors**: `ಹೆಣ್ಣು ನರಿ` (vixen for she-wolf, line 49), `ಸೊಂಪಿನಲ್ಲಿ` (plumpness for leanness, line 50), and `ಹೊಂಡು` (hole for greyhound, lines 101–102).
+
+**GPT-5.2** reviewed every line against the Italian original, covering vocabulary precision, grammar/syntax, register consistency, cultural context, and Dante-specific scholarship. It detected all errors that Gemini missed and provided concrete alternative translations for nearly every issue.
+
+### Is Pass 1 necessary?
+
+GPT-5.2 in Pass 2 reviews the Gemini-fixed output (not the original). The four Kannada errors that Gemini did fix (flying→fleeing, pass→ದಾರಿ, false→faint, wounded→died of wounds) are simple lexical errors well within GPT-5.2's detection capability. Gemini's 8 Spanish corrections are likewise fully subsumed by GPT-5.2's exhaustive review.
+
+This suggests that **the Gemini pass could likely be removed** without degrading final output quality. Its practical contribution — reducing a small number of surface errors before GPT-5.2's review — does not justify the added pipeline complexity and API cost. The one caveat is that removing Gemini increases the error density that GPT-5.2 must process in a single pass, which could theoretically affect review thoroughness; this would need empirical verification on 1–2 languages.
 
 ## Conclusion
 
