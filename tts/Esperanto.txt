@@ -1,3 +1,5 @@
+# La malluma arbaro
+
 1 En la mezo de la vojaĝo de nia vivo
 2 mi trovis min en malluma arbaro,
 3 ĉar la rekta vojo estis perdiĝinta.
@@ -25,6 +27,8 @@
 19 Tiam la timo estis iom kvieta,
 20 kiu en la lago de mia koro estis daŭrinta
 21 la nokton kiun mi trapasis kun tiom da angoro.
+
+# La tri bestoj
 
 22 Kaj kiel iu kiu kun anhelanta spiro,
 23 eliris el la maro al la bordo,
@@ -62,6 +66,8 @@
 47 kun alta kapo kaj kun rabia malsato,
 48 tiel ke ŝajnis ke la aero tremis pro li.
 
+# La apero de Vergilio
+
 49 Kaj lupino, ŝarĝita de ĉia avido,
 50 ŝajnis ŝarĝita malgraŭ sia maldikeco,
 51 kaj jam faris multajn homojn vivi en malĝojo;
@@ -85,6 +91,8 @@
 64 Kiam mi vidis lin en la granda dezerto,
 65 «Kompatu min», mi kriis al li,
 66 «kia ajn vi estu, ĉu ombro ĉu vera homo!».
+
+# La dialogo kun la poeto
 
 67 Li respondis al mi: «Ne (estas) homo; sed homo iam mi estis,
 68 kaj miaj gepatroj estis lombardoj,
@@ -118,6 +126,8 @@
 89 helpu min kontraŭ ŝi, fama saĝulo,
 90 ĉar pro ŝi tremas miaj vejnoj kaj pojnoj.»
 
+# La profetaĵo pri la ĉashundo
+
 91 «Al vi konvenas fari alian vojaĝon»,
 92 li respondis post kiam li vidis min plori,
 93 «se vi volas eskapi de ĉi tiu sovaĝa loko;
@@ -145,6 +155,8 @@
 109 Li ĉasos ŝin tra ĉiu vilaĝo,
 110 ĝis kiam li revenigos ŝin al la infero,
 111 tie de kie envio unue ellasis ŝin.
+
+# La komenco de la vojaĝo
 
 112 Tial, por via bono, mi pensas kaj discernas
 113 ke vi sekvu min, kaj mi estos via gvidanto,
