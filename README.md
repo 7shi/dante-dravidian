@@ -39,6 +39,8 @@ This leverages the model's natural translation ability while using structured ch
 - [tokenize/](tokenize/): Italian tokenizer specialized for Dante's text.
 - [en-norton/](en-norton/): Norton's English translation of *Inferno* Canto 1, used as the reference translation.
 - [test/](test/): Contains translation logs and evaluation results for the first few lines of *Inferno*.
+- [fix/](fix/): Post-translation fix pipeline that reviews, corrects, and adds section headers to translations using LLMs (e.g., Gemini 3.0 Pro, GPT-5.2).
+- [tts/](tts/): Text-to-Speech pipeline that generates audio readings of *Inferno* Canto 1 translations using Google's Gemini TTS model.
 
 ### Scripts
 
