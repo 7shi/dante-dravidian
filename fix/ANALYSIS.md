@@ -72,9 +72,43 @@ The model lacks domain knowledge about Dante: "lonza" vs. "leone" vs. "lupa" dis
 
 Both outputs showed inconsistent register (formal/informal mixing, quotation mark omission for direct speech). The Spanish output was closer to natural prose; the Kannada output often read as translationese with broken word order.
 
+## Prompt Improvement vs. Model Limitations
+
+The 4-stage prompt pipeline (`PROMPT.md`) already incorporates several safeguards: reference-anchored translation (Step 1), structured word-level coverage checks (Step 3), correction passes (Step 4), and explicit target-language purity constraints. The pipeline also chunks input into 3-line tercets (`test.py`) to reduce structural tracking burden. Despite all of this, the 120B model still produced antonym substitutions, nonsense words, cross-script contamination, and broken syntax — particularly for Kannada.
+
+This raises the question: **are these failures addressable through better prompting, or are they fundamental limitations of the 120B model?**
+
+The evidence suggests that most Kannada-specific failures reflect **model-level limitations** rather than prompt design flaws:
+
+- **Instruction non-compliance**: The model ignored explicit constraints it was given (e.g., target-language purity in Step 4, line-count fidelity in Step 2). Better prompt placement might help marginally, but a model that cannot reliably follow instructions it has already received is unlikely to follow additional ones.
+- **Vocabulary gaps that prompts cannot fill**: When the model lacks Kannada vocabulary for a concept, it falls back to phonetic guessing ("ಹೊಂಡು" for "veltro"), English bridging ("ಪಾಸ್"), or cross-script borrowing (Malayalam words in Kannada). A glossary (Recommendation 1) could address known problem terms, but cannot cover the full vocabulary gap.
+- **Systematic quality difference by language**: The same prompt pipeline produced acceptable Spanish output but severely broken Kannada output. The prompts are language-agnostic by design, so the quality gap reflects the model's uneven training data coverage across languages.
+- **Self-check failures**: Steps 3–4 ask the model to identify and fix its own errors, but the model's Kannada competence is insufficient to reliably evaluate its own Kannada output. A model that produces "ಸೊಂಪಿನಲ್ಲಿ" (plumpness) for "magrezza" (leanness) is unlikely to catch this as WRONG in its own coverage check.
+
+**This assessment led to the decision to build the fix pipeline** (`fix/`), which uses more capable models (Gemini 3.0 Pro, GPT-5.2) for post-hoc review and correction rather than relying solely on prompt engineering to extract better output from the 120B model. The fix pipeline's design — always comparing against the Italian original — compensates for information that the 120B model failed to encode, which no amount of self-correction prompting could recover.
+
+### Why not use large models from the start?
+
+A natural question arises: if the 120B model's output requires extensive correction by GPT-5.2 anyway, why not use GPT-5.2 (or a comparable large model) for the initial translation as well?
+
+The answer is **cost structure**. The 4-stage translation pipeline (`PROMPT.md`) is designed to be thorough: it performs source-reference alignment, word-by-word analysis, translation, coverage checking, and correction — all as a multi-turn conversation per tercet, per language. For 46 tercets × 20 languages, this amounts to hundreds of API calls with substantial prompt context. Running this entirely on large commercial models would be prohibitively expensive.
+
+The current architecture separates the workload by cost profile:
+
+- **Local 120B model** (free, unlimited): Handles the labor-intensive 4-stage pipeline — the bulk of the API calls. The output quality varies by language, but even for low-resource languages it provides a structured draft with line numbering, approximate meaning, and consistent formatting.
+- **Large commercial models** (paid, per-token): Handle only the review-and-fix passes, which are comparatively lightweight — a single review pass and fix per language, not the full 4-stage pipeline. These models' superior cross-lingual competence is applied where it matters most: evaluating and correcting the draft against the Italian original.
+
+This "cheap draft, expensive correction" architecture is a pragmatic trade-off, and the benefits extend beyond cost savings. Even if budget were unlimited, having a draft improves the reliability of the final output:
+
+- **Generation vs. verification**: Translating 136 lines of tercets from scratch is a *generation* task — the model must produce correct output for every line while maintaining structural fidelity. Even large models can skip lines, duplicate content, or hallucinate under these conditions. With a draft in hand, the task becomes *verification and correction* — comparing two texts and identifying discrepancies — which is fundamentally more constrained and less prone to omission or hallucination.
+- **Structural scaffolding**: The 120B model's draft, however flawed in content, provides line numbering, consistent formatting, and a one-to-one correspondence with the source. This scaffolding anchors the large model's review, making it unlikely to lose track of which line it is processing.
+- **Error locality**: When the large model works from a draft, errors are localized — it needs to fix specific words or phrases, not reconstruct entire passages. This keeps each correction small and verifiable, reducing the risk of introducing new errors during the fix process.
+
+That said, some improvements to the initial translation prompts could still reduce the fix pipeline's workload, particularly for high-severity errors that are expensive to correct downstream.
+
 ## Recommendations for Prompt/Context Improvements
 
-The following could improve GPT-OSS 120B output quality *before* the fix pipeline runs, reducing the burden on downstream models:
+The following could improve GPT-OSS 120B output quality *before* the fix pipeline runs, reducing the burden on downstream models. However, given the model limitations discussed above, these should be understood as **incremental improvements** rather than solutions — the fix pipeline remains essential:
 
 ### 1. Provide a Glossary of Dante-Specific Terms
 
@@ -91,49 +125,21 @@ Key terms:
 
 This directly addresses the vocabulary gap for culturally loaded terms.
 
-### 2. Add Tercet-by-Tercet Alignment Anchors
+### 2. Add Tercet-by-Tercet Alignment Anchors *(already implemented)*
 
-Instead of presenting the full 136 lines at once, chunk the input into tercets with explicit line numbering:
+The pipeline already chunks input into 3-line tercets with explicit line numbering (`test.py`, lines 82–98). Despite this, structural tracking errors (e.g., line 40 duplication) still occurred, suggesting that the chunking alone is insufficient for the 120B model. Additional anchoring — such as repeating the line numbers in the translation instruction or adding explicit "do not skip or duplicate lines" constraints — could further reduce these errors.
 
-```
-Translate lines 37–39:
-37 Temp' era dal principio del mattino,
-38 e 'l sol montava 'n sù con quelle stelle
-39 ch'eran con lui quando l'amor divino
-```
+### 3. Enforce Target-Language Purity Check *(already implemented)*
 
-This reduces the structural tracking burden and prevents line-skipping/duplication errors.
+Step 4 of the prompt pipeline (`PROMPT.md`) already includes: "Verify that the output contains only {target_lang} script; no other language scripts should be mixed in." Despite this instruction, the 120B model still produced English loanwords ("ಪಾಸ್") and cross-script contamination (Malayalam in Kannada text). This suggests the instruction needs to be moved earlier (e.g., into Step 2 as a translation constraint) or made more prominent, since the model may not retain Step 4 instructions when generating Step 2 output.
 
-### 3. Enforce Target-Language Purity Check
+### 4. Provide Parallel English as Bridge Context *(already implemented)*
 
-Add an explicit instruction: "Do NOT use English words or words from other scripts. Every word must be in [target language] script. If you are unsure of a term, transliterate the Italian original rather than using English."
+Step 1 of the prompt pipeline already provides the English reference translation alongside the Italian source, and the model performs source-reference alignment before translating. However, for low-resource languages, the English context may not carry through strongly enough to later steps. Making the English more prominent in the Step 2 translation instruction (e.g., including key English phrases inline) could help the 120B model avoid semantic inversions.
 
-This would prevent the "ಪಾಸ್" (pass) and cross-script contamination issues in Kannada.
+### 5. Add a Self-Check Instruction for Key Semantic Relations *(partially implemented)*
 
-### 4. Provide Parallel English as Bridge Context
-
-For low-resource languages, include the English translation alongside the Italian to give the model a second reference point:
-
-```
-Italian: che non lasciò già mai persona viva.
-English: that never yet left any person alive.
-→ Translate to Kannada:
-```
-
-The 4-stage pipeline already does this (Step 1 alignment), but making the English more prominent in the translation step could help the 120B model avoid semantic inversions.
-
-### 5. Add a Self-Check Instruction for Key Semantic Relations
-
-Prompt the model to verify key relationships after translating:
-
-```
-After translating, verify:
-- Line 7: Is the comparison "the forest is SO bitter THAT death is only slightly more"? (not the reverse)
-- Line 49: Is the animal a she-WOLF (not fox, not dog)?
-- Lines 55–57: Is this a SIMILE ("like one who...")?
-```
-
-This lightweight self-verification could catch the most common semantic inversions.
+Steps 3–4 of the prompt pipeline already implement a coverage check (MISSING/WRONG/GRAMMAR/UNNECESSARY status) and correction pass. However, this check operates at the word level, not at the semantic-relation level. Adding passage-specific verification prompts for critical relationships (e.g., "Is the animal a she-WOLF?" or "Is this a resultative 'so X that Y' structure?") could catch errors that word-level coverage misses, such as antonym substitutions or structural inversions.
 
 ### 6. Use Few-Shot Examples from the Same Language Family
 
@@ -145,4 +151,6 @@ The fix pipeline is effective: it transforms GPT-OSS 120B output from rough draf
 
 However, the pipeline cannot always recover information that was never encoded. When the 120B model produces "ಹೊಂಡು" (pit) for "veltro" (greyhound), no amount of review can recover the correct meaning without access to the Italian source — which is why the pipeline's design of always comparing against the original is essential.
 
-The most impactful improvement would be **providing a domain-specific glossary** in the initial translation prompt. This single change could eliminate the highest-severity errors (wrong animals, wrong concepts, nonsense words) that currently require the most expensive downstream correction. Combined with tercet-level chunking and an explicit target-language purity constraint, GPT-OSS 120B could produce substantially cleaner first drafts, especially for low-resource languages like Kannada.
+The prompt pipeline (`PROMPT.md`) already incorporates multiple safeguards — reference anchoring, tercet chunking, coverage checks, correction passes, and target-language purity constraints — but the 120B model does not reliably follow these instructions, particularly for low-resource languages. This is not primarily a prompt engineering problem but a **model capability limitation**: the model's Kannada training data is insufficient for it to produce or self-evaluate accurate translations, regardless of how carefully the prompts are structured.
+
+The most impactful prompt-level improvement would be **providing a domain-specific glossary** to eliminate the highest-severity errors (wrong animals, wrong concepts, nonsense words). But even with an optimized prompt pipeline, the quality gap between high-resource and low-resource languages will persist at this model scale. **The fix pipeline using more capable models (Gemini 3.0 Pro, GPT-5.2) is not merely a convenience but a necessity** — it provides the cross-lingual competence and instruction-following reliability that the 120B model lacks, and represents a deliberate architectural choice to separate "fast local draft generation" from "accurate quality correction."
