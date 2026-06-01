@@ -125,3 +125,10 @@ edits live only in `paradiso.md`, not in the per-canto `paradiso/NN.json`).
 following the policy in [`ref/AGENTS.md`](ref/AGENTS.md). They predate `scene.py`
 and are kept as worked examples of the intended structure and granularity; their
 table headers (`行` / `場面名` / `内容`) and summaries are in Japanese.
+
+[`ref/inferno-01.toml`](ref/inferno-01.toml) is a hand-written **context-lock**
+sample for Inferno Canto 1 — a per-scene skeleton that fixes identity only (who
+speaks, where, who "this light" is) as translation pre-processing, with a `basis`
+quote per entry for verification against the source. It is kept here to compare
+against a model-generated version later. See `PLAN.md` for the design and the
+error patterns it guards against.
