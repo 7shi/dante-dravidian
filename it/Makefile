@@ -8,3 +8,15 @@ $(TARGET):
 
 split: $(TARGET)
 	python split.py < $(TARGET)
+
+# Scene breakdowns (one .md + .jsonl per canticle). Resumable via the JSONL.
+# Override the model with e.g. `make scenes MODEL=google:gemini-3-pro-preview`.
+MODEL ?=
+SCENES = inferno.md purgatorio.md paradiso.md
+
+scenes: $(SCENES)
+
+$(SCENES): %.md: %
+	uv run python scene.py $< $(if $(MODEL),-m $(MODEL)) -o $@
+
+.PHONY: all split scenes

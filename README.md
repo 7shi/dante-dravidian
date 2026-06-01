@@ -35,7 +35,7 @@ This leverages the model's natural translation ability while using structured ch
 
 ### Directories
 
-- [it/](it/): Italian source text management.
+- [it/](it/): Italian source text management, plus `scene.py` for generating scene-by-scene breakdowns of each canticle with a local LLM.
 - [tokenize/](tokenize/): Italian tokenizer specialized for Dante's text.
 - [en-norton/](en-norton/): Norton's English translation of *Inferno* Canto 1, used as the reference translation.
 - [test/](test/): Contains translation logs and evaluation results for the first few lines of *Inferno*.
