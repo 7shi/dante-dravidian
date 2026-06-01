@@ -211,23 +211,25 @@ def canto_number(path):
     return int(Path(path).stem)
 
 
-def load_jsonl(path):
-    """Return {canto_num: breakdown_dict} from an existing JSONL, or {} if absent."""
+def json_path(canticle_dir, canto_num):
+    """Per-canto JSON checkpoint path, e.g. inferno/01.json next to 01.txt."""
+    return Path(canticle_dir) / f"{canto_num:02d}.json"
+
+
+def load_breakdowns(canticle_dir):
+    """Return {canto_num: breakdown_dict} from the per-canto JSON files present."""
     done = {}
-    path = Path(path)
-    if path.exists():
-        for line in path.read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                obj = json.loads(line)
-                done[obj["canto"]] = obj["breakdown"]
+    for p in Path(canticle_dir).glob("*.json"):
+        done[canto_number(p)] = json.loads(p.read_text(encoding="utf-8"))
     return done
 
 
-def append_jsonl(path, canto_num, breakdown):
-    """Append one canto's breakdown to the JSONL checkpoint."""
-    record = {"canto": canto_num, "breakdown": breakdown.model_dump()}
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+def write_json(path, breakdown):
+    """Write one canto's breakdown to its per-canto JSON checkpoint (indent=2)."""
+    Path(path).write_text(
+        json.dumps(breakdown.model_dump(), indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
 
 def write_markdown(title, breakdowns, output_path):
@@ -242,7 +244,7 @@ def write_markdown(title, breakdowns, output_path):
     print(f"Scene breakdown written to {output_path}")
 
 
-def cmd_split(canticle_dir, output_path, language, model, only_canto=None, jsonl_path=None):
+def cmd_split(canticle_dir, output_path, language, model, only_canto=None, save=True):
     canticle_dir = Path(canticle_dir)
     title = CANTICLE_TITLES.get(canticle_dir.name, canticle_dir.name.capitalize())
 
@@ -257,28 +259,29 @@ def cmd_split(canticle_dir, output_path, language, model, only_canto=None, jsonl
         print(f"Error: No canto files found in {canticle_dir}", file=sys.stderr)
         sys.exit(1)
 
-    # Test mode (-c): generate straight to Markdown, no JSONL checkpoint.
-    if jsonl_path is None:
-        breakdowns = {}
-        for path in canto_files:
-            canto_num = canto_number(path)
-            breakdowns[canto_num] = split_canto(path, canto_num, language, model)
-        write_markdown(title, breakdowns, output_path)
-        return
-
-    # Full run: checkpoint each canto to JSONL so an interrupted run can resume.
-    done = load_jsonl(jsonl_path)
+    # Generate each canto, checkpointing to its per-canto JSON (NN.json next to
+    # NN.txt) so an interrupted full run can resume. A full run skips cantos that
+    # already have a JSON; test mode (-c) always regenerates and only writes the
+    # JSON when `save` is set.
+    generated = {}
     for path in canto_files:
         canto_num = canto_number(path)
-        if canto_num in done:
-            print(f"Canto {canto_num} already in {jsonl_path}, skipping.")
+        jp = json_path(canticle_dir, canto_num)
+        if only_canto is None and jp.exists():
+            print(f"Canto {canto_num} already in {jp}, skipping.")
             continue
         breakdown = split_canto(path, canto_num, language, model)
-        append_jsonl(jsonl_path, canto_num, breakdown)
+        generated[canto_num] = breakdown
+        if save:
+            write_json(jp, breakdown)
 
-    # Once the JSONL is complete, convert it to the final Markdown.
-    breakdowns = {n: CantoBreakdown.model_validate(b)
-                  for n, b in load_jsonl(jsonl_path).items()}
+    # Render Markdown: the single canto in test mode, otherwise every canto with
+    # a per-canto JSON in the directory.
+    if only_canto is not None:
+        breakdowns = {only_canto: generated[only_canto]}
+    else:
+        breakdowns = {n: CantoBreakdown.model_validate(b)
+                      for n, b in load_breakdowns(canticle_dir).items()}
     write_markdown(title, breakdowns, output_path)
 
 
@@ -296,19 +299,19 @@ def main():
     parser.add_argument("-l", "--language", default=DEFAULT_LANGUAGE,
                         help=f"Language for scene names and summaries (default: {DEFAULT_LANGUAGE})")
     parser.add_argument("-c", "--canto", type=int,
-                        help="Process only this canto number (for testing; no checkpoint unless --jsonl is given)")
-    parser.add_argument("--jsonl",
-                        help="JSONL checkpoint path for resumable runs (takes priority; "
-                             "default for a full run: output path with a .jsonl extension)")
+                        help="Process only this canto number (for testing; no JSON checkpoint unless --save is given)")
+    parser.add_argument("--save", action="store_true",
+                        help="In test mode (-c), also write the per-canto JSON checkpoint "
+                             "(full runs always write per-canto JSON next to the source).")
     args = parser.parse_args()
 
     if args.output and len(args.inputs) > 1:
         print("Error: -o/--output can only be used with a single input directory. Use --outdir for multiple.",
               file=sys.stderr)
         sys.exit(1)
-    if args.jsonl and len(args.inputs) > 1:
-        print("Error: --jsonl can only be used with a single input directory.", file=sys.stderr)
-        sys.exit(1)
+
+    # Full runs always checkpoint; test mode (-c) only when --save is given.
+    save = True if args.canto is None else args.save
 
     for canticle_dir in args.inputs:
         if args.outdir:
@@ -316,17 +319,7 @@ def main():
         else:
             output_path = args.output
 
-        if args.jsonl:
-            # Explicit --jsonl always wins, even in test mode.
-            jsonl_path = args.jsonl
-        elif args.canto is not None:
-            # Test mode without --jsonl: no checkpoint.
-            jsonl_path = None
-        else:
-            # Full run: derive the checkpoint path from the output filename.
-            jsonl_path = str(Path(output_path).with_suffix(".jsonl"))
-
-        cmd_split(canticle_dir, output_path, args.language, args.model, args.canto, jsonl_path)
+        cmd_split(canticle_dir, output_path, args.language, args.model, args.canto, save)
 
 
 if __name__ == "__main__":

@@ -35,37 +35,38 @@ Japanese directly.
 
 ### Output and resuming
 
-Each canticle produces one `.md` plus one `.jsonl` checkpoint (e.g.
-`inferno.md` + `inferno.jsonl`). The JSONL stores one canto per line and is
-written incrementally, so an interrupted run resumes by re-running the same
-command (already-finished cantos are skipped). Once every canto is present the
-JSONL is converted to the final Markdown.
+Each canticle produces one `.md` (e.g. `inferno.md`) plus a per-canto JSON
+checkpoint written next to each source line file — `inferno/01.json` beside
+`inferno/01.txt`, and so on. Each canto's breakdown is written as soon as it is
+generated, so an interrupted run resumes by re-running the same command
+(cantos that already have a JSON are skipped). Once every canto is present the
+per-canto JSON files are rendered into the final Markdown.
 
 ### Usage
 
 ```sh
-# All three canticles into this directory (inferno.md/.jsonl, etc.)
+# All three canticles into this directory (inferno.md + inferno/NN.json, etc.)
 make scenes
 make scenes MODEL=google:gemini-3-pro-preview   # override the model
 
 # A single canticle
 uv run python scene.py inferno -o inferno.md
 
-# Test one canto (no checkpoint unless --jsonl is given)
+# Test one canto (no JSON checkpoint unless --save is given)
 uv run python scene.py inferno -o /tmp/test.md -c 1
 ```
 
 Key options: `-o` (single canticle → explicit file) vs `--outdir` (one or more
 canticles → `<canticle>.md` each); `-m`/`--model`; `-l`/`--language`;
-`-c`/`--canto` (test a single canto); `--jsonl` (explicit checkpoint path, takes
-priority).
+`-c`/`--canto` (test a single canto); `--save` (in test mode, also write the
+per-canto JSON checkpoint).
 
 ## Manual corrections to `inferno.md`
 
 The following factual/proper-noun errors in the generated `inferno.md` were
 hand-corrected after checking the source in `inferno/`. These edits live **only
-in `inferno.md`** — the `inferno.jsonl` checkpoint keeps the raw model output, so
-regenerating the Markdown with `scene.py` would overwrite them.
+in `inferno.md`** — the per-canto `inferno/NN.json` checkpoints keep the raw
+model output, so regenerating the Markdown with `scene.py` would overwrite them.
 
 | Canto (lines) | Correction | Basis in the source |
 |---|---|---|
@@ -81,7 +82,7 @@ regenerating the Markdown with `scene.py` would overwrite them.
 ## Manual corrections to `purgatorio.md`
 
 Hand-corrected against the source in `purgatorio/` (same caveat as above — these
-edits live only in `purgatorio.md`, not in `purgatorio.jsonl`).
+edits live only in `purgatorio.md`, not in the per-canto `purgatorio/NN.json`).
 
 | Canto (lines) | Correction | Basis in the source |
 |---|---|---|
@@ -103,7 +104,7 @@ edits live only in `purgatorio.md`, not in `purgatorio.jsonl`).
 ## Manual corrections to `paradiso.md`
 
 Hand-corrected against the source in `paradiso/` (same caveat as above — these
-edits live only in `paradiso.md`, not in `paradiso.jsonl`).
+edits live only in `paradiso.md`, not in the per-canto `paradiso/NN.json`).
 
 | Canto (lines) | Correction | Basis in the source |
 |---|---|---|

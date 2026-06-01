@@ -9,7 +9,8 @@ $(TARGET):
 split: $(TARGET)
 	python split.py < $(TARGET)
 
-# Scene breakdowns (one .md + .jsonl per canticle). Resumable via the JSONL.
+# Scene breakdowns (one .md per canticle, plus a per-canto NN.json next to each
+# NN.txt source). Resumable: a full run skips cantos that already have a JSON.
 # Override the model with e.g. `make scenes MODEL=google:gemini-3-pro-preview`.
 MODEL ?=
 SCENES = inferno.md purgatorio.md paradiso.md
