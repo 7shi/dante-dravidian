@@ -90,6 +90,16 @@ the canticle-specific realm vocabulary, and the standard spelling of recurring
 proper names (e.g. Cassio → Cassius). Scenes only reference it; they do not
 repeat it.
 
+> **Open question — name form in the lock (revisit later).** The speaker table
+> that feeds `speaker`/`addressee` (`tokenize/PLAN.md`) records names in their
+> **source spelling** (`Virgilio`, `Frati Godenti`), on the principle that
+> translation is needless overhead for the downstream local LLM. The lock and
+> the glossary example above instead use English/anglicized forms
+> (`Virgil`, `Cassio → Cassius`). These should be reconciled: either the lock
+> adopts source spelling to match the TSV (likely preferred, same rationale), or
+> a single normalization point is defined. Deferred — the TOML side is not yet
+> updated; agreement is currently on *who* speaks, not the exact string.
+
 ### Format and layout
 
 - **TOML**, one file per canto, placed next to the source (e.g.
