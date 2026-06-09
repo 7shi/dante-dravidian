@@ -8,9 +8,11 @@ repository = "https://github.com/7shi/dante-dravidian"
 requires-python = ">=3.13"
 dependencies = [
     "audioop-lts>=0.2.2",
+    "dante-corpus",
     "llm7shi",
     "pydub>=0.25.1",
 ]
 
 [tool.uv.sources]
 llm7shi = { git = "https://github.com/7shi/llm7shi.git" }
+dante-corpus = { path = "../dante-corpus", editable = true }

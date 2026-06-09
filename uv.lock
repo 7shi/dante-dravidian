@@ -253,11 +253,22 @@ wheels = [
 ]
 
 [[package]]
+name = "dante-corpus"
+version = "0.1.0"
+source = { editable = "../dante-corpus" }
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "llm7shi", git = "https://github.com/7shi/llm7shi.git" }]
+
+[[package]]
 name = "dante-dravidian"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "audioop-lts" },
+    { name = "dante-corpus" },
     { name = "llm7shi" },
     { name = "pydub" },
 ]
@@ -265,6 +276,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "audioop-lts", specifier = ">=0.2.2" },
+    { name = "dante-corpus", editable = "../dante-corpus" },
     { name = "llm7shi", git = "https://github.com/7shi/llm7shi.git" },
     { name = "pydub", specifier = ">=0.25.1" },
 ]

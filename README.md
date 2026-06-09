@@ -29,14 +29,13 @@ This leverages the model's natural translation ability while using structured ch
 3.  **Word Table & Coverage Check**: Builds a word table *after* translation to verify completeness, mapping each source word to its target equivalent with back-translation and status (OK/MISSING/WRONG). Lists any items requiring correction.
 4.  **Correction & Final Output**: Fixes MISSING or WRONG items from Step 3. Outputs the corrected translation in a single code block.
 
-**Note**: See [PROMPT.md](PROMPT.md) for the full prompts, [test/README.md](test/README.md) for translation results and analysis, and [Japanese article](https://note.com/7shi/n/n7c266a99758d) for a detailed explanation.
+**Note**: See [PROMPT.md](PROMPT.md) for the full prompts, [PLAN.md](PLAN.md) for the scene-by-scene translation plan, [ARCHITECTURE.md](ARCHITECTURE.md) for the three-repository structure, [test/README.md](test/README.md) for translation results and analysis, and [Japanese article](https://note.com/7shi/n/n7c266a99758d) for a detailed explanation.
 
 ## Project Structure
 
 ### Directories
 
-- [it/](it/): Italian source text management, plus `scene.py` for generating scene-by-scene breakdowns of each canticle with a local LLM.
-- [tokenize/](tokenize/): Italian tokenizer specialized for Dante's text.
+- The Italian source text, scene-by-scene breakdowns, and the tokenizer are provided by the external **dante-corpus** package and consumed through its API — no longer directories in this repo.
 - [en-norton/](en-norton/): Norton's English translation of *Inferno* Canto 1, used as the reference translation.
 - [test/](test/): Contains translation logs and evaluation results for the first few lines of *Inferno*.
 - [fix/](fix/): Post-translation fix pipeline that reviews, corrects, and adds section headers to translations using LLMs (e.g., Gemini 3.0 Pro, GPT-5.2).
@@ -50,23 +49,35 @@ This leverages the model's natural translation ability while using structured ch
 
 ## Usage
 
+### Dependency Projects
+
+This project is part of a three-repository set and depends on the following companion repositories:
+
+- [dante-corpus](https://github.com/7shi/dante-corpus) - The shared corpus library and thin CLI. Serves the normalized Italian source text, tokens, and the quote-span tree as a queryable "DB" through its `dante_corpus` API. **Required** — this project reads canto text from it via an editable path dependency.
+- [dante-analyze](https://github.com/7shi/dante-analyze) - The formalization / knowledge-graph layer. Runs local-LLM passes (scenes → markup → reading → bullets → tags) over the corpus to produce referent-resolved data and the per-scene context lock the translation consumes (see [PLAN.md](PLAN.md)). Companion project; not required just to run the translation pipeline.
+
 ### Preparation
 
-Ensure you have `uv` installed. First, prepare the Italian source text:
+Because `dante-dravidian` consumes `dante-corpus` via an editable path dependency (`../dante-corpus`), all three repositories must share one parent directory. Ensure you have `uv` installed, then clone all three into the same directory:
 
 ```bash
+git clone https://github.com/7shi/dante-dravidian.git
+git clone https://github.com/7shi/dante-corpus.git
+git clone https://github.com/7shi/dante-analyze.git
+cd dante-dravidian
 uv sync
-cd it
-make
-make split
 ```
 
-Then, tokenize the text:
+The resulting layout:
 
-```bash
-cd ../tokenize
-make
 ```
+your-workspace/
+├── dante-corpus/      # source text, tokens (read via the dante_corpus API)
+├── dante-analyze/     # analysis layer + context lock
+└── dante-dravidian/   # this repo (translation)
+```
+
+`uv sync` installs `dante-corpus` as an editable dependency; the Italian source text and tokens are then served through its API — there is no local text-generation or tokenize step in this repo.
 
 ### Test
 

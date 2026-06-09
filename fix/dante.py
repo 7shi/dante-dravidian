@@ -3,12 +3,21 @@ import json
 import sys
 import re
 from pathlib import Path
+import dante_corpus as dc
 from llm7shi.compat import generate_with_schema
 
 # Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
-PATH_INFERNO = SCRIPT_DIR.parent / "tokenize" / "inferno" / "01.txt"
 PATH_TITLES = SCRIPT_DIR / "titles.json"
+
+def read_canto_text(canticle, canto_no):
+    canto = dc.canto(canticle, canto_no)
+    result = ""
+    for line in canto.lines():
+        if line.no > 1 and line.no % 3 == 1:
+            result += "\n"
+        result += f"{line.no} {line.text}\n"
+    return result
 
 def load_titles():
     """Load section titles from titles.json."""
@@ -26,18 +35,6 @@ def read_file(path):
         sys.exit(1)
     return path.read_text(encoding="utf-8")
 
-def read_tokenized_file(path):
-    result = ""
-    text = read_file(path)
-    line_num = 1
-    for line in text.splitlines():
-        if tokens := line.split("|"):
-            if line_num > 1 and line_num % 3 == 1:
-                result += "\n"
-            result += f"{line_num} {tokens[0]}\n"
-            line_num += 1
-    return result
-
 def write_file(path, content):
     Path(path).write_text(content, encoding="utf-8")
 
@@ -54,9 +51,9 @@ def run_llm(messages, model):
     return extract_code_block(response.text) + "\n"
 
 def cmd_review(input_path, output_path, model):
-    print(f"Reviewing {input_path} against {PATH_INFERNO}...")
+    print(f"Reviewing {input_path}...")
     target_text = read_file(input_path)
-    original_text = read_tokenized_file(PATH_INFERNO)
+    original_text = read_canto_text("inferno", 1)
     
     prompt = """You are an expert translator and reviewer specializing in Dante's Inferno.
 Your task is to review the following translation against the original Italian text.
@@ -108,9 +105,9 @@ IMPORTANT: Wrap the entire output in a single code block using triple backticks 
     print(f"Fixed text written to {output_path}")
 
 def cmd_quote(input_path, output_path, model):
-    print(f"Fixing quotes in {input_path} against {PATH_INFERNO}...")
+    print(f"Fixing quotes in {input_path}...")
     target_text = read_file(input_path)
-    original_text = read_tokenized_file(PATH_INFERNO)
+    original_text = read_canto_text("inferno", 1)
     target_lines = target_text.splitlines()
     
     prompt = """You are an expert translator and editor specializing in Dante's Inferno.

@@ -52,6 +52,7 @@ if args.languages is not None:
 import math
 import re
 from pathlib import Path
+import dante_corpus as dc
 from llm import LLMClient, history_to_xml, xml_to_history
 from translate import step1, translate, get_result
 
@@ -64,8 +65,8 @@ def get_language_name(lang):
     return langname.strip().replace(" ", "_")
 
 # Read test data
-with open("tokenize/inferno/01.txt", "r", encoding="utf-8") as f:
-    it = [l.split("|")[0] for line in f if (l := line.strip())]
+canto = dc.canto("inferno", 1)
+it = [line.text for line in canto.lines()]
 with open("en-norton/inferno-01.txt", "r", encoding="utf-8") as f:
     en = [l for line in f if (l := line.strip())]
 
